@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+.DS_Store
+output
+
+# Raw source videos are too large for normal GitHub uploads and should stay local.
+public/videos/factory-profile-3.mp4
+public/videos/factory-final.mp4
+public/videos/factory-hero.mp4
+public/videos/factory-profile-4.mp4
+public/videos/hero-background-2.mp4
