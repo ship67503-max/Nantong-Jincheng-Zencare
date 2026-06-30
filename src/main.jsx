@@ -108,8 +108,8 @@ const advantages = [
   },
   {
     icon: Truck,
-    title: 'Reliable Supply',
-    text: 'Stable scheduling and export support for long-term orders.',
+    title: 'Supply Coordination',
+    text: 'Production scheduling and export support for long-term orders.',
   },
 ];
 
@@ -121,7 +121,7 @@ const customProducts = [
     image: '/images/custom-disposable-pet-pads-premium.png',
     specs: ['Multiple sizes', 'Absorbency levels', 'Embossing optional'],
     badge: 'OEM / ODM',
-    summary: 'OEM pet pads built around absorption, leak protection, and stable output.',
+    summary: 'OEM pet pads built around absorption, leak protection, and production planning.',
     details: ['Softness, embossing, size, and absorbency can be tuned.', 'Private-label packing and outer bag artwork supported.', 'Built for brands, retailers, and cross-border channels.'],
   },
   {
@@ -169,7 +169,7 @@ const customProducts = [
     title: 'Adhesive Pet Pads',
     category: 'Anti-Slip Design',
     image: '/images/custom-adhesive-pet-pad-ai.png',
-    specs: ['Secure backing', 'Easy removal', 'Quality assured'],
+    specs: ['Secure backing', 'Easy removal', 'Quality checked'],
     badge: 'Custom Backing',
     summary: 'Anti-slip pet pads designed for cleaner placement and easy removal.',
     details: ['Adhesive position, size, specification, and packing can be customized.', 'Designed to reduce shifting while removing cleanly.', 'Ideal for upgraded training pad and scenario-based lines.'],
@@ -203,7 +203,7 @@ const uiTranslations = {
     contact: 'Contact Us',
     regionSearch: 'Search Europe / America',
     noRegion: 'No region found',
-    support: 'Our experts are available 24/7:',
+    support: 'Contact our team for project support:',
     chat: 'Chat Now',
     top: 'Back to Top',
     footer: ['About', 'Investor Relations', 'Affiliates', 'Jobs', 'Help', 'Learn', 'Give Back', 'Gift Cards'],
@@ -542,7 +542,7 @@ function AboutPage() {
     ['Company', 'Nantong JINCHENG ZENCARE Technology Company is a pet care absorbent product source factory serving OEM, ODM, and private-label programs.'],
     ['Services', 'Pet pads, pet diapers, care bed pads, glove wipes, structure design, packaging development, sampling, and export support.'],
     ['Team', 'R&D, production, quality inspection, merchandising, packaging, and delivery teams work as one project flow.'],
-    ['Results', '20 years in the industry, 12,000 sq.m factory area, 8 automated lines, and 120M pcs stable annual capacity.'],
+    ['Results', '20 years in the industry, 12,000 sq.m factory area, 8 automated lines, and annual capacity of up to 120M pcs, subject to product specifications and production schedule.'],
   ];
 
   return (
@@ -551,12 +551,12 @@ function AboutPage() {
         <div className="about-page-hero">
           <p className="section-kicker">About JINCHENG ZENCARE</p>
           <h1>
-            Built for stable
+            Built for
             <br />
-            <em className="title-key">pet pad OEM/ODM supply</em>.
+            <em className="title-key">pet pad OEM/ODM supply projects</em>.
           </h1>
           <p>
-            We help brands, cross-border sellers, and channel partners build absorbent pet care product lines with reliable manufacturing and practical customization.
+            We help brands, cross-border sellers, and channel partners build absorbent pet care product lines with manufacturing support and practical customization.
           </p>
         </div>
 
@@ -593,10 +593,10 @@ function InvestorRelationsPage() {
     ['20 Years', 'Industry Experience'],
     ['12,000 sq.m', 'Factory Area'],
     ['8 Lines', 'Automated Production'],
-    ['120M pcs', 'Stable Capacity'],
+    ['120M pcs', 'Annual Capacity'],
   ];
   const investorUpdates = [
-    ['Capacity Upgrade', 'Automated pet pad production supports stable long-term OEM/ODM supply.'],
+    ['Capacity Upgrade', 'Automated pet pad production supports long-term OEM/ODM project planning.'],
     ['Quality System', 'Batch inspection covers materials, process, performance, and shipment review.'],
     ['Custom Program', 'Private-label projects can include structure, absorbency, packaging, and market-ready specifications.'],
   ];
@@ -614,7 +614,7 @@ function InvestorRelationsPage() {
             behind <em className="title-key">pet care supply</em>.
           </h1>
           <p>
-            A source factory focused on pet absorbent products, OEM/ODM customization, and reliable delivery for global business partners.
+            A source factory focused on pet absorbent products, OEM/ODM customization, and delivery coordination for global business partners.
           </p>
         </div>
       </div>
@@ -626,7 +626,7 @@ function InvestorRelationsPage() {
             <h2>Nantong JINCHENG ZENCARE Technology Company</h2>
           </div>
           <p>
-            We specialize in R&D, manufacturing, and sales of pet pads, pet diapers, care bed pads, glove wipes, and related absorbent care products. Our operating model combines stable production capacity, practical product development, and flexible private-label support.
+            We specialize in R&D, manufacturing, and sales of pet pads, pet diapers, care bed pads, glove wipes, and related absorbent care products. Our operating model combines production capacity planning, practical product development, and flexible private-label support.
           </p>
           <p>
             For B2B customers, we provide product structure planning, sample development, batch production, quality inspection, packaging coordination, and export delivery support.
@@ -670,9 +670,9 @@ function InvestorRelationsPage() {
 
 function AffiliatesPage() {
   const reasons = [
-    'Introduce reliable pet care products to your market with source-factory support.',
+    'Introduce pet care products to your market with source-factory support.',
     'Access OEM/ODM customization across absorbency, size, packing, and private label.',
-    'Work with stable capacity, sample support, and export-ready coordination.',
+    'Work with capacity planning, sample support, and export-ready coordination.',
     'Build long-term channel value with practical product development and quality control.',
   ];
   const faqs = [
@@ -693,7 +693,7 @@ function AffiliatesPage() {
             <em className="title-key">pet pad source factory</em>.
           </h1>
           <p>
-            For distributors, sourcing partners, and channel teams looking for stable OEM/ODM supply.
+            For distributors, sourcing partners, and channel teams looking for OEM/ODM supply support.
           </p>
         </div>
 
@@ -845,7 +845,7 @@ function LearnCenterPage() {
       tag: 'Packaging',
     },
     {
-      title: 'Inside batch inspection for stable pet pad delivery',
+      title: 'Inside batch inspection for pet pad delivery management',
       image: '/images/quality-inspection-lab-mask.png',
       tag: 'Quality',
     },
@@ -942,11 +942,11 @@ function GiveBackPage() {
     ['Responsible Supply', 'Partner with brands on practical, long-life product programs.'],
     ['Waste Awareness', 'Support specification planning that reduces over-design and excess packing.'],
     ['Pet Care Access', 'Help channel partners build accessible absorbent care products for everyday use.'],
-    ['Quality First', 'Stable quality reduces returns, defects, and unnecessary product loss.'],
+    ['Quality Focus', 'Quality management can help improve product consistency and reduce unnecessary product loss in daily operations.'],
   ];
   const partnerStories = [
     ['Brand Partners', 'Developing fit-for-market pet pad lines with balanced performance and cost.'],
-    ['Channel Teams', 'Supporting distributors with stable delivery, packaging coordination, and sample planning.'],
+    ['Channel Teams', 'Supporting distributors with delivery coordination, packaging coordination, and sample planning.'],
     ['Pet Care Projects', 'Creating absorbent products for home care, training, travel, and care-bed scenarios.'],
   ];
 
@@ -963,7 +963,7 @@ function GiveBackPage() {
             <em className="title-key">built with responsibility</em>.
           </h1>
           <p>
-            We believe source manufacturing should support stable quality, practical use, and long-term value for pets, brands, and channel partners.
+            We believe source manufacturing should support quality management, practical use, and long-term value for pets, brands, and channel partners.
           </p>
           <a href="/#contact">
             Start a responsible project
@@ -1011,7 +1011,7 @@ function GiveBackPage() {
 
         <div className="giveback-stories">
           <p className="section-kicker">Partners & Projects</p>
-          <h2>Working with customers who care about stable, useful products.</h2>
+          <h2>Working with customers who care about practical and well-managed products.</h2>
           <div>
             {partnerStories.map(([title, text], index) => (
               <article key={title}>
@@ -1029,7 +1029,7 @@ function GiveBackPage() {
 
 function GiftCardsPage() {
   const kitOptions = [
-    ['Starter Kit', 'Pads, absorbent sheets, and packaging swatches for first-round evaluation.'],
+    ['Starter Kit', 'Pads, absorbent sheets, and packaging swatches for initial evaluation.'],
     ['Brand Review Set', 'Private-label mockups with material cards, structure notes, and pack directions.'],
     ['Channel Sample Box', 'Retail-ready sample kits prepared for distributors, buyers, and category teams.'],
   ];
@@ -1876,7 +1876,7 @@ function App() {
             <div>
               <p className="section-kicker">Why JINCHENG ZENCARE</p>
               <h2>
-                Source factory strength for <em className="title-key">stable OEM/ODM supply</em>.
+                Source factory strength for <em className="title-key">OEM/ODM supply support</em>.
               </h2>
             </div>
           </div>
