@@ -540,9 +540,9 @@ function ProductPlanInquiry() {
 function AboutPage() {
   const aboutHighlights = [
     ['Company', 'Nantong JINCHENG ZENCARE Technology Company is a pet care absorbent product source factory serving OEM, ODM, and private-label programs.'],
-    ['Services', 'Pet pads, pet diapers, care bed pads, glove wipes, structure design, packaging development, sampling, and export support.'],
+    ['Services', 'Pet pads, pet diapers, care bed pads, adult nursing pads, glove wipes, structure design, packaging development, sampling, and export support.'],
     ['Team', 'R&D, production, quality inspection, merchandising, packaging, and delivery teams work as one project flow.'],
-    ['Results', '20 years in the industry, 12,000 sq.m factory area, 8 automated lines, and annual capacity of up to 120M pcs, subject to product specifications and production schedule.'],
+    ['Results', '20 years in the industry, 12,000 sq.m factory area, 8 automated lines, and annual capacity of up to 300M pcs, subject to product specifications and production schedule.'],
   ];
 
   return (
@@ -593,7 +593,7 @@ function InvestorRelationsPage() {
     ['20 Years', 'Industry Experience'],
     ['12,000 sq.m', 'Factory Area'],
     ['8 Lines', 'Automated Production'],
-    ['120M pcs', 'Annual Capacity'],
+    ['300M pcs', 'Annual Capacity'],
   ];
   const investorUpdates = [
     ['Capacity Upgrade', 'Automated pet pad production supports long-term OEM/ODM project planning.'],
@@ -1752,10 +1752,10 @@ function App() {
                 an <em className="title-key">OEM/ODM source factory</em>.
               </h2>
               <p>
-                20 years focused on pet pads, pet diapers, and care bed pads.
+                20 years focused on pet pads, pet diapers, care bed pads, and adult nursing pads.
               </p>
               <p>
-                12,000 sq.m factory, 8 automated lines, 120M pcs annual capacity.
+                12,000 sq.m factory, 8 automated lines, 300M pcs annual capacity.
               </p>
               <div className="contact-strip">
                 <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 15162883729</a>
@@ -1955,7 +1955,7 @@ function App() {
             <p className="section-kicker">Start Your Custom Order</p>
             <h2>
               <span>Start your</span>
-              <span><em className="title-key">custom pet pad program</em>.</span>
+              <span><em className="title-key">custom pet products program</em>.</span>
             </h2>
             <p>
               Send your target market, specs, packaging, and order plan. We will prepare the OEM/ODM solution.
