@@ -1,5 +1,5 @@
 (function () {
-  var apiBase = (window.JCZ_BUSINESS_API || 'https://business-api.jczcare.com').replace(/\/$/, '');
+  var apiBase = (window.JCZ_BUSINESS_API || window.location.origin).replace(/\/$/, '');
 
   if (!apiBase) {
     return;
@@ -144,18 +144,6 @@
     }
   }
 
-  function injectTracker() {
-    if (document.querySelector('script[data-jcz-tracker]')) {
-      return;
-    }
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.dataset.jczTracker = 'true';
-    script.src = apiBase + '/api/public/tracker.js';
-    document.body.appendChild(script);
-  }
-
   function waitForApp(callback) {
     var attempts = 0;
     var timer = window.setInterval(function () {
@@ -168,7 +156,6 @@
   }
 
   function boot() {
-    injectTracker();
     waitForApp(function () {
       fetchContent('seo').then(applySeo);
       fetchContent('banner').then(applyBanner);
