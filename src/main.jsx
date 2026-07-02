@@ -206,7 +206,7 @@ const uiTranslations = {
     support: 'Contact our team for project support:',
     chat: 'Chat Now',
     top: 'Back to Top',
-    footer: ['About', 'Investor Relations', 'Affiliates', 'Jobs', 'Help', 'Learn', 'Give Back', 'Gift Cards'],
+    footer: ['About', 'Investor Relations', 'Affiliates', 'Help', 'Learn', 'Give Back', 'Gift Cards'],
   },
   de: {
     nav: ['Profil', 'Projekte', 'Innovation', 'Qualitat', 'Vorteile', 'Anpassung'],
@@ -216,7 +216,7 @@ const uiTranslations = {
     support: 'Unsere Experten sind 24/7 verfugbar:',
     chat: 'Jetzt chatten',
     top: 'Nach oben',
-    footer: ['Uber uns', 'Investor Relations', 'Partner', 'Jobs', 'Hilfe', 'Wissen', 'Engagement', 'Musterkits'],
+    footer: ['Uber uns', 'Investor Relations', 'Partner', 'Hilfe', 'Wissen', 'Engagement', 'Musterkits'],
   },
   fr: {
     nav: ['Profil', 'Projets', 'Innovation', 'Qualite', 'Avantages', 'Personnalisation'],
@@ -226,7 +226,7 @@ const uiTranslations = {
     support: 'Nos experts sont disponibles 24/7 :',
     chat: 'Chat en ligne',
     top: 'Haut de page',
-    footer: ['A propos', 'Investisseurs', 'Affilies', 'Emplois', 'Aide', 'Guide', 'Engagement', 'Kits cadeaux'],
+    footer: ['A propos', 'Investisseurs', 'Affilies', 'Aide', 'Guide', 'Engagement', 'Kits cadeaux'],
   },
   it: {
     nav: ['Profilo', 'Progetti', 'Innovazione', 'Qualita', 'Vantaggi', 'Personalizzazione'],
@@ -236,7 +236,7 @@ const uiTranslations = {
     support: 'I nostri esperti sono disponibili 24/7:',
     chat: 'Chatta ora',
     top: 'Torna su',
-    footer: ['Chi siamo', 'Investitori', 'Affiliati', 'Lavoro', 'Aiuto', 'Guide', 'Responsabilita', 'Kit regalo'],
+    footer: ['Chi siamo', 'Investitori', 'Affiliati', 'Aiuto', 'Guide', 'Responsabilita', 'Kit regalo'],
   },
   es: {
     nav: ['Perfil', 'Proyectos', 'Innovacion', 'Calidad', 'Ventajas', 'Personalizacion'],
@@ -246,7 +246,7 @@ const uiTranslations = {
     support: 'Nuestros expertos estan disponibles 24/7:',
     chat: 'Chatear ahora',
     top: 'Volver arriba',
-    footer: ['Sobre nosotros', 'Inversores', 'Afiliados', 'Empleos', 'Ayuda', 'Aprender', 'Contribuir', 'Kits regalo'],
+    footer: ['Sobre nosotros', 'Inversores', 'Afiliados', 'Ayuda', 'Aprender', 'Contribuir', 'Kits regalo'],
   },
   nl: {
     nav: ['Profiel', 'Projecten', 'Innovatie', 'Kwaliteit', 'Voordelen', 'Maatwerk'],
@@ -256,7 +256,7 @@ const uiTranslations = {
     support: 'Onze experts zijn 24/7 beschikbaar:',
     chat: 'Chat nu',
     top: 'Naar boven',
-    footer: ['Over ons', 'Investeerders', 'Partners', 'Jobs', 'Help', 'Leren', 'Teruggeven', 'Sample kits'],
+    footer: ['Over ons', 'Investeerders', 'Partners', 'Help', 'Leren', 'Teruggeven', 'Sample kits'],
   },
   pl: {
     nav: ['Profil', 'Projekty', 'Innowacje', 'Jakosc', 'Zalety', 'Personalizacja'],
@@ -266,7 +266,7 @@ const uiTranslations = {
     support: 'Nasi eksperci sa dostepni 24/7:',
     chat: 'Czat teraz',
     top: 'Do gory',
-    footer: ['O nas', 'Inwestorzy', 'Partnerzy', 'Praca', 'Pomoc', 'Wiedza', 'Wsparcie', 'Zestawy probek'],
+    footer: ['O nas', 'Inwestorzy', 'Partnerzy', 'Pomoc', 'Wiedza', 'Wsparcie', 'Zestawy probek'],
   },
   sv: {
     nav: ['Profil', 'Projekt', 'Innovation', 'Kvalitet', 'Fordelar', 'Anpassning'],
@@ -276,7 +276,7 @@ const uiTranslations = {
     support: 'Vara experter finns tillgangliga 24/7:',
     chat: 'Chatta nu',
     top: 'Till toppen',
-    footer: ['Om oss', 'Investerare', 'Partners', 'Jobb', 'Hjalp', 'Lar dig', 'Ge tillbaka', 'Provkit'],
+    footer: ['Om oss', 'Investerare', 'Partners', 'Hjalp', 'Lar dig', 'Ge tillbaka', 'Provkit'],
   },
   da: {
     nav: ['Profil', 'Projekter', 'Innovation', 'Kvalitet', 'Fordele', 'Tilpasning'],
@@ -286,7 +286,7 @@ const uiTranslations = {
     support: 'Vores eksperter er tilgaengelige 24/7:',
     chat: 'Chat nu',
     top: 'Til toppen',
-    footer: ['Om os', 'Investorer', 'Partnere', 'Jobs', 'Hjaelp', 'Laer', 'Giv tilbage', 'Provekit'],
+    footer: ['Om os', 'Investorer', 'Partnere', 'Hjaelp', 'Laer', 'Giv tilbage', 'Provekit'],
   },
   no: {
     nav: ['Profil', 'Prosjekter', 'Innovasjon', 'Kvalitet', 'Fordeler', 'Tilpasning'],
@@ -296,7 +296,7 @@ const uiTranslations = {
     support: 'Vare eksperter er tilgjengelige 24/7:',
     chat: 'Chat na',
     top: 'Til toppen',
-    footer: ['Om oss', 'Investorer', 'Partnere', 'Jobber', 'Hjelp', 'Laer', 'Gi tilbake', 'Provekit'],
+    footer: ['Om oss', 'Investorer', 'Partnere', 'Hjelp', 'Laer', 'Gi tilbake', 'Provekit'],
   },
   fi: {
     nav: ['Profiili', 'Projektit', 'Innovaatio', 'Laatu', 'Edut', 'Raatalointi'],
@@ -306,7 +306,7 @@ const uiTranslations = {
     support: 'Asiantuntijamme ovat tavoitettavissa 24/7:',
     chat: 'Chat nyt',
     top: 'Ylos',
-    footer: ['Tietoa meista', 'Sijoittajat', 'Kumppanit', 'Tyopaikat', 'Tuki', 'Opi', 'Vastuullisuus', 'Naytekitit'],
+    footer: ['Tietoa meista', 'Sijoittajat', 'Kumppanit', 'Tuki', 'Opi', 'Vastuullisuus', 'Naytekitit'],
   },
   pt: {
     nav: ['Perfil', 'Projetos', 'Inovacao', 'Qualidade', 'Vantagens', 'Personalizacao'],
@@ -316,7 +316,7 @@ const uiTranslations = {
     support: 'Nossos especialistas estao disponiveis 24/7:',
     chat: 'Conversar agora',
     top: 'Voltar ao topo',
-    footer: ['Sobre nos', 'Investidores', 'Afiliados', 'Empregos', 'Ajuda', 'Aprender', 'Retribuir', 'Kits amostra'],
+    footer: ['Sobre nos', 'Investidores', 'Afiliados', 'Ajuda', 'Aprender', 'Retribuir', 'Kits amostra'],
   },
 };
 
@@ -340,7 +340,6 @@ const footerLinks = [
   { label: 'About', href: '/pages/about' },
   { label: 'Investor Relations', href: '/pages/investor-relations' },
   { label: 'Affiliates', href: '/pages/affiliates' },
-  { label: 'Jobs', href: '/pages/jobs' },
   { label: 'Help', href: '/pages/help' },
   { label: 'Learn', href: '/pages/learn' },
   { label: 'Give Back', href: '/pages/give-back' },
