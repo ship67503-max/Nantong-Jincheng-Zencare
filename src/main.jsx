@@ -375,6 +375,9 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         {ui.contact}
         <ArrowUpRight size={18} strokeWidth={1.8} />
       </a>
+      <a className="nav-signin" href="/sign-in">
+        Sign In
+      </a>
     </nav>
   );
 }
@@ -531,6 +534,147 @@ function ProductPlanInquiry() {
             <ArrowUpRight size={18} />
           </button>
         </form>
+      </div>
+    </section>
+  );
+}
+
+function SignInPage() {
+  const [formState, setFormState] = useState({
+    email: '',
+    password: '',
+  });
+  const initialAuthNotice =
+    new URLSearchParams(window.location.search).get('status') === 'setup-required'
+      ? 'Apple ID sign-in is reserved. Please configure Apple Developer credentials before enabling this provider.'
+      : '';
+  const [submitState, setSubmitState] = useState({
+    status: initialAuthNotice ? 'error' : 'idle',
+    message: initialAuthNotice,
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitState({ status: 'loading', message: 'Submitting account record...' });
+
+    try {
+      const response = await fetch('/api/sign-in', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formState.email,
+          password: formState.password,
+          method: 'email-password',
+          source: window.location.pathname,
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Unable to submit this account record.');
+      }
+
+      setFormState({ email: '', password: '' });
+      setSubmitState({
+        status: 'success',
+        message: data.message || 'Account submitted. Our business team will review the registration.',
+      });
+    } catch (error) {
+      setSubmitState({
+        status: 'error',
+        message: error.message || 'Submission failed. Please try again later.',
+      });
+    }
+  };
+
+  return (
+    <section className="signin-page">
+      <div className="signin-silk" aria-hidden="true">
+        <SilkBoundary>
+          <React.Suspense fallback={<div className="inquiry-silk-fallback" />}>
+            <Silk
+              speed={2.6}
+              scale={1.12}
+              color="#102217"
+              noiseIntensity={1.05}
+              rotation={-0.28}
+            />
+          </React.Suspense>
+        </SilkBoundary>
+      </div>
+      <div className="container signin-shell">
+        <div className="signin-copy">
+          <p className="section-kicker">Business Account</p>
+          <h1>
+            Sign in to
+            <br />
+            <em className="title-key">JINCHENG ZENCARE</em>.
+          </h1>
+          <p>
+            Access your business account for OEM/ODM project communication, sample follow-up, and product plan records.
+          </p>
+        </div>
+
+        <div className="signin-card">
+          <div className="signin-card-head">
+            <span>Account Login</span>
+            <h2>Enter your business account details.</h2>
+          </div>
+
+          <form className="contact-form signin-form" aria-label="Business account sign in form" onSubmit={handleSubmit}>
+            <label>
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                autoComplete="email"
+                required
+                value={formState.email}
+                onChange={(event) => setFormState((state) => ({ ...state, email: event.target.value }))}
+              />
+            </label>
+            <label>
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                required
+                minLength="8"
+                value={formState.password}
+                onChange={(event) => setFormState((state) => ({ ...state, password: event.target.value }))}
+              />
+            </label>
+            <button type="submit" disabled={submitState.status === 'loading'}>
+              {submitState.status === 'loading' ? 'Submitting...' : 'Sign In'}
+              <ArrowUpRight size={18} />
+            </button>
+            {submitState.message && (
+              <p className={`signin-message ${submitState.status}`}>
+                {submitState.message}
+              </p>
+            )}
+          </form>
+
+          <div className="signin-divider">
+            <span>or continue with</span>
+          </div>
+
+          <div className="signin-providers">
+            <a href="/api/auth/apple">
+              Apple ID
+              <ArrowUpRight size={16} />
+            </a>
+            <a href="mailto:hengtuo@nthegntuo.com?subject=Business%20account%20access%20request">
+              Email Support
+              <Mail size={16} />
+            </a>
+          </div>
+
+          <p className="signin-note">
+            Passwords are processed securely and are not stored in plain text. Business account records can be synchronized with JCZ Business Center through the backend API.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -1130,6 +1274,7 @@ function App() {
   const ui = useMemo(() => getUiText(activeRegion), [activeRegion]);
   const productSlug = currentPath.match(/^\/products\/([^/]+)\/?$/)?.[1];
   const isInquiryPage = currentPath === '/request-product-plan';
+  const isSignInPage = currentPath === '/sign-in';
   const isAboutPage = currentPath === '/pages/about';
   const isInvestorPage = currentPath === '/pages/investor-relations';
   const isAffiliatesPage = currentPath === '/pages/affiliates';
@@ -1212,7 +1357,7 @@ function App() {
         };
       };
 
-      if (currentProduct || isInquiryPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
+      if (currentProduct || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
         gsap.set(nav, {
           x: 0,
           y: 0,
@@ -1233,7 +1378,9 @@ function App() {
           ? '.product-detail-page .detail-copy > *, .product-detail-page .detail-visual, .product-detail-page .detail-info-grid article'
           : isInquiryPage
             ? '.inquiry-page .inquiry-copy > *, .inquiry-page .inquiry-form'
-            : isAboutPage
+            : isSignInPage
+              ? '.signin-page .signin-copy > *, .signin-page .signin-card'
+              : isAboutPage
               ? '.about-page .about-page-hero > *, .about-page .about-page-grid article, .about-page .about-address-card'
               : isInvestorPage
                 ? '.investor-page .investor-hero-content > *, .investor-page .investor-overview > *, .investor-page .investor-stats article, .investor-page .investor-news article'
@@ -1536,7 +1683,7 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentProduct, isInquiryPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
+  }, [currentProduct, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -1560,7 +1707,7 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
-    if (currentProduct || isInquiryPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
+    if (currentProduct || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
       return undefined;
     }
 
@@ -1587,13 +1734,22 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentProduct, isInquiryPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
+  }, [currentProduct, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
 
   if (isInquiryPage) {
     return (
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <ProductPlanInquiry />
+      </main>
+    );
+  }
+
+  if (isSignInPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SignInPage />
       </main>
     );
   }

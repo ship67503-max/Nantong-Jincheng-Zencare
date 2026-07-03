@@ -3,6 +3,7 @@ dist
 .env
 .DS_Store
 output
+data/jcz-business-center/account/*.json
 
 # Raw source videos are too large for normal GitHub uploads and should stay local.
 public/videos/factory-profile-3.mp4

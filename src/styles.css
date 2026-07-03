@@ -221,6 +221,34 @@ textarea {
   z-index: 1;
 }
 
+.nav-signin {
+  flex: 0 0 auto;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid rgba(246, 248, 239, 0.18);
+  border-radius: 999px;
+  background: rgba(246, 248, 239, 0.08);
+  color: rgba(246, 248, 239, 0.9);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.nav-signin:hover {
+  border-color: rgba(215, 238, 132, 0.5);
+  background: rgba(215, 238, 132, 0.13);
+  color: #ffffff;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -2908,6 +2936,185 @@ textarea {
 .inquiry-form {
   min-height: 540px;
   align-self: center;
+}
+
+.signin-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(215, 238, 132, 0.14), transparent 28rem),
+    radial-gradient(circle at 86% 72%, rgba(45, 89, 56, 0.28), transparent 34rem),
+    linear-gradient(135deg, #06100b 0%, #13231a 58%, #0a120d 100%);
+}
+
+.signin-silk {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.62;
+  filter: saturate(1.05);
+}
+
+.signin-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(5, 13, 9, 0.88) 0%, rgba(5, 13, 9, 0.4) 52%, rgba(5, 13, 9, 0.82) 100%),
+    linear-gradient(180deg, rgba(8, 14, 10, 0.18), rgba(8, 14, 10, 0.76));
+  pointer-events: none;
+}
+
+.signin-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(460px, 0.58fr);
+  gap: 100px;
+  align-items: center;
+  padding: 150px 0 90px;
+}
+
+.signin-copy h1 {
+  max-width: 820px;
+  margin: 0;
+  color: #f7faef;
+  font-size: clamp(64px, 6vw, 116px);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.signin-copy h1 .title-key {
+  display: inline-block;
+  margin-top: 0.08em;
+  color: #d7ee84;
+  font-size: 0.88em;
+  line-height: 0.94;
+}
+
+.signin-copy p:not(.section-kicker) {
+  width: min(590px, 100%);
+  margin: 34px 0 0;
+  color: rgba(246, 248, 239, 0.68);
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.signin-card {
+  padding: 28px;
+  border: 1px solid rgba(246, 248, 239, 0.15);
+  border-radius: 32px;
+  background: rgba(14, 25, 18, 0.72);
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.36);
+  backdrop-filter: blur(28px) saturate(1.12);
+}
+
+.signin-card-head {
+  margin-bottom: 22px;
+}
+
+.signin-card-head span {
+  color: #d7ee84;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.signin-card-head h2 {
+  max-width: 380px;
+  margin: 10px 0 0;
+  color: #f7faef;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.signin-form {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.signin-form button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.signin-message {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: rgba(246, 248, 239, 0.78);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.signin-message.success {
+  color: #dff5a0;
+  background: rgba(215, 238, 132, 0.12);
+}
+
+.signin-message.error {
+  color: #ffd8c8;
+  background: rgba(255, 122, 84, 0.12);
+}
+
+.signin-divider {
+  margin: 24px 0 18px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: center;
+  color: rgba(246, 248, 239, 0.48);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.signin-divider::before,
+.signin-divider::after {
+  content: "";
+  height: 1px;
+  background: rgba(246, 248, 239, 0.13);
+}
+
+.signin-providers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.signin-providers a {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(246, 248, 239, 0.14);
+  border-radius: 18px;
+  background: rgba(246, 248, 239, 0.08);
+  color: rgba(246, 248, 239, 0.88);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.signin-providers a:hover {
+  border-color: rgba(215, 238, 132, 0.44);
+  background: rgba(215, 238, 132, 0.12);
+}
+
+.signin-note {
+  margin: 20px 0 0;
+  color: rgba(246, 248, 239, 0.48);
+  font-size: 12px;
+  line-height: 1.65;
 }
 
 .contact-page {
