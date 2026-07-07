@@ -927,7 +927,7 @@ function HelpCenterPage() {
             </a>
           </div>
           <div className="help-quick-contact">
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 15162883729</a>
+            <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
             <a href="mailto:hengtuo@nthegntuo.com"><Mail size={18} /> hengtuo@nthegntuo.com</a>
           </div>
         </div>
@@ -1870,7 +1870,7 @@ function App() {
                   <Phone size={18} />
                   <span>
                     <strong>Call Us Now</strong>
-                    <small>+86 15162883729</small>
+                    <small>+86 18061305971</small>
                   </span>
                 </a>
               </div>
@@ -1913,7 +1913,7 @@ function App() {
                 12,000 sq.m factory, 8 automated lines, 300M pcs annual capacity.
               </p>
               <div className="contact-strip">
-                <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 15162883729</a>
+                <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
                 <span><Mail size={18} /> hengtuo@nthegntuo.com</span>
               </div>
             </div>
@@ -2118,7 +2118,7 @@ function App() {
             <div className="contact-panel">
               <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
                 <Phone size={20} />
-                <span>+86 15162883729</span>
+                <span>+86 18061305971</span>
               </a>
               <a href="mailto:hengtuo@nthegntuo.com">
                 <Mail size={20} />
@@ -2152,7 +2152,7 @@ function App() {
             <strong>{ui.support}</strong>
             <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
               <Phone size={20} />
-              +86 15162883729
+              +86 18061305971
             </a>
             <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
               <MessageCircle size={20} />
