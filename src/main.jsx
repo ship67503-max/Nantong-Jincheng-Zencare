@@ -23,7 +23,7 @@ import './styles.css';
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
 const whatsappChatUrl =
-  'https://wa.me/8615162883729?text=Hello%20Nantong%20JINCHENG%20ZENCARE%2C%20I%20would%20like%20to%20discuss%20a%20custom%20pet%20pad%20OEM%2FODM%20project.';
+  'https://wa.me/8618061305971?text=Hello%20Nantong%20JINCHENG%20ZENCARE%2C%20I%20would%20like%20to%20discuss%20a%20custom%20pet%20pad%20OEM%2FODM%20project.';
 const Silk = React.lazy(() => import('./Silk'));
 
 class SilkBoundary extends React.Component {
@@ -199,7 +199,7 @@ const regionLinks = [
 
 const uiTranslations = {
   en: {
-    nav: ['Profile', 'Projects', 'Innovation', 'Quality', 'Advantages', 'Customization'],
+    nav: ['Profile', 'Projects', 'Innovation', 'Quality', 'Advantages', 'Customization', 'News'],
     contact: 'Contact Us',
     regionSearch: 'Search Europe / America',
     noRegion: 'No region found',
@@ -209,7 +209,7 @@ const uiTranslations = {
     footer: ['About', 'Investor Relations', 'Affiliates', 'Help', 'Learn', 'Give Back', 'Gift Cards'],
   },
   de: {
-    nav: ['Profil', 'Projekte', 'Innovation', 'Qualitat', 'Vorteile', 'Anpassung'],
+    nav: ['Profil', 'Projekte', 'Innovation', 'Qualitat', 'Vorteile', 'Anpassung', 'News'],
     contact: 'Kontakt',
     regionSearch: 'Europa / Amerika suchen',
     noRegion: 'Keine Region gefunden',
@@ -219,7 +219,7 @@ const uiTranslations = {
     footer: ['Uber uns', 'Investor Relations', 'Partner', 'Hilfe', 'Wissen', 'Engagement', 'Musterkits'],
   },
   fr: {
-    nav: ['Profil', 'Projets', 'Innovation', 'Qualite', 'Avantages', 'Personnalisation'],
+    nav: ['Profil', 'Projets', 'Innovation', 'Qualite', 'Avantages', 'Personnalisation', 'Actualites'],
     contact: 'Contact',
     regionSearch: 'Rechercher Europe / Amerique',
     noRegion: 'Aucune region trouvee',
@@ -229,7 +229,7 @@ const uiTranslations = {
     footer: ['A propos', 'Investisseurs', 'Affilies', 'Aide', 'Guide', 'Engagement', 'Kits cadeaux'],
   },
   it: {
-    nav: ['Profilo', 'Progetti', 'Innovazione', 'Qualita', 'Vantaggi', 'Personalizzazione'],
+    nav: ['Profilo', 'Progetti', 'Innovazione', 'Qualita', 'Vantaggi', 'Personalizzazione', 'News'],
     contact: 'Contatti',
     regionSearch: 'Cerca Europa / America',
     noRegion: 'Nessuna regione trovata',
@@ -239,7 +239,7 @@ const uiTranslations = {
     footer: ['Chi siamo', 'Investitori', 'Affiliati', 'Aiuto', 'Guide', 'Responsabilita', 'Kit regalo'],
   },
   es: {
-    nav: ['Perfil', 'Proyectos', 'Innovacion', 'Calidad', 'Ventajas', 'Personalizacion'],
+    nav: ['Perfil', 'Proyectos', 'Innovacion', 'Calidad', 'Ventajas', 'Personalizacion', 'Noticias'],
     contact: 'Contacto',
     regionSearch: 'Buscar Europa / America',
     noRegion: 'No se encontro region',
@@ -249,7 +249,7 @@ const uiTranslations = {
     footer: ['Sobre nosotros', 'Inversores', 'Afiliados', 'Ayuda', 'Aprender', 'Contribuir', 'Kits regalo'],
   },
   nl: {
-    nav: ['Profiel', 'Projecten', 'Innovatie', 'Kwaliteit', 'Voordelen', 'Maatwerk'],
+    nav: ['Profiel', 'Projecten', 'Innovatie', 'Kwaliteit', 'Voordelen', 'Maatwerk', 'Nieuws'],
     contact: 'Contact',
     regionSearch: 'Zoek Europa / Amerika',
     noRegion: 'Geen regio gevonden',
@@ -259,7 +259,7 @@ const uiTranslations = {
     footer: ['Over ons', 'Investeerders', 'Partners', 'Help', 'Leren', 'Teruggeven', 'Sample kits'],
   },
   pl: {
-    nav: ['Profil', 'Projekty', 'Innowacje', 'Jakosc', 'Zalety', 'Personalizacja'],
+    nav: ['Profil', 'Projekty', 'Innowacje', 'Jakosc', 'Zalety', 'Personalizacja', 'News'],
     contact: 'Kontakt',
     regionSearch: 'Szukaj Europa / Ameryka',
     noRegion: 'Nie znaleziono regionu',
@@ -269,7 +269,7 @@ const uiTranslations = {
     footer: ['O nas', 'Inwestorzy', 'Partnerzy', 'Pomoc', 'Wiedza', 'Wsparcie', 'Zestawy probek'],
   },
   sv: {
-    nav: ['Profil', 'Projekt', 'Innovation', 'Kvalitet', 'Fordelar', 'Anpassning'],
+    nav: ['Profil', 'Projekt', 'Innovation', 'Kvalitet', 'Fordelar', 'Anpassning', 'Nyheter'],
     contact: 'Kontakt',
     regionSearch: 'Sok Europa / Amerika',
     noRegion: 'Ingen region hittades',
@@ -279,7 +279,7 @@ const uiTranslations = {
     footer: ['Om oss', 'Investerare', 'Partners', 'Hjalp', 'Lar dig', 'Ge tillbaka', 'Provkit'],
   },
   da: {
-    nav: ['Profil', 'Projekter', 'Innovation', 'Kvalitet', 'Fordele', 'Tilpasning'],
+    nav: ['Profil', 'Projekter', 'Innovation', 'Kvalitet', 'Fordele', 'Tilpasning', 'Nyheder'],
     contact: 'Kontakt',
     regionSearch: 'Sog Europa / Amerika',
     noRegion: 'Ingen region fundet',
@@ -289,7 +289,7 @@ const uiTranslations = {
     footer: ['Om os', 'Investorer', 'Partnere', 'Hjaelp', 'Laer', 'Giv tilbage', 'Provekit'],
   },
   no: {
-    nav: ['Profil', 'Prosjekter', 'Innovasjon', 'Kvalitet', 'Fordeler', 'Tilpasning'],
+    nav: ['Profil', 'Prosjekter', 'Innovasjon', 'Kvalitet', 'Fordeler', 'Tilpasning', 'Nyheter'],
     contact: 'Kontakt',
     regionSearch: 'Sok Europa / Amerika',
     noRegion: 'Ingen region funnet',
@@ -299,7 +299,7 @@ const uiTranslations = {
     footer: ['Om oss', 'Investorer', 'Partnere', 'Hjelp', 'Laer', 'Gi tilbake', 'Provekit'],
   },
   fi: {
-    nav: ['Profiili', 'Projektit', 'Innovaatio', 'Laatu', 'Edut', 'Raatalointi'],
+    nav: ['Profiili', 'Projektit', 'Innovaatio', 'Laatu', 'Edut', 'Raatalointi', 'Uutiset'],
     contact: 'Yhteys',
     regionSearch: 'Hae Eurooppa / Amerikka',
     noRegion: 'Aluetta ei loytynyt',
@@ -309,7 +309,7 @@ const uiTranslations = {
     footer: ['Tietoa meista', 'Sijoittajat', 'Kumppanit', 'Tuki', 'Opi', 'Vastuullisuus', 'Naytekitit'],
   },
   pt: {
-    nav: ['Perfil', 'Projetos', 'Inovacao', 'Qualidade', 'Vantagens', 'Personalizacao'],
+    nav: ['Perfil', 'Projetos', 'Inovacao', 'Qualidade', 'Vantagens', 'Personalizacao', 'Noticias'],
     contact: 'Contato',
     regionSearch: 'Pesquisar Europa / America',
     noRegion: 'Nenhuma regiao encontrada',
@@ -348,9 +348,54 @@ const footerLinks = [
 
 const socialLinks = [
   { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/' },
-  { label: 'YouTube', mark: '▶', href: 'https://youtube.com/@nantongjinchengzencaretechnolo?si=jTie2dZK0mYx4M7c' },
+  { label: 'YouTube', mark: 'yt', href: 'https://youtube.com/@nantongjinchengzencaretechnolo?si=jTie2dZK0mYx4M7c' },
   { label: 'Instagram', mark: 'ig', href: 'https://www.instagram.com/' },
-  { label: 'TikTok', mark: '♪', href: 'https://www.tiktok.com/' },
+  { label: 'TikTok', mark: 'tk', href: 'https://www.tiktok.com/' },
+];
+
+const newsArticles = [
+  {
+    slug: 'private-label-pet-pad-ideas',
+    category: 'Creative Ideas',
+    date: '2026.07',
+    title: 'Private-label pet pad ideas for brands building a sharper product line',
+    excerpt: 'How size, absorbency, surface feel, and packaging language can turn a basic pet pad into a clearer market offer.',
+    image: '/images/custom-disposable-pet-pads-premium.png',
+    body: [
+      'A private-label pet pad project works best when the product is planned around a specific use case. Puppy training, senior pet care, travel, cage lining, and care-bed protection all require different choices in size, weight, surface feel, and absorbency.',
+      'For brand owners, the creative work is not only visual packaging. It is also the way the structure, core, film, embossing, and pack count communicate value to customers.',
+      'Our team uses sample review, structure discussion, and packaging coordination to help customers turn loose ideas into a product plan that can be quoted, sampled, and produced.',
+    ],
+    points: ['Scenario-based size planning', 'Absorbency and core structure direction', 'Retail pack and carton language'],
+  },
+  {
+    slug: 'absorbent-core-development-notes',
+    category: 'Product Thinking',
+    date: '2026.07',
+    title: 'What we consider when developing absorbent core structures',
+    excerpt: 'A concise look at SAP ratio, fluff pulp, diffusion speed, rewet control, and cost balance in pet absorbent products.',
+    image: '/images/pet-pad-layer-protection-premium.png',
+    body: [
+      'Absorbent core development is a balance between speed, lock-in, surface dryness, pad thickness, and target cost. A stronger core does not always mean simply adding more material.',
+      'Different sales channels may need different product logic. A high-turnover daily pad may focus on cost and consistency, while a premium pad may emphasize surface comfort, structure visibility, and packaging presentation.',
+      'By adjusting layer materials, SAP placement, pulp ratio, and film options, we help customers evaluate which structure fits the market positioning.',
+    ],
+    points: ['SAP and fluff pulp balance', 'Rewet and diffusion review', 'Cost-to-performance planning'],
+  },
+  {
+    slug: 'factory-visual-content-for-b2b-brands',
+    category: 'Brand Content',
+    date: '2026.07',
+    title: 'Why factory visual content matters for B2B pet care brands',
+    excerpt: 'Factory scenes, inspection details, and clean product visuals help customers understand capability before sampling.',
+    image: '/images/production-line-clean.png',
+    body: [
+      'B2B customers often need more than a product photo. They need to understand the manufacturing environment, inspection logic, packaging workflow, and communication reliability behind the product.',
+      'Clear factory visuals can help brands and buyers align faster. Production lines, warehouse order, laboratory inspection, and product layer details all become part of the trust-building process.',
+      'We are building a content system that makes OEM/ODM cooperation easier to understand, from first inquiry to sample confirmation.',
+    ],
+    points: ['Factory capability storytelling', 'Inspection and process content', 'Buyer-facing product education'],
+  },
 ];
 
 function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
@@ -367,6 +412,7 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         <a href="/#about">{ui.nav[0]}</a>
         <a href="/#projects">{ui.nav[1]}</a>
         <a href="/#innovation">{ui.nav[2]}</a>
+        <a href="/pages/news">{ui.nav[6]}</a>
         <a href="/#quality">{ui.nav[3]}</a>
         <a href="/#advantages">{ui.nav[4]}</a>
         <a href="/#customization">{ui.nav[5]}</a>
@@ -476,6 +522,116 @@ function ProductDetail({ product }) {
               <p>{detail}</p>
             </article>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NewsPage() {
+  const featuredArticle = newsArticles[0];
+
+  return (
+    <section className="news-page">
+      <div className="container news-shell">
+        <div className="news-hero">
+          <p className="section-kicker">News & Ideas</p>
+          <h1>
+            Factory ideas for
+            <br />
+            <em className="title-key">better pet care products</em>.
+          </h1>
+          <p>
+            Short updates on OEM/ODM product thinking, factory capability, packaging direction, and brand-ready pet care ideas.
+          </p>
+        </div>
+
+        <a className="news-feature" href={`/pages/news/${featuredArticle.slug}`}>
+          <img src={featuredArticle.image} alt={featuredArticle.title} />
+          <div>
+            <span>{featuredArticle.category}</span>
+            <h2>{featuredArticle.title}</h2>
+            <p>{featuredArticle.excerpt}</p>
+            <small>
+              Read article
+              <ArrowUpRight size={16} />
+            </small>
+          </div>
+        </a>
+
+        <div className="news-grid">
+          {newsArticles.map((article) => (
+            <a className="news-card" href={`/pages/news/${article.slug}`} key={article.slug}>
+              <img src={article.image} alt={article.title} />
+              <div>
+                <span>{article.category}</span>
+                <small>{article.date}</small>
+              </div>
+              <h2>{article.title}</h2>
+              <p>{article.excerpt}</p>
+              <strong>
+                Know more...
+                <ArrowUpRight size={16} />
+              </strong>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NewsArticlePage({ article }) {
+  const relatedArticles = newsArticles.filter((item) => item.slug !== article.slug);
+
+  return (
+    <section className="news-article-page">
+      <div className="container news-article-shell">
+        <a className="detail-back" href="/pages/news">
+          Back to News
+          <ArrowUpRight size={16} />
+        </a>
+        <div className="news-article-hero">
+          <div>
+            <p className="section-kicker">{article.category}</p>
+            <h1>{article.title}</h1>
+            <p>{article.excerpt}</p>
+          </div>
+          <img src={article.image} alt={article.title} />
+        </div>
+
+        <div className="news-article-layout">
+          <article className="news-article-body">
+            {article.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </article>
+          <aside className="news-article-aside">
+            <span>{article.date}</span>
+            <h2>Key notes</h2>
+            <ul>
+              {article.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <a href="/request-product-plan?product=news-inquiry">
+              Request a product plan
+              <ArrowUpRight size={16} />
+            </a>
+          </aside>
+        </div>
+
+        <div className="news-related">
+          <p className="section-kicker">More Ideas</p>
+          <div>
+            {relatedArticles.map((item) => (
+              <a className="news-related-card" href={`/pages/news/${item.slug}`} key={item.slug}>
+                <span>{item.category}</span>
+                <h2>{item.title}</h2>
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -1282,8 +1438,13 @@ function App() {
   const isLearnPage = currentPath === '/pages/learn';
   const isGiveBackPage = currentPath === '/pages/give-back';
   const isGiftCardsPage = currentPath === '/pages/gift-cards';
+  const newsSlug = currentPath.match(/^\/pages\/news\/([^/]+)\/?$/)?.[1];
+  const isNewsPage = currentPath === '/pages/news';
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
+    : null;
+  const currentNewsArticle = newsSlug
+    ? newsArticles.find((article) => article.slug === newsSlug)
     : null;
 
   const handleRegionChange = (region) => {
@@ -1357,7 +1518,7 @@ function App() {
         };
       };
 
-      if (currentProduct || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
+      if (currentProduct || currentNewsArticle || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
         gsap.set(nav, {
           x: 0,
           y: 0,
@@ -1376,6 +1537,10 @@ function App() {
         gsap.set(navCta, { backgroundColor: '#d7ee84', color: '#0f1d16' });
         const entryTargets = currentProduct
           ? '.product-detail-page .detail-copy > *, .product-detail-page .detail-visual, .product-detail-page .detail-info-grid article'
+          : currentNewsArticle
+            ? '.news-article-page .news-article-hero > *, .news-article-page .news-article-body > *, .news-article-page .news-article-aside, .news-article-page .news-related-card'
+            : isNewsPage
+              ? '.news-page .news-hero > *, .news-page .news-feature, .news-page .news-card'
           : isInquiryPage
             ? '.inquiry-page .inquiry-copy > *, .inquiry-page .inquiry-form'
             : isSignInPage
@@ -1683,7 +1848,7 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentProduct, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
+  }, [currentProduct, currentNewsArticle, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -1707,7 +1872,7 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
-    if (currentProduct || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage) {
+    if (currentProduct || currentNewsArticle || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
       return undefined;
     }
 
@@ -1734,7 +1899,7 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentProduct, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage]);
+  }, [currentProduct, currentNewsArticle, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
 
   if (isInquiryPage) {
     return (
@@ -1813,6 +1978,24 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <GiftCardsPage />
+      </main>
+    );
+  }
+
+  if (isNewsPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <NewsPage />
+      </main>
+    );
+  }
+
+  if (currentNewsArticle) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <NewsArticlePage article={currentNewsArticle} />
       </main>
     );
   }
