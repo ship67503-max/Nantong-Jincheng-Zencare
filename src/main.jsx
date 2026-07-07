@@ -22,6 +22,7 @@ import './styles.css';
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
+const siteUrl = 'https://www.jczcare.com';
 const whatsappChatUrl =
   'https://wa.me/8618061305971?text=Hello%20Nantong%20JINCHENG%20ZENCARE%2C%20I%20would%20like%20to%20discuss%20a%20custom%20pet%20pad%20OEM%2FODM%20project.';
 const Silk = React.lazy(() => import('./Silk'));
@@ -344,6 +345,9 @@ const footerLinks = [
   { label: 'Learn', href: '/pages/learn' },
   { label: 'Give Back', href: '/pages/give-back' },
   { label: 'Gift Cards', href: '/pages/gift-cards' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'OEM Process', href: '/oem-process' },
 ];
 
 const socialLinks = [
@@ -397,6 +401,417 @@ const newsArticles = [
     points: ['Factory capability storytelling', 'Inspection and process content', 'Buyer-facing product education'],
   },
 ];
+
+const businessSeoPages = [
+  {
+    path: '/oem-pet-pee-pads',
+    kicker: 'OEM Pet Pee Pads',
+    title: 'OEM Pet Pee Pads Manufacturer | Nantong JINCHENG ZENCARE',
+    description: 'OEM pet pee pads manufacturer in China for overseas pet brands, wholesalers, importers, supermarkets, and distributors needing custom size, absorbency, packaging, and stable supply.',
+    h1: 'OEM pet pee pads for brands that need stable factory supply.',
+    intro: 'Nantong JINCHENG ZENCARE develops and manufactures OEM pet pee pads for B2B buyers who need practical product specifications, private-label packaging, and repeatable delivery performance.',
+    image: '/images/custom-disposable-pet-pads-premium.png',
+    sections: [
+      ['Custom specification', 'Size, weight, embossing, topsheet feel, absorbency level, and backing film can be planned around your market position.'],
+      ['Factory-side development', 'Our team supports sample review, material selection, production testing, packaging coordination, and export-ready order planning.'],
+      ['B2B supply focus', 'We work with brands, channel partners, importers, and distributors that need reliable OEM pet pad programs rather than retail one-off orders.'],
+    ],
+    faqs: [
+      ['Can you customize OEM pet pee pads?', 'Yes. We can customize size, absorbency, surface material, embossing, color direction, packaging, carton marks, and pack count.'],
+      ['Who is this OEM service for?', 'It is designed for pet brands, wholesalers, distributors, importers, supermarkets, and cross-border sellers.'],
+      ['Can you prepare samples before mass production?', 'Yes. Samples can be prepared for specification review, absorbency testing, packaging confirmation, and buyer presentation.'],
+    ],
+  },
+  {
+    path: '/private-label-pet-pads',
+    kicker: 'Private Label Pet Pads',
+    title: 'Private Label Pet Pads Manufacturer | OEM Packaging & Supply',
+    description: 'Private label pet pads manufacturer supporting brand packaging, custom specifications, absorbency options, sample development, and export supply for B2B pet care buyers.',
+    h1: 'Private label pet pads with factory-backed product planning.',
+    intro: 'Build a pet pad line with your own brand identity, packaging direction, product structure, and channel-ready specification support.',
+    image: '/images/custom-care-pad-packaging-ai.png',
+    sections: [
+      ['Brand presentation', 'We support pouch, bag, carton, label, product naming, pack count, and buyer-facing material descriptions.'],
+      ['Product matching', 'Private-label pads can be aligned to puppy training, adult pet care, travel, cage lining, retail shelves, or online bundles.'],
+      ['Sampling workflow', 'Samples help confirm structure, absorbency, surface feel, package language, and carton details before bulk production.'],
+    ],
+    faqs: [
+      ['Can you make products under our brand?', 'Yes. We support private-label packaging and product specifications for your target market.'],
+      ['Do you help with packaging direction?', 'Yes. We can coordinate bag format, pack count, carton marks, product descriptions, and sample presentation.'],
+      ['Can one brand develop multiple pad lines?', 'Yes. Customers can build basic, premium, charcoal, adhesive, or scenario-based product lines.'],
+    ],
+  },
+  {
+    path: '/pet-pee-pad-manufacturer',
+    kicker: 'Pet Pee Pad Manufacturer',
+    title: 'Pet Pee Pad Manufacturer in China | JCZCARE OEM Factory',
+    description: 'China pet pee pad manufacturer for OEM/ODM orders, custom absorbency, private-label packaging, automated production, and export-ready B2B supply.',
+    h1: 'Pet pee pad manufacturer for long-term B2B cooperation.',
+    intro: 'Our factory supports commercial buyers with absorbent pet care products made for stable quality, structured communication, and repeat production.',
+    image: '/images/factory-campus.jpeg',
+    sections: [
+      ['Manufacturing capability', 'A 12,000-square-meter factory and automated lines support custom pet pad, pet diaper, absorbent sheet, and care pad programs.'],
+      ['Quality process', 'Incoming materials, line checks, absorbency tests, sealing review, and shipment inspection help maintain order consistency.'],
+      ['Export support', 'We coordinate samples, packaging, cartons, marks, and production schedules for overseas B2B buyers.'],
+    ],
+    faqs: [
+      ['What products do you manufacture?', 'We manufacture pet pads, pet absorbent sheets, pet diapers, care bed pads, and related absorbent pet care items.'],
+      ['Can you supply overseas distributors?', 'Yes. Our service is built for brands, distributors, importers, wholesalers, and channel buyers.'],
+      ['Do you support ODM development?', 'Yes. We can assist with structure, formula direction, packaging, and market-oriented product planning.'],
+    ],
+  },
+  {
+    path: '/pet-pad-factory',
+    kicker: 'Pet Pad Factory',
+    title: 'Pet Pad Factory | Automated OEM Pet Care Manufacturing',
+    description: 'Pet pad factory with automated production, custom specifications, absorbent core development, private-label packaging, and B2B export coordination.',
+    h1: 'A pet pad factory built for OEM/ODM supply.',
+    intro: 'From raw material review to packing and shipment, our pet pad factory supports buyers who need clarity, capacity, and product consistency.',
+    image: '/images/production-line-clean.png',
+    sections: [
+      ['Automated production', 'Automated equipment helps manage repeated order output across size, weight, core structure, and pack format.'],
+      ['Factory visibility', 'Production lines, warehouse organization, inspection steps, and packing workflows are part of our buyer communication process.'],
+      ['Product flexibility', 'We support standard pads, charcoal pads, adhesive pads, absorbent paper sheets, and care products for different channels.'],
+    ],
+    faqs: [
+      ['Is JCZCARE a source factory?', 'Yes. Nantong JINCHENG ZENCARE is a source manufacturer focused on absorbent pet care products.'],
+      ['Can factory specifications be customized?', 'Yes. Size, absorbency, surface material, packaging, and carton requirements can be customized.'],
+      ['Can you support repeat orders?', 'Yes. Our production planning is designed for long-term B2B cooperation and repeat order coordination.'],
+    ],
+  },
+  {
+    path: '/about-factory',
+    kicker: 'About Factory',
+    title: 'About JCZCARE Factory | Nantong JINCHENG ZENCARE',
+    description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent product manufacturer focused on OEM/ODM pet pads, private-label support, quality control, and export service.',
+    h1: 'A focused absorbent pet care factory in Nantong.',
+    intro: 'Nantong JINCHENG ZENCARE Technology Company focuses on the R&D, manufacturing, and sales of pet pads, pet diapers, absorbent sheets, and care bed pads.',
+    image: '/images/factory-campus.jpeg',
+    sections: [
+      ['Company profile', 'With 20 years of industry experience, we support B2B buyers with product development, manufacturing, and packaging coordination.'],
+      ['Production base', 'Our factory covers about 12,000 square meters with automated lines and stable production planning for absorbent pet care products.'],
+      ['Cooperation model', 'We serve overseas pet brands, distributors, supermarkets, wholesalers, importers, and cross-border channels.'],
+    ],
+    faqs: [
+      ['Where is the factory located?', 'The company is located in Nantong, Jiangsu, China.'],
+      ['What is your main business?', 'Our main business is OEM/ODM manufacturing of pet absorbent care products for B2B buyers.'],
+      ['Can buyers visit or review the factory?', 'Factory information, production visuals, product samples, and project communication can be prepared for buyer review.'],
+    ],
+  },
+  {
+    path: '/quality-control',
+    kicker: 'Quality Control',
+    title: 'Pet Pad Quality Control | OEM Absorbency & Batch Inspection',
+    description: 'Quality control process for OEM pet pads covering raw materials, production checks, absorbency testing, rewet review, leakage performance, packaging, and shipment inspection.',
+    h1: 'Quality control before every pet pad shipment.',
+    intro: 'Our quality process is designed around practical buyer concerns: material consistency, absorbency, surface dryness, leakage prevention, sealing, packing, and shipment appearance.',
+    image: '/images/quality-inspection-lab-mask.png',
+    sections: [
+      ['Incoming materials', 'Topsheet, fluff pulp, SAP, backing film, and packaging materials are reviewed against order requirements.'],
+      ['Process checks', 'Weight, size, sealing, embossing, folding, and packaging consistency are monitored during production.'],
+      ['Performance review', 'Absorption speed, diffusion, rewet, pressure performance, and leakage behavior can be tested according to the project brief.'],
+    ],
+    faqs: [
+      ['What quality checks are used for pet pads?', 'Typical checks include raw material review, size and weight checks, absorbency tests, rewet review, sealing checks, and packaging inspection.'],
+      ['Can quality requirements be customized?', 'Yes. Buyers can define target absorbency, pad size, weight, packaging, and inspection focus for the project.'],
+      ['Do you inspect before shipment?', 'Yes. Carton marks, labels, packaging appearance, and shipment readiness are reviewed before dispatch.'],
+    ],
+  },
+  {
+    path: '/oem-process',
+    kicker: 'OEM Process',
+    title: 'OEM Pet Pad Process | From Brief to Production',
+    description: 'OEM pet pad process for B2B buyers: project brief, specification planning, sample development, testing, packaging confirmation, production, inspection, and shipment.',
+    h1: 'A clear OEM process from brief to shipment.',
+    intro: 'Our OEM process helps buyers turn product ideas into practical specifications, samples, confirmed packaging, and repeatable production orders.',
+    image: '/images/warehouse-storage-clean.png',
+    sections: [
+      ['Project brief', 'Share target market, product type, size, absorbency, packaging direction, expected quantity, and delivery requirements.'],
+      ['Sample development', 'We prepare specification options for buyer review, including material, structure, package format, and performance direction.'],
+      ['Production delivery', 'After sample and packaging confirmation, production, batch inspection, packing, and shipping coordination are arranged.'],
+    ],
+    faqs: [
+      ['What information is needed to start?', 'Please provide target market, size, absorbency, packaging idea, order quantity, and preferred delivery plan.'],
+      ['How does sample confirmation work?', 'Samples are reviewed for structure, absorbency, surface feel, packaging, and buyer requirements before bulk order planning.'],
+      ['Can you support repeat production?', 'Yes. Confirmed specifications and packaging details can be used to support repeat order consistency.'],
+    ],
+  },
+  {
+    path: '/certifications',
+    kicker: 'Certifications',
+    title: 'Pet Pad Factory Certifications & Compliance Support | JCZCARE',
+    description: 'Certification and compliance support for pet pad OEM buyers, including factory documentation, material information, packaging coordination, and B2B export requirements.',
+    h1: 'Certification support for B2B pet pad projects.',
+    intro: 'Certification and documentation needs vary by market and channel. We support buyers with practical factory, product, material, and packaging information for project review.',
+    image: '/images/production-line-enhanced.png',
+    sections: [
+      ['Documentation support', 'Factory information, product specifications, material descriptions, and packaging details can be prepared for buyer evaluation.'],
+      ['Channel requirements', 'We coordinate project information for distributors, supermarkets, importers, and private-label brand review processes.'],
+      ['Quality records', 'Batch-related inspection and production information can support order communication and internal buyer documentation.'],
+    ],
+    faqs: [
+      ['Can you provide factory documentation?', 'Yes. We can prepare available factory and product information according to project requirements.'],
+      ['Can packaging be adjusted for local markets?', 'Yes. Label direction, carton marks, pack count, and product language can be coordinated for target channels.'],
+      ['Do certification needs vary by country?', 'Yes. Requirements may vary by market, channel, and buyer policy, so details should be confirmed during project planning.'],
+    ],
+  },
+  {
+    path: '/faq',
+    kicker: 'FAQ',
+    title: 'OEM Pet Pad FAQ | Private Label, MOQ, Samples & Quality',
+    description: 'Frequently asked questions for OEM pet pad buyers covering customization, private label, samples, MOQ planning, quality control, packaging, delivery, and factory cooperation.',
+    h1: 'OEM pet pad questions, answered clearly.',
+    intro: 'Use this FAQ to understand how JCZCARE supports B2B buyers with pet pad customization, sample development, private-label packaging, and production coordination.',
+    image: '/images/pet-pad-product-studio.png',
+    sections: [
+      ['For brand owners', 'We help convert product requirements into specifications, samples, packaging formats, and production-ready plans.'],
+      ['For distributors', 'We support practical product lines, carton planning, shipment coordination, and repeat order communication.'],
+      ['For importers', 'We provide factory-side coordination for absorbent pet care products, private label, and market-fit product development.'],
+    ],
+    faqs: [
+      ['Do you offer OEM and ODM service?', 'Yes. We offer OEM and ODM support for pet pads, absorbent sheets, pet diapers, care bed pads, and related products.'],
+      ['Can we customize the package?', 'Yes. Private-label packaging, pack count, carton marks, labels, and brand presentation can be customized.'],
+      ['What affects MOQ?', 'MOQ can depend on material, size, packaging, printing, product structure, and production scheduling.'],
+      ['Can you ship overseas?', 'Yes. We support export-oriented B2B projects and coordinate packing and shipment requirements with buyers.'],
+    ],
+  },
+  {
+    path: '/blog',
+    kicker: 'Blog',
+    title: 'Pet Pad OEM Blog | Factory Ideas, Product Development & B2B Supply',
+    description: 'Read JCZCARE blog insights about OEM pet pads, private-label packaging, absorbent core development, quality control, factory supply, and B2B pet care product planning.',
+    h1: 'Pet pad OEM insights for better B2B decisions.',
+    intro: 'Our blog collects practical product ideas, factory notes, and buyer-focused guidance for pet care brands, distributors, wholesalers, importers, and channel teams.',
+    image: '/images/contact-pets-grass-centered.png',
+    sections: [
+      ['Product development', 'Explore absorbent core planning, material choices, pad scenarios, and channel-specific product direction.'],
+      ['Factory knowledge', 'Understand production workflow, quality control, packaging coordination, and export order planning.'],
+      ['Brand growth', 'Build stronger private-label product lines with clearer specifications, better sample presentation, and structured communication.'],
+    ],
+    faqs: [
+      ['What topics does the blog cover?', 'The blog covers OEM pet pads, private-label packaging, absorbent core design, quality control, factory supply, and B2B product planning.'],
+      ['Is the blog for retail buyers?', 'No. The content is mainly written for B2B buyers such as brands, distributors, wholesalers, importers, and channel partners.'],
+      ['Can I request a topic?', 'Yes. Contact our team with your product question and we can provide project-focused guidance.'],
+    ],
+    articleLinks: true,
+  },
+  {
+    path: '/contact',
+    kicker: 'Contact',
+    title: 'Contact JCZCARE | OEM Pet Pad Manufacturer Inquiry',
+    description: 'Contact Nantong JINCHENG ZENCARE for OEM pet pads, private-label packaging, samples, product planning, absorbent core development, and B2B factory cooperation.',
+    h1: 'Contact JCZCARE for your OEM pet pad project.',
+    intro: 'Share your target market, product requirement, size, absorbency, packaging direction, and quantity. Our team will help prepare a clear project plan.',
+    image: '/images/contact-pets-grass-centered.png',
+    sections: [
+      ['Project inquiry', 'Tell us what product line you want to develop and which market or sales channel you plan to serve.'],
+      ['Specification support', 'We can discuss size, weight, absorbency, surface material, backing film, packaging, and carton requirements.'],
+      ['Direct communication', 'Use WhatsApp, email, or the request form to start project communication with our factory team.'],
+    ],
+    faqs: [
+      ['What should I include in my inquiry?', 'Please include product type, target market, size, absorbency, packaging idea, quantity, and delivery expectation.'],
+      ['Can I contact by WhatsApp?', 'Yes. You can contact us by WhatsApp for OEM/ODM pet pad project discussion.'],
+      ['Do you reply to B2B project requests?', 'Yes. We focus on overseas B2B OEM/ODM inquiries from brands, distributors, importers, and channel partners.'],
+    ],
+  },
+];
+
+const seoPageMap = new Map(businessSeoPages.map((page) => [page.path, page]));
+
+const staticSeoPages = {
+  '/request-product-plan': {
+    title: 'OEM Product Plan Request | JCZCARE Pet Pad Factory',
+    description: 'Submit your OEM/ODM pet pad project details to Nantong JINCHENG ZENCARE for specification planning, samples, packaging direction, and B2B factory support.',
+    image: '/images/pet-pad-layer-protection-premium.png',
+  },
+  '/sign-in': {
+    title: 'Business Sign In | JCZCARE',
+    description: 'Sign in to the JCZCARE business portal for OEM pet pad project communication and account registration.',
+    image: heroFallbackImage,
+  },
+  '/pages/about': {
+    title: 'About Nantong JINCHENG ZENCARE | Pet Pad Source Factory',
+    description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent products source factory supporting OEM/ODM pet pads, private-label packaging, and export supply.',
+    image: '/images/factory-campus.jpeg',
+  },
+  '/pages/investor-relations': {
+    title: 'Business Overview | JCZCARE Pet Care Manufacturing',
+    description: 'A business overview of JCZCARE manufacturing capability, production capacity, quality focus, and B2B absorbent pet care product supply.',
+    image: '/images/factory-campus.jpeg',
+  },
+  '/pages/affiliates': {
+    title: 'Distributor & Partner Program | JCZCARE OEM Pet Pads',
+    description: 'Partner with JCZCARE as a distributor or sourcing partner for OEM pet pads, private-label absorbent products, packaging support, and factory supply.',
+    image: '/images/contact-pets-grass-centered.png',
+  },
+  '/pages/help': {
+    title: 'Help Center | OEM Pet Pad Orders, Samples & Packaging',
+    description: 'Find answers about OEM pet pad orders, sample development, packaging support, quality control, production scheduling, and factory communication.',
+    image: '/images/quality-inspection-lab-mask.png',
+  },
+  '/pages/learn': {
+    title: 'Learn Center | Pet Pad OEM Knowledge & Product Planning',
+    description: 'Learn about pet pad absorbency, private-label packaging, product structure, factory supply, quality control, and OEM/ODM development decisions.',
+    image: '/images/pet-pad-layer-protection-premium.png',
+  },
+  '/pages/give-back': {
+    title: 'Responsible Pet Care Manufacturing | JCZCARE',
+    description: 'Explore JCZCARE responsible manufacturing principles for practical absorbent pet care products, quality planning, and long-term B2B cooperation.',
+    image: '/images/contact-pets-grass-centered.png',
+  },
+  '/pages/gift-cards': {
+    title: 'OEM Sample Kits | Pet Pad Material & Packaging Review',
+    description: 'Request OEM sample kits for pet pads, absorbent sheets, packaging swatches, material review, and buyer-ready private-label product planning.',
+    image: '/images/custom-disposable-pet-pads-premium.png',
+  },
+};
+
+const buildAbsoluteUrl = (path = '/') => `${siteUrl}${path}`;
+
+const setHeadTag = (selector, createTag, valueKey, value) => {
+  let tag = document.head.querySelector(selector);
+
+  if (!tag) {
+    tag = createTag();
+    document.head.appendChild(tag);
+  }
+
+  tag.setAttribute(valueKey, value);
+};
+
+const buildStructuredData = ({ title, description, path, faqs = [], image }) => {
+  const canonical = buildAbsoluteUrl(path);
+  const baseData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Nantong JINCHENG ZENCARE Technology Company',
+      alternateName: 'JCZCARE',
+      url: siteUrl,
+      email: 'hengtuo@nthegntuo.com',
+      telephone: '+86 18061305971',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Nantong',
+        addressRegion: 'Jiangsu',
+        addressCountry: 'CN',
+      },
+      sameAs: ['https://youtube.com/@nantongjinchengzencaretechnolo'],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'JCZCARE',
+      url: siteUrl,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${siteUrl}/pages/news?search={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: siteUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: title,
+          item: canonical,
+        },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': path === '/contact' ? 'ContactPage' : 'WebPage',
+      name: title,
+      description,
+      url: canonical,
+      image: image ? buildAbsoluteUrl(image) : buildAbsoluteUrl(heroFallbackImage),
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'JCZCARE',
+        url: siteUrl,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Nantong JINCHENG ZENCARE Technology Company',
+      },
+    },
+  ];
+
+  if (faqs.length > 0) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: answer,
+        },
+      })),
+    });
+  }
+
+  return baseData;
+};
+
+const applyPageSeo = ({ title, description, path, image, faqs }) => {
+  const canonical = buildAbsoluteUrl(path);
+  const shareImage = buildAbsoluteUrl(image || heroFallbackImage);
+
+  document.title = title;
+  setHeadTag('meta[name="description"]', () => {
+    const tag = document.createElement('meta');
+    tag.setAttribute('name', 'description');
+    return tag;
+  }, 'content', description);
+  setHeadTag('meta[name="robots"]', () => {
+    const tag = document.createElement('meta');
+    tag.setAttribute('name', 'robots');
+    return tag;
+  }, 'content', 'index, follow, max-image-preview:large');
+  setHeadTag('link[rel="canonical"]', () => {
+    const tag = document.createElement('link');
+    tag.setAttribute('rel', 'canonical');
+    return tag;
+  }, 'href', canonical);
+
+  [
+    ['property', 'og:title', title],
+    ['property', 'og:description', description],
+    ['property', 'og:type', 'website'],
+    ['property', 'og:url', canonical],
+    ['property', 'og:image', shareImage],
+    ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:title', title],
+    ['name', 'twitter:description', description],
+    ['name', 'twitter:image', shareImage],
+  ].forEach(([attr, key, content]) => {
+    setHeadTag(`meta[${attr}="${key}"]`, () => {
+      const tag = document.createElement('meta');
+      tag.setAttribute(attr, key);
+      return tag;
+    }, 'content', content);
+  });
+
+  let structuredDataTag = document.head.querySelector('#jczcare-jsonld');
+  if (!structuredDataTag) {
+    structuredDataTag = document.createElement('script');
+    structuredDataTag.id = 'jczcare-jsonld';
+    structuredDataTag.type = 'application/ld+json';
+    document.head.appendChild(structuredDataTag);
+  }
+  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image }));
+};
 
 function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
   return (
@@ -631,6 +1046,92 @@ function NewsArticlePage({ article }) {
                 <ArrowUpRight size={16} />
               </a>
             ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BusinessSeoPage({ page }) {
+  const clusterLinks = businessSeoPages
+    .filter((item) => item.path !== page.path)
+    .slice(0, 6);
+
+  return (
+    <section className="business-seo-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero">
+          <div>
+            <p className="section-kicker">{page.kicker}</p>
+            <h1>{page.h1}</h1>
+            <p>{page.intro}</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=oem-pet-pad-project">
+                Request OEM plan
+                <ArrowUpRight size={18} />
+              </a>
+              <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+                Talk by WhatsApp
+                <MessageCircle size={18} />
+              </a>
+            </div>
+          </div>
+          <img src={page.image} alt={`${page.kicker} by Nantong JINCHENG ZENCARE`} loading="eager" />
+        </div>
+
+        <div className="business-seo-grid">
+          {page.sections.map(([title, text]) => (
+            <article key={title}>
+              <span>{title}</span>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+
+        {page.articleLinks && (
+          <div className="business-seo-featured">
+            <p className="section-kicker">Latest Factory Ideas</p>
+            <div>
+              {newsArticles.map((article) => (
+                <a href={`/pages/news/${article.slug}`} key={article.slug}>
+                  <img src={article.image} alt={article.title} loading="lazy" />
+                  <span>{article.category}</span>
+                  <h2>{article.title}</h2>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="business-seo-faq">
+          <div>
+            <p className="section-kicker">Buyer FAQ</p>
+            <h2>Clear answers for OEM/ODM decision makers.</h2>
+          </div>
+          <div className="affiliate-faq-list">
+            {page.faqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div className="business-seo-links">
+          <p className="section-kicker">Related OEM Resources</p>
+          <div>
+            {clusterLinks.map((item) => (
+              <a href={item.path} key={item.path}>
+                {item.kicker}
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+            <a href="/pages/news">
+              News & Ideas
+              <ArrowUpRight size={16} />
+            </a>
           </div>
         </div>
       </div>
@@ -1440,6 +1941,8 @@ function App() {
   const isGiftCardsPage = currentPath === '/pages/gift-cards';
   const newsSlug = currentPath.match(/^\/pages\/news\/([^/]+)\/?$/)?.[1];
   const isNewsPage = currentPath === '/pages/news';
+  const currentSeoPage = seoPageMap.get(currentPath);
+  const currentStaticSeo = staticSeoPages[currentPath];
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
     : null;
@@ -1467,6 +1970,70 @@ function App() {
     document.documentElement.lang = activeRegion.lang;
     document.documentElement.dataset.region = activeRegion.slug;
   }, [activeRegion]);
+
+  useEffect(() => {
+    if (currentSeoPage) {
+      applyPageSeo({
+        title: currentSeoPage.title,
+        description: currentSeoPage.description,
+        path: currentSeoPage.path,
+        image: currentSeoPage.image,
+        faqs: currentSeoPage.faqs,
+      });
+      return;
+    }
+
+    if (currentProduct) {
+      applyPageSeo({
+        title: `${currentProduct.title} OEM Manufacturer | JCZCARE`,
+        description: `${currentProduct.summary} Custom specifications, private-label packaging, sample development, and B2B factory supply from Nantong JINCHENG ZENCARE.`,
+        path: `/products/${currentProduct.slug}`,
+        image: currentProduct.image,
+        faqs: [
+          [`Can you customize ${currentProduct.title}?`, 'Yes. We support OEM/ODM specifications, private-label packaging, sample review, and B2B production planning.'],
+          ['How do I request this product plan?', 'Use the product request form or WhatsApp to share target market, specification, quantity, and packaging direction.'],
+        ],
+      });
+      return;
+    }
+
+    if (currentNewsArticle) {
+      applyPageSeo({
+        title: `${currentNewsArticle.title} | JCZCARE News`,
+        description: currentNewsArticle.excerpt,
+        path: `/pages/news/${currentNewsArticle.slug}`,
+        image: currentNewsArticle.image,
+      });
+      return;
+    }
+
+    if (isNewsPage) {
+      applyPageSeo({
+        title: 'News & Ideas | Pet Pad OEM Factory Insights | JCZCARE',
+        description: 'Factory ideas and B2B insights about OEM pet pads, private-label packaging, absorbent core development, quality control, and export supply.',
+        path: '/pages/news',
+        image: '/images/contact-pets-grass-centered.png',
+      });
+      return;
+    }
+
+    if (currentStaticSeo) {
+      applyPageSeo({
+        title: currentStaticSeo.title,
+        description: currentStaticSeo.description,
+        path: currentPath,
+        image: currentStaticSeo.image,
+      });
+      return;
+    }
+
+    applyPageSeo({
+      title: 'Nantong JINCHENG ZENCARE | Pet Pad OEM/ODM Source Factory',
+      description: 'Nantong JINCHENG ZENCARE Technology Company is a pet care absorbent product source manufacturer offering pet pads, care bed pads, OEM/ODM customization, private-label development, product sampling, and delivery coordination.',
+      path: currentPath === '/' ? '/' : currentPath,
+      image: heroFallbackImage,
+    });
+  }, [currentSeoPage, currentProduct, currentNewsArticle, currentStaticSeo, isNewsPage, currentPath]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -1518,7 +2085,7 @@ function App() {
         };
       };
 
-      if (currentProduct || currentNewsArticle || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
+      if (currentProduct || currentNewsArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
         gsap.set(nav, {
           x: 0,
           y: 0,
@@ -1541,6 +2108,8 @@ function App() {
             ? '.news-article-page .news-article-hero > *, .news-article-page .news-article-body > *, .news-article-page .news-article-aside, .news-article-page .news-related-card'
             : isNewsPage
               ? '.news-page .news-hero > *, .news-page .news-feature, .news-page .news-card'
+              : currentSeoPage
+                ? '.business-seo-page .business-seo-hero > *, .business-seo-page .business-seo-grid article, .business-seo-page .business-seo-faq > *, .business-seo-page .business-seo-links > *, .business-seo-page .business-seo-featured > *'
           : isInquiryPage
             ? '.inquiry-page .inquiry-copy > *, .inquiry-page .inquiry-form'
             : isSignInPage
@@ -1848,7 +2417,7 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentProduct, currentNewsArticle, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
+  }, [currentProduct, currentNewsArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -1872,7 +2441,7 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
-    if (currentProduct || currentNewsArticle || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
+    if (currentProduct || currentNewsArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
       return undefined;
     }
 
@@ -1899,7 +2468,7 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentProduct, currentNewsArticle, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
+  }, [currentProduct, currentNewsArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
 
   if (isInquiryPage) {
     return (
@@ -1996,6 +2565,15 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <NewsArticlePage article={currentNewsArticle} />
+      </main>
+    );
+  }
+
+  if (currentSeoPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <BusinessSeoPage page={currentSeoPage} />
       </main>
     );
   }

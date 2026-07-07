@@ -156,6 +156,12 @@
   }
 
   function boot() {
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+
+    if (path !== '/') {
+      return;
+    }
+
     waitForApp(function () {
       fetchContent('seo').then(applySeo);
       fetchContent('banner').then(applyBanner);
