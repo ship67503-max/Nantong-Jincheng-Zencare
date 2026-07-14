@@ -3906,42 +3906,6 @@ textarea {
   color: #5f7c22;
 }
 
-.footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 0 0 auto;
-}
-
-.footer-socials a {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: #142018;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.footer-socials a:nth-child(1) {
-  background: #1b5fd6;
-}
-
-.footer-socials a:nth-child(2) {
-  background: #f0182d;
-}
-
-.footer-socials a:nth-child(3) {
-  background: #d91773;
-}
-
-.footer-socials a:nth-child(4) {
-  background: #050505;
-}
-
 @media (max-width: 1400px) {
   body {
     min-width: 1024px;

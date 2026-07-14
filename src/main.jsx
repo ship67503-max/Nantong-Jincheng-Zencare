@@ -350,13 +350,6 @@ const footerLinks = [
   { label: 'OEM Process', href: '/oem-process' },
 ];
 
-const socialLinks = [
-  { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/' },
-  { label: 'YouTube', mark: 'yt', href: 'https://youtube.com/@nantongjinchengzencaretechnolo?si=jTie2dZK0mYx4M7c' },
-  { label: 'Instagram', mark: 'ig', href: 'https://www.instagram.com/' },
-  { label: 'TikTok', mark: 'tk', href: 'https://www.tiktok.com/' },
-];
-
 const newsArticles = [
   {
     slug: 'private-label-pet-pad-ideas',
@@ -2932,13 +2925,6 @@ function App() {
                 <a key={link.label} href={link.href}>{ui.footer[index] ?? link.label}</a>
               ))}
             </nav>
-            <div className="footer-socials" aria-label="Social links">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} aria-label={link.label}>
-                  {link.mark}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </footer>
