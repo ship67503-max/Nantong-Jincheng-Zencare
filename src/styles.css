@@ -3557,28 +3557,9 @@ textarea {
   background: rgba(255, 122, 84, 0.12);
 }
 
-.signin-divider {
-  margin: 24px 0 18px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 14px;
-  align-items: center;
-  color: rgba(246, 248, 239, 0.48);
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.signin-divider::before,
-.signin-divider::after {
-  content: "";
-  height: 1px;
-  background: rgba(246, 248, 239, 0.13);
-}
-
 .signin-providers {
+  margin-top: 18px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 

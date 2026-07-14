@@ -1194,13 +1194,9 @@ function SignInPage() {
     email: '',
     password: '',
   });
-  const initialAuthNotice =
-    new URLSearchParams(window.location.search).get('status') === 'setup-required'
-      ? 'Apple ID sign-in is reserved. Please configure Apple Developer credentials before enabling this provider.'
-      : '';
   const [submitState, setSubmitState] = useState({
-    status: initialAuthNotice ? 'error' : 'idle',
-    message: initialAuthNotice,
+    status: 'idle',
+    message: '',
   });
 
   const handleSubmit = async (event) => {
@@ -1306,15 +1302,7 @@ function SignInPage() {
             )}
           </form>
 
-          <div className="signin-divider">
-            <span>or continue with</span>
-          </div>
-
           <div className="signin-providers">
-            <a href="/api/auth/apple">
-              Apple ID
-              <ArrowUpRight size={16} />
-            </a>
             <a href="mailto:hengtuo@nthegntuo.com?subject=Business%20account%20access%20request">
               Email Support
               <Mail size={16} />
