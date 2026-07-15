@@ -8,7 +8,7 @@ Checkpoint mode: Enabled
 Latest checkpoint file: `docs/CHECKPOINT.md`  
 Active sprint: Sprint 01 - Technical SEO Audit and Stability  
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: Real server-side inquiry email sending implemented  
+Latest completed task: Google Sheets inquiry sync added  
 Next required deliverable: Review, commit, deploy, or assign next sprint
 
 Difficulty scale:
@@ -95,7 +95,7 @@ Deliverables:
 
 - Better request form UX. Completed: shared inquiry form with loading, disabled submit state, duplicate-submit prevention, and failure fallback.
 - Validation and success states. Completed: required name/email/message, max lengths, front-end and server-side checks, success state, and error fallback.
-- Inquiry storage strategy. Pending: decide whether to also store leads in CRM, spreadsheet, database, or JCZ Business Center.
+- Inquiry storage strategy. Partially completed: inquiries can now sync to Google Sheets through Google Sheets API.
 - WhatsApp and email conversion paths. Completed: unified visible email, `mailto` fallback, and Resend-based server-side inquiry endpoint.
 
 Completed increment:
@@ -105,11 +105,14 @@ Completed increment:
 - Added Vercel/Resend environment variable placeholders.
 - Replaced the static contact-page form with the validated reusable inquiry form.
 - Added HTML and plain-text email output, Reply-To handling, honeypot protection, input sanitization, content-length checks, and basic rate limiting.
+- Added Google Sheets API sync for Contact / Inquiry / Request submissions.
+- Added service separation for email delivery and Google Sheets append operations.
 
 Remaining:
 
 - Configure production Resend sender/domain and Vercel environment variables.
-- Decide whether inquiry records should also be stored in CRM, spreadsheet, or database.
+- Configure Google Cloud service account, share the target Google Sheet, and add Google Sheets environment variables to Vercel.
+- Decide whether Google Sheets should later sync into CRM, database, or JCZ Business Center.
 
 ## Sprint 05: Commercial SEO Landing Pages
 Priority: High  

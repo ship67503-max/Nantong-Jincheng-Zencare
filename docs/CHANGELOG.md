@@ -2,6 +2,46 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.1.5 - Google Sheets Sync Deployment Fix
+
+Date: 2026-07-15
+
+### Changed
+- Updated Google Sheets range to use `GOOGLE_SHEET_NAME`, defaulting to `工作表1`.
+- Ensured `/api/contact` sends email first, then awaits Google Sheets append only after Resend succeeds.
+- Updated Google Sheets logging to `Google Sheets append succeeded` on success.
+- Updated Google Sheets failure logging to `Google Sheets append failed` with a safe error message only.
+
+### Verified
+- Confirmed `googleapis` is listed in `package.json`.
+- Confirmed `GOOGLE_PRIVATE_KEY` is normalized with `replace(/\\n/g, '\n')`.
+- Confirmed `spreadsheets.values.append` uses `valueInputOption: USER_ENTERED` and `insertDataOption: INSERT_ROWS`.
+- API test confirmed Resend success returns success even when Google Sheets append fails.
+- API test confirmed Resend failure still returns a failure response.
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
+## v1.1.4 - Google Sheets Inquiry Sync Added
+
+Date: 2026-07-15
+
+### Added
+- Added `googleapis` dependency for direct Google Sheets API integration.
+- Added `services/googleSheets.js` to append each inquiry as a new Google Sheets row.
+- Added `services/email.js` to keep Resend email delivery separate from contact API flow control.
+- Added Google Sheets environment placeholders to `.env.example`.
+
+### Changed
+- Refactored `/api/contact` so it validates inquiry data, calls `sendEmail()`, and calls `appendInquiryToGoogleSheets()`.
+- Google Sheets sync now runs independently from Resend email delivery.
+- Google Sheets failures are logged with `console.error()` and do not make the customer-facing form fail when Resend succeeds.
+
+### Verified
+- API test confirmed Resend success still returns success when Google Sheets sync fails.
+- API test confirmed Resend failure still returns a customer-facing failure response.
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
 ## v1.1.3 - Contact Sender Environment Enforcement
 
 Date: 2026-07-15

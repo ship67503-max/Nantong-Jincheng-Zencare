@@ -3,7 +3,7 @@
 ## Latest Checkpoint
 Date: 2026-07-15
 
-Status: Real server-side inquiry email sending confirmed and ready for commit/push.
+Status: Google Sheets inquiry sync deployment fix verified. Awaiting commit and push.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -27,13 +27,21 @@ Status: Real server-side inquiry email sending confirmed and ready for commit/pu
 - Verified API validation and mocked Resend success path.
 - Confirmed final recipient is `hengtuo@nthengtuo.com`.
 - Enforced `CONTACT_FROM_EMAIL` as the only sender source for `/api/contact`.
+- Added direct Google Sheets API inquiry sync through `services/googleSheets.js`.
+- Refactored Resend delivery into `services/email.js`.
+- Updated `/api/contact` to call `sendEmail()` and `appendInquiryToGoogleSheets()` independently.
+- Confirmed Google Sheets sync failure is logged and does not break customer success when Resend succeeds.
+- Updated Google Sheets range to use `GOOGLE_SHEET_NAME`, defaulting to `工作表1`.
+- Confirmed `/api/contact` sends email first, then appends to Google Sheets after Resend succeeds.
+- Confirmed Google Sheets append uses `USER_ENTERED` and `INSERT_ROWS`.
 
 ## Current Task
-- Commit and push current changes to GitHub.
+- Commit and push Google Sheets automatic inquiry saving to GitHub.
 
 ## Remaining Tasks
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
-- Confirm Vercel auto-deployment result after GitHub push.
+- Configure Google Cloud service account and Google Sheets environment variables in Vercel.
+- Confirm Vercel creates a new deployment after GitHub push.
 - Plan the next sprint only after approval.
 - Continue future tasks from this checkpoint.
 
@@ -59,6 +67,10 @@ If the connection is interrupted:
 - Secret exposure scan: no Resend/API environment names are referenced from front-end source files.
 - Sender check: `/api/contact` uses `CONTACT_FROM_EMAIL` and no hardcoded sender fallback.
 - Recipient check: `/api/contact` sends to `hengtuo@nthengtuo.com`.
+- Google Sheets sync test: Resend success returns success even when Sheets sync logs an error.
+- Package check: `googleapis` installed.
+- Google Sheets range: `GOOGLE_SHEET_NAME` defaults to `工作表1`; append range resolves to `'工作表1'!A:L`.
+- Latest lint/build: passed after Google Sheets deployment fix.
 
 ## Next Checkpoint
 Next checkpoint should be created after the user approves, commits, deploys, configures email environment variables, or assigns the next sprint.
