@@ -1,0 +1,160 @@
+# Changelog
+
+All notable project documentation and website development changes should be recorded in this file.
+
+## v1.1.3 - Contact Sender Environment Enforcement
+
+Date: 2026-07-15
+
+### Changed
+- Confirmed the final inquiry recipient remains `hengtuo@nthengtuo.com`.
+- Updated `/api/contact` so the sender address is read only from `CONTACT_FROM_EMAIL`.
+- Removed the hardcoded fallback sender address from the contact email endpoint.
+
+### Verified
+- API mock test confirmed `to` is `hengtuo@nthengtuo.com`.
+- API mock test confirmed `from` comes from `CONTACT_FROM_EMAIL`.
+- API mock test confirmed `reply_to` is the inquiry user's email address.
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
+## v1.1.2 - Real Server-Side Inquiry Email Sending
+
+Date: 2026-07-14
+
+### Added
+- Added hardened server-side contact email handling through the existing Vercel `/api/contact` endpoint.
+- Added HTML and plain-text inquiry email rendering for Resend delivery.
+- Added honeypot spam protection, content-length limiting, field length limits, input sanitization, and basic per-IP rate limiting.
+- Added front-end honeypot field, field max lengths, autocomplete hints, duplicate-submit prevention, and disabled loading state.
+
+### Changed
+- Strengthened the shared Contact / Inquiry / Request form so success is shown only after the server endpoint returns success.
+- Preserved user-entered values on send failure and clears the form only after successful delivery.
+- Standardized failure fallback text with a clickable `mailto:hengtuo@nthengtuo.com` backup.
+- Updated `.env.example` so `CONTACT_FROM_EMAIL` is an explicit production placeholder instead of a production-looking default.
+
+### Verified
+- API test: empty form is rejected.
+- API test: invalid email is rejected.
+- API test: honeypot spam field is rejected.
+- API test: missing `RESEND_API_KEY` returns a failure and does not show fake success.
+- API test: mocked Resend success includes `reply_to`, HTML body, and text body.
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
+### Notes
+- Live sending requires Vercel environment variables and a verified Resend sender/domain.
+- No deployment was triggered for this task.
+
+## v1.1.1 - Contact Email and Inquiry Routing Unified
+
+Date: 2026-07-14
+
+### Added
+- Added `/api/contact` serverless endpoint for website inquiry email delivery through Resend.
+- Added environment placeholders for `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL`.
+- Added reusable inquiry form validation, loading state, success state, and failure state.
+
+### Changed
+- Unified visible website email contact to `hengtuo@nthengtuo.com`.
+- Converted visible email contact points into clickable `mailto:` links with prefilled inquiry subjects and quotation body where relevant.
+- Replaced the static contact-page form with the reusable inquiry form that submits to `/api/contact`.
+- Updated structured data email output to use the unified contact email.
+
+### Verified
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+- Global search found no remaining legacy email strings or the previous typo email.
+
+### Notes
+- Real email sending requires Vercel environment variables and a verified Resend sender/domain before production use.
+- No deployment was triggered for this task.
+
+## v1.1.0 - Technical SEO Foundation Implemented
+
+Date: 2026-07-14
+
+### Added
+- Added build-time WebP generation for public image assets.
+- Added route-level static SEO HTML generation for all public routes.
+- Added shared SEO page data for canonical URLs, metadata, Open Graph, Twitter Card, and JSON-LD output.
+- Added SEO validation script to check route metadata, duplicate titles, duplicate descriptions, canonical format, and image availability.
+- Added Product Schema for product detail routes.
+- Added FAQ Schema support for FAQ-oriented pages.
+- Added Breadcrumb, Organization, and WebSite schema output in generated static HTML.
+
+### Changed
+- Updated the production build command to generate WebP assets, build the Vite app, and generate route-level SEO HTML.
+- Optimized homepage default meta description for clearer B2B source-factory positioning.
+- Improved internal linking by adding key commercial SEO pages to footer navigation.
+- Replaced major visible images with a WebP-aware optimized image component using native lazy loading and async decoding.
+- Improved image alt text across product, news, factory, learning, and SEO landing page visuals.
+
+### Verified
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+- `dist/sitemap.xml` begins with XML and contains 57 URLs.
+- `dist/robots.txt` points to `https://www.jczcare.com/sitemap.xml`.
+- Generated route HTML includes unique title, description, canonical, Open Graph, Twitter Card, and JSON-LD metadata.
+- Product detail HTML includes Product Schema.
+- FAQ/contact HTML includes FAQ Schema where applicable.
+
+### Notes
+- No deployment was triggered.
+- The project remains Vite + React, so Next/Image was addressed through a Vite-compatible optimized image component and generated WebP assets.
+- Vite still reports the existing Silk animation chunk as larger than 500 kB; this is a performance warning, not a build failure.
+
+## v1.0.1 - Checkpoint Workflow Enabled
+
+Date: 2026-07-14
+
+### Added
+- Added checkpoint-mode operating rule for future development work.
+- Added requirement to save progress after every completed task.
+- Added requirement to update `CHANGELOG.md` and `ROADMAP.md` after each completed task.
+- Added current checkpoint tracking through `docs/CHECKPOINT.md`.
+
+### Completed Before This Checkpoint
+- Footer social media icon links were removed and deployed.
+- Apple ID sign-in option and backend Apple auth route were removed and deployed.
+- Project documentation system was initialized.
+- Sprint 01 audit work was started but not yet completed.
+
+### Notes
+- Future work must continue from the latest checkpoint instead of restarting the project.
+- Website source code was not modified for this checkpoint setup.
+
+## v1.0.0 - Documentation System Initialized
+
+### Added
+- Created the `docs/` documentation system.
+- Added master project prompt documentation.
+- Added AI development rules.
+- Added business strategy documentation.
+- Added roadmap documentation.
+- Added sprint audit documentation.
+- Added changelog file.
+
+### Notes
+- This version initializes long-term project documentation only.
+- No website source code changes are included in this documentation initialization.
+- Future website changes should be recorded here with version number, date, summary, files changed, and verification status.
+
+## Future Changelog Format
+
+### vX.X.X - Title
+
+Date: To be added.
+
+Added:
+- To be added.
+
+Changed:
+- To be added.
+
+Fixed:
+- To be added.
+
+Verified:
+- To be added.

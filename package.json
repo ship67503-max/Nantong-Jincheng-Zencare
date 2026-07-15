@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs",
+    "lint": "node scripts/validate-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "vite": "^7.0.0"
   },
   "devDependencies": {
+    "sharp": "^0.35.3",
     "vite-plugin-sitemap": "^0.8.2"
   }
 }

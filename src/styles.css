@@ -3653,6 +3653,14 @@ textarea {
   gap: 8px;
 }
 
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form label span {
   color: rgba(246, 248, 239, 0.56);
   font-size: 12px;
@@ -3693,6 +3701,33 @@ textarea {
   color: #172019;
   font-weight: 900;
   cursor: pointer;
+}
+
+.contact-form button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.form-message {
+  margin: 0;
+  color: rgba(246, 248, 239, 0.78);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.form-message.success {
+  color: #d6ee81;
+}
+
+.form-message.error {
+  color: #ffd2c7;
+}
+
+.form-message a {
+  color: #f6f8ef;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .site-footer {

@@ -23,9 +23,34 @@ import './styles.css';
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
 const siteUrl = 'https://www.jczcare.com';
+const contactEmail = 'hengtuo@nthengtuo.com';
 const whatsappChatUrl =
   'https://wa.me/8618061305971?text=Hello%20Nantong%20JINCHENG%20ZENCARE%2C%20I%20would%20like%20to%20discuss%20a%20custom%20pet%20pad%20OEM%2FODM%20project.';
 const Silk = React.lazy(() => import('./Silk'));
+
+const buildMailto = (subject = 'Website Inquiry', body = '') => {
+  const params = new URLSearchParams({ subject });
+
+  if (body) {
+    params.set('body', body);
+  }
+
+  return `mailto:${contactEmail}?${params.toString()}`;
+};
+
+const quotationEmailBody = [
+  'Hello,',
+  '',
+  'I am interested in your products and would like to request a quotation.',
+  '',
+  'Company Name:',
+  'Country:',
+  'Product:',
+  'Estimated Quantity:',
+  'Customization Requirements:',
+  '',
+  'Best regards,',
+].join('\n');
 
 class SilkBoundary extends React.Component {
   constructor(props) {
@@ -347,7 +372,11 @@ const footerLinks = [
   { label: 'Gift Cards', href: '/pages/gift-cards' },
   { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Pet Pad Factory', href: '/pet-pad-factory' },
+  { label: 'Private Label Pet Pads', href: '/private-label-pet-pads' },
+  { label: 'Quality Control', href: '/quality-control' },
   { label: 'OEM Process', href: '/oem-process' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const newsArticles = [
@@ -672,7 +701,22 @@ const setHeadTag = (selector, createTag, valueKey, value) => {
   tag.setAttribute(valueKey, value);
 };
 
-const buildStructuredData = ({ title, description, path, faqs = [], image }) => {
+function OptimizedImage({ src, alt, loading = 'lazy', decoding = 'async', ...props }) {
+  const webpSrc = src?.match(/\.(png|jpe?g)$/i) ? src.replace(/\.(png|jpe?g)$/i, '.webp') : '';
+
+  if (!webpSrc) {
+    return <img src={src} alt={alt} loading={loading} decoding={decoding} {...props} />;
+  }
+
+  return (
+    <picture>
+      <source srcSet={webpSrc} type="image/webp" />
+      <img src={src} alt={alt} loading={loading} decoding={decoding} {...props} />
+    </picture>
+  );
+}
+
+const buildStructuredData = ({ title, description, path, faqs = [], image, product }) => {
   const canonical = buildAbsoluteUrl(path);
   const baseData = [
     {
@@ -681,7 +725,7 @@ const buildStructuredData = ({ title, description, path, faqs = [], image }) => 
       name: 'Nantong JINCHENG ZENCARE Technology Company',
       alternateName: 'JCZCARE',
       url: siteUrl,
-      email: 'hengtuo@nthegntuo.com',
+      email: contactEmail,
       telephone: '+86 18061305971',
       address: {
         '@type': 'PostalAddress',
@@ -754,10 +798,40 @@ const buildStructuredData = ({ title, description, path, faqs = [], image }) => 
     });
   }
 
+  if (product) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.title,
+      category: product.category,
+      image: buildAbsoluteUrl(product.image),
+      description: product.summary,
+      brand: {
+        '@type': 'Brand',
+        name: 'JCZCARE',
+      },
+      manufacturer: {
+        '@type': 'Organization',
+        name: 'Nantong JINCHENG ZENCARE Technology Company',
+      },
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        priceCurrency: 'USD',
+        url: canonical,
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'USD',
+          description: 'OEM pricing depends on product specification, packaging, and order quantity.',
+        },
+      },
+    });
+  }
+
   return baseData;
 };
 
-const applyPageSeo = ({ title, description, path, image, faqs }) => {
+const applyPageSeo = ({ title, description, path, image, faqs, product }) => {
   const canonical = buildAbsoluteUrl(path);
   const shareImage = buildAbsoluteUrl(image || heroFallbackImage);
 
@@ -803,7 +877,7 @@ const applyPageSeo = ({ title, description, path, image, faqs }) => {
     structuredDataTag.type = 'application/ld+json';
     document.head.appendChild(structuredDataTag);
   }
-  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image }));
+  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image, product }));
 };
 
 function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
@@ -919,7 +993,7 @@ function ProductDetail({ product }) {
             </a>
           </div>
           <div className="detail-visual">
-            <img src={product.image} alt={product.title} />
+            <OptimizedImage src={product.image} alt={`${product.title} product image`} />
             <span>{product.badge}</span>
           </div>
         </div>
@@ -955,7 +1029,7 @@ function NewsPage() {
         </div>
 
         <a className="news-feature" href={`/pages/news/${featuredArticle.slug}`}>
-          <img src={featuredArticle.image} alt={featuredArticle.title} />
+          <OptimizedImage src={featuredArticle.image} alt={`${featuredArticle.title} article image`} />
           <div>
             <span>{featuredArticle.category}</span>
             <h2>{featuredArticle.title}</h2>
@@ -970,7 +1044,7 @@ function NewsPage() {
         <div className="news-grid">
           {newsArticles.map((article) => (
             <a className="news-card" href={`/pages/news/${article.slug}`} key={article.slug}>
-              <img src={article.image} alt={article.title} />
+              <OptimizedImage src={article.image} alt={`${article.title} article image`} />
               <div>
                 <span>{article.category}</span>
                 <small>{article.date}</small>
@@ -1005,7 +1079,7 @@ function NewsArticlePage({ article }) {
             <h1>{article.title}</h1>
             <p>{article.excerpt}</p>
           </div>
-          <img src={article.image} alt={article.title} />
+          <OptimizedImage src={article.image} alt={`${article.title} article image`} loading="eager" />
         </div>
 
         <div className="news-article-layout">
@@ -1070,7 +1144,7 @@ function BusinessSeoPage({ page }) {
               </a>
             </div>
           </div>
-          <img src={page.image} alt={`${page.kicker} by Nantong JINCHENG ZENCARE`} loading="eager" />
+          <OptimizedImage src={page.image} alt={`${page.kicker} by Nantong JINCHENG ZENCARE`} loading="eager" />
         </div>
 
         <div className="business-seo-grid">
@@ -1088,7 +1162,7 @@ function BusinessSeoPage({ page }) {
             <div>
               {newsArticles.map((article) => (
                 <a href={`/pages/news/${article.slug}`} key={article.slug}>
-                  <img src={article.image} alt={article.title} loading="lazy" />
+                  <OptimizedImage src={article.image} alt={`${article.title} related content image`} />
                   <span>{article.category}</span>
                   <h2>{article.title}</h2>
                 </a>
@@ -1132,7 +1206,177 @@ function BusinessSeoPage({ page }) {
   );
 }
 
+function InquiryForm({ className = '', product = '', source = 'website-contact', rows = 4, buttonLabel = 'Send Inquiry' }) {
+  const [formState, setFormState] = useState({
+    name: '',
+    companyName: '',
+    email: '',
+    phone: '',
+    country: '',
+    product,
+    quantity: '',
+    message: '',
+    website: '',
+  });
+  const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
+  const lastSubmitAtRef = useRef(0);
+
+  useEffect(() => {
+    setFormState((state) => ({ ...state, product }));
+  }, [product]);
+
+  const updateField = (field) => (event) => {
+    setFormState((state) => ({ ...state, [field]: event.target.value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      ...formState,
+      name: formState.name.trim(),
+      companyName: formState.companyName.trim(),
+      email: formState.email.trim(),
+      phone: formState.phone.trim(),
+      country: formState.country.trim(),
+      product: formState.product.trim(),
+      quantity: formState.quantity.trim(),
+      message: formState.message.trim(),
+      website: formState.website.trim(),
+      source,
+      pageUrl: window.location.href,
+    };
+
+    const now = Date.now();
+
+    if (submitState.status === 'loading' || now - lastSubmitAtRef.current < 2000) {
+      return;
+    }
+
+    lastSubmitAtRef.current = now;
+
+    if (!payload.name) {
+      setSubmitState({ status: 'error', message: 'Please enter your name.' });
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      setSubmitState({ status: 'error', message: 'Please enter a valid email address.' });
+      return;
+    }
+
+    if (!payload.message) {
+      setSubmitState({ status: 'error', message: 'Please enter your product requirement.' });
+      return;
+    }
+
+    setSubmitState({ status: 'loading', message: 'Sending your inquiry...' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Sorry, your inquiry could not be sent.');
+      }
+
+      setFormState({
+        name: '',
+        companyName: '',
+        email: '',
+        phone: '',
+        country: '',
+        product,
+        quantity: '',
+        message: '',
+        website: '',
+      });
+      setSubmitState({
+        status: 'success',
+        message: data.message || 'Thank you. Your inquiry has been sent successfully. We will contact you shortly.',
+      });
+    } catch (error) {
+      setSubmitState({
+        status: 'error',
+        message: error.message || 'Sorry, your inquiry could not be sent. Please try again or email us directly at hengtuo@nthengtuo.com.',
+      });
+    }
+  };
+
+  const isLoading = submitState.status === 'loading';
+
+  return (
+    <form className={`contact-form ${className}`.trim()} aria-label="OEM inquiry form" onSubmit={handleSubmit}>
+      <label className="form-honeypot" aria-hidden="true">
+        <span>Website</span>
+        <input
+          type="text"
+          name="website"
+          tabIndex="-1"
+          autoComplete="off"
+          value={formState.website}
+          onChange={updateField('website')}
+        />
+      </label>
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required maxLength="100" autoComplete="name" value={formState.name} onChange={updateField('name')} />
+      </label>
+      <label>
+        <span>Company Name</span>
+        <input type="text" name="companyName" maxLength="200" autoComplete="organization" value={formState.companyName} onChange={updateField('companyName')} />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required maxLength="200" autoComplete="email" value={formState.email} onChange={updateField('email')} />
+      </label>
+      <label>
+        <span>Phone / WhatsApp</span>
+        <input type="text" name="phone" maxLength="100" autoComplete="tel" value={formState.phone} onChange={updateField('phone')} />
+      </label>
+      <label>
+        <span>Country</span>
+        <input type="text" name="country" maxLength="100" autoComplete="country-name" value={formState.country} onChange={updateField('country')} />
+      </label>
+      <label>
+        <span>Product</span>
+        <input type="text" name="product" maxLength="200" value={formState.product} onChange={updateField('product')} />
+      </label>
+      <label>
+        <span>Estimated Quantity</span>
+        <input type="text" name="quantity" maxLength="100" value={formState.quantity} onChange={updateField('quantity')} />
+      </label>
+      <label>
+        <span>Product Requirement</span>
+        <textarea name="message" rows={rows} required maxLength="5000" value={formState.message} onChange={updateField('message')} />
+      </label>
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? 'Sending...' : buttonLabel}
+        <ArrowUpRight size={18} />
+      </button>
+      {submitState.message && (
+        <p className={`form-message ${submitState.status}`}>
+          {submitState.message.includes(contactEmail) ? (
+            <>
+              Sorry, your inquiry could not be sent. Please try again or email us directly at{' '}
+              <a href={buildMailto('Website Inquiry')}>{contactEmail}</a>.
+            </>
+          ) : (
+            submitState.message
+          )}
+        </p>
+      )}
+    </form>
+  );
+}
+
 function ProductPlanInquiry() {
+  const productParam = new URLSearchParams(window.location.search).get('product') || '';
+
   return (
     <section className="inquiry-page">
       <div className="inquiry-silk" aria-hidden="true">
@@ -1162,28 +1406,12 @@ function ProductPlanInquiry() {
             Share the key project details. Our team will prepare a clear product plan for your market.
           </p>
         </div>
-        <form className="contact-form inquiry-form" aria-label="Product plan inquiry form">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" />
-          </label>
-          <label>
-            <span>Email / WhatsApp</span>
-            <input type="text" name="contact" />
-          </label>
-          <label>
-            <span>Country</span>
-            <input type="text" name="country" />
-          </label>
-          <label>
-            <span>Product Requirement</span>
-            <textarea name="message" rows="5" />
-          </label>
-          <button type="button">
-            Submit Request
-            <ArrowUpRight size={18} />
-          </button>
-        </form>
+        <InquiryForm
+          className="inquiry-form"
+          product={productParam}
+          source="product-plan-request"
+          rows={5}
+        />
       </div>
     </section>
   );
@@ -1303,7 +1531,7 @@ function SignInPage() {
           </form>
 
           <div className="signin-providers">
-            <a href="mailto:hengtuo@nthegntuo.com?subject=Business%20account%20access%20request">
+            <a href={buildMailto('Business account access request')}>
               Email Support
               <Mail size={16} />
             </a>
@@ -1385,7 +1613,7 @@ function InvestorRelationsPage() {
   return (
     <section className="investor-page">
       <div className="investor-hero">
-        <img src="/images/contact-pets-grass-centered.png" alt="Pet care market and brand partnership" />
+        <OptimizedImage src="/images/contact-pets-grass-centered.png" alt="Pet care brand partnership scene" loading="eager" />
         <div className="investor-hero-overlay" />
         <div className="container investor-hero-content">
           <p className="section-kicker">Investor Relations</p>
@@ -1480,7 +1708,7 @@ function AffiliatesPage() {
 
         <div className="affiliates-feature">
           <div className="affiliates-image">
-            <img src="/images/custom-products-preview.png" alt="Custom pet care product program" />
+            <OptimizedImage src="/images/custom-products-preview.png" alt="Custom pet care product program preview" />
           </div>
           <div className="affiliates-reasons">
             <p className="section-kicker">Why Partner With Us</p>
@@ -1564,9 +1792,9 @@ function HelpCenterPage() {
               <MessageCircle size={18} />
             </a>
           </div>
-          <div className="help-quick-contact">
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
-            <a href="mailto:hengtuo@nthegntuo.com"><Mail size={18} /> hengtuo@nthegntuo.com</a>
+        <div className="help-quick-contact">
+          <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
+            <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}><Mail size={18} /> {contactEmail}</a>
           </div>
         </div>
 
@@ -1674,7 +1902,7 @@ function LearnCenterPage() {
         </div>
 
         <div className="learn-feature">
-          <img src="/images/contact-pets-grass-centered.png" alt="Pet care product learning center" />
+          <OptimizedImage src="/images/contact-pets-grass-centered.png" alt="Pet care product learning center visual" loading="eager" />
           <div>
             <span>OEM Knowledge</span>
             <h2>Build better private-label pet care products with factory-side guidance.</h2>
@@ -1688,7 +1916,7 @@ function LearnCenterPage() {
         <div className="learn-featured-grid">
           {featuredArticles.map((article) => (
             <article key={article.title}>
-              <img src={article.image} alt={article.title} />
+              <OptimizedImage src={article.image} alt={`${article.title} learning article image`} />
               <span>{article.tag}</span>
               <h2>{article.title}</h2>
             </article>
@@ -1698,7 +1926,7 @@ function LearnCenterPage() {
         <div className="learn-section-list">
           {learnSections.map((section) => (
             <article key={section.title}>
-              <img src={section.image} alt={section.title} />
+              <OptimizedImage src={section.image} alt={`${section.title} learning topic image`} />
               <div>
                 <p className="section-kicker">{section.title}</p>
                 <h2>{section.title}</h2>
@@ -1734,7 +1962,7 @@ function GiveBackPage() {
   return (
     <section className="giveback-page">
       <div className="giveback-hero">
-        <img src="/images/contact-pets-grass-centered.png" alt="People and pets in a lively outdoor scene" />
+        <OptimizedImage src="/images/contact-pets-grass-centered.png" alt="People and pets in a lively outdoor scene" loading="eager" />
         <div className="giveback-hero-overlay" />
         <div className="container giveback-hero-content">
           <p className="section-kicker">Give Back</p>
@@ -1847,7 +2075,7 @@ function GiftCardsPage() {
 
         <div className="gift-card-preview">
           <div className="gift-card-visual">
-            <img src="/images/custom-disposable-pet-pads-premium.png" alt="Premium pet pad sample kit" />
+            <OptimizedImage src="/images/custom-disposable-pet-pads-premium.png" alt="Premium pet pad sample kit for OEM review" />
             <span>OEM / ODM</span>
           </div>
           <div className="gift-card-panel">
@@ -1880,7 +2108,7 @@ function GiftCardsPage() {
           <div className="gift-showcase-grid">
             {customProducts.slice(0, 4).map((product) => (
               <a key={product.slug} href={`/products/${product.slug}`}>
-                <img src={product.image} alt={product.title} />
+                <OptimizedImage src={product.image} alt={`${product.title} sample kit item`} />
                 <span>{product.category}</span>
                 <strong>{product.title}</strong>
               </a>
@@ -1970,6 +2198,7 @@ function App() {
         description: `${currentProduct.summary} Custom specifications, private-label packaging, sample development, and B2B factory supply from Nantong JINCHENG ZENCARE.`,
         path: `/products/${currentProduct.slug}`,
         image: currentProduct.image,
+        product: currentProduct,
         faqs: [
           [`Can you customize ${currentProduct.title}?`, 'Yes. We support OEM/ODM specifications, private-label packaging, sample review, and B2B production planning.'],
           ['How do I request this product plan?', 'Use the product request form or WhatsApp to share target market, specification, quantity, and packaging direction.'],
@@ -2010,7 +2239,7 @@ function App() {
 
     applyPageSeo({
       title: 'Nantong JINCHENG ZENCARE | Pet Pad OEM/ODM Source Factory',
-      description: 'Nantong JINCHENG ZENCARE Technology Company is a pet care absorbent product source manufacturer offering pet pads, care bed pads, OEM/ODM customization, private-label development, product sampling, and delivery coordination.',
+      description: 'Nantong JINCHENG ZENCARE is a pet pad OEM/ODM source factory for pet pads, absorbent care products, private-label packaging, and B2B supply.',
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
@@ -2636,9 +2865,10 @@ function App() {
           </div>
           <div className="about-grid">
             <div className="about-media">
-              <img
+              <OptimizedImage
                 src="/images/factory-campus.jpeg"
                 alt="Nantong JINCHENG ZENCARE factory exterior"
+                loading="eager"
               />
             </div>
             <div className="about-copy">
@@ -2656,7 +2886,7 @@ function App() {
               </p>
               <div className="contact-strip">
                 <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
-                <span><Mail size={18} /> hengtuo@nthegntuo.com</span>
+                <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}><Mail size={18} /> {contactEmail}</a>
               </div>
             </div>
           </div>
@@ -2694,7 +2924,7 @@ function App() {
           <div className="project-grid">
             {factoryImages.map((item, index) => (
               <article className={`project-card project-${index + 1}`} key={item.title}>
-                <img src={item.src} alt={item.title} />
+                <OptimizedImage src={item.src} alt={`${item.title} factory production scene`} />
                 <div className="project-content">
                   <span>{item.tag}</span>
                   <h3>{item.title}</h3>
@@ -2735,9 +2965,10 @@ function App() {
       <section className="section quality" id="quality">
         <div className="container quality-layout">
           <div className="quality-visual">
-            <img
+            <OptimizedImage
               src="/images/quality-inspection-lab-mask.png"
               alt="Pet pad quality inspection and laboratory testing"
+              loading="eager"
             />
             <div className="quality-badge">
               <Microscope size={20} />
@@ -2824,7 +3055,7 @@ function App() {
             {customProducts.map((product) => (
               <article className="custom-product-card" key={product.title}>
                 <div className="custom-product-media">
-                  <img src={product.image} alt={product.title} />
+                  <OptimizedImage src={product.image} alt={`${product.title} customization option`} />
                   <span>{product.badge}</span>
                 </div>
                 <div className="custom-product-body">
@@ -2862,30 +3093,18 @@ function App() {
                 <Phone size={20} />
                 <span>+86 18061305971</span>
               </a>
-              <a href="mailto:hengtuo@nthegntuo.com">
+              <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}>
                 <Mail size={20} />
-                <span>hengtuo@nthegntuo.com</span>
+                <span>{contactEmail}</span>
               </a>
             </div>
           </div>
-          <form className="contact-form" aria-label="OEM inquiry form">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" />
-            </label>
-            <label>
-              <span>Email / WhatsApp</span>
-              <input type="text" name="contact" />
-            </label>
-            <label>
-              <span>Product Requirement</span>
-              <textarea name="message" rows="4" />
-            </label>
-            <button type="button">
-              Send Inquiry
-              <ArrowUpRight size={18} />
-            </button>
-          </form>
+          <InquiryForm
+            product="OEM/ODM pet products"
+            source="contact-page"
+            rows={4}
+            buttonLabel="Send Inquiry"
+          />
         </div>
       </section>
       <footer className="site-footer">
@@ -2921,3 +3140,4 @@ function App() {
 }
 
 createRoot(document.getElementById('root')).render(<App />);
+
