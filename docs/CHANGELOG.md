@@ -2,6 +2,21 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.1.6 - Google Sheets Diagnostics Added
+
+Date: 2026-07-15
+
+### Added
+- Added runtime diagnostics for `GOOGLE_SHEET_ID` and `GOOGLE_SHEET_NAME`.
+- Added `spreadsheets.get` check before appending inquiry rows.
+- Added logs for the actual `spreadsheetId` and `range` used by Google Sheets append.
+- Added 404 response data logging for Google Sheets GET and append failures.
+
+### Verified
+- Confirmed no private key value is logged.
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
 ## v1.1.5 - Google Sheets Sync Deployment Fix
 
 Date: 2026-07-15
