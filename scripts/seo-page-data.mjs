@@ -1,3 +1,5 @@
+import { blogArticles, getBlogArticleText } from '../src/blogData.js';
+
 export const siteUrl = 'https://www.jczcare.com';
 
 export const defaultImage = '/images/factory-campus.jpeg';
@@ -323,6 +325,17 @@ export const newsSeo = [
   },
 ];
 
+export const blogSeo = blogArticles.map((article) => ({
+  path: article.path,
+  title: article.seoTitle,
+  description: article.metaDescription,
+  image: article.image,
+  type: 'Article',
+  article,
+  faqs: article.faqs,
+  articleBody: getBlogArticleText(article),
+}));
+
 export const regions = [
   'united-states',
   'canada',
@@ -350,7 +363,7 @@ export const regions = [
   image: defaultImage,
 }));
 
-export const allSeoEntries = [...pageSeo, ...productSeo, ...newsSeo, ...regions];
+export const allSeoEntries = [...pageSeo, ...productSeo, ...newsSeo, ...blogSeo, ...regions];
 
 export const getSeoEntry = (path = '/') => allSeoEntries.find((entry) => entry.path === path) || {
   ...baseSeo,

@@ -8,8 +8,8 @@ Checkpoint mode: Enabled
 Latest checkpoint file: `docs/CHECKPOINT.md`  
 Active sprint: Sprint 01 - Technical SEO Audit and Stability  
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: Google Sheets runtime Sheet ID verification deployed  
-Next required deliverable: Review Vercel runtime logs or assign next sprint
+Latest completed task: SEO Blog foundation added and verified  
+Next required deliverable: Commit, push, confirm deployment, or assign next sprint
 
 Difficulty scale:
 
@@ -121,12 +121,18 @@ Priority: High
 Difficulty: Medium  
 Expected ROI: High
 
+Status: Started
+
 Goals:
 
 - Expand pages targeting B2B search intent.
 - Build keyword clusters around OEM pet pads, private label, manufacturer, factory, quality control, and absorbent core development.
 
 Deliverables:
+
+- Completed increment: created the first 12 English SEO Blog articles targeting B2B OEM/ODM pet pad sourcing intent.
+- Completed increment: added `/blog` and `/blog/[slug]` with static metadata, schema, internal links, related articles, and inquiry CTA.
+- Completed increment: added Blog URLs to sitemap/static SEO generation.
 
 - SEO landing page cluster.
 - Internal linking map.

@@ -19,6 +19,7 @@ import {
   Truck,
 } from 'lucide-react';
 import './styles.css';
+import { blogArticles, getRelatedBlogArticles } from './blogData.js';
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
@@ -225,7 +226,7 @@ const regionLinks = [
 
 const uiTranslations = {
   en: {
-    nav: ['Profile', 'Projects', 'Innovation', 'Quality', 'Advantages', 'Customization', 'News'],
+    nav: ['Profile', 'Projects', 'Innovation', 'Quality', 'Advantages', 'Customization', 'Blog'],
     contact: 'Contact Us',
     regionSearch: 'Search Europe / America',
     noRegion: 'No region found',
@@ -235,7 +236,7 @@ const uiTranslations = {
     footer: ['About', 'Investor Relations', 'Affiliates', 'Help', 'Learn', 'Give Back', 'Gift Cards'],
   },
   de: {
-    nav: ['Profil', 'Projekte', 'Innovation', 'Qualitat', 'Vorteile', 'Anpassung', 'News'],
+    nav: ['Profil', 'Projekte', 'Innovation', 'Qualitat', 'Vorteile', 'Anpassung', 'Blog'],
     contact: 'Kontakt',
     regionSearch: 'Europa / Amerika suchen',
     noRegion: 'Keine Region gefunden',
@@ -245,7 +246,7 @@ const uiTranslations = {
     footer: ['Uber uns', 'Investor Relations', 'Partner', 'Hilfe', 'Wissen', 'Engagement', 'Musterkits'],
   },
   fr: {
-    nav: ['Profil', 'Projets', 'Innovation', 'Qualite', 'Avantages', 'Personnalisation', 'Actualites'],
+    nav: ['Profil', 'Projets', 'Innovation', 'Qualite', 'Avantages', 'Personnalisation', 'Blog'],
     contact: 'Contact',
     regionSearch: 'Rechercher Europe / Amerique',
     noRegion: 'Aucune region trouvee',
@@ -255,7 +256,7 @@ const uiTranslations = {
     footer: ['A propos', 'Investisseurs', 'Affilies', 'Aide', 'Guide', 'Engagement', 'Kits cadeaux'],
   },
   it: {
-    nav: ['Profilo', 'Progetti', 'Innovazione', 'Qualita', 'Vantaggi', 'Personalizzazione', 'News'],
+    nav: ['Profilo', 'Progetti', 'Innovazione', 'Qualita', 'Vantaggi', 'Personalizzazione', 'Blog'],
     contact: 'Contatti',
     regionSearch: 'Cerca Europa / America',
     noRegion: 'Nessuna regione trovata',
@@ -265,7 +266,7 @@ const uiTranslations = {
     footer: ['Chi siamo', 'Investitori', 'Affiliati', 'Aiuto', 'Guide', 'Responsabilita', 'Kit regalo'],
   },
   es: {
-    nav: ['Perfil', 'Proyectos', 'Innovacion', 'Calidad', 'Ventajas', 'Personalizacion', 'Noticias'],
+    nav: ['Perfil', 'Proyectos', 'Innovacion', 'Calidad', 'Ventajas', 'Personalizacion', 'Blog'],
     contact: 'Contacto',
     regionSearch: 'Buscar Europa / America',
     noRegion: 'No se encontro region',
@@ -275,7 +276,7 @@ const uiTranslations = {
     footer: ['Sobre nosotros', 'Inversores', 'Afiliados', 'Ayuda', 'Aprender', 'Contribuir', 'Kits regalo'],
   },
   nl: {
-    nav: ['Profiel', 'Projecten', 'Innovatie', 'Kwaliteit', 'Voordelen', 'Maatwerk', 'Nieuws'],
+    nav: ['Profiel', 'Projecten', 'Innovatie', 'Kwaliteit', 'Voordelen', 'Maatwerk', 'Blog'],
     contact: 'Contact',
     regionSearch: 'Zoek Europa / Amerika',
     noRegion: 'Geen regio gevonden',
@@ -285,7 +286,7 @@ const uiTranslations = {
     footer: ['Over ons', 'Investeerders', 'Partners', 'Help', 'Leren', 'Teruggeven', 'Sample kits'],
   },
   pl: {
-    nav: ['Profil', 'Projekty', 'Innowacje', 'Jakosc', 'Zalety', 'Personalizacja', 'News'],
+    nav: ['Profil', 'Projekty', 'Innowacje', 'Jakosc', 'Zalety', 'Personalizacja', 'Blog'],
     contact: 'Kontakt',
     regionSearch: 'Szukaj Europa / Ameryka',
     noRegion: 'Nie znaleziono regionu',
@@ -295,7 +296,7 @@ const uiTranslations = {
     footer: ['O nas', 'Inwestorzy', 'Partnerzy', 'Pomoc', 'Wiedza', 'Wsparcie', 'Zestawy probek'],
   },
   sv: {
-    nav: ['Profil', 'Projekt', 'Innovation', 'Kvalitet', 'Fordelar', 'Anpassning', 'Nyheter'],
+    nav: ['Profil', 'Projekt', 'Innovation', 'Kvalitet', 'Fordelar', 'Anpassning', 'Blog'],
     contact: 'Kontakt',
     regionSearch: 'Sok Europa / Amerika',
     noRegion: 'Ingen region hittades',
@@ -305,7 +306,7 @@ const uiTranslations = {
     footer: ['Om oss', 'Investerare', 'Partners', 'Hjalp', 'Lar dig', 'Ge tillbaka', 'Provkit'],
   },
   da: {
-    nav: ['Profil', 'Projekter', 'Innovation', 'Kvalitet', 'Fordele', 'Tilpasning', 'Nyheder'],
+    nav: ['Profil', 'Projekter', 'Innovation', 'Kvalitet', 'Fordele', 'Tilpasning', 'Blog'],
     contact: 'Kontakt',
     regionSearch: 'Sog Europa / Amerika',
     noRegion: 'Ingen region fundet',
@@ -315,7 +316,7 @@ const uiTranslations = {
     footer: ['Om os', 'Investorer', 'Partnere', 'Hjaelp', 'Laer', 'Giv tilbage', 'Provekit'],
   },
   no: {
-    nav: ['Profil', 'Prosjekter', 'Innovasjon', 'Kvalitet', 'Fordeler', 'Tilpasning', 'Nyheter'],
+    nav: ['Profil', 'Prosjekter', 'Innovasjon', 'Kvalitet', 'Fordeler', 'Tilpasning', 'Blog'],
     contact: 'Kontakt',
     regionSearch: 'Sok Europa / Amerika',
     noRegion: 'Ingen region funnet',
@@ -325,7 +326,7 @@ const uiTranslations = {
     footer: ['Om oss', 'Investorer', 'Partnere', 'Hjelp', 'Laer', 'Gi tilbake', 'Provekit'],
   },
   fi: {
-    nav: ['Profiili', 'Projektit', 'Innovaatio', 'Laatu', 'Edut', 'Raatalointi', 'Uutiset'],
+    nav: ['Profiili', 'Projektit', 'Innovaatio', 'Laatu', 'Edut', 'Raatalointi', 'Blog'],
     contact: 'Yhteys',
     regionSearch: 'Hae Eurooppa / Amerikka',
     noRegion: 'Aluetta ei loytynyt',
@@ -335,7 +336,7 @@ const uiTranslations = {
     footer: ['Tietoa meista', 'Sijoittajat', 'Kumppanit', 'Tuki', 'Opi', 'Vastuullisuus', 'Naytekitit'],
   },
   pt: {
-    nav: ['Perfil', 'Projetos', 'Inovacao', 'Qualidade', 'Vantagens', 'Personalizacao', 'Noticias'],
+    nav: ['Perfil', 'Projetos', 'Inovacao', 'Qualidade', 'Vantagens', 'Personalizacao', 'Blog'],
     contact: 'Contato',
     regionSearch: 'Pesquisar Europa / America',
     noRegion: 'Nenhuma regiao encontrada',
@@ -716,7 +717,7 @@ function OptimizedImage({ src, alt, loading = 'lazy', decoding = 'async', ...pro
   );
 }
 
-const buildStructuredData = ({ title, description, path, faqs = [], image, product }) => {
+const buildStructuredData = ({ title, description, path, faqs = [], image, product, article }) => {
   const canonical = buildAbsoluteUrl(path);
   const baseData = [
     {
@@ -828,10 +829,33 @@ const buildStructuredData = ({ title, description, path, faqs = [], image, produ
     });
   }
 
+  if (article) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.title,
+      description: article.metaDescription,
+      image: buildAbsoluteUrl(article.image),
+      datePublished: article.publishedAt,
+      dateModified: article.updatedAt,
+      author: {
+        '@type': 'Organization',
+        name: article.author,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Nantong JINCHENG ZENCARE Technology Company',
+      },
+      mainEntityOfPage: canonical,
+      articleSection: article.category,
+      keywords: [article.primaryKeyword, ...article.secondaryKeywords].join(', '),
+    });
+  }
+
   return baseData;
 };
 
-const applyPageSeo = ({ title, description, path, image, faqs, product }) => {
+const applyPageSeo = ({ title, description, path, image, faqs, product, article }) => {
   const canonical = buildAbsoluteUrl(path);
   const shareImage = buildAbsoluteUrl(image || heroFallbackImage);
 
@@ -855,7 +879,7 @@ const applyPageSeo = ({ title, description, path, image, faqs, product }) => {
   [
     ['property', 'og:title', title],
     ['property', 'og:description', description],
-    ['property', 'og:type', 'website'],
+    ['property', 'og:type', article ? 'article' : 'website'],
     ['property', 'og:url', canonical],
     ['property', 'og:image', shareImage],
     ['name', 'twitter:card', 'summary_large_image'],
@@ -877,7 +901,7 @@ const applyPageSeo = ({ title, description, path, image, faqs, product }) => {
     structuredDataTag.type = 'application/ld+json';
     document.head.appendChild(structuredDataTag);
   }
-  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image, product }));
+  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image, product, article }));
 };
 
 function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
@@ -894,7 +918,7 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         <a href="/#about">{ui.nav[0]}</a>
         <a href="/#projects">{ui.nav[1]}</a>
         <a href="/#innovation">{ui.nav[2]}</a>
-        <a href="/pages/news">{ui.nav[6]}</a>
+        <a href="/blog">{ui.nav[6]}</a>
         <a href="/#quality">{ui.nav[3]}</a>
         <a href="/#advantages">{ui.nav[4]}</a>
         <a href="/#customization">{ui.nav[5]}</a>
@@ -1108,6 +1132,181 @@ function NewsArticlePage({ article }) {
           <div>
             {relatedArticles.map((item) => (
               <a className="news-related-card" href={`/pages/news/${item.slug}`} key={item.slug}>
+                <span>{item.category}</span>
+                <h2>{item.title}</h2>
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BlogPage() {
+  const featuredArticle = blogArticles[0];
+
+  return (
+    <section className="news-page blog-page">
+      <div className="container news-shell">
+        <div className="news-hero blog-hero">
+          <p className="section-kicker">JCZCARE Blog</p>
+          <h1>
+            Practical insights for
+            <br />
+            <em className="title-key">OEM pet pad buyers</em>.
+          </h1>
+          <p>
+            Practical insights for pet product brands, importers and distributors sourcing OEM and private label pet pads.
+          </p>
+        </div>
+
+        <a className="news-feature blog-feature" href={`/blog/${featuredArticle.slug}`}>
+          <OptimizedImage src={featuredArticle.image} alt={featuredArticle.imageAlt} />
+          <div>
+            <span>{featuredArticle.category}</span>
+            <h2>{featuredArticle.title}</h2>
+            <p>{featuredArticle.intro}</p>
+            <small>
+              {featuredArticle.publishedAt} · 7 min read
+              <ArrowUpRight size={16} />
+            </small>
+          </div>
+        </a>
+
+        <div className="news-grid blog-grid">
+          {blogArticles.map((article) => (
+            <a className="news-card blog-card" href={`/blog/${article.slug}`} key={article.slug}>
+              <OptimizedImage src={article.image} alt={article.imageAlt} />
+              <div>
+                <span>{article.category}</span>
+                <small>{article.publishedAt} · 7 min read</small>
+              </div>
+              <h2>{article.title}</h2>
+              <p>{article.intro}</p>
+              <strong>
+                Read article
+                <ArrowUpRight size={16} />
+              </strong>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BlogArticlePage({ article }) {
+  const relatedArticles = getRelatedBlogArticles(article.slug);
+
+  return (
+    <section className="news-article-page blog-article-page">
+      <div className="container news-article-shell">
+        <a className="detail-back" href="/blog">
+          Back to Blog
+          <ArrowUpRight size={16} />
+        </a>
+        <div className="news-article-hero blog-article-hero">
+          <div>
+            <p className="section-kicker">{article.category}</p>
+            <h1>{article.title}</h1>
+            <p>{article.intro}</p>
+            <div className="blog-meta">
+              <span>{article.author}</span>
+              <span>{article.publishedAt}</span>
+              <span>Updated {article.updatedAt}</span>
+              <span>Primary keyword: {article.primaryKeyword}</span>
+            </div>
+          </div>
+          <OptimizedImage src={article.image} alt={article.imageAlt} loading="eager" />
+        </div>
+
+        <div className="news-article-layout">
+          <article className="news-article-body blog-article-body">
+            <div className="blog-intro">
+              <p>{article.coreAngle}</p>
+              <div className="blog-inline-links" aria-label="Related internal links">
+                <a href="/">JCZCARE homepage</a>
+                <a href="/#customization">OEM/ODM service</a>
+                <a href="/#projects">Product examples</a>
+                <a href="/#contact">Contact the factory</a>
+              </div>
+            </div>
+
+            <nav className="blog-toc" aria-label="Article table of contents">
+              <h2>Table of contents</h2>
+              <ol>
+                {article.toc.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            </nav>
+
+            {article.sections.map((section) => (
+              <section key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.h3 && <h3>{section.h3}</h3>}
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </section>
+            ))}
+
+            <section className="blog-checklist">
+              <h2>Buyer Checklist</h2>
+              <ul>
+                {article.checklist.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="blog-faq">
+              <h2>FAQ</h2>
+              {article.faqs.map(([question, answer]) => (
+                <div key={question}>
+                  <h3>{question}</h3>
+                  <p>{answer}</p>
+                </div>
+              ))}
+            </section>
+
+            <section className="blog-cta">
+              <h2>{article.cta.title}</h2>
+              <p>{article.cta.text}</p>
+              <div>
+                {article.cta.links.map((link) => (
+                  <a key={link.href} href={link.href}>
+                    {link.label}
+                    <ArrowUpRight size={16} />
+                  </a>
+                ))}
+              </div>
+            </section>
+          </article>
+
+          <aside className="news-article-aside blog-article-aside">
+            <span>{article.category}</span>
+            <h2>Article focus</h2>
+            <ul>
+              <li>Primary keyword: {article.primaryKeyword}</li>
+              {article.secondaryKeywords.map((keyword) => (
+                <li key={keyword}>{keyword}</li>
+              ))}
+            </ul>
+            <a href="/request-product-plan?product=blog-inquiry">
+              Submit an inquiry
+              <ArrowUpRight size={16} />
+            </a>
+          </aside>
+        </div>
+
+        <div className="news-related">
+          <p className="section-kicker">Related Articles</p>
+          <div>
+            {relatedArticles.map((item) => (
+              <a className="news-related-card" href={`/blog/${item.slug}`} key={item.slug}>
                 <span>{item.category}</span>
                 <h2>{item.title}</h2>
                 <ArrowUpRight size={16} />
@@ -2150,6 +2349,8 @@ function App() {
   const isGiftCardsPage = currentPath === '/pages/gift-cards';
   const newsSlug = currentPath.match(/^\/pages\/news\/([^/]+)\/?$/)?.[1];
   const isNewsPage = currentPath === '/pages/news';
+  const blogSlug = currentPath.match(/^\/blog\/([^/]+)\/?$/)?.[1];
+  const isBlogPage = currentPath === '/blog';
   const currentSeoPage = seoPageMap.get(currentPath);
   const currentStaticSeo = staticSeoPages[currentPath];
   const currentProduct = productSlug
@@ -2157,6 +2358,9 @@ function App() {
     : null;
   const currentNewsArticle = newsSlug
     ? newsArticles.find((article) => article.slug === newsSlug)
+    : null;
+  const currentBlogArticle = blogSlug
+    ? blogArticles.find((article) => article.slug === blogSlug)
     : null;
 
   const handleRegionChange = (region) => {
@@ -2207,6 +2411,28 @@ function App() {
       return;
     }
 
+    if (currentBlogArticle) {
+      applyPageSeo({
+        title: currentBlogArticle.seoTitle,
+        description: currentBlogArticle.metaDescription,
+        path: `/blog/${currentBlogArticle.slug}`,
+        image: currentBlogArticle.image,
+        faqs: currentBlogArticle.faqs,
+        article: currentBlogArticle,
+      });
+      return;
+    }
+
+    if (isBlogPage) {
+      applyPageSeo({
+        title: 'Pet Pad OEM Blog | Factory Insights for Buyers',
+        description: 'Practical JCZCARE blog insights for pet product brands, importers and distributors sourcing OEM pet pads and private label puppy pads.',
+        path: '/blog',
+        image: '/images/factory-campus.jpeg',
+      });
+      return;
+    }
+
     if (currentNewsArticle) {
       applyPageSeo({
         title: `${currentNewsArticle.title} | JCZCARE News`,
@@ -2243,7 +2469,7 @@ function App() {
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
-  }, [currentSeoPage, currentProduct, currentNewsArticle, currentStaticSeo, isNewsPage, currentPath]);
+  }, [currentSeoPage, currentProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, currentPath]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -2295,7 +2521,7 @@ function App() {
         };
       };
 
-      if (currentProduct || currentNewsArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
+      if (currentProduct || currentNewsArticle || currentBlogArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
         gsap.set(nav, {
           x: 0,
           y: 0,
@@ -2627,7 +2853,7 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentProduct, currentNewsArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
+  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -2651,7 +2877,7 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
-    if (currentProduct || currentNewsArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage) {
+    if (currentProduct || currentNewsArticle || currentBlogArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
       return undefined;
     }
 
@@ -2678,7 +2904,7 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentProduct, currentNewsArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage]);
+  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
 
   if (isInquiryPage) {
     return (
@@ -2757,6 +2983,24 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <GiftCardsPage />
+      </main>
+    );
+  }
+
+  if (isBlogPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <BlogPage />
+      </main>
+    );
+  }
+
+  if (currentBlogArticle) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <BlogArticlePage article={currentBlogArticle} />
       </main>
     );
   }

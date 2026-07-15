@@ -24,6 +24,43 @@ const absoluteUrl = (url = '/') => {
 
 const productMap = new Map(productSeo.map((product) => [product.path, product]));
 
+const renderStaticArticle = (article) => {
+  if (!article) {
+    return '';
+  }
+
+  const sectionHtml = article.sections.map((section) => [
+    `<section>`,
+    `<h2>${escapeHtml(section.heading)}</h2>`,
+    section.h3 ? `<h3>${escapeHtml(section.h3)}</h3>` : '',
+    ...section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`),
+    `</section>`,
+  ].join('\n')).join('\n');
+
+  const checklistHtml = article.checklist.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n');
+  const faqHtml = article.faqs.map(([question, answer]) => [
+    `<section>`,
+    `<h3>${escapeHtml(question)}</h3>`,
+    `<p>${escapeHtml(answer)}</p>`,
+    `</section>`,
+  ].join('\n')).join('\n');
+
+  return [
+    `<main class="static-blog-content">`,
+    `<article>`,
+    `<p>${escapeHtml(article.category)} | ${escapeHtml(article.author)} | ${escapeHtml(article.publishedAt)}</p>`,
+    `<h1>${escapeHtml(article.title)}</h1>`,
+    `<p>${escapeHtml(article.intro)}</p>`,
+    `<nav aria-label="Table of contents"><h2>Table of contents</h2><ol>${article.toc.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol></nav>`,
+    sectionHtml,
+    `<section><h2>Buyer Checklist</h2><ul>${checklistHtml}</ul></section>`,
+    `<section><h2>FAQ</h2>${faqHtml}</section>`,
+    `<section><h2>${escapeHtml(article.cta.title)}</h2><p>${escapeHtml(article.cta.text)}</p></section>`,
+    `</article>`,
+    `</main>`,
+  ].join('\n');
+};
+
 const buildJsonLd = (entry) => {
   const canonical = absoluteUrl(entry.path);
   const image = absoluteUrl(entry.image);
@@ -100,6 +137,30 @@ const buildJsonLd = (entry) => {
     });
   }
 
+  if (entry.article) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: entry.article.title,
+      description: entry.article.metaDescription,
+      image,
+      datePublished: entry.article.publishedAt,
+      dateModified: entry.article.updatedAt,
+      author: {
+        '@type': 'Organization',
+        name: entry.article.author,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: organization.name,
+      },
+      mainEntityOfPage: canonical,
+      articleSection: entry.article.category,
+      keywords: [entry.article.primaryKeyword, ...entry.article.secondaryKeywords].join(', '),
+      articleBody: entry.articleBody,
+    });
+  }
+
   if (entry.faqs?.length) {
     graph.push({
       '@context': 'https://schema.org',
@@ -128,7 +189,7 @@ const renderHead = (entry) => {
     `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
     `<meta property="og:title" content="${escapeHtml(entry.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(entry.description)}" />`,
-    '<meta property="og:type" content="website" />',
+    `<meta property="og:type" content="${entry.type === 'Article' ? 'article' : 'website'}" />`,
     `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
     `<meta property="og:image" content="${escapeHtml(image)}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',
@@ -154,7 +215,11 @@ let written = 0;
 
 for (const route of staticRoutes) {
   const entry = getSeoEntry(route);
-  const cleaned = template.replace(managedHeadPattern, '').replace('</head>', `    ${renderHead(entry)}\n  </head>`);
+  const staticContent = renderStaticArticle(entry.article);
+  const bodyTemplate = staticContent
+    ? template.replace('<div id="root"></div>', `<div id="root">${staticContent}</div>`)
+    : template;
+  const cleaned = bodyTemplate.replace(managedHeadPattern, '').replace('</head>', `    ${renderHead(entry)}\n  </head>`);
   await writeHtml(route, cleaned);
   written += 1;
 }

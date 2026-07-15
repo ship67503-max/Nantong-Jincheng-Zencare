@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { blogArticles } from '../src/blogData.js';
 
 const rootDir = process.cwd();
 const mainSourcePath = path.join(rootDir, 'src', 'main.jsx');
@@ -127,6 +128,8 @@ export const resolvePublicRoutes = () => {
   addMatches(routes, staticSeoPagesBlock, /['"]([^'"]+)['"]\s*:/g);
 
   addRoute(routes, '/pages/news');
+  addRoute(routes, '/blog');
+  blogArticles.forEach((article) => addRoute(routes, article.path));
 
   return Array.from(routes).sort((a, b) => a.localeCompare(b));
 };

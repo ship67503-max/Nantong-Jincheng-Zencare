@@ -2,6 +2,25 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.1.9 - SEO Blog Foundation
+
+Date: 2026-07-15
+
+### Added
+- Added 12 English SEO Blog articles targeting B2B pet pad OEM/ODM sourcing intent.
+- Added `/blog` listing page and `/blog/[slug]` article detail pages.
+- Added Blog article data module with titles, slugs, keywords, summaries, FAQs, buyer checklists, CTA links, related articles, author, publish date, update date, image alt text, and metadata.
+- Added Blog Article Schema, FAQ Schema, canonical URLs, Open Graph, Twitter Card support, and static article body output during build.
+- Added Blog routes to sitemap/static route generation.
+- Added responsive Blog page styles for desktop and mobile layouts.
+
+### Verified
+- `npm.cmd run lint` passed for 69 public routes.
+- `npm.cmd run build` completed successfully.
+- Verified all 12 Blog article files are generated in `dist/blog/`.
+- Verified sitemap contains `/blog` plus all 12 Blog article URLs.
+- Verified generated article HTML contains body text, title, description, canonical, Article Schema, FAQ Schema, and Buyer Checklist content.
+
 ## v1.1.8 - Google Sheet ID Runtime Verification
 
 Date: 2026-07-15
