@@ -8,8 +8,8 @@ Checkpoint mode: Enabled
 Latest checkpoint file: `docs/CHECKPOINT.md`  
 Active sprint: Sprint 01 - Technical SEO Audit and Stability  
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: Google Sheets inquiry sync added  
-Next required deliverable: Review, commit, deploy, or assign next sprint
+Latest completed task: Google Sheets service account diagnostics added  
+Next required deliverable: Verify lint/build, push to GitHub, or assign next sprint
 
 Difficulty scale:
 
@@ -107,6 +107,7 @@ Completed increment:
 - Added HTML and plain-text email output, Reply-To handling, honeypot protection, input sanitization, content-length checks, and basic rate limiting.
 - Added Google Sheets API sync for Contact / Inquiry / Request submissions.
 - Added service separation for email delivery and Google Sheets append operations.
+- Added safe Google Sheets diagnostics for service account identity and Spreadsheet GET failures.
 
 Remaining:
 

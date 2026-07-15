@@ -47,6 +47,8 @@ export async function appendInquiryToGoogleSheets(inquiry) {
     throw new Error('Missing Google Sheets environment variables.');
   }
 
+  console.log('GOOGLE_CLIENT_EMAIL:', process.env.GOOGLE_CLIENT_EMAIL);
+  console.log('GOOGLE_PROJECT_ID:', process.env.GOOGLE_PROJECT_ID);
   console.log('GOOGLE_SHEET_ID:', process.env.GOOGLE_SHEET_ID);
   console.log('GOOGLE_SHEET_NAME:', process.env.GOOGLE_SHEET_NAME);
 
@@ -67,11 +69,9 @@ export async function appendInquiryToGoogleSheets(inquiry) {
     });
     console.log('Spreadsheet GET success');
   } catch (error) {
-    console.error('Spreadsheet GET failed', error);
-
-    if (isNotFoundError(error)) {
-      console.error('Spreadsheet GET 404 response data:', error.response?.data);
-    }
+    console.error('Spreadsheet GET failed status:', error.response?.status);
+    console.error('Spreadsheet GET failed data:', error.response?.data);
+    console.error('Spreadsheet GET failed message:', error.message);
 
     throw error;
   }

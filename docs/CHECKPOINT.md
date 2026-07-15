@@ -3,7 +3,7 @@
 ## Latest Checkpoint
 Date: 2026-07-15
 
-Status: Google Sheets diagnostics added. Awaiting commit and push.
+Status: Google Sheets service account diagnostics added and verified. Awaiting commit and push.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -36,9 +36,11 @@ Status: Google Sheets diagnostics added. Awaiting commit and push.
 - Confirmed Google Sheets append uses `USER_ENTERED` and `INSERT_ROWS`.
 - Added Google Sheets diagnostics for sheet ID, sheet name, spreadsheet GET, append range, and 404 response data.
 - Confirmed diagnostics do not log the private key value.
+- Added safe service account identity diagnostics for Google Sheets troubleshooting.
+- Updated Spreadsheet GET failure diagnostics to log status, response data, and message without logging the private key.
 
 ## Current Task
-- Commit and push Google Sheets diagnostics to GitHub.
+- Commit and push Google Sheets service account diagnostics to GitHub.
 
 ## Remaining Tasks
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
@@ -74,6 +76,7 @@ If the connection is interrupted:
 - Google Sheets range: `GOOGLE_SHEET_NAME` defaults to `工作表1`; append range resolves to `工作表1!A:L`.
 - Latest lint/build: passed after Google Sheets deployment fix.
 - Latest lint/build: passed after Google Sheets diagnostics.
+- Latest lint/build: passed after Google Sheets service account diagnostics.
 
 ## Next Checkpoint
 Next checkpoint should be created after the user approves, commits, deploys, configures email environment variables, or assigns the next sprint.

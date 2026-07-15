@@ -2,6 +2,23 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.1.7 - Google Sheets Service Account Diagnostics
+
+Date: 2026-07-15
+
+### Added
+- Added safe runtime diagnostics for `GOOGLE_CLIENT_EMAIL` and `GOOGLE_PROJECT_ID`.
+- Kept existing `GOOGLE_SHEET_ID`, `GOOGLE_SHEET_NAME`, and `spreadsheets.get` diagnostics.
+- Updated Spreadsheet GET failure logging to show response status, response data, and error message.
+
+### Security
+- Confirmed `GOOGLE_PRIVATE_KEY` is not logged.
+- Removed full Spreadsheet GET error object logging to reduce sensitive diagnostic noise.
+
+### Verified
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
 ## v1.1.6 - Google Sheets Diagnostics Added
 
 Date: 2026-07-15
