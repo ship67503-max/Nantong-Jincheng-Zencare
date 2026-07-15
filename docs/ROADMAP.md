@@ -8,7 +8,7 @@ Checkpoint mode: Enabled
 Latest checkpoint file: `docs/CHECKPOINT.md`  
 Active sprint: Sprint 01 - Technical SEO Audit and Stability  
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: Google Sheets service account diagnostics added  
+Latest completed task: Google Sheets runtime Sheet ID verification added  
 Next required deliverable: Verify lint/build, push to GitHub, or assign next sprint
 
 Difficulty scale:
@@ -108,6 +108,7 @@ Completed increment:
 - Added Google Sheets API sync for Contact / Inquiry / Request submissions.
 - Added service separation for email delivery and Google Sheets append operations.
 - Added safe Google Sheets diagnostics for service account identity and Spreadsheet GET failures.
+- Added runtime Sheet ID verification to confirm the exact Vercel environment value used by Google Sheets sync.
 
 Remaining:
 

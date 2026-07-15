@@ -2,6 +2,22 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.1.8 - Google Sheet ID Runtime Verification
+
+Date: 2026-07-15
+
+### Added
+- Added explicit runtime logging for `Runtime GOOGLE_SHEET_ID =` to verify the exact Spreadsheet ID used by Vercel at request time.
+
+### Checked
+- Searched the project for the reported stale Spreadsheet ID.
+- Confirmed no hardcoded Spreadsheet ID or default `GOOGLE_SHEET_ID` fallback exists in project source.
+- Confirmed Google Sheets access still reads Spreadsheet ID only from `process.env.GOOGLE_SHEET_ID`.
+
+### Verified
+- `npm.cmd run lint` passed for 57 public routes.
+- `npm.cmd run build` completed successfully.
+
 ## v1.1.7 - Google Sheets Service Account Diagnostics
 
 Date: 2026-07-15

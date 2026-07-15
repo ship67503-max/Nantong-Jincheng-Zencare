@@ -3,7 +3,7 @@
 ## Latest Checkpoint
 Date: 2026-07-15
 
-Status: Google Sheets service account diagnostics added and verified. Awaiting commit and push.
+Status: Google Sheets runtime Sheet ID verification added and verified. Awaiting commit and push.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -38,9 +38,11 @@ Status: Google Sheets service account diagnostics added and verified. Awaiting c
 - Confirmed diagnostics do not log the private key value.
 - Added safe service account identity diagnostics for Google Sheets troubleshooting.
 - Updated Spreadsheet GET failure diagnostics to log status, response data, and message without logging the private key.
+- Searched for stale Spreadsheet ID usage and confirmed no hardcoded Spreadsheet ID exists in source.
+- Added explicit `Runtime GOOGLE_SHEET_ID =` logging to verify the exact Vercel runtime value.
 
 ## Current Task
-- Commit and push Google Sheets service account diagnostics to GitHub.
+- Commit and push Google Sheets runtime Sheet ID verification to GitHub.
 
 ## Remaining Tasks
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
@@ -77,6 +79,7 @@ If the connection is interrupted:
 - Latest lint/build: passed after Google Sheets deployment fix.
 - Latest lint/build: passed after Google Sheets diagnostics.
 - Latest lint/build: passed after Google Sheets service account diagnostics.
+- Latest lint/build: passed after Google Sheets runtime Sheet ID verification.
 
 ## Next Checkpoint
 Next checkpoint should be created after the user approves, commits, deploys, configures email environment variables, or assigns the next sprint.

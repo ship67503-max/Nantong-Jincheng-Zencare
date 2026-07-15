@@ -50,6 +50,7 @@ export async function appendInquiryToGoogleSheets(inquiry) {
   console.log('GOOGLE_CLIENT_EMAIL:', process.env.GOOGLE_CLIENT_EMAIL);
   console.log('GOOGLE_PROJECT_ID:', process.env.GOOGLE_PROJECT_ID);
   console.log('GOOGLE_SHEET_ID:', process.env.GOOGLE_SHEET_ID);
+  console.log('Runtime GOOGLE_SHEET_ID =', process.env.GOOGLE_SHEET_ID);
   console.log('GOOGLE_SHEET_NAME:', process.env.GOOGLE_SHEET_NAME);
 
   const auth = new google.auth.JWT({
