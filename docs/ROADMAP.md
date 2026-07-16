@@ -165,6 +165,7 @@ Completed increment:
 - Added six new English long-form articles and expanded the Blog route set to 18 articles.
 - Added static internal links to factory, customization, product, advantages, contact and related-article routes.
 - Added dynamic reading-time labels based on article text length.
+- Deployed and verified the six new Blog URLs in Vercel Production.
 
 ## Sprint 07: Performance and Core Web Vitals
 Priority: High  
