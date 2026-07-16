@@ -152,6 +152,16 @@ const customProducts = [
     details: ['Softness, embossing, size, and absorbency can be tuned.', 'Private-label packing and outer bag artwork supported.', 'Built for brands, retailers, and cross-border channels.'],
   },
   {
+    slug: 'adult-underpads',
+    title: 'Adult Disposable Underpads',
+    category: 'Healthcare Care Series',
+    image: '/images/adult-underpads-hero.png',
+    specs: ['SAP absorbency', 'Multiple sizes', 'OEM packaging'],
+    badge: 'OEM / ODM',
+    summary: 'Premium disposable underpads for healthcare, home care, distribution, and private-label programs.',
+    details: ['Non-woven, tissue, SAP, and PE film structures can be planned around the application.', 'Size, weight, absorbency, pack count, and carton presentation can be customized.', 'Sampling and specification review support for B2B healthcare product programs.'],
+  },
+  {
     slug: 'pet-care-pad-glove-wipes',
     title: 'Pet Care Pad & Glove Wipes',
     category: 'Care Series',
@@ -201,6 +211,19 @@ const customProducts = [
     summary: 'Anti-slip pet pads designed for cleaner placement and easy removal.',
     details: ['Adhesive position, size, specification, and packing can be customized.', 'Designed to reduce shifting while removing cleanly.', 'Ideal for upgraded training pad and scenario-based lines.'],
   },
+];
+
+const adultUnderpadProduct = customProducts.find((product) => product.slug === 'adult-underpads');
+
+const adultUnderpadFaqs = [
+  ['Can I customize the package?', 'Yes. We can coordinate private-label artwork, pack count, bag format, carton marks, and outer packaging around your target market and channel requirements.'],
+  ['What is your MOQ?', 'MOQ is negotiated according to size, absorbency specification, packaging format, and production planning. Share your target quantity for a project-specific quotation.'],
+  ['Can you print my logo?', 'Yes. Logo printing and private-label presentation can be reviewed during the packaging and artwork confirmation stage.'],
+  ['Can you develop new sizes?', 'Yes. Size, weight, core configuration, and packing can be reviewed for new product programs before sampling.'],
+  ['What certificates do you have?', 'Certification and compliance documentation should be confirmed against the destination market and specific product program. Our team can discuss the documentation required for your project.'],
+  ['How long is production?', 'Production timing depends on specification approval, raw-material planning, packaging confirmation, and order quantity. A project schedule is provided after the brief is reviewed.'],
+  ['Do you provide samples?', 'Yes. Samples can be arranged for material feel, dimensions, absorbency direction, packaging review, and buyer evaluation before bulk production.'],
+  ['Can you support Amazon brands?', 'Yes. We can discuss private-label product specifications, packaging, carton information, and supply planning for online brands and other retail channels.'],
 ];
 
 const regionLinks = [
@@ -919,6 +942,7 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         <a href="/#projects">{ui.nav[1]}</a>
         <a href="/#innovation">{ui.nav[2]}</a>
         <a href="/blog">{ui.nav[6]}</a>
+        <a href="/products/adult-underpads">Products</a>
         <a href="/#quality">{ui.nav[3]}</a>
         <a href="/#advantages">{ui.nav[4]}</a>
         <a href="/#customization">{ui.nav[5]}</a>
@@ -1031,6 +1055,244 @@ function ProductDetail({ product }) {
         </div>
       </div>
     </section>
+  );
+}
+
+const adultUnderpadFeatures = [
+  [Droplets, 'Super Absorbent', 'Rapid liquid absorption with SAP technology.'],
+  [ShieldCheck, 'Leak-proof Protection', 'Reliable waterproof PE backing.'],
+  [Layers3, 'Soft Comfort', 'Gentle non-woven surface for skin comfort.'],
+  [Factory, 'OEM / ODM Available', 'Custom sizes, packaging, and branding.'],
+];
+
+const adultUnderpadAdvantages = [
+  'High Absorption Capacity',
+  'Multi-layer Leak Protection',
+  'Skin-friendly Surface',
+  'Low Rewet Performance',
+  'Odor Control',
+  'OEM Customization',
+  'Multiple Sizes',
+  'Fast Production',
+];
+
+const adultUnderpadCustomization = [
+  ['Custom Size', 'Match dimensions to care settings, packs, and usage scenarios.'],
+  ['Custom Weight', 'Balance material weight, absorbency, and target price positioning.'],
+  ['Custom SAP Ratio', 'Review core composition around absorption and rewet targets.'],
+  ['Custom Packaging', 'Choose pack count, bag format, carton marks, and label direction.'],
+  ['Private Label', 'Prepare a brand-ready product line for distributors and retailers.'],
+  ['Carton Printing', 'Coordinate outer carton information for logistics and shipment.'],
+];
+
+const adultUnderpadApplications = [
+  ['Hospital', 'Disposable protection for beds, examination areas, and care workflows.'],
+  ['Nursing Home', 'Practical absorbent formats for routine resident care and supply planning.'],
+  ['Medical Distributor', 'Configurable specifications and packaging for regional distribution.'],
+  ['Retail Brand', 'Private-label underpads for home care and consumer healthcare channels.'],
+];
+
+function SiteFooter({ ui }) {
+  return (
+    <footer className="site-footer">
+      <div className="footer-support">
+        <div className="container footer-support-inner">
+          <strong>{ui.support}</strong>
+          <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+            <Phone size={20} />
+            +86 18061305971
+          </a>
+          <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+            <MessageCircle size={20} />
+            {ui.chat}
+          </a>
+          <a className="footer-top-link" href="#adult-underpads-top">
+            <ArrowUp size={20} />
+            {ui.top}
+          </a>
+        </div>
+      </div>
+      <div className="footer-links-band">
+        <div className="container footer-links-inner">
+          <nav className="footer-links" aria-label="Footer links">
+            {footerLinks.map((link, index) => (
+              <a key={link.label} href={link.href}>{ui.footer[index] ?? link.label}</a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function AdultUnderpadsPage({ ui }) {
+  return (
+    <div className="adult-underpads-page" id="adult-underpads-top">
+      <div className="container adult-underpads-shell">
+        <a className="detail-back" href="/#customization">
+          Back to Products
+          <ArrowUpRight size={16} />
+        </a>
+
+        <section className="adult-underpads-hero" aria-labelledby="adult-underpads-title">
+          <div className="adult-underpads-hero-media">
+            <OptimizedImage
+              src="/images/adult-underpads-hero.png"
+              alt="Adult disposable underpads with absorbent white surface and blue leak-proof backing"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="adult-underpads-hero-copy">
+            <p className="section-kicker">OEM / ODM</p>
+            <h1 id="adult-underpads-title">Premium Adult Disposable Underpads</h1>
+            <p className="adult-underpads-subtitle">Premium Protection for Healthcare &amp; Home Care</p>
+            <p>
+              Designed for hospitals, nursing homes, distributors, and private label brands. Manufactured with absorbent material planning, leak protection, and buyer-ready packaging support for global B2B programs.
+            </p>
+            <div className="adult-underpads-actions">
+              <a className="detail-cta" href="/request-product-plan?product=adult-underpads">
+                Request OEM Quote
+                <ArrowUpRight size={18} />
+              </a>
+              <a className="adult-underpads-secondary-cta" href="/request-product-plan?product=adult-underpads&request=catalogue">
+                Download Catalogue
+                <ArrowUpRight size={18} />
+              </a>
+            </div>
+            <div className="adult-underpads-inline-links" aria-label="Product resources">
+              <a href="/#customization">OEM / ODM service</a>
+              <a href="/products/disposable-pet-pads">Pet pad range</a>
+              <a href="/#contact">Contact factory</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="adult-underpads-section" aria-labelledby="adult-underpads-features-title">
+          <div className="adult-underpads-section-heading">
+            <p className="section-kicker">Product Platform</p>
+            <h2 id="adult-underpads-features-title">Protection planned for real care environments.</h2>
+          </div>
+          <div className="adult-underpads-feature-grid">
+            {adultUnderpadFeatures.map(([Icon, title, text]) => (
+              <article key={title} className="adult-underpads-feature-card">
+                <span className="adult-underpads-icon"><Icon size={22} strokeWidth={1.8} /></span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="adult-underpads-advantages" aria-labelledby="adult-underpads-advantages-title">
+          <div className="adult-underpads-advantages-media">
+            <OptimizedImage
+              src="/images/adult-underpads-hero.png"
+              alt="Close product view of adult disposable underpad surface and blue edge"
+            />
+          </div>
+          <div className="adult-underpads-advantages-copy">
+            <p className="section-kicker">Product Advantages</p>
+            <h2 id="adult-underpads-advantages-title">Why Choose Our Underpads</h2>
+            <ul>
+              {adultUnderpadAdvantages.map((advantage) => <li key={advantage}>{advantage}</li>)}
+            </ul>
+            <a className="text-link" href="/#advantages">Explore factory advantages <ArrowUpRight size={16} /></a>
+          </div>
+        </section>
+
+        <section className="adult-underpads-section" aria-labelledby="adult-underpads-spec-title">
+          <div className="adult-underpads-section-heading">
+            <p className="section-kicker">Specification Framework</p>
+            <h2 id="adult-underpads-spec-title">A clear starting point for your product brief.</h2>
+          </div>
+          <div className="adult-underpads-spec-table" role="table" aria-label="Adult disposable underpad specifications">
+            {[
+              ['Material', 'Non-woven + Tissue + SAP + PE Film'],
+              ['Absorbency', 'High'],
+              ['Size', 'Customizable'],
+              ['Color', 'White / Blue'],
+              ['Packing', 'OEM'],
+              ['Surface', 'Diamond Embossed'],
+              ['MOQ', 'Negotiable'],
+              ['Application', 'Hospital / Clinic / Nursing Home / Home Care'],
+            ].map(([label, value]) => (
+              <div key={label} className="adult-underpads-spec-row" role="row">
+                <strong role="cell">{label}</strong>
+                <span role="cell">{value}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="adult-underpads-section" aria-labelledby="adult-underpads-custom-title">
+          <div className="adult-underpads-section-heading">
+            <p className="section-kicker">OEM / ODM Development</p>
+            <h2 id="adult-underpads-custom-title">Build the specification your market needs.</h2>
+          </div>
+          <div className="adult-underpads-custom-grid">
+            {adultUnderpadCustomization.map(([title, text], index) => (
+              <article key={title} className="adult-underpads-custom-card">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="adult-underpads-section" aria-labelledby="adult-underpads-applications-title">
+          <div className="adult-underpads-section-heading">
+            <p className="section-kicker">Industry Applications</p>
+            <h2 id="adult-underpads-applications-title">One platform, multiple care channels.</h2>
+          </div>
+          <div className="adult-underpads-application-grid">
+            {adultUnderpadApplications.map(([title, text]) => (
+              <article key={title} className="adult-underpads-application-card">
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="adult-underpads-certification" aria-labelledby="adult-underpads-certification-title">
+          <div>
+            <p className="section-kicker">Compliance &amp; Supply</p>
+            <h2 id="adult-underpads-certification-title">Documentation aligned to your market.</h2>
+          </div>
+          <div className="adult-underpads-certification-list" aria-label="Certification and service capabilities">
+            {['ISO', 'CE', 'FDA', 'BSCI', 'OEM Factory', 'Private Label Service'].map((item) => <span key={item}>{item}</span>)}
+          </div>
+        </section>
+
+        <section className="adult-underpads-section adult-underpads-faq-section" aria-labelledby="adult-underpads-faq-title">
+          <div className="adult-underpads-section-heading">
+            <p className="section-kicker">Buyer FAQ</p>
+            <h2 id="adult-underpads-faq-title">Questions buyers ask before sampling.</h2>
+          </div>
+          <div className="adult-underpads-faq-list">
+            {adultUnderpadFaqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>{question}<span aria-hidden="true">+</span></summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section className="adult-underpads-final-cta" aria-labelledby="adult-underpads-cta-title">
+          <p className="section-kicker">OEM / ODM Partnership</p>
+          <h2 id="adult-underpads-cta-title">Looking for a Reliable OEM Underpad Manufacturer?</h2>
+          <p>Our engineering team helps brands build premium healthcare products for global markets.</p>
+          <div className="adult-underpads-actions">
+            <a className="detail-cta" href="/#contact">Contact Sales <ArrowUpRight size={18} /></a>
+            <a className="adult-underpads-secondary-cta" href="/request-product-plan?product=adult-underpads&request=sample">Request Sample <ArrowUpRight size={18} /></a>
+          </div>
+        </section>
+      </div>
+      <SiteFooter ui={ui} />
+    </div>
   );
 }
 
@@ -2340,6 +2602,7 @@ function App() {
   const [activeRegion, setActiveRegion] = useState(getInitialRegion);
   const ui = useMemo(() => getUiText(activeRegion), [activeRegion]);
   const productSlug = currentPath.match(/^\/products\/([^/]+)\/?$/)?.[1];
+  const isAdultUnderpadsPage = currentPath === '/products/adult-underpads';
   const isInquiryPage = currentPath === '/request-product-plan';
   const isSignInPage = currentPath === '/sign-in';
   const isAboutPage = currentPath === '/pages/about';
@@ -2394,6 +2657,18 @@ function App() {
         path: currentSeoPage.path,
         image: currentSeoPage.image,
         faqs: currentSeoPage.faqs,
+      });
+      return;
+    }
+
+    if (isAdultUnderpadsPage && currentProduct) {
+      applyPageSeo({
+        title: 'Premium Adult Disposable Underpads OEM Manufacturer | JCZCare',
+        description: 'OEM adult disposable underpads manufacturer providing customizable absorbent underpads for hospitals, distributors and private label brands worldwide.',
+        path: '/products/adult-underpads',
+        image: '/images/adult-underpads-hero.png',
+        product: currentProduct,
+        faqs: adultUnderpadFaqs,
       });
       return;
     }
@@ -2471,7 +2746,7 @@ function App() {
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
-  }, [currentSeoPage, currentProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, currentPath]);
+  }, [currentSeoPage, currentProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, currentPath]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -3021,6 +3296,15 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <NewsArticlePage article={currentNewsArticle} />
+      </main>
+    );
+  }
+
+  if (isAdultUnderpadsPage && currentProduct) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <AdultUnderpadsPage ui={ui} />
       </main>
     );
   }
