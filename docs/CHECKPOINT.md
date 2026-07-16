@@ -1,9 +1,9 @@
 # Project Checkpoint
 
 ## Latest Checkpoint
-Date: 2026-07-15
+Date: 2026-07-16
 
-Status: SEO Blog foundation added and verified. Awaiting commit, push, and Vercel deployment confirmation.
+Status: SEO Blog foundation deployed. Technical SEO feed infrastructure added and verified locally; awaiting commit, push, and Vercel deployment confirmation.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -43,15 +43,20 @@ Status: SEO Blog foundation added and verified. Awaiting commit, push, and Verce
 - Added 12 English SEO Blog articles for B2B pet pad OEM/ODM sourcing intent.
 - Added `/blog` and `/blog/[slug]` routes.
 - Added Blog metadata, Article Schema, FAQ Schema, canonical support, static body output, sitemap routes, and responsive styles.
+- Confirmed Vercel successfully deployed SEO Blog foundation for commit `416ddc2`.
+- Added build-time RSS feed generation at `/rss.xml`.
+- Added build-time HTML sitemap generation at `/sitemap.html`.
+- Added RSS discovery tags to route-level static SEO output.
+- Updated Vercel routing and headers for RSS and HTML sitemap static assets.
 
 ## Current Task
-- Commit, push, and confirm Vercel deployment for SEO Blog foundation.
+- Commit, push, and confirm Vercel deployment for Technical SEO feed infrastructure.
 
 ## Remaining Tasks
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
 - Configure Google Cloud service account and Google Sheets environment variables in Vercel.
 - Confirm Vercel creates a new deployment after GitHub push.
-- Plan the next sprint only after approval.
+- Continue Phase 1 Technical SEO improvements in logical milestones.
 - Continue future tasks from this checkpoint.
 
 ## Resume Instructions
@@ -88,6 +93,11 @@ If the connection is interrupted:
 - Latest lint/build: passed after SEO Blog foundation.
 - Latest sitemap check: `/blog` plus 12 Blog article URLs generated.
 - Latest static HTML check: 12 Blog articles include body text, metadata, canonical, Article Schema, FAQ Schema, and Buyer Checklist content.
+- SEO Blog deployment: completed successfully for commit `416ddc2`.
+- Latest lint/build: passed after Technical SEO feed infrastructure.
+- RSS check: `dist/rss.xml` generated with 12 Blog items.
+- HTML sitemap check: `dist/sitemap.html` generated with 69 public routes.
+- Vercel routing check: `/rss.xml` and `/sitemap.html` excluded from SPA fallback.
 
 ## Next Checkpoint
-Next checkpoint should be created after the user approves, commits, deploys, configures email environment variables, or assigns the next sprint.
+Next checkpoint should be created after GitHub push and Vercel deployment confirmation for the Technical SEO feed infrastructure milestone.

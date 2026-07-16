@@ -2,6 +2,29 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.2.0 - Technical SEO Feed Infrastructure
+
+Date: 2026-07-16
+
+### Added
+- Added build-time RSS feed generation at `/rss.xml` for SEO Blog articles.
+- Added build-time HTML sitemap generation at `/sitemap.html` for buyers and search engines.
+- Added RSS discovery link to the global document head and generated route-level SEO heads.
+- Added Article Open Graph published/modified time tags for Blog article static HTML.
+
+### Changed
+- Updated the production build pipeline to generate RSS and HTML sitemap assets after route-level static SEO output.
+- Updated Vercel routing exclusions so `/rss.xml` and `/sitemap.html` are served as static SEO files instead of falling back to the SPA shell.
+- Added Vercel content-type headers for RSS and HTML sitemap assets.
+
+### Verified
+- Confirmed previous SEO Blog deployment completed successfully on Vercel for commit `416ddc2`.
+- `npm.cmd run lint` passed for 69 public routes.
+- `npm.cmd run build` completed successfully.
+- Verified `dist/rss.xml` contains 12 Blog feed items.
+- Verified `dist/sitemap.html` contains 69 public routes and 12 Blog article links.
+- Verified Blog article static HTML includes RSS discovery, Article Schema, FAQ Schema, Buyer Checklist content, and article time tags.
+
 ## v1.1.9 - SEO Blog Foundation
 
 Date: 2026-07-15

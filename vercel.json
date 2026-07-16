@@ -24,11 +24,29 @@
           "value": "text/plain; charset=utf-8"
         }
       ]
+    },
+    {
+      "source": "/rss.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
     }
   ],
   "rewrites": [
     {
-      "source": "/:path((?!sitemap\\.xml|robots\\.txt|favicon\\.svg|favicon\\.ico|assets/|images/|videos/|api/).*)",
+      "source": "/:path((?!sitemap\\.xml|sitemap\\.html|rss\\.xml|robots\\.txt|favicon\\.svg|favicon\\.ico|assets/|images/|videos/|api/).*)",
       "destination": "/index.html"
     }
   ]

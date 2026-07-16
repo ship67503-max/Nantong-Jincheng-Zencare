@@ -177,7 +177,7 @@ const buildJsonLd = (entry) => {
 };
 
 const managedHeadPattern =
-  /<title>[\s\S]*?<\/title>|<meta\s+(?:name|property)="(?:description|robots|og:title|og:description|og:type|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image)"[\s\S]*?>|<link\s+rel="canonical"[\s\S]*?>|<script id="jczcare-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/g;
+  /<title>[\s\S]*?<\/title>|<meta\s+(?:name|property)="(?:description|robots|og:title|og:description|og:type|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image|article:published_time|article:modified_time)"[\s\S]*?>|<link\s+rel="canonical"[\s\S]*?>|<link\s+rel="alternate"\s+type="application\/rss\+xml"[\s\S]*?>|<script id="jczcare-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/g;
 
 const renderHead = (entry) => {
   const canonical = absoluteUrl(entry.path);
@@ -187,6 +187,7 @@ const renderHead = (entry) => {
     `<meta name="description" content="${escapeHtml(entry.description)}" />`,
     '<meta name="robots" content="index, follow, max-image-preview:large" />',
     `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
+    `<link rel="alternate" type="application/rss+xml" title="JCZCARE OEM Pet Pad Manufacturing Insights" href="${siteUrl}/rss.xml" />`,
     `<meta property="og:title" content="${escapeHtml(entry.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(entry.description)}" />`,
     `<meta property="og:type" content="${entry.type === 'Article' ? 'article' : 'website'}" />`,
@@ -196,8 +197,10 @@ const renderHead = (entry) => {
     `<meta name="twitter:title" content="${escapeHtml(entry.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(entry.description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(image)}" />`,
+    entry.article ? `<meta property="article:published_time" content="${escapeHtml(entry.article.publishedAt)}" />` : '',
+    entry.article ? `<meta property="article:modified_time" content="${escapeHtml(entry.article.updatedAt)}" />` : '',
     `<script id="jczcare-jsonld" type="application/ld+json">${buildJsonLd(entry)}</script>`,
-  ].join('\n    ');
+  ].filter(Boolean).join('\n    ');
 };
 
 const writeHtml = async (route, html) => {

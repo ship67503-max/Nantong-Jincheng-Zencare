@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs",
+    "build": "node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs && node scripts/generate-seo-assets.mjs",
     "lint": "node scripts/validate-seo.mjs",
     "preview": "vite preview"
   },

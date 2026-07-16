@@ -6,10 +6,10 @@ This roadmap organizes the JCZCARE website into practical development sprints. E
 ## Current Status
 Checkpoint mode: Enabled  
 Latest checkpoint file: `docs/CHECKPOINT.md`  
-Active sprint: Sprint 01 - Technical SEO Audit and Stability  
+Active sprint: Sprint 01 - Technical SEO Foundation  
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: SEO Blog foundation added and verified  
-Next required deliverable: Commit, push, confirm deployment, or assign next sprint
+Latest completed task: RSS and HTML sitemap infrastructure added and verified locally  
+Next required deliverable: Commit, push, and confirm Vercel deployment
 
 Difficulty scale:
 
@@ -41,6 +41,8 @@ Deliverables:
 - Route-level metadata and JSON-LD output.
 - SEO validation script.
 - WebP generation and optimized image component.
+- RSS feed for Blog articles.
+- HTML sitemap for public routes.
 - Successful lint and production build.
 
 ## Sprint 02: Core Trust and Factory Positioning
