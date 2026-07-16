@@ -35,6 +35,25 @@ export const productSeo = [
     category: 'OEM pet pads',
   },
   {
+    path: '/products/adult-underpads',
+    title: 'Premium Adult Disposable Underpads OEM Manufacturer | JCZCare',
+    description:
+      'OEM adult disposable underpads manufacturer providing customizable absorbent underpads for hospitals, distributors and private label brands worldwide.',
+    image: '/images/adult-underpads-hero.png',
+    productName: 'Adult Disposable Underpads',
+    category: 'Healthcare absorbent underpads',
+    faqs: [
+      ['Can I customize the package?', 'Yes. Private-label artwork, pack count, bag format, carton marks, and outer packaging can be reviewed for your target market.'],
+      ['What is your MOQ?', 'MOQ is negotiated according to size, absorbency specification, packaging format, and production planning.'],
+      ['Can you print my logo?', 'Yes. Logo printing and private-label presentation can be reviewed during packaging and artwork confirmation.'],
+      ['Can you develop new sizes?', 'Yes. Size, weight, core configuration, and packing can be reviewed for new product programs before sampling.'],
+      ['What certificates do you have?', 'Documentation should be confirmed against the destination market and specific product program.'],
+      ['How long is production?', 'Timing depends on specification approval, raw-material planning, packaging confirmation, and order quantity.'],
+      ['Do you provide samples?', 'Yes. Samples can be arranged for material feel, dimensions, absorbency direction, and packaging review.'],
+      ['Can you support Amazon brands?', 'Yes. We can discuss private-label specifications, packaging, carton information, and supply planning for online brands.'],
+    ],
+  },
+  {
     path: '/products/pet-care-pad-glove-wipes',
     title: 'Pet Care Pad & Glove Wipes OEM | JCZCARE',
     description:
