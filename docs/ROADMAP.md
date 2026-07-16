@@ -159,6 +159,13 @@ Deliverables:
 - Article templates.
 - Related links and CTAs.
 
+Completed increment:
+
+- Added a 300-topic SEO content map covering 20 B2B buyer-intent clusters.
+- Added six new English long-form articles and expanded the Blog route set to 18 articles.
+- Added static internal links to factory, customization, product, advantages, contact and related-article routes.
+- Added dynamic reading-time labels based on article text length.
+
 ## Sprint 07: Performance and Core Web Vitals
 Priority: High  
 Difficulty: High  
@@ -268,3 +275,9 @@ Deliverables:
 - Blog clusters.
 - Case study format.
 - Factory visual content guidelines.
+
+Current growth focus:
+
+- Publish from docs/SEO_ROADMAP.md in commercial-intent clusters before broad informational expansion.
+- Improve existing 18 articles with measured Search Console query coverage, first-hand factory evidence and stronger inquiry paths.
+- Add verified factory process, quality and packaging evidence only when source material is available.

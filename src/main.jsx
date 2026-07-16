@@ -19,7 +19,7 @@ import {
   Truck,
 } from 'lucide-react';
 import './styles.css';
-import { blogArticles, getRelatedBlogArticles } from './blogData.js';
+import { blogArticles, getBlogReadTime, getRelatedBlogArticles } from './blogData.js';
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
@@ -1169,7 +1169,7 @@ function BlogPage() {
             <h2>{featuredArticle.title}</h2>
             <p>{featuredArticle.intro}</p>
             <small>
-              {featuredArticle.publishedAt} · 7 min read
+              {featuredArticle.publishedAt} · {getBlogReadTime(featuredArticle)} min read
               <ArrowUpRight size={16} />
             </small>
           </div>
@@ -1181,7 +1181,7 @@ function BlogPage() {
               <OptimizedImage src={article.image} alt={article.imageAlt} />
               <div>
                 <span>{article.category}</span>
-                <small>{article.publishedAt} · 7 min read</small>
+                <small>{article.publishedAt} · {getBlogReadTime(article)} min read</small>
               </div>
               <h2>{article.title}</h2>
               <p>{article.intro}</p>
@@ -1230,6 +1230,8 @@ function BlogArticlePage({ article }) {
                 <a href="/">JCZCARE homepage</a>
                 <a href="/#customization">OEM/ODM service</a>
                 <a href="/#projects">Product examples</a>
+                <a href="/products/disposable-pet-pads">Disposable pet pads</a>
+                <a href="/#advantages">Factory advantages</a>
                 <a href="/#contact">Contact the factory</a>
               </div>
             </div>

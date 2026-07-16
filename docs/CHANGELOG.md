@@ -2,6 +2,27 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.3.0 - SEO Growth Content Batch 01
+
+Date: 2026-07-16
+
+### Added
+- Added docs/SEO_ROADMAP.md with 300 unique B2B article topics across 20 topic clusters.
+- Added six long-form English Blog articles for supplier qualification, private-label launches, factory audits, packaging, landed cost and quality control.
+- Added the new articles to the static Blog route set, sitemap, RSS feed and route-level SEO generation.
+
+### Changed
+- Added product, factory advantages and contact internal links to Blog article content.
+- Added related-article links to static Blog HTML so crawlers can discover the content without relying on client-side rendering.
+- Replaced the Blog listing fixed reading-time label with article-length-based reading time.
+
+### Verified
+- npm.cmd run lint passed for 75 public routes.
+- npm.cmd run build completed successfully.
+- 18 Blog articles generated as static HTML.
+- dist/sitemap.xml contains 18 Blog article URLs.
+- dist/rss.xml contains 18 Blog feed items.
+
 ## v1.2.0 - Technical SEO Feed Infrastructure
 
 Date: 2026-07-16

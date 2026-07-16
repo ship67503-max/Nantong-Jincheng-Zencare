@@ -1,3 +1,5 @@
+import { growthBlogArticles } from './seoGrowthArticles.js';
+
 const siteUrl = 'https://www.jczcare.com';
 
 const publishedAt = '2026-07-15';
@@ -628,7 +630,7 @@ const buildArticle = (spec) => ({
   },
 });
 
-export const blogArticles = blogSpecs.map(buildArticle);
+export const blogArticles = [...blogSpecs.map(buildArticle), ...growthBlogArticles];
 
 export const getBlogArticleBySlug = (slug) => blogArticles.find((article) => article.slug === slug);
 
@@ -655,3 +657,8 @@ export const getBlogArticleText = (article) => [
   article.cta.title,
   article.cta.text,
 ].filter(Boolean).join('\n\n');
+
+export const getBlogReadTime = (article) => {
+  const words = getBlogArticleText(article).trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(6, Math.ceil(words / 200));
+};

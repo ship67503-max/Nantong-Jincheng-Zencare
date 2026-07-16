@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { blogArticles } from '../src/blogData.js';
 import { resolvePublicRoutes } from './seo-routes.mjs';
 import { getSeoEntry, organization, productSeo, siteUrl } from './seo-page-data.mjs';
 
@@ -23,6 +24,7 @@ const absoluteUrl = (url = '/') => {
 };
 
 const productMap = new Map(productSeo.map((product) => [product.path, product]));
+const blogArticleMap = new Map(blogArticles.map((article) => [article.slug, article]));
 
 const renderStaticArticle = (article) => {
   if (!article) {
@@ -45,6 +47,13 @@ const renderStaticArticle = (article) => {
     `</section>`,
   ].join('\n')).join('\n');
 
+  const relatedHtml = (article.relatedSlugs || []).map((slug) => {
+    const related = blogArticleMap.get(slug);
+    return related
+      ? '<li><a href="' + escapeHtml(related.path) + '">' + escapeHtml(related.title) + '</a></li>'
+      : '';
+  }).join('');
+
   return [
     `<main class="static-blog-content">`,
     `<article>`,
@@ -52,9 +61,11 @@ const renderStaticArticle = (article) => {
     `<h1>${escapeHtml(article.title)}</h1>`,
     `<p>${escapeHtml(article.intro)}</p>`,
     `<nav aria-label="Table of contents"><h2>Table of contents</h2><ol>${article.toc.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol></nav>`,
+    '<nav aria-label="Internal links"><a href="/">JCZCARE homepage</a> | <a href="/#customization">OEM/ODM service</a> | <a href="/products/disposable-pet-pads">Disposable pet pads</a> | <a href="/#advantages">Factory advantages</a> | <a href="/#contact">Contact the factory</a></nav>',
     sectionHtml,
     `<section><h2>Buyer Checklist</h2><ul>${checklistHtml}</ul></section>`,
     `<section><h2>FAQ</h2>${faqHtml}</section>`,
+    '<section><h2>Related Articles</h2><ul>' + relatedHtml + '</ul></section>',
     `<section><h2>${escapeHtml(article.cta.title)}</h2><p>${escapeHtml(article.cta.text)}</p></section>`,
     `</article>`,
     `</main>`,
