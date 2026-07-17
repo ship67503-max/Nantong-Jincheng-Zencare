@@ -22,7 +22,7 @@ Revenue is expected to come from:
 - Charcoal pet pads.
 - Adhesive pet pads.
 - Pet waste bags.
-- Care bed pads and related absorbent care products.
+- dog poop bags and related absorbent care products.
 
 ## OEM/ODM Positioning
 JCZCARE should be positioned as a product planning and source manufacturing partner.

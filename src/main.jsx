@@ -501,7 +501,7 @@ const businessSeoPages = [
       ['Export support', 'We coordinate samples, packaging, cartons, marks, and production schedules for overseas B2B buyers.'],
     ],
     faqs: [
-      ['What products do you manufacture?', 'We manufacture pet pads, pet absorbent sheets, pet diapers, care bed pads, and related absorbent pet care items.'],
+      ['What products do you manufacture?', 'We manufacture pet pads, pet absorbent sheets, pet diapers, dog poop bags, and related absorbent pet care items.'],
       ['Can you supply overseas distributors?', 'Yes. Our service is built for brands, distributors, importers, wholesalers, and channel buyers.'],
       ['Do you support ODM development?', 'Yes. We can assist with structure, formula direction, packaging, and market-oriented product planning.'],
     ],
@@ -531,7 +531,7 @@ const businessSeoPages = [
     title: 'About JCZCARE Factory | Nantong JINCHENG ZENCARE',
     description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent product manufacturer focused on OEM/ODM pet pads, private-label support, quality control, and export service.',
     h1: 'A focused absorbent pet care factory in Nantong.',
-    intro: 'Nantong JINCHENG ZENCARE Technology Company focuses on the R&D, manufacturing, and sales of pet pads, pet diapers, absorbent sheets, and care bed pads.',
+    intro: 'Nantong JINCHENG ZENCARE Technology Company focuses on the R&D, manufacturing, and sales of pet pads, pet diapers, absorbent sheets, and dog poop bags.',
     image: '/images/factory-campus.jpeg',
     sections: [
       ['Company profile', 'With 20 years of industry experience, we support B2B buyers with product development, manufacturing, and packaging coordination.'],
@@ -615,7 +615,7 @@ const businessSeoPages = [
       ['For importers', 'We provide factory-side coordination for absorbent pet care products, private label, and market-fit product development.'],
     ],
     faqs: [
-      ['Do you offer OEM and ODM service?', 'Yes. We offer OEM and ODM support for pet pads, absorbent sheets, pet diapers, care bed pads, and related products.'],
+      ['Do you offer OEM and ODM service?', 'Yes. We offer OEM and ODM support for pet pads, absorbent sheets, pet diapers, dog poop bags, and related products.'],
       ['Can we customize the package?', 'Yes. Private-label packaging, pack count, carton marks, labels, and brand presentation can be customized.'],
       ['What affects MOQ?', 'MOQ can depend on material, size, packaging, printing, product structure, and production scheduling.'],
       ['Can you ship overseas?', 'Yes. We support export-oriented B2B projects and coordinate packing and shipment requirements with buyers.'],
@@ -2023,7 +2023,7 @@ function SignInPage() {
 function AboutPage() {
   const aboutHighlights = [
     ['Company', 'Nantong JINCHENG ZENCARE Technology Company is a pet care absorbent product source factory serving OEM, ODM, and private-label programs.'],
-    ['Services', 'Pet pads, pet diapers, care bed pads, adult nursing pads, glove wipes, structure design, packaging development, sampling, and export support.'],
+    ['Services', 'Pet pads, pet diapers, dog poop bags, adult nursing pads, glove wipes, structure design, packaging development, sampling, and export support.'],
     ['Team', 'R&D, production, quality inspection, merchandising, packaging, and delivery teams work as one project flow.'],
     ['Results', '20 years in the industry, 12,000 sq.m factory area, 8 automated lines, and annual capacity of up to 300M pcs, subject to product specifications and production schedule.'],
   ];
@@ -2109,7 +2109,7 @@ function InvestorRelationsPage() {
             <h2>Nantong JINCHENG ZENCARE Technology Company</h2>
           </div>
           <p>
-            We specialize in R&D, manufacturing, and sales of pet pads, pet diapers, care bed pads, glove wipes, and related absorbent care products. Our operating model combines production capacity planning, practical product development, and flexible private-label support.
+            We specialize in R&D, manufacturing, and sales of pet pads, pet diapers, dog poop bags, glove wipes, and related absorbent care products. Our operating model combines production capacity planning, practical product development, and flexible private-label support.
           </p>
           <p>
             For B2B customers, we provide product structure planning, sample development, batch production, quality inspection, packaging coordination, and export delivery support.
@@ -2160,7 +2160,7 @@ function AffiliatesPage() {
   ];
   const faqs = [
     ['Who can join?', 'Distributors, sourcing agents, channel partners, retailers, and pet care project operators.'],
-    ['What products are available?', 'Pet pads, pet diapers, care bed pads, glove wipes, pet waste bags, and customized absorbent products.'],
+    ['What products are available?', 'Pet pads, pet diapers, dog poop bags, glove wipes, pet waste bags, and customized absorbent products.'],
     ['Can we request private-label support?', 'Yes. We support packaging, specifications, structure, label direction, and sample planning.'],
     ['How do we start?', 'Send your market, product target, expected volume, and packaging needs. Our team will prepare a cooperation plan.'],
   ];
@@ -3421,7 +3421,7 @@ function App() {
                 an <em className="title-key">OEM/ODM source factory</em>.
               </h2>
               <p>
-                20 years focused on pet pads, pet diapers, care bed pads, and adult nursing pads.
+                20 years focused on pet pads, pet diapers, dog poop bags, and adult nursing pads.
               </p>
               <p>
                 12,000 sq.m factory, 8 automated lines, 300M pcs annual capacity.

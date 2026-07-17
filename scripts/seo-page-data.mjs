@@ -244,7 +244,7 @@ export const pageSeo = [
       'Frequently asked questions for OEM pet pad buyers covering customization, private label, samples, MOQ planning, quality control, packaging, delivery, and factory cooperation.',
     image: '/images/pet-pad-product-studio.png',
     faqs: [
-      ['Do you offer OEM and ODM service?', 'Yes. JCZCARE offers OEM and ODM support for pet pads, absorbent sheets, pet diapers, care bed pads, and related products.'],
+      ['Do you offer OEM and ODM service?', 'Yes. JCZCARE offers OEM and ODM support for pet pads, absorbent sheets, pet diapers, dog poop bags, and related products.'],
       ['Can we customize the package?', 'Yes. Private-label packaging, pack count, carton marks, labels, and brand presentation can be customized.'],
       ['Can you ship overseas?', 'Yes. We support export-oriented B2B projects and coordinate packing and shipment requirements with buyers.'],
     ],
