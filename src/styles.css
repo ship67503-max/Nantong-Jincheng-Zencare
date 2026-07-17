@@ -4344,6 +4344,77 @@ textarea {
   font-weight: 900;
 }
 
+.whatsapp-icon {
+  color: #25d366;
+  flex: 0 0 auto;
+}
+
+.whatsapp-cta,
+.contact-panel-whatsapp,
+.footer-whatsapp-cta {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.whatsapp-cta:hover,
+.contact-panel-whatsapp:hover,
+.footer-whatsapp-cta:hover {
+  border-color: rgba(37, 211, 102, 0.6);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(37, 211, 102, 0.08);
+  transform: translateY(-2px);
+}
+
+.hero-action.secondary.whatsapp-cta {
+  min-width: 238px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.hero-action.secondary.whatsapp-cta small:last-child {
+  color: rgba(246, 248, 239, 0.88);
+  font-weight: 800;
+}
+
+.contact-panel-whatsapp span,
+.footer-whatsapp-cta span {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
+.contact-panel-whatsapp {
+  white-space: normal;
+}
+
+.contact-panel-whatsapp strong,
+.footer-whatsapp-cta strong {
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.contact-panel-whatsapp small,
+.footer-whatsapp-cta small {
+  color: rgba(246, 248, 239, 0.62);
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.footer-support-inner .footer-whatsapp-cta {
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 7px 14px;
+  border: 1px solid rgba(20, 32, 24, 0.14);
+  background: rgba(255, 255, 255, 0.2);
+  color: #142018;
+}
+
+.footer-support-inner .footer-whatsapp-cta small {
+  color: rgba(20, 32, 24, 0.64);
+}
+
 .footer-top-link {
   justify-self: end;
   min-width: 190px;
@@ -4795,6 +4866,21 @@ textarea {
 }
 
 @media (max-width: 860px) {
+  .footer-support-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    padding: 18px 0;
+  }
+
+  .footer-support-inner > strong {
+    grid-column: 1 / -1;
+  }
+
+  .footer-support-inner .footer-top-link {
+    min-width: 0;
+    justify-self: stretch;
+  }
+
   .adult-underpads-page {
     padding-top: 110px;
   }
@@ -4835,6 +4921,25 @@ textarea {
 }
 
 @media (max-width: 560px) {
+  .footer-support-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer-support-inner .footer-whatsapp-cta,
+  .footer-support-inner > a:not(.footer-top-link) {
+    justify-content: flex-start;
+  }
+
+  .footer-support-inner .footer-top-link {
+    justify-self: stretch;
+  }
+
+  .hero-action.secondary.whatsapp-cta {
+    min-width: 0;
+    width: 100%;
+  }
+
   .adult-underpads-shell {
     gap: 20px;
     padding-bottom: 68px;

@@ -13,7 +13,6 @@ import {
   Mail,
   MessageCircle,
   Microscope,
-  Phone,
   Ruler,
   ShieldCheck,
   Truck,
@@ -25,8 +24,9 @@ const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
 const siteUrl = 'https://www.jczcare.com';
 const contactEmail = 'hengtuo@nthengtuo.com';
+const whatsappPhone = '+86 18962944556';
 const whatsappChatUrl =
-  'https://wa.me/8618061305971?text=Hello%20Nantong%20JINCHENG%20ZENCARE%2C%20I%20would%20like%20to%20discuss%20a%20custom%20pet%20pad%20OEM%2FODM%20project.';
+  'https://wa.me/8618962944556?text=Hello%2C%20I%20am%20interested%20in%20your%20OEM%2FODM%20pet%20products.%20Please%20share%20more%20information%20about%20MOQ%2C%20pricing%2C%20samples%2C%20and%20lead%20time.';
 const Silk = React.lazy(() => import('./Silk'));
 
 const buildMailto = (subject = 'Website Inquiry', body = '') => {
@@ -750,7 +750,14 @@ const buildStructuredData = ({ title, description, path, faqs = [], image, produ
       alternateName: 'JCZCARE',
       url: siteUrl,
       email: contactEmail,
-      telephone: '+86 18061305971',
+      telephone: whatsappPhone,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        telephone: whatsappPhone,
+        availableLanguage: ['English'],
+        url: 'https://wa.me/8618962944556',
+      },
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Nantong',
@@ -1098,13 +1105,17 @@ function SiteFooter({ ui }) {
       <div className="footer-support">
         <div className="container footer-support-inner">
           <strong>{ui.support}</strong>
-          <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
-            <Phone size={20} />
-            +86 18061305971
+          <a className="footer-whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
+            <MessageCircle className="whatsapp-icon" size={20} />
+            <span>
+              <strong>Talk to Our OEM Specialist</strong>
+              <small>Start WhatsApp Chat</small>
+              <small>{whatsappPhone}</small>
+            </span>
           </a>
-          <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+          <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
             <MessageCircle size={20} />
-            {ui.chat}
+            Start WhatsApp Chat
           </a>
           <a className="footer-top-link" href="#adult-underpads-top">
             <ArrowUp size={20} />
@@ -1601,7 +1612,7 @@ function BusinessSeoPage({ page }) {
                 Request OEM plan
                 <ArrowUpRight size={18} />
               </a>
-              <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+              <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
                 Talk by WhatsApp
                 <MessageCircle size={18} />
               </a>
@@ -2050,7 +2061,7 @@ function AboutPage() {
           <p>
             Factory visits, sample discussions, product development meetings, and OEM/ODM project communication can be arranged by appointment.
           </p>
-          <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+          <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
             Contact for Factory Visit
             <ArrowUpRight size={18} />
           </a>
@@ -2250,13 +2261,13 @@ function HelpCenterPage() {
           </h1>
           <div className="help-search">
             <input type="search" placeholder="Search OEM, sampling, packaging, quality..." aria-label="Search help topics" />
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+            <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
               Chat Now
               <MessageCircle size={18} />
             </a>
           </div>
         <div className="help-quick-contact">
-          <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
+          <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp"><MessageCircle className="whatsapp-icon" size={18} /> {whatsappPhone}</a>
             <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}><Mail size={18} /> {contactEmail}</a>
           </div>
         </div>
@@ -2457,7 +2468,7 @@ function GiveBackPage() {
           <article>
             <h3>Product Donation Support</h3>
             <p>Reserved sample and surplus programs can support local pet care initiatives when project conditions allow.</p>
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer">Discuss support <ArrowUpRight size={16} /></a>
+            <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">Discuss support <ArrowUpRight size={16} /></a>
           </article>
           <article>
             <h3>Responsible Packaging</h3>
@@ -2529,7 +2540,7 @@ function GiftCardsPage() {
               Request sample kit
               <ArrowUpRight size={18} />
             </a>
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+            <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
               Discuss by WhatsApp
               <MessageCircle size={18} />
             </a>
@@ -3367,11 +3378,12 @@ function App() {
                   Watch Factory Video
                   <CirclePlay size={18} />
                 </a>
-                <a className="hero-action secondary" href={whatsappChatUrl} target="_blank" rel="noreferrer">
-                  <Phone size={18} />
+                <a className="hero-action secondary whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
+                  <MessageCircle className="whatsapp-icon" size={18} />
                   <span>
-                    <strong>Call Us Now</strong>
-                    <small>+86 18061305971</small>
+                    <strong>Talk to Our OEM Specialist</strong>
+                    <small>Start WhatsApp Chat</small>
+                    <small>{whatsappPhone}</small>
                   </span>
                 </a>
               </div>
@@ -3415,7 +3427,7 @@ function App() {
                 12,000 sq.m factory, 8 automated lines, 300M pcs annual capacity.
               </p>
               <div className="contact-strip">
-                <a href={whatsappChatUrl} target="_blank" rel="noreferrer"><Phone size={18} /> +86 18061305971</a>
+                <a className="whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp"><MessageCircle className="whatsapp-icon" size={18} /> {whatsappPhone}</a>
                 <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}><Mail size={18} /> {contactEmail}</a>
               </div>
             </div>
@@ -3619,9 +3631,13 @@ function App() {
               Send your target market, specs, packaging, and order plan. We will prepare the OEM/ODM solution.
             </p>
             <div className="contact-panel">
-              <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
-                <Phone size={20} />
-                <span>+86 18061305971</span>
+              <a className="contact-panel-whatsapp" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
+                <MessageCircle className="whatsapp-icon" size={20} />
+                <span>
+                  <strong>Talk to Our OEM Specialist</strong>
+                  <small>Start WhatsApp Chat</small>
+                  <small>{whatsappPhone}</small>
+                </span>
               </a>
               <a href={buildMailto('Website Inquiry', quotationEmailBody)} aria-label={`Email ${contactEmail}`}>
                 <Mail size={20} />
@@ -3641,13 +3657,17 @@ function App() {
         <div className="footer-support">
           <div className="container footer-support-inner">
             <strong>{ui.support}</strong>
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
-              <Phone size={20} />
-              +86 18061305971
+            <a className="footer-whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
+              <MessageCircle className="whatsapp-icon" size={20} />
+              <span>
+                <strong>Talk to Our OEM Specialist</strong>
+                <small>Start WhatsApp Chat</small>
+                <small>{whatsappPhone}</small>
+              </span>
             </a>
-            <a href={whatsappChatUrl} target="_blank" rel="noreferrer">
+            <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
               <MessageCircle size={20} />
-              {ui.chat}
+              Start WhatsApp Chat
             </a>
             <a className="footer-top-link" href="#home">
               <ArrowUp size={20} />

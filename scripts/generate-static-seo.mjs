@@ -84,6 +84,7 @@ const buildJsonLd = (entry) => {
       url: siteUrl,
       email: organization.email,
       telephone: organization.telephone,
+      contactPoint: organization.contactPoint,
       address: {
         '@type': 'PostalAddress',
         addressLocality: organization.addressLocality,
