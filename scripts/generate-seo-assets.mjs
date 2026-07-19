@@ -52,8 +52,16 @@ const routes = resolvePublicRoutes();
 const groupedRoutes = routes.reduce((groups, route) => {
   const section = route === '/'
     ? 'Core'
+    : route.startsWith('/blog/category')
+      ? 'Topic Clusters'
     : route.startsWith('/blog')
       ? 'Blog'
+      : route.startsWith('/resources') || route.startsWith('/academy') || route.startsWith('/comparisons')
+        ? 'Buyer Resources'
+        : route.startsWith('/factory') || route.startsWith('/media') || route.startsWith('/downloads')
+          ? 'Factory & Media'
+          : route.startsWith('/case-studies') || route.startsWith('/authors')
+            ? 'Trust & Expertise'
       : route.startsWith('/products')
         ? 'Products'
         : route.startsWith('/pages')

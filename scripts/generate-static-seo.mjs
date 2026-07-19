@@ -36,6 +36,9 @@ const renderStaticArticle = (article) => {
     `<h2>${escapeHtml(section.heading)}</h2>`,
     section.h3 ? `<h3>${escapeHtml(section.h3)}</h3>` : '',
     ...section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`),
+    section.comparisonRows
+      ? `<table><tbody>${section.comparisonRows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table>`
+      : '',
     `</section>`,
   ].join('\n')).join('\n');
 
@@ -61,7 +64,8 @@ const renderStaticArticle = (article) => {
     `<h1>${escapeHtml(article.title)}</h1>`,
     `<p>${escapeHtml(article.intro)}</p>`,
     `<nav aria-label="Table of contents"><h2>Table of contents</h2><ol>${article.toc.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol></nav>`,
-    '<nav aria-label="Internal links"><a href="/">JCZCARE homepage</a> | <a href="/#customization">OEM/ODM service</a> | <a href="/products/disposable-pet-pads">Disposable pet pads</a> | <a href="/#advantages">Factory advantages</a> | <a href="/#contact">Contact the factory</a></nav>',
+    `<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / <a href="${escapeHtml(article.clusterPath)}">${escapeHtml(article.clusterTitle)}</a> / <span>${escapeHtml(article.title)}</span></nav>`,
+    `<nav aria-label="Internal links"><a href="${escapeHtml(article.clusterPath)}">${escapeHtml(article.clusterTitle)} pillar guide</a> | <a href="/factory">Factory resources</a> | <a href="/customization">Customization</a> | <a href="/products/disposable-pet-pads">Products</a> | <a href="/contact">Contact an expert</a></nav>`,
     sectionHtml,
     `<section><h2>Buyer Checklist</h2><ul>${checklistHtml}</ul></section>`,
     `<section><h2>FAQ</h2>${faqHtml}</section>`,
@@ -70,6 +74,74 @@ const renderStaticArticle = (article) => {
     `</article>`,
     `</main>`,
   ].join('\n');
+};
+
+const renderStaticAuthority = (page) => {
+  if (!page) {
+    return '';
+  }
+
+  const breadcrumbs = (page.breadcrumbs || [['Home', '/'], [page.title, page.path]])
+    .map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`)
+    .join(' / ');
+  const sections = (page.sections || []).map((section) => [
+    '<section>',
+    `<h2>${escapeHtml(section.heading)}</h2>`,
+    ...(section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`),
+    section.comparisonRows
+      ? `<table><tbody>${section.comparisonRows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table>`
+      : '',
+    '</section>',
+  ].join('\n')).join('\n');
+  const articleLinks = (page.articles || []).map((article) =>
+    `<li><a href="${escapeHtml(article.path)}">${escapeHtml(article.title)}</a></li>`
+  ).join('');
+  const cards = (page.cards || []).map(([label, href]) =>
+    `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`
+  ).join('');
+  const faqGroups = (page.groups || []).map((group) => [
+    `<section><h2>${escapeHtml(group.title)}</h2>`,
+    ...group.faqs.map(([question, answer]) => `<h3>${escapeHtml(question)}</h3><p>${escapeHtml(answer)}</p>`),
+    `<p><a href="${escapeHtml(group.path)}">Read the ${escapeHtml(group.title)} pillar guide</a></p></section>`,
+  ].join('\n')).join('\n');
+  const faqs = page.groups
+    ? ''
+    : (page.faqs || []).map(([question, answer]) =>
+      `<section><h3>${escapeHtml(question)}</h3><p>${escapeHtml(answer)}</p></section>`
+    ).join('\n');
+  const references = (page.references || []).map((reference) =>
+    `<li><a href="${escapeHtml(reference.url)}" rel="noopener noreferrer">${escapeHtml(reference.label)}</a>: ${escapeHtml(reference.note)}</li>`
+  ).join('');
+  const products = (page.products || []).map((href) =>
+    `<li><a href="${escapeHtml(href)}">${escapeHtml(href.split('/').pop().replace(/-/g, ' '))}</a></li>`
+  ).join('');
+  const timeline = (page.timeline || []).map(([number, title, text]) =>
+    `<li><strong>${escapeHtml(number)} ${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p></li>`
+  ).join('');
+  const specifications = (page.specifications || []).map(([label, value]) =>
+    `<tr><th>${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`
+  ).join('');
+  const gallery = (page.gallery || []).map(([src, caption]) =>
+    `<figure><img src="${escapeHtml(src)}" alt="${escapeHtml(caption)}" loading="lazy" /><figcaption>${escapeHtml(caption)}</figcaption></figure>`
+  ).join('');
+
+  return [
+    '<main class="static-authority-content">',
+    `<nav aria-label="Breadcrumb">${breadcrumbs}</nav>`,
+    `<article><p>${escapeHtml(page.kicker)}</p><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.intro)}</p>`,
+    sections,
+    articleLinks ? `<section><h2>Related Articles</h2><ul>${articleLinks}</ul></section>` : '',
+    cards ? `<section><h2>Explore Resources</h2><ul>${cards}</ul></section>` : '',
+    timeline ? `<section><h2>Controlled Workflow</h2><ol>${timeline}</ol></section>` : '',
+    specifications ? `<section><h2>Buyer Specifications</h2><table><tbody>${specifications}</tbody></table></section>` : '',
+    faqGroups,
+    faqs ? `<section><h2>Frequently Asked Questions</h2>${faqs}</section>` : '',
+    gallery ? `<section><h2>Factory Photography</h2>${gallery}</section>` : '',
+    references ? `<section><h2>Authoritative References</h2><ul>${references}</ul></section>` : '',
+    `<section><h2>Related Products</h2><ul>${products}</ul></section>`,
+    '<section><h2>Discuss your project</h2><p>Share your product, market, specification, packaging, quantity, and delivery destination with JCZCARE.</p><a href="/request-product-plan?product=authority-resource">Request a product plan</a> <a href="/contact">Contact an expert</a></section>',
+    '</article></main>',
+  ].filter(Boolean).join('\n');
 };
 
 const buildJsonLd = (entry) => {
@@ -100,17 +172,19 @@ const buildJsonLd = (entry) => {
       url: siteUrl,
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${siteUrl}/pages/news?search={search_term_string}`,
+        target: `${siteUrl}/blog?search={search_term_string}`,
         'query-input': 'required name=search_term_string',
       },
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: entry.title, item: canonical },
-      ],
+      itemListElement: (entry.breadcrumbs || [['Home', '/'], [entry.title, entry.path]]).map(([name, item], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name,
+        item: absoluteUrl(item),
+      })),
     },
     {
       '@context': 'https://schema.org',
@@ -173,6 +247,64 @@ const buildJsonLd = (entry) => {
     });
   }
 
+  if (entry.authorityPage?.kind === 'pillar' || entry.authorityPage?.kind === 'factory-detail') {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: entry.authorityPage.h1,
+      description: entry.authorityPage.metaDescription,
+      image,
+      datePublished: entry.authorityPage.updatedAt,
+      dateModified: entry.authorityPage.updatedAt,
+      author: { '@type': 'Organization', name: 'JCZCARE Editorial Team' },
+      publisher: { '@type': 'Organization', name: organization.name },
+      mainEntityOfPage: canonical,
+      articleSection: entry.authorityPage.title,
+      keywords: entry.authorityPage.title,
+    });
+  }
+
+  if (entry.authorityPage?.timeline?.length) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${entry.authorityPage.title} workflow`,
+      itemListElement: entry.authorityPage.timeline.map(([number, name, description], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${number} ${name}`,
+        description,
+      })),
+    });
+  }
+
+  if (entry.authorityPage?.gallery?.length) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      name: entry.authorityPage.title,
+      description: entry.authorityPage.metaDescription,
+      url: canonical,
+      associatedMedia: entry.authorityPage.gallery.map(([contentUrl, caption]) => ({
+        '@type': 'ImageObject',
+        contentUrl: absoluteUrl(contentUrl),
+        caption,
+      })),
+    });
+  }
+
+  if (entry.authorityPage?.video) {
+    graph.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'JCZCARE Factory Profile Video',
+      description: entry.authorityPage.metaDescription,
+      thumbnailUrl: absoluteUrl(entry.authorityPage.image),
+      contentUrl: absoluteUrl(entry.authorityPage.video),
+      uploadDate: entry.authorityPage.updatedAt,
+    });
+  }
+
   if (entry.faqs?.length) {
     graph.push({
       '@context': 'https://schema.org',
@@ -230,7 +362,9 @@ let written = 0;
 
 for (const route of staticRoutes) {
   const entry = getSeoEntry(route);
-  const staticContent = renderStaticArticle(entry.article);
+  const staticContent = entry.article
+    ? renderStaticArticle(entry.article)
+    : renderStaticAuthority(entry.authorityPage);
   const bodyTemplate = staticContent
     ? template.replace('<div id="root"></div>', `<div id="root">${staticContent}</div>`)
     : template;

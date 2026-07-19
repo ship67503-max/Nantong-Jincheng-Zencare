@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs && node scripts/generate-seo-assets.mjs",
-    "lint": "node scripts/validate-seo.mjs",
+    "build": "node scripts/generate-blog-covers.mjs && node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs && node scripts/generate-seo-assets.mjs",
+    "generate:blog-covers": "node scripts/generate-blog-covers.mjs --force",
+    "lint": "node scripts/validate-topic-clusters.mjs && node scripts/validate-seo.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,4 +1,6 @@
 import { growthBlogArticles } from './seoGrowthArticles.js';
+import { blogExpansionArticles } from './blogExpansionData.js';
+import { resolveArticleClusterSlug, topicClusterMap } from './topicClusters.js';
 
 const siteUrl = 'https://www.jczcare.com';
 
@@ -630,17 +632,46 @@ const buildArticle = (spec) => ({
   },
 });
 
-export const blogArticles = [...blogSpecs.map(buildArticle), ...growthBlogArticles];
+const sourceBlogArticles = [...blogExpansionArticles, ...growthBlogArticles, ...blogSpecs.map(buildArticle)];
+
+export const blogArticles = sourceBlogArticles.map((article) => {
+  const clusterSlug = resolveArticleClusterSlug(article);
+  const cluster = topicClusterMap.get(clusterSlug);
+
+  return {
+    ...article,
+    clusterSlug,
+    clusterTitle: cluster?.title || article.category,
+    clusterPath: cluster?.path || '/blog',
+  };
+});
 
 export const getBlogArticleBySlug = (slug) => blogArticles.find((article) => article.slug === slug);
 
 export const getRelatedBlogArticles = (slug) => {
   const article = getBlogArticleBySlug(slug);
   const relatedSlugs = article?.relatedSlugs || [];
-  return relatedSlugs
+  const explicitArticles = relatedSlugs
     .map((relatedSlug) => getBlogArticleBySlug(relatedSlug))
     .filter(Boolean);
+
+  if (!article) {
+    return explicitArticles;
+  }
+
+  const semanticArticles = blogArticles
+    .filter((candidate) => (
+      candidate.slug !== slug
+      && candidate.clusterSlug === article.clusterSlug
+      && !relatedSlugs.includes(candidate.slug)
+    ))
+    .slice(0, 5 - explicitArticles.length);
+
+  return [...explicitArticles, ...semanticArticles].slice(0, 5);
 };
+
+export const getBlogArticlesByCluster = (clusterSlug) =>
+  blogArticles.filter((article) => article.clusterSlug === clusterSlug);
 
 export const getBlogArticleText = (article) => [
   article.title,
@@ -649,6 +680,7 @@ export const getBlogArticleText = (article) => [
     section.heading,
     section.h3 || '',
     ...section.paragraphs,
+    ...(section.comparisonRows || []).flat(),
   ]),
   'Buyer Checklist',
   ...article.checklist,

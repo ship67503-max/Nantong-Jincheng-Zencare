@@ -2,6 +2,38 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.4.0 - Topic Authority and Factory Resource Centers
+
+Date: 2026-07-20
+
+### Added
+- Expanded the SEO Blog content system to 100 connected B2B articles.
+- Added 15 authoritative topic-cluster pillar pages for OEM manufacturing, pet training pads, adult underpads, dog poop bags, private label, customization, quality, factory audits, packaging, shipping, materials, SAP, PE film, importing, and industry insights.
+- Added ten dedicated factory pages for Production Line, Warehouse, Raw Materials, Quality Control, Testing Laboratory, Packaging, Container Loading, SAP Technology, PE Film, and Certificates.
+- Added factory workflow timelines, buyer specification tables, professional factory photography, related products, related technical articles, FAQs, breadcrumbs, and inquiry CTAs.
+- Added build-time cover generation and topic-cluster validation scripts.
+
+### Changed
+- Connected Blog articles to their parent pillar pages, related content, relevant products, factory resources, and conversion routes.
+- Expanded the Factory Center into a navigation hub for all ten factory topics.
+- Added Factory to the primary navigation.
+- Extended route-level SEO generation, sitemap, RSS, static HTML, Article Schema, FAQ Schema, Breadcrumb Schema, ItemList workflow Schema, and ImageGallery Schema for the expanded authority system.
+- Added responsive factory timeline and specification layouts.
+
+### Fixed
+- Normalized factory section data to the shared authority-page content model, fixing a runtime blank-page error caused by an undefined paragraph collection.
+
+### Verified
+- `npm.cmd run lint` passed for 204 public routes.
+- `npm.cmd run build` completed successfully.
+- Topic-cluster validation passed for 15 pillar pages and 100 connected articles.
+- All ten factory routes generated as static HTML and are present in the XML and HTML sitemaps.
+- Desktop and 390 px mobile browser checks passed without horizontal overflow.
+- Production Line and Certificates pages render with unique metadata, canonical URLs, FAQ Schema, Breadcrumb Schema, and workflow ItemList Schema.
+- Vercel Production deployment `dpl_Et8mETwtW4ywcsKWUdECXsmNdnsj` completed with Ready status and was aliased to `https://www.jczcare.com`.
+- All ten live factory routes return HTTP 200 with static H1, FAQ Schema, and Breadcrumb Schema.
+- The live XML sitemap returns `application/xml` with all ten factory URLs; the live RSS feed returns 100 items.
+
 ## v1.3.0 - SEO Growth Content Batch 01
 
 Date: 2026-07-16

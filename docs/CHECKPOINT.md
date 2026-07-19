@@ -1,9 +1,9 @@
 # Project Checkpoint
 
 ## Latest Checkpoint
-Date: 2026-07-16
+Date: 2026-07-20
 
-Status: SEO growth content batch 01 committed, pushed, deployed, and verified on production.
+Status: Topic authority and Factory Resource Center implementation is complete and verified on Vercel Production. The GitHub push is pending because the local environment cannot currently reach `github.com:443`.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -51,9 +51,17 @@ Status: SEO growth content batch 01 committed, pushed, deployed, and verified on
 - Committed and pushed Technical SEO feed infrastructure as `8b5d207`.
 - Confirmed Vercel production deployment completed successfully for `8b5d207`.
 - Verified live `/rss.xml`, `/sitemap.html`, and `/sitemap.xml` responses.
+- Expanded the Blog content library to 100 connected B2B articles.
+- Added 15 authoritative pillar pages and connected existing articles into topic clusters.
+- Added build-time Blog cover generation and topic-cluster validation.
+- Added ten factory resource pages covering Production Line, Warehouse, Raw Materials, Quality Control, Testing Laboratory, Packaging, Container Loading, SAP Technology, PE Film, and Certificates.
+- Added factory photography, workflow timelines, buyer specifications, related products, related articles, FAQs, breadcrumbs, and inquiry CTAs.
+- Added factory routes to navigation, static SEO output, XML sitemap, HTML sitemap, and structured data.
+- Fixed the factory runtime blank-page error by normalizing section data for the shared authority-page renderer.
+- Verified desktop and 390 px mobile rendering with no horizontal overflow.
 
 ## Current Task
-- Await next Search Console-led SEO growth milestone.
+- Retry the existing `main` branch push for the completed milestone when GitHub connectivity is available. Do not repeat implementation, build, browser QA, or Vercel deployment.
 
 ## Remaining Tasks
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
@@ -62,6 +70,8 @@ Status: SEO growth content batch 01 committed, pushed, deployed, and verified on
 - Continue future tasks from this checkpoint.
 - Review the six new article drafts against the 2,500-4,000 word target and expand where needed in the next content pass.
 - Use Google Search Console query data to prioritize the next five topics from docs/SEO_ROADMAP.md.
+- Verify all ten factory routes and the expanded sitemap on the production domain after deployment.
+- Push the completed local commit to `origin/main`; no code changes are required.
 
 ## Resume Instructions
 If the connection is interrupted:
@@ -115,6 +125,17 @@ If the connection is interrupted:
 - Production check: all six new Blog URLs return HTTP 200 and include FAQ Schema.
 - Production sitemap check: six new Blog URLs are present in https://www.jczcare.com/sitemap.xml.
 - Production RSS check: https://www.jczcare.com/rss.xml returns application/rss+xml with 18 items.
+- Latest SEO lint: passed for 204 public routes.
+- Latest production build: passed with 204 route-level static HTML pages and 100 RSS items.
+- Topic-cluster validation: passed for 15 pillar pages and 100 connected articles.
+- Factory route validation: all ten pages generated with metadata, canonical, FAQ, Breadcrumb, workflow, photography, related-product, and inquiry content.
+- Browser validation: Production Line and Certificates pages render correctly on desktop; Production Line also passed a 390 px mobile overflow check.
+- Known non-blocking build warning: the existing main and Silk chunks remain above Vite's 500 kB advisory threshold.
+- Vercel Production deployment: `dpl_Et8mETwtW4ywcsKWUdECXsmNdnsj`, Ready, aliased to `https://www.jczcare.com`.
+- Live factory verification: all ten routes return HTTP 200 with static H1, FAQ Schema, and Breadcrumb Schema.
+- Live sitemap verification: `application/xml`, all ten factory routes present.
+- Live RSS verification: `application/rss+xml`, 100 items.
+- GitHub push status: pending after repeated network failures to `github.com:443`; local commit is preserved.
 
 ## Next Checkpoint
-Latest checkpoint completed: commit 198c69a95070e950c2ff444d6b9dec766fa02032 is live in production. Next checkpoint should use Google Search Console query and page data to prioritize the next five topics from docs/SEO_ROADMAP.md.
+Create the next checkpoint after `git push origin main` succeeds, recording the final remote commit hash and any GitHub-triggered Vercel deployment.

@@ -6,10 +6,10 @@ This roadmap organizes the JCZCARE website into practical development sprints. E
 ## Current Status
 Checkpoint mode: Enabled  
 Latest checkpoint file: `docs/CHECKPOINT.md`  
-Active sprint: Sprint 01 - Technical SEO Foundation  
+Active sprint: Sprint 02 and Sprint 06 authority expansion
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: RSS and HTML sitemap infrastructure deployed and verified on production  
-Next required deliverable: Continue Phase 1 with the next technical SEO milestone
+Latest completed task: 100-article topic clusters, 15 pillar pages, and ten factory resource pages deployed and verified on Vercel Production
+Next required deliverable: Complete the pending GitHub push when GitHub connectivity is available, then use Search Console data to prioritize the next content-improvement cycle
 
 Difficulty scale:
 
@@ -49,6 +49,7 @@ Deliverables:
 Priority: Critical  
 Difficulty: Medium  
 Expected ROI: High
+Status: Major factory resource milestone completed
 
 Goals:
 
@@ -62,6 +63,13 @@ Deliverables:
 - Clearer quality control content.
 - Stronger OEM/ODM explanation.
 - Better internal links to inquiry pages.
+
+Completed increment:
+
+- Added a Factory Center with ten dedicated process and capability pages.
+- Added buyer-focused workflows, specifications, photography, related products, related articles, FAQs, breadcrumbs, and inquiry CTAs.
+- Added production-line, warehouse, raw-material, QC, laboratory, packaging, loading, SAP, PE-film, and certificate-documentation topics.
+- Added static SEO output and structured data for every factory page.
 
 ## Sprint 03: Product Page System
 Priority: High  
@@ -123,7 +131,7 @@ Priority: High
 Difficulty: Medium  
 Expected ROI: High
 
-Status: Started
+Status: Major authority-system milestone completed
 
 Goals:
 
@@ -135,11 +143,9 @@ Deliverables:
 - Completed increment: created the first 12 English SEO Blog articles targeting B2B OEM/ODM pet pad sourcing intent.
 - Completed increment: added `/blog` and `/blog/[slug]` with static metadata, schema, internal links, related articles, and inquiry CTA.
 - Completed increment: added Blog URLs to sitemap/static SEO generation.
-
-- SEO landing page cluster.
-- Internal linking map.
-- FAQ schema where relevant.
-- Sitemap inclusion.
+- Completed increment: expanded the Blog content system to 100 connected B2B articles.
+- Completed increment: added 15 commercial pillar pages with cluster navigation, FAQs, schema, related products, and conversion links.
+- Completed increment: added the expanded authority routes to sitemap, RSS, static HTML, and internal-link generation.
 
 ## Sprint 06: Blog and Knowledge Center
 Priority: Medium  
@@ -166,6 +172,9 @@ Completed increment:
 - Added static internal links to factory, customization, product, advantages, contact and related-article routes.
 - Added dynamic reading-time labels based on article text length.
 - Deployed and verified the six new Blog URLs in Vercel Production.
+- Expanded the content library to 100 articles and organized them beneath 15 authoritative pillar pages.
+- Added build-time cover generation for the expanded Blog library.
+- Added automated topic-cluster validation to prevent orphaned articles, missing metadata, and broken cluster relationships.
 
 ## Sprint 07: Performance and Core Web Vitals
 Priority: High  

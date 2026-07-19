@@ -18,7 +18,17 @@ import {
   Truck,
 } from 'lucide-react';
 import './styles.css';
-import { blogArticles, getBlogReadTime, getRelatedBlogArticles } from './blogData.js';
+import {
+  blogArticles,
+  getBlogArticlesByCluster,
+  getBlogReadTime,
+  getRelatedBlogArticles,
+} from './blogData.js';
+import {
+  getAuthorityPage,
+  getRelatedProductsForArticle,
+} from './authorityData.js';
+import { topicClusters } from './topicClusters.js';
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/factory-campus.jpeg';
@@ -401,6 +411,13 @@ const footerLinks = [
   { label: 'Quality Control', href: '/quality-control' },
   { label: 'OEM Process', href: '/oem-process' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Factory Center', href: '/factory' },
+  { label: 'Academy', href: '/academy' },
+  { label: 'Comparisons', href: '/comparisons' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Media', href: '/media' },
+  { label: 'Downloads', href: '/downloads' },
 ];
 
 const newsArticles = [
@@ -740,7 +757,17 @@ function OptimizedImage({ src, alt, loading = 'lazy', decoding = 'async', ...pro
   );
 }
 
-const buildStructuredData = ({ title, description, path, faqs = [], image, product, article }) => {
+const buildStructuredData = ({
+  title,
+  description,
+  path,
+  faqs = [],
+  image,
+  product,
+  article,
+  breadcrumbs,
+  authorityPage,
+}) => {
   const canonical = buildAbsoluteUrl(path);
   const baseData = [
     {
@@ -773,27 +800,19 @@ const buildStructuredData = ({ title, description, path, faqs = [], image, produ
       url: siteUrl,
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${siteUrl}/pages/news?search={search_term_string}`,
+        target: `${siteUrl}/blog?search={search_term_string}`,
         'query-input': 'required name=search_term_string',
       },
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: siteUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: title,
-          item: canonical,
-        },
-      ],
+      itemListElement: (breadcrumbs || [['Home', '/'], [title, path]]).map(([name, item], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name,
+        item: buildAbsoluteUrl(item),
+      })),
     },
     {
       '@context': 'https://schema.org',
@@ -882,10 +901,76 @@ const buildStructuredData = ({ title, description, path, faqs = [], image, produ
     });
   }
 
+  if (authorityPage?.kind === 'pillar' || authorityPage?.kind === 'factory-detail') {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: authorityPage.h1,
+      description: authorityPage.metaDescription,
+      image: buildAbsoluteUrl(authorityPage.image),
+      datePublished: authorityPage.updatedAt,
+      dateModified: authorityPage.updatedAt,
+      author: { '@type': 'Organization', name: 'JCZCARE Editorial Team' },
+      publisher: { '@type': 'Organization', name: 'Nantong JINCHENG ZENCARE Technology Company' },
+      mainEntityOfPage: canonical,
+      articleSection: authorityPage.title,
+    });
+  }
+
+  if (authorityPage?.timeline?.length) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `${authorityPage.title} workflow`,
+      itemListElement: authorityPage.timeline.map(([number, name, description], index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${number} ${name}`,
+        description,
+      })),
+    });
+  }
+
+  if (authorityPage?.gallery?.length) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      name: authorityPage.title,
+      url: canonical,
+      associatedMedia: authorityPage.gallery.map(([contentUrl, caption]) => ({
+        '@type': 'ImageObject',
+        contentUrl: buildAbsoluteUrl(contentUrl),
+        caption,
+      })),
+    });
+  }
+
+  if (authorityPage?.video) {
+    baseData.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'JCZCARE Factory Profile Video',
+      description: authorityPage.metaDescription,
+      thumbnailUrl: buildAbsoluteUrl(authorityPage.image),
+      contentUrl: buildAbsoluteUrl(authorityPage.video),
+      uploadDate: authorityPage.updatedAt,
+    });
+  }
+
   return baseData;
 };
 
-const applyPageSeo = ({ title, description, path, image, faqs, product, article }) => {
+const applyPageSeo = ({
+  title,
+  description,
+  path,
+  image,
+  faqs,
+  product,
+  article,
+  breadcrumbs,
+  authorityPage,
+}) => {
   const canonical = buildAbsoluteUrl(path);
   const shareImage = buildAbsoluteUrl(image || heroFallbackImage);
 
@@ -931,7 +1016,17 @@ const applyPageSeo = ({ title, description, path, image, faqs, product, article 
     structuredDataTag.type = 'application/ld+json';
     document.head.appendChild(structuredDataTag);
   }
-  structuredDataTag.textContent = JSON.stringify(buildStructuredData({ title, description, path, faqs, image, product, article }));
+  structuredDataTag.textContent = JSON.stringify(buildStructuredData({
+    title,
+    description,
+    path,
+    faqs,
+    image,
+    product,
+    article,
+    breadcrumbs,
+    authorityPage,
+  }));
 };
 
 function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
@@ -949,6 +1044,8 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         <a href="/#projects">{ui.nav[1]}</a>
         <a href="/#innovation">{ui.nav[2]}</a>
         <a href="/blog">{ui.nav[6]}</a>
+        <a href="/factory">Factory</a>
+        <a href="/resources">Resources</a>
         <a href="/products/adult-underpads">Products</a>
         <a href="/#quality">{ui.nav[3]}</a>
         <a href="/#advantages">{ui.nav[4]}</a>
@@ -1435,6 +1532,22 @@ function BlogPage() {
           </p>
         </div>
 
+        <nav className="blog-cluster-directory" aria-label="Blog topic clusters">
+          <div>
+            <p className="section-kicker">15 Buyer Knowledge Hubs</p>
+            <h2>Explore by sourcing decision</h2>
+          </div>
+          <div className="blog-cluster-links">
+            {topicClusters.map((cluster) => (
+              <a href={cluster.path} key={cluster.slug}>
+                <span>{cluster.title}</span>
+                <small>{getBlogArticlesByCluster(cluster.slug).length} related guides</small>
+                <ArrowUpRight size={16} />
+              </a>
+            ))}
+          </div>
+        </nav>
+
         <a className="news-feature blog-feature" href={`/blog/${featuredArticle.slug}`}>
           <OptimizedImage src={featuredArticle.image} alt={featuredArticle.imageAlt} />
           <div>
@@ -1472,14 +1585,19 @@ function BlogPage() {
 
 function BlogArticlePage({ article }) {
   const relatedArticles = getRelatedBlogArticles(article.slug);
+  const relatedProducts = getRelatedProductsForArticle(article)
+    .map((path) => customProducts.find((product) => `/products/${product.slug}` === path))
+    .filter(Boolean);
 
   return (
     <section className="news-article-page blog-article-page">
       <div className="container news-article-shell">
-        <a className="detail-back" href="/blog">
-          Back to Blog
-          <ArrowUpRight size={16} />
-        </a>
+        <nav className="authority-breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span>/</span>
+          <a href="/blog">Blog</a><span>/</span>
+          <a href={article.clusterPath}>{article.clusterTitle}</a><span>/</span>
+          <span aria-current="page">{article.title}</span>
+        </nav>
         <div className="news-article-hero blog-article-hero">
           <div>
             <p className="section-kicker">{article.category}</p>
@@ -1501,11 +1619,12 @@ function BlogArticlePage({ article }) {
               <p>{article.coreAngle}</p>
               <div className="blog-inline-links" aria-label="Related internal links">
                 <a href="/">JCZCARE homepage</a>
-                <a href="/#customization">OEM/ODM service</a>
-                <a href="/#projects">Product examples</a>
+                <a href={article.clusterPath}>{article.clusterTitle} pillar guide</a>
+                <a href="/customization">OEM/ODM customization</a>
+                <a href="/factory">Factory resources</a>
                 <a href="/products/disposable-pet-pads">Disposable pet pads</a>
-                <a href="/#advantages">Factory advantages</a>
-                <a href="/#contact">Contact the factory</a>
+                <a href="/advantages">Factory advantages</a>
+                <a href="/contact">Contact the factory</a>
               </div>
             </div>
 
@@ -1525,6 +1644,18 @@ function BlogArticlePage({ article }) {
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+                {section.comparisonRows && (
+                  <div className="adult-underpads-spec-table" role="table" aria-label={`${section.heading} comparison`}>
+                    {section.comparisonRows.map(([label, optionA, optionB, implication]) => (
+                      <div role="row" key={`${label}-${optionA}`}>
+                        <strong role="cell">{label}</strong>
+                        <span role="cell">{optionA}</span>
+                        <span role="cell">{optionB}</span>
+                        <span role="cell">{implication}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
 
@@ -1589,6 +1720,254 @@ function BlogArticlePage({ article }) {
             ))}
           </div>
         </div>
+
+        <section className="blog-related-products" aria-labelledby="article-related-products">
+          <div>
+            <p className="section-kicker">Related Products</p>
+            <h2 id="article-related-products">Move from research to a product brief.</h2>
+          </div>
+          <div>
+            {relatedProducts.map((product) => (
+              <a href={`/products/${product.slug}`} key={product.slug}>
+                <OptimizedImage src={product.image} alt={`${product.title} related OEM product`} />
+                <span>{product.category}</span>
+                <strong>{product.title}</strong>
+                <ArrowUpRight size={18} />
+              </a>
+            ))}
+            <a className="blog-expert-card" href="/request-product-plan?product=blog-consultation">
+              <span>Contact an Expert</span>
+              <strong>Discuss specification, MOQ, samples, and lead time.</strong>
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+  );
+}
+
+function AuthorityPage({ page }) {
+  const pageProducts = (page.products || [])
+    .map((path) => customProducts.find((product) => `/products/${product.slug}` === path))
+    .filter(Boolean);
+
+  return (
+    <section className={`authority-page authority-${page.kind}`}>
+      <div className="container authority-shell">
+        <nav className="authority-breadcrumbs" aria-label="Breadcrumb">
+          {page.breadcrumbs.map(([label, href], index) => (
+            <React.Fragment key={`${href}-${label}`}>
+              {index > 0 && <span>/</span>}
+              {index === page.breadcrumbs.length - 1
+                ? <span aria-current="page">{label}</span>
+                : <a href={href}>{label}</a>}
+            </React.Fragment>
+          ))}
+        </nav>
+
+        <header className="authority-hero">
+          <div>
+            <p className="section-kicker">{page.kicker}</p>
+            <h1>{page.h1}</h1>
+            <p>{page.intro}</p>
+            <div className="authority-hero-actions">
+              <a href="/request-product-plan?product=oem-consultation">Request OEM Consultation <ArrowUpRight size={17} /></a>
+              <a href="/contact">Contact Sales <ArrowUpRight size={17} /></a>
+            </div>
+          </div>
+          <OptimizedImage src={page.image} alt={page.imageAlt} loading="eager" fetchPriority="high" />
+        </header>
+
+        {(page.kind === 'pillar' || page.kind === 'factory-detail') && (
+          <div className="authority-summary-bar">
+            <span><strong>{page.articles.length}</strong> related buyer guides</span>
+            <span><strong>{page.sections.length}</strong> process chapters</span>
+            <span><strong>{page.faqs.length}</strong> buyer FAQs</span>
+            <span>Updated {page.updatedAt}</span>
+          </div>
+        )}
+
+        {page.cards?.length > 0 && (
+          <section className="authority-card-section">
+            <p className="section-kicker">Explore Resources</p>
+            <div className="authority-card-grid">
+              {page.cards.map(([label, href], index) => (
+                <a href={href} key={`${href}-${label}`}>
+                  <small>{String(index + 1).padStart(2, '0')}</small>
+                  <strong>{label}</strong>
+                  <ArrowUpRight size={18} />
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {page.timeline?.length > 0 && (
+          <section className="factory-timeline-section" aria-labelledby="factory-timeline-title">
+            <div className="factory-section-heading">
+              <p className="section-kicker">Controlled Workflow</p>
+              <h2 id="factory-timeline-title">How the process moves from requirement to evidence.</h2>
+            </div>
+            <div className="factory-timeline">
+              {page.timeline.map(([number, title, text]) => (
+                <article key={`${number}-${title}`}>
+                  <span>{number}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {page.specifications?.length > 0 && (
+          <section className="factory-specifications" aria-labelledby="factory-specifications-title">
+            <div className="factory-section-heading">
+              <p className="section-kicker">Buyer Specifications</p>
+              <h2 id="factory-specifications-title">The information to define, verify, and retain.</h2>
+            </div>
+            <div className="factory-specification-table" role="table" aria-label={`${page.title} buyer specifications`}>
+              {page.specifications.map(([label, value]) => (
+                <div role="row" key={label}>
+                  <strong role="rowheader">{label}</strong>
+                  <span role="cell">{value}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {page.sections?.length > 0 && (
+          <div className="authority-content-layout">
+            <nav className="authority-toc" aria-label="Pillar page contents">
+              <p>On this page</p>
+              {page.sections.map((section, index) => (
+                <a href={`#pillar-section-${index + 1}`} key={section.heading}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>{section.heading}
+                </a>
+              ))}
+              {page.articles?.length > 0 && <a href="#related-cluster-articles"><span>→</span>All related guides</a>}
+            </nav>
+
+            <article className="authority-content">
+              {page.sections.map((section, index) => (
+                <section id={`pillar-section-${index + 1}`} key={section.heading}>
+                  <span className="authority-chapter">{String(index + 1).padStart(2, '0')}</span>
+                  <h2>{section.heading}</h2>
+                  {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  {section.comparisonRows && (
+                    <div className="authority-table-wrap">
+                      <div className="authority-table" role="table" aria-label={`${section.heading} comparison table`}>
+                        {section.comparisonRows.map((row, rowIndex) => (
+                          <div role="row" className={rowIndex === 0 ? 'authority-table-head' : ''} key={row.join('-')}>
+                            {row.map((cell) => <span role={rowIndex === 0 ? 'columnheader' : 'cell'} key={cell}>{cell}</span>)}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </section>
+              ))}
+            </article>
+          </div>
+        )}
+
+        {page.articles?.length > 0 && (
+          <section className="authority-article-library" id="related-cluster-articles">
+            <div>
+              <p className="section-kicker">{page.kind === 'factory-detail' ? 'Factory Knowledge Library' : 'Topic Cluster Library'}</p>
+              <h2>{page.kind === 'factory-detail' ? 'Continue with related technical and procurement guides.' : 'Every related buyer article, connected to this guide.'}</h2>
+              <p>Use the focused articles below for deeper specification, quality, cost, packaging, and sourcing decisions.</p>
+            </div>
+            <div className="authority-article-grid">
+              {page.articles.map((article) => (
+                <a href={article.path} key={article.slug}>
+                  <span>{article.category}</span>
+                  <h3>{article.title}</h3>
+                  <small>{getBlogReadTime(article)} min read</small>
+                  <ArrowUpRight size={17} />
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {page.gallery?.length > 0 && (
+          <section className="authority-gallery">
+            {page.gallery.map(([src, caption]) => (
+              <figure key={src}>
+                <OptimizedImage src={src} alt={caption} />
+                <figcaption>{caption}</figcaption>
+              </figure>
+            ))}
+          </section>
+        )}
+
+        {(page.groups?.length > 0 || page.faqs?.length > 0) && (
+          <section className="authority-faq">
+            <div>
+              <p className="section-kicker">Buyer FAQ</p>
+              <h2>Answers grounded in controlled B2B sourcing.</h2>
+            </div>
+            {(page.groups || [{ title: page.title, path: page.path, faqs: page.faqs }]).map((group) => (
+              <div className="authority-faq-group" key={group.title}>
+                {page.groups && <h3><a href={group.path}>{group.title}</a></h3>}
+                {group.faqs.map(([question, answer]) => (
+                  <details key={`${group.title}-${question}`}>
+                    <summary>{question}<span aria-hidden="true">+</span></summary>
+                    <p>{answer}</p>
+                  </details>
+                ))}
+              </div>
+            ))}
+          </section>
+        )}
+
+        {page.references?.length > 0 && (
+          <section className="authority-references">
+            <p className="section-kicker">Authoritative References</p>
+            <div>
+              {page.references.map((reference) => (
+                <a href={reference.url} target="_blank" rel="noopener noreferrer" key={reference.url}>
+                  <strong>{reference.label}</strong>
+                  <span>{reference.note}</span>
+                  <ArrowUpRight size={17} />
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {pageProducts.length > 0 && (
+          <section className="authority-products">
+            <div>
+              <p className="section-kicker">Related Products</p>
+              <h2>Apply the framework to a live OEM brief.</h2>
+            </div>
+            <div>
+              {pageProducts.map((product) => (
+                <a href={`/products/${product.slug}`} key={product.slug}>
+                  <OptimizedImage src={product.image} alt={`${product.title} related to ${page.title}`} />
+                  <span>{product.category}</span>
+                  <strong>{product.title}</strong>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section className="authority-final-cta">
+          <p className="section-kicker">Start a Controlled Project</p>
+          <h2>Turn this buyer knowledge into a clear OEM specification.</h2>
+          <p>Share your market, product benchmark, target performance, quantity, packaging, and delivery destination.</p>
+          <div>
+            <a href="/request-product-plan?product=oem-consultation">Request a Product Plan <ArrowUpRight size={18} /></a>
+            <a href="/contact">Contact JCZCARE <ArrowUpRight size={18} /></a>
+          </div>
+        </section>
       </div>
     </section>
   );
@@ -2627,6 +3006,7 @@ function App() {
   const isNewsPage = currentPath === '/pages/news';
   const blogSlug = currentPath.match(/^\/blog\/([^/]+)\/?$/)?.[1];
   const isBlogPage = currentPath === '/blog';
+  const currentAuthorityPage = getAuthorityPage(currentPath);
   const currentSeoPage = seoPageMap.get(currentPath);
   const currentStaticSeo = staticSeoPages[currentPath];
   const currentProduct = productSlug
@@ -2661,6 +3041,19 @@ function App() {
   }, [activeRegion]);
 
   useEffect(() => {
+    if (currentAuthorityPage) {
+      applyPageSeo({
+        title: currentAuthorityPage.seoTitle,
+        description: currentAuthorityPage.metaDescription,
+        path: currentAuthorityPage.path,
+        image: currentAuthorityPage.image,
+        faqs: currentAuthorityPage.faqs,
+        breadcrumbs: currentAuthorityPage.breadcrumbs,
+        authorityPage: currentAuthorityPage,
+      });
+      return;
+    }
+
     if (currentSeoPage) {
       applyPageSeo({
         title: currentSeoPage.title,
@@ -2707,6 +3100,12 @@ function App() {
         image: currentBlogArticle.image,
         faqs: currentBlogArticle.faqs,
         article: currentBlogArticle,
+        breadcrumbs: [
+          ['Home', '/'],
+          ['Blog', '/blog'],
+          [currentBlogArticle.clusterTitle, currentBlogArticle.clusterPath],
+          [currentBlogArticle.title, currentBlogArticle.path],
+        ],
       });
       return;
     }
@@ -2757,7 +3156,7 @@ function App() {
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
-  }, [currentSeoPage, currentProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, currentPath]);
+  }, [currentAuthorityPage, currentSeoPage, currentProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, currentPath]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -2809,7 +3208,7 @@ function App() {
         };
       };
 
-      if (currentProduct || currentNewsArticle || currentBlogArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
+      if (currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
         gsap.set(nav, {
           x: 0,
           y: 0,
@@ -2832,6 +3231,8 @@ function App() {
             ? '.news-article-page .news-article-hero > *, .news-article-page .news-article-body > *, .news-article-page .news-article-aside, .news-article-page .news-related-card'
             : isNewsPage
               ? '.news-page .news-hero > *, .news-page .news-feature, .news-page .news-card'
+              : currentAuthorityPage
+                ? '.authority-page .authority-hero > *, .authority-page .authority-summary-bar > *, .authority-page .authority-card-grid a'
               : currentSeoPage
                 ? '.business-seo-page .business-seo-hero > *, .business-seo-page .business-seo-grid article, .business-seo-page .business-seo-faq > *, .business-seo-page .business-seo-links > *, .business-seo-page .business-seo-featured > *'
           : isInquiryPage
@@ -3141,7 +3542,7 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
+  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -3165,7 +3566,7 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
-    if (currentProduct || currentNewsArticle || currentBlogArticle || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
+    if (currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
       return undefined;
     }
 
@@ -3192,7 +3593,7 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
+  }, [currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
 
   if (isInquiryPage) {
     return (
@@ -3280,6 +3681,7 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <BlogPage />
+        <SiteFooter ui={ui} />
       </main>
     );
   }
@@ -3289,6 +3691,7 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <BlogArticlePage article={currentBlogArticle} />
+        <SiteFooter ui={ui} />
       </main>
     );
   }
@@ -3316,6 +3719,16 @@ function App() {
       <main ref={rootRef}>
         <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
         <AdultUnderpadsPage ui={ui} />
+      </main>
+    );
+  }
+
+  if (currentAuthorityPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <AuthorityPage page={currentAuthorityPage} />
+        <SiteFooter ui={ui} />
       </main>
     );
   }

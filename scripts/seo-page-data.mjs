@@ -1,4 +1,5 @@
 import { blogArticles, getBlogArticleText } from '../src/blogData.js';
+import { getAuthoritySeoEntries } from '../src/authorityData.js';
 
 export const siteUrl = 'https://www.jczcare.com';
 
@@ -360,6 +361,12 @@ export const blogSeo = blogArticles.map((article) => ({
   article,
   faqs: article.faqs,
   articleBody: getBlogArticleText(article),
+  breadcrumbs: [
+    ['Home', '/'],
+    ['Blog', '/blog'],
+    [article.clusterTitle, article.clusterPath],
+    [article.title, article.path],
+  ],
 }));
 
 export const regions = [
@@ -389,7 +396,17 @@ export const regions = [
   image: defaultImage,
 }));
 
-export const allSeoEntries = [...pageSeo, ...productSeo, ...newsSeo, ...blogSeo, ...regions];
+const authoritySeoEntries = getAuthoritySeoEntries();
+const authorityPaths = new Set(authoritySeoEntries.map((entry) => entry.path));
+
+export const allSeoEntries = [
+  ...authoritySeoEntries,
+  ...pageSeo.filter((entry) => !authorityPaths.has(entry.path)),
+  ...productSeo,
+  ...newsSeo,
+  ...blogSeo,
+  ...regions,
+];
 
 export const getSeoEntry = (path = '/') => allSeoEntries.find((entry) => entry.path === path) || {
   ...baseSeo,
