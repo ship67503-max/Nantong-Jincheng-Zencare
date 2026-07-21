@@ -3,7 +3,7 @@
 ## Latest Checkpoint
 Date: 2026-07-21
 
-Status: The global navigation is permanently center-anchored, no longer shifts horizontally during scroll animation, and displays its brand and menu text without clipping. Production deployment verification is pending.
+Status: The global navigation is permanently center-anchored, no longer shifts horizontally during scroll animation, displays its text without clipping, and is verified on Vercel Production.
 
 ## Completed Tasks
 - Reworked the navigation animation to keep `left: 50%` and `xPercent: -50` in every GSAP state.
@@ -11,6 +11,8 @@ Status: The global navigation is permanently center-anchored, no longer shifts h
 - Stabilized the navigation width and prevented brand/menu text from being compressed or clipped.
 - Added a compact breakpoint that hides the full link rail below 860px while retaining primary actions.
 - Verified the navigation at page load, after scrolling 900px, and on direct `/blog` entry with zero center drift, clipping, or horizontal overflow.
+- Pushed commit `83e503e` to `origin/main`; Vercel Production completed successfully.
+- Verified the live homepage returns HTTP 200 and serves the centered-navigation CSS with no country-selector markup.
 - Removed the global country selector, country dropdown, flag, caret, click handler, and all related navigation styles.
 - Confirmed direct public routes and existing localized content remain available without exposing a country-switching control.
 - Verified the updated navigation in the browser with zero region-selector nodes or country labels.

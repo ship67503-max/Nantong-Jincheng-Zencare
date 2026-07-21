@@ -15,6 +15,8 @@ Date: 2026-07-21
 - Homepage initial state and 900px scrolled state remain centered with no clipping or overflow.
 - Direct `/blog` navigation render remains centered with no clipping or overflow.
 - SEO lint and production build passed for 393 public routes.
+- Vercel Production deployed successfully from commit `83e503e`.
+- Live production CSS contains the fixed center anchor, stable navigation width, and compact breakpoint rules.
 
 ## v1.5.1 - Remove Country Switching Navigation
 
