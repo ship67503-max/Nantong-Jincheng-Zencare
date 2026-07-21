@@ -1032,7 +1032,7 @@ const applyPageSeo = ({
   }));
 };
 
-function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
+function SiteNav({ navRef, ui }) {
   return (
     <nav ref={navRef} className="nav">
       <a className="brand" href="/#home" aria-label="Nantong JINCHENG ZENCARE homepage">
@@ -1041,7 +1041,6 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
           <small>Technology Company</small>
         </span>
       </a>
-      <RegionSelector activeRegion={activeRegion} onRegionChange={onRegionChange} ui={ui} />
       <div className="nav-links" aria-label="Main navigation">
         <a href="/#about">{ui.nav[0]}</a>
         <a href="/#projects">{ui.nav[1]}</a>
@@ -1062,65 +1061,6 @@ function SiteNav({ navRef, activeRegion, onRegionChange, ui }) {
         Sign In
       </a>
     </nav>
-  );
-}
-
-function RegionSelector({ activeRegion, onRegionChange, ui }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState('');
-  const filteredRegions = useMemo(() => {
-    const keyword = query.trim().toLowerCase();
-
-    if (!keyword) {
-      return regionLinks;
-    }
-
-    return regionLinks.filter((region) => region.label.toLowerCase().includes(keyword));
-  }, [query]);
-
-  return (
-    <div className="region-selector">
-      <button
-        type="button"
-        className="region-trigger"
-        aria-expanded={isOpen}
-        aria-controls="region-menu"
-        onClick={() => setIsOpen((open) => !open)}
-      >
-        <span className="region-flag" aria-hidden="true" />
-        <span>{activeRegion.label}</span>
-        <span className="region-caret" aria-hidden="true">v</span>
-      </button>
-      {isOpen && (
-        <div className="region-menu" id="region-menu">
-          <input
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={ui.regionSearch}
-            aria-label="Search region"
-            autoFocus
-          />
-          <div className="region-options">
-            {filteredRegions.map((region) => (
-              <button
-                type="button"
-                key={region.href}
-                className={region.href === activeRegion.href ? 'active' : undefined}
-                onClick={() => {
-                  onRegionChange(region);
-                  setIsOpen(false);
-                  setQuery('');
-                }}
-              >
-                {region.label}
-              </button>
-            ))}
-            {filteredRegions.length === 0 && <span className="region-empty">{ui.noRegion}</span>}
-          </div>
-        </div>
-      )}
-    </div>
   );
 }
 
@@ -3024,22 +2964,6 @@ function App() {
     ? blogArticles.find((article) => article.slug === blogSlug)
     : null;
 
-  const handleRegionChange = (region) => {
-    setActiveRegion(region);
-    window.localStorage.setItem('selectedRegion', region.slug);
-
-    const nextUrl = new URL(window.location.href);
-
-    if (nextUrl.pathname.startsWith('/region/')) {
-      nextUrl.pathname = region.href;
-      nextUrl.searchParams.delete('region');
-    } else {
-      nextUrl.searchParams.set('region', region.slug);
-    }
-
-    window.history.replaceState(null, '', nextUrl);
-  };
-
   useEffect(() => {
     document.documentElement.lang = activeRegion.lang;
     document.documentElement.dataset.region = activeRegion.slug;
@@ -3603,7 +3527,7 @@ function App() {
   if (isInquiryPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <ProductPlanInquiry />
       </main>
     );
@@ -3612,7 +3536,7 @@ function App() {
   if (isSignInPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <SignInPage />
       </main>
     );
@@ -3621,7 +3545,7 @@ function App() {
   if (isAboutPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <AboutPage />
       </main>
     );
@@ -3630,7 +3554,7 @@ function App() {
   if (isInvestorPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <InvestorRelationsPage />
       </main>
     );
@@ -3639,7 +3563,7 @@ function App() {
   if (isAffiliatesPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <AffiliatesPage />
       </main>
     );
@@ -3648,7 +3572,7 @@ function App() {
   if (isHelpPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <HelpCenterPage />
       </main>
     );
@@ -3657,7 +3581,7 @@ function App() {
   if (isLearnPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <LearnCenterPage />
       </main>
     );
@@ -3666,7 +3590,7 @@ function App() {
   if (isGiveBackPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <GiveBackPage />
       </main>
     );
@@ -3675,7 +3599,7 @@ function App() {
   if (isGiftCardsPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <GiftCardsPage />
       </main>
     );
@@ -3684,7 +3608,7 @@ function App() {
   if (isBlogPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <BlogPage />
         <SiteFooter ui={ui} />
       </main>
@@ -3694,7 +3618,7 @@ function App() {
   if (currentBlogArticle) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <BlogArticlePage article={currentBlogArticle} />
         <SiteFooter ui={ui} />
       </main>
@@ -3704,7 +3628,7 @@ function App() {
   if (isNewsPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <NewsPage />
       </main>
     );
@@ -3713,7 +3637,7 @@ function App() {
   if (currentNewsArticle) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <NewsArticlePage article={currentNewsArticle} />
       </main>
     );
@@ -3722,7 +3646,7 @@ function App() {
   if (isAdultUnderpadsPage && currentProduct) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <AdultUnderpadsPage ui={ui} />
       </main>
     );
@@ -3731,7 +3655,7 @@ function App() {
   if (currentAuthorityPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <AuthorityPage page={currentAuthorityPage} />
         <SiteFooter ui={ui} />
       </main>
@@ -3741,7 +3665,7 @@ function App() {
   if (currentSeoPage) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <BusinessSeoPage page={currentSeoPage} />
       </main>
     );
@@ -3750,7 +3674,7 @@ function App() {
   if (currentProduct) {
     return (
       <main ref={rootRef}>
-        <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+        <SiteNav navRef={navRef} ui={ui} />
         <ProductDetail product={currentProduct} />
       </main>
     );
@@ -3758,7 +3682,7 @@ function App() {
 
   return (
     <main ref={rootRef}>
-      <SiteNav navRef={navRef} activeRegion={activeRegion} onRegionChange={handleRegionChange} ui={ui} />
+      <SiteNav navRef={navRef} ui={ui} />
 
       <section className="hero" id="home">
         {heroVideoFailed ? (
