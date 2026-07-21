@@ -2,7 +2,7 @@
 
 ## Execution Status
 
-- Status: Blocked before generation by the built-in Codex image generation service. The latest backend availability check failed after three bounded attempts on 2026-07-21 at 15:51 +08:00.
+- Status: Batch 1 started after a successful standalone connectivity test, then stopped when the built-in Codex image generation service became unavailable again on 2026-07-21 at 17:16 +08:00.
 - Started from commit: `fb1e78c039c77587acf28764f6fb8829043322b1`
 - Working branch: `codex/regenerate-non-homepage-images`
 - Website source changes: none
@@ -71,6 +71,26 @@ image generation failed: network error: error sending request for url (https://c
 
 No HTTP response status was available. The failure occurred during request transmission to the built-in endpoint. No test image or temporary output was created. No image replacement batch started, and no website, homepage, route, image reference, or production asset changed.
 
+### Batch 1 Interruption - 2026-07-21 17:16 +08:00
+
+The existing route audit and homepage protection mapping were reused without rescanning all routes. Batch 1 was defined as five independent non-homepage product detail pages:
+
+1. `/products/disposable-pet-pads`
+2. `/products/adult-underpads`
+3. `/products/pet-care-pad-glove-wipes`
+4. `/products/pet-absorbent-paper-sheets`
+5. `/products/custom-pet-waste-bags`
+
+The page titles, H1-level product names, supporting product copy, image purpose, existing product subject, and responsive hero container behavior were reviewed for all five tasks. The desktop product-detail image area is a wide hero region and the mobile layout remains responsive; generated targets were therefore specified as wide landscape assets.
+
+- Disposable Pet Pads: three attempts failed. The first used the existing image only as a product-material reference and failed at the built-in edit endpoint. Two progressively simplified no-reference generation attempts failed at the generation endpoint.
+- Adult Disposable Underpads: three progressively simplified no-reference generation attempts failed at the generation endpoint.
+- Pet Care Pad & Glove Wipes: not started because the backend was classified as unavailable after six consecutive failures across two distinct tasks.
+- Pet Absorbent Paper Sheets: not started for the same reason.
+- Custom Pet Waste Bags: not started for the same reason.
+
+Every failure returned a request-transmission network error for the built-in Codex image endpoint. No HTTP response status, image output, or temporary file was returned. Both attempted images retain their original assets. No source, style, route, SEO, text, layout, homepage asset, or image reference changed.
+
 ## Next Resume Point
 
-Resume with one minimal built-in imagegen recovery test when the service is available. Do not repeat the route, architecture, or protected-homepage audit. After a successful test, remove or mark the test output unused, then continue at generation batch 1 in groups of five and save validated assets under `public/images/generated/`.
+Resume with one minimal built-in imagegen recovery test when the service is available. Do not repeat the route, architecture, protected-homepage audit, or Batch 1 semantic review. After a successful test, restart Batch 1 at `/products/disposable-pet-pads`, retaining the same five-page batch and saving validated assets under `public/images/generated/`.
