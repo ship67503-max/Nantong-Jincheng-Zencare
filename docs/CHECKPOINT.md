@@ -1,9 +1,9 @@
 # Project Checkpoint
 
 ## Latest Checkpoint
-Date: 2026-07-21
+Date: 2026-07-21 13:08 +08:00
 
-Status: Non-homepage image regeneration is audited and isolated on `codex/regenerate-non-homepage-images`, but generation is blocked by the built-in imagegen service returning repeated network errors.
+Status: Non-homepage image regeneration remains blocked. The built-in imagegen recovery test failed three times with the same service network error; no image or website file was changed.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -72,9 +72,12 @@ Status: Non-homepage image regeneration is audited and isolated on `codex/regene
 - Route and asset audit is complete: 393 public routes, 392 non-homepage routes, 150 Blog articles, 186 authority routes, and 10 factory detail routes.
 - Resume at image generation batch 1; do not repeat the completed scan or homepage protection analysis.
 - Use only the built-in Codex imagegen workflow. Do not use CLI/API or third-party generation fallbacks.
+- Latest recovery test: three failed attempts on 2026-07-21 at 13:08 +08:00. Each returned `network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)`.
+- Recovery-test outputs: none. Generated images: 0. Replaced images: 0. Homepage changes: none.
 
 ## Remaining Tasks
-- Retry generation batch 1 after the built-in imagegen service is available.
+- Retry one minimal imagegen recovery test after the built-in service is available; do not repeat the completed scan.
+- After a successful recovery test, resume generation batch 1 in groups of five.
 - Generate and validate unique non-homepage hero and supporting images in semantic batches.
 - Update only non-homepage image references and alt text.
 - Complete desktop/mobile visual QA, lint, build, report, commit, push, and Vercel Production deployment.
