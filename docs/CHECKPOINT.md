@@ -3,9 +3,13 @@
 ## Latest Checkpoint
 Date: 2026-07-21
 
-Status: The complete B2B SEO content ecosystem is implemented, pushed to GitHub, and verified on Vercel Production.
+Status: Country switching has been fully removed from the global navigation. Lint, production build, and browser verification have passed; production deployment verification is the remaining step.
 
 ## Completed Tasks
+- Removed the global country selector, country dropdown, flag, caret, click handler, and all related navigation styles.
+- Confirmed direct public routes and existing localized content remain available without exposing a country-switching control.
+- Verified the updated navigation in the browser with zero region-selector nodes or country labels.
+- Re-ran lint and production build successfully for 393 public routes.
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
 - Footer social media icon links were removed from the live website.
 - Apple ID sign-in option and `/api/auth/apple` route were removed from the live website.

@@ -2,6 +2,19 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.5.1 - Remove Country Switching Navigation
+
+Date: 2026-07-21
+
+### Changed
+- Removed the country selector and all country-switching interactions from the global navigation.
+- Removed the associated dropdown, flag, caret, and region-selector styles without changing page routes or content.
+
+### Verified
+- Confirmed the rendered navigation contains no country selector, country labels, or region-switch controls.
+- SEO lint passed for 393 public routes.
+- Production build completed successfully.
+
 ## v1.5.0 - Complete B2B SEO Content Ecosystem
 
 Date: 2026-07-21

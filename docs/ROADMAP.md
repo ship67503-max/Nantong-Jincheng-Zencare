@@ -6,10 +6,10 @@ This roadmap organizes the JCZCARE website into practical development sprints. E
 ## Current Status
 Checkpoint mode: Enabled  
 Latest checkpoint file: `docs/CHECKPOINT.md`  
-Active sprint: Sprint 05 and Sprint 06 authority expansion
+Active sprint: Production navigation maintenance
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: 325-page B2B content ecosystem with 150 Blog articles, 40 Buyer Guides, expanded comparisons, case studies, factory knowledge, material knowledge, FAQs, reports, and resources, deployed and verified on Vercel Production
-Next required deliverable: Use Search Console data to improve the highest-opportunity clusters and conversion paths rather than adding undirected volume
+Latest completed task: Removed the country-switching control and all related interaction code from the global navigation; lint, build, and browser verification passed
+Next required deliverable: Verify the country-selector removal on Vercel Production, then use Search Console data to improve the highest-opportunity clusters and conversion paths
 
 Difficulty scale:
 
