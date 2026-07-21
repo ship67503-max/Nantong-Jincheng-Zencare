@@ -14,6 +14,8 @@ Date: 2026-07-21
 - Confirmed the rendered navigation contains no country selector, country labels, or region-switch controls.
 - SEO lint passed for 393 public routes.
 - Production build completed successfully.
+- Vercel Production deployed successfully from commit `a61eee8`.
+- Live homepage verification returned HTTP 200 with no country-selector markup.
 
 ## v1.5.0 - Complete B2B SEO Content Ecosystem
 

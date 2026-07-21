@@ -3,13 +3,15 @@
 ## Latest Checkpoint
 Date: 2026-07-21
 
-Status: Country switching has been fully removed from the global navigation. Lint, production build, and browser verification have passed; production deployment verification is the remaining step.
+Status: Country switching has been fully removed from the global navigation and verified on Vercel Production.
 
 ## Completed Tasks
 - Removed the global country selector, country dropdown, flag, caret, click handler, and all related navigation styles.
 - Confirmed direct public routes and existing localized content remain available without exposing a country-switching control.
 - Verified the updated navigation in the browser with zero region-selector nodes or country labels.
 - Re-ran lint and production build successfully for 393 public routes.
+- Pushed commit `a61eee8` to `origin/main`; Vercel reported a successful deployment.
+- Verified `https://www.jczcare.com/` returns HTTP 200 with zero region-selector classes and zero country labels.
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
 - Footer social media icon links were removed from the live website.
 - Apple ID sign-in option and `/api/auth/apple` route were removed from the live website.

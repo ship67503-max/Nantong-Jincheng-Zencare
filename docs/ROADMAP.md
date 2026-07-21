@@ -9,7 +9,7 @@ Latest checkpoint file: `docs/CHECKPOINT.md`
 Active sprint: Production navigation maintenance
 Sprint 01 status: Completed as Technical SEO Foundation  
 Latest completed task: Removed the country-switching control and all related interaction code from the global navigation; lint, build, and browser verification passed
-Next required deliverable: Verify the country-selector removal on Vercel Production, then use Search Console data to improve the highest-opportunity clusters and conversion paths
+Next required deliverable: Use Search Console data to improve the highest-opportunity clusters and conversion paths
 
 Difficulty scale:
 
