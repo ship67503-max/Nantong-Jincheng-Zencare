@@ -1,9 +1,9 @@
 # Project Checkpoint
 
 ## Latest Checkpoint
-Date: 2026-07-21 15:23 +08:00
+Date: 2026-07-21 15:51 +08:00
 
-Status: Non-homepage image regeneration remains blocked. A connection-only built-in imagegen test failed on 2026-07-21 at 15:23 +08:00; no image or website file was changed.
+Status: Non-homepage image regeneration remains blocked. The latest built-in imagegen backend availability check failed after three bounded attempts on 2026-07-21 at 15:51 +08:00; no image or website file was changed.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -75,6 +75,7 @@ Status: Non-homepage image regeneration remains blocked. A connection-only built
 - Latest recovery test: three failed attempts on 2026-07-21 at 13:08 +08:00. Each returned `network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)`.
 - Connection-only recovery check on 2026-07-21 at 15:23 +08:00: one permitted request returned `image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)`.
 - Diagnostic classification: HTTP status unavailable because no HTTP response was returned; error type is a network transport error; request failed while sending to the built-in image generation endpoint. The response did not indicate an expired login, permission denial, quota exhaustion, or an HTTP-level network policy block.
+- Latest backend availability check on 2026-07-21 at 15:51 +08:00: three attempts, separated by 20-second and 30-second intervals, all failed with the same request-transmission network error. No output was created and batch 1 did not start.
 - Recovery-test outputs: none. Generated images: 0. Replaced images: 0. Homepage changes: none.
 
 ## Remaining Tasks

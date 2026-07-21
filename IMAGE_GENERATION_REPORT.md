@@ -2,7 +2,7 @@
 
 ## Execution Status
 
-- Status: Blocked before generation by the built-in Codex image generation service. Recovery test failed after three bounded retries on 2026-07-21.
+- Status: Blocked before generation by the built-in Codex image generation service. The latest backend availability check failed after three bounded attempts on 2026-07-21 at 15:51 +08:00.
 - Started from commit: `fb1e78c039c77587acf28764f6fb8829043322b1`
 - Working branch: `codex/regenerate-non-homepage-images`
 - Website source changes: none
@@ -55,7 +55,22 @@ No image output or temporary file was produced. Generated images remain `0`; rep
 
 No generated output was returned by any attempt. The prohibited CLI/API fallback was not used, and no `OPENAI_API_KEY` or third-party image service was requested.
 
+### Backend Availability Check - 2026-07-21 15:51 +08:00
+
+Following the renewed execution instruction, the existing route inventory and homepage protection scope were retained. The built-in imagegen connection was tested with a temporary 16:9 request for a clean modern pet hygiene products factory interior with no people, animals, packaging, text, logo, or watermark.
+
+1. Attempt 1 failed after waiting for the built-in service response.
+2. Attempt 2 ran after a 20-second interval and failed identically.
+3. Attempt 3 ran after a 30-second interval and failed identically.
+
+All three attempts returned:
+
+```text
+image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)
+```
+
+No HTTP response status was available. The failure occurred during request transmission to the built-in endpoint. No test image or temporary output was created. No image replacement batch started, and no website, homepage, route, image reference, or production asset changed.
+
 ## Next Resume Point
 
 Resume with one minimal built-in imagegen recovery test when the service is available. Do not repeat the route, architecture, or protected-homepage audit. After a successful test, remove or mark the test output unused, then continue at generation batch 1 in groups of five and save validated assets under `public/images/generated/`.
-
