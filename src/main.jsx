@@ -3104,47 +3104,14 @@ function App() {
       const navLinks = nav.querySelector('.nav-links');
       const navCta = nav.querySelector('.nav-cta');
 
-      const getNavLayout = () => {
-        const viewportWidth = window.innerWidth;
-        const isCompactViewport = viewportWidth <= 1400;
-        const startMaxWidth = viewportWidth - (isCompactViewport ? 64 : 96);
-        const startPadding = isCompactViewport ? 40 : 46;
-        const startGap = isCompactViewport ? 11 : 16;
-        const contentWidth = Array.from(nav.children).reduce(
-          (total, child) => total + Math.ceil(Math.max(child.scrollWidth, child.getBoundingClientRect().width)),
-          0,
-        );
-        const endMaxWidth = viewportWidth - (isCompactViewport ? 40 : 76);
-        const endPadding = isCompactViewport ? 34 : 50;
-        const endGap = isCompactViewport ? 16 : 28;
-        const startWidth = Math.min(
-          Math.ceil(contentWidth + startPadding + startGap * 2),
-          startMaxWidth,
-        );
-        const startLeft = Math.max(isCompactViewport ? 32 : 48, (viewportWidth - startWidth) / 2);
-        const endWidth = Math.min(
-          isCompactViewport ? 1160 : 1480,
-          endMaxWidth,
-          Math.ceil(contentWidth + endPadding + endGap * 2),
-        );
-        const endLeft = (viewportWidth - endWidth) / 2;
-
-        return {
-          startLeft,
-          startWidth,
-          endLeft,
-          endWidth,
-        };
-      };
-
       if (currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
         gsap.set(nav, {
           x: 0,
+          xPercent: -50,
           y: 0,
           autoAlpha: 1,
-          left: () => getNavLayout().endLeft,
+          left: '50%',
           top: 16,
-          width: () => getNavLayout().endWidth,
           height: 66,
           gap: () => (window.innerWidth <= 1400 ? 16 : 28),
           padding: () => (window.innerWidth <= 1400 ? '0 12px 0 18px' : '0 16px 0 22px'),
@@ -3204,11 +3171,11 @@ function App() {
 
       gsap.set(nav, {
         x: 0,
+        xPercent: -50,
         y: -34,
         autoAlpha: 0,
-        left: () => getNavLayout().startLeft,
+        left: '50%',
         top: 18,
-        width: () => getNavLayout().startWidth,
         height: 54,
         gap: 16,
         padding: '0 12px 0 18px',
@@ -3220,9 +3187,10 @@ function App() {
       gsap.set(navCta, { backgroundColor: '#d7ee84', color: '#15201a' });
 
       gsap.to(nav, {
-        left: () => getNavLayout().endLeft,
+        left: '50%',
+        x: 0,
+        xPercent: -50,
         top: 16,
-        width: () => getNavLayout().endWidth,
         height: 66,
         gap: () => (window.innerWidth <= 1400 ? 16 : 28),
         padding: () => (window.innerWidth <= 1400 ? '0 12px 0 18px' : '0 16px 0 22px'),

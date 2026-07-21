@@ -2,6 +2,20 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.5.2 - Stabilize Centered Navigation
+
+Date: 2026-07-21
+
+### Fixed
+- Anchored the global navigation to the horizontal center in both CSS and GSAP states.
+- Removed the scroll interpolation that could make the navigation enter from the left before settling in the center.
+- Prevented the company name and navigation labels from being truncated by flex compression.
+
+### Verified
+- Homepage initial state and 900px scrolled state remain centered with no clipping or overflow.
+- Direct `/blog` navigation render remains centered with no clipping or overflow.
+- SEO lint and production build passed for 393 public routes.
+
 ## v1.5.1 - Remove Country Switching Navigation
 
 Date: 2026-07-21

@@ -71,17 +71,17 @@ textarea {
 .nav {
   position: fixed;
   top: 18px;
-  left: max(48px, calc((100vw - 1700px) / 2));
+  left: 50%;
   z-index: 2147483000;
-  width: auto;
-  max-width: calc(100vw - 96px);
+  width: min(1480px, calc(100vw - 48px));
+  max-width: calc(100vw - 48px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   height: 54px;
   padding: 0 12px 0 18px;
-  transform: translateX(0);
+  transform: translateX(-50%);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
   background: rgba(18, 29, 23, 0.34);
@@ -90,7 +90,7 @@ textarea {
   -webkit-backdrop-filter: blur(24px) saturate(1.2);
   overflow: visible;
   isolation: isolate;
-  will-change: top, left, width, height, padding, gap, background, box-shadow;
+  will-change: top, height, padding, gap, background, box-shadow;
 }
 
 .nav::before {
@@ -119,13 +119,13 @@ textarea {
 
 .nav.is-floating {
   top: 16px;
-  left: max(38px, calc((100vw - 1480px) / 2));
+  left: 50%;
   width: min(1480px, calc(100vw - 76px));
   max-width: calc(100vw - 76px);
   height: 66px;
   justify-content: space-between;
   gap: 28px;
-  transform: translateX(0);
+  transform: translateX(-50%);
   background: rgba(19, 34, 27, 0.78);
   border-color: rgba(230, 246, 206, 0.2);
   box-shadow: 0 20px 74px rgba(0, 0, 0, 0.38);
@@ -142,9 +142,9 @@ textarea {
 }
 
 .brand {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
-  max-width: 370px;
+  max-width: none;
   position: relative;
   z-index: 1;
 }
@@ -156,8 +156,6 @@ textarea {
 .brand strong,
 .brand small {
   display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .brand strong {
@@ -182,9 +180,9 @@ textarea {
   position: relative;
   z-index: 1;
   min-width: 0;
-  flex: 0 1 auto;
-  justify-content: flex-start;
-  overflow: hidden;
+  flex: 1 1 auto;
+  justify-content: center;
+  overflow: visible;
 }
 
 .nav-links a {
@@ -5147,14 +5145,15 @@ textarea {
   }
 
   .nav {
-    left: 32px;
-    max-width: calc(100vw - 64px);
+    left: 50%;
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
   }
 
   .nav.is-floating {
-    left: max(24px, calc((100vw - 1160px) / 2));
-    width: min(1160px, calc(100vw - 48px));
-    max-width: calc(100vw - 48px);
+    left: 50%;
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
   }
 
   .nav-links {
@@ -5172,7 +5171,7 @@ textarea {
   }
 
   .brand {
-    max-width: 260px;
+    max-width: none;
   }
 
   .brand strong {
@@ -5379,7 +5378,7 @@ textarea {
   }
 
   .brand {
-    max-width: 220px;
+    max-width: none;
   }
 }
 
@@ -5389,7 +5388,7 @@ textarea {
   }
 
   .brand {
-    max-width: 190px;
+    max-width: none;
   }
 
   .brand small {
@@ -5475,6 +5474,12 @@ textarea {
   .authority-products > div:last-child,
   .blog-related-products > div:last-child {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
   }
 }
 

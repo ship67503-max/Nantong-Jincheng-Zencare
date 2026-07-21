@@ -3,9 +3,14 @@
 ## Latest Checkpoint
 Date: 2026-07-21
 
-Status: Country switching has been fully removed from the global navigation and verified on Vercel Production.
+Status: The global navigation is permanently center-anchored, no longer shifts horizontally during scroll animation, and displays its brand and menu text without clipping. Production deployment verification is pending.
 
 ## Completed Tasks
+- Reworked the navigation animation to keep `left: 50%` and `xPercent: -50` in every GSAP state.
+- Removed scroll-driven navigation width and horizontal-position interpolation.
+- Stabilized the navigation width and prevented brand/menu text from being compressed or clipped.
+- Added a compact breakpoint that hides the full link rail below 860px while retaining primary actions.
+- Verified the navigation at page load, after scrolling 900px, and on direct `/blog` entry with zero center drift, clipping, or horizontal overflow.
 - Removed the global country selector, country dropdown, flag, caret, click handler, and all related navigation styles.
 - Confirmed direct public routes and existing localized content remain available without exposing a country-switching control.
 - Verified the updated navigation in the browser with zero region-selector nodes or country labels.
