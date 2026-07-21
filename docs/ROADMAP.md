@@ -6,10 +6,10 @@ This roadmap organizes the JCZCARE website into practical development sprints. E
 ## Current Status
 Checkpoint mode: Enabled  
 Latest checkpoint file: `docs/CHECKPOINT.md`  
-Active sprint: Sprint 02 and Sprint 06 authority expansion
+Active sprint: Sprint 05 and Sprint 06 authority expansion
 Sprint 01 status: Completed as Technical SEO Foundation  
-Latest completed task: 100-article topic clusters, 15 pillar pages, and ten factory resource pages pushed to GitHub and verified on Vercel Production
-Next required deliverable: Use Search Console data to prioritize the next content-improvement cycle
+Latest completed task: 325-page B2B content ecosystem with 150 Blog articles, 40 Buyer Guides, expanded comparisons, case studies, factory knowledge, material knowledge, FAQs, reports, and resources
+Next required deliverable: Use Search Console data to improve the highest-opportunity clusters and conversion paths rather than adding undirected volume
 
 Difficulty scale:
 
@@ -146,6 +146,8 @@ Deliverables:
 - Completed increment: expanded the Blog content system to 100 connected B2B articles.
 - Completed increment: added 15 commercial pillar pages with cluster navigation, FAQs, schema, related products, and conversion links.
 - Completed increment: added the expanded authority routes to sitemap, RSS, static HTML, and internal-link generation.
+- Completed increment: expanded the complete target system to 150 Blog articles, 40 Buyer Guides, 30 comparisons, 20 case studies, 20 factory pages, 15 material pages, 15 FAQ landing pages, 10 reports, 15 pillars, and 10 buyer resources.
+- Completed increment: added exact count, word-range, metadata, component-contract, internal-link, and duplicate-paragraph validation.
 
 ## Sprint 06: Blog and Knowledge Center
 Priority: Medium  
@@ -175,6 +177,8 @@ Completed increment:
 - Expanded the content library to 100 articles and organized them beneath 15 authoritative pillar pages.
 - Added build-time cover generation for the expanded Blog library.
 - Added automated topic-cluster validation to prevent orphaned articles, missing metadata, and broken cluster relationships.
+- Added dedicated Buyer Guide, Materials, Reports, and Resource centers with cross-cluster product and inquiry links.
+- Expanded the generated route set to 393 public pages and the RSS feed to 150 articles.
 
 ## Sprint 07: Performance and Core Web Vitals
 Priority: High  
@@ -193,6 +197,12 @@ Deliverables:
 - Video optimization plan.
 - Bundle analysis.
 - Core Web Vitals action list.
+
+Completed increment:
+
+- Replaced a global 3.2 MB JPEG preload with its 148 KB WebP equivalent.
+- Converted blocking Google display-font CSS import to non-blocking head loading.
+- Improved a representative new Blog article Lighthouse performance score from 86 to 94 while retaining SEO 100 and Best Practices 100.
 
 ## Sprint 08: Accessibility and Responsive Refinement
 Priority: Medium  

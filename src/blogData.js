@@ -1,5 +1,6 @@
 import { growthBlogArticles } from './seoGrowthArticles.js';
 import { blogExpansionArticles } from './blogExpansionData.js';
+import { ecosystemBlogArticles } from './contentEcosystemBlogData.js';
 import { resolveArticleClusterSlug, topicClusterMap } from './topicClusters.js';
 
 const siteUrl = 'https://www.jczcare.com';
@@ -632,10 +633,15 @@ const buildArticle = (spec) => ({
   },
 });
 
-const sourceBlogArticles = [...blogExpansionArticles, ...growthBlogArticles, ...blogSpecs.map(buildArticle)];
+const sourceBlogArticles = [
+  ...ecosystemBlogArticles,
+  ...blogExpansionArticles,
+  ...growthBlogArticles,
+  ...blogSpecs.map(buildArticle),
+];
 
 export const blogArticles = sourceBlogArticles.map((article) => {
-  const clusterSlug = resolveArticleClusterSlug(article);
+  const clusterSlug = article.clusterSlug || resolveArticleClusterSlug(article);
   const cluster = topicClusterMap.get(clusterSlug);
 
   return {
@@ -667,7 +673,16 @@ export const getRelatedBlogArticles = (slug) => {
     ))
     .slice(0, 5 - explicitArticles.length);
 
-  return [...explicitArticles, ...semanticArticles].slice(0, 5);
+  const selectedSlugs = new Set([
+    slug,
+    ...explicitArticles.map((candidate) => candidate.slug),
+    ...semanticArticles.map((candidate) => candidate.slug),
+  ]);
+  const supportingArticles = blogArticles
+    .filter((candidate) => !selectedSlugs.has(candidate.slug))
+    .slice(0, Math.max(0, 5 - explicitArticles.length - semanticArticles.length));
+
+  return [...explicitArticles, ...semanticArticles, ...supportingArticles].slice(0, 5);
 };
 
 export const getBlogArticlesByCluster = (clusterSlug) =>

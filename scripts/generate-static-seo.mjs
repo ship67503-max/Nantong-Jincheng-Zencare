@@ -247,10 +247,14 @@ const buildJsonLd = (entry) => {
     });
   }
 
-  if (entry.authorityPage?.kind === 'pillar' || entry.authorityPage?.kind === 'factory-detail') {
+  if (
+    entry.authorityPage?.kind === 'pillar'
+    || entry.authorityPage?.kind === 'factory-detail'
+    || ['Article', 'Report'].includes(entry.authorityPage?.schemaType)
+  ) {
     graph.push({
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': entry.authorityPage.schemaType || 'Article',
       headline: entry.authorityPage.h1,
       description: entry.authorityPage.metaDescription,
       image,

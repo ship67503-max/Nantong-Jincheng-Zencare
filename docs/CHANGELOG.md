@@ -2,6 +2,38 @@
 
 All notable project documentation and website development changes should be recorded in this file.
 
+## v1.5.0 - Complete B2B SEO Content Ecosystem
+
+Date: 2026-07-21
+
+### Added
+- Expanded the Blog library from 100 to 150 connected B2B articles.
+- Added 40 long-form Buyer Guides, bringing supplier selection, MOQ, sampling, lead time, packaging, inspection, importing, and landed-cost decisions into one procurement center.
+- Expanded the authority system to 30 comparison pages, 20 representative case studies, 20 factory-knowledge pages, 15 material-knowledge pages, 15 FAQ landing pages, 10 industry reports, and 10 downloadable-resource request pages.
+- Added Buyer Guide, Material Knowledge, Industry Report, and Buyer Resource hubs with semantic links to products, pillars, related articles, factory content, and inquiry routes.
+- Added an automated content-ecosystem validator for page counts, word ranges, component data contracts, related content, metadata uniqueness, and exact paragraph duplication.
+
+### Changed
+- Expanded the static SEO, sitemap, RSS, schema, navigation, and internal-link systems to cover 393 public routes.
+- Added cross-collection links among pillars, guides, comparisons, related articles, products, and conversion routes.
+- Switched the global factory-image preload from a 3.2 MB JPEG to the existing 148 KB WebP asset.
+- Moved display-font loading out of the blocking CSS import and into a non-blocking document-head preload with a noscript fallback.
+
+### Fixed
+- Corrected the new Blog table-of-contents data contract so direct article URLs render without a React runtime error.
+- Filled related-article lists for small topic clusters without creating duplicate links.
+- Removed a duplicate `/resources` hub definition while preserving the established public URL.
+- Eliminated exact duplicate paragraphs from generated long-form authority content by binding every paragraph to its page and section context.
+
+### Verified
+- Topic-cluster validation passed for 15 pillar pages and 150 connected articles.
+- Content-ecosystem validation passed for 325 target content pages and 186 authority routes.
+- SEO validation passed for 393 public routes.
+- Production build generated 393 route-level HTML pages and 150 RSS items.
+- XML sitemap contains 393 unique URLs; static link validation found zero broken internal routes.
+- Desktop and 390 px mobile browser checks passed with zero horizontal overflow, broken images, or console errors.
+- Lighthouse for a new Blog article: Performance 94, Accessibility 96, Best Practices 100, SEO 100.
+
 ## v1.4.0 - Topic Authority and Factory Resource Centers
 
 Date: 2026-07-20

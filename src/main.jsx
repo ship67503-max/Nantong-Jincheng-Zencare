@@ -418,6 +418,9 @@ const footerLinks = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Media', href: '/media' },
   { label: 'Downloads', href: '/downloads' },
+  { label: 'Buyer Guides', href: '/buyer-guides' },
+  { label: 'Material Knowledge', href: '/materials' },
+  { label: 'Industry Reports', href: '/reports' },
 ];
 
 const newsArticles = [
@@ -1772,7 +1775,9 @@ function AuthorityPage({ page }) {
             <h1>{page.h1}</h1>
             <p>{page.intro}</p>
             <div className="authority-hero-actions">
-              <a href="/request-product-plan?product=oem-consultation">Request OEM Consultation <ArrowUpRight size={17} /></a>
+              <a href={page.downloadPath || '/request-product-plan?product=oem-consultation'}>
+                {page.downloadPath ? 'Request Download' : 'Request OEM Consultation'} <ArrowUpRight size={17} />
+              </a>
               <a href="/contact">Contact Sales <ArrowUpRight size={17} /></a>
             </div>
           </div>

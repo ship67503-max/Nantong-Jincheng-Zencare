@@ -1,6 +1,14 @@
 import { blogArticles, getBlogArticlesByCluster } from './blogData.js';
 import { topicClusters, topicClusterMap } from './topicClusters.js';
 import { factoryNavigationCards, factoryPages } from './factoryData.js';
+import {
+  ecosystemAuthorityPages,
+  ecosystemCaseStudyPages,
+  ecosystemComparisonPages,
+  ecosystemFactoryPages,
+  faqLandingPages,
+  resourcePages,
+} from './contentEcosystemAuthorityData.js';
 
 const siteUrl = 'https://www.jczcare.com';
 const updatedAt = '2026-07-17';
@@ -246,6 +254,7 @@ const hubPageSpecs = [
     intro: 'Use these structured guides to prepare supplier briefs, compare quotations, evaluate factories, control quality, and plan imports.',
     image: '/images/factory-campus.jpeg',
     cards: [
+      ...resourcePages.map((page) => [page.title, page.path]),
       ['Import Guides', '/blog/category/import-guide'], ['OEM Guides', '/blog/category/oem-manufacturing'],
       ['Factory Audit', '/blog/category/factory-audit'], ['MOQ Guide', '/blog/oem-pet-pad-moq-sampling-lead-time'],
       ['Lead Time Guide', '/blog/category/shipping'], ['Packaging Guide', '/blog/category/packaging'],
@@ -264,7 +273,10 @@ const hubPageSpecs = [
     intro: 'A buyer-focused view of production, materials, quality evidence, warehouse control, and export preparation.',
     image: '/images/factory-campus.jpeg',
     video: '/videos/factory-profile-4-compressed.mp4',
-    cards: factoryNavigationCards,
+    cards: [
+      ...factoryNavigationCards,
+      ...ecosystemFactoryPages.map((page) => [page.title, page.path]),
+    ],
   },
   {
     path: '/academy',
@@ -292,7 +304,7 @@ const hubPageSpecs = [
     h1: 'Compare sourcing options on evidence, not labels',
     intro: 'Use controlled comparison frameworks to evaluate cost, performance, MOQ, lead time, quality evidence, and risk.',
     image: '/images/pet-pad-layer-protection-premium.png',
-    cards: comparisonPages.map((page) => [page.title, page.path]),
+    cards: [...comparisonPages, ...ecosystemComparisonPages].map((page) => [page.title, page.path]),
   },
   {
     path: '/case-studies',
@@ -304,7 +316,7 @@ const hubPageSpecs = [
     h1: 'Apply repeatable sourcing methods to real buyer decisions',
     intro: 'These transparent educational scenarios do not invent customer claims. They show how buyers can structure decisions, evidence, and next actions.',
     image: '/images/production-line-clean.png',
-    cards: caseStudyPages.map((page) => [page.title, page.path]),
+    cards: [...caseStudyPages, ...ecosystemCaseStudyPages].map((page) => [page.title, page.path]),
   },
   {
     path: '/media',
@@ -412,6 +424,7 @@ export const faqPage = {
   groups: faqGroups,
   faqs: faqGroups.flatMap((group) => group.faqs),
   sections: [],
+  cards: faqLandingPages.map((page) => [page.title, page.path]),
   products: ['/products/disposable-pet-pads', '/products/adult-underpads'],
   breadcrumbs: [['Home', '/'], ['FAQ', '/faq']],
 };
@@ -423,6 +436,7 @@ export const authorityPages = [
   ...comparisonPages,
   ...caseStudyPages,
   faqPage,
+  ...ecosystemAuthorityPages,
 ];
 
 export const authorityPageMap = new Map(authorityPages.map((page) => [page.path, page]));
@@ -440,11 +454,11 @@ export const getAuthoritySeoEntries = () => authorityPages.map((page) => ({
   title: page.seoTitle,
   description: page.metaDescription,
   image: page.image,
-  type: page.kind === 'faq'
+  type: page.schemaType || (page.kind === 'faq'
     ? 'FAQPage'
     : page.kind === 'pillar' || page.kind === 'factory-detail'
       ? 'Article'
-      : 'CollectionPage',
+      : 'CollectionPage'),
   faqs: page.faqs,
   breadcrumbs: page.breadcrumbs,
   authorityPage: page,
