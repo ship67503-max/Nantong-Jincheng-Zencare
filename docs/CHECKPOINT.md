@@ -3,7 +3,7 @@
 ## Latest Checkpoint
 Date: 2026-07-21
 
-Status: The complete B2B SEO content ecosystem is implemented, pushed to GitHub, and verified on Vercel Production.
+Status: Non-homepage image regeneration is audited and isolated on `codex/regenerate-non-homepage-images`, but generation is blocked by the built-in imagegen service returning repeated network errors.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -68,9 +68,16 @@ Status: The complete B2B SEO content ecosystem is implemented, pushed to GitHub,
 - Reduced global preload transfer weight by using the existing WebP factory image and non-blocking display fonts.
 
 ## Current Task
-- Await Search Console query and inquiry data for the next evidence-led optimization milestone.
+- Regenerate and replace all non-homepage content images while preserving the homepage exactly.
+- Route and asset audit is complete: 393 public routes, 392 non-homepage routes, 150 Blog articles, 186 authority routes, and 10 factory detail routes.
+- Resume at image generation batch 1; do not repeat the completed scan or homepage protection analysis.
+- Use only the built-in Codex imagegen workflow. Do not use CLI/API or third-party generation fallbacks.
 
 ## Remaining Tasks
+- Retry generation batch 1 after the built-in imagegen service is available.
+- Generate and validate unique non-homepage hero and supporting images in semantic batches.
+- Update only non-homepage image references and alt text.
+- Complete desktop/mobile visual QA, lint, build, report, commit, push, and Vercel Production deployment.
 - Configure Resend production environment variables in Vercel before expecting live email delivery.
 - Configure Google Cloud service account and Google Sheets environment variables in Vercel.
 - Continue Phase 1 Technical SEO improvements in logical milestones.
