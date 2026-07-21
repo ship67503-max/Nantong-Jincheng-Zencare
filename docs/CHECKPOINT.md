@@ -1,9 +1,9 @@
 # Project Checkpoint
 
 ## Latest Checkpoint
-Date: 2026-07-21 13:08 +08:00
+Date: 2026-07-21 15:23 +08:00
 
-Status: Non-homepage image regeneration remains blocked. The built-in imagegen recovery test failed three times with the same service network error; no image or website file was changed.
+Status: Non-homepage image regeneration remains blocked. A connection-only built-in imagegen test failed on 2026-07-21 at 15:23 +08:00; no image or website file was changed.
 
 ## Completed Tasks
 - Documentation folder initialized with project strategy, rules, roadmap, changelog, and Sprint 01 audit checklist.
@@ -73,6 +73,8 @@ Status: Non-homepage image regeneration remains blocked. The built-in imagegen r
 - Resume at image generation batch 1; do not repeat the completed scan or homepage protection analysis.
 - Use only the built-in Codex imagegen workflow. Do not use CLI/API or third-party generation fallbacks.
 - Latest recovery test: three failed attempts on 2026-07-21 at 13:08 +08:00. Each returned `network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)`.
+- Connection-only recovery check on 2026-07-21 at 15:23 +08:00: one permitted request returned `image generation failed: network error: error sending request for url (https://chatgpt.com/backend-api/codex/images/generations)`.
+- Diagnostic classification: HTTP status unavailable because no HTTP response was returned; error type is a network transport error; request failed while sending to the built-in image generation endpoint. The response did not indicate an expired login, permission denial, quota exhaustion, or an HTTP-level network policy block.
 - Recovery-test outputs: none. Generated images: 0. Replaced images: 0. Homepage changes: none.
 
 ## Remaining Tasks
