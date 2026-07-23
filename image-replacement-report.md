@@ -23,9 +23,19 @@ Generated at: 2026-07-23T09:25:40.105Z
 
 ## Deployment
 
-- Status: pending
+- Status: success
 - Production domain: https://www.jczcare.com
+- Vercel deployment URL: https://nantong-jincheng-zencare-aq42d47gw-shi-peiyu-s-projects.vercel.app
+- Vercel inspector URL: https://vercel.com/shi-peiyu-s-projects/nantong-jincheng-zencare/4BswXnTAeFGtAMqR3VfZDeZ8KpaS
 - Vercel project ID: prj_oydn0sYZkzaSe8GggaK4AQyJg69N
+- Production check: passed, selected route/image HEAD requests returned 200
+
+## Git
+
+- Checkpoint commit: a587f04
+- Final local commit before report update: 90633a8
+- Branch: codex/regenerate-non-homepage-images
+- Push status: failed because this machine could not connect to github.com:443 after two attempts.
 
 ## Unsupported / Unreplaced Positions
 

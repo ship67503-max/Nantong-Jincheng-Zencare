@@ -1850,8 +1850,17 @@
     "homepage_protection_check": "passed: no diff from checkpoint for index.html, src/styles.css, src/Silk.jsx, and protected homepage image files."
   },
   "deployment": {
-    "status": "pending",
+    "status": "success",
     "production_domain": "https://www.jczcare.com",
-    "vercel_project_id": "prj_oydn0sYZkzaSe8GggaK4AQyJg69N"
+    "vercel_deployment_url": "https://nantong-jincheng-zencare-aq42d47gw-shi-peiyu-s-projects.vercel.app",
+    "vercel_inspector_url": "https://vercel.com/shi-peiyu-s-projects/nantong-jincheng-zencare/4BswXnTAeFGtAMqR3VfZDeZ8KpaS",
+    "vercel_project_id": "prj_oydn0sYZkzaSe8GggaK4AQyJg69N",
+    "production_check": "passed: HEAD 200 for /products/disposable-pet-pads, /factory/production-line, /blog/choose-reliable-pet-pad-manufacturer, and generated product image."
+  },
+  "git": {
+    "checkpoint_commit": "a587f04",
+    "final_commit": "90633a8",
+    "branch": "codex/regenerate-non-homepage-images",
+    "push_status": "failed: GitHub connection to github.com:443 failed from this machine after two attempts; local commits are created."
   }
 }
