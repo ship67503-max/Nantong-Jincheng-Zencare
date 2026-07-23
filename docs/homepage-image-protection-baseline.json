@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-07-22T05:36:13.657Z",
+  "branch": "codex/regenerate-non-homepage-images",
+  "note": "Protected homepage assets and non-route-specific presentation files. src/main.jsx is shared by homepage and inner routes and must be reviewed by diff instead of whole-file hash.",
+  "files": [
+    {
+      "path": "index.html",
+      "exists": true,
+      "sha256": "43891b94b8957d2e13382fd8b389eadf01c43bf75e2fa6fe0ee55e4c05a7f9ef"
+    },
+    {
+      "path": "src/Silk.jsx",
+      "exists": true,
+      "sha256": "b559d135c2c8df39b14e867138e98a015b139c1b794a38bd4b72dd3787c38470"
+    },
+    {
+      "path": "src/styles.css",
+      "exists": true,
+      "sha256": "2f9999b361c2135a801761d0faddd5d145a0f30d5734f2da5671d32e5c35b302"
+    },
+    {
+      "path": "public/images/factory-campus.jpeg",
+      "exists": true,
+      "sha256": "1dd0efc0090e803c29a21f02687ee3a650a928543247a926fd1443a54407246e"
+    },
+    {
+      "path": "public/images/custom-disposable-pet-pads-premium.png",
+      "exists": true,
+      "sha256": "4b0f187b999bf129ca9fc320e362f34dc7eec334e2167dc8fb64563863b65b29"
+    },
+    {
+      "path": "public/images/pet-pad-layer-protection-premium.png",
+      "exists": true,
+      "sha256": "349d5a5f9051916e1303fb07629a585f529483e91fb5e1383e346fe62112cf4f"
+    },
+    {
+      "path": "public/images/quality-inspection-lab-mask.png",
+      "exists": true,
+      "sha256": "85b7cb5d2f695186a3e76e2e01fbcc94e8ec30114a1fd8dcbbca45a691d71796"
+    },
+    {
+      "path": "public/images/contact-pets-grass-centered.png",
+      "exists": true,
+      "sha256": "17714a258516807f7709271f5e1c64d45ae38853f5ff5cf92cf5e84fb205c277"
+    },
+    {
+      "path": "public/images/production-line-clean.png",
+      "exists": true,
+      "sha256": "bdee4482720eb783e99bb957aaf4461fd9dd18bd5ed77fb99a1b90cd563b2b0e"
+    }
+  ]
+}

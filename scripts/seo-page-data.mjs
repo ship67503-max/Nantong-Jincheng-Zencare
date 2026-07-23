@@ -38,7 +38,7 @@ export const productSeo = [
     title: 'Disposable Pet Pads OEM Manufacturer | JCZCARE',
     description:
       'Disposable pet pads for OEM/ODM buyers needing custom sizes, absorbency levels, embossing options, private-label packaging, and factory-side production support.',
-    image: '/images/custom-disposable-pet-pads-premium.png',
+    image: '/generated-images/pet-pads/products-disposable-pet-pads.webp',
     productName: 'Disposable Pet Pads',
     category: 'OEM pet pads',
   },
@@ -47,7 +47,7 @@ export const productSeo = [
     title: 'Premium Adult Disposable Underpads OEM Manufacturer | JCZCare',
     description:
       'OEM adult disposable underpads manufacturer providing customizable absorbent underpads for hospitals, distributors and private label brands worldwide.',
-    image: '/images/adult-underpads-hero.png',
+    image: '/generated-images/adult-underpads/products-adult-underpads.webp',
     productName: 'Adult Disposable Underpads',
     category: 'Healthcare absorbent underpads',
     faqs: [

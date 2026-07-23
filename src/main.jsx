@@ -156,6 +156,8 @@ const customProducts = [
     title: 'Disposable Pet Pads',
     category: 'Core Product',
     image: '/images/custom-disposable-pet-pads-premium.png',
+    detailImage: '/generated-images/pet-pads/products-disposable-pet-pads.webp',
+    detailImageAlt: 'Dog sitting beside a disposable pet training pad in a modern home',
     specs: ['Multiple sizes', 'Absorbency levels', 'Embossing optional'],
     badge: 'OEM / ODM',
     summary: 'OEM pet pads built around absorption, leak protection, and production planning.',
@@ -166,6 +168,8 @@ const customProducts = [
     title: 'Adult Disposable Underpads',
     category: 'Healthcare Care Series',
     image: '/images/adult-underpads-hero.png',
+    detailImage: '/generated-images/adult-underpads/products-adult-underpads.webp',
+    detailImageAlt: 'Absorbency testing of an adult disposable underpad in a quality laboratory',
     specs: ['SAP absorbency', 'Multiple sizes', 'OEM packaging'],
     badge: 'OEM / ODM',
     summary: 'Premium disposable underpads for healthcare, home care, distribution, and private-label programs.',
@@ -857,7 +861,7 @@ const buildStructuredData = ({
       '@type': 'Product',
       name: product.title,
       category: product.category,
-      image: buildAbsoluteUrl(product.image),
+      image: buildAbsoluteUrl(product.detailImage || product.image),
       description: product.summary,
       brand: {
         '@type': 'Brand',
@@ -1088,7 +1092,10 @@ function ProductDetail({ product }) {
             </a>
           </div>
           <div className="detail-visual">
-            <OptimizedImage src={product.image} alt={`${product.title} product image`} />
+            <OptimizedImage
+              src={product.detailImage || product.image}
+              alt={product.detailImageAlt || `${product.title} product image`}
+            />
             <span>{product.badge}</span>
           </div>
         </div>
@@ -1188,8 +1195,8 @@ function AdultUnderpadsPage({ ui }) {
         <section className="adult-underpads-hero" aria-labelledby="adult-underpads-title">
           <div className="adult-underpads-hero-media">
             <OptimizedImage
-              src="/images/adult-underpads-hero.png"
-              alt="Adult disposable underpads with absorbent white surface and blue leak-proof backing"
+              src={adultUnderpadProduct.detailImage}
+              alt={adultUnderpadProduct.detailImageAlt}
               loading="eager"
               fetchPriority="high"
             />
@@ -1238,8 +1245,8 @@ function AdultUnderpadsPage({ ui }) {
         <section className="adult-underpads-advantages" aria-labelledby="adult-underpads-advantages-title">
           <div className="adult-underpads-advantages-media">
             <OptimizedImage
-              src="/images/adult-underpads-hero.png"
-              alt="Close product view of adult disposable underpad surface and blue edge"
+              src={adultUnderpadProduct.detailImage}
+              alt={adultUnderpadProduct.detailImageAlt}
             />
           </div>
           <div className="adult-underpads-advantages-copy">
@@ -2999,7 +3006,7 @@ function App() {
         title: 'Premium Adult Disposable Underpads OEM Manufacturer | JCZCare',
         description: 'OEM adult disposable underpads manufacturer providing customizable absorbent underpads for hospitals, distributors and private label brands worldwide.',
         path: '/products/adult-underpads',
-        image: '/images/adult-underpads-hero.png',
+        image: currentProduct.detailImage,
         product: currentProduct,
         faqs: adultUnderpadFaqs,
       });

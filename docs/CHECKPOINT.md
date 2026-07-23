@@ -172,3 +172,200 @@ If the connection is interrupted:
 
 ## Next Checkpoint
 After production verification, use Google Search Console query and page data to prioritize improvements to the highest-opportunity pillar, guide, report, factory, and Blog pages without repeating this completed milestone.
+
+## Image Regeneration Checkpoint - 2026-07-22 09:46 +08:00
+
+- Branch: `codex/regenerate-non-homepage-images`
+- Starting checkpoint: `ed41bc0`
+- Route inventory and image-demand mapping: reused; no rescan
+- Current task: `/products/disposable-pet-pads`
+- Playwright: installed as a development-only QA dependency with dedicated Chromium
+- Desktop candidate QA: passed loading, decoding, layout, network, and console checks
+- Mobile candidate QA: failed because the existing portrait crop removed the dog; candidate rejected
+- Website state: original Disposable Pet Pads asset/reference restored; homepage unchanged
+- Accepted generated images: `0`
+- Replaced images: `0`
+- Push/merge/deploy: not performed
+- Blocker: built-in imagegen product requests repeatedly fail during request transport; a minimal connectivity test succeeded once, but the immediate product retry failed
+- Resume point: retry only the centered mobile-safe Disposable Pet Pads image in single-image serial mode; do not rescan routes or repeat semantic review
+
+### Retry Update - 2026-07-22 10:04 +08:00
+
+- `/products/disposable-pet-pads`: one product-specific 4:3 imagegen request attempted in strict serial mode
+- Result: request-transport network error; no file returned
+- Empty-room connectivity output: explicitly rejected and not used
+- Original product image/reference: preserved
+- Homepage and website source: unchanged
+- Adult Underpads: not started
+- Commit/push/merge/deploy: not performed
+- Resume point: retry the same approved Disposable Pet Pads product scene only after built-in imagegen service recovery; reuse all existing route, semantic, container, and QA findings
+
+### Image Queue Checkpoint - 2026-07-22 10:15 +08:00
+
+- Mode: `IMAGE QUEUE MODE`
+- Completed queue images: `0`
+- Current/next pending image: `Disposable Pet Pads`
+- Latest attempt: failed during request transport; no image returned
+- Retry behavior: stopped immediately; no additional imagegen call made
+- Website images/references, homepage, layout, and source code: unchanged
+- Browser/build/Git/deployment actions: not performed
+- Resume rule: when built-in imagegen is available, continue with the same pending Disposable Pet Pads image; do not rescan, recreate mappings, or regenerate completed images
+
+### Image Queue Retry Checkpoint - 2026-07-22 10:40 +08:00
+
+- Branch: `codex/regenerate-non-homepage-images`
+- Queue item: `Disposable Pet Pads`
+- Attempt count this cycle: `3`
+- Recovery intervals completed: `45 seconds`, then `90 seconds`
+- Latest error type: built-in imagegen request-transport network error with no HTTP response or output file
+- Output directory/file: not created
+- Completed/approved queue images: `0`
+- Current status: `failed-network`; keep as first pending item
+- Website source, image references, homepage, Playwright, build, Git, push, merge, and deployment: untouched
+- Next resume action: retry this same item only when built-in imagegen recovers; do not rescan routes or recreate the queue
+
+### Fal Billing Preflight Checkpoint - 2026-07-22 10:57 +08:00
+
+- Branch: `codex/regenerate-non-homepage-images`
+- Starting checkpoint: `ed41bc0`
+- Existing route scan, semantic analysis, image mapping, and queue: reused without rescanning
+- Fal plugin: installed and callable; catalog, schema, pricing, and documentation queries succeeded
+- Recommended endpoint: `fal-ai/flux-2/klein/9b`
+- Price: USD `0.011` per megapixel for successful output
+- Supported output: `landscape_4_3` or custom size; JPEG, PNG, and WebP
+- Account free credits / remaining balance: not exposed by the available Fal connector tools and therefore not verified
+- Commercial-use status for the exact recommended endpoint: not explicitly returned by the connector; Fal requires model-specific license verification
+- Generation decision: no request submitted because an unauthorized charge could not be ruled out
+- Current/next pending item: `Disposable Pet Pads`
+- Generated/saved/replaced images: `0 / 0 / 0`
+- Homepage, website source, image references, layout, SEO, and task queue: unchanged
+- Build/Playwright/Git commit/push/merge/deploy: not performed
+- Resume condition: verify sufficient free credit or explicitly authorize the estimated Fal cost before submitting a single-image request
+
+### Manual Canva Intake Checkpoint - 2026-07-22 13:38 +08:00
+
+- Branch: `codex/regenerate-non-homepage-images`
+- Existing 393-route scan and 392 non-homepage image requirements: reused without rescanning
+- Queue file: `docs/image-generation-queue.json` (392 tasks, all currently `pending`)
+- Homepage baseline: `docs/homepage-image-protection-baseline.json`
+- Current/next task: `task-0001` for `/products/disposable-pet-pads`
+- Current target: `/generated-images/pet-pads/products-disposable-pet-pads.webp`
+- Expected source: a completed PNG, JPG, JPEG, or WebP download placed in `D:\WebsiteImages\incoming`
+- Intake/processed/rejected directories: created and writable
+- Project category output directories: created under `public/generated-images/`
+- Stable eligible files detected at checkpoint: `0`
+- Current completed/rejected/replaced totals: `0 / 0 / 0`
+- Homepage, website text, layout, SEO, routes, contact form, Resend, and Google Sheets logic: unchanged
+- Build, push, merge, and deployment: not performed
+- Next action: monitor the intake directory every 30 seconds; process only a stable, valid, semantically matching image for `task-0001`
+
+### Manual Intake Idle Checkpoint - 2026-07-22 13:51 +08:00
+
+- Intake monitoring completed for 10 continuous minutes at 30-second intervals
+- Eligible files received: `0`
+- Completed / rejected / manual-review-required: `0 / 0 / 0`
+- Remaining pending tasks: `392`
+- Next pending task: `task-0001`
+- Next page: `/products/disposable-pet-pads`
+- Expected target: `/generated-images/pet-pads/products-disposable-pet-pads.webp`
+- Homepage unchanged: `YES`
+- Website image references and source code: unchanged during monitoring
+- Build, Git commit, push, merge, and Vercel deployment: not performed
+- Resume trigger: place the next completed Canva image in `D:\WebsiteImages\incoming`; resume from this checkpoint without rescanning or recreating the queue
+
+### Manual Intake Task Checkpoint - 2026-07-23 09:12 +08:00
+
+- Completed task: `task-0001`
+- Completed page: `/products/disposable-pet-pads`
+- New route-specific asset: `/generated-images/pet-pads/products-disposable-pet-pads.webp`
+- Processed dimensions / size: `1458 x 941` / `60,596` bytes
+- Desktop/mobile image loading: passed
+- Homepage and customization product card: still use `/images/custom-disposable-pet-pads-premium.png`
+- Homepage unchanged: `YES`
+- Queue totals: `1 completed`, `391 pending`
+- Next pending task: `task-0002`
+- Next page: `/products/adult-underpads`
+- Expected subject: adult disposable underpad in a professional home-care or healthcare setting
+- Existing unrelated or pet-pad-only downloads: retained for review; not misassigned
+- Build, Git commit, push, merge, and Vercel deployment: not performed
+- Resume action: evaluate the next stable incoming image against `task-0002`; reject or retain mismatches without advancing the queue
+
+### Adult Underpads Intake Checkpoint - 2026-07-23 09:19 +08:00
+
+- Active task: `task-0002`
+- Active route: `/products/adult-underpads`
+- Reviewed downloads in this checkpoint: `44`
+- Valid Adult Underpads assets: `0`
+- Rejected but preserved assets: `44`
+- Rejected directory: `D:/WebsiteImages/rejected`
+- Queue totals: `1 completed`, `391 pending`
+- Download asset totals: `1 processed`, `44 rejected`, `0 manual-review-required`
+- Incoming directory after reviewed snapshot: empty
+- Homepage unchanged: `YES`
+- No page reference was advanced for `task-0002`
+- Build, commit, push, merge, and deployment: not performed
+- Resume trigger: receive a stable, decodable, watermark-free Adult Disposable Underpads image showing a professional home-care bed or healthcare setting
+
+### Adult Underpads Idle Checkpoint - 2026-07-23 09:31 +08:00
+
+- Monitoring window: 10 minutes
+- New eligible downloads: `0`
+- Queue: `1 completed`, `391 pending`
+- Rejected assets: `44`, all preserved on disk
+- Next task: `task-0002`
+- Incoming directory: empty
+- Homepage baseline verification: passed with zero mismatches
+- Homepage root/customization new-image usage: zero; protected original remains in use
+- Build, commit, push, merge, and deployment: not performed
+- Resume from this exact checkpoint when the next Canva download is placed in `D:\WebsiteImages\incoming`
+
+### Adult Underpads Completed Checkpoint - 2026-07-23 11:23 +08:00
+
+- Completed task: `task-0002`
+- Completed page: `/products/adult-underpads`
+- Accepted source: `D:/WebsiteImages/processed/task-0002-adult-underpads-source.jpg`
+- New route-specific asset: `/generated-images/adult-underpads/products-adult-underpads.webp`
+- Processed dimensions / size: `1536 x 1024` / `59,724` bytes
+- Semantic validation: passed; watermark-free adult underpad absorbency testing in a quality laboratory
+- Desktop validation: passed; HTTP 200, both image instances decoded, no request or console errors
+- Mobile validation: passed; HTTP 200, both image instances decoded, responsive 3:2 rendering, no request or console errors
+- Homepage/customization product card: still use `/images/adult-underpads-hero.png`
+- Homepage protected-file baseline: passed with zero mismatches
+- Queue totals: `2 completed`, `390 pending`
+- Next pending task: `task-0003`
+- Next page: `/products/pet-care-pad-glove-wipes`
+- Expected subject: disposable pet care glove wipes and private-label care-product presentation
+- Watermarked files: not cropped, altered, or assigned
+- Build, commit, push, merge, and deployment: not performed
+- Resume action: review only a new, stable, watermark-free source matching `task-0003`
+
+### Pet Care Glove Wipes Intake Checkpoint - 2026-07-23 11:53 +08:00
+
+- Active task: `task-0003`
+- Active route: `/products/pet-care-pad-glove-wipes`
+- Expected subject: disposable pet care glove wipes and a credible private-label care-product presentation
+- Reviewed downloads in this checkpoint: `8`
+- Accepted assets: `0`
+- Rejected but preserved assets: `8`
+- Rejected directory range: `D:/WebsiteImages/rejected/reviewed-0057-original.jpg` through `reviewed-0064-original.jpg`
+- Rejection reasons: category mismatch, missing glove-wipe product, or visible generated/packaging text
+- Watermark/text removal: not performed
+- Incoming directory after review: empty
+- Queue totals: `2 completed`, `390 pending`
+- Next pending task remains: `task-0003`
+- Homepage unchanged: `YES`
+- Build, commit, push, merge, and deployment: not performed
+- Resume trigger: place a stable, decodable, watermark-free image that clearly shows disposable pet care glove wipes in `D:\WebsiteImages\incoming`
+
+### Pet Care Glove Wipes Idle Checkpoint - 2026-07-23 12:18 +08:00
+
+- Monitoring window: at least 10 continuous minutes after the latest intake review
+- New eligible downloads: `0`
+- Queue totals: `2 completed`, `390 pending`
+- Rejected downloaded assets: `64`, all preserved on disk
+- Next pending task: `task-0003`
+- Next page: `/products/pet-care-pad-glove-wipes`
+- Incoming directory: empty
+- Homepage unchanged: `YES`
+- Build, commit, push, merge, and deployment: not performed
+- Resume trigger: place a stable, decodable, watermark-free image that clearly shows disposable pet care glove wipes in `D:\WebsiteImages\incoming`
