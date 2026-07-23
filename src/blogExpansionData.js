@@ -13,7 +13,7 @@ const categoryProfiles = {
       'approved samples, controlled specifications, production records, packaging proofs and batch-related inspection evidence',
     commercial:
       'development scope, MOQ by component, sampling rounds, artwork approval, production scheduling and repeat-order control',
-    sourceImage: '/images/production-line-clean.png',
+    sourceImage: '/images/generated-site/factory/factory-production-line-01.webp',
   },
   'Pet Training Pads': {
     buyers: 'pet pad brands, distributors, wholesalers, supermarkets and online sellers',
@@ -24,7 +24,7 @@ const categoryProfiles = {
       'measured samples, retained references, weight and size records, absorbency observations, leakage checks and packing inspection',
     commercial:
       'performance tier, pack count, retail positioning, carton efficiency, order quantity and channel-specific quality expectations',
-    sourceImage: '/images/pet-pad-layer-protection-premium.png',
+    sourceImage: '/images/generated-site/products/products-pet-pad-structure-01.webp',
   },
   'Adult Underpads': {
     buyers: 'healthcare distributors, nursing suppliers, private-label brands and institutional procurement teams',
@@ -35,7 +35,7 @@ const categoryProfiles = {
       'material declarations, approved specifications, dimensional checks, absorbency and rewet observations, packaging review and traceable batches',
     commercial:
       'care setting, underpad dimensions, absorbency target, pack count, labeling review, institutional tenders and supply continuity',
-    sourceImage: '/images/adult-underpads-hero.png',
+    sourceImage: '/images/generated-site/products/products-underpads-01.webp',
   },
   'Dog Poop Bags': {
     buyers: 'pet brands, distributors, retailers, supermarkets and private-label waste bag buyers',
@@ -57,7 +57,7 @@ const categoryProfiles = {
       'dated factory records, live process evidence, production and inspection documents, retained samples, shipment photos and corrective actions',
     commercial:
       'capacity allocation, SKU planning, quality ownership, warehouse readiness, export coordination and business continuity',
-    sourceImage: '/images/factory-campus.jpeg',
+    sourceImage: '/images/generated-site/factory/factory-campus-01.webp',
   },
   'Buying Guide': {
     buyers: 'purchasing managers, importers, wholesalers, retail buyers and category managers',
@@ -68,7 +68,7 @@ const categoryProfiles = {
       'supplier quotations, samples, specification sheets, audit findings, inspection results, shipping documents and order history',
     commercial:
       'total landed cost, MOQ, lead time, payment milestones, Incoterms, supplier risk, negotiation and reorder planning',
-    sourceImage: '/images/warehouse-storage-clean.png',
+    sourceImage: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
   },
   'Industry Insights': {
     buyers: 'brand strategists, procurement leaders, distributors, retailers and product development teams',
@@ -79,7 +79,7 @@ const categoryProfiles = {
       'market data, channel feedback, supplier evidence, specification comparisons, quality records and verified regulatory guidance',
     commercial:
       'portfolio planning, category growth, pricing pressure, supply resilience, sustainability communication and long-term sourcing strategy',
-    sourceImage: '/images/custom-products-preview.png',
+    sourceImage: '/images/generated-site/packaging/private-label-packaging-02.webp',
   },
 };
 
@@ -367,7 +367,7 @@ const topicSpecs = rawTopics.map(([category, title, slug, primaryKeyword, angle,
     angle,
     decision,
     risk,
-    image: `/images/blog/${slug}.webp`,
+    image: `/images/generated-site/blog/${slug}.webp`,
     imageAlt: `${title} for OEM and private-label B2B buyers`,
     intro: `${title} is a practical sourcing topic for ${profile.buyers}. This guide explains how to ${angle}, document ${decision}, and reduce the risk of ${risk}.`,
     coreAngle: `The core buying objective is to ${angle} while keeping product evidence, commercial terms and repeat-order controls aligned.`,

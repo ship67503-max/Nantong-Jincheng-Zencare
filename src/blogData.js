@@ -10,16 +10,16 @@ const updatedAt = '2026-07-15';
 const author = 'JCZCare Editorial Team';
 
 const baseImages = {
-  factory: '/images/factory-campus.jpeg',
-  production: '/images/production-line-clean.png',
-  lamination: '/images/lamination-detail-clean.png',
-  warehouse: '/images/warehouse-storage-clean.png',
-  quality: '/images/quality-inspection-lab-mask.png',
-  layer: '/images/pet-pad-layer-protection-premium.png',
-  product: '/images/custom-disposable-pet-pads-premium.png',
-  packaging: '/images/custom-care-pad-packaging-ai.png',
-  absorbentPaper: '/images/custom-absorbent-paper-ai.png',
-  charcoal: '/images/custom-charcoal-pet-pad-ai.png',
+  factory: '/images/generated-site/factory/factory-campus-01.webp',
+  production: '/images/generated-site/factory/factory-production-line-01.webp',
+  lamination: '/images/generated-site/factory/factory-lamination-01.webp',
+  warehouse: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
+  quality: '/images/generated-site/quality-control/factory-quality-control-01.webp',
+  layer: '/images/generated-site/products/products-pet-pad-structure-01.webp',
+  product: '/images/generated-site/products/products-disposable-pads-01.webp',
+  packaging: '/images/generated-site/packaging/private-label-packaging-01.webp',
+  absorbentPaper: '/images/generated-site/materials/products-absorbent-paper-01.webp',
+  charcoal: '/images/generated-site/products/products-charcoal-pads-01.webp',
 };
 
 const blogSpecs = [

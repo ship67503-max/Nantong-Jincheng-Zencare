@@ -156,7 +156,7 @@ const customProducts = [
     title: 'Disposable Pet Pads',
     category: 'Core Product',
     image: '/images/custom-disposable-pet-pads-premium.png',
-    detailImage: '/generated-images/pet-pads/products-disposable-pet-pads.webp',
+    detailImage: '/images/generated-site/products/products-disposable-pads-01.webp',
     detailImageAlt: 'Dog sitting beside a disposable pet training pad in a modern home',
     specs: ['Multiple sizes', 'Absorbency levels', 'Embossing optional'],
     badge: 'OEM / ODM',
@@ -168,7 +168,7 @@ const customProducts = [
     title: 'Adult Disposable Underpads',
     category: 'Healthcare Care Series',
     image: '/images/adult-underpads-hero.png',
-    detailImage: '/generated-images/adult-underpads/products-adult-underpads.webp',
+    detailImage: '/images/generated-site/products/products-underpads-01.webp',
     detailImageAlt: 'Absorbency testing of an adult disposable underpad in a quality laboratory',
     specs: ['SAP absorbency', 'Multiple sizes', 'OEM packaging'],
     badge: 'OEM / ODM',
@@ -180,6 +180,8 @@ const customProducts = [
     title: 'Pet Care Pad & Glove Wipes',
     category: 'Care Series',
     image: '/images/custom-care-pad-packaging-ai.png',
+    detailImage: '/images/generated-site/packaging/private-label-packaging-01.webp',
+    detailImageAlt: 'Private-label pet care packaging review meeting',
     specs: ['Private label', 'Retail pack', 'Soft surface'],
     badge: 'Private Label',
     summary: 'Disposable care products for daily pet cleaning and private-label retail.',
@@ -190,6 +192,8 @@ const customProducts = [
     title: 'Pet Absorbent Paper Sheets',
     category: 'Source Factory',
     image: '/images/custom-absorbent-paper-ai.png',
+    detailImage: '/images/generated-site/materials/products-absorbent-paper-01.webp',
+    detailImageAlt: 'Absorbent paper and core material sample on a tray',
     specs: ['SAP blend', 'Layer material', 'Bulk customization'],
     badge: 'Factory Direct',
     summary: 'Absorbent paper sheets configured for core materials and bulk supply.',
@@ -210,6 +214,8 @@ const customProducts = [
     title: 'Charcoal Pet Pads',
     category: 'Odor Control',
     image: '/images/custom-charcoal-pet-pad-ai.png',
+    detailImage: '/images/generated-site/products/products-charcoal-pads-01.webp',
+    detailImageAlt: 'Dark-backed absorbent pad edge for odor-control product reference',
     specs: ['Activated carbon', 'Odor reduction', 'Fast sampling'],
     badge: 'Formula Support',
     summary: 'Odor-control pet pads for premium and upgraded product lines.',
@@ -220,6 +226,8 @@ const customProducts = [
     title: 'Adhesive Pet Pads',
     category: 'Anti-Slip Design',
     image: '/images/custom-adhesive-pet-pad-ai.png',
+    detailImage: '/images/generated-site/products/products-adhesive-pads-01.webp',
+    detailImageAlt: 'Disposable pet pad on wood floor during liquid absorption test',
     specs: ['Secure backing', 'Easy removal', 'Quality checked'],
     badge: 'Custom Backing',
     summary: 'Anti-slip pet pads designed for cleaner placement and easy removal.',
@@ -434,7 +442,7 @@ const newsArticles = [
     date: '2026.07',
     title: 'Private-label pet pad ideas for brands building a sharper product line',
     excerpt: 'How size, absorbency, surface feel, and packaging language can turn a basic pet pad into a clearer market offer.',
-    image: '/images/custom-disposable-pet-pads-premium.png',
+    image: '/images/generated-site/products/products-disposable-pads-01.webp',
     body: [
       'A private-label pet pad project works best when the product is planned around a specific use case. Puppy training, senior pet care, travel, cage lining, and care-bed protection all require different choices in size, weight, surface feel, and absorbency.',
       'For brand owners, the creative work is not only visual packaging. It is also the way the structure, core, film, embossing, and pack count communicate value to customers.',
@@ -448,7 +456,7 @@ const newsArticles = [
     date: '2026.07',
     title: 'What we consider when developing absorbent core structures',
     excerpt: 'A concise look at SAP ratio, fluff pulp, diffusion speed, rewet control, and cost balance in pet absorbent products.',
-    image: '/images/pet-pad-layer-protection-premium.png',
+    image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
     body: [
       'Absorbent core development is a balance between speed, lock-in, surface dryness, pad thickness, and target cost. A stronger core does not always mean simply adding more material.',
       'Different sales channels may need different product logic. A high-turnover daily pad may focus on cost and consistency, while a premium pad may emphasize surface comfort, structure visibility, and packaging presentation.',
@@ -462,7 +470,7 @@ const newsArticles = [
     date: '2026.07',
     title: 'Why factory visual content matters for B2B pet care brands',
     excerpt: 'Factory scenes, inspection details, and clean product visuals help customers understand capability before sampling.',
-    image: '/images/production-line-clean.png',
+    image: '/images/generated-site/factory/factory-production-line-01.webp',
     body: [
       'B2B customers often need more than a product photo. They need to understand the manufacturing environment, inspection logic, packaging workflow, and communication reliability behind the product.',
       'Clear factory visuals can help brands and buyers align faster. Production lines, warehouse order, laboratory inspection, and product layer details all become part of the trust-building process.',
@@ -480,7 +488,7 @@ const businessSeoPages = [
     description: 'OEM pet pee pads manufacturer in China for overseas pet brands, wholesalers, importers, supermarkets, and distributors needing custom size, absorbency, packaging, and stable supply.',
     h1: 'OEM pet pee pads for brands that need stable factory supply.',
     intro: 'Nantong JINCHENG ZENCARE develops and manufactures OEM pet pee pads for B2B buyers who need practical product specifications, private-label packaging, and repeatable delivery performance.',
-    image: '/images/custom-disposable-pet-pads-premium.png',
+    image: '/images/generated-site/products/products-disposable-pads-01.webp',
     sections: [
       ['Custom specification', 'Size, weight, embossing, topsheet feel, absorbency level, and backing film can be planned around your market position.'],
       ['Factory-side development', 'Our team supports sample review, material selection, production testing, packaging coordination, and export-ready order planning.'],
@@ -499,7 +507,7 @@ const businessSeoPages = [
     description: 'Private label pet pads manufacturer supporting brand packaging, custom specifications, absorbency options, sample development, and export supply for B2B pet care buyers.',
     h1: 'Private label pet pads with factory-backed product planning.',
     intro: 'Build a pet pad line with your own brand identity, packaging direction, product structure, and channel-ready specification support.',
-    image: '/images/custom-care-pad-packaging-ai.png',
+    image: '/images/generated-site/packaging/private-label-packaging-01.webp',
     sections: [
       ['Brand presentation', 'We support pouch, bag, carton, label, product naming, pack count, and buyer-facing material descriptions.'],
       ['Product matching', 'Private-label pads can be aligned to puppy training, adult pet care, travel, cage lining, retail shelves, or online bundles.'],
@@ -518,7 +526,7 @@ const businessSeoPages = [
     description: 'China pet pee pad manufacturer for OEM/ODM orders, custom absorbency, private-label packaging, automated production, and export-ready B2B supply.',
     h1: 'Pet pee pad manufacturer for long-term B2B cooperation.',
     intro: 'Our factory supports commercial buyers with absorbent pet care products made for stable quality, structured communication, and repeat production.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
     sections: [
       ['Manufacturing capability', 'A 12,000-square-meter factory and automated lines support custom pet pad, pet diaper, absorbent sheet, and care pad programs.'],
       ['Quality process', 'Incoming materials, line checks, absorbency tests, sealing review, and shipment inspection help maintain order consistency.'],
@@ -537,7 +545,7 @@ const businessSeoPages = [
     description: 'Pet pad factory with automated production, custom specifications, absorbent core development, private-label packaging, and B2B export coordination.',
     h1: 'A pet pad factory built for OEM/ODM supply.',
     intro: 'From raw material review to packing and shipment, our pet pad factory supports buyers who need clarity, capacity, and product consistency.',
-    image: '/images/production-line-clean.png',
+    image: '/images/generated-site/factory/factory-production-line-01.webp',
     sections: [
       ['Automated production', 'Automated equipment helps manage repeated order output across size, weight, core structure, and pack format.'],
       ['Factory visibility', 'Production lines, warehouse organization, inspection steps, and packing workflows are part of our buyer communication process.'],
@@ -556,7 +564,7 @@ const businessSeoPages = [
     description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent product manufacturer focused on OEM/ODM pet pads, private-label support, quality control, and export service.',
     h1: 'A focused absorbent pet care factory in Nantong.',
     intro: 'Nantong JINCHENG ZENCARE Technology Company focuses on the R&D, manufacturing, and sales of pet pads, pet diapers, absorbent sheets, and dog poop bags.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
     sections: [
       ['Company profile', 'With 20 years of industry experience, we support B2B buyers with product development, manufacturing, and packaging coordination.'],
       ['Production base', 'Our factory covers about 12,000 square meters with automated lines and stable production planning for absorbent pet care products.'],
@@ -575,7 +583,7 @@ const businessSeoPages = [
     description: 'Quality control process for OEM pet pads covering raw materials, production checks, absorbency testing, rewet review, leakage performance, packaging, and shipment inspection.',
     h1: 'Quality control before every pet pad shipment.',
     intro: 'Our quality process is designed around practical buyer concerns: material consistency, absorbency, surface dryness, leakage prevention, sealing, packing, and shipment appearance.',
-    image: '/images/quality-inspection-lab-mask.png',
+    image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
     sections: [
       ['Incoming materials', 'Topsheet, fluff pulp, SAP, backing film, and packaging materials are reviewed against order requirements.'],
       ['Process checks', 'Weight, size, sealing, embossing, folding, and packaging consistency are monitored during production.'],
@@ -594,7 +602,7 @@ const businessSeoPages = [
     description: 'OEM pet pad process for B2B buyers: project brief, specification planning, sample development, testing, packaging confirmation, production, inspection, and shipment.',
     h1: 'A clear OEM process from brief to shipment.',
     intro: 'Our OEM process helps buyers turn product ideas into practical specifications, samples, confirmed packaging, and repeatable production orders.',
-    image: '/images/warehouse-storage-clean.png',
+    image: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
     sections: [
       ['Project brief', 'Share target market, product type, size, absorbency, packaging direction, expected quantity, and delivery requirements.'],
       ['Sample development', 'We prepare specification options for buyer review, including material, structure, package format, and performance direction.'],
@@ -613,7 +621,7 @@ const businessSeoPages = [
     description: 'Certification and compliance support for pet pad OEM buyers, including factory documentation, material information, packaging coordination, and B2B export requirements.',
     h1: 'Certification support for B2B pet pad projects.',
     intro: 'Certification and documentation needs vary by market and channel. We support buyers with practical factory, product, material, and packaging information for project review.',
-    image: '/images/production-line-enhanced.png',
+    image: '/images/generated-site/factory/factory-production-line-02.webp',
     sections: [
       ['Documentation support', 'Factory information, product specifications, material descriptions, and packaging details can be prepared for buyer evaluation.'],
       ['Channel requirements', 'We coordinate project information for distributors, supermarkets, importers, and private-label brand review processes.'],
@@ -632,7 +640,7 @@ const businessSeoPages = [
     description: 'Frequently asked questions for OEM pet pad buyers covering customization, private label, samples, MOQ planning, quality control, packaging, delivery, and factory cooperation.',
     h1: 'OEM pet pad questions, answered clearly.',
     intro: 'Use this FAQ to understand how JCZCARE supports B2B buyers with pet pad customization, sample development, private-label packaging, and production coordination.',
-    image: '/images/pet-pad-product-studio.png',
+    image: '/images/generated-site/products/products-disposable-pads-02.webp',
     sections: [
       ['For brand owners', 'We help convert product requirements into specifications, samples, packaging formats, and production-ready plans.'],
       ['For distributors', 'We support practical product lines, carton planning, shipment coordination, and repeat order communication.'],
@@ -652,7 +660,7 @@ const businessSeoPages = [
     description: 'Read JCZCARE blog insights about OEM pet pads, private-label packaging, absorbent core development, quality control, factory supply, and B2B pet care product planning.',
     h1: 'Pet pad OEM insights for better B2B decisions.',
     intro: 'Our blog collects practical product ideas, factory notes, and buyer-focused guidance for pet care brands, distributors, wholesalers, importers, and channel teams.',
-    image: '/images/contact-pets-grass-centered.png',
+    image: '/images/generated-site/contact/contact-business-office-01.webp',
     sections: [
       ['Product development', 'Explore absorbent core planning, material choices, pad scenarios, and channel-specific product direction.'],
       ['Factory knowledge', 'Understand production workflow, quality control, packaging coordination, and export order planning.'],
@@ -672,7 +680,7 @@ const businessSeoPages = [
     description: 'Contact Nantong JINCHENG ZENCARE for OEM pet pads, private-label packaging, samples, product planning, absorbent core development, and B2B factory cooperation.',
     h1: 'Contact JCZCARE for your OEM pet pad project.',
     intro: 'Share your target market, product requirement, size, absorbency, packaging direction, and quantity. Our team will help prepare a clear project plan.',
-    image: '/images/contact-pets-grass-centered.png',
+    image: '/images/generated-site/contact/contact-business-office-01.webp',
     sections: [
       ['Project inquiry', 'Tell us what product line you want to develop and which market or sales channel you plan to serve.'],
       ['Specification support', 'We can discuss size, weight, absorbency, surface material, backing film, packaging, and carton requirements.'],
@@ -692,7 +700,7 @@ const staticSeoPages = {
   '/request-product-plan': {
     title: 'OEM Product Plan Request | JCZCARE Pet Pad Factory',
     description: 'Submit your OEM/ODM pet pad project details to Nantong JINCHENG ZENCARE for specification planning, samples, packaging direction, and B2B factory support.',
-    image: '/images/pet-pad-layer-protection-premium.png',
+    image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
   },
   '/sign-in': {
     title: 'Business Sign In | JCZCARE',
@@ -702,37 +710,37 @@ const staticSeoPages = {
   '/pages/about': {
     title: 'About Nantong JINCHENG ZENCARE | Pet Pad Source Factory',
     description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent products source factory supporting OEM/ODM pet pads, private-label packaging, and export supply.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
   },
   '/pages/investor-relations': {
     title: 'Business Overview | JCZCARE Pet Care Manufacturing',
     description: 'A business overview of JCZCARE manufacturing capability, production capacity, quality focus, and B2B absorbent pet care product supply.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
   },
   '/pages/affiliates': {
     title: 'Distributor & Partner Program | JCZCARE OEM Pet Pads',
     description: 'Partner with JCZCARE as a distributor or sourcing partner for OEM pet pads, private-label absorbent products, packaging support, and factory supply.',
-    image: '/images/contact-pets-grass-centered.png',
+    image: '/images/generated-site/contact/contact-business-office-01.webp',
   },
   '/pages/help': {
     title: 'Help Center | OEM Pet Pad Orders, Samples & Packaging',
     description: 'Find answers about OEM pet pad orders, sample development, packaging support, quality control, production scheduling, and factory communication.',
-    image: '/images/quality-inspection-lab-mask.png',
+    image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
   },
   '/pages/learn': {
     title: 'Learn Center | Pet Pad OEM Knowledge & Product Planning',
     description: 'Learn about pet pad absorbency, private-label packaging, product structure, factory supply, quality control, and OEM/ODM development decisions.',
-    image: '/images/pet-pad-layer-protection-premium.png',
+    image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
   },
   '/pages/give-back': {
     title: 'Responsible Pet Care Manufacturing | JCZCARE',
     description: 'Explore JCZCARE responsible manufacturing principles for practical absorbent pet care products, quality planning, and long-term B2B cooperation.',
-    image: '/images/contact-pets-grass-centered.png',
+    image: '/images/generated-site/contact/contact-business-office-01.webp',
   },
   '/pages/gift-cards': {
     title: 'OEM Sample Kits | Pet Pad Material & Packaging Review',
     description: 'Request OEM sample kits for pet pads, absorbent sheets, packaging swatches, material review, and buyer-ready private-label product planning.',
-    image: '/images/custom-disposable-pet-pads-premium.png',
+    image: '/images/generated-site/products/products-disposable-pads-01.webp',
   },
 };
 
@@ -1095,6 +1103,8 @@ function ProductDetail({ product }) {
             <OptimizedImage
               src={product.detailImage || product.image}
               alt={product.detailImageAlt || `${product.title} product image`}
+              loading="eager"
+              fetchPriority="high"
             />
             <span>{product.badge}</span>
           </div>
@@ -2513,7 +2523,7 @@ function AffiliatesPage() {
 
         <div className="affiliates-feature">
           <div className="affiliates-image">
-            <OptimizedImage src="/images/custom-products-preview.png" alt="Custom pet care product program preview" />
+            <OptimizedImage src="/images/generated-site/packaging/private-label-packaging-02.webp" alt="Custom pet care product program preview" />
           </div>
           <div className="affiliates-reasons">
             <p className="section-kicker">Why Partner With Us</p>
@@ -2650,39 +2660,39 @@ function LearnCenterPage() {
   const featuredArticles = [
     {
       title: 'How to choose absorbency for pet pad OEM projects',
-      image: '/images/pet-pad-layer-protection-premium.png',
+      image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
       tag: 'Absorbency Guide',
     },
     {
       title: 'What brands should confirm before private-label packaging',
-      image: '/images/custom-care-pad-packaging-ai.png',
+      image: '/images/generated-site/packaging/private-label-packaging-01.webp',
       tag: 'Packaging',
     },
     {
       title: 'Inside batch inspection for pet pad delivery management',
-      image: '/images/quality-inspection-lab-mask.png',
+      image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
       tag: 'Quality',
     },
   ];
   const learnSections = [
     {
       title: 'Product Structure',
-      image: '/images/pet-pad-layer-protection.png',
+      image: '/images/generated-site/products/products-pet-pad-macro-01.webp',
       articles: ['Layer design for fast lock-in', 'SAP core and pulp balance', 'Leakproof film selection'],
     },
     {
       title: 'Custom Development',
-      image: '/images/custom-disposable-pet-pads-premium.png',
+      image: '/images/generated-site/products/products-disposable-pads-01.webp',
       articles: ['Size, weight, and embossing options', 'Channel-ready product planning', 'Sample review checklist'],
     },
     {
       title: 'Factory & Supply',
-      image: '/images/production-line-clean.png',
+      image: '/images/generated-site/factory/factory-production-line-01.webp',
       articles: ['Automated production stability', 'Packing and shipment workflow', 'How OEM orders move through factory'],
     },
     {
       title: 'Market Applications',
-      image: '/images/custom-adhesive-pet-pad-ai.png',
+      image: '/images/generated-site/products/products-adhesive-pads-01.webp',
       articles: ['Training pad product lines', 'Care bed pad scenarios', 'Premium and charcoal pad upgrades'],
     },
   ];
@@ -2707,7 +2717,7 @@ function LearnCenterPage() {
         </div>
 
         <div className="learn-feature">
-          <OptimizedImage src="/images/contact-pets-grass-centered.png" alt="Pet care product learning center visual" loading="eager" />
+          <OptimizedImage src="/images/generated-site/contact/contact-business-office-01.webp" alt="Pet care product learning center visual" loading="eager" />
           <div>
             <span>OEM Knowledge</span>
             <h2>Build better private-label pet care products with factory-side guidance.</h2>
@@ -2880,7 +2890,7 @@ function GiftCardsPage() {
 
         <div className="gift-card-preview">
           <div className="gift-card-visual">
-            <OptimizedImage src="/images/custom-disposable-pet-pads-premium.png" alt="Premium pet pad sample kit for OEM review" />
+            <OptimizedImage src="/images/generated-site/products/products-disposable-pads-01.webp" alt="Premium pet pad sample kit for OEM review" />
             <span>OEM / ODM</span>
           </div>
           <div className="gift-card-panel">
@@ -3051,7 +3061,7 @@ function App() {
         title: 'Pet Pad OEM Blog | Factory Insights for Buyers',
         description: 'Practical JCZCARE blog insights for pet product brands, importers and distributors sourcing OEM pet pads and private label puppy pads.',
         path: '/blog',
-        image: '/images/factory-campus.jpeg',
+        image: '/images/generated-site/factory/factory-campus-01.webp',
       });
       return;
     }

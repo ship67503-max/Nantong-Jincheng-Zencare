@@ -252,7 +252,7 @@ const hubPageSpecs = [
     kicker: 'Buyer Resource Center',
     h1: 'Practical sourcing resources for pet product buyers',
     intro: 'Use these structured guides to prepare supplier briefs, compare quotations, evaluate factories, control quality, and plan imports.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
     cards: [
       ...resourcePages.map((page) => [page.title, page.path]),
       ['Import Guides', '/blog/category/import-guide'], ['OEM Guides', '/blog/category/oem-manufacturing'],
@@ -271,7 +271,7 @@ const hubPageSpecs = [
     kicker: 'Factory Resource Center',
     h1: 'See how an OEM program moves through the factory',
     intro: 'A buyer-focused view of production, materials, quality evidence, warehouse control, and export preparation.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
     video: '/videos/factory-profile-4-compressed.mp4',
     cards: [
       ...factoryNavigationCards,
@@ -287,7 +287,7 @@ const hubPageSpecs = [
     kicker: 'Learning Center',
     h1: 'Build stronger OEM knowledge before you source',
     intro: 'Start with beginner guides, then move into materials, technology, manufacturing, quality, and commercial decisions.',
-    image: '/images/pet-pad-layer-protection-premium.png',
+    image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
     cards: [
       ['Import Guides', '/blog/category/import-guide'], ['OEM Knowledge', '/blog/category/oem-manufacturing'],
       ['Industry Knowledge', '/blog/category/industry-insights'], ['Materials', '/blog/category/materials'],
@@ -303,7 +303,7 @@ const hubPageSpecs = [
     kicker: 'Decision Comparisons',
     h1: 'Compare sourcing options on evidence, not labels',
     intro: 'Use controlled comparison frameworks to evaluate cost, performance, MOQ, lead time, quality evidence, and risk.',
-    image: '/images/pet-pad-layer-protection-premium.png',
+    image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
     cards: [...comparisonPages, ...ecosystemComparisonPages].map((page) => [page.title, page.path]),
   },
   {
@@ -315,7 +315,7 @@ const hubPageSpecs = [
     kicker: 'Case Scenarios',
     h1: 'Apply repeatable sourcing methods to real buyer decisions',
     intro: 'These transparent educational scenarios do not invent customer claims. They show how buyers can structure decisions, evidence, and next actions.',
-    image: '/images/production-line-clean.png',
+    image: '/images/generated-site/factory/factory-production-line-01.webp',
     cards: [...caseStudyPages, ...ecosystemCaseStudyPages].map((page) => [page.title, page.path]),
   },
   {
@@ -327,14 +327,14 @@ const hubPageSpecs = [
     kicker: 'Media Library',
     h1: 'Factory and product evidence in one media library',
     intro: 'Explore existing JCZCARE production, product, quality, warehouse, packaging, and factory visual assets.',
-    image: '/images/factory-campus.jpeg',
+    image: '/images/generated-site/factory/factory-campus-01.webp',
     gallery: [
-      ['/images/factory-campus.jpeg', 'Factory campus and production building'],
-      ['/images/production-line-clean.png', 'Automated absorbent product production line'],
-      ['/images/warehouse-storage-clean.png', 'Finished-product warehouse and storage'],
-      ['/images/quality-inspection-lab-mask.png', 'Quality inspection in laboratory setting'],
-      ['/images/pet-pad-layer-protection-premium.png', 'Absorbent pet pad layer structure'],
-      ['/images/factory-campus.jpeg', 'Factory logistics and shipment preparation'],
+      ['/images/generated-site/factory/factory-campus-01.webp', 'Factory campus and production building'],
+      ['/images/generated-site/factory/factory-production-line-01.webp', 'Automated absorbent product production line'],
+      ['/images/generated-site/warehouse/warehouse-finished-goods-01.webp', 'Finished-product warehouse and storage'],
+      ['/images/generated-site/quality-control/factory-quality-control-01.webp', 'Quality inspection in laboratory setting'],
+      ['/images/generated-site/products/products-pet-pad-structure-01.webp', 'Absorbent pet pad layer structure'],
+      ['/images/generated-site/factory/factory-campus-01.webp', 'Factory logistics and shipment preparation'],
     ],
   },
   {
@@ -346,7 +346,7 @@ const hubPageSpecs = [
     kicker: 'Downloads',
     h1: 'Request the documents your sourcing team needs',
     intro: 'Select a resource and submit your business details. Our team will confirm the current document for your product and market.',
-    image: '/images/custom-care-pad-packaging-ai.png',
+    image: '/images/generated-site/packaging/private-label-packaging-01.webp',
     includeInquiryForm: true,
     cards: [
       ['OEM Catalog', '/request-product-plan?product=oem-catalog'], ['Product Catalog', '/request-product-plan?product=product-catalog'],
@@ -364,7 +364,7 @@ const hubPageSpecs = [
     kicker: 'Author & Expertise',
     h1: 'Manufacturing knowledge written for professional buyers',
     intro: 'JCZCARE content is prepared from practical product, quality, packaging, sourcing, and factory workflow knowledge, then reviewed for clear B2B use.',
-    image: '/images/quality-inspection-lab-mask.png',
+    image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
     cards: topicClusters.map((cluster) => [cluster.title, cluster.path]),
   },
 ];
@@ -418,7 +418,7 @@ export const faqPage = {
   kicker: 'Buyer FAQ Center',
   h1: '240 practical answers for OEM and private-label buyers',
   intro: 'Browse questions by category, then follow the linked pillar guide, products, factory resources, and contact route.',
-  image: '/images/quality-inspection-lab-mask.png',
+  image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
   imageAlt: 'JCZCARE buyer FAQ and quality resource center',
   updatedAt,
   groups: faqGroups,
