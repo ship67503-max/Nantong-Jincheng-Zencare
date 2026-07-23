@@ -1,0 +1,281 @@
+Prepared 150 blog image prompts.
+Manifest: C:\Users\Administrator\Documents\Google独立站\docs\blog-image-audit\blog-image-regeneration-manifest.json
+Generating 131 images with concurrency 4; skipped 19 existing drafts.
+[14/150] start institutional-underpad-supplier-program (worker 1)
+[15/150] start adult-underpad-arrival-inspection (worker 2)
+[22/150] start private-label-barcode-master-data (worker 3)
+[23/150] start private-label-line-extension-planning (worker 4)
+[15/150] ok adult-underpad-arrival-inspection 62s
+[24/150] start private-label-retailer-onboarding (worker 2)
+[22/150] ok private-label-barcode-master-data 89s
+[25/150] start pet-product-dieline-approval (worker 3)
+[14/150] ok institutional-underpad-supplier-program 110s
+[26/150] start pet-pad-carton-compression-risk (worker 1)
+[23/150] retry private-label-line-extension-planning
+[24/150] ok private-label-retailer-onboarding 83s
+[27/150] start multi-language-pet-product-packaging (worker 2)
+[25/150] ok pet-product-dieline-approval 106s
+[28/150] start pet-product-packaging-cost-engineering (worker 3)
+[26/150] retry pet-pad-carton-compression-risk
+[23/150] failed private-label-line-extension-planning 251s
+[29/150] start pet-product-container-moisture-control (worker 4)
+[27/150] ok multi-language-pet-product-packaging 120s
+[30/150] start pet-product-shipping-document-checklist (worker 2)
+[28/150] ok pet-product-packaging-cost-engineering 110s
+[31/150] start pet-product-reorder-point-planning (worker 3)
+[26/150] ok pet-pad-carton-compression-risk 215s
+[32/150] start pet-product-lcl-vs-fcl-decision (worker 1)
+[30/150] ok pet-product-shipping-document-checklist 79s
+[33/150] start pet-pad-defect-classification (worker 2)
+[31/150] ok pet-product-reorder-point-planning 74s
+[34/150] start pet-pad-retained-sample-program (worker 3)
+[33/150] ok pet-pad-defect-classification 83s
+[35/150] start oem-corrective-action-review (worker 2)
+[32/150] ok pet-product-lcl-vs-fcl-decision 104s
+[36/150] start pet-product-golden-sample-control (worker 1)
+[29/150] ok pet-product-container-moisture-control 181s
+[37/150] start factory-maintenance-audit-pet-products (worker 4)
+[34/150] ok pet-pad-retained-sample-program 71s
+[38/150] start factory-traceability-audit (worker 3)
+[35/150] ok oem-corrective-action-review 76s
+[39/150] start factory-business-continuity-review (worker 2)
+[38/150] ok factory-traceability-audit 71s
+[40/150] start factory-subcontracting-control (worker 3)
+[36/150] ok pet-product-golden-sample-control 100s
+[41/150] start nonwoven-basis-weight-pet-pads (worker 1)
+[37/150] retry factory-maintenance-audit-pet-products
+[39/150] ok factory-business-continuity-review 72s
+[42/150] start hot-melt-adhesive-absorbent-products (worker 2)
+[41/150] ok nonwoven-basis-weight-pet-pads 71s
+[43/150] start sap-gel-blocking-pet-pads (worker 1)
+[40/150] ok factory-subcontracting-control 98s
+[44/150] start sap-dosing-consistency-audit (worker 3)
+[37/150] ok factory-maintenance-audit-pet-products 224s
+[45/150] start pe-film-pinhole-risk-pet-pads (worker 4)
+[42/150] ok hot-melt-adhesive-absorbent-products 82s
+[46/150] start printed-backing-film-pet-pads (worker 2)
+[43/150] ok sap-gel-blocking-pet-pads 85s
+[47/150] start pet-product-supplier-scorecard (worker 1)
+[44/150] ok sap-dosing-consistency-audit 106s
+[48/150] start pet-product-payment-milestone-plan (worker 3)
+[46/150] ok printed-backing-film-pet-pads 107s
+[49/150] start pet-product-quotation-normalization (worker 2)
+[45/150] ok pe-film-pinhole-risk-pet-pads 116s
+[50/150] start pet-care-supply-chain-resilience (worker 4)
+[49/150] ok pet-product-quotation-normalization 92s
+[51/150] start oem-pet-pad-product-brief (worker 2)
+[50/150] ok pet-care-supply-chain-resilience 90s
+[52/150] start custom-absorbency-targets-oem-pet-pads (worker 4)
+[47/150] ok pet-product-supplier-scorecard 211s
+[53/150] start oem-pet-pad-sample-approval-workflow (worker 1)
+[52/150] ok custom-absorbency-targets-oem-pet-pads 80s
+[54/150] start pet-pad-pilot-order-planning (worker 4)
+[51/150] ok oem-pet-pad-product-brief 96s
+[55/150] start private-label-pet-pad-artwork-approval (worker 2)
+[48/150] retry pet-product-payment-milestone-plan
+[53/150] ok oem-pet-pad-sample-approval-workflow 74s
+[56/150] start oem-pet-pad-pricing-factors (worker 1)
+[56/150] ok oem-pet-pad-pricing-factors 70s
+[57/150] start pet-pad-repeat-order-consistency (worker 1)
+[48/150] ok pet-product-payment-milestone-plan 316s
+[58/150] start oem-pet-pad-change-control (worker 3)
+[54/150] ok pet-pad-pilot-order-planning 101s
+[59/150] start multi-sku-pet-pad-range-launch (worker 4)
+[57/150] ok pet-pad-repeat-order-consistency 67s
+[60/150] start oem-pet-pad-production-timeline (worker 1)
+[58/150] ok oem-pet-pad-change-control 89s
+[61/150] start questions-oem-buyers-ask-pet-pad-factory (worker 3)
+[59/150] ok multi-sku-pet-pad-range-launch 101s
+[62/150] start nda-product-information-oem-sourcing (worker 4)
+[55/150] retry private-label-pet-pad-artwork-approval
+[61/150] ok questions-oem-buyers-ask-pet-pad-factory 77s
+[63/150] start oem-project-handoff-to-factory (worker 3)
+[60/150] ok oem-pet-pad-production-timeline 116s
+[64/150] start demand-forecast-oem-pet-pad-supply (worker 1)
+[62/150] ok nda-product-information-oem-sourcing 101s
+[65/150] start pet-pad-technical-specification-sheet (worker 4)
+[55/150] ok private-label-pet-pad-artwork-approval 311s
+[66/150] start five-layer-puppy-pad-construction (worker 2)
+[65/150] ok pet-pad-technical-specification-sheet 80s
+[67/150] start leak-proof-pe-backing-puppy-pads (worker 4)
+[64/150] ok demand-forecast-oem-pet-pad-supply 113s
+[68/150] start absorption-speed-vs-capacity-pet-pads (worker 1)
+[66/150] ok five-layer-puppy-pad-construction 99s
+[69/150] start puppy-pad-rewet-testing (worker 2)
+[63/150] ok oem-project-handoff-to-factory 193s
+[70/150] start pet-pad-edge-sealing-quality (worker 3)
+[67/150] retry leak-proof-pe-backing-puppy-pads
+[68/150] ok absorption-speed-vs-capacity-pet-pads 121s
+[71/150] start pet-pad-embossing-patterns (worker 1)
+[70/150] ok pet-pad-edge-sealing-quality 118s
+[72/150] start scented-vs-unscented-puppy-pads (worker 3)
+[67/150] ok leak-proof-pe-backing-puppy-pads 196s
+[73/150] start activated-charcoal-pet-pads-buyer-guide (worker 4)
+[71/150] ok pet-pad-embossing-patterns 91s
+[74/150] start adhesive-puppy-pad-backing-options (worker 1)
+[73/150] ok activated-charcoal-pet-pads-buyer-guide 66s
+[75/150] start retail-pet-pad-size-range (worker 4)
+[72/150] ok scented-vs-unscented-puppy-pads 81s
+[76/150] start common-puppy-pad-quality-defects (worker 3)
+[69/150] retry puppy-pad-rewet-testing
+[74/150] ok adhesive-puppy-pad-backing-options 89s
+[77/150] start pet-pad-performance-test-methods (worker 1)
+[75/150] ok retail-pet-pad-size-range 64s
+[78/150] start adult-disposable-underpad-materials (worker 4)
+[69/150] ok puppy-pad-rewet-testing 308s
+[79/150] start hospital-underpad-procurement-guide (worker 2)
+[76/150] ok common-puppy-pad-quality-defects 73s
+[80/150] start nursing-home-underpad-supplier-evaluation (worker 3)
+[78/150] ok adult-disposable-underpad-materials 76s
+[81/150] start adult-underpad-absorbency-specification (worker 4)
+[79/150] ok hospital-underpad-procurement-guide 79s
+[82/150] start underpad-skin-contact-surface (worker 2)
+[81/150] ok adult-underpad-absorbency-specification 56s
+[83/150] start pe-film-backing-adult-underpads (worker 4)
+[77/150] ok pet-pad-performance-test-methods 149s
+[84/150] start oem-adult-underpads-development (worker 1)
+[82/150] ok underpad-skin-contact-surface 78s
+[85/150] start private-label-adult-underpad-packaging (worker 2)
+[83/150] ok pe-film-backing-adult-underpads 70s
+[86/150] start adult-underpad-size-weight-pack-count (worker 4)
+[84/150] ok oem-adult-underpads-development 72s
+[87/150] start adult-underpad-quality-inspection (worker 1)
+[85/150] ok private-label-adult-underpad-packaging 60s
+[88/150] start how-dog-waste-bags-are-manufactured (worker 2)
+[80/150] retry nursing-home-underpad-supplier-evaluation
+[86/150] ok adult-underpad-size-weight-pack-count 65s
+[89/150] start compostable-dog-poop-bags-due-diligence (worker 4)
+[87/150] ok adult-underpad-quality-inspection 69s
+[90/150] start hdpe-vs-ldpe-dog-waste-bags (worker 1)
+[89/150] ok compostable-dog-poop-bags-due-diligence 78s
+[91/150] start leak-proof-dog-poop-bag-specification (worker 4)
+[90/150] ok hdpe-vs-ldpe-dog-waste-bags 76s
+[92/150] start oem-dog-waste-bag-manufacturing (worker 1)
+[80/150] ok nursing-home-underpad-supplier-evaluation 331s
+[93/150] start private-label-dog-poop-bags-launch (worker 3)
+[91/150] ok leak-proof-dog-poop-bag-specification 70s
+[94/150] start dog-waste-bag-roll-core-sizes (worker 4)
+[92/150] ok oem-dog-waste-bag-manufacturing 72s
+[95/150] start dog-poop-bag-packaging-options (worker 1)
+[93/150] ok private-label-dog-poop-bags-launch 73s
+[96/150] start wholesale-dog-waste-bags-cost-moq (worker 3)
+[88/150] retry how-dog-waste-bags-are-manufactured
+[95/150] ok dog-poop-bag-packaging-options 69s
+[97/150] start dog-waste-bag-thickness-tear-resistance (worker 1)
+[96/150] ok wholesale-dog-waste-bags-cost-moq 75s
+[98/150] start pet-product-factory-tour-checklist (worker 3)
+[94/150] ok dog-waste-bag-roll-core-sizes 124s
+[99/150] start evaluate-pet-pad-production-capacity (worker 4)
+[88/150] ok how-dog-waste-bags-are-manufactured 333s
+[100/150] start pet-pad-factory-quality-control-system (worker 2)
+[97/150] ok dog-waste-bag-thickness-tear-resistance 85s
+[101/150] start pet-product-warehouse-export-management (worker 1)
+[98/150] ok pet-product-factory-tour-checklist 81s
+[102/150] start pet-pad-container-loading-guide (worker 3)
+[99/150] ok evaluate-pet-pad-production-capacity 94s
+[103/150] start pet-product-export-documents (worker 4)
+[101/150] ok pet-product-warehouse-export-management 73s
+[104/150] start review-pet-product-factory-certificates (worker 1)
+[100/150] ok pet-pad-factory-quality-control-system 90s
+[105/150] start production-line-maintenance-oem-reliability (worker 2)
+[102/150] ok pet-pad-container-loading-guide 95s
+[106/150] start choose-pet-product-supplier-long-term (worker 3)
+[104/150] ok review-pet-product-factory-certificates 67s
+[107/150] start china-vs-vietnam-pet-product-sourcing (worker 1)
+[103/150] ok pet-product-export-documents 103s
+[108/150] start reduce-pet-product-purchasing-cost (worker 4)
+[105/150] ok production-line-maintenance-oem-reliability 99s
+[109/150] start private-label-pet-product-moq-guide (worker 2)
+[107/150] ok china-vs-vietnam-pet-product-sourcing 73s
+[110/150] start imported-pet-product-lead-time (worker 1)
+[108/150] ok reduce-pet-product-purchasing-cost 76s
+[111/150] start incoterms-pet-product-importers (worker 4)
+[109/150] ok private-label-pet-product-moq-guide 73s
+[112/150] start fob-vs-cif-pet-pad-shipments (worker 2)
+[110/150] ok imported-pet-product-lead-time 68s
+[113/150] start pre-shipment-inspection-pet-care-products (worker 1)
+[111/150] ok incoterms-pet-product-importers 100s
+[114/150] start evaluate-pet-product-samples (worker 4)
+[106/150] retry choose-pet-product-supplier-long-term
+[112/150] ok fob-vs-cif-pet-pad-shipments 99s
+[115/150] start oem-pet-product-negotiation-tips (worker 2)
+[113/150] ok pre-shipment-inspection-pet-care-products 116s
+[116/150] start pet-product-supplier-red-flags (worker 1)
+[114/150] ok evaluate-pet-product-samples 109s
+[117/150] start annual-pet-product-sourcing-plan (worker 4)
+[116/150] ok pet-product-supplier-red-flags 102s
+[118/150] start global-pet-care-market-oem-buyers (worker 1)
+[117/150] ok annual-pet-product-sourcing-plan 116s
+[119/150] start private-label-pet-product-trends (worker 4)
+[106/150] failed choose-pet-product-supplier-long-term 480s
+[120/150] start retail-trends-pet-pad-ranges (worker 3)
+[115/150] retry oem-pet-product-negotiation-tips
+[118/150] ok global-pet-care-market-oem-buyers 105s
+[121/150] start pet-product-packaging-trends (worker 1)
+[119/150] ok private-label-pet-product-trends 100s
+[122/150] start sustainability-absorbent-pet-products (worker 4)
+[115/150] ok oem-pet-product-negotiation-tips 332s
+[123/150] start review-eco-claims-pet-products (worker 2)
+[121/150] ok pet-product-packaging-trends 109s
+[124/150] start raw-material-volatility-pet-products (worker 1)
+[123/150] ok review-eco-claims-pet-products 76s
+[125/150] start sap-supply-pricing-absorbent-products (worker 2)
+[122/150] ok sustainability-absorbent-pet-products 105s
+[126/150] start fluff-pulp-absorbent-paper-supply (worker 4)
+[124/150] ok raw-material-volatility-pet-products 77s
+[127/150] start pe-film-trends-pet-pads-underpads (worker 1)
+[120/150] retry retail-trends-pet-pad-ranges
+[126/150] ok fluff-pulp-absorbent-paper-supply 93s
+[128/150] start resilient-pet-product-supply-chain (worker 4)
+[125/150] ok sap-supply-pricing-absorbent-products 109s
+[129/150] start automation-pet-pad-manufacturing (worker 2)
+[127/150] ok pe-film-trends-pet-pads-underpads 85s
+[130/150] start ecommerce-private-label-pet-products (worker 1)
+[130/150] ok ecommerce-private-label-pet-products 97s
+[131/150] start future-oem-pet-product-manufacturing (worker 1)
+[120/150] ok retail-trends-pet-pad-ranges 393s
+[132/150] start pet-product-sourcing-priorities-2027 (worker 3)
+[128/150] ok resilient-pet-product-supply-chain 122s
+[133/150] start oem-pet-pad-supplier-qualification-checklist (worker 4)
+[129/150] retry automation-pet-pad-manufacturing
+[132/150] ok pet-product-sourcing-priorities-2027 77s
+[134/150] start private-label-pet-pad-launch-timeline (worker 3)
+[131/150] ok future-oem-pet-product-manufacturing 91s
+[135/150] start pet-pad-factory-audit-remote-and-onsite (worker 1)
+[129/150] ok automation-pet-pad-manufacturing 201s
+[136/150] start pet-pad-packaging-compliance-artwork-checklist (worker 2)
+[133/150] ok oem-pet-pad-supplier-qualification-checklist 98s
+[137/150] start pet-pad-landed-cost-model-importers (worker 4)
+[134/150] ok private-label-pet-pad-launch-timeline 75s
+[138/150] start pet-pad-quality-control-inspection-plan (worker 3)
+[135/150] ok pet-pad-factory-audit-remote-and-onsite 66s
+[139/150] start choose-reliable-pet-pad-manufacturer (worker 1)
+[137/150] ok pet-pad-landed-cost-model-importers 93s
+[140/150] start oem-vs-odm-pet-pads-buyers-guide (worker 4)
+[136/150] ok pet-pad-packaging-compliance-artwork-checklist 103s
+[141/150] start private-label-pet-training-pads-buyers-guide (worker 2)
+[138/150] ok pet-pad-quality-control-inspection-plan 77s
+[142/150] start how-puppy-pads-are-manufactured (worker 3)
+[139/150] ok choose-reliable-pet-pad-manufacturer 85s
+[143/150] start evaluate-pet-pad-factory-before-order (worker 1)
+[141/150] ok private-label-pet-training-pads-buyers-guide 66s
+[144/150] start sap-in-puppy-pads (worker 2)
+[143/150] ok evaluate-pet-pad-factory-before-order 70s
+[145/150] start virgin-pulp-vs-recycled-pulp-pet-pads (worker 1)
+[140/150] ok oem-vs-odm-pet-pads-buyers-guide 116s
+[146/150] start what-determines-puppy-pad-absorbency (worker 4)
+[142/150] ok how-puppy-pads-are-manufactured 94s
+[147/150] start oem-pet-pad-moq-sampling-lead-time (worker 3)
+[144/150] ok sap-in-puppy-pads 80s
+[148/150] start custom-packaging-private-label-pet-pads (worker 2)
+[146/150] ok what-determines-puppy-pad-absorbency 66s
+[149/150] start reduce-pet-pad-procurement-costs (worker 4)
+[147/150] ok oem-pet-pad-moq-sampling-lead-time 83s
+[150/150] start pet-pad-quality-control-buyers-checklist (worker 3)
+[150/150] ok pet-pad-quality-control-buyers-checklist 63s
+[149/150] ok reduce-pet-pad-procurement-costs 111s
+[145/150] retry virgin-pulp-vs-recycled-pulp-pet-pads
+[148/150] retry custom-packaging-private-label-pet-pads
+[145/150] failed virgin-pulp-vs-recycled-pulp-pet-pads 365s
+[148/150] ok custom-packaging-private-label-pet-pads 361s
+Generation complete. New: 128; skipped: 19; failures: 3

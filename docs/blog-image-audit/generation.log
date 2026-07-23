@@ -1,0 +1,47 @@
+Prepared 150 blog image prompts.
+Manifest: C:\Users\Administrator\Documents\Google独立站\docs\blog-image-audit\blog-image-regeneration-manifest.json
+Generating 150 images with concurrency 4; skipped 0 existing drafts.
+[1/150] start oem-pet-pad-contract-manufacturing (worker 1)
+[2/150] start oem-product-change-control (worker 2)
+[3/150] start oem-pilot-order-planning (worker 3)
+[4/150] start oem-multi-sku-launch-plan (worker 4)
+[4/150] ok oem-multi-sku-launch-plan 64s
+[5/150] start oem-capacity-allocation-review (worker 4)
+[3/150] ok oem-pilot-order-planning 70s
+[6/150] start puppy-pad-surface-intake-design (worker 3)
+[2/150] ok oem-product-change-control 73s
+[7/150] start pet-pad-edge-seal-quality (worker 2)
+[1/150] ok oem-pet-pad-contract-manufacturing 99s
+[8/150] start pet-pad-embossing-pattern-selection (worker 1)
+[5/150] ok oem-capacity-allocation-review 78s
+[9/150] start pet-pad-folding-pack-efficiency (worker 4)
+[7/150] ok pet-pad-edge-seal-quality 72s
+[10/150] start travel-pet-pad-sourcing-guide (worker 2)
+[6/150] ok puppy-pad-surface-intake-design 75s
+[11/150] start adult-underpad-surface-comfort-specification (worker 3)
+[8/150] ok pet-pad-embossing-pattern-selection 106s
+[12/150] start adult-underpad-pack-count-tender-planning (worker 1)
+[11/150] ok adult-underpad-surface-comfort-specification 68s
+[13/150] start adult-underpad-backing-film-selection (worker 3)
+[9/150] ok pet-pad-folding-pack-efficiency 74s
+[14/150] start institutional-underpad-supplier-program (worker 4)
+[10/150] ok travel-pet-pad-sourcing-guide 74s
+[15/150] start adult-underpad-arrival-inspection (worker 2)
+[12/150] ok adult-underpad-pack-count-tender-planning 75s
+[16/150] start dog-waste-bag-perforation-control (worker 1)
+[13/150] ok adult-underpad-backing-film-selection 67s
+[17/150] start dog-poop-bag-roll-count-verification (worker 3)
+[16/150] ok dog-waste-bag-perforation-control 76s
+[18/150] start dog-waste-bag-scent-selection (worker 1)
+[17/150] ok dog-poop-bag-roll-count-verification 76s
+[19/150] start dog-poop-bag-dispenser-compatibility (worker 3)
+[19/150] ok dog-poop-bag-dispenser-compatibility 88s
+[20/150] start dog-waste-bag-print-registration (worker 3)
+[18/150] retry dog-waste-bag-scent-selection
+[20/150] ok dog-waste-bag-print-registration 101s
+[21/150] start private-label-claim-approval-workflow (worker 3)
+[18/150] ok dog-waste-bag-scent-selection 213s
+[22/150] start private-label-barcode-master-data (worker 1)
+[15/150] retry adult-underpad-arrival-inspection
+[21/150] ok private-label-claim-approval-workflow 82s
+[23/150] start private-label-line-extension-planning (worker 3)

@@ -646,6 +646,7 @@ export const blogArticles = sourceBlogArticles.map((article) => {
 
   return {
     ...article,
+    image: `/images/generated-site/blog/${article.slug}.webp`,
     clusterSlug,
     clusterTitle: cluster?.title || article.category,
     clusterPath: cluster?.path || '/blog',

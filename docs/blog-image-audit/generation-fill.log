@@ -1,0 +1,11 @@
+Prepared 150 blog image prompts.
+Manifest: C:\Users\Administrator\Documents\Google独立站\docs\blog-image-audit\blog-image-regeneration-manifest.json
+Generating 3 images with concurrency 1; skipped 147 existing drafts.
+[23/150] start private-label-line-extension-planning (worker 1)
+[23/150] retry private-label-line-extension-planning
+[23/150] ok private-label-line-extension-planning 220s
+[106/150] start choose-pet-product-supplier-long-term (worker 1)
+[106/150] ok choose-pet-product-supplier-long-term 72s
+[145/150] start virgin-pulp-vs-recycled-pulp-pet-pads (worker 1)
+[145/150] ok virgin-pulp-vs-recycled-pulp-pet-pads 71s
+Generation complete. New: 3; skipped: 147; failures: 0
