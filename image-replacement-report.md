@@ -33,9 +33,11 @@ Generated at: 2026-07-23T09:25:40.105Z
 ## Git
 
 - Checkpoint commit: a587f04
-- Final local commit before report update: 90633a8
+- Image replacement commit: 90633a8
+- Deployment report commit: 686dc4d
 - Branch: codex/regenerate-non-homepage-images
-- Push status: failed because this machine could not connect to github.com:443 after two attempts.
+- Pull request URL: https://github.com/ship67503-max/Nantong-Jincheng-Zencare/pull/new/codex/regenerate-non-homepage-images
+- Push status: success, branch pushed to origin/codex/regenerate-non-homepage-images.
 
 ## Unsupported / Unreplaced Positions
 

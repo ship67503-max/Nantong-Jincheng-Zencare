@@ -1859,8 +1859,10 @@
   },
   "git": {
     "checkpoint_commit": "a587f04",
-    "final_commit": "90633a8",
+    "image_replacement_commit": "90633a8",
+    "deployment_report_commit": "686dc4d",
     "branch": "codex/regenerate-non-homepage-images",
-    "push_status": "failed: GitHub connection to github.com:443 failed from this machine after two attempts; local commits are created."
+    "push_status": "success: pushed branch to origin/codex/regenerate-non-homepage-images",
+    "pull_request_url": "https://github.com/ship67503-max/Nantong-Jincheng-Zencare/pull/new/codex/regenerate-non-homepage-images"
   }
 }
