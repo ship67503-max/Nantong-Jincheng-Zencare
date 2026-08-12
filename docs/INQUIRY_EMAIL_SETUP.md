@@ -8,6 +8,7 @@ CONTACT_FROM_EMAIL=sales3@nthengtuo.com
 SMTP_HOST=smtp.nthengtuo.com
 SMTP_PORT=465
 SMTP_SECURE=true
+SMTP_TLS_REJECT_UNAUTHORIZED=false
 SMTP_USER=sales3@nthengtuo.com
 SMTP_PASS=<client authorization code>
 SMTP_TO_EMAIL=sales3@nthengtuo.com
