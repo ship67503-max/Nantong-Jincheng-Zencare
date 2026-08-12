@@ -1,5 +1,33 @@
+import nodemailer from 'nodemailer';
+
 const contactEmail = process.env.CONTACT_TO_EMAIL || 'hengtuo@nthengtuo.com';
 const fromEmail = process.env.CONTACT_FROM_EMAIL;
+
+function hasSmtpConfig() {
+  return Boolean(
+    process.env.SMTP_HOST
+      && process.env.SMTP_USER
+      && process.env.SMTP_PASS,
+  );
+}
+
+function getSmtpTransporter() {
+  const port = Number(process.env.SMTP_PORT || 465);
+  const secure = String(process.env.SMTP_SECURE || (port === 465 ? 'true' : 'false')).toLowerCase() === 'true';
+
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port,
+    secure,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 20000,
+  });
+}
 
 function escapeHtml(value) {
   return String(value || '')
@@ -70,15 +98,34 @@ function renderHtmlEmail(inquiry) {
 }
 
 export async function sendEmail(inquiry) {
+  const subject = inquiry.companyName
+    ? `New Website Inquiry - ${inquiry.companyName}`
+    : 'New Website Inquiry';
+  const text = renderTextEmail(inquiry);
+  const html = renderHtmlEmail(inquiry);
+
+  if (hasSmtpConfig()) {
+    try {
+      const transporter = getSmtpTransporter();
+      await transporter.sendMail({
+        from: fromEmail || process.env.SMTP_USER,
+        to: contactEmail,
+        replyTo: inquiry.email,
+        subject,
+        text,
+        html,
+      });
+      return { ok: true, provider: 'smtp' };
+    } catch (error) {
+      console.error('SMTP inquiry email failed', error?.message || 'Unknown error');
+    }
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey || !fromEmail) {
     return { ok: false, status: 503 };
   }
-
-  const subject = inquiry.companyName
-    ? `New Website Inquiry - ${inquiry.companyName}`
-    : 'New Website Inquiry';
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -91,8 +138,8 @@ export async function sendEmail(inquiry) {
       to: [contactEmail],
       reply_to: inquiry.email,
       subject,
-      text: renderTextEmail(inquiry),
-      html: renderHtmlEmail(inquiry),
+      text,
+      html,
     }),
   });
 
@@ -100,5 +147,5 @@ export async function sendEmail(inquiry) {
     return { ok: false, status: response.status };
   }
 
-  return { ok: true };
+  return { ok: true, provider: 'resend' };
 }
