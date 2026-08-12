@@ -10,6 +10,8 @@ SMTP_PORT=465
 SMTP_SECURE=true
 SMTP_USER=sales3@nthengtuo.com
 SMTP_PASS=<client authorization code>
+SMTP_TO_EMAIL=sales3@nthengtuo.com
+SMTP_FROM_EMAIL=sales3@nthengtuo.com
 ```
 
 The SMTP password must only be stored in Vercel, never in source control. The

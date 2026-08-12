@@ -3,6 +3,14 @@ import nodemailer from 'nodemailer';
 const contactEmail = process.env.CONTACT_TO_EMAIL || 'hengtuo@nthengtuo.com';
 const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
+function getSmtpToEmail() {
+  return process.env.SMTP_TO_EMAIL || contactEmail;
+}
+
+function getSmtpFromEmail() {
+  return process.env.SMTP_FROM_EMAIL || fromEmail || process.env.SMTP_USER;
+}
+
 function hasSmtpConfig() {
   return Boolean(
     process.env.SMTP_HOST
@@ -108,8 +116,8 @@ export async function sendEmail(inquiry) {
     try {
       const transporter = getSmtpTransporter();
       await transporter.sendMail({
-        from: fromEmail || process.env.SMTP_USER,
-        to: contactEmail,
+        from: getSmtpFromEmail(),
+        to: getSmtpToEmail(),
         replyTo: inquiry.email,
         subject,
         text,
