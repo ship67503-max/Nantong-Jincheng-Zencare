@@ -49,6 +49,37 @@ ${blogItems.map((item) => `    <item>
 `;
 
 const routes = resolvePublicRoutes();
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes.map((route) => {
+  const entry = getSeoEntry(route);
+  const lastmod = entry.article?.updatedAt || entry.authorityPage?.updatedAt;
+  return `  <url>
+    <loc>${escapeXml(absoluteUrl(route))}</loc>${lastmod ? `
+    <lastmod>${escapeXml(lastmod)}</lastmod>` : ''}
+  </url>`;
+}).join('\n')}
+</urlset>
+`;
+
+// Keep the submitted sitemap URL as a real sitemap index. This avoids making
+// Google interpret a redirect from /sitemap-index.xml to a different sitemap
+// document, which can hide the sitemap association during URL inspection.
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${escapeXml(`${siteUrl}/sitemap.xml`)}</loc>
+    <lastmod>${escapeXml(buildDate.slice(0, 10))}</lastmod>
+  </sitemap>
+</sitemapindex>
+`;
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${siteUrl}/sitemap-index.xml
+`;
+
 const groupedRoutes = routes.reduce((groups, route) => {
   const section = route === '/'
     ? 'Core'
@@ -82,7 +113,7 @@ const sitemapHtml = `<!doctype html>
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="${siteUrl}/sitemap.html" />
     <title>HTML Sitemap | JCZCARE</title>
-    <meta name="description" content="Browse all public JCZCARE pages, product pages, OEM resources, blog articles, and regional sourcing pages." />
+    <meta name="description" content="Browse all public JCZCARE pages, product pages, OEM resources, factory information, and blog articles." />
     <style>
       body { margin: 0; font-family: Arial, sans-serif; background: #07130e; color: #f6f8ed; }
       main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
@@ -99,7 +130,7 @@ const sitemapHtml = `<!doctype html>
     <main>
       <p>JCZCARE Sitemap</p>
       <h1>All public pages for OEM pet pad buyers.</h1>
-      <p>This HTML sitemap helps buyers and search engines find JCZCARE factory profiles, OEM services, product pages, regional pages, and B2B blog resources.</p>
+      <p>This HTML sitemap helps buyers and search engines find JCZCARE factory profiles, OEM services, product pages, buyer resources, and B2B blog articles.</p>
 ${Object.entries(groupedRoutes).map(([section, sectionRoutes]) => `      <section>
         <h2>${escapeXml(section)}</h2>
         <ul>
@@ -116,7 +147,11 @@ ${sectionRoutes.map((route) => {
 `;
 
 await fs.writeFile(path.join(distDir, 'rss.xml'), rssXml, 'utf8');
+await fs.writeFile(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
+await fs.writeFile(path.join(distDir, 'sitemap-index.xml'), sitemapIndexXml, 'utf8');
 await fs.writeFile(path.join(distDir, 'sitemap.html'), sitemapHtml, 'utf8');
+await fs.writeFile(path.join(distDir, 'robots.txt'), robotsTxt, 'utf8');
 
 console.log(`Generated RSS feed with ${blogItems.length} items.`);
+console.log(`Generated XML sitemap with ${routes.length} indexable routes.`);
 console.log(`Generated HTML sitemap with ${routes.length} public routes.`);

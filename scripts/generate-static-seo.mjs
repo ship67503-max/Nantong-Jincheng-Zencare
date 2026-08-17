@@ -1,13 +1,20 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { blogArticles } from '../src/blogData.js';
-import { resolvePublicRoutes } from './seo-routes.mjs';
+import {
+  nonIndexableRoutes,
+  resolveMainSourceContent,
+  resolvePublicRoutes,
+  resolveStaticRoutes,
+} from './seo-routes.mjs';
 import { getSeoEntry, organization, productSeo, siteUrl } from './seo-page-data.mjs';
 
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, 'dist');
 const templatePath = path.join(distDir, 'index.html');
-const staticRoutes = resolvePublicRoutes();
+const staticRoutes = resolveStaticRoutes();
+const indexableRoutes = resolvePublicRoutes();
+const nonIndexableRouteSet = new Set(nonIndexableRoutes);
 
 const escapeHtml = (value = '') =>
   String(value)
@@ -25,6 +32,118 @@ const absoluteUrl = (url = '/') => {
 
 const productMap = new Map(productSeo.map((product) => [product.path, product]));
 const blogArticleMap = new Map(blogArticles.map((article) => [article.slug, article]));
+const mainSourceContent = resolveMainSourceContent();
+const businessPageMap = new Map(mainSourceContent.businessPages.map((page) => [page.path, page]));
+const productContentMap = new Map(mainSourceContent.products.map((product) => [`/products/${product.slug}`, product]));
+const newsArticleMap = new Map(mainSourceContent.newsArticles.map((article) => [`/pages/news/${article.slug}`, article]));
+
+const renderLinkList = (links) => {
+  const uniqueLinks = Array.from(new Map(links.map(([label, href]) => [href, [label, href]])).values());
+  return uniqueLinks.map(([label, href]) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join('\n');
+};
+
+const pageLabel = (entry) => entry.title.split(' | ')[0];
+
+const coreDiscoveryLinks = [
+  ['Home', '/'],
+  ['Factory', '/factory'],
+  ['OEM Capability', '/oem-capability'],
+  ['Private Label', '/private-label'],
+  ['Quality Control', '/quality-control'],
+  ['Buyer Resources', '/resources'],
+  ['Blog', '/blog'],
+  ['Editorial Team', '/authors/jczcare-editorial-team'],
+  ['Contact', '/contact'],
+  ['HTML Sitemap', '/sitemap.html'],
+];
+
+const relatedLinksFor = (entry) => {
+  if (entry.path === '/') {
+    return [
+      ...mainSourceContent.products.map((product) => [product.title, `/products/${product.slug}`]),
+      ...mainSourceContent.businessPages.map((page) => [page.h1 || pageLabel(page), page.path]),
+      ...blogArticles.slice(0, 12).map((article) => [article.title, article.path]),
+    ];
+  }
+
+  if (entry.path === '/blog') {
+    return blogArticles.map((article) => [article.title, article.path]);
+  }
+
+  if (entry.path === '/pages/news') {
+    return mainSourceContent.newsArticles.map((article) => [article.title, `/pages/news/${article.slug}`]);
+  }
+
+  const prefix = `/${entry.path.split('/').filter(Boolean)[0] || ''}`;
+  const sameSection = indexableRoutes
+    .filter((route) => route !== entry.path && route.startsWith(prefix))
+    .slice(0, 24)
+    .map((route) => {
+      const relatedEntry = getSeoEntry(route);
+      return [pageLabel(relatedEntry), route];
+    });
+
+  return [
+    ...sameSection,
+    ...mainSourceContent.products.map((product) => [product.title, `/products/${product.slug}`]),
+    ['OEM Manufacturing Capability', '/oem-capability'],
+    ['Contact the Factory', '/contact'],
+  ];
+};
+
+const renderStaticPage = (entry) => {
+  const businessPage = businessPageMap.get(entry.path);
+  const product = productContentMap.get(entry.path);
+  const newsArticle = newsArticleMap.get(entry.path);
+  const h1 = businessPage?.h1 || pageLabel(entry);
+  const intro = businessPage?.intro || newsArticle?.excerpt || product?.summary || entry.description;
+  const sections = businessPage?.sections || [];
+  const faqs = businessPage?.faqs || entry.faqs || [];
+
+  const sectionHtml = sections.map(([heading, text]) =>
+    `<section><h2>${escapeHtml(heading)}</h2><p>${escapeHtml(text)}</p></section>`
+  ).join('\n');
+
+  const productHtml = product ? [
+    '<section><h2>Product and OEM scope</h2>',
+    `<p>${escapeHtml(product.application)}</p>`,
+    `<p>${escapeHtml(product.oemCapability)}</p>`,
+    `<p>${escapeHtml(product.customization)}</p>`,
+    `<ul>${product.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>`,
+    '</section>',
+    `<section><h2>Available directions</h2><ul>${product.specs.map((spec) => `<li>${escapeHtml(spec)}</li>`).join('')}</ul></section>`,
+  ].join('\n') : '';
+
+  const newsHtml = newsArticle ? [
+    `<section><h2>${escapeHtml(newsArticle.title)}</h2>`,
+    ...newsArticle.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`),
+    `<ul>${newsArticle.points.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}</ul>`,
+    '</section>',
+  ].join('\n') : '';
+
+  const faqHtml = faqs.length ? [
+    '<section><h2>Frequently Asked Questions</h2>',
+    ...faqs.map(([question, answer]) => `<h3>${escapeHtml(question)}</h3><p>${escapeHtml(answer)}</p>`),
+    '</section>',
+  ].join('\n') : '';
+
+  return [
+    '<main class="static-seo-content">',
+    `<nav aria-label="Primary">${coreDiscoveryLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join(' | ')}</nav>`,
+    '<article>',
+    `<p>${escapeHtml(businessPage?.kicker || product?.category || newsArticle?.category || 'JCZCARE')}</p>`,
+    `<h1>${escapeHtml(h1)}</h1>`,
+    `<p>${escapeHtml(intro)}</p>`,
+    sectionHtml,
+    productHtml,
+    newsHtml,
+    faqHtml,
+    `<section><h2>Explore JCZCARE</h2><ul>${renderLinkList(relatedLinksFor(entry))}</ul></section>`,
+    '<section><h2>Discuss your OEM project</h2><p>Share your target market, product specification, packaging direction, quantity, and delivery destination with our factory team.</p><a href="/contact">Contact an expert</a></section>',
+    '</article>',
+    '</main>',
+  ].filter(Boolean).join('\n');
+};
 
 const renderStaticArticle = (article) => {
   if (!article) {
@@ -60,12 +179,12 @@ const renderStaticArticle = (article) => {
   return [
     `<main class="static-blog-content">`,
     `<article>`,
-    `<p>${escapeHtml(article.category)} | ${escapeHtml(article.author)} | ${escapeHtml(article.publishedAt)}</p>`,
+    `<p>${escapeHtml(article.category)} | <a href="/authors/jczcare-editorial-team">${escapeHtml(article.author)}</a> | ${escapeHtml(article.publishedAt)}</p>`,
     `<h1>${escapeHtml(article.title)}</h1>`,
     `<p>${escapeHtml(article.intro)}</p>`,
     `<nav aria-label="Table of contents"><h2>Table of contents</h2><ol>${article.toc.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ol></nav>`,
     `<nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog">Blog</a> / <a href="${escapeHtml(article.clusterPath)}">${escapeHtml(article.clusterTitle)}</a> / <span>${escapeHtml(article.title)}</span></nav>`,
-    `<nav aria-label="Internal links"><a href="${escapeHtml(article.clusterPath)}">${escapeHtml(article.clusterTitle)} pillar guide</a> | <a href="/factory">Factory resources</a> | <a href="/customization">Customization</a> | <a href="/products/disposable-pet-pads">Products</a> | <a href="/contact">Contact an expert</a></nav>`,
+    `<nav aria-label="Internal links"><a href="${escapeHtml(article.clusterPath)}">${escapeHtml(article.clusterTitle)} pillar guide</a> | <a href="/factory">Factory resources</a> | <a href="/private-label">Customization</a> | <a href="/products/disposable-pet-pads">Products</a> | <a href="/contact">Contact an expert</a></nav>`,
     sectionHtml,
     `<section><h2>Buyer Checklist</h2><ul>${checklistHtml}</ul></section>`,
     `<section><h2>FAQ</h2>${faqHtml}</section>`,
@@ -325,15 +444,16 @@ const buildJsonLd = (entry) => {
 };
 
 const managedHeadPattern =
-  /<title>[\s\S]*?<\/title>|<meta\s+(?:name|property)="(?:description|robots|og:title|og:description|og:type|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image|article:published_time|article:modified_time)"[\s\S]*?>|<link\s+rel="canonical"[\s\S]*?>|<link\s+rel="alternate"\s+type="application\/rss\+xml"[\s\S]*?>|<script id="jczcare-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/g;
+  /<title>[\s\S]*?<\/title>|<meta\s+(?:name|property)="(?:description|keywords|robots|og:title|og:description|og:type|og:url|og:image|twitter:card|twitter:title|twitter:description|twitter:image|article:published_time|article:modified_time)"[\s\S]*?>|<link\s+rel="canonical"[\s\S]*?>|<link\s+rel="alternate"\s+type="application\/rss\+xml"[\s\S]*?>|<script id="jczcare-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/g;
 
-const renderHead = (entry) => {
+const renderHead = (entry, indexable) => {
   const canonical = absoluteUrl(entry.path);
   const image = absoluteUrl(entry.image);
   return [
     `<title>${escapeHtml(entry.title)}</title>`,
     `<meta name="description" content="${escapeHtml(entry.description)}" />`,
-    '<meta name="robots" content="index, follow, max-image-preview:large" />',
+    entry.keywords ? `<meta name="keywords" content="${escapeHtml(entry.keywords)}" />` : '',
+    `<meta name="robots" content="${indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow'}" />`,
     `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
     `<link rel="alternate" type="application/rss+xml" title="JCZCARE OEM Pet Pad Manufacturing Insights" href="${siteUrl}/rss.xml" />`,
     `<meta property="og:title" content="${escapeHtml(entry.title)}" />`,
@@ -348,6 +468,7 @@ const renderHead = (entry) => {
     entry.article ? `<meta property="article:published_time" content="${escapeHtml(entry.article.publishedAt)}" />` : '',
     entry.article ? `<meta property="article:modified_time" content="${escapeHtml(entry.article.updatedAt)}" />` : '',
     `<script id="jczcare-jsonld" type="application/ld+json">${buildJsonLd(entry)}</script>`,
+    '<style id="jczcare-static-shell">.static-seo-content,.static-blog-content,.static-authority-content{max-width:1180px;margin:0 auto;padding:96px 24px;font-family:Arial,sans-serif;line-height:1.65;color:#17231d}.static-seo-content nav,.static-blog-content nav,.static-authority-content nav{margin-bottom:24px}.static-seo-content a,.static-blog-content a,.static-authority-content a{color:#246b45}.static-seo-content section,.static-blog-content section,.static-authority-content section{margin:32px 0}.static-seo-content img,.static-authority-content img{max-width:100%;height:auto}</style>',
   ].filter(Boolean).join('\n    ');
 };
 
@@ -368,11 +489,18 @@ for (const route of staticRoutes) {
   const entry = getSeoEntry(route);
   const staticContent = entry.article
     ? renderStaticArticle(entry.article)
-    : renderStaticAuthority(entry.authorityPage);
-  const bodyTemplate = staticContent
-    ? template.replace('<div id="root"></div>', `<div id="root">${staticContent}</div>`)
-    : template;
-  const cleaned = bodyTemplate.replace(managedHeadPattern, '').replace('</head>', `    ${renderHead(entry)}\n  </head>`);
+    : entry.authorityPage
+      ? renderStaticAuthority(entry.authorityPage)
+      : renderStaticPage(entry);
+  const bodyTemplate = template.replace('<div id="root"></div>', `<div id="root">${staticContent}</div>`);
+  const cleaned = bodyTemplate
+    .replace(managedHeadPattern, '')
+    .replace('</head>', `    ${renderHead(entry, !nonIndexableRouteSet.has(route))}\n  </head>`);
+
+  if (!/<main\b/i.test(cleaned) || !/<h1\b/i.test(cleaned) || !/<a\b/i.test(cleaned)) {
+    throw new Error(`Static SEO output is missing crawlable content for ${route}`);
+  }
+
   await writeHtml(route, cleaned);
   written += 1;
 }

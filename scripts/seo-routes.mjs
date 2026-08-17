@@ -9,15 +9,17 @@ const mainSourcePath = path.join(rootDir, 'src', 'main.jsx');
 
 const coreRoutes = [
   '/',
-  '/about',
-  '/contact',
-  '/profile',
-  '/projects',
-  '/innovation',
-  '/news',
-  '/quality',
-  '/advantages',
-  '/customization',
+  '/products',
+  '/products/pet-training-pads',
+  '/products/pet-diapers',
+  '/products/adult-underpads',
+  '/products/disposable-cleaning-products',
+  '/products/garbage-bags',
+];
+
+export const nonIndexableRoutes = [
+  '/request-product-plan',
+  '/sign-in',
 ];
 
 const excludedRoutePatterns = [
@@ -25,6 +27,9 @@ const excludedRoutePatterns = [
   /^\/admin(?:\/|$)/,
   /^\/private(?:\/|$)/,
   /^\/dev(?:\/|$)/,
+  /^\/region(?:\/|$)/,
+  /^\/(?:about|profile|projects|innovation|news|quality|advantages|customization)\/?$/,
+  /^\/(?:request-product-plan|sign-in)\/?$/,
 ];
 
 const normalizeRoute = (route) => {
@@ -103,6 +108,29 @@ const findDeclarationBlock = (source, declaration, openChar, closeChar) => {
   return '';
 };
 
+const evaluateSourceArray = (source, declaration, dependencies = {}) => {
+  const block = findDeclarationBlock(source, declaration, '[', ']');
+
+  if (!block) {
+    return [];
+  }
+
+  const dependencyNames = Object.keys(dependencies);
+  const dependencyValues = Object.values(dependencies);
+  return Function(...dependencyNames, `"use strict"; return (${block});`)(...dependencyValues);
+};
+
+export const resolveMainSourceContent = () => {
+  const source = fs.readFileSync(mainSourcePath, 'utf8');
+  const b2bImage = (name) => `/images/generated-site/b2b-optimization/${name}.webp`;
+
+  return {
+    businessPages: evaluateSourceArray(source, 'const businessSeoPages', { b2bImage }),
+    products: evaluateSourceArray(source, 'const customProducts'),
+    newsArticles: evaluateSourceArray(source, 'const newsArticles'),
+  };
+};
+
 const addMatches = (routes, text, pattern, routeBuilder = (match) => match[1]) => {
   for (const match of text.matchAll(pattern)) {
     addRoute(routes, routeBuilder(match));
@@ -137,3 +165,8 @@ export const resolvePublicRoutes = () => {
 
   return Array.from(routes).sort((a, b) => a.localeCompare(b));
 };
+
+export const resolveStaticRoutes = () => Array.from(new Set([
+  ...resolvePublicRoutes(),
+  ...nonIndexableRoutes,
+])).sort((a, b) => a.localeCompare(b));

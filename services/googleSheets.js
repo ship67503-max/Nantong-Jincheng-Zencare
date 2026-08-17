@@ -5,7 +5,7 @@ const defaultSheetName = '\u5de5\u4f5c\u88681';
 function getSheetRange() {
   const sheetName = process.env.GOOGLE_SHEET_NAME || defaultSheetName;
 
-  return `${sheetName}!A:L`;
+  return `${sheetName}!A:Q`;
 }
 
 function getGooglePrivateKey() {
@@ -29,12 +29,17 @@ function buildRow(inquiry) {
     inquiry.email || '',
     inquiry.phone || '',
     inquiry.country || '',
+    inquiry.companyWebsite || '',
+    inquiry.jobRole || '',
     inquiry.product || '',
     inquiry.quantity || '',
+    inquiry.requiredSize || '',
+    inquiry.packagingRequirement || '',
     inquiry.message || '',
     inquiry.pageUrl || '',
     inquiry.ip || '',
     inquiry.userAgent || '',
+    JSON.stringify(inquiry.leadSource || {}),
   ];
 }
 
@@ -46,12 +51,6 @@ export async function appendInquiryToGoogleSheets(inquiry) {
   if (!hasGoogleSheetsConfig()) {
     throw new Error('Missing Google Sheets environment variables.');
   }
-
-  console.log('GOOGLE_CLIENT_EMAIL:', process.env.GOOGLE_CLIENT_EMAIL);
-  console.log('GOOGLE_PROJECT_ID:', process.env.GOOGLE_PROJECT_ID);
-  console.log('GOOGLE_SHEET_ID:', process.env.GOOGLE_SHEET_ID);
-  console.log('Runtime GOOGLE_SHEET_ID =', process.env.GOOGLE_SHEET_ID);
-  console.log('GOOGLE_SHEET_NAME:', process.env.GOOGLE_SHEET_NAME);
 
   const auth = new google.auth.JWT({
     email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -65,10 +64,10 @@ export async function appendInquiryToGoogleSheets(inquiry) {
   const range = getSheetRange();
 
   try {
-    await sheets.spreadsheets.get({
-      spreadsheetId,
-    });
-    console.log('Spreadsheet GET success');
+    await sheets.spreadsheets.get(
+      { spreadsheetId },
+      { timeout: 5000 },
+    );
   } catch (error) {
     console.error('Spreadsheet GET failed status:', error.response?.status);
     console.error('Spreadsheet GET failed data:', error.response?.data);
@@ -77,19 +76,19 @@ export async function appendInquiryToGoogleSheets(inquiry) {
     throw error;
   }
 
-  console.log('Using spreadsheetId:', spreadsheetId);
-  console.log('Using range:', range);
-
   try {
-    await sheets.spreadsheets.values.append({
-      spreadsheetId,
-      range,
-      valueInputOption: 'USER_ENTERED',
-      insertDataOption: 'INSERT_ROWS',
-      requestBody: {
-        values: [buildRow(inquiry)],
+    await sheets.spreadsheets.values.append(
+      {
+        spreadsheetId,
+        range,
+        valueInputOption: 'USER_ENTERED',
+        insertDataOption: 'INSERT_ROWS',
+        requestBody: {
+          values: [buildRow(inquiry)],
+        },
       },
-    });
+      { timeout: 5000 },
+    );
   } catch (error) {
     if (isNotFoundError(error)) {
       console.error('Google Sheets append 404 response data:', error.response?.data);
@@ -97,8 +96,6 @@ export async function appendInquiryToGoogleSheets(inquiry) {
 
     throw error;
   }
-
-  console.log('Google Sheets append succeeded');
 
   return { ok: true };
 }

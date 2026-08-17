@@ -8,6 +8,7 @@
     "build": "node scripts/generate-blog-covers.mjs && node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs && node scripts/generate-seo-assets.mjs",
     "generate:blog-covers": "node scripts/generate-blog-covers.mjs --force",
     "lint": "node scripts/validate-topic-clusters.mjs && node scripts/validate-content-ecosystem.mjs && node scripts/validate-seo.mjs",
+    "test": "node --test tests/*.test.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "googleapis": "^173.0.0",
     "gsap": "^3.15.0",
     "lucide-react": "^0.468.0",
+    "nodemailer": "^7.0.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "^0.184.0",

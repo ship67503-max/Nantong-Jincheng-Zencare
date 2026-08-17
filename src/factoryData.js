@@ -4,19 +4,19 @@ const updatedAt = '2026-07-17';
 
 const commonGallery = {
   production: [
-    ['/images/generated-site/factory/factory-production-line-01.webp', 'Automated absorbent product converting line'],
+    ['/images/oem/production/factory-production-line-real-20260729.jpg', 'Automated absorbent product converting line'],
     ['/images/generated-site/factory/factory-lamination-01.webp', 'Lamination and material-guiding detail'],
     ['/images/generated-site/factory/factory-production-line-02.webp', 'Production equipment and controlled line environment'],
   ],
   warehouse: [
     ['/images/generated-site/warehouse/warehouse-finished-goods-01.webp', 'Finished-product warehouse and organized storage'],
-    ['/images/generated-site/factory/factory-campus-01.webp', 'Factory dispatch and logistics area'],
+    ['/images/oem/factory/factory-campus-real-aerial-20260729.png', 'Factory dispatch and logistics area'],
     ['/images/generated-site/packaging/private-label-packaging-01.webp', 'Private-label packing format reference'],
   ],
   quality: [
     ['/images/generated-site/quality-control/factory-quality-control-01.webp', 'Product inspection in a laboratory setting'],
     ['/images/generated-site/products/products-pet-pad-structure-01.webp', 'Absorbent product layer structure'],
-    ['/images/generated-site/factory/factory-production-line-01.webp', 'In-process production control environment'],
+    ['/images/oem/production/factory-production-line-real-20260729.jpg', 'In-process production control environment'],
   ],
   materials: [
     ['/images/generated-site/products/products-pet-pad-structure-01.webp', 'Layered absorbent product construction'],
@@ -80,7 +80,7 @@ const factoryProfiles = [
     kicker: 'Factory Process',
     h1: 'Pet pad production line: from roll materials to packed goods',
     intro: 'A buyer-focused view of how absorbent product materials are aligned, converted, checked, folded, and prepared for private-label packing.',
-    image: '/images/generated-site/factory/factory-production-line-01.webp',
+    image: '/images/oem/production/factory-production-line-real-20260729.jpg',
     imageAlt: 'Automated pet pad production line for OEM manufacturing',
     gallery: commonGallery.production,
     keywords: ['production', 'manufactur', 'automation', 'line'],
@@ -284,7 +284,7 @@ const factoryProfiles = [
     kicker: 'Export Logistics',
     h1: 'Container loading planned around product protection and landed value',
     intro: 'How carton dimensions, loading estimates, shipment controls, and documentation support reliable B2B delivery.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
     imageAlt: 'Factory container loading and export shipment preparation',
     gallery: commonGallery.warehouse,
     keywords: ['container', 'loading', 'shipping', 'export'],
@@ -386,12 +386,12 @@ const factoryProfiles = [
     kicker: 'Documentation Center',
     h1: 'Certificate and compliance documents reviewed by scope, not logo',
     intro: 'A responsible framework for confirming current factory, product, material, and destination-market evidence before purchase.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
     imageAlt: 'JCZCARE factory campus for certificate and compliance document review',
     gallery: [
-      ['/images/generated-site/factory/factory-campus-01.webp', 'Factory profile and operating-site reference'],
+      ['/images/oem/factory/factory-campus-real-aerial-20260729.png', 'Factory profile and operating-site reference'],
       ['/images/generated-site/quality-control/factory-quality-control-01.webp', 'Product inspection and test-evidence context'],
-      ['/images/generated-site/factory/factory-production-line-01.webp', 'Manufacturing process connected to buyer documentation'],
+      ['/images/oem/production/factory-production-line-real-20260729.jpg', 'Manufacturing process connected to buyer documentation'],
     ],
     keywords: ['certificate', 'iso', 'bsci', 'compliance', 'document'],
     products: ['/products/disposable-pet-pads', '/products/adult-underpads'],
