@@ -998,6 +998,13 @@ const footerLinks = [
   { label: 'Industry Reports', href: '/reports' },
 ];
 
+const footerLinkGroups = [
+  { title: 'Company', labels: ['About', 'Investor Relations', 'Affiliates', 'Give Back', 'Gift Cards'] },
+  { title: 'Products', labels: ['Pet Pad Factory', 'Private Label Pet Pads', 'Quality Control'] },
+  { title: 'OEM Resources', labels: ['OEM Process', 'Resources', 'Blog', 'FAQ', 'Learn', 'Downloads', 'Download Center', 'Buyer Guides', 'Material Knowledge', 'Industry Reports', 'Case Studies', 'Comparisons', 'Media'] },
+  { title: 'Contact', labels: ['Contact', 'Factory Center', 'Help'] },
+];
+
 const socialLinks = [
   {
     label: 'Instagram',
@@ -1811,7 +1818,31 @@ function SiteNav({ navRef, ui }) {
   const isChinese = activeLanguage === 'zh-CN';
   const localizedCompanyName = isChinese ? companyNameZh : companyName;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null);
   const closeMobileMenu = () => setMobileOpen(false);
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      document.body.classList.remove('mobile-menu-open');
+      return undefined;
+    }
+
+    document.body.classList.add('mobile-menu-open');
+    const firstFocusable = menuRef.current?.querySelector('a, button');
+    firstFocusable?.focus({ preventScroll: true });
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMobileOpen(false);
+        toggleRef.current?.focus({ preventScroll: true });
+      }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [mobileOpen]);
 
   return (
     <nav ref={navRef} className="nav">
@@ -1824,6 +1855,7 @@ function SiteNav({ navRef, ui }) {
       <button
         type="button"
         className="nav-mobile-toggle"
+        ref={toggleRef}
         aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
         aria-expanded={mobileOpen}
         aria-controls="site-navigation-links"
@@ -1831,7 +1863,7 @@ function SiteNav({ navRef, ui }) {
       >
         {mobileOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
-      <div id="site-navigation-links" className={`nav-links notranslate${mobileOpen ? ' is-open' : ''}`} translate="no" aria-label={labels.ariaLabel}>
+      <div id="site-navigation-links" ref={menuRef} className={`nav-links notranslate${mobileOpen ? ' is-open' : ''}`} translate="no" aria-label={labels.ariaLabel}>
         <a href="/" onClick={closeMobileMenu}>{labels.home}</a>
         <a href="/factory" onClick={closeMobileMenu}>{labels.factory}</a>
         <ProductMegaMenu label={labels.products} onNavigate={closeMobileMenu} />
@@ -1840,15 +1872,18 @@ function SiteNav({ navRef, ui }) {
         <a href="/quality-control" onClick={closeMobileMenu}>{labels.quality}</a>
         <a href="/blog" onClick={closeMobileMenu}>{labels.resources}</a>
         <a href="/#contact" onClick={closeMobileMenu}>{labels.contact}</a>
+        <a className="nav-signin nav-signin-menu" href="/sign-in" onClick={closeMobileMenu}>{labels.signIn}</a>
       </div>
       <a className="nav-cta notranslate" translate="no" href="/request-product-plan?product=oem-pet-pad-project">
         {labels.quote}
         <ArrowUpRight size={18} strokeWidth={1.8} />
       </a>
       <LanguageSwitcher />
-      <a className="nav-signin notranslate" translate="no" href="/sign-in">
-        {labels.signIn}
-      </a>
+      <button type="button" className={`nav-mobile-backdrop${mobileOpen ? ' is-visible' : ''}`} aria-label="Close navigation" onClick={closeMobileMenu} tabIndex={mobileOpen ? 0 : -1} />
+      <div className="mobile-conversion-bar" aria-label="Quick contact actions">
+        <a className="mobile-conversion-whatsapp" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} aria-hidden="true" /> WhatsApp</a>
+        <a className="mobile-conversion-quote" href="/request-product-plan?product=oem-pet-pad-project"><ArrowUpRight size={18} aria-hidden="true" /> Request Quote</a>
+      </div>
     </nav>
   );
 }
@@ -2149,6 +2184,21 @@ function FooterSocialLinks() {
 }
 
 function SiteFooter({ ui }) {
+  const [openGroups, setOpenGroups] = useState(() => {
+    const openByDefault = !window.matchMedia('(max-width: 767px)').matches;
+    return Object.fromEntries(footerLinkGroups.map((group) => [group.title, openByDefault]));
+  });
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    const syncGroups = () => {
+      const openByDefault = !query.matches;
+      setOpenGroups(Object.fromEntries(footerLinkGroups.map((group) => [group.title, openByDefault])));
+    };
+    query.addEventListener?.('change', syncGroups);
+    return () => query.removeEventListener?.('change', syncGroups);
+  }, []);
+
   return (
     <footer className="site-footer">
       <div className="footer-support">
@@ -2175,12 +2225,27 @@ function SiteFooter({ ui }) {
       </div>
       <div className="footer-links-band">
         <div className="container footer-links-inner">
-          <nav className="footer-links" aria-label="Footer links">
-            {footerLinks.map((link, index) => (
-              <a key={link.label} href={link.href}>{ui.footer[index] ?? link.label}</a>
+          <div className="footer-links" aria-label="Footer links">
+            {footerLinkGroups.map((group) => (
+              <details className="footer-link-group" key={group.title} open={openGroups[group.title]} onToggle={(event) => { const isOpen = event.currentTarget.open; setOpenGroups((state) => ({ ...state, [group.title]: isOpen })); }}>
+                <summary>{group.title}<span aria-hidden="true">+</span></summary>
+                <nav aria-label={group.title}>
+                  {group.labels.map((label) => {
+                    const link = footerLinks.find((item) => item.label === label);
+                    return link ? <a key={link.label} href={link.href}>{link.label}</a> : null;
+                  })}
+                </nav>
+              </details>
             ))}
-          </nav>
+          </div>
         </div>
+      </div>
+      <div className="container footer-legal">
+        <span className="notranslate" translate="no">{companyName}</span>
+        <a href={buildMailto('Website Inquiry')}>{contactEmail}</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms</a>
+        <small>Copyright {new Date().getFullYear()} JCZCARE. All rights reserved.</small>
       </div>
     </footer>
   );
@@ -3699,6 +3764,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
   const [fieldErrors, setFieldErrors] = useState({});
   const [captchaToken, setCaptchaToken] = useState('');
   const [captchaStatus, setCaptchaStatus] = useState('loading');
+  const [moreDetailsOpen, setMoreDetailsOpen] = useState(() => !window.matchMedia('(max-width: 767px)').matches);
   const lastSubmitAtRef = useRef(0);
   const isSubmittingRef = useRef(false);
   const submissionIdRef = useRef(createInquirySubmissionId());
@@ -3946,6 +4012,9 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
           <input ref={fieldRefs.name} type="text" name="name" required maxLength="100" autoComplete="name" placeholder="Full name" value={formState.name} onChange={updateField('name')} aria-invalid={Boolean(fieldErrors.name)} aria-describedby={fieldErrors.name ? 'inquiry-name-error' : undefined} />
           {fieldErrors.name && <small id="inquiry-name-error" className="field-error">{fieldErrors.name}</small>}
         </label>
+        <details className="inquiry-more-details" open={moreDetailsOpen} onToggle={(event) => setMoreDetailsOpen(event.currentTarget.open)}>
+          <summary>More project details <span aria-hidden="true">+</span></summary>
+        <div className="inquiry-more-details-fields">
         <label>
           <span>Company Name</span>
           <input type="text" name="companyName" maxLength="200" autoComplete="organization" placeholder="Company name" value={formState.companyName} onChange={updateField('companyName')} />
@@ -3976,6 +4045,8 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
           <span>Estimated Quantity</span>
           <input type="text" name="quantity" maxLength="100" placeholder="Monthly or order quantity" value={formState.quantity} onChange={updateField('quantity')} />
         </label>
+        </div>
+        </details>
         <label className={`inquiry-field-wide${fieldErrors.product ? ' has-error' : ''}`}>
           <span>Product Interest <strong className="required-mark" aria-hidden="true">*</strong></span>
           <select ref={fieldRefs.product} name="product" required value={formState.product} onChange={updateField('product')} aria-invalid={Boolean(fieldErrors.product)} aria-describedby={fieldErrors.product ? 'inquiry-product-error' : undefined}>
@@ -6035,39 +6106,7 @@ function App() {
           />
         </div>
       </section>
-      <footer className="site-footer">
-        <div className="footer-support">
-          <div className="container footer-support-inner">
-            <strong>{ui.support}</strong>
-            <a className="footer-whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
-              <MessageCircle className="whatsapp-icon" size={20} />
-              <span>
-                <strong>Talk to Our OEM Specialist</strong>
-                <small>Start WhatsApp Chat</small>
-                <small>{whatsappPhone}</small>
-              </span>
-            </a>
-            <a href="/request-product-plan?product=oem-partnership" aria-label="Start an OEM partnership">
-              <ArrowUpRight size={20} />
-              Start OEM Partnership
-            </a>
-            <FooterSocialLinks />
-            <a className="footer-top-link" href="#home">
-              <ArrowUp size={20} />
-              {ui.top}
-            </a>
-          </div>
-        </div>
-        <div className="footer-links-band">
-          <div className="container footer-links-inner">
-            <nav className="footer-links" aria-label="Footer links">
-              {footerLinks.map((link, index) => (
-                <a key={link.label} href={link.href}>{ui.footer[index] ?? link.label}</a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter ui={ui} />
     </main>
   );
 }

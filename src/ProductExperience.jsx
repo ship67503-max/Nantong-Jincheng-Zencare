@@ -56,12 +56,27 @@ function useReducedMotion() {
   return reduced;
 }
 
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)');
+    const update = () => setMobile(query.matches);
+    update();
+    query.addEventListener?.('change', update);
+    return () => query.removeEventListener?.('change', update);
+  }, []);
+
+  return mobile;
+}
+
 export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whatsappChatUrl }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const resumeAtRef = useRef(0);
   const touchStartRef = useRef(null);
   const reducedMotion = useReducedMotion();
+  const isMobile = useIsMobile();
 
   const selectSlide = (index, manual = false) => {
     setActiveIndex((index + heroSlides.length) % heroSlides.length);
@@ -69,12 +84,12 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
   };
 
   useEffect(() => {
-    if (reducedMotion || paused) return undefined;
+    if (reducedMotion || paused || isMobile) return undefined;
     const timer = window.setInterval(() => {
       if (Date.now() >= resumeAtRef.current) setActiveIndex((index) => (index + 1) % heroSlides.length);
     }, 6500);
     return () => window.clearInterval(timer);
-  }, [paused, reducedMotion]);
+  }, [paused, reducedMotion, isMobile]);
 
   const onTouchStart = (event) => {
     setPaused(true);
@@ -128,11 +143,11 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
         className="home-product-hero-video"
         src={heroVideoSource}
         poster={heroVideoPoster}
-        autoPlay={!reducedMotion}
+        autoPlay={!reducedMotion && !isMobile}
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
       />
       <div className="home-product-hero-slides">
@@ -252,6 +267,19 @@ export function HomeProductShowcase() {
               onClick={() => setActiveSlug(series.slug)}
               key={series.slug}
             >{series.shortTitle}</button>
+          ))}
+        </div>
+
+        <div className="home-product-category-grid" aria-label="Six product categories">
+          {productSeries.map((series) => (
+            <a className="home-product-category-card" href={`/products/${series.slug}`} key={series.slug}>
+              <span className="home-product-category-media"><img src={series.image} alt={series.imageAlt} loading="lazy" decoding="async" /></span>
+              <span className="home-product-category-copy">
+                <strong>{series.title}</strong>
+                <small>{series.productTypes.slice(0, 3).join(' / ')}</small>
+                <em>View Series <ArrowUpRight size={15} aria-hidden="true" /></em>
+              </span>
+            </a>
           ))}
         </div>
 
