@@ -246,7 +246,7 @@ export const productSeries = [
     productTypes: ['Standard', 'Degradable', 'Fully Biodegradable'],
     customization: ['Custom Size', 'Material Direction', 'Bag Format', 'Printed Design', 'Private Label Packaging'],
     products: [
-      product({ name: 'Standard Garbage Bags', slug: 'standard-garbage-bags', features: ['Standard garbage bag format', 'Custom size and packaging direction'], image: '/images/products/garbage-bags/garbage-bags-series-cover.webp', imageAlt: 'Colorful garbage bag rolls displayed beside premium retail packaging' }),
+      product({ name: 'Standard Garbage Bags', slug: 'standard-garbage-bags', features: ['Standard garbage bag format', 'Custom size and packaging direction'], image: '/images/products/garbage-bags/pet-waste-bags-dispenser.webp', imageAlt: 'Pet waste bag packaging with a bone-shaped dispenser and bag roll' }),
       product({
         name: 'Degradable Garbage Bags',
         slug: 'degradable-garbage-bags',

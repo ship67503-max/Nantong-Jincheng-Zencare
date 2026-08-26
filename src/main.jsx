@@ -55,7 +55,7 @@ import {
   getRelatedProductsForArticle,
 } from './authorityData.js';
 import { topicClusters } from './topicClusters.js';
-import { CatalogProductDetailPage, ProductCenterPage, ProductSeriesPage } from './ProductCatalogPages.jsx';
+import { CatalogProductDetailPage, OwnBrandPage, ProductCenterPage, ProductSeriesPage, ownBrandProducts } from './ProductCatalogPages.jsx';
 import { HomeHeroCarousel, HomeProductShowcase, ProductMegaMenu } from './ProductExperience.jsx';
 import {
   getProductSeries,
@@ -90,6 +90,7 @@ const navigationTranslations = {
     home: 'Home',
     factory: 'Factory',
     products: 'Products',
+    ownBrands: 'Own Brands',
     oemProcess: 'OEM Process',
     quality: 'Quality Control',
     resources: 'Resources',
@@ -102,6 +103,7 @@ const navigationTranslations = {
     home: '\u9996\u9875',
     factory: '\u5de5\u5382\u5b9e\u529b',
     products: '\u4ea7\u54c1\u4e2d\u5fc3',
+    ownBrands: '\u81ea\u6709\u54c1\u724c',
     oemProcess: 'OEM\u6d41\u7a0b',
     quality: '\u8d28\u91cf\u63a7\u5236',
     resources: '\u8d44\u6e90\u4e2d\u5fc3',
@@ -114,6 +116,7 @@ const navigationTranslations = {
     home: 'Home',
     factory: 'Fabbrica',
     products: 'Prodotti',
+    ownBrands: 'Marchi propri',
     oemProcess: 'Processo OEM',
     quality: 'Controllo qualit\u00e0',
     resources: 'Risorse',
@@ -126,6 +129,7 @@ const navigationTranslations = {
     home: 'Accueil',
     factory: 'Usine',
     products: 'Produits',
+    ownBrands: 'Marques propres',
     oemProcess: 'Processus OEM',
     quality: 'Contr\u00f4le qualit\u00e9',
     resources: 'Ressources',
@@ -1831,6 +1835,7 @@ function SiteNav({ navRef, ui }) {
         <a href="/" onClick={closeMobileMenu}>{labels.home}</a>
         <a href="/factory" onClick={closeMobileMenu}>{labels.factory}</a>
         <ProductMegaMenu label={labels.products} onNavigate={closeMobileMenu} />
+        <a href="/own-brands" onClick={closeMobileMenu}>{labels.ownBrands}</a>
         <a href="/oem-process" onClick={closeMobileMenu}>{labels.oemProcess}</a>
         <a href="/quality-control" onClick={closeMobileMenu}>{labels.quality}</a>
         <a href="/blog" onClick={closeMobileMenu}>{labels.resources}</a>
@@ -4789,6 +4794,7 @@ function App() {
   const productSlug = currentPath.match(/^\/products\/([^/]+)\/?$/)?.[1];
   const productDetailMatch = currentPath.match(/^\/products\/([^/]+)\/([^/]+)\/?$/);
   const isProductsCenterPage = currentPath === '/products' || currentPath === '/products/';
+  const isOwnBrandPage = currentPath === '/own-brands' || currentPath === '/own-brands/';
   const isAdultUnderpadsPage = currentPath === '/products/adult-underpads';
   const isInquiryPage = currentPath === '/request-product-plan';
   const isSignInPage = currentPath === '/sign-in';
@@ -4814,8 +4820,24 @@ function App() {
   const currentSeoPage = seoPageMap.get(currentPath);
   const currentStaticSeo = staticSeoPages[currentPath];
   const currentSeries = productSlug ? getProductSeries(productSlug) : null;
+  const brandProductId = productDetailMatch ? new URLSearchParams(window.location.search).get('brand') : null;
+  const ownBrandProduct = brandProductId
+    ? ownBrandProducts.find((entry) => entry.brandId === brandProductId)
+    : null;
   const catalogProduct = productDetailMatch
-    ? getSeriesProduct(productDetailMatch[1], productDetailMatch[2])
+    ? (() => {
+        const baseProduct = getSeriesProduct(productDetailMatch[1], productDetailMatch[2]);
+        if (!baseProduct || !ownBrandProduct) return baseProduct;
+        return {
+          ...baseProduct,
+          name: ownBrandProduct.title,
+          title: ownBrandProduct.title,
+          image: ownBrandProduct.image,
+          imageAlt: ownBrandProduct.imageAlt,
+          imageScale: ownBrandProduct.imageScale,
+          summary: ownBrandProduct.summary,
+        };
+      })()
     : null;
   const currentProduct = productSlug && !currentSeries
     ? customProducts.find((product) => product.slug === productSlug)
@@ -4853,6 +4875,20 @@ function App() {
         breadcrumbs: [
           ['Home', '/'],
           ['Products', '/products'],
+        ],
+      });
+      return;
+    }
+
+    if (isOwnBrandPage) {
+      applyPageSeo({
+        title: 'PetBest Own Brand Products | JCZCARE',
+        description: 'Explore PetBest, the JCZCARE own brand for pet-care products, with direct product details and brand supply support.',
+        path: '/own-brands',
+        image: '/images/brand-petbest/petbest-logo.png',
+        breadcrumbs: [
+          ['Home', '/'],
+          ['Own Brands', '/own-brands'],
         ],
       });
       return;
@@ -4995,7 +5031,7 @@ function App() {
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
-  }, [currentAuthorityPage, currentSeoPage, currentProduct, currentSeries, catalogProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, isProductsCenterPage, currentPath]);
+  }, [currentAuthorityPage, currentSeoPage, currentProduct, currentSeries, catalogProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, isProductsCenterPage, isOwnBrandPage, currentPath]);
 
   useEffect(() => {
     captureLeadAttribution();
@@ -5544,6 +5580,16 @@ function App() {
     );
   }
 
+  if (isOwnBrandPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <OwnBrandPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
   if (currentSeries) {
     return (
       <main ref={rootRef}>
@@ -5683,6 +5729,24 @@ function App() {
       />
 
       <HomeProductShowcase />
+
+      <section className="home-own-brand-callout" aria-labelledby="home-own-brand-title">
+        <div className="container home-own-brand-callout-inner">
+          <div className="home-own-brand-callout-copy">
+            <p className="section-kicker">Own Brands</p>
+            <h2 id="home-own-brand-title">PetBest own-brand products</h2>
+            <p>Our own-brand product content is being fully updated. If you need assistance, <a href="/request-product-plan?product=own-brand-update">contact us directly</a> and submit the form. A product specialist will get in touch.</p>
+            <div className="home-own-brand-callout-actions">
+              <a className="home-own-brand-primary" href="/own-brands">View Own Brands <ArrowUpRight size={17} /></a>
+              <a className="home-own-brand-secondary" href="/request-product-plan?product=own-brand-update">Contact Us <ArrowUpRight size={17} /></a>
+            </div>
+          </div>
+          <a className="home-own-brand-callout-logo" href="/own-brands" aria-label="View PetBest own-brand products">
+            <img src="/images/brand-petbest/petbest-logo.png" alt="PetBest logo" loading="lazy" decoding="async" />
+          </a>
+        </div>
+      </section>
+
       <CustomizationTimeline />
       <ShippingSolution />
 
