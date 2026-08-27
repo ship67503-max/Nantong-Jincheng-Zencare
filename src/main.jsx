@@ -55,7 +55,7 @@ import {
   getRelatedProductsForArticle,
 } from './authorityData.js';
 import { topicClusters } from './topicClusters.js';
-import { CatalogProductDetailPage, OwnBrandPage, ProductCenterPage, ProductSeriesPage, ownBrandProducts } from './ProductCatalogPages.jsx';
+import { CatalogProductDetailPage, ProductCenterPage, ProductSeriesPage } from './ProductCatalogPages.jsx';
 import { HomeHeroCarousel, HomeProductShowcase, ProductMegaMenu } from './ProductExperience.jsx';
 import {
   getProductSeries,
@@ -90,7 +90,6 @@ const navigationTranslations = {
     home: 'Home',
     factory: 'Factory',
     products: 'Products',
-    ownBrands: 'Own Brands',
     oemProcess: 'OEM Process',
     quality: 'Quality Control',
     resources: 'Resources',
@@ -103,7 +102,6 @@ const navigationTranslations = {
     home: '\u9996\u9875',
     factory: '\u5de5\u5382\u5b9e\u529b',
     products: '\u4ea7\u54c1\u4e2d\u5fc3',
-    ownBrands: '\u81ea\u6709\u54c1\u724c',
     oemProcess: 'OEM\u6d41\u7a0b',
     quality: '\u8d28\u91cf\u63a7\u5236',
     resources: '\u8d44\u6e90\u4e2d\u5fc3',
@@ -116,7 +114,6 @@ const navigationTranslations = {
     home: 'Home',
     factory: 'Fabbrica',
     products: 'Prodotti',
-    ownBrands: 'Marchi propri',
     oemProcess: 'Processo OEM',
     quality: 'Controllo qualit\u00e0',
     resources: 'Risorse',
@@ -129,7 +126,6 @@ const navigationTranslations = {
     home: 'Accueil',
     factory: 'Usine',
     products: 'Produits',
-    ownBrands: 'Marques propres',
     oemProcess: 'Processus OEM',
     quality: 'Contr\u00f4le qualit\u00e9',
     resources: 'Ressources',
@@ -361,24 +357,6 @@ const advantages = [
     text: 'Specification confirmation, sample approval, production control, and export coordination.',
     image: '/images/oem/customization/generated-20260808/private-label-support.png',
   },
-];
-
-const homepageOemSteps = [
-  ['01', 'Inquiry', 'Share target market, product type, estimated quantity, and delivery plan.', '/images/oem/contact/business-meeting-oem.webp'],
-  ['02', 'Specification Confirmation', 'Confirm size, weight, absorbency, structure, pack count, and target price direction.', '/images/oem/customization/oem-meeting-01.webp'],
-  ['03', 'Material Selection', 'Review nonwoven, SAP, fluff pulp, absorbent paper, and PE film options.', '/images/oem/materials/production-process-line.webp'],
-  ['04', 'Sample Approval', 'Measure samples, review performance, and record buyer approval before production.', '/images/oem/quality/private-label-packaging-review.webp'],
-  ['05', 'Mass Production', 'Transfer the approved specification to scheduled production and line control.', '/images/oem/production/production-line-clean.png'],
-  ['06', 'Quality Inspection', 'Check incoming materials, in-process output, finished products, and packing.', '/images/oem/quality/quality-inspection-water-retention-20260806.jpg'],
-  ['07', 'Shipment', 'Complete final release, export packing, loading, documents, and delivery coordination.', '/images/oem/warehouse/generated-20260808/shipment-export-loading-20260808.png'],
-];
-
-const homepageOemFlowRows = [
-  homepageOemSteps.slice(0, 4),
-  [
-    ...homepageOemSteps.slice(4),
-    ['START', 'Start Your OEM Project', 'Share your product brief and turn these seven controlled stages into a production plan.', '/images/oem/contact/business-meeting-oem.webp', 'cta'],
-  ],
 ];
 
 const customProducts = [
@@ -1867,7 +1845,6 @@ function SiteNav({ navRef, ui }) {
         <a href="/" onClick={closeMobileMenu}>{labels.home}</a>
         <a href="/factory" onClick={closeMobileMenu}>{labels.factory}</a>
         <ProductMegaMenu label={labels.products} onNavigate={closeMobileMenu} />
-        <a href="/own-brands" onClick={closeMobileMenu}>{labels.ownBrands}</a>
         <a href="/oem-process" onClick={closeMobileMenu}>{labels.oemProcess}</a>
         <a href="/quality-control" onClick={closeMobileMenu}>{labels.quality}</a>
         <a href="/blog" onClick={closeMobileMenu}>{labels.resources}</a>
@@ -3483,7 +3460,46 @@ function CaseStudyPage() {
   );
 }
 
-function OemProcessPage() {
+function MaterialInnovationSection({ materialTerminology }) {
+  return (
+    <section className="section innovation" id="innovation">
+      <div className="container innovation-grid">
+        <div className="innovation-copy">
+          <p className="section-kicker">Material Technology</p>
+          <h2>
+            Material choices engineered for <em className="title-key">target performance</em>.
+          </h2>
+          <p>
+            <span className="notranslate" translate="no">{materialTerminology.introduction}</span>
+          </p>
+        </div>
+        <div className="innovation-cards">
+          {innovations.map(({ icon: Icon, title, text, image, materialTerminology: isMaterialTerminology }) => {
+            const displayTitle = isMaterialTerminology ? materialTerminology.title : title;
+            const displayText = isMaterialTerminology ? materialTerminology.text : text;
+
+            return (
+              <article className="innovation-card" key={title}>
+                <OptimizedImage src={image} alt={`${title} material detail`} />
+                <div className="innovation-card-copy">
+                  <div className="icon-box">
+                    <Icon size={24} strokeWidth={1.7} />
+                  </div>
+                  <div>
+                    <h3 className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayTitle}</h3>
+                    <p className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayText}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function OemProcessPage({ materialTerminology }) {
   return (
     <section className="business-seo-page process-page">
       <div className="container business-seo-shell">
@@ -3501,6 +3517,44 @@ function OemProcessPage() {
             <OptimizedImage src={b2bImage('oem-sample-review')} alt="" loading="eager" />
           </div>
         </div>
+        <MaterialInnovationSection materialTerminology={materialTerminology} />
+        <CustomizationTimeline />
+        <ShippingSolution />
+        <section className="section quality" id="quality">
+          <div className="container quality-layout">
+            <div className="quality-visual">
+              <OptimizedImage
+                src="/images/oem/quality/quality-absorbency-batch-test-20260806.jpg"
+                alt="Pet pad absorbency batch test in the quality laboratory"
+                loading="eager"
+              />
+              <div className="quality-badge">
+                <Microscope size={20} />
+                <span>Batch Inspection</span>
+              </div>
+            </div>
+            <div className="quality-content">
+              <p className="section-kicker">Quality Control</p>
+              <h2>
+                Inspection from incoming material to <em className="title-key">finished goods</em>.
+              </h2>
+              <p>
+                Quality checks focus on specification consistency, absorbency, sealing, packaging, and shipment readiness.
+              </p>
+              <div className="inspection-list">
+                {inspections.map(([step, title, text]) => (
+                  <article className="inspection-item" key={title}>
+                    <strong>{step}</strong>
+                    <div>
+                      <h3>{title}</h3>
+                      <p>{text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="oem-capability-section" aria-labelledby="oem-capability-title">
           <div>
             <p className="section-kicker">Customization Capability</p>
@@ -4856,6 +4910,7 @@ function App() {
   const rootRef = useRef(null);
   const navRef = useRef(null);
   const heroVideoRef = useRef(null);
+  const aboutVideoRef = useRef(null);
   const [heroVideoFailed, setHeroVideoFailed] = useState(false);
   const currentPath = window.location.pathname;
   const [activeRegion, setActiveRegion] = useState(getInitialRegion);
@@ -4865,7 +4920,6 @@ function App() {
   const productSlug = currentPath.match(/^\/products\/([^/]+)\/?$/)?.[1];
   const productDetailMatch = currentPath.match(/^\/products\/([^/]+)\/([^/]+)\/?$/);
   const isProductsCenterPage = currentPath === '/products' || currentPath === '/products/';
-  const isOwnBrandPage = currentPath === '/own-brands' || currentPath === '/own-brands/';
   const isAdultUnderpadsPage = currentPath === '/products/adult-underpads';
   const isInquiryPage = currentPath === '/request-product-plan';
   const isSignInPage = currentPath === '/sign-in';
@@ -4891,23 +4945,9 @@ function App() {
   const currentSeoPage = seoPageMap.get(currentPath);
   const currentStaticSeo = staticSeoPages[currentPath];
   const currentSeries = productSlug ? getProductSeries(productSlug) : null;
-  const brandProductId = productDetailMatch ? new URLSearchParams(window.location.search).get('brand') : null;
-  const ownBrandProduct = brandProductId
-    ? ownBrandProducts.find((entry) => entry.brandId === brandProductId)
-    : null;
   const catalogProduct = productDetailMatch
     ? (() => {
-        const baseProduct = getSeriesProduct(productDetailMatch[1], productDetailMatch[2]);
-        if (!baseProduct || !ownBrandProduct) return baseProduct;
-        return {
-          ...baseProduct,
-          name: ownBrandProduct.title,
-          title: ownBrandProduct.title,
-          image: ownBrandProduct.image,
-          imageAlt: ownBrandProduct.imageAlt,
-          imageScale: ownBrandProduct.imageScale,
-          summary: ownBrandProduct.summary,
-        };
+        return getSeriesProduct(productDetailMatch[1], productDetailMatch[2]);
       })()
     : null;
   const currentProduct = productSlug && !currentSeries
@@ -4946,20 +4986,6 @@ function App() {
         breadcrumbs: [
           ['Home', '/'],
           ['Products', '/products'],
-        ],
-      });
-      return;
-    }
-
-    if (isOwnBrandPage) {
-      applyPageSeo({
-        title: 'PetBest Own Brand Products | JCZCARE',
-        description: 'Explore PetBest, the JCZCARE own brand for pet-care products, with direct product details and brand supply support.',
-        path: '/own-brands',
-        image: '/images/brand-petbest/petbest-logo.png',
-        breadcrumbs: [
-          ['Home', '/'],
-          ['Own Brands', '/own-brands'],
         ],
       });
       return;
@@ -5102,7 +5128,7 @@ function App() {
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
-  }, [currentAuthorityPage, currentSeoPage, currentProduct, currentSeries, catalogProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, isProductsCenterPage, isOwnBrandPage, currentPath]);
+  }, [currentAuthorityPage, currentSeoPage, currentProduct, currentSeries, catalogProduct, currentNewsArticle, currentBlogArticle, currentStaticSeo, isNewsPage, isBlogPage, isAdultUnderpadsPage, isProductsCenterPage, currentPath]);
 
   useEffect(() => {
     captureLeadAttribution();
@@ -5321,8 +5347,8 @@ function App() {
         {
           section: '#about',
           title: '#about .section-kicker',
-          image: '#about .about-video, #about .about-media',
-          imageInner: '#about .about-video video, #about .about-media img',
+          image: '#about .about-media',
+          imageInner: '#about .about-media img',
           items: '#about .about-copy h2, #about .about-copy p:not(.section-kicker), #about .contact-strip, #about .profile-metrics-bar',
         },
         {
@@ -5493,6 +5519,39 @@ function App() {
   }, [heroVideoFailed]);
 
   useEffect(() => {
+    const video = aboutVideoRef.current;
+
+    if (!video) {
+      return undefined;
+    }
+
+    video.autoplay = true;
+    video.defaultMuted = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+
+    const playWhenReady = () => {
+      if (document.visibilityState === 'hidden') {
+        return;
+      }
+      video.play().catch(() => {});
+    };
+
+    video.addEventListener('canplay', playWhenReady);
+    video.addEventListener('loadeddata', playWhenReady);
+    document.addEventListener('visibilitychange', playWhenReady);
+    playWhenReady();
+
+    return () => {
+      video.removeEventListener('canplay', playWhenReady);
+      video.removeEventListener('loadeddata', playWhenReady);
+      document.removeEventListener('visibilitychange', playWhenReady);
+    };
+  }, [currentPath]);
+
+  useEffect(() => {
     if (currentSeries || catalogProduct || currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
       return undefined;
     }
@@ -5651,16 +5710,6 @@ function App() {
     );
   }
 
-  if (isOwnBrandPage) {
-    return (
-      <main ref={rootRef}>
-        <SiteNav navRef={navRef} ui={ui} />
-        <OwnBrandPage />
-        <SiteFooter ui={ui} />
-      </main>
-    );
-  }
-
   if (currentSeries) {
     return (
       <main ref={rootRef}>
@@ -5694,7 +5743,7 @@ function App() {
     return (
       <main ref={rootRef}>
         <SiteNav navRef={navRef} ui={ui} />
-        <OemProcessPage />
+        <OemProcessPage materialTerminology={materialTerminology} />
         <SiteFooter ui={ui} />
       </main>
     );
@@ -5801,26 +5850,6 @@ function App() {
 
       <HomeProductShowcase />
 
-      <section className="home-own-brand-callout" aria-labelledby="home-own-brand-title">
-        <div className="container home-own-brand-callout-inner">
-          <div className="home-own-brand-callout-copy">
-            <p className="section-kicker">Own Brands</p>
-            <h2 id="home-own-brand-title">PetBest own-brand products</h2>
-            <p>Our own-brand product content is being fully updated. If you need assistance, <a href="/request-product-plan?product=own-brand-update">contact us directly</a> and submit the form. A product specialist will get in touch.</p>
-            <div className="home-own-brand-callout-actions">
-              <a className="home-own-brand-primary" href="/own-brands">View Own Brands <ArrowUpRight size={17} /></a>
-              <a className="home-own-brand-secondary" href="/request-product-plan?product=own-brand-update">Contact Us <ArrowUpRight size={17} /></a>
-            </div>
-          </div>
-          <a className="home-own-brand-callout-logo" href="/own-brands" aria-label="View PetBest own-brand products">
-            <img src="/images/brand-petbest/petbest-logo.png" alt="PetBest logo" loading="lazy" decoding="async" />
-          </a>
-        </div>
-      </section>
-
-      <CustomizationTimeline />
-      <ShippingSolution />
-
       <section className="section projects" id="projects">
         <div className="container">
           <div className="section-head">
@@ -5890,13 +5919,14 @@ function App() {
         <div className="container about-shell">
           <div className="about-video" aria-label="Factory video">
             <video
+              ref={aboutVideoRef}
               src="/videos/factory-profile-4-compressed.mp4"
               poster="/images/oem/hero/factory-campus.webp"
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
             />
           </div>
           <div className="about-grid">
@@ -5943,132 +5973,6 @@ function App() {
               Request OEM Quote
               <ArrowUpRight size={18} />
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section home-oem-process" id="oem-process-home">
-        <div className="container">
-          <div className="section-head home-oem-process-head">
-            <div>
-              <p className="section-kicker">OEM / ODM Process</p>
-              <h2>
-                A controlled process from <em className="title-key">requirement to shipment</em>.
-              </h2>
-            </div>
-            <a className="section-action" href="/oem-process">
-              View Full OEM Process
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
-          <div className="home-oem-flow" aria-label="OEM process stages in continuous motion">
-            {homepageOemFlowRows.map((steps, rowIndex) => (
-              <div
-                className={`home-oem-rail home-oem-rail--${rowIndex === 0 ? 'forward' : 'reverse'}`}
-                key={rowIndex === 0 ? 'planning' : 'delivery'}
-              >
-                <div className="home-oem-track" role="list">
-                  {[...steps, ...steps].map(([number, title, text, image, kind], index) => {
-                    const isDuplicate = index >= steps.length;
-
-                    return (
-                      <article
-                        className={`home-oem-card${kind === 'cta' ? ' home-oem-card--cta' : ''}`}
-                        key={`${rowIndex}-${title}-${index}`}
-                        role="listitem"
-                        aria-hidden={isDuplicate ? 'true' : undefined}
-                      >
-                        <div className="home-oem-card-media">
-                          <OptimizedImage src={image} alt={isDuplicate ? '' : `${title} for OEM pet hygiene products`} />
-                        </div>
-                        <div>
-                          <span>{number}</span>
-                          <h3>{title}</h3>
-                          <p>{text}</p>
-                          {kind === 'cta' ? (
-                            <a href="/request-product-plan?product=oem-pet-pad-project" tabIndex={isDuplicate ? -1 : undefined}>
-                              Request project plan
-                              <ArrowUpRight size={16} />
-                            </a>
-                          ) : null}
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section innovation" id="innovation">
-        <div className="container innovation-grid">
-          <div className="innovation-copy">
-            <p className="section-kicker">Material Technology</p>
-            <h2>
-              Material choices engineered for <em className="title-key">target performance</em>.
-            </h2>
-            <p>
-              <span className="notranslate" translate="no">{materialTerminology.introduction}</span>
-            </p>
-          </div>
-          <div className="innovation-cards">
-            {innovations.map(({ icon: Icon, title, text, image, materialTerminology: isMaterialTerminology }) => {
-              const displayTitle = isMaterialTerminology ? materialTerminology.title : title;
-              const displayText = isMaterialTerminology ? materialTerminology.text : text;
-
-              return (
-              <article className="innovation-card" key={title}>
-                <OptimizedImage src={image} alt={`${title} material detail`} />
-                <div className="innovation-card-copy">
-                  <div className="icon-box">
-                    <Icon size={24} strokeWidth={1.7} />
-                  </div>
-                  <div>
-                    <h3 className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayTitle}</h3>
-                    <p className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayText}</p>
-                  </div>
-                </div>
-              </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section quality" id="quality">
-        <div className="container quality-layout">
-          <div className="quality-visual">
-            <OptimizedImage
-              src="/images/oem/quality/quality-absorbency-batch-test-20260806.jpg"
-              alt="Pet pad absorbency batch test in the quality laboratory"
-              loading="eager"
-            />
-            <div className="quality-badge">
-              <Microscope size={20} />
-              <span>Batch Inspection</span>
-            </div>
-          </div>
-          <div className="quality-content">
-            <p className="section-kicker">Quality Control</p>
-            <h2>
-              Inspection from incoming material to <em className="title-key">finished goods</em>.
-            </h2>
-            <p>
-              Quality checks focus on specification consistency, absorbency, sealing, packaging, and shipment readiness.
-            </p>
-            <div className="inspection-list">
-              {inspections.map(([step, title, text]) => (
-                <article className="inspection-item" key={title}>
-                  <strong>{step}</strong>
-                  <div>
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </div>
       </section>

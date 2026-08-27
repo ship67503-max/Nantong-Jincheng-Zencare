@@ -18,113 +18,6 @@ import { buildProductQuoteHref, productSeries } from './productCatalogData.js';
 
 const capabilityIcons = [Ruler, Droplets, Layers3, Palette, PackageCheck, Settings2];
 
-export const ownBrandProducts = [
-  {
-    brandId: 'petbest-pad-01',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-01.webp',
-    imageScale: 2.62,
-    eyebrow: 'Daily Care',
-    title: 'PetBest Daily Pad',
-    summary: 'A dependable everyday pad for home training and routine floor protection.',
-  },
-  {
-    brandId: 'petbest-pad-02',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-02.webp',
-    imageScale: 2.85,
-    eyebrow: 'Absorbent Core',
-    title: 'PetBest Blue Core Pad',
-    summary: 'A practical absorbent format designed for everyday pet-care routines.',
-  },
-  {
-    brandId: 'petbest-pad-03',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'bamboo-charcoal-pet-training-pads',
-    image: '/images/brand-petbest/products/petbest-pad-03.webp',
-    imageScale: 2.76,
-    eyebrow: 'Odor Control',
-    title: 'PetBest Charcoal Pad',
-    summary: 'A charcoal-layer format for a cleaner, fresher pet-care setup.',
-  },
-  {
-    brandId: 'petbest-pad-04',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-04.webp',
-    imageScale: 2.27,
-    eyebrow: 'Printed Range',
-    title: 'PetBest Printed Pad',
-    summary: 'A printed pad format that brings a clear identity to everyday pet care.',
-  },
-  {
-    brandId: 'petbest-pad-05',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-05.webp',
-    imageScale: 2.6,
-    eyebrow: 'Compact Pack',
-    title: 'PetBest Compact Pad',
-    summary: 'A compact retail-ready format for convenient storage and daily use.',
-  },
-  {
-    brandId: 'petbest-pad-06',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-06.webp',
-    imageScale: 2.05,
-    eyebrow: 'Daily Care',
-    title: 'PetBest Blue Pack Pad',
-    summary: 'A familiar blue-pack format for reliable home and travel protection.',
-  },
-  {
-    brandId: 'petbest-pad-07',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-07.webp',
-    imageScale: 2.44,
-    eyebrow: 'Soft Surface',
-    title: 'PetBest Soft Surface Pad',
-    summary: 'A soft-surface pad option for comfortable everyday pet routines.',
-  },
-  {
-    brandId: 'petbest-pad-08',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'bamboo-charcoal-pet-training-pads',
-    image: '/images/brand-petbest/products/petbest-pad-08.webp',
-    imageScale: 2.32,
-    eyebrow: '3D Structure',
-    title: 'PetBest 3D Charcoal Pad',
-    summary: 'A structured charcoal pad format for a differentiated product range.',
-  },
-  {
-    brandId: 'petbest-pad-09',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'standard-pet-urine-pads',
-    image: '/images/brand-petbest/products/petbest-pad-09.webp',
-    imageScale: 2.2,
-    eyebrow: 'Comfort Care',
-    title: 'PetBest Green Comfort Pad',
-    summary: 'A soft green-format pad for daily home care and retail presentation.',
-  },
-  {
-    brandId: 'petbest-pad-10',
-    seriesSlug: 'pet-training-pads',
-    productSlug: 'bamboo-charcoal-pet-training-pads',
-    image: '/images/brand-petbest/products/petbest-pad-10.webp',
-    imageScale: 2.26,
-    eyebrow: 'Thickened Core',
-    title: 'PetBest Thick Charcoal Pad',
-    summary: 'A thickened charcoal format for a more substantial absorbent range.',
-  },
-].map((entry) => {
-  const series = productSeries.find((item) => item.slug === entry.seriesSlug);
-  const product = series?.products.find((item) => item.slug === entry.productSlug);
-  return { ...entry, series, product, imageAlt: `${entry.title} from the PetBest own brand range` };
-}).filter((entry) => entry.series && entry.product);
-
 function ProductVisual({ image, imageAlt, imageFit, imagePosition, label, status, loading = 'lazy', className = '' }) {
   if (!image || status === 'placeholder') {
     return (
@@ -210,78 +103,6 @@ function ProductCard({ series, item, index }) {
         </div>
       </div>
     </article>
-  );
-}
-
-function OwnBrandCollection() {
-  return (
-    <section className="own-brand-section" aria-labelledby="own-brand-title">
-      <div className="products-center-heading own-brand-heading">
-        <div>
-          <p className="section-kicker">Our Own Brands</p>
-          <h1 id="own-brand-title">Own Brand Products</h1>
-        </div>
-        <p>Explore JCZCARE own-brand products. Select a brand to view its products and individual details.</p>
-      </div>
-      <div className="catalog-update-notice" role="note">
-        <Info size={21} strokeWidth={1.8} aria-hidden="true" />
-        <div>
-          <p className="catalog-update-notice-kicker">Catalog Update</p>
-          <p>Our product content is being fully updated. If you need assistance, <a href={buildProductQuoteHref({ title: 'Own Brand Product Update Inquiry' })}>contact us directly</a> and submit the form. A product specialist will get in touch.</p>
-        </div>
-      </div>
-      <nav className="own-brand-directory" aria-label="Own brand directory">
-        <a className="own-brand-directory-item is-active" href="#petbest-products">
-          <span className="own-brand-logo">
-            <img src="/images/brand-petbest/petbest-logo.png" alt="PetBest logo" loading="lazy" decoding="async" />
-          </span>
-          <span className="own-brand-directory-copy">
-            <strong>PetBest</strong>
-            <span>Our own pet-care product brand</span>
-          </span>
-          <span className="own-brand-directory-meta"><b>{ownBrandProducts.length}</b> products</span>
-          <ArrowUpRight size={18} aria-hidden="true" />
-        </a>
-      </nav>
-      <div className="own-brand-grid" id="petbest-products">
-        {ownBrandProducts.map(({ brandId, series, product, image, imageAlt, imageScale, eyebrow, title, summary }) => (
-          <article className="own-brand-card" key={brandId}>
-            <a
-              className="own-brand-card-media"
-              href={`/products/${series.slug}/${product.slug}?brand=${brandId}`}
-              aria-label={`View ${title}`}
-              style={{ '--product-image-scale': imageScale }}
-            >
-              <ProductVisual image={image} imageAlt={imageAlt} label={title} loading="lazy" />
-              <span className="own-brand-badge">Own Brand</span>
-            </a>
-            <div className="own-brand-card-body">
-              <p className="own-brand-eyebrow">{eyebrow}</p>
-              <h2>{title}</h2>
-              <p>{summary}</p>
-              <a href={`/products/${series.slug}/${product.slug}?brand=${brandId}`}>View Product <ArrowUpRight size={17} /></a>
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className="own-brand-footer">
-        <p>Looking for PetBest products or a branded range for your market?</p>
-        <a href={buildProductQuoteHref({ title: 'PetBest Own Brand Collection' })}>Discuss Brand Supply <ArrowUpRight size={17} /></a>
-      </div>
-    </section>
-  );
-}
-
-export function OwnBrandPage() {
-  return (
-    <section className="own-brand-page">
-      <div className="container own-brand-page-shell">
-        <nav className="catalog-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a><span>/</span><span aria-current="page">Own Brands</span>
-        </nav>
-        <OwnBrandCollection />
-      </div>
-    </section>
   );
 }
 
@@ -399,7 +220,7 @@ export function ProductSeriesPage({ series }) {
           </div>
           <div className="series-product-grid">
             {series.products.map((item, index) => <ProductCard series={series} item={item} index={index} key={item.slug} />)}
-          </div>
+            </div>
         </section>
 
         <section className="series-customization" aria-labelledby={`${series.slug}-customization-title`}>
@@ -440,10 +261,7 @@ export function CatalogProductDetailPage({ product }) {
         </nav>
 
         <header className="catalog-detail-hero">
-          <div
-            className={`catalog-detail-media${product.imageScale ? ' is-own-brand' : ''}`}
-            style={product.imageScale ? { '--product-detail-scale': product.imageScale } : undefined}
-          >
+          <div className="catalog-detail-media">
             <ProductVisual {...product} label={product.name} loading="eager" />
           </div>
           <div className="catalog-detail-copy">

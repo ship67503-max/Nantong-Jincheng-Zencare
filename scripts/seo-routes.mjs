@@ -10,7 +10,6 @@ const mainSourcePath = path.join(rootDir, 'src', 'main.jsx');
 const coreRoutes = [
   '/',
   '/products',
-  '/own-brands',
   '/products/pet-training-pads',
   '/products/pet-diapers',
   '/products/adult-underpads',

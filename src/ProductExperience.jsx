@@ -8,12 +8,63 @@ import {
   Layers3,
   Mail,
   MessageCircle,
-  PackageCheck,
 } from 'lucide-react';
 import { buildProductQuoteHref, productSeries } from './productCatalogData.js';
 
 const heroVideoSource = '/videos/hero-background-2-720p.webm';
 const heroVideoPoster = '/images/oem/hero/factory-campus.webp';
+
+const productImageMosaicRows = (() => {
+  const seen = new Set();
+  const groups = productSeries.map((series) => {
+    const images = series.products.flatMap((item) => [
+      item.image ? { src: item.image, alt: item.imageAlt } : null,
+      ...(item.gallery || []),
+      ...(item.detailGallery || []),
+    ].map((image) => image && ({
+      ...image,
+      name: item.name,
+      seriesSlug: series.slug,
+      seriesTitle: series.title,
+    })));
+
+    return images.filter((image) => {
+      if (!image?.src || seen.has(image.src)) return false;
+      seen.add(image.src);
+      return true;
+    });
+  });
+
+  const dominantIndex = groups.reduce((best, group, index) => group.length > groups[best].length ? index : best, 0);
+  const dominant = groups[dominantIndex] || [];
+  const supporting = groups.filter((_, index) => index !== dominantIndex);
+  const supportingImages = [];
+  const maxSupportingLength = Math.max(0, ...supporting.map((group) => group.length));
+  for (let index = 0; index < maxSupportingLength; index += 1) {
+    supporting.forEach((group) => {
+      if (group[index]) supportingImages.push(group[index]);
+    });
+  }
+  const repeatedSupportingImages = Array.from({ length: 4 }, () => supportingImages).flat();
+
+  const dominantRows = Array.from({ length: 4 }, () => []);
+  dominant.forEach((image, index) => dominantRows[index % 4].push(image));
+  const supportingRows = Array.from({ length: 4 }, () => []);
+  repeatedSupportingImages.forEach((image, index) => supportingRows[index % 4].push(image));
+
+  return dominantRows.map((dominantRow, rowIndex) => {
+    const supportRow = supportingRows[rowIndex];
+    const mixed = [];
+    let supportIndex = 0;
+    dominantRow.forEach((image, index) => {
+      const target = Math.floor(((index + 1) * supportRow.length) / dominantRow.length);
+      while (supportIndex < target) mixed.push(supportRow[supportIndex++]);
+      mixed.push(image);
+    });
+    mixed.push(...supportRow.slice(supportIndex));
+    return mixed;
+  });
+})();
 
 const heroSlides = [
   {
@@ -189,85 +240,30 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
   );
 }
 
-function ProductCardVisual({ item }) {
-  if (!item.image || item.imageStatus === 'placeholder') {
-    return (
-      <div className="home-product-placeholder" role="img" aria-label={item.imageAlt}>
-        <PackageCheck size={34} strokeWidth={1.4} />
-        <span>{item.name}</span>
-        <small>Image pending</small>
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={item.image}
-      alt={item.imageAlt}
-      loading="lazy"
-      decoding="async"
-      style={item.imageFit || item.imagePosition ? {
-        objectFit: item.imageFit || undefined,
-        objectPosition: item.imagePosition || undefined,
-      } : undefined}
-    />
-  );
-}
-
 export function HomeProductShowcase() {
-  const [activeSlug, setActiveSlug] = useState(productSeries[0].slug);
-  const trackRef = useRef(null);
-  const dragRef = useRef({ active: false, moved: false, startX: 0, scrollLeft: 0 });
-  const activeSeries = productSeries.find((series) => series.slug === activeSlug) || productSeries[0];
-
-  const scrollTrack = (direction) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector('.home-series-product-card');
-    track.scrollBy({ left: direction * ((card?.getBoundingClientRect().width || 320) + 18), behavior: 'smooth' });
-  };
-
-  const onPointerDown = (event) => {
-    if (event.pointerType === 'mouse' && event.button !== 0) return;
-    if (event.target.closest('a, button')) return;
-    dragRef.current = { active: true, moved: false, startX: event.clientX, scrollLeft: trackRef.current.scrollLeft };
-    trackRef.current.setPointerCapture(event.pointerId);
-    trackRef.current.classList.add('is-dragging');
-  };
-
-  const onPointerMove = (event) => {
-    if (!dragRef.current.active) return;
-    if (Math.abs(event.clientX - dragRef.current.startX) > 14) dragRef.current.moved = true;
-    trackRef.current.scrollLeft = dragRef.current.scrollLeft - (event.clientX - dragRef.current.startX);
-  };
-
-  const endDrag = () => {
-    dragRef.current.active = false;
-    trackRef.current?.classList.remove('is-dragging');
-  };
 
   return (
     <section className="home-product-showcase" id="product-categories">
       <div className="container">
         <div className="home-product-showcase-head">
           <div><p className="section-kicker">Product Center</p><h2>Explore Our Product Categories</h2></div>
-          <div className="home-product-showcase-arrows">
-            <button type="button" onClick={() => scrollTrack(-1)} aria-label="Previous products"><ArrowLeft size={19} /></button>
-            <button type="button" onClick={() => scrollTrack(1)} aria-label="Next products"><ArrowRight size={19} /></button>
-          </div>
+          <a className="home-product-showcase-link" href="/products#product-series">View Product Pages <ArrowUpRight size={17} aria-hidden="true" /></a>
         </div>
 
-        <div className="home-product-tabs" role="tablist" aria-label="Product categories">
-          {productSeries.map((series) => (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={series.slug === activeSeries.slug}
-              className={series.slug === activeSeries.slug ? 'is-active' : ''}
-              onClick={() => setActiveSlug(series.slug)}
-              key={series.slug}
-            >{series.shortTitle}</button>
-          ))}
+        <div className="home-product-mosaic" aria-label="Product image showcase">
+          {productImageMosaicRows.map((rowItems, rowIndex) => {
+            return (
+              <div className="home-product-mosaic-row" key={`product-mosaic-row-${rowIndex}`}>
+                <div className="home-product-mosaic-track">
+                  {[...rowItems, ...rowItems].map((item, index) => (
+                    <span className="home-product-mosaic-item" key={`${item.seriesSlug}-${item.src}-${index}`} aria-hidden={index >= rowItems.length}>
+                      <img src={item.src} alt={index >= rowItems.length ? '' : `${item.name} product image`} loading={index >= rowItems.length ? 'lazy' : 'eager'} decoding="async" />
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="home-product-category-grid" aria-label="Six product categories">
@@ -283,34 +279,6 @@ export function HomeProductShowcase() {
           ))}
         </div>
 
-        <div
-          className="home-product-track"
-          ref={trackRef}
-          key={activeSeries.slug}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={endDrag}
-          onPointerCancel={endDrag}
-          onPointerLeave={(event) => { if (event.buttons === 0) endDrag(); }}
-          onClickCapture={(event) => {
-            if (dragRef.current.moved) event.preventDefault();
-            dragRef.current.moved = false;
-          }}
-        >
-          {activeSeries.products.map((item) => (
-            <article className="home-series-product-card" key={item.slug}>
-              <a className="home-series-product-media" href={`/products/${activeSeries.slug}/${item.slug}`}><ProductCardVisual item={item} /></a>
-              <div className="home-series-product-body">
-                <span>{activeSeries.title}</span>
-                <h3>{item.name}</h3>
-                <p>{item.features[0]}</p>
-                <a href={`/products/${activeSeries.slug}/${item.slug}`}>View Details <ArrowUpRight size={16} /></a>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <a className="home-product-view-all" href={`/products/${activeSeries.slug}`}>View All Products <ArrowRight size={18} /></a>
       </div>
     </section>
   );
