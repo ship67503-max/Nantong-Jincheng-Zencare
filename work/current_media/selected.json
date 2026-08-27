@@ -1,0 +1,374 @@
+[
+  {
+    "row": 2,
+    "col": "photo",
+    "id": "ID_A167EEADDC2245AF818C54A12378E1D0",
+    "desc": "宠物卫生用品自动化生产线与洁净生产车间"
+  },
+  {
+    "row": 3,
+    "col": "photo",
+    "id": "ID_8C3FAF2DF1BC4B44BBFA3775620235BB",
+    "desc": "一次性宠物训练尿垫产品展示"
+  },
+  {
+    "row": 6,
+    "col": "photo",
+    "id": "ID_335B2E692C5A4CC281D134C6533AD43F",
+    "desc": "宠物吸水纸片及吸收芯材料展示"
+  },
+  {
+    "row": 10,
+    "col": "photo",
+    "id": "ID_E89920E850EC405AA9F89C0011469EE2",
+    "desc": "自动化复合与覆膜生产设备"
+  },
+  {
+    "row": 11,
+    "col": "photo",
+    "id": "ID_F2E4F80A086B41F9A55FD999F686E501",
+    "desc": "成品仓储、包装与交付场景"
+  },
+  {
+    "row": 12,
+    "col": "photo",
+    "id": "ID_B2DBC3AF441D440C96C5DE87B961F589",
+    "desc": "吸水纸与吸收芯材料样品"
+  },
+  {
+    "row": 15,
+    "col": "current",
+    "id": "ID_B5F5C13F57964CD390FE7B8285D8B974",
+    "desc": "OEM宠物卫生用品业务洽谈场景"
+  },
+  {
+    "row": 16,
+    "col": "current",
+    "id": "ID_86E0769088A84229A525E018BEE0C38A",
+    "desc": "OEM规格确认与产品样品讨论场景"
+  },
+  {
+    "row": 17,
+    "col": "photo",
+    "id": "ID_B9C88885FEF049A0BABD442F5DE6D5F5",
+    "desc": "宠物尿垫材料选择与生产流程展示"
+  },
+  {
+    "row": 17,
+    "col": "current",
+    "id": "ID_760816B02C0443D0982204614E4FC66A",
+    "desc": "宠物尿垫材料选择与生产流程展示"
+  },
+  {
+    "row": 28,
+    "col": "photo",
+    "id": "ID_D04BEF2FAFF94E7DB6713EA3945E643E",
+    "desc": "宠物卫生用品OEM生产线"
+  },
+  {
+    "row": 31,
+    "col": "photo",
+    "id": "ID_5647154CA990459683961B6FA114CCA9",
+    "desc": "自动化宠物尿垫生产线全景"
+  },
+  {
+    "row": 33,
+    "col": "photo",
+    "id": "ID_3E55377F47F247EF83F91634984E6DC5",
+    "desc": "工厂制造能力与生产车间展示"
+  },
+  {
+    "row": 38,
+    "col": "photo",
+    "id": "ID_BE09579C0E344AE28056BD5EF68D797A",
+    "desc": "私牌包装样品与包装工序"
+  },
+  {
+    "row": 47,
+    "col": "photo",
+    "id": "ID_134BBC3C62B54543BD31752C4B7E6C1D",
+    "desc": "宠物尿垫成品终检与尺寸测量"
+  },
+  {
+    "row": 50,
+    "col": "photo",
+    "id": "ID_F760045FA2584052B5F265E979F471CA",
+    "desc": "博客封面：Planning an OEM Pilot Order Before Full-Scale Production"
+  },
+  {
+    "row": 52,
+    "col": "photo",
+    "id": "ID_3E87433DA7D14803BDCE896DE6FB10DA",
+    "desc": "博客封面：How Buyers Should Review OEM Capacity Allocation"
+  },
+  {
+    "row": 53,
+    "col": "photo",
+    "id": "ID_A94E504BEB3744E4ABF46FE0B97B07E9",
+    "desc": "博客封面：Puppy Pad Surface Intake: What B2B Buyers Should Specify"
+  },
+  {
+    "row": 54,
+    "col": "photo",
+    "id": "ID_1B3AC788F6894B288C4FBAA8DADB0392",
+    "desc": "博客封面：Pet Pad Edge Seals: Preventing Leakage and Delamination"
+  },
+  {
+    "row": 56,
+    "col": "photo",
+    "id": "ID_DBC98A00794445008461441D558C4686",
+    "desc": "博客封面：Pet Pad Folding Formats and Retail Pack Efficiency"
+  },
+  {
+    "row": 56,
+    "col": "current",
+    "id": "ID_EFF09D4096E0482285679000D2F0FF21",
+    "desc": "博客封面：Pet Pad Folding Formats and Retail Pack Efficiency"
+  },
+  {
+    "row": 79,
+    "col": "photo",
+    "id": "ID_0B5777D5D9BA44E99DE261A579609578",
+    "desc": "博客封面：LCL vs FCL for Pet Product Imports"
+  },
+  {
+    "row": 80,
+    "col": "photo",
+    "id": "ID_BFC45EA44F854B41B2272E722F2F8E66",
+    "desc": "博客封面：Pet Pad Defect Classification for Pre-Shipment Inspection"
+  },
+  {
+    "row": 81,
+    "col": "photo",
+    "id": "ID_FB6FA55F31EC4DA997D951142EBCAAD0",
+    "desc": "博客封面：How to Build a Pet Pad Retained Sample Program"
+  },
+  {
+    "row": 84,
+    "col": "photo",
+    "id": "ID_AA93BCB27C634B2F9760FE352CF4FA5F",
+    "desc": "博客封面：Factory Maintenance Audit for Pet Product Production"
+  },
+  {
+    "row": 85,
+    "col": "photo",
+    "id": "ID_60A54A1793BB4BF0BFF5C9F0DD702FD4",
+    "desc": "博客封面：Traceability Audit for OEM Pet Product Factories"
+  },
+  {
+    "row": 86,
+    "col": "photo",
+    "id": "ID_175BC5D79BEC48CF99BB9414EA2AD732",
+    "desc": "博客封面：Business Continuity Review for an OEM Pet Product Factory"
+  },
+  {
+    "row": 88,
+    "col": "photo",
+    "id": "ID_31B0D354A84946D18C1D7DF6D4E8176C",
+    "desc": "博客封面：Nonwoven Basis Weight in Pet Pad Specifications"
+  },
+  {
+    "row": 89,
+    "col": "photo",
+    "id": "ID_562BBA2761A247C9960A3E0EA8D6D5E2",
+    "desc": "博客封面：Hot-Melt Adhesive in Absorbent Product Manufacturing"
+  },
+  {
+    "row": 100,
+    "col": "photo",
+    "id": "ID_E9AA99CF5B62418EA08C92C2D50A3611",
+    "desc": "博客封面：OEM Pet Pad Sample Approval Workflow"
+  },
+  {
+    "row": 101,
+    "col": "photo",
+    "id": "ID_CA22B5CAE60C4AEB9F51E0A5276D5D15",
+    "desc": "博客封面：How to Plan a Pet Pad Pilot Order"
+  },
+  {
+    "row": 113,
+    "col": "photo",
+    "id": "ID_EAFBA31626CB42B1B4F009BAC4B817C7",
+    "desc": "博客封面：Five-Layer Puppy Pad Construction Explained"
+  },
+  {
+    "row": 114,
+    "col": "photo",
+    "id": "ID_B3E79353E0AC4120A9AFA35443488347",
+    "desc": "博客封面：How Leak-Proof PE Backing Works in Puppy Pads"
+  },
+  {
+    "row": 117,
+    "col": "photo",
+    "id": "ID_92C3C9E972E24C97B66D5BD42C0A40A6",
+    "desc": "博客封面：Why Edge Sealing Matters in Pet Pads"
+  },
+  {
+    "row": 118,
+    "col": "photo",
+    "id": "ID_888629AC656445F68B1B67ADBC50050A",
+    "desc": "博客封面：Pet Pad Embossing Patterns: Function and Buyer Choices"
+  },
+  {
+    "row": 145,
+    "col": "photo",
+    "id": "ID_B792FCF5697D423C8AF0485511DB39F9",
+    "desc": "博客封面：What to Look for During a Pet Product Factory Tour"
+  },
+  {
+    "row": 146,
+    "col": "photo",
+    "id": "ID_4640CC9CA55243A3804516C3F6C394E9",
+    "desc": "博客封面：How to Evaluate Pet Pad Production Capacity"
+  },
+  {
+    "row": 148,
+    "col": "photo",
+    "id": "ID_CE0B73FFAAD1466D9FB5DA06C4558C18",
+    "desc": "博客封面：Pet Product Warehouse Management for Export Orders"
+  },
+  {
+    "row": 149,
+    "col": "photo",
+    "id": "ID_397188E65A7345A4AB884DCB05C3A570",
+    "desc": "博客封面：Container Loading for Pet Pad Export Shipments"
+  },
+  {
+    "row": 152,
+    "col": "photo",
+    "id": "ID_5F0EF19680BF42BC8325F344A5B5F26D",
+    "desc": "博客封面：Production Line Maintenance and OEM Supply Reliability"
+  },
+  {
+    "row": 159,
+    "col": "photo",
+    "id": "ID_35983C152CD54AF5B22B62F9A1E84E11",
+    "desc": "博客封面：FOB vs CIF for Pet Pad Shipments"
+  },
+  {
+    "row": 160,
+    "col": "photo",
+    "id": "ID_B4E3402ADBE0427FABA7D131BC344CB0",
+    "desc": "博客封面：Pre-Shipment Inspection for Pet Care Products"
+  },
+  {
+    "row": 171,
+    "col": "photo",
+    "id": "ID_AAA39778A9D84AE8B1FBA1EC934E3D99",
+    "desc": "博客封面：Managing Raw Material Volatility in Pet Product Sourcing"
+  },
+  {
+    "row": 173,
+    "col": "photo",
+    "id": "ID_98748DA138D5492EB058878511B6D55C",
+    "desc": "博客封面：Fluff Pulp and Absorbent Paper Supply Trends"
+  },
+  {
+    "row": 174,
+    "col": "photo",
+    "id": "ID_097CAB5127AE49EF9AA1EB6E766A2CD6",
+    "desc": "博客封面：PE Film Trends in Pet Pads and Underpads"
+  },
+  {
+    "row": 175,
+    "col": "photo",
+    "id": "ID_64C02974C6144166857799A171965AEF",
+    "desc": "博客封面：Building a Resilient Pet Product Supply Chain"
+  },
+  {
+    "row": 178,
+    "col": "photo",
+    "id": "ID_2D1522220E024ECD83AF4DD343A37F82",
+    "desc": "博客封面：The Future of OEM Pet Product Manufacturing"
+  },
+  {
+    "row": 180,
+    "col": "photo",
+    "id": "ID_10F175D14E054C72A5FE1C5332AC9416",
+    "desc": "博客封面：OEM Pet Pad Supplier Qualification Checklist for Importers"
+  },
+  {
+    "row": 185,
+    "col": "photo",
+    "id": "ID_7281B18D762F42F7BA8007E8B11BE8BD",
+    "desc": "博客封面：Pet Pad Quality Control Inspection Plan for OEM Orders"
+  },
+  {
+    "row": 186,
+    "col": "photo",
+    "id": "ID_1B423BB89BC2455A813CC7B01434BB6F",
+    "desc": "博客封面：How to Choose a Reliable Pet Pad Manufacturer"
+  },
+  {
+    "row": 188,
+    "col": "photo",
+    "id": "ID_7D66989E432F46C0AAE6BC222FDCC332",
+    "desc": "博客封面：Private Label Pet Training Pads: A Complete Buyer’s Guide"
+  },
+  {
+    "row": 189,
+    "col": "photo",
+    "id": "ID_3130158CB62D402284055CF17DDE4BE8",
+    "desc": "博客封面：How Puppy Pads Are Manufactured"
+  },
+  {
+    "row": 190,
+    "col": "photo",
+    "id": "ID_D6AA757FA1404C27AB6BBBF2B87044BF",
+    "desc": "博客封面：How to Evaluate a Pet Pad Factory Before Placing an Order"
+  },
+  {
+    "row": 194,
+    "col": "photo",
+    "id": "ID_CDB695327EB3403080C193ECB612717A",
+    "desc": "博客封面：OEM Pet Pad MOQ, Sampling and Lead Time Explained"
+  },
+  {
+    "row": 197,
+    "col": "photo",
+    "id": "ID_D624AF71508441A1B56A3E28368598CB",
+    "desc": "博客封面：Pet Pad Quality Control: What Professional Buyers Should Check"
+  },
+  {
+    "row": 198,
+    "col": "photo",
+    "id": "ID_A37991E9570247488291F5E368D619C3",
+    "desc": "一次性宠物训练尿垫白底主图"
+  },
+  {
+    "row": 200,
+    "col": "photo",
+    "id": "ID_D004FCF447BF43FC88E9A3AAEE9F6B2B",
+    "desc": "宠物训练尿垫表层与封边微距细节"
+  },
+  {
+    "row": 201,
+    "col": "photo",
+    "id": "ID_FE23FB6AC37F4274A99DC0C467433DDC",
+    "desc": "宠物训练尿垫五层结构分解展示"
+  },
+  {
+    "row": 208,
+    "col": "photo",
+    "id": "ID_13CC0CC3A1324EA297ECBB424A4F7BDA",
+    "desc": "宠物吸水纸卷材与片材白底主图"
+  },
+  {
+    "row": 210,
+    "col": "photo",
+    "id": "ID_0391BD4748B749708AA50D6D74E576DC",
+    "desc": "宠物吸水纸纤维材料微距细节"
+  },
+  {
+    "row": 211,
+    "col": "photo",
+    "id": "ID_DADAA547B8934785BA1BA1F4ECD48167",
+    "desc": "宠物吸水纸卷材与批量包装展示"
+  },
+  {
+    "row": 212,
+    "col": "photo",
+    "id": "ID_8BAD24EDAB9B4E778BB5BA4DDB2B2D04",
+    "desc": "宠物吸水纸尿垫转换应用场景"
+  }
+]

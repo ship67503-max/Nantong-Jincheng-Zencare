@@ -1,0 +1,82 @@
+
+> petbasi-factory-site@0.1.0 dev
+> vite --host 0.0.0.0 --port 5175 --strictPort
+
+
+  VITE v7.3.5  ready in 1230 ms
+
+  ➜  Local:   http://localhost:5175/
+  ➜  Network: http://26.26.26.1:5175/
+  ➜  Network: http://192.168.3.10:5175/
+  ➜  press h + enter to show help
+09:59:06 [vite] (client) page reload work/inquiry-smtp-deploy/dist/blog/index.html
+10:24:03 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+10:26:23 [vite] (client) hmr update /src/styles.css
+10:26:58 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+10:27:14 [vite] (client) hmr update /src/styles.css
+10:27:36 [vite] (client) hmr update /src/styles.css
+10:29:33 [vite] (client) hmr update /src/styles.css
+10:37:12 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+10:37:46 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+10:39:05 [vite] (client) hmr update /src/styles.css
+10:47:22 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+10:47:22 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh (new export)
+10:47:22 [vite] (client) hmr update /src/main.jsx
+10:47:23 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:47:23 [vite] (client) page reload src/main.jsx
+10:47:47 [vite] (client) hmr update /src/main.jsx
+10:47:47 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+10:47:47 [vite] (client) page reload src/main.jsx
+15:36:00 [vite] (client) hmr update /src/styles.css
+15:40:58 [vite] (client) hmr update /src/styles.css
+15:42:44 [vite] (client) hmr update /src/styles.css
+15:45:59 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+15:45:59 [vite] (client) hmr update /src/styles.css
+15:45:59 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh ("ownBrandProducts" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:45:59 [vite] (client) hmr update /src/main.jsx
+15:46:00 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:46:00 [vite] (client) page reload src/main.jsx
+15:55:56 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+15:55:56 [vite] (client) hmr update /src/styles.css
+15:55:57 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh ("ownBrandProducts" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:55:57 [vite] (client) hmr update /src/main.jsx
+15:55:57 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:55:57 [vite] (client) page reload src/main.jsx
+15:57:08 [vite] (client) hmr update /src/styles.css
+15:59:17 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+15:59:17 [vite] (client) hmr update /src/styles.css
+15:59:17 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh ("ownBrandProducts" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:59:17 [vite] (client) hmr update /src/main.jsx
+15:59:18 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+15:59:18 [vite] (client) page reload src/main.jsx
+16:00:51 [vite] (client) page reload work/product-brand-design-build/index.html
+16:05:02 [vite] (client) hmr update /src/main.jsx
+16:05:02 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+16:05:02 [vite] (client) hmr update /src/styles.css
+16:05:02 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+16:05:02 [vite] (client) page reload src/main.jsx
+16:07:38 [vite] (client) page reload work/detail-scale-build/index.html
+16:11:07 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+16:11:07 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh (new export)
+16:11:07 [vite] (client) hmr update /src/main.jsx
+16:11:08 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+16:11:08 [vite] (client) page reload src/main.jsx
+16:11:43 [vite] (client) hmr update /src/main.jsx
+16:11:43 [vite] scripts/seo-routes.mjs changed, restarting server...
+16:11:43 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+16:11:43 [vite] (client) page reload src/main.jsx
+16:11:44 [vite] server restarted.
+16:11:51 [vite] (client) page reload work/inquiry-smtp-deploy/dist/blog/index.html
+16:11:59 [vite] (client) hmr update /src/styles.css
+16:12:18 [vite] (client) hmr update /src/styles.css
+16:12:31 [vite] (client) hmr update /src/styles.css
+16:12:46 [vite] (client) hmr update /src/styles.css
+16:13:41 [vite] (client) hmr update /src/styles.css
+16:14:01 [vite] (client) hmr update /src/styles.css
+16:15:34 [vite] (client) page reload work/own-brand-page-build/index.html
+16:16:55 [vite] (client) hmr update /src/ProductCatalogPages.jsx
+16:16:55 [vite] (client) hmr invalidate /src/ProductCatalogPages.jsx Could not Fast Refresh ("ownBrandProducts" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+16:16:55 [vite] (client) hmr update /src/main.jsx
+16:16:55 [vite] (client) hmr invalidate /src/main.jsx Could not Fast Refresh ("true" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+16:16:55 [vite] (client) page reload src/main.jsx
+16:17:41 [vite] (client) page reload work/english-own-brand-build/index.html

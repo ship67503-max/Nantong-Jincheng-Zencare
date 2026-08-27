@@ -1,0 +1,51 @@
+npm warn exec The following package was not found and will be installed: vercel@58.9.1
+Vercel CLI 58.9.1 (Node.js 24.16.0)
+Deploying nantong-jincheng-zencare
+Uploading [--------------------] (0.0B/265.1KB)
+Uploading [======--------------] (80.0KB/265.1KB)
+Uploading [==========----------] (144.0KB/265.1KB)
+Uploading [===============-----] (208.0KB/265.1KB)
+Uploading [====================] (265.1KB/265.1KB)
+  Inspect         https://vercel.com/shi-peiyu-s-projects/nantong-jincheng-zencare/8sfce9ffuXvuYdbU9s2YdNnhiMYo
+  Production      https://nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app
+Building…
+Building…
+Running build in Washington, D.C., USA (East) – iad1
+Build machine configuration: 2 cores, 8 GB
+Retrieving list of deployment files...
+Downloading 593 deployment files...
+Restored build cache from previous deployment (2A4dEHKTyjP839f94r4aWZTzqhtA)
+Running "vercel build"
+Vercel CLI 58.1.0
+Installing dependencies...
+up to date in 915ms
+44 packages are looking for funding
+run `npm fund` for details
+Running "npm run build"
+> petbasi-factory-site@0.1.0 build
+> node scripts/generate-blog-covers.mjs && node scripts/generate-webp.mjs && vite build && node scripts/generate-static-seo.mjs && node scripts/generate-seo-assets.mjs
+Generated 0 blog covers; skipped 82.
+Generated 103 WebP images.
+vite v7.3.5 building client environment for production...
+transforming...
+✓ 1616 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   3.26 kB │ gzip:   1.22 kB
+dist/assets/index-BW0sOznm.css  191.22 kB │ gzip:  32.63 kB
+dist/assets/index-CJJiHFKy.js   883.67 kB │ gzip: 261.79 kB
+dist/assets/Silk-CjtE30uL.js    890.85 kB │ gzip: 240.38 kB
+✓ built in 6.54s
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Generated route-level SEO HTML for 377 routes.
+Generated RSS feed with 150 items.
+Generated XML sitemap with 375 indexable routes.
+Generated HTML sitemap with 375 public routes.
+Build Completed in /vercel/output [51s]
+Deploying outputs...
+[2K[1A[2K[G  Production      https://nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app
+Completing…
+▲ Aliased         https://www.jczcare.com

@@ -1,0 +1,194 @@
+﻿Diagnose log at 2026-08-26T02:24:34Z
+
+AppPath: D:\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: D:\Git\mingw64\bin\
+Version: 2.7.3+5fa7116896c82164996a609accd1c5ad90fe730a
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 19045)
+Reading environment variables... OK
+ Variables:
+SystemDrive=C:
+ProgramFiles(x86)=C:\Program Files (x86)
+MSYSTEM=MINGW64
+ProgramW6432=C:\Program Files
+PAGER=cat
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 191 Stepping 2, GenuineIntel
+TMP=C:\Users\Administrator\AppData\Local\Temp
+PROCESSOR_ARCHITECTURE=AMD64
+Path=D:/Git/mingw64/libexec/git-core;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\Administrator\bin;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\Administrator\.codex\tmp\arg0\codex-arg02HyITC;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\override;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Bandizip\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;D:\Git\cmd;C:\Program Files\GitHub CLI\;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Microsoft\WinGet\Links;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin\fallback;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd;C:\Users\Administrator\AppData\Local\OpenAI\Codex\bin\c6c4820dcd243daa;C:\Program Files\WindowsApps\OpenAI.Codex_26.818.5229.0_x64__2p2nqsd0c76g0\app\resources
+NOMISS_API_KEY=sk-umUwI8P1c4Ke8rIL50ojcCZrIh6zP5nssxZERXM4CeHm8uoF
+ACSetupSvcPort=23210
+PROCESSOR_REVISION=bf02
+TMPDIR=C:\Users\Administrator\AppData\Local\Temp
+TEMP=C:\Users\Administrator\AppData\Local\Temp
+USERPROFILE=C:\Users\Administrator
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+LOGONSERVER=\\DESKTOP-7A37VST
+TERM=dumb
+NO_COLOR=1
+SystemRoot=C:\Windows
+CODEX_THREAD_ID=01a02206-ce32-7033-895b-9e3d743be63a
+PLINK_PROTOCOL=ssh
+GH_PAGER=cat
+OneDrive=C:\Users\Administrator\OneDrive
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-7A37VST
+CommonProgramFiles=C:\Program Files\Common Files
+RUST_LOG=warn
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S=8e172ec9f458f2e636fc69a1b8c68c217f6bb8d10c41f70a05a0878b73863701
+ProgramData=C:\ProgramData
+LC_CTYPE=C.UTF-8
+RlsSvcPort=22112
+HOMEPATH=\Users\Administrator
+COMPUTERNAME=DESKTOP-7A37VST
+ALLUSERSPROFILE=C:\ProgramData
+CommonProgramW6432=C:\Program Files\Common Files
+USERNAME=Administrator
+GIT_EXEC_PATH=D:/Git/mingw64/libexec/git-core
+DriverData=C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE=C:
+windir=C:\Windows
+GIT_TRACE2_PARENT_SID=324b3dfb-9e88-43d8-a640-df3b018bff00
+NUMBER_OF_PROCESSORS=20
+OS=Windows_NT
+CODEX_SESSION_ID=01a02206-ce32-7033-895b-9e3d743be63a
+CODEX_PERMISSION_PROFILE=:danger-full-access
+LANG=C.UTF-8
+ComSpec=C:\Windows\system32\cmd.exe
+CODEX_INTERNAL_ORIGINATOR_OVERRIDE=Codex Desktop
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+HOME=C:\Users\Administrator
+PSModulePath=C:\Users\Administrator\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\users\administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+ProgramFiles=C:\Program Files
+CODEX_CI=1
+LC_ALL=C.UTF-8
+APPDATA=C:\Users\Administrator\AppData\Roaming
+USERDOMAIN=DESKTOP-7A37VST
+PROCESSOR_LEVEL=6
+LOCALAPPDATA=C:\Users\Administrator\AppData\Local
+GIT_PAGER=cat
+COLORTERM=
+PUBLIC=C:\Users\Public
+LOG_FORMAT=json
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\Administrator\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\Administrator\AppData\Local\Temp\3974456bad556fa3b4b602ef'... OK
+Reading from temporary file 'C:\Users\Administrator\AppData\Local\Temp\3974456bad556fa3b4b602ef'... OK
+Deleting temporary file 'C:\Users\Administrator\AppData\Local\Temp\3974456bad556fa3b4b602ef'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\Administrator
+UserDataDirectoryPath: C:\Users\Administrator\.gcm
+GetCurrentDirectory(): C:\Users\Administrator\Documents\独立站修改
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:61424/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.54.0.windows.1'
+Locating current repository...Git repository at 'C:/Users/Administrator/Documents/独立站修改/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:D:/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:D:/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:D:/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:D:/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:D:/Git/etc/gitconfig	filter.lfs.required=true
+file:D:/Git/etc/gitconfig	http.sslbackend=schannel
+file:D:/Git/etc/gitconfig	core.autocrlf=true
+file:D:/Git/etc/gitconfig	core.fscache=true
+file:D:/Git/etc/gitconfig	core.symlinks=false
+file:D:/Git/etc/gitconfig	pull.rebase=false
+file:D:/Git/etc/gitconfig	credential.helper=manager
+file:D:/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:D:/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/Administrator/.gitconfig	user.name=ship67503
+file:C:/Users/Administrator/.gitconfig	user.email=ship67503@gmail.com
+file:C:/Users/Administrator/.gitconfig	http.https://github.com.proxy=http://127.0.0.1:7897
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.source.url=C:\Users\Administrator\Documents\Google独立站
+file:.git/config	remote.source.fetch=+refs/heads/*:refs/remotes/source/*
+file:.git/config	branch.codex/inquiry-smtp.remote=https://github.com/ship67503-max/Nantong-Jincheng-Zencare.git
+file:.git/config	branch.codex/inquiry-smtp.merge=refs/heads/codex/inquiry-smtp
+file:.git/config	branch.codex/product-system.remote=source
+file:.git/config	branch.codex/product-system.merge=refs/heads/codex/product-system
+file:.git/config	remote.github.url=https://github.com/ship67503-max/Nantong-Jincheng-Zencare.git
+file:.git/config	remote.github.fetch=+refs/heads/*:refs/remotes/github/*
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\Administrator\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\Administrator\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

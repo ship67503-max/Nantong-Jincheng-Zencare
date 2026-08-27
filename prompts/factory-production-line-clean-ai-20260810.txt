@@ -1,0 +1,13 @@
+Use case: photorealistic-natural
+Asset type: independent B2B factory website hero image
+Primary request: A clean, bright, high-end documentary photograph of a real automated pet hygiene absorbent-products production line inside a modern manufacturing workshop. Show continuous blue industrial machinery with yellow safety railings, transparent guarding, white absorbent material rolls, organized pallets, marked walking lanes, and a long production line receding into the background. The scene should feel operational, credible, and ready for OEM/ODM buyer evaluation.
+Scene/backdrop: spacious modern factory workshop with orderly equipment, clean polished concrete floor, clear safety markings, tidy cable management, uncluttered work areas, no visible trash or loose packaging.
+Subject: automated absorbent pet pad production line and factory floor.
+Style/medium: photorealistic industrial documentary photography, natural materials and believable engineering details, not a 3D render.
+Composition/framing: wide landscape 3:2 composition, eye-level camera, strong leading lines from the production line, balanced negative space, suitable for a website hero crop, no text overlay.
+Lighting/mood: bright neutral overhead industrial lighting, soft even exposure, accurate white balance, crisp but natural contrast, clean and professional.
+Color palette: cool steel and glass, blue machinery, safety yellow railings, white material rolls, neutral gray and green floor.
+Materials/textures: realistic brushed metal, transparent polycarbonate guards, matte painted steel, paper and nonwoven rolls, subtle floor texture.
+Text (verbatim): none.
+Constraints: clean and tidy visual presentation; keep all machinery physically plausible; no logos, no watermarks, no text, no decorative graphics; preserve an authentic factory atmosphere.
+Avoid: clutter, loose cables, scattered tools, stains, damaged equipment, dramatic haze, excessive reflections, oversaturated colors, fake futuristic machinery, people in close foreground, staged showroom look, CGI appearance.

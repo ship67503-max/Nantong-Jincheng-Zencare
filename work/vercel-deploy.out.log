@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_8sfce9ffuXvuYdbU9s2YdNnhiMYo",
+    "url": "https://nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/shi-peiyu-s-projects/nantong-jincheng-zencare/8sfce9ffuXvuYdbU9s2YdNnhiMYo",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_8sfce9ffuXvuYdbU9s2YdNnhiMYo"
+  },
+  "message": "Deployment nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app ready.",
+  "next": [
+    {
+      "command": "vercel curl https://nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect nantong-jincheng-zencare-p01zmxav6-shi-peiyu-s-projects.vercel.app",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel deploy --prod",
+      "when": "Promote to production"
+    }
+  ]
+}

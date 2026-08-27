@@ -1,0 +1,7 @@
+Use case: product-mockup
+Asset type: 16:9 ecommerce product-photo background plate
+Primary request: Create an empty warm lifestyle product-photography set matching a cozy modern living room. A pale natural wood tabletop fills the lower third, with a cream sofa, one green indoor plant, and a bright window softly blurred in the background. Leave the tabletop completely empty for later compositing.
+Style/medium: premium photorealistic commercial photography, natural shallow depth of field.
+Lighting/mood: soft warm daylight from the right, clean and inviting.
+Constraints: background only; no package, no paper, no sheets, no pads, no stack, no text, no logo, no watermark.
+Avoid: colored gradients, clutter, harsh shadows, dark scene.

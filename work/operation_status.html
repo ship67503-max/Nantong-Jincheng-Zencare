@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商务洽谈图片填充面板</title>
+<style>
+  body{margin:0;font-family:"Microsoft YaHei","Segoe UI",Arial,sans-serif;background:#f5f7fb;color:#1f2937}
+  .shell{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+  aside{background:#132231;color:#eef6ff;padding:22px 18px;position:sticky;top:0;height:100vh;box-sizing:border-box}
+  aside h1{font-size:18px;margin:0 0 16px;line-height:1.35}
+  .step{margin:10px 0;padding:10px 12px;background:#1b3144;border-left:3px solid #4ade80;border-radius:4px;font-size:13px;line-height:1.45}
+  .ok{color:#4ade80;font-weight:700}
+  .muted{color:#b7c7d6;font-size:12px;line-height:1.65;margin-top:14px}
+  main{padding:28px 34px;max-width:1080px}
+  h2{margin:0 0 8px;font-size:24px}
+  .lead{margin:0 0 18px;color:#556270;line-height:1.65}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}
+  .card,.panel{background:#fff;border:1px solid #d9e2ec;border-radius:6px}
+  .card{padding:16px 18px}
+  .card strong{display:block;color:#16a34a;font-size:28px;line-height:1.1;margin-bottom:6px}
+  .card span{color:#607080;font-size:13px}
+  .panel{padding:18px 20px;margin-bottom:18px}
+  .panel h3{margin:0 0 12px;font-size:16px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:9px 7px;border-bottom:1px solid #edf1f5;text-align:left;vertical-align:top;line-height:1.55}
+  th{color:#607080;font-weight:600}
+  .path{font-family:Consolas,"Courier New",monospace;font-size:12px;word-break:break-all}
+  .footer{color:#607080;font-size:12px;line-height:1.6}
+  @media(max-width:860px){.shell{grid-template-columns:1fr}aside{height:auto;position:static}main{padding:22px 16px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <h1>商务洽谈图片填充</h1>
+    <div class="step"><span class="ok">完成</span> 找到对应行：宠物护理OEM项目商务沟通场景</div>
+    <div class="step"><span class="ok">完成</span> 制作 15 张洽谈图对照拼图</div>
+    <div class="step"><span class="ok">完成</span> 选出 9 张最贴合的会议/洽谈/样品确认图</div>
+    <div class="step"><span class="ok">完成</span> 写入“当前图片路径”后的 H:P 图片位</div>
+    <div class="step"><span class="ok">完成</span> 导出并校验 cellImage 结构</div>
+    <p class="muted">没有额外合适图片的地方保持空白；这一轮只补商务洽谈图，不改其他行。</p>
+  </aside>
+  <main>
+    <h2>商务洽谈图片已填充</h2>
+    <p class="lead">这一行现在保留原来的路径列，同时在后面的图片位补进了 9 张更贴合的商务洽谈实拍图。</p>
+    <div class="grid">
+      <div class="card"><strong>9</strong><span>已写入的图片位</span></div>
+      <div class="card"><strong>15</strong><span>候选洽谈图总数</span></div>
+      <div class="card"><strong>238</strong><span>输出文件 cellImage 总数</span></div>
+    </div>
+    <section class="panel">
+      <h3>文件范围</h3>
+      <table>
+        <tr><th>项目</th><th>路径</th></tr>
+        <tr><td>源 Excel</td><td class="path">C:\Users\Administrator\Documents\xwechat_files\wxid_xbi9o0tdyhpq12_be07\msg\file\2026-08\独立站AI图-新增产品图片.xlsx</td></tr>
+        <tr><td>洽谈图片</td><td class="path">C:\Users\Administrator\Desktop\洽谈\去除时间水印\</td></tr>
+        <tr><td>输出 Excel</td><td class="path">C:\Users\Administrator\Documents\独立站修改\outputs\bba0b1ee-4668-45c7-9d4d-4e52d1a58816\独立站AI图-新增产品图片-商务洽谈已补充实拍图.xlsx</td></tr>
+      </table>
+    </section>
+    <section class="panel">
+      <h3>结果摘要</h3>
+      <table>
+        <tr><th>项目</th><th>说明</th></tr>
+        <tr><td>补图位置</td><td>AI图片总表，第 26 行，H:P</td></tr>
+        <tr><td>处理方式</td><td>保留原“当前图片路径”，在后面追加更合适的商务洽谈实拍图</td></tr>
+        <tr><td>校验结果</td><td>第 26 行已出现 9 个 DISPIMG 公式，输出包中的 cellImages 和关系数同步增加</td></tr>
+      </table>
+    </section>
+    <p class="footer">如果这类商务洽谈图后面还要继续补同主题板块，我可以按同样方式继续往表里接。</p>
+  </main>
+</div>
+</body>
+</html>

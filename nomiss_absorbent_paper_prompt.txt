@@ -1,0 +1,11 @@
+Use case: product-mockup
+Asset type: ecommerce product photo
+Primary request: Recreate a warm, photorealistic tabletop product scene matching the supplied visual description: a blue retail package labeled exactly "URINE-ABSORBENT PAPER" and "50 PADS 25X30CM" stands on the left, a neat stack of folded white urine-absorbent paper sheets sits on the right, and one unfolded sheet lies underneath them on a light wooden table. The unfolded bottom sheet is thin white urine-absorbent paper, not a pet training pad and not a diaper pad.
+Scene/backdrop: bright cozy living room, cream sofa and green indoor plant softly blurred in the background.
+Style/medium: premium natural product photography, realistic materials, shallow depth of field.
+Composition/framing: landscape, eye-level tabletop view, package left, folded white sheets right.
+Lighting/mood: warm soft daylight from the right.
+Materials/textures: thin soft white absorbent nonwoven paper with subtle embossed texture and plain white edges.
+Text (verbatim): "URINE-ABSORBENT PAPER"; "50 PADS"; "25X30CM".
+Constraints: the bottom sheet must have no blue plastic border, no colored rim, no sealed training-pad edge, and no thick padded construction. Keep it visibly thin, flexible, white, paper-like, and consistent with the folded stack.
+Avoid: pet training pad, puppy pee pad, diaper pad, blue border, plastic border, colored edge, watermark, extra products.

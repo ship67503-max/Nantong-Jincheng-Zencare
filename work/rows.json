@@ -1,0 +1,4125 @@
+[
+  {
+    "row": 1,
+    "key": "K198",
+    "desc": "对应概述文本",
+    "pages": "所在页面",
+    "photo": "实拍图（待补充）",
+    "current": "当前图片路径",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 2,
+    "key": "=DISPIMG(\"ID_FDAADCBB346E40D38D00A37A72D8E251\",1)",
+    "desc": "宠物卫生用品自动化生产线与洁净生产车间",
+    "pages": "首页\nManufacturing capability for OEM pet pad supply.\nOEM/ODM Pet Pad Manufacturing Process\n等4个页面（详见“页面明细”）",
+    "photo": "=DISPIMG(\"ID_A167EEADDC2245AF818C54A12378E1D0\",1)",
+    "current": "/images/oem/production/production-line-clean.png",
+    "extras": [
+      "=DISPIMG(\"ID_EDCCDD0119E44B3298A70CA0B73A3472\",1)",
+      "=DISPIMG(\"ID_A618E1195DA54BD2AF8DE5FBAB0999B4\",1)",
+      "=DISPIMG(\"ID_B7EE20CF617B4C73A75F017667BE989A\",1)",
+      "=DISPIMG(\"ID_A1D39D392DE94FA99D19B2A368305E48\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 3,
+    "key": "=DISPIMG(\"ID_58B655CDCFF94556B7216CC6E09C157D\",1)",
+    "desc": "一次性宠物训练尿垫产品展示",
+    "pages": "首页\nBuild stronger OEM knowledge before you source\nManufacturing knowledge written for professional buyers\n等160个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/products/custom-disposable-pet-pads-premium.png",
+    "extras": [
+      "=DISPIMG(\"ID_F6EA401E4AEA4C56BF4638FF3F594CB0\",1)",
+      "=DISPIMG(\"ID_0E1D61AB5E994CDEB767B0B5AB090C60\",1)",
+      "=DISPIMG(\"ID_8C3FAF2DF1BC4B44BBFA3775620235BB\",1)",
+      "=DISPIMG(\"ID_38E4D6217AC1454094452911AAE587D8\",1)",
+      null,
+      "=DISPIMG(\"ID_AB60A24F997A40858A7D75ECAA4751D6\",1)",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 4,
+    "key": "=DISPIMG(\"ID_E5A006F8CE01430CBE0964A22B16F616\",1)",
+    "desc": "成人护理垫产品展示",
+    "pages": "首页\nBuild stronger OEM knowledge before you source\nManufacturing knowledge written for professional buyers\n等86个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/products/adult-underpads-hero.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 5,
+    "key": 4,
+    "desc": "宠物护理垫与手套湿巾零售包装展示",
+    "pages": "首页\nAmazon Private-Label Pet Product Guide\nBarcode Guide for Private-Label Pet Products\n等14个页面（详见“页面明细”）",
+    "photo": null,
+    "current": "/images/oem/products/custom-care-pad-packaging-ai.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 6,
+    "key": 5,
+    "desc": "宠物吸水纸片及吸收芯材料展示",
+    "pages": "首页\nAdult Underpad Procurement Guide\nFluff Pulp Buyer Guide for Absorbent Cores\n等32个页面（详见“页面明细”）",
+    "photo": null,
+    "current": "/images/oem/products/custom-absorbent-paper-ai.png",
+    "extras": [
+      "=DISPIMG(\"ID_7BAF465CFAE549D1B6F93C676278C02B\",1)",
+      "=DISPIMG(\"ID_335B2E692C5A4CC281D134C6533AD43F\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 7,
+    "key": 6,
+    "desc": "定制宠物拾便袋产品展示",
+    "pages": "首页\nContainer Loading Guide for Pet Products\nDog Poop Bag Procurement Guide\n等60个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/products/custom-pet-waste-bags-ai.png\n/images/custom-pet-waste-bags-ai.png\n/images/oem/products/custom-pet-waste-bags-ai.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 8,
+    "key": 7,
+    "desc": "活性炭除味宠物尿垫产品展示",
+    "pages": "首页\nODM Pet Product Development Guide\nHow to Write a Pet Pad Specification\n等8个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/products/custom-charcoal-pet-pad-ai.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 9,
+    "key": 8,
+    "desc": "带粘贴防滑结构的宠物尿垫产品展示",
+    "pages": "首页\nODM Pet Product Development Guide\nPE Film Buyer Guide for Pet Pads and Underpads\n等14个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/products/custom-adhesive-pet-pad-ai.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 10,
+    "key": 9,
+    "desc": "自动化复合与覆膜生产设备",
+    "pages": "首页\nManufacturing capability for OEM pet pad supply.",
+    "photo": "=DISPIMG(\"ID_E89920E850EC405AA9F89C0011469EE2\",1)",
+    "current": "/images/oem/production/lamination-detail-clean.png",
+    "extras": [
+      "=DISPIMG(\"ID_38EA58A7629C4812AEC339058AB39000\",1)",
+      "=DISPIMG(\"ID_F031E8497B4643F2BBF2FDA3E4B16287\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 11,
+    "key": 10,
+    "desc": "成品仓储、包装与交付场景",
+    "pages": "首页\nManufacturing capability for OEM pet pad supply.",
+    "photo": "=DISPIMG(\"ID_F2E4F80A086B41F9A55FD999F686E501\",1)",
+    "current": "/images/oem/warehouse/warehouse-storage-clean.png",
+    "extras": [
+      "=DISPIMG(\"ID_74670F0A0EDA43D0A873246B64C3F172\",1)",
+      null,
+      "=DISPIMG(\"ID_4C27BD79080343C9ADD1DFA0F82171D3\",1)",
+      "=DISPIMG(\"ID_EB0C7FE8814C4CC291B712DCD4D0FC61\",1)",
+      "=DISPIMG(\"ID_071289AEB0D14726A4234CC01A22CF93\",1)",
+      "=DISPIMG(\"ID_2340115EC9494FF480A16E82FC52F3DF\",1)",
+      "=DISPIMG(\"ID_7CA90EA462284CA984CF8043C5D7FCD9\",1)",
+      "=DISPIMG(\"ID_53CA4B6706814E36BEA569369BFD68B7\",1)",
+      null
+    ]
+  },
+  {
+    "row": 12,
+    "key": 11,
+    "desc": "吸水纸与吸收芯材料样品",
+    "pages": "首页\nPE film backing designed around leakage, feel, and production stability\nRaw materials behind a controlled absorbent product specification\n等5个页面（详见“页面明细”）",
+    "photo": null,
+    "current": "/images/oem/materials/products-absorbent-paper-01.webp\n/images/generated-site/materials/products-absorbent-paper-01.webp",
+    "extras": [
+      "=DISPIMG(\"ID_2CCFAB19C73C48478E97FC63BEEA87B0\",1)",
+      "=DISPIMG(\"ID_B2DBC3AF441D440C96C5DE87B961F589\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 13,
+    "key": 12,
+    "desc": "宠物护理产品私牌包装评审场景",
+    "pages": "首页\nAmazon Private-Label Pet Product Guide\nBarcode Guide for Private-Label Pet Products\n等31个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/oem/packaging/private-label-packaging-01.webp\n/images/generated-site/packaging/private-label-packaging-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 14,
+    "key": 13,
+    "desc": "包装定制方案与私牌支持展示",
+    "pages": "首页\nPrivate label pet pads for brands and retail channels.",
+    "photo": "7",
+    "current": "/images/oem/quality/packaging-customization-options.webp\n/images/generated-site/b2b-optimization/packaging-customization-options.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 15,
+    "key": 14,
+    "desc": "OEM宠物卫生用品业务洽谈场景",
+    "pages": "首页\nOEM/ODM Pet Pad Manufacturing Process\nPrivate label pet pads for brands and retail channels.",
+    "photo": "7",
+    "current": "=DISPIMG(\"ID_B5F5C13F57964CD390FE7B8285D8B974\",1)",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 16,
+    "key": 15,
+    "desc": "OEM规格确认与产品样品讨论场景",
+    "pages": "首页\nOEM/ODM Pet Pad Manufacturing Process",
+    "photo": "7",
+    "current": "=DISPIMG(\"ID_86E0769088A84229A525E018BEE0C38A\",1)",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 17,
+    "key": 16,
+    "desc": "宠物尿垫材料选择与生产流程展示",
+    "pages": "首页\nOEM/ODM Pet Pad Manufacturing Process",
+    "photo": "=DISPIMG(\"ID_B9C88885FEF049A0BABD442F5DE6D5F5\",1)",
+    "current": "=DISPIMG(\"ID_760816B02C0443D0982204614E4FC66A\",1)",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 18,
+    "key": 17,
+    "desc": "样品确认与私牌包装评审场景",
+    "pages": "首页\nOEM/ODM Pet Pad Manufacturing Process\nPrivate label pet pads for brands and retail channels.",
+    "photo": "7",
+    "current": "/images/oem/quality/private-label-packaging-review.webp\n/images/generated-site/b2b-optimization/private-label-packaging-review.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 19,
+    "key": 18,
+    "desc": "宠物尿垫质量检验与实验室测试",
+    "pages": "首页\nQuality control system for OEM absorbent products.",
+    "photo": "7",
+    "current": "/images/oem/quality/quality-inspection-lab-mask.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 20,
+    "key": 19,
+    "desc": "吸收性能测试与出货检验场景",
+    "pages": "首页\nOEM/ODM Pet Pad Manufacturing Process\nQuality control system for OEM absorbent products.",
+    "photo": "7",
+    "current": "/images/oem/warehouse/absorbency-testing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 21,
+    "key": 20,
+    "desc": "宠物尿垫无纺布表面微距细节",
+    "pages": "首页\nPractical insight forpet pad product decisions.",
+    "photo": "7",
+    "current": "/images/oem/materials/products-pet-pad-macro-01.webp\n/images/generated-site/products/products-pet-pad-macro-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 22,
+    "key": 21,
+    "desc": "宠物尿垫PE底膜与多层结构细节",
+    "pages": "首页",
+    "photo": "7",
+    "current": "/images/oem/materials/products-pe-film-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 23,
+    "key": 22,
+    "desc": "多层宠物尿垫结构与折叠样品",
+    "pages": "Build stronger OEM knowledge before you source\nFluff Pulp Buyer Guide for Absorbent Cores\nNonwoven Material Buyer Guide for Absorbent Products\n等44个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/generated-site/products/products-pet-pad-structure-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 24,
+    "key": 23,
+    "desc": "宠物尿垫实验室质量检测场景",
+    "pages": "Manufacturing knowledge written for professional buyers\nPet Pad Sample Evaluation Scorecard\nHow to Write a Pet Product Quality Plan\n等25个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/generated-site/quality-control/factory-quality-control-01.webp\n/images/oem/quality/factory-quality-control-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 25,
+    "key": 24,
+    "desc": "成人护理垫吸收性能与压力测试",
+    "pages": "Adult Underpad Procurement Guide\nAdult Underpad Rewet Reduction Scenario\nUS Distributor Adult Underpad Program Scenario\n等7个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/generated-site/products/products-underpads-01.webp\n/images/oem/products/products-underpads-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 26,
+    "key": 25,
+    "desc": "宠物训练尿垫及使用场景",
+    "pages": "How to Write a Pet Pad Specification\nOEM project examples for global pet care buyers.\nPet Training Pad Buyer FAQ\n等10个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/generated-site/products/products-disposable-pads-01.webp\n/images/oem/products/products-disposable-pads-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 27,
+    "key": 26,
+    "desc": "宠物护理OEM项目商务沟通场景",
+    "pages": "Forecasting Guide for Imported Pet Products\nRetail Chain Pet Product Sourcing Guide\nFixed vs Rolling Forecasts for OEM Supply\n等10个页面（详见“页面明细”）",
+    "photo": "7",
+    "current": "/images/generated-site/contact/contact-business-office-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 28,
+    "key": 27,
+    "desc": "宠物卫生用品OEM生产线",
+    "pages": "OEM project examples for global pet care buyers.",
+    "photo": "=DISPIMG(\"ID_D04BEF2FAFF94E7DB6713EA3945E643E\",1)",
+    "current": "/images/oem/production/factory-production-line-03.webp",
+    "extras": [
+      "=DISPIMG(\"ID_7DB598DB78964ED790090476F1815D98\",1)",
+      "=DISPIMG(\"ID_2D23652714A44646A428005500F0233B\",1)",
+      "=DISPIMG(\"ID_925D3E5A22BE430D9E26571A850912E7\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 29,
+    "key": 28,
+    "desc": "活性炭除味宠物尿垫结构展示",
+    "pages": "OEM project examples for global pet care buyers.\nCharcoal Pet Pads",
+    "photo": "7",
+    "current": "/images/oem/products/products-charcoal-pads-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 30,
+    "key": 29,
+    "desc": "粘贴式宠物尿垫吸收测试场景",
+    "pages": "OEM project examples for global pet care buyers.\nPractical insight forpet pad product decisions.\nAdhesive Pet Pads",
+    "photo": "7",
+    "current": "/images/oem/products/products-adhesive-pads-01.webp\n/images/generated-site/products/products-adhesive-pads-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 31,
+    "key": 30,
+    "desc": "自动化宠物尿垫生产线全景",
+    "pages": "Certification support for B2B pet pad projects.\nPet pad production line: from roll materials to packed goods\nOEM capability for European and American buyers.",
+    "photo": "=DISPIMG(\"ID_5647154CA990459683961B6FA114CCA9\",1)",
+    "current": "/images/generated-site/factory/factory-production-line-02.webp\n/images/oem/production/factory-production-line-02.webp",
+    "extras": [
+      "=DISPIMG(\"ID_84749AD97D5A4BF3970A2878B3185755\",1)",
+      "=DISPIMG(\"ID_F4ECC5CC830440F289435518C2C48083\",1)",
+      "=DISPIMG(\"ID_AF7C74AA7A1943CC84CE025CE93AA379\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 32,
+    "key": 31,
+    "desc": "OEM产品目录与工厂资料展示",
+    "pages": "Request product and OEM capability documents.",
+    "photo": "7",
+    "current": "/images/generated-site/b2b-optimization/download-center-catalog.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 33,
+    "key": 32,
+    "desc": "工厂制造能力与生产车间展示",
+    "pages": "Manufacturing capability for OEM pet pad supply.",
+    "photo": "=DISPIMG(\"ID_84749AD97D5A4BF3970A2878B3185755\",1)",
+    "current": "/images/generated-site/b2b-optimization/factory-capability-workshop.webp",
+    "extras": [
+      "=DISPIMG(\"ID_CF80855AF8084829824D5303E32D7078\",1)",
+      "=DISPIMG(\"ID_B0183B978A9A4FCEACFDE134624C453B\",1)",
+      "=DISPIMG(\"ID_BB9C0161051A48FBBDC7D6067B5391A3\",1)",
+      "=DISPIMG(\"ID_3E55377F47F247EF83F91634984E6DC5\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 34,
+    "key": 33,
+    "desc": "宠物护理用品成品仓库与出口备货",
+    "pages": "Manufacturing capability for OEM pet pad supply.\nContainer loading planned around product protection and landed value\nPackaging that connects brand presentation to factory execution\n等6个页面（详见“页面明细”）",
+    "photo": "=DISPIMG(\"ID_A0E9309F7F95446D997F17522B192CB4\",1)",
+    "current": "/images/oem/warehouse/warehouse-finished-goods-01.webp\n/images/generated-site/warehouse/warehouse-finished-goods-01.webp",
+    "extras": [
+      "=DISPIMG(\"ID_C46D4145825B40F2A248D55362B14888\",1)",
+      "=DISPIMG(\"ID_29D89B49FEB1493ABCDFD65AD204BCA0\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 35,
+    "key": 34,
+    "desc": "无纺布材料导向与复合工序",
+    "pages": "PE film backing designed around leakage, feel, and production stability\nPet pad production line: from roll materials to packed goods\nRaw materials behind a controlled absorbent product specification\n等5个页面（详见“页面明细”）",
+    "photo": "=DISPIMG(\"ID_F0913D2EF89E4D6E94229F94F2EC1E27\",1)",
+    "current": "/images/generated-site/factory/factory-lamination-01.webp\n/images/oem/production/factory-lamination-01.webp",
+    "extras": [
+      "=DISPIMG(\"ID_116D75C90B0045B0B2239E07888BF650\",1)",
+      "=DISPIMG(\"ID_BB6BCE87B5C5482F96A2092AA8684FB0\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 36,
+    "key": 35,
+    "desc": "OEM产品样品评审场景",
+    "pages": "OEM/ODM Pet Pad Manufacturing Process",
+    "photo": "7",
+    "current": "/images/generated-site/b2b-optimization/oem-sample-review.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 37,
+    "key": 36,
+    "desc": "OEM样品开发与确认场景",
+    "pages": "OEM/ODM Pet Pad Manufacturing Process",
+    "photo": "7",
+    "current": "/images/oem/customization/oem-sample-review-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 38,
+    "key": 37,
+    "desc": "私牌包装样品与包装工序",
+    "pages": "OEM/ODM Pet Pad Manufacturing Process\nPartner with apet pad source factory.",
+    "photo": "=DISPIMG(\"ID_BE09579C0E344AE28056BD5EF68D797A\",1)",
+    "current": "/images/oem/packaging/private-label-packaging-02.webp\n/images/generated-site/packaging/private-label-packaging-02.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 39,
+    "key": 38,
+    "desc": "人物与宠物户外互动场景",
+    "pages": "Better pet care,built with responsibility.\nCorporate strengthbehind pet care supply.",
+    "photo": "7",
+    "current": "/images/contact-pets-grass-centered.png",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 40,
+    "key": 39,
+    "desc": "产品规格、材料与样品展示",
+    "pages": "Private label pet pads for brands and retail channels.",
+    "photo": "7",
+    "current": "/images/generated-site/b2b-optimization/product-specification-samples.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 41,
+    "key": 40,
+    "desc": "折叠及展开的成人护理垫棚拍展示",
+    "pages": "Adult Underpads",
+    "photo": "7",
+    "current": "/images/products/adult-underpads/adult-underpad-main.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 42,
+    "key": 41,
+    "desc": "成人护理垫尺寸与材料结构示意",
+    "pages": "Adult Underpads",
+    "photo": "7",
+    "current": "/images/products/adult-underpads/adult-underpad-size.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 43,
+    "key": 42,
+    "desc": "成人护理垫居家护理使用场景",
+    "pages": "Adult Underpads",
+    "photo": "7",
+    "current": "/images/products/adult-underpads/adult-underpad-home-care.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 44,
+    "key": 43,
+    "desc": "成人护理垫吸收芯体微距细节",
+    "pages": "Adult Underpads",
+    "photo": "7",
+    "current": "/images/products/adult-underpads/adult-underpad-core-detail.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 45,
+    "key": 44,
+    "desc": "成人护理垫无品牌私牌包装概念",
+    "pages": "Adult Underpads",
+    "photo": "7",
+    "current": "/images/products/adult-underpads/adult-underpad-package.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 46,
+    "key": 45,
+    "desc": "OEM宠物尿垫吸收性能实验室测试",
+    "pages": "Quality control system for OEM absorbent products.",
+    "photo": "7",
+    "current": "/images/oem/quality/factory-testing-lab-01.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 47,
+    "key": 46,
+    "desc": "宠物尿垫成品终检与尺寸测量",
+    "pages": "Quality control system for OEM absorbent products.",
+    "photo": "=DISPIMG(\"ID_134BBC3C62B54543BD31752C4B7E6C1D\",1)",
+    "current": "/images/oem/quality/factory-quality-control-02.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 48,
+    "key": 47,
+    "desc": "博客封面：OEM Pet Pad Contract Manufacturing: A Buyer Workflow",
+    "pages": "OEM Pet Pad Contract Manufacturing: A Buyer Workflow",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-pad-contract-manufacturing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 49,
+    "key": 48,
+    "desc": "博客封面：How OEM Product Change Control Protects Repeat Orders",
+    "pages": "How OEM Product Change Control Protects Repeat Orders",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-product-change-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 50,
+    "key": 49,
+    "desc": "博客封面：Planning an OEM Pilot Order Before Full-Scale Production",
+    "pages": "Planning an OEM Pilot Order Before Full-Scale Production",
+    "photo": "=DISPIMG(\"ID_F760045FA2584052B5F265E979F471CA\",1)",
+    "current": "/images/generated-site/blog/oem-pilot-order-planning.webp",
+    "extras": [
+      "=DISPIMG(\"ID_655DDDC7F8704867A19664D1F87E93E2\",1)",
+      "=DISPIMG(\"ID_84EBB66BA9FC4140A23534DA8D50C3DB\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 51,
+    "key": 50,
+    "desc": "博客封面：Managing a Multi-SKU OEM Pet Product Launch",
+    "pages": "Managing a Multi-SKU OEM Pet Product Launch",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-multi-sku-launch-plan.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 52,
+    "key": 51,
+    "desc": "博客封面：How Buyers Should Review OEM Capacity Allocation",
+    "pages": "How Buyers Should Review OEM Capacity Allocation",
+    "photo": "=DISPIMG(\"ID_3E87433DA7D14803BDCE896DE6FB10DA\",1)",
+    "current": "/images/generated-site/blog/oem-capacity-allocation-review.webp",
+    "extras": [
+      "=DISPIMG(\"ID_708379F88BA346CEAB4D450F565BF6C2\",1)",
+      "F53",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 53,
+    "key": 52,
+    "desc": "博客封面：Puppy Pad Surface Intake: What B2B Buyers Should Specify",
+    "pages": "Puppy Pad Surface Intake: What B2B Buyers Should Specify",
+    "photo": "=DISPIMG(\"ID_A94E504BEB3744E4ABF46FE0B97B07E9\",1)",
+    "current": "/images/generated-site/blog/puppy-pad-surface-intake-design.webp",
+    "extras": [
+      "=DISPIMG(\"ID_61A9821159604C018248F06F5B7DE2E5\",1)",
+      "=DISPIMG(\"ID_2FABF6AD3E80476E90DEC2275E8091EE\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 54,
+    "key": 53,
+    "desc": "博客封面：Pet Pad Edge Seals: Preventing Leakage and Delamination",
+    "pages": "Pet Pad Edge Seals: Preventing Leakage and Delamination",
+    "photo": "=DISPIMG(\"ID_1B3AC788F6894B288C4FBAA8DADB0392\",1)",
+    "current": "/images/generated-site/blog/pet-pad-edge-seal-quality.webp",
+    "extras": [
+      "=DISPIMG(\"ID_C27199D35AAC4B718F8A84FAABD5B45A\",1)",
+      "=DISPIMG(\"ID_66750093CB6449FD9C91752E3B2D2A24\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 55,
+    "key": 54,
+    "desc": "博客封面：How to Select a Pet Pad Embossing Pattern",
+    "pages": "How to Select a Pet Pad Embossing Pattern",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-embossing-pattern-selection.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 56,
+    "key": 55,
+    "desc": "博客封面：Pet Pad Folding Formats and Retail Pack Efficiency",
+    "pages": "Pet Pad Folding Formats and Retail Pack Efficiency",
+    "photo": "=DISPIMG(\"ID_DBC98A00794445008461441D558C4686\",1)",
+    "current": "=DISPIMG(\"ID_EFF09D4096E0482285679000D2F0FF21\",1)",
+    "extras": [
+      "=DISPIMG(\"ID_696B0E850E0A44BA918D679BF69AF32F\",1)",
+      "=DISPIMG(\"ID_88C0F4B217D846F887ACBF792A0D7ADD\",1)",
+      "=DISPIMG(\"ID_337B176DC6074085B8DA668DBF9EA68C\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 57,
+    "key": 56,
+    "desc": "博客封面：Sourcing Travel Pet Pads for Portable Use Cases",
+    "pages": "Sourcing Travel Pet Pads for Portable Use Cases",
+    "photo": "7",
+    "current": "/images/generated-site/blog/travel-pet-pad-sourcing-guide.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 58,
+    "key": 57,
+    "desc": "博客封面：Specifying Surface Comfort for Adult Disposable Underpads",
+    "pages": "Specifying Surface Comfort for Adult Disposable Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-surface-comfort-specification.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 59,
+    "key": 58,
+    "desc": "博客封面：Adult Underpad Pack Counts for Tenders and Distribution",
+    "pages": "Adult Underpad Pack Counts for Tenders and Distribution",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-pack-count-tender-planning.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 60,
+    "key": 59,
+    "desc": "博客封面：Selecting Backing Film for Adult Underpads",
+    "pages": "Selecting Backing Film for Adult Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-backing-film-selection.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 61,
+    "key": 60,
+    "desc": "博客封面：Building an Institutional Underpad Supply Program",
+    "pages": "Building an Institutional Underpad Supply Program",
+    "photo": "7",
+    "current": "/images/generated-site/blog/institutional-underpad-supplier-program.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 62,
+    "key": 61,
+    "desc": "博客封面：Arrival Inspection for Imported Adult Underpads",
+    "pages": "Arrival Inspection for Imported Adult Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-arrival-inspection.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 63,
+    "key": 62,
+    "desc": "博客封面：Dog Waste Bag Perforation: A Buyer Quality Guide",
+    "pages": "Dog Waste Bag Perforation: A Buyer Quality Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-waste-bag-perforation-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 64,
+    "key": 63,
+    "desc": "博客封面：How to Verify Dog Poop Bag Roll Counts",
+    "pages": "How to Verify Dog Poop Bag Roll Counts",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-poop-bag-roll-count-verification.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 65,
+    "key": 64,
+    "desc": "博客封面：Scented Dog Waste Bags: OEM Selection and Risk Controls",
+    "pages": "Scented Dog Waste Bags: OEM Selection and Risk Controls",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-waste-bag-scent-selection.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 66,
+    "key": 65,
+    "desc": "博客封面：Dog Poop Bag Dispenser Compatibility Guide",
+    "pages": "Dog Poop Bag Dispenser Compatibility Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-poop-bag-dispenser-compatibility.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 67,
+    "key": 66,
+    "desc": "博客封面：Printing and Registration Controls for Dog Waste Bags",
+    "pages": "Printing and Registration Controls for Dog Waste Bags",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-waste-bag-print-registration.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 68,
+    "key": 67,
+    "desc": "博客封面：Private-Label Claim Approval for Pet Products",
+    "pages": "Private-Label Claim Approval for Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-claim-approval-workflow.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 69,
+    "key": 68,
+    "desc": "博客封面：Barcode and Master Data Control for Private-Label Launches",
+    "pages": "Barcode and Master Data Control for Private-Label Launches",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-barcode-master-data.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 70,
+    "key": 69,
+    "desc": "博客封面：Planning a Private-Label Pet Product Line Extension",
+    "pages": "Planning a Private-Label Pet Product Line Extension",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-line-extension-planning.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 71,
+    "key": 70,
+    "desc": "博客封面：Retailer Onboarding for Private-Label Pet Products",
+    "pages": "Retailer Onboarding for Private-Label Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-retailer-onboarding.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 72,
+    "key": 71,
+    "desc": "博客封面：How to Approve Pet Product Packaging Dielines",
+    "pages": "How to Approve Pet Product Packaging Dielines",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-dieline-approval.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 73,
+    "key": 72,
+    "desc": "博客封面：Managing Carton Compression Risk for Pet Pads",
+    "pages": "Managing Carton Compression Risk for Pet Pads",
+    "photo": null,
+    "current": "/images/generated-site/blog/pet-pad-carton-compression-risk.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 74,
+    "key": 73,
+    "desc": "博客封面：Multi-Language Packaging for Pet Product Imports",
+    "pages": "Multi-Language Packaging for Pet Product Imports",
+    "photo": "7",
+    "current": "/images/generated-site/blog/multi-language-pet-product-packaging.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 75,
+    "key": 74,
+    "desc": "博客封面：Cost Engineering for Private-Label Pet Product Packaging",
+    "pages": "Cost Engineering for Private-Label Pet Product Packaging",
+    "photo": null,
+    "current": "/images/generated-site/blog/pet-product-packaging-cost-engineering.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 76,
+    "key": 75,
+    "desc": "博客封面：Container Moisture Control for Pet Product Shipments",
+    "pages": "Container Moisture Control for Pet Product Shipments",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-container-moisture-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 77,
+    "key": 76,
+    "desc": "博客封面：Shipping Document Checklist for Pet Product Importers",
+    "pages": "Shipping Document Checklist for Pet Product Importers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-shipping-document-checklist.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 78,
+    "key": 77,
+    "desc": "博客封面：Reorder Point Planning for Imported Pet Products",
+    "pages": "Reorder Point Planning for Imported Pet Products",
+    "photo": "=DISPIMG(\"ID_38C66FCBACF9468C8206D2ABD6F5F081\",1)",
+    "current": "/images/generated-site/blog/pet-product-reorder-point-planning.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 79,
+    "key": 78,
+    "desc": "博客封面：LCL vs FCL for Pet Product Imports",
+    "pages": "LCL vs FCL for Pet Product Imports",
+    "photo": "=DISPIMG(\"ID_0B5777D5D9BA44E99DE261A579609578\",1)",
+    "current": "/images/generated-site/blog/pet-product-lcl-vs-fcl-decision.webp",
+    "extras": [
+      "=DISPIMG(\"ID_DED5ABBE003D463A96711D01D811913B\",1)",
+      "=DISPIMG(\"ID_6C0D282EB0734DB5B9D6447D146ED4B3\",1)",
+      "=DISPIMG(\"ID_15F5415C35DF4BEABABA8759723135B3\",1)",
+      "=DISPIMG(\"ID_BC0D24A7EBAD40FCA28216F2DD38F5B6\",1)",
+      "=DISPIMG(\"ID_66C7FBEB51C34B6E9CA58715718E9EE2\",1)",
+      "=DISPIMG(\"ID_4D7243E0C38349D0AEBAB92F4C5D13B0\",1)",
+      "=DISPIMG(\"ID_9AEDE376F3ED49919ABB51A1A101057C\",1)",
+      "=DISPIMG(\"ID_4C1E1BB974884057B51D946BCA5EE6E9\",1)",
+      null
+    ]
+  },
+  {
+    "row": 80,
+    "key": 79,
+    "desc": "博客封面：Pet Pad Defect Classification for Pre-Shipment Inspection",
+    "pages": "Pet Pad Defect Classification for Pre-Shipment Inspection",
+    "photo": "=DISPIMG(\"ID_BFC45EA44F854B41B2272E722F2F8E66\",1)",
+    "current": "/images/generated-site/blog/pet-pad-defect-classification.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 81,
+    "key": 80,
+    "desc": "博客封面：How to Build a Pet Pad Retained Sample Program",
+    "pages": "How to Build a Pet Pad Retained Sample Program",
+    "photo": "=DISPIMG(\"ID_FB6FA55F31EC4DA997D951142EBCAAD0\",1)",
+    "current": "/images/generated-site/blog/pet-pad-retained-sample-program.webp",
+    "extras": [
+      "=DISPIMG(\"ID_C403B82D80CC44AAA2AE7C87D4F032C7\",1)",
+      "=DISPIMG(\"ID_4AC2995E82B94D09BDAEEDE3F139B4A9\",1)",
+      "=DISPIMG(\"ID_9C4123C0C86F42079F13AD2EB99DED44\",1)",
+      "=DISPIMG(\"ID_C34EBC4217C2401699C3BAB5CC66CDCF\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 82,
+    "key": 81,
+    "desc": "博客封面：Reviewing Corrective Action from an OEM Supplier",
+    "pages": "Reviewing Corrective Action from an OEM Supplier",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-corrective-action-review.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 83,
+    "key": 82,
+    "desc": "博客封面：Golden Sample Control for Private-Label Pet Products",
+    "pages": "Golden Sample Control for Private-Label Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-golden-sample-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 84,
+    "key": 83,
+    "desc": "博客封面：Factory Maintenance Audit for Pet Product Production",
+    "pages": "Factory Maintenance Audit for Pet Product Production",
+    "photo": "=DISPIMG(\"ID_AA93BCB27C634B2F9760FE352CF4FA5F\",1)",
+    "current": "/images/generated-site/blog/factory-maintenance-audit-pet-products.webp",
+    "extras": [
+      "=DISPIMG(\"ID_474B65E52A6541FEAD6ABE91BD0A0079\",1)",
+      null,
+      "=DISPIMG(\"ID_F63707C935F14C538A9A0F00A6D2BCA8\",1)",
+      "=DISPIMG(\"ID_A1BA8CC857D343F5850ED37B91DB1418\",1)",
+      "=DISPIMG(\"ID_C95F3E139A7C4D7181C536A7DC04FEA6\",1)",
+      "=DISPIMG(\"ID_1B292DA7F9E147D7B5BF01C02928A3CB\",1)",
+      "=DISPIMG(\"ID_6FD410C7BD384D8AAFF1F2A4477C6792\",1)",
+      null,
+      null
+    ]
+  },
+  {
+    "row": 85,
+    "key": 84,
+    "desc": "博客封面：Traceability Audit for OEM Pet Product Factories",
+    "pages": "Traceability Audit for OEM Pet Product Factories",
+    "photo": "=DISPIMG(\"ID_60A54A1793BB4BF0BFF5C9F0DD702FD4\",1)",
+    "current": "/images/generated-site/blog/factory-traceability-audit.webp",
+    "extras": [
+      "=DISPIMG(\"ID_C6B5D45549CA43549D8514AF8FC5417C\",1)",
+      "=DISPIMG(\"ID_6D87976DCF9C4DACBC70C7D5CD7D9440\",1)",
+      "=DISPIMG(\"ID_EF09BE60BD4342AEB49DEA90C402563B\",1)",
+      "=DISPIMG(\"ID_848482AC4C1E4B38944B2658096B917F\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 86,
+    "key": 85,
+    "desc": "博客封面：Business Continuity Review for an OEM Pet Product Factory",
+    "pages": "Business Continuity Review for an OEM Pet Product Factory",
+    "photo": "=DISPIMG(\"ID_175BC5D79BEC48CF99BB9414EA2AD732\",1)",
+    "current": "/images/generated-site/blog/factory-business-continuity-review.webp",
+    "extras": [
+      "=DISPIMG(\"ID_1950CA0C554343888AF0496CD99F0D6B\",1)",
+      "=DISPIMG(\"ID_5AF723B3BBB045A5B34CB0DC5296EF82\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 87,
+    "key": 86,
+    "desc": "博客封面：How to Audit Subcontracting in an OEM Supply Chain",
+    "pages": "How to Audit Subcontracting in an OEM Supply Chain",
+    "photo": "7",
+    "current": "/images/generated-site/blog/factory-subcontracting-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 88,
+    "key": 87,
+    "desc": "博客封面：Nonwoven Basis Weight in Pet Pad Specifications",
+    "pages": "Nonwoven Basis Weight in Pet Pad Specifications",
+    "photo": "=DISPIMG(\"ID_31B0D354A84946D18C1D7DF6D4E8176C\",1)",
+    "current": "/images/generated-site/blog/nonwoven-basis-weight-pet-pads.webp",
+    "extras": [
+      "=DISPIMG(\"ID_39FA25C521554A8EABA2D6794E93679B\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 89,
+    "key": 88,
+    "desc": "博客封面：Hot-Melt Adhesive in Absorbent Product Manufacturing",
+    "pages": "Hot-Melt Adhesive in Absorbent Product Manufacturing",
+    "photo": "=DISPIMG(\"ID_562BBA2761A247C9960A3E0EA8D6D5E2\",1)",
+    "current": "/images/generated-site/blog/hot-melt-adhesive-absorbent-products.webp",
+    "extras": [
+      "=DISPIMG(\"ID_D334405134024293B128E7E1FB4CEA71\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 90,
+    "key": 89,
+    "desc": "博客封面：SAP Gel Blocking in Pet Pads: What Buyers Should Know",
+    "pages": "SAP Gel Blocking in Pet Pads: What Buyers Should Know",
+    "photo": "7",
+    "current": "/images/generated-site/blog/sap-gel-blocking-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 91,
+    "key": 90,
+    "desc": "博客封面：Auditing SAP Dosing Consistency in Production",
+    "pages": "Auditing SAP Dosing Consistency in Production",
+    "photo": "7",
+    "current": "/images/generated-site/blog/sap-dosing-consistency-audit.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 92,
+    "key": 91,
+    "desc": "博客封面：PE Film Pinhole Risk in Pet and Adult Underpads",
+    "pages": "PE Film Pinhole Risk in Pet and Adult Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pe-film-pinhole-risk-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 93,
+    "key": 92,
+    "desc": "博客封面：Printed Backing Film for Private-Label Pet Pads",
+    "pages": "Printed Backing Film for Private-Label Pet Pads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/printed-backing-film-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 94,
+    "key": 93,
+    "desc": "博客封面：Building a Pet Product Supplier Scorecard",
+    "pages": "Building a Pet Product Supplier Scorecard",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-supplier-scorecard.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 95,
+    "key": 94,
+    "desc": "博客封面：Payment Milestones for OEM Pet Product Orders",
+    "pages": "Payment Milestones for OEM Pet Product Orders",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-payment-milestone-plan.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 96,
+    "key": 95,
+    "desc": "博客封面：How to Normalize Pet Product Supplier Quotations",
+    "pages": "How to Normalize Pet Product Supplier Quotations",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-quotation-normalization.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 97,
+    "key": 96,
+    "desc": "博客封面：Building Resilience in the Pet Care Supply Chain",
+    "pages": "Building Resilience in the Pet Care Supply Chain",
+    "photo": null,
+    "current": "/images/generated-site/blog/pet-care-supply-chain-resilience.webp",
+    "extras": [
+      "=DISPIMG(\"ID_BC0E9528B2D14D21AABB6A864B6A2FFA\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 98,
+    "key": 97,
+    "desc": "博客封面：How to Write an OEM Pet Pad Product Brief",
+    "pages": "How to Write an OEM Pet Pad Product Brief",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-pad-product-brief.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 99,
+    "key": 98,
+    "desc": "博客封面：How to Set Custom Absorbency Targets for OEM Pet Pads",
+    "pages": "How to Set Custom Absorbency Targets for OEM Pet Pads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/custom-absorbency-targets-oem-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 100,
+    "key": 99,
+    "desc": "博客封面：OEM Pet Pad Sample Approval Workflow",
+    "pages": "OEM Pet Pad Sample Approval Workflow",
+    "photo": "=DISPIMG(\"ID_E9AA99CF5B62418EA08C92C2D50A3611\",1)",
+    "current": "/images/generated-site/blog/oem-pet-pad-sample-approval-workflow.webp",
+    "extras": [
+      "=DISPIMG(\"ID_AE291ED07D794C1F8CAA7192F17ECA1E\",1)",
+      "=DISPIMG(\"ID_44F657384B6D497EB142D1C75DA7F3F2\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 101,
+    "key": 100,
+    "desc": "博客封面：How to Plan a Pet Pad Pilot Order",
+    "pages": "How to Plan a Pet Pad Pilot Order",
+    "photo": "=DISPIMG(\"ID_CA22B5CAE60C4AEB9F51E0A5276D5D15\",1)",
+    "current": "/images/generated-site/blog/pet-pad-pilot-order-planning.webp",
+    "extras": [
+      "=DISPIMG(\"ID_97E11A7FAF1B4E18BEB954DAEE9B909E\",1)",
+      "=DISPIMG(\"ID_1EC0DD01D0194B2CAFC85CAC74E5F5EC\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 102,
+    "key": 101,
+    "desc": "博客封面：Private Label Pet Pad Artwork Approval Guide",
+    "pages": "Private Label Pet Pad Artwork Approval Guide",
+    "photo": null,
+    "current": "/images/generated-site/blog/private-label-pet-pad-artwork-approval.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 103,
+    "key": 102,
+    "desc": "博客封面：What Determines OEM Pet Pad Pricing",
+    "pages": "What Determines OEM Pet Pad Pricing",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-pad-pricing-factors.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 104,
+    "key": 103,
+    "desc": "博客封面：How Factories Control Pet Pad Repeat Orders",
+    "pages": "How Factories Control Pet Pad Repeat Orders",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-repeat-order-consistency.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 105,
+    "key": 104,
+    "desc": "博客封面：OEM Pet Pad Change Control for Buyers",
+    "pages": "OEM Pet Pad Change Control for Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-pad-change-control.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 106,
+    "key": 105,
+    "desc": "博客封面：How to Launch a Multi-SKU Pet Pad Range",
+    "pages": "How to Launch a Multi-SKU Pet Pad Range",
+    "photo": "7",
+    "current": "/images/generated-site/blog/multi-sku-pet-pad-range-launch.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 107,
+    "key": 106,
+    "desc": "博客封面：OEM Pet Pad Production Timeline Explained",
+    "pages": "OEM Pet Pad Production Timeline Explained",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-pad-production-timeline.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 108,
+    "key": 107,
+    "desc": "博客封面：Questions OEM Buyers Should Ask a Pet Pad Factory",
+    "pages": "Questions OEM Buyers Should Ask a Pet Pad Factory",
+    "photo": "7",
+    "current": "/images/generated-site/blog/questions-oem-buyers-ask-pet-pad-factory.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 109,
+    "key": 108,
+    "desc": "博客封面：NDA and Product Information Control in OEM Sourcing",
+    "pages": "NDA and Product Information Control in OEM Sourcing",
+    "photo": "7",
+    "current": "/images/generated-site/blog/nda-product-information-oem-sourcing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 110,
+    "key": 109,
+    "desc": "博客封面：From Sourcing Team to Factory: A Better Project Handoff",
+    "pages": "From Sourcing Team to Factory: A Better Project Handoff",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-project-handoff-to-factory.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 111,
+    "key": 110,
+    "desc": "博客封面：How Demand Forecasts Improve OEM Pet Pad Supply",
+    "pages": "How Demand Forecasts Improve OEM Pet Pad Supply",
+    "photo": "7",
+    "current": "/images/generated-site/blog/demand-forecast-oem-pet-pad-supply.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 112,
+    "key": 111,
+    "desc": "博客封面：Building a Pet Pad Technical Specification Sheet",
+    "pages": "Building a Pet Pad Technical Specification Sheet",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-technical-specification-sheet.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 113,
+    "key": 112,
+    "desc": "博客封面：Five-Layer Puppy Pad Construction Explained",
+    "pages": "Five-Layer Puppy Pad Construction Explained",
+    "photo": "=DISPIMG(\"ID_EAFBA31626CB42B1B4F009BAC4B817C7\",1)",
+    "current": "/images/generated-site/blog/five-layer-puppy-pad-construction.webp",
+    "extras": [
+      "=DISPIMG(\"ID_CEC6E5DD2E744AC889799E62DC992832\",1)",
+      "=DISPIMG(\"ID_C3ECA834AAC3425CAF53DD8AB6C276C3\",1)",
+      "=DISPIMG(\"ID_F8186D03F81A4C4597B80813B22B5E37\",1)",
+      "=DISPIMG(\"ID_4AD70E72C2714775B757F9F63C5B611E\",1)",
+      "=DISPIMG(\"ID_B4EF09F0A5E544FB96E4AEC4DA6A7E81\",1)",
+      "=DISPIMG(\"ID_E0B9063DAB254D3F847A794DB399927A\",1)",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 114,
+    "key": 113,
+    "desc": "博客封面：How Leak-Proof PE Backing Works in Puppy Pads",
+    "pages": "How Leak-Proof PE Backing Works in Puppy Pads",
+    "photo": "=DISPIMG(\"ID_B3E79353E0AC4120A9AFA35443488347\",1)",
+    "current": "/images/generated-site/blog/leak-proof-pe-backing-puppy-pads.webp",
+    "extras": [
+      "=DISPIMG(\"ID_7E87B9AC3E3942B18A3849A502925853\",1)",
+      "=DISPIMG(\"ID_BFE9E3531AFA46B6A233E51FF233229A\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 115,
+    "key": 114,
+    "desc": "博客封面：Absorption Speed vs Capacity in Pet Training Pads",
+    "pages": "Absorption Speed vs Capacity in Pet Training Pads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/absorption-speed-vs-capacity-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 116,
+    "key": 115,
+    "desc": "博客封面：How Rewet Testing Helps Compare Puppy Pads",
+    "pages": "How Rewet Testing Helps Compare Puppy Pads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/puppy-pad-rewet-testing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 117,
+    "key": 116,
+    "desc": "博客封面：Why Edge Sealing Matters in Pet Pads",
+    "pages": "Why Edge Sealing Matters in Pet Pads",
+    "photo": "=DISPIMG(\"ID_92C3C9E972E24C97B66D5BD42C0A40A6\",1)",
+    "current": "/images/generated-site/blog/pet-pad-edge-sealing-quality.webp",
+    "extras": [
+      "=DISPIMG(\"ID_4FF9214FEA5146F89051A74AE9338969\",1)",
+      "=DISPIMG(\"ID_EBB26FB916DB40839ADAC213D8889A35\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 118,
+    "key": 117,
+    "desc": "博客封面：Pet Pad Embossing Patterns: Function and Buyer Choices",
+    "pages": "Pet Pad Embossing Patterns: Function and Buyer Choices",
+    "photo": "=DISPIMG(\"ID_888629AC656445F68B1B67ADBC50050A\",1)",
+    "current": "/images/generated-site/blog/pet-pad-embossing-patterns.webp",
+    "extras": [
+      "=DISPIMG(\"ID_265FD14A681144B8AB4BB56F38FB1AC0\",1)",
+      "=DISPIMG(\"ID_83732012E8E949FFACF4F512C5E55E42\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 119,
+    "key": 118,
+    "desc": "博客封面：Scented vs Unscented Puppy Pads for Private Label",
+    "pages": "Scented vs Unscented Puppy Pads for Private Label",
+    "photo": "7",
+    "current": "/images/generated-site/blog/scented-vs-unscented-puppy-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 120,
+    "key": 119,
+    "desc": "博客封面：Activated Charcoal Pet Pads for Odor-Control Lines",
+    "pages": "Activated Charcoal Pet Pads for Odor-Control Lines",
+    "photo": "7",
+    "current": "/images/generated-site/blog/activated-charcoal-pet-pads-buyer-guide.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 121,
+    "key": 120,
+    "desc": "博客封面：Adhesive Puppy Pads: Corner Tabs and Full Backing",
+    "pages": "Adhesive Puppy Pads: Corner Tabs and Full Backing",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adhesive-puppy-pad-backing-options.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 122,
+    "key": 121,
+    "desc": "博客封面：How to Build a Retail Pet Pad Size Range",
+    "pages": "How to Build a Retail Pet Pad Size Range",
+    "photo": "7",
+    "current": "/images/generated-site/blog/retail-pet-pad-size-range.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 123,
+    "key": 122,
+    "desc": "博客封面：Common Puppy Pad Quality Defects and Root Causes",
+    "pages": "Common Puppy Pad Quality Defects and Root Causes",
+    "photo": "7",
+    "current": "/images/generated-site/blog/common-puppy-pad-quality-defects.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 124,
+    "key": 123,
+    "desc": "博客封面：Pet Pad Performance Test Methods for B2B Buyers",
+    "pages": "Pet Pad Performance Test Methods for B2B Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-performance-test-methods.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 125,
+    "key": 124,
+    "desc": "博客封面：Adult Disposable Underpad Materials and Structure",
+    "pages": "Adult Disposable Underpad Materials and Structure",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-disposable-underpad-materials.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 126,
+    "key": 125,
+    "desc": "博客封面：Hospital Underpad Procurement Guide",
+    "pages": "Hospital Underpad Procurement Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/hospital-underpad-procurement-guide.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 127,
+    "key": 126,
+    "desc": "博客封面：How Nursing Homes Should Evaluate Underpad Suppliers",
+    "pages": "How Nursing Homes Should Evaluate Underpad Suppliers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/nursing-home-underpad-supplier-evaluation.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 128,
+    "key": 127,
+    "desc": "博客封面：How to Specify Adult Underpad Absorbency",
+    "pages": "How to Specify Adult Underpad Absorbency",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-absorbency-specification.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 129,
+    "key": 128,
+    "desc": "博客封面：Skin-Contact Surface Choices for Disposable Underpads",
+    "pages": "Skin-Contact Surface Choices for Disposable Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/underpad-skin-contact-surface.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 130,
+    "key": 129,
+    "desc": "博客封面：PE Film Backing for Medical and Care Underpads",
+    "pages": "PE Film Backing for Medical and Care Underpads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pe-film-backing-adult-underpads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 131,
+    "key": 130,
+    "desc": "博客封面：OEM Adult Underpads: Development Process for Brands",
+    "pages": "OEM Adult Underpads: Development Process for Brands",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-adult-underpads-development.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 132,
+    "key": 131,
+    "desc": "博客封面：Private Label Adult Underpad Packaging Guide",
+    "pages": "Private Label Adult Underpad Packaging Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-adult-underpad-packaging.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 133,
+    "key": 132,
+    "desc": "博客封面：Adult Underpad Size, Weight and Pack Count Planning",
+    "pages": "Adult Underpad Size, Weight and Pack Count Planning",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-size-weight-pack-count.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 134,
+    "key": 133,
+    "desc": "博客封面：Adult Underpad Quality Inspection Checklist",
+    "pages": "Adult Underpad Quality Inspection Checklist",
+    "photo": "7",
+    "current": "/images/generated-site/blog/adult-underpad-quality-inspection.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 135,
+    "key": 134,
+    "desc": "博客封面：How Dog Waste Bags Are Manufactured",
+    "pages": "How Dog Waste Bags Are Manufactured",
+    "photo": "7",
+    "current": "/images/generated-site/blog/how-dog-waste-bags-are-manufactured.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 136,
+    "key": 135,
+    "desc": "博客封面：Compostable Dog Poop Bags: Buyer Due Diligence",
+    "pages": "Compostable Dog Poop Bags: Buyer Due Diligence",
+    "photo": "7",
+    "current": "/images/generated-site/blog/compostable-dog-poop-bags-due-diligence.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 137,
+    "key": 136,
+    "desc": "博客封面：HDPE vs LDPE Dog Waste Bags",
+    "pages": "HDPE vs LDPE Dog Waste Bags",
+    "photo": "7",
+    "current": "/images/generated-site/blog/hdpe-vs-ldpe-dog-waste-bags.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 138,
+    "key": 137,
+    "desc": "博客封面：How to Specify Leak-Proof Dog Poop Bags",
+    "pages": "How to Specify Leak-Proof Dog Poop Bags",
+    "photo": "7",
+    "current": "/images/generated-site/blog/leak-proof-dog-poop-bag-specification.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 139,
+    "key": 138,
+    "desc": "博客封面：OEM Dog Waste Bag Manufacturing Guide",
+    "pages": "OEM Dog Waste Bag Manufacturing Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-dog-waste-bag-manufacturing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 140,
+    "key": 139,
+    "desc": "博客封面：Private Label Dog Poop Bags Launch Checklist",
+    "pages": "Private Label Dog Poop Bags Launch Checklist",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-dog-poop-bags-launch.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 141,
+    "key": 140,
+    "desc": "博客封面：Dog Waste Bag Roll Core Sizes Explained",
+    "pages": "Dog Waste Bag Roll Core Sizes Explained",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-waste-bag-roll-core-sizes.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 142,
+    "key": 141,
+    "desc": "博客封面：Dog Poop Bag Packaging Options for Retail Brands",
+    "pages": "Dog Poop Bag Packaging Options for Retail Brands",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-poop-bag-packaging-options.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 143,
+    "key": 142,
+    "desc": "博客封面：Wholesale Dog Waste Bags: Cost and MOQ Guide",
+    "pages": "Wholesale Dog Waste Bags: Cost and MOQ Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/wholesale-dog-waste-bags-cost-moq.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 144,
+    "key": 143,
+    "desc": "博客封面：Dog Waste Bag Thickness and Tear Resistance",
+    "pages": "Dog Waste Bag Thickness and Tear Resistance",
+    "photo": "7",
+    "current": "/images/generated-site/blog/dog-waste-bag-thickness-tear-resistance.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 145,
+    "key": 144,
+    "desc": "博客封面：What to Look for During a Pet Product Factory Tour",
+    "pages": "What to Look for During a Pet Product Factory Tour",
+    "photo": "=DISPIMG(\"ID_B792FCF5697D423C8AF0485511DB39F9\",1)",
+    "current": "/images/generated-site/blog/pet-product-factory-tour-checklist.webp",
+    "extras": [
+      "=DISPIMG(\"ID_608E8BC9CD1740CDA7232166DE314B43\",1)",
+      "=DISPIMG(\"ID_5DAFD7B50A614FAF88A811855B1D52A2\",1)",
+      "=DISPIMG(\"ID_95AF05B4BC7245EEBE1018A27A04C8DB\",1)",
+      "=DISPIMG(\"ID_3E0EDC75357B4C1E8DE23C0C274C3144\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 146,
+    "key": 145,
+    "desc": "博客封面：How to Evaluate Pet Pad Production Capacity",
+    "pages": "How to Evaluate Pet Pad Production Capacity",
+    "photo": "=DISPIMG(\"ID_4640CC9CA55243A3804516C3F6C394E9\",1)",
+    "current": "/images/generated-site/blog/evaluate-pet-pad-production-capacity.webp",
+    "extras": [
+      "=DISPIMG(\"ID_9B7E1F340F2D4292BBB218D8E0868780\",1)",
+      "=DISPIMG(\"ID_38DCE9F5D2B94BEBBE0AE07FB299C117\",1)",
+      "=DISPIMG(\"ID_5D121D29486249F3B2FCDAF87F2EF370\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 147,
+    "key": 146,
+    "desc": "博客封面：Inside a Pet Pad Factory Quality Control System",
+    "pages": "Inside a Pet Pad Factory Quality Control System",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-factory-quality-control-system.webp",
+    "extras": [
+      "=DISPIMG(\"ID_4B6C0DD2B01645928BB81E2B050FBC5D\",1)",
+      "=DISPIMG(\"ID_4DFA35BA87BD4987877EF1F49D678858\",1)",
+      null,
+      "=DISPIMG(\"ID_96E9EAA30E494485B92B6F57E91DE9A4\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 148,
+    "key": 147,
+    "desc": "博客封面：Pet Product Warehouse Management for Export Orders",
+    "pages": "Pet Product Warehouse Management for Export Orders",
+    "photo": "=DISPIMG(\"ID_CE0B73FFAAD1466D9FB5DA06C4558C18\",1)",
+    "current": "/images/generated-site/blog/pet-product-warehouse-export-management.webp",
+    "extras": [
+      "=DISPIMG(\"ID_F130E737B8AF4E5D8C01B24E493EC2BB\",1)",
+      "=DISPIMG(\"ID_DEE297ED136D44DB83D757E28FDEC7E9\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 149,
+    "key": 148,
+    "desc": "博客封面：Container Loading for Pet Pad Export Shipments",
+    "pages": "Container Loading for Pet Pad Export Shipments",
+    "photo": "=DISPIMG(\"ID_397188E65A7345A4AB884DCB05C3A570\",1)",
+    "current": "/images/generated-site/blog/pet-pad-container-loading-guide.webp",
+    "extras": [
+      "=DISPIMG(\"ID_7B36BA26A3CF4887A9F2824C6DA4B9DD\",1)",
+      "=DISPIMG(\"ID_DCFEE78B795F49CBA7B51C5E8C5E9FA9\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 150,
+    "key": 149,
+    "desc": "博客封面：Export Documents Pet Product Buyers Should Review",
+    "pages": "Export Documents Pet Product Buyers Should Review",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-export-documents.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 151,
+    "key": 150,
+    "desc": "博客封面：How Buyers Should Review Factory Certificates",
+    "pages": "How Buyers Should Review Factory Certificates",
+    "photo": "7",
+    "current": "/images/generated-site/blog/review-pet-product-factory-certificates.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 152,
+    "key": 151,
+    "desc": "博客封面：Production Line Maintenance and OEM Supply Reliability",
+    "pages": "Production Line Maintenance and OEM Supply Reliability",
+    "photo": "=DISPIMG(\"ID_5F0EF19680BF42BC8325F344A5B5F26D\",1)",
+    "current": "/images/generated-site/blog/production-line-maintenance-oem-reliability.webp",
+    "extras": [
+      "=DISPIMG(\"ID_E5E986C20E1F4FF0AFB5DFC495486C45\",1)",
+      "=DISPIMG(\"ID_C765803F099C48CFA6E7C54CAAA662F4\",1)",
+      "=DISPIMG(\"ID_8F78659795174A0984BC1AFF18C70A9A\",1)",
+      "=DISPIMG(\"ID_D2416348B4554A308E6B3B5215B68198\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 153,
+    "key": 152,
+    "desc": "博客封面：How to Choose a Pet Product Supplier for Long-Term Growth",
+    "pages": "How to Choose a Pet Product Supplier for Long-Term Growth",
+    "photo": "7",
+    "current": "/images/generated-site/blog/choose-pet-product-supplier-long-term.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 154,
+    "key": 153,
+    "desc": "博客封面：China vs Vietnam for Pet Product Sourcing",
+    "pages": "China vs Vietnam for Pet Product Sourcing",
+    "photo": "7",
+    "current": "/images/generated-site/blog/china-vs-vietnam-pet-product-sourcing.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 155,
+    "key": 154,
+    "desc": "博客封面：How to Reduce Pet Product Purchasing Cost Responsibly",
+    "pages": "How to Reduce Pet Product Purchasing Cost Responsibly",
+    "photo": "7",
+    "current": "/images/generated-site/blog/reduce-pet-product-purchasing-cost.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 156,
+    "key": 155,
+    "desc": "博客封面：MOQ Guide for Private Label Pet Products",
+    "pages": "MOQ Guide for Private Label Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-pet-product-moq-guide.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 157,
+    "key": 156,
+    "desc": "博客封面：Lead Time Planning for Imported Pet Products",
+    "pages": "Lead Time Planning for Imported Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/imported-pet-product-lead-time.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 158,
+    "key": 157,
+    "desc": "博客封面：Incoterms for Pet Product Importers",
+    "pages": "Incoterms for Pet Product Importers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/incoterms-pet-product-importers.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 159,
+    "key": 158,
+    "desc": "博客封面：FOB vs CIF for Pet Pad Shipments",
+    "pages": "FOB vs CIF for Pet Pad Shipments",
+    "photo": "=DISPIMG(\"ID_35983C152CD54AF5B22B62F9A1E84E11\",1)",
+    "current": "/images/generated-site/blog/fob-vs-cif-pet-pad-shipments.webp",
+    "extras": [
+      null,
+      "=DISPIMG(\"ID_3045D4DBEECD4DE186E50EA8127A004A\",1)",
+      "=DISPIMG(\"ID_8154B74887F9408B9074DEFE5F28816F\",1)",
+      "=DISPIMG(\"ID_8719AE3B0198436FB807E69B5D8CBDA3\",1)",
+      "=DISPIMG(\"ID_C232C4B1A1B244129DACC0BD7A7C5919\",1)",
+      "=DISPIMG(\"ID_1A05E40C2C594CC4A5B77950C0F6BDCB\",1)",
+      "=DISPIMG(\"ID_F6C1FEFC0C574DD6992EA42C41C5FF2C\",1)",
+      "=DISPIMG(\"ID_5C8D8A3B0C074D44832A5B327766E3AC\",1)",
+      "=DISPIMG(\"ID_9B0724F9F3D24CBEBC0D9860008E3C93\",1)"
+    ]
+  },
+  {
+    "row": 160,
+    "key": 159,
+    "desc": "博客封面：Pre-Shipment Inspection for Pet Care Products",
+    "pages": "Pre-Shipment Inspection for Pet Care Products",
+    "photo": "=DISPIMG(\"ID_B4E3402ADBE0427FABA7D131BC344CB0\",1)",
+    "current": "/images/generated-site/blog/pre-shipment-inspection-pet-care-products.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 161,
+    "key": 160,
+    "desc": "博客封面：How to Evaluate Pet Product Samples",
+    "pages": "How to Evaluate Pet Product Samples",
+    "photo": "7",
+    "current": "/images/generated-site/blog/evaluate-pet-product-samples.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 162,
+    "key": 161,
+    "desc": "博客封面：Negotiation Tips for OEM Pet Product Buyers",
+    "pages": "Negotiation Tips for OEM Pet Product Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-pet-product-negotiation-tips.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 163,
+    "key": 162,
+    "desc": "博客封面：Pet Product Supplier Red Flags",
+    "pages": "Pet Product Supplier Red Flags",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-supplier-red-flags.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 164,
+    "key": 163,
+    "desc": "博客封面：Building an Annual Pet Product Sourcing Plan",
+    "pages": "Building an Annual Pet Product Sourcing Plan",
+    "photo": "7",
+    "current": "/images/generated-site/blog/annual-pet-product-sourcing-plan.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 165,
+    "key": 164,
+    "desc": "博客封面：Global Pet Care Market Signals for OEM Buyers",
+    "pages": "Global Pet Care Market Signals for OEM Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/global-pet-care-market-oem-buyers.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 166,
+    "key": 165,
+    "desc": "博客封面：Private Label Pet Product Trends for B2B Buyers",
+    "pages": "Private Label Pet Product Trends for B2B Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-pet-product-trends.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 167,
+    "key": 166,
+    "desc": "博客封面：Retail Trends Shaping Pet Pad Product Ranges",
+    "pages": "Retail Trends Shaping Pet Pad Product Ranges",
+    "photo": "7",
+    "current": "/images/generated-site/blog/retail-trends-pet-pad-ranges.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 168,
+    "key": 167,
+    "desc": "博客封面：Pet Product Packaging Trends for Private Label",
+    "pages": "Pet Product Packaging Trends for Private Label",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-packaging-trends.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 169,
+    "key": 168,
+    "desc": "博客封面：Sustainability in Absorbent Pet Products",
+    "pages": "Sustainability in Absorbent Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/sustainability-absorbent-pet-products.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 170,
+    "key": 169,
+    "desc": "博客封面：How to Review Eco Claims for Pet Products",
+    "pages": "How to Review Eco Claims for Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/review-eco-claims-pet-products.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 171,
+    "key": 170,
+    "desc": "博客封面：Managing Raw Material Volatility in Pet Product Sourcing",
+    "pages": "Managing Raw Material Volatility in Pet Product Sourcing",
+    "photo": "=DISPIMG(\"ID_AAA39778A9D84AE8B1FBA1EC934E3D99\",1)",
+    "current": "/images/generated-site/blog/raw-material-volatility-pet-products.webp",
+    "extras": [
+      "=DISPIMG(\"ID_73D03262FB234222A48528AFF6CE20EE\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 172,
+    "key": 171,
+    "desc": "博客封面：SAP Supply and Pricing for Absorbent Product Buyers",
+    "pages": "SAP Supply and Pricing for Absorbent Product Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/sap-supply-pricing-absorbent-products.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 173,
+    "key": 172,
+    "desc": "博客封面：Fluff Pulp and Absorbent Paper Supply Trends",
+    "pages": "Fluff Pulp and Absorbent Paper Supply Trends",
+    "photo": "=DISPIMG(\"ID_98748DA138D5492EB058878511B6D55C\",1)",
+    "current": "/images/generated-site/blog/fluff-pulp-absorbent-paper-supply.webp",
+    "extras": [
+      "=DISPIMG(\"ID_7A632E6DDD3347ABBB9EA83572BFCA27\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 174,
+    "key": 173,
+    "desc": "博客封面：PE Film Trends in Pet Pads and Underpads",
+    "pages": "PE Film Trends in Pet Pads and Underpads",
+    "photo": "=DISPIMG(\"ID_097CAB5127AE49EF9AA1EB6E766A2CD6\",1)",
+    "current": "/images/generated-site/blog/pe-film-trends-pet-pads-underpads.webp",
+    "extras": [
+      null,
+      "=DISPIMG(\"ID_27E4A36958CD4686BA5F23DAB7C2EC2B\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 175,
+    "key": 174,
+    "desc": "博客封面：Building a Resilient Pet Product Supply Chain",
+    "pages": "Building a Resilient Pet Product Supply Chain",
+    "photo": "=DISPIMG(\"ID_64C02974C6144166857799A171965AEF\",1)",
+    "current": "/images/generated-site/blog/resilient-pet-product-supply-chain.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 176,
+    "key": 175,
+    "desc": "博客封面：Automation in Pet Pad Manufacturing",
+    "pages": "Automation in Pet Pad Manufacturing",
+    "photo": "7",
+    "current": "/images/generated-site/blog/automation-pet-pad-manufacturing.webp",
+    "extras": [
+      "I176",
+      null,
+      "=DISPIMG(\"ID_68F1F02EE0C4479383966ADCA45B5F1F\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 177,
+    "key": 176,
+    "desc": "博客封面：E-Commerce Requirements for Private Label Pet Products",
+    "pages": "E-Commerce Requirements for Private Label Pet Products",
+    "photo": "7",
+    "current": "/images/generated-site/blog/ecommerce-private-label-pet-products.webp",
+    "extras": [
+      "=DISPIMG(\"ID_A266AB37C481482598F20E679DEBFD2F\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 178,
+    "key": 177,
+    "desc": "博客封面：The Future of OEM Pet Product Manufacturing",
+    "pages": "The Future of OEM Pet Product Manufacturing",
+    "photo": "=DISPIMG(\"ID_2D1522220E024ECD83AF4DD343A37F82\",1)",
+    "current": "/images/generated-site/blog/future-oem-pet-product-manufacturing.webp",
+    "extras": [
+      "=DISPIMG(\"ID_2944F04605A943E6B2F9D333B351A9A5\",1)",
+      "=DISPIMG(\"ID_8E2628C01C6E4D56BDF7A5A114BE55B3\",1)",
+      "=DISPIMG(\"ID_20BE594A4EAD4073B34044E9FA25B824\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 179,
+    "key": 178,
+    "desc": "博客封面：Pet Product Sourcing Priorities for 2027",
+    "pages": "Pet Product Sourcing Priorities for 2027",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-product-sourcing-priorities-2027.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 180,
+    "key": 179,
+    "desc": "博客封面：OEM Pet Pad Supplier Qualification Checklist for Importers",
+    "pages": "OEM Pet Pad Supplier Qualification Checklist for Importers",
+    "photo": "=DISPIMG(\"ID_10F175D14E054C72A5FE1C5332AC9416\",1)",
+    "current": "/images/generated-site/blog/oem-pet-pad-supplier-qualification-checklist.webp",
+    "extras": [
+      "=DISPIMG(\"ID_33B99FA125004F00B9460B0E1D6F2F9F\",1)",
+      "=DISPIMG(\"ID_D4E10B5D4DBC491DA59DD130F31F2D1E\",1)",
+      "=DISPIMG(\"ID_6EF1C29378DA4F7D9434B5A67470491A\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 181,
+    "key": 180,
+    "desc": "博客封面：Private Label Pet Pads Launch Timeline: From Brief to First Shipment",
+    "pages": "Private Label Pet Pads Launch Timeline: From Brief to First Shipment",
+    "photo": "7",
+    "current": "/images/generated-site/blog/private-label-pet-pad-launch-timeline.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 182,
+    "key": 181,
+    "desc": "博客封面：Pet Pad Factory Audit: A Remote and On-Site Buyer Guide",
+    "pages": "Pet Pad Factory Audit: A Remote and On-Site Buyer Guide",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-factory-audit-remote-and-onsite.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 183,
+    "key": 182,
+    "desc": "博客封面：Pet Pad Packaging Compliance and Artwork Checklist for B2B Buyers",
+    "pages": "Pet Pad Packaging Compliance and Artwork Checklist for B2B Buyers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-packaging-compliance-artwork-checklist.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 184,
+    "key": 183,
+    "desc": "博客封面：Pet Pad Landed Cost Model: A Practical Guide for Importers",
+    "pages": "Pet Pad Landed Cost Model: A Practical Guide for Importers",
+    "photo": "7",
+    "current": "/images/generated-site/blog/pet-pad-landed-cost-model-importers.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 185,
+    "key": 184,
+    "desc": "博客封面：Pet Pad Quality Control Inspection Plan for OEM Orders",
+    "pages": "Pet Pad Quality Control Inspection Plan for OEM Orders",
+    "photo": "=DISPIMG(\"ID_7281B18D762F42F7BA8007E8B11BE8BD\",1)",
+    "current": "/images/generated-site/blog/pet-pad-quality-control-inspection-plan.webp",
+    "extras": [
+      "=DISPIMG(\"ID_5AE8384C13974A8C9BF4A4F807480CFC\",1)",
+      "=DISPIMG(\"ID_10DE88EF7CF34EBDBF85E08DF01A9498\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 186,
+    "key": 185,
+    "desc": "博客封面：How to Choose a Reliable Pet Pad Manufacturer",
+    "pages": "How to Choose a Reliable Pet Pad Manufacturer",
+    "photo": "=DISPIMG(\"ID_1B423BB89BC2455A813CC7B01434BB6F\",1)",
+    "current": "/images/generated-site/blog/choose-reliable-pet-pad-manufacturer.webp",
+    "extras": [
+      "=DISPIMG(\"ID_BFC27C47C48E47D2A5A39B30A9D3FE47\",1)",
+      "=DISPIMG(\"ID_E22CCFC95AF84D9A93B6AD56EBE605C1\",1)",
+      "=DISPIMG(\"ID_8E69D788B35546F4809A47060779904F\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 187,
+    "key": 186,
+    "desc": "博客封面：OEM vs ODM Pet Pads: What Buyers Need to Know",
+    "pages": "OEM vs ODM Pet Pads: What Buyers Need to Know",
+    "photo": "7",
+    "current": "/images/generated-site/blog/oem-vs-odm-pet-pads-buyers-guide.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 188,
+    "key": 187,
+    "desc": "博客封面：Private Label Pet Training Pads: A Complete Buyer’s Guide",
+    "pages": "Private Label Pet Training Pads: A Complete Buyer’s Guide",
+    "photo": "=DISPIMG(\"ID_7D66989E432F46C0AAE6BC222FDCC332\",1)",
+    "current": "/images/generated-site/blog/private-label-pet-training-pads-buyers-guide.webp",
+    "extras": [
+      "=DISPIMG(\"ID_4F79959999DD49E49AF500BAC26DDCA3\",1)",
+      "=DISPIMG(\"ID_2537EA21831B491CB586E2631CE37083\",1)",
+      "=DISPIMG(\"ID_109DF3759D1A4A2E9540DFA18C1451FE\",1)",
+      "=DISPIMG(\"ID_B20C0B5B015745EEBD512CFC33B554E4\",1)",
+      "=DISPIMG(\"ID_DD218E1E966D4BE380977A4FFA81327D\",1)",
+      "=DISPIMG(\"ID_895196D2B6D14D8CB6F63953ADAEE80E\",1)",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 189,
+    "key": 188,
+    "desc": "博客封面：How Puppy Pads Are Manufactured",
+    "pages": "How Puppy Pads Are Manufactured",
+    "photo": "=DISPIMG(\"ID_3130158CB62D402284055CF17DDE4BE8\",1)",
+    "current": "/images/generated-site/blog/how-puppy-pads-are-manufactured.webp",
+    "extras": [
+      "=DISPIMG(\"ID_4D900F7699D542129FA9B40C6B70BEC1\",1)",
+      "=DISPIMG(\"ID_6EEE131D7313443C917525D330773568\",1)",
+      null,
+      "=DISPIMG(\"ID_28526F6858EA4D1E8F2C6A5A753E6893\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 190,
+    "key": 189,
+    "desc": "博客封面：How to Evaluate a Pet Pad Factory Before Placing an Order",
+    "pages": "How to Evaluate a Pet Pad Factory Before Placing an Order",
+    "photo": "=DISPIMG(\"ID_D6AA757FA1404C27AB6BBBF2B87044BF\",1)",
+    "current": "/images/generated-site/blog/evaluate-pet-pad-factory-before-order.webp",
+    "extras": [
+      "=DISPIMG(\"ID_976010EA6AB54018AC120ABC82132436\",1)",
+      "=DISPIMG(\"ID_2DD3C50ABF744650B1F37C7EA4CCAC77\",1)",
+      "=DISPIMG(\"ID_E8CC0BDF98B349FE9808E600C5336ECE\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 191,
+    "key": 190,
+    "desc": "博客封面：What Is SAP in Puppy Pads and Why Does It Matter",
+    "pages": "What Is SAP in Puppy Pads and Why Does It Matter",
+    "photo": "7",
+    "current": "/images/generated-site/blog/sap-in-puppy-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 192,
+    "key": 191,
+    "desc": "博客封面：Virgin Pulp vs Recycled Pulp in Pet Pads",
+    "pages": "Virgin Pulp vs Recycled Pulp in Pet Pads",
+    "photo": "7",
+    "current": "/images/generated-site/blog/virgin-pulp-vs-recycled-pulp-pet-pads.webp",
+    "extras": [
+      "=DISPIMG(\"ID_92E512993DB84F529097CC9491EB1237\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 193,
+    "key": 192,
+    "desc": "博客封面：What Determines the Absorbency of a Puppy Pad",
+    "pages": "What Determines the Absorbency of a Puppy Pad",
+    "photo": "7",
+    "current": "/images/generated-site/blog/what-determines-puppy-pad-absorbency.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 194,
+    "key": 193,
+    "desc": "博客封面：OEM Pet Pad MOQ, Sampling and Lead Time Explained",
+    "pages": null,
+    "photo": "=DISPIMG(\"ID_CDB695327EB3403080C193ECB612717A\",1)",
+    "current": "/images/generated-site/blog/oem-pet-pad-moq-sampling-lead-time.webp",
+    "extras": [
+      "=DISPIMG(\"ID_8681BD7201D34D76805131B68D5A13F2\",1)",
+      "=DISPIMG(\"ID_19B5A13C782142FC8A6EDFE0C44A6720\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 195,
+    "key": 194,
+    "desc": "博客封面：Custom Packaging Options for Private Label Pet Pads",
+    "pages": "Custom Packaging Options for Private Label Pet Pads",
+    "photo": null,
+    "current": "/images/generated-site/blog/custom-packaging-private-label-pet-pads.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 196,
+    "key": 195,
+    "desc": "博客封面：How Importers Can Reduce Pet Pad Procurement Costs",
+    "pages": "How Importers Can Reduce Pet Pad Procurement Costs",
+    "photo": "7",
+    "current": "/images/generated-site/blog/reduce-pet-pad-procurement-costs.webp",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 197,
+    "key": 196,
+    "desc": "博客封面：Pet Pad Quality Control: What Professional Buyers Should Check",
+    "pages": "Pet Pad Quality Control: What Professional Buyers Should Check",
+    "photo": "=DISPIMG(\"ID_D624AF71508441A1B56A3E28368598CB\",1)",
+    "current": "/images/generated-site/blog/pet-pad-quality-control-buyers-checklist.webp",
+    "extras": [
+      "=DISPIMG(\"ID_E6C92E1E8B3840A88C3BC8B7244A5574\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 198,
+    "key": 197,
+    "desc": "一次性宠物训练尿垫白底主图",
+    "pages": "首页\nPet Hygiene Products Manufacturer\nDisposable Pet Training Pads",
+    "photo": "=DISPIMG(\"ID_A37991E9570247488291F5E368D619C3\",1)",
+    "current": "/images/products/pet-training-pads/pet-training-pad-main.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_03894332779D4CBC9549CC6F83DB240D\",1)",
+      "=DISPIMG(\"ID_FF90967517014CE09C487F248457DC67\",1)",
+      "=DISPIMG(\"ID_73F983FE902C43C7988BEBD32CED828F\",1)",
+      null,
+      "=DISPIMG(\"ID_93808B8E989346ABA28400F17F9A40FD\",1)",
+      "=DISPIMG(\"ID_EEE3FD8AD15248DD8B8B184B3891B4C6\",1)",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 199,
+    "key": 198,
+    "desc": "欧美家庭宠物训练尿垫使用场景",
+    "pages": "Disposable Pet Training Pads",
+    "photo": null,
+    "current": "/images/products/pet-training-pads/pet-training-pad-home.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 200,
+    "key": 199,
+    "desc": "宠物训练尿垫表层与封边微距细节",
+    "pages": "Disposable Pet Training Pads",
+    "photo": "=DISPIMG(\"ID_D004FCF447BF43FC88E9A3AAEE9F6B2B\",1)",
+    "current": "/images/products/pet-training-pads/pet-training-pad-detail.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_91502F96B77A4DA8A275DCBB34F40666\",1)",
+      "=DISPIMG(\"ID_67CB0548CAE34CA3B7A5EFE3A007648E\",1)",
+      "=DISPIMG(\"ID_DABDB2EF13FC421FB8513B5E808D8155\",1)",
+      "=DISPIMG(\"ID_2F70C96A2C094FD1A8965E7741E1E5F3\",1)",
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 201,
+    "key": 200,
+    "desc": "宠物训练尿垫五层结构分解展示",
+    "pages": "Disposable Pet Training Pads",
+    "photo": "=DISPIMG(\"ID_FE23FB6AC37F4274A99DC0C467433DDC\",1)",
+    "current": "/images/products/pet-training-pads/pet-training-pad-structure.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_591AE55D58064004ACB7C4E4670392BB\",1)",
+      "=DISPIMG(\"ID_955DDEC93D8745D1A4325E45426E2035\",1)",
+      "=DISPIMG(\"ID_6468E5DB23E44A32BCC75BEF676EFD10\",1)",
+      "=DISPIMG(\"ID_33F92AA2E8044AEF949BFA48156B3435\",1)",
+      "=DISPIMG(\"ID_D4DFE50B75C44239A08DAA4808067532\",1)",
+      "=DISPIMG(\"ID_5CFF98851CD74A1EA076F9CCE0AE9EB0\",1)",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 202,
+    "key": 201,
+    "desc": "宠物训练尿垫私牌包装展示",
+    "pages": "Disposable Pet Training Pads",
+    "photo": null,
+    "current": "/images/products/pet-training-pads/pet-training-pad-package.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 203,
+    "key": 202,
+    "desc": "成人护理垫白底主图",
+    "pages": "首页\nPet Hygiene Products Manufacturer\nAdult Underpads",
+    "photo": null,
+    "current": "/images/products/adult-underpads/adult-underpad-main.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 204,
+    "key": 203,
+    "desc": "成人护理垫家庭护理使用场景",
+    "pages": "Adult Underpads",
+    "photo": null,
+    "current": "/images/products/adult-underpads/adult-underpad-home-care.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 205,
+    "key": 204,
+    "desc": "成人护理垫吸收芯材料微距细节",
+    "pages": "Adult Underpads",
+    "photo": null,
+    "current": "/images/products/adult-underpads/adult-underpad-core-detail.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 206,
+    "key": 205,
+    "desc": "成人护理垫不同尺寸对比展示",
+    "pages": "Adult Underpads",
+    "photo": null,
+    "current": "/images/products/adult-underpads/adult-underpad-size.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 207,
+    "key": 206,
+    "desc": "成人护理垫私牌包装展示",
+    "pages": "Adult Underpads",
+    "photo": null,
+    "current": "/images/products/adult-underpads/adult-underpad-package.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 208,
+    "key": 207,
+    "desc": "宠物吸水纸卷材与片材白底主图",
+    "pages": "首页\nPet Hygiene Products Manufacturer\nPet Absorbent Paper",
+    "photo": "=DISPIMG(\"ID_13CC0CC3A1324EA297ECBB424A4F7BDA\",1)",
+    "current": "/images/products/pet-absorbent-paper/pet-absorbent-paper-main.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_20B4101FE67D499FB4CECEEA24EFB14E\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 209,
+    "key": 208,
+    "desc": "宠物吸水纸护理应用场景",
+    "pages": "Pet Absorbent Paper",
+    "photo": null,
+    "current": "/images/products/pet-absorbent-paper/pet-absorbent-paper-pet-care.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 210,
+    "key": 209,
+    "desc": "宠物吸水纸纤维材料微距细节",
+    "pages": "Pet Absorbent Paper",
+    "photo": "=DISPIMG(\"ID_0391BD4748B749708AA50D6D74E576DC\",1)",
+    "current": "/images/products/pet-absorbent-paper/pet-absorbent-paper-material.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_183F8F6B10BF42B8B491C9B3E389FCCB\",1)",
+      "=DISPIMG(\"ID_37BC762AB4C14697B323C4225606A371\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 211,
+    "key": 210,
+    "desc": "宠物吸水纸卷材与批量包装展示",
+    "pages": "Pet Absorbent Paper",
+    "photo": "=DISPIMG(\"ID_DADAA547B8934785BA1BA1F4ECD48167\",1)",
+    "current": "/images/products/pet-absorbent-paper/pet-absorbent-paper-roll-package.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_E3708D25250F41FC804127B08474D9C9\",1)",
+      "=DISPIMG(\"ID_7AD911D542DF474093BF76307523C5B0\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 212,
+    "key": 211,
+    "desc": "宠物吸水纸尿垫转换应用场景",
+    "pages": "Pet Absorbent Paper",
+    "photo": "=DISPIMG(\"ID_8BAD24EDAB9B4E778BB5BA4DDB2B2D04\",1)",
+    "current": "/images/products/pet-absorbent-paper/pet-absorbent-paper-application.jpg",
+    "extras": [
+      "=DISPIMG(\"ID_C398B04181554A36B7EA2CBA31880DFF\",1)",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 213,
+    "key": 212,
+    "desc": "一次性宠物清洁用品白底主图",
+    "pages": "首页\nPet Hygiene Products Manufacturer\nDisposable Cleaning Products",
+    "photo": null,
+    "current": "/images/products/disposable-cleaning-products/disposable-cleaning-products-main.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 214,
+    "key": 213,
+    "desc": "一次性宠物清洁用品护理使用场景",
+    "pages": "Disposable Cleaning Products",
+    "photo": null,
+    "current": "/images/products/disposable-cleaning-products/disposable-cleaning-products-pet-care.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 215,
+    "key": 214,
+    "desc": "一次性宠物清洁用品私牌包装展示",
+    "pages": "Disposable Cleaning Products",
+    "photo": null,
+    "current": "/images/products/disposable-cleaning-products/disposable-cleaning-products-package.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 216,
+    "key": 215,
+    "desc": "一次性宠物清洁用品家庭使用场景",
+    "pages": "Disposable Cleaning Products",
+    "photo": null,
+    "current": "/images/products/disposable-cleaning-products/disposable-cleaning-products-use.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "row": 217,
+    "key": 216,
+    "desc": "一次性宠物清洁用品无纺布材料微距细节",
+    "pages": "Disposable Cleaning Products",
+    "photo": null,
+    "current": "/images/products/disposable-cleaning-products/disposable-cleaning-products-detail.jpg",
+    "extras": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]

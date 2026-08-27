@@ -1,0 +1,9 @@
+Use case: product-mockup
+Asset type: clean 16:9 ecommerce blog banner background
+Primary request: Create an empty, photorealistic warm modern living-room product photography set. A pale natural oak tabletop spans the lower 38 percent of the frame, with a softly blurred cream sofa and one restrained green indoor plant in the background. Leave the tabletop completely empty for later product compositing.
+Style/medium: premium natural commercial photography, realistic lens rendering, subtle shallow depth of field.
+Composition/framing: landscape, eye-level tabletop view, uncluttered central and foreground space, balanced visual weight, no objects on the table.
+Lighting/mood: soft warm daylight from the right, gentle grounded shadows, bright clean atmosphere.
+Color palette: warm white, light neutral gray, natural pale wood, restrained green.
+Constraints: background only; no package, no paper sheets, no pads, no animals, no text, no logos, no watermark.
+Avoid: blue border, product mockups, excessive blur, dark room, dramatic shadows, colored gradient, decorative clutter.

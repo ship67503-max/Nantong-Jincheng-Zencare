@@ -1,0 +1,6 @@
+Use case: product-mockup
+Asset type: neutral product-photo background reference
+Primary request: a clean, softly lit neutral warm-white studio background for a 16:9 absorbent-paper product photograph, with a pale matte tabletop and a very subtle gray-beige wall gradient.
+Style/medium: realistic commercial product photography backdrop, smooth and uncluttered.
+Lighting/mood: soft even daylight, no hard shadows, no objects.
+Constraints: background only; no package, no paper, no pad, no text, no logo, no watermark.

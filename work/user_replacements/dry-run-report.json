@@ -1,0 +1,2864 @@
+[
+  {
+    "row": 2,
+    "description": "宠物卫生用品自动化生产线与洁净生产车间",
+    "sitePath": "/images/oem/production/production-line-clean.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\production-line-clean.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-002-ID_A167EEADDC2245AF818C54A12378E1D0.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "png",
+      "width": 850,
+      "height": 478,
+      "bytes": 786205,
+      "sha256": "d375277c1113dd6c68d442c8be640915a986a58db8953793c6501c74d941c683"
+    },
+    "output": {
+      "format": "png",
+      "width": 850,
+      "height": 478,
+      "bytes": 786205,
+      "sha256": "d375277c1113dd6c68d442c8be640915a986a58db8953793c6501c74d941c683"
+    }
+  },
+  {
+    "row": 3,
+    "description": "一次性宠物训练尿垫产品展示",
+    "sitePath": "/images/oem/products/custom-disposable-pet-pads-premium.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-disposable-pet-pads-premium.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-003-ID_730E50022D484E998636A5FA6638CB61.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1638757,
+      "sha256": "6f1b1ac059748434199f3dc6a2a964e028c2c90ec83cbdb1504e281f3439c850"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1638757,
+      "sha256": "6f1b1ac059748434199f3dc6a2a964e028c2c90ec83cbdb1504e281f3439c850"
+    }
+  },
+  {
+    "row": 4,
+    "description": "成人护理垫产品展示",
+    "sitePath": "/images/oem/products/adult-underpads-hero.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\adult-underpads-hero.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-004-ID_13D5F673450349C196E0BC52B99F998E.png",
+      "format": "png",
+      "width": 1672,
+      "height": 940
+    },
+    "previous": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1561783,
+      "sha256": "1c25f096d6c526403ac807f6aa5ffd3b02e48f67cfb9a2b680c62d5ae7ee7333"
+    },
+    "output": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1561783,
+      "sha256": "1c25f096d6c526403ac807f6aa5ffd3b02e48f67cfb9a2b680c62d5ae7ee7333"
+    }
+  },
+  {
+    "row": 5,
+    "description": "宠物护理垫与手套湿巾零售包装展示",
+    "sitePath": "/images/oem/products/custom-care-pad-packaging-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-care-pad-packaging-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-005-ID_33D0DE929B1643758C5161826F7F90C2.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1623817,
+      "sha256": "939cb8b8f7f4e477af217bc7935b709490492abcb086a5741d30be6c8a6f1ba7"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1623817,
+      "sha256": "939cb8b8f7f4e477af217bc7935b709490492abcb086a5741d30be6c8a6f1ba7"
+    }
+  },
+  {
+    "row": 6,
+    "description": "宠物吸水纸片及吸收芯材料展示",
+    "sitePath": "/images/oem/products/custom-absorbent-paper-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-absorbent-paper-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-006-ID_6A57B998DB434828981F7DBD5CF21DD1.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941
+    },
+    "previous": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1671994,
+      "sha256": "2c1753e7bf01e480ef5113a772f299ac5ed509b7fff433794185b7da741bd03e"
+    },
+    "output": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1671994,
+      "sha256": "2c1753e7bf01e480ef5113a772f299ac5ed509b7fff433794185b7da741bd03e"
+    }
+  },
+  {
+    "row": 7,
+    "description": "定制宠物拾便袋产品展示",
+    "sitePath": "/images/oem/products/custom-pet-waste-bags-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-pet-waste-bags-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-007-ID_0CD727E048D643C195E151F060F5B6B8.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1682789,
+      "sha256": "47383d9575d639c742764a1005fb5009ddfe5eb0b8a21bff14a504b5279a87b7"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1682789,
+      "sha256": "47383d9575d639c742764a1005fb5009ddfe5eb0b8a21bff14a504b5279a87b7"
+    }
+  },
+  {
+    "row": 7,
+    "description": "定制宠物拾便袋产品展示",
+    "sitePath": "/images/custom-pet-waste-bags-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\custom-pet-waste-bags-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-007-ID_0CD727E048D643C195E151F060F5B6B8.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1682789,
+      "sha256": "47383d9575d639c742764a1005fb5009ddfe5eb0b8a21bff14a504b5279a87b7"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1682789,
+      "sha256": "47383d9575d639c742764a1005fb5009ddfe5eb0b8a21bff14a504b5279a87b7"
+    }
+  },
+  {
+    "row": 7,
+    "description": "定制宠物拾便袋产品展示",
+    "sitePath": "/images/oem/products/custom-pet-waste-bags-ai.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-pet-waste-bags-ai.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-007-ID_0CD727E048D643C195E151F060F5B6B8.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 100982,
+      "sha256": "a930690ed4153a921c774d90d8e84c452fc41238e50c4c32ba9126d7d66599b5"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 100982,
+      "sha256": "a930690ed4153a921c774d90d8e84c452fc41238e50c4c32ba9126d7d66599b5"
+    }
+  },
+  {
+    "row": 8,
+    "description": "活性炭除味宠物尿垫产品展示",
+    "sitePath": "/images/oem/products/custom-charcoal-pet-pad-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-charcoal-pet-pad-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-008-ID_80F5BF0761FE4B4A9D2F6CC0490A4D26.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1894043,
+      "sha256": "69afcec77208f2eff854e4326ffcfd3a10bdea71371cfd03922531f8b131f059"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1894043,
+      "sha256": "69afcec77208f2eff854e4326ffcfd3a10bdea71371cfd03922531f8b131f059"
+    }
+  },
+  {
+    "row": 9,
+    "description": "带粘贴防滑结构的宠物尿垫产品展示",
+    "sitePath": "/images/oem/products/custom-adhesive-pet-pad-ai.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\custom-adhesive-pet-pad-ai.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-009-ID_8D6CBF8960D742CD80252277F62B4668.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1674723,
+      "sha256": "a23de1d1d456ae719330b1a61caf99f5165356c78b98e18b18d1d71ec9823a9f"
+    },
+    "output": {
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1674723,
+      "sha256": "a23de1d1d456ae719330b1a61caf99f5165356c78b98e18b18d1d71ec9823a9f"
+    }
+  },
+  {
+    "row": 10,
+    "description": "自动化复合与覆膜生产设备",
+    "sitePath": "/images/oem/production/lamination-detail-clean.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\lamination-detail-clean.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-010-ID_E89920E850EC405AA9F89C0011469EE2.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "png",
+      "width": 850,
+      "height": 478,
+      "bytes": 676456,
+      "sha256": "525f8f9fee87bc959157ead429a69b90b45d00a77607a5502ee9d6e4abebca7b"
+    },
+    "output": {
+      "format": "png",
+      "width": 850,
+      "height": 478,
+      "bytes": 676456,
+      "sha256": "525f8f9fee87bc959157ead429a69b90b45d00a77607a5502ee9d6e4abebca7b"
+    }
+  },
+  {
+    "row": 11,
+    "description": "成品仓储、包装与交付场景",
+    "sitePath": "/images/oem/warehouse/warehouse-storage-clean.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\warehouse\\warehouse-storage-clean.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-011-ID_F2E4F80A086B41F9A55FD999F686E501.jpeg",
+      "format": "jpeg",
+      "width": 1132,
+      "height": 636
+    },
+    "previous": {
+      "format": "png",
+      "width": 1132,
+      "height": 636,
+      "bytes": 1149705,
+      "sha256": "3d4a38efa087672ecd1043c6b37911a672ded8bf5e5c066829f5cf9dfccb69fa"
+    },
+    "output": {
+      "format": "png",
+      "width": 1132,
+      "height": 636,
+      "bytes": 1149705,
+      "sha256": "3d4a38efa087672ecd1043c6b37911a672ded8bf5e5c066829f5cf9dfccb69fa"
+    }
+  },
+  {
+    "row": 12,
+    "description": "吸水纸与吸收芯材料样品",
+    "sitePath": "/images/oem/materials/products-absorbent-paper-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\materials\\products-absorbent-paper-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-012-ID_C71FB24ED3864398B4DC07A8A9B3C088.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    }
+  },
+  {
+    "row": 12,
+    "description": "吸水纸与吸收芯材料样品",
+    "sitePath": "/images/generated-site/materials/products-absorbent-paper-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\materials\\products-absorbent-paper-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-012-ID_C71FB24ED3864398B4DC07A8A9B3C088.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    }
+  },
+  {
+    "row": 13,
+    "description": "宠物护理产品私牌包装评审场景",
+    "sitePath": "/images/oem/packaging/private-label-packaging-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\packaging\\private-label-packaging-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-013-ID_D8BDD1F7039E4EAD8CDDBE64DF02924E.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 159670,
+      "sha256": "37611a756d7042f9a911114ff2d90fdd4d9adfcc853b1062d952a28c97e7be94"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 159670,
+      "sha256": "37611a756d7042f9a911114ff2d90fdd4d9adfcc853b1062d952a28c97e7be94"
+    }
+  },
+  {
+    "row": 13,
+    "description": "宠物护理产品私牌包装评审场景",
+    "sitePath": "/images/generated-site/packaging/private-label-packaging-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\packaging\\private-label-packaging-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-013-ID_D8BDD1F7039E4EAD8CDDBE64DF02924E.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 159670,
+      "sha256": "37611a756d7042f9a911114ff2d90fdd4d9adfcc853b1062d952a28c97e7be94"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 159670,
+      "sha256": "37611a756d7042f9a911114ff2d90fdd4d9adfcc853b1062d952a28c97e7be94"
+    }
+  },
+  {
+    "row": 14,
+    "description": "包装定制方案与私牌支持展示",
+    "sitePath": "/images/oem/quality/packaging-customization-options.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\packaging-customization-options.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-014-ID_E8199B53413440A4AACFECF2126DA944.jpeg",
+      "format": "jpeg",
+      "width": 2048,
+      "height": 1150
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 898,
+      "bytes": 104654,
+      "sha256": "c2e1d4b2c02a26f1a0d41129e30e0fbbc7b8c006cf2fd44fa1a9dab8d1b6e6b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 898,
+      "bytes": 104654,
+      "sha256": "c2e1d4b2c02a26f1a0d41129e30e0fbbc7b8c006cf2fd44fa1a9dab8d1b6e6b4"
+    }
+  },
+  {
+    "row": 14,
+    "description": "包装定制方案与私牌支持展示",
+    "sitePath": "/images/generated-site/b2b-optimization/packaging-customization-options.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\b2b-optimization\\packaging-customization-options.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-014-ID_E8199B53413440A4AACFECF2126DA944.jpeg",
+      "format": "jpeg",
+      "width": 2048,
+      "height": 1150
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 898,
+      "bytes": 104654,
+      "sha256": "c2e1d4b2c02a26f1a0d41129e30e0fbbc7b8c006cf2fd44fa1a9dab8d1b6e6b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 898,
+      "bytes": 104654,
+      "sha256": "c2e1d4b2c02a26f1a0d41129e30e0fbbc7b8c006cf2fd44fa1a9dab8d1b6e6b4"
+    }
+  },
+  {
+    "row": 18,
+    "description": "样品确认与私牌包装评审场景",
+    "sitePath": "/images/oem/quality/private-label-packaging-review.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\private-label-packaging-review.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-018-ID_4A4FB1F8C2FE4ABCA62FD34F6F7D1BB9.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 215390,
+      "sha256": "6369aa4ac3941588435d6138bcae022d9242d4636d92dd4f05376eebee3cb882"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 215390,
+      "sha256": "6369aa4ac3941588435d6138bcae022d9242d4636d92dd4f05376eebee3cb882"
+    }
+  },
+  {
+    "row": 18,
+    "description": "样品确认与私牌包装评审场景",
+    "sitePath": "/images/generated-site/b2b-optimization/private-label-packaging-review.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\b2b-optimization\\private-label-packaging-review.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-018-ID_4A4FB1F8C2FE4ABCA62FD34F6F7D1BB9.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 215390,
+      "sha256": "6369aa4ac3941588435d6138bcae022d9242d4636d92dd4f05376eebee3cb882"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 215390,
+      "sha256": "6369aa4ac3941588435d6138bcae022d9242d4636d92dd4f05376eebee3cb882"
+    }
+  },
+  {
+    "row": 19,
+    "description": "宠物尿垫质量检验与实验室测试",
+    "sitePath": "/images/oem/quality/quality-inspection-lab-mask.png",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\quality-inspection-lab-mask.png",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-019-ID_E045D8E23B574C418E66CFE917DAF548.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1842955,
+      "sha256": "4e949d55c46ebd28aa453da7fe94785c3cde1e40b2767fb6941af304371af92d"
+    },
+    "output": {
+      "format": "png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1842955,
+      "sha256": "4e949d55c46ebd28aa453da7fe94785c3cde1e40b2767fb6941af304371af92d"
+    }
+  },
+  {
+    "row": 20,
+    "description": "吸收性能测试与出货检验场景",
+    "sitePath": "/images/oem/warehouse/absorbency-testing.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\warehouse\\absorbency-testing.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-020-ID_79920D5D4E9E4BE6875AD252B457ABB0.jpeg",
+      "format": "jpeg",
+      "width": 4032,
+      "height": 2268
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 238686,
+      "sha256": "bcebe3e8726852b712e0c8fefe347fc3f5a034e634e322e26c4d4eff929f3f52"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 238686,
+      "sha256": "bcebe3e8726852b712e0c8fefe347fc3f5a034e634e322e26c4d4eff929f3f52"
+    }
+  },
+  {
+    "row": 22,
+    "description": "宠物尿垫PE底膜与多层结构细节",
+    "sitePath": "/images/oem/materials/products-pe-film-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\materials\\products-pe-film-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-022-ID_C1C4E3547FA448D0A56CDD15AC53A158.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    }
+  },
+  {
+    "row": 23,
+    "description": "多层宠物尿垫结构与折叠样品",
+    "sitePath": "/images/generated-site/products/products-pet-pad-structure-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\products\\products-pet-pad-structure-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-023-ID_0F25154296E648EC9B3378134B778E46.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    }
+  },
+  {
+    "row": 24,
+    "description": "宠物尿垫实验室质量检测场景",
+    "sitePath": "/images/generated-site/quality-control/factory-quality-control-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\quality-control\\factory-quality-control-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-024-ID_E8B3F37EB8FB46AEA2B5CABFE85801AE.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 227804,
+      "sha256": "197a405a7e94653e67c7745fc36309bd86d898de6722aa374473ed30eeb1bca7"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 227804,
+      "sha256": "197a405a7e94653e67c7745fc36309bd86d898de6722aa374473ed30eeb1bca7"
+    }
+  },
+  {
+    "row": 24,
+    "description": "宠物尿垫实验室质量检测场景",
+    "sitePath": "/images/oem/quality/factory-quality-control-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\factory-quality-control-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-024-ID_E8B3F37EB8FB46AEA2B5CABFE85801AE.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 227804,
+      "sha256": "197a405a7e94653e67c7745fc36309bd86d898de6722aa374473ed30eeb1bca7"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 227804,
+      "sha256": "197a405a7e94653e67c7745fc36309bd86d898de6722aa374473ed30eeb1bca7"
+    }
+  },
+  {
+    "row": 25,
+    "description": "成人护理垫吸收性能与压力测试",
+    "sitePath": "/images/generated-site/products/products-underpads-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\products\\products-underpads-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-025-ID_79186E2AE7E4404C94CC411D5452332E.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184940,
+      "sha256": "9394207114f925c9d31f92913d9da917b2e767bf626ac5d77155381d011821bc"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184940,
+      "sha256": "9394207114f925c9d31f92913d9da917b2e767bf626ac5d77155381d011821bc"
+    }
+  },
+  {
+    "row": 25,
+    "description": "成人护理垫吸收性能与压力测试",
+    "sitePath": "/images/oem/products/products-underpads-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\products-underpads-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-025-ID_79186E2AE7E4404C94CC411D5452332E.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184940,
+      "sha256": "9394207114f925c9d31f92913d9da917b2e767bf626ac5d77155381d011821bc"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 184940,
+      "sha256": "9394207114f925c9d31f92913d9da917b2e767bf626ac5d77155381d011821bc"
+    }
+  },
+  {
+    "row": 27,
+    "description": "宠物护理OEM项目商务沟通场景",
+    "sitePath": "/images/generated-site/contact/contact-business-office-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\contact\\contact-business-office-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-027-ID_D08E9D48D18D433BA6888642EF357E36.jpeg",
+      "format": "jpeg",
+      "width": 1707,
+      "height": 959
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 899,
+      "bytes": 100304,
+      "sha256": "ef8a822391c431ec3ddeeea49404cf5b9007664679199b7c772a3986710a2402"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 899,
+      "bytes": 100304,
+      "sha256": "ef8a822391c431ec3ddeeea49404cf5b9007664679199b7c772a3986710a2402"
+    }
+  },
+  {
+    "row": 28,
+    "description": "宠物卫生用品OEM生产线",
+    "sitePath": "/images/oem/production/factory-production-line-03.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\factory-production-line-03.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-028-ID_D04BEF2FAFF94E7DB6713EA3945E643E.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 114480,
+      "sha256": "bfe36dc94dd2d0cef03e56ddab002ea4e4a46a9851b08d9712bb79019ed32f75"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 114480,
+      "sha256": "bfe36dc94dd2d0cef03e56ddab002ea4e4a46a9851b08d9712bb79019ed32f75"
+    }
+  },
+  {
+    "row": 29,
+    "description": "活性炭除味宠物尿垫结构展示",
+    "sitePath": "/images/oem/products/products-charcoal-pads-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\products-charcoal-pads-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-029-ID_1BB0F41EA711462A955ECFC6E30388A1.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    }
+  },
+  {
+    "row": 30,
+    "description": "粘贴式宠物尿垫吸收测试场景",
+    "sitePath": "/images/oem/products/products-adhesive-pads-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\products\\products-adhesive-pads-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-030-ID_25DDC8E8DB99415EA41596D16E1891D3.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 398126,
+      "sha256": "74c93f34aef97ea8346142445287d427b4fca812b2d1b837f8b8f6d09352db5b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 398126,
+      "sha256": "74c93f34aef97ea8346142445287d427b4fca812b2d1b837f8b8f6d09352db5b"
+    }
+  },
+  {
+    "row": 30,
+    "description": "粘贴式宠物尿垫吸收测试场景",
+    "sitePath": "/images/generated-site/products/products-adhesive-pads-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\products\\products-adhesive-pads-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-030-ID_25DDC8E8DB99415EA41596D16E1891D3.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 398126,
+      "sha256": "74c93f34aef97ea8346142445287d427b4fca812b2d1b837f8b8f6d09352db5b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 398126,
+      "sha256": "74c93f34aef97ea8346142445287d427b4fca812b2d1b837f8b8f6d09352db5b"
+    }
+  },
+  {
+    "row": 31,
+    "description": "自动化宠物尿垫生产线全景",
+    "sitePath": "/images/generated-site/factory/factory-production-line-02.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\factory\\factory-production-line-02.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-031-ID_5647154CA990459683961B6FA114CCA9.jpeg",
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252162,
+      "sha256": "b439e2e253a24375214b899c6b433bd13e46659cf80f077a17e7b132bca97256"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252162,
+      "sha256": "b439e2e253a24375214b899c6b433bd13e46659cf80f077a17e7b132bca97256"
+    }
+  },
+  {
+    "row": 31,
+    "description": "自动化宠物尿垫生产线全景",
+    "sitePath": "/images/oem/production/factory-production-line-02.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\factory-production-line-02.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-031-ID_5647154CA990459683961B6FA114CCA9.jpeg",
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252162,
+      "sha256": "b439e2e253a24375214b899c6b433bd13e46659cf80f077a17e7b132bca97256"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252162,
+      "sha256": "b439e2e253a24375214b899c6b433bd13e46659cf80f077a17e7b132bca97256"
+    }
+  },
+  {
+    "row": 33,
+    "description": "工厂制造能力与生产车间展示",
+    "sitePath": "/images/generated-site/b2b-optimization/factory-capability-workshop.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\b2b-optimization\\factory-capability-workshop.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-033-ID_3E55377F47F247EF83F91634984E6DC5.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 126472,
+      "sha256": "17a2d9aac75509f9b334cd3a8ceb4bed359af83b49333bc6ad86870a6557d344"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 126472,
+      "sha256": "17a2d9aac75509f9b334cd3a8ceb4bed359af83b49333bc6ad86870a6557d344"
+    }
+  },
+  {
+    "row": 35,
+    "description": "无纺布材料导向与复合工序",
+    "sitePath": "/images/generated-site/factory/factory-lamination-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\factory\\factory-lamination-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-035-ID_D4D6C7BC82544FECA498094966E4EA9C.jpeg",
+      "format": "jpeg",
+      "width": 3840,
+      "height": 2160
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 127148,
+      "sha256": "958127f4c81cbe58f0ef7bec798a5f8865a6504f0ab1d034c5c07a707d4507d1"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 127148,
+      "sha256": "958127f4c81cbe58f0ef7bec798a5f8865a6504f0ab1d034c5c07a707d4507d1"
+    }
+  },
+  {
+    "row": 35,
+    "description": "无纺布材料导向与复合工序",
+    "sitePath": "/images/oem/production/factory-lamination-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\factory-lamination-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-035-ID_D4D6C7BC82544FECA498094966E4EA9C.jpeg",
+      "format": "jpeg",
+      "width": 3840,
+      "height": 2160
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 127148,
+      "sha256": "958127f4c81cbe58f0ef7bec798a5f8865a6504f0ab1d034c5c07a707d4507d1"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 127148,
+      "sha256": "958127f4c81cbe58f0ef7bec798a5f8865a6504f0ab1d034c5c07a707d4507d1"
+    }
+  },
+  {
+    "row": 36,
+    "description": "OEM产品样品评审场景",
+    "sitePath": "/images/generated-site/b2b-optimization/oem-sample-review.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\b2b-optimization\\oem-sample-review.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-036-ID_1D1E3488DC1E41CCA08FAB797B52A0B1.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 107274,
+      "sha256": "7fe48f8e2be691e640bf7dea639e71e4b0f137f307e7069da8465dfb96ec3ffd"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 107274,
+      "sha256": "7fe48f8e2be691e640bf7dea639e71e4b0f137f307e7069da8465dfb96ec3ffd"
+    }
+  },
+  {
+    "row": 37,
+    "description": "OEM样品开发与确认场景",
+    "sitePath": "/images/oem/customization/oem-sample-review-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\customization\\oem-sample-review-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-037-ID_E49B60F4D24644F09DF10F79D14A17B5.jpeg",
+      "format": "jpeg",
+      "width": 1707,
+      "height": 959
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 899,
+      "bytes": 108856,
+      "sha256": "ec988a87049b63f558d408199fdf4feb858c18fd1237743721a25f5e04098cad"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 899,
+      "bytes": 108856,
+      "sha256": "ec988a87049b63f558d408199fdf4feb858c18fd1237743721a25f5e04098cad"
+    }
+  },
+  {
+    "row": 38,
+    "description": "私牌包装样品与包装工序",
+    "sitePath": "/images/oem/packaging/private-label-packaging-02.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\packaging\\private-label-packaging-02.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-038-ID_BE09579C0E344AE28056BD5EF68D797A.jpeg",
+      "format": "jpeg",
+      "width": 1132,
+      "height": 636
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 77640,
+      "sha256": "4ce880faab8ea7cfeacd01b7255fbf739cbb8b8cfbf7fae258b7b89770ef5663"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 77640,
+      "sha256": "4ce880faab8ea7cfeacd01b7255fbf739cbb8b8cfbf7fae258b7b89770ef5663"
+    }
+  },
+  {
+    "row": 38,
+    "description": "私牌包装样品与包装工序",
+    "sitePath": "/images/generated-site/packaging/private-label-packaging-02.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\packaging\\private-label-packaging-02.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-038-ID_BE09579C0E344AE28056BD5EF68D797A.jpeg",
+      "format": "jpeg",
+      "width": 1132,
+      "height": 636
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 77640,
+      "sha256": "4ce880faab8ea7cfeacd01b7255fbf739cbb8b8cfbf7fae258b7b89770ef5663"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 77640,
+      "sha256": "4ce880faab8ea7cfeacd01b7255fbf739cbb8b8cfbf7fae258b7b89770ef5663"
+    }
+  },
+  {
+    "row": 40,
+    "description": "产品规格、材料与样品展示",
+    "sitePath": "/images/generated-site/b2b-optimization/product-specification-samples.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\b2b-optimization\\product-specification-samples.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-040-ID_FF95907F84514DA3BF703E5392814CE1.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    }
+  },
+  {
+    "row": 44,
+    "description": "成人护理垫吸收芯体微距细节",
+    "sitePath": "/images/products/adult-underpads/adult-underpad-core-detail.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\adult-underpads\\adult-underpad-core-detail.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-044-ID_A89747595AFB4CA49F0C20E1B1CDB0DB.png",
+      "format": "png",
+      "width": 1672,
+      "height": 940
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 213008,
+      "sha256": "b44f6407728aabd43c48931606b3b9e2bf6ad0f33a4569aa3416d457ac41ab74"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900,
+      "bytes": 153271,
+      "sha256": "36feb24e05b450c91cf950a14a5c37a51e4d38827b1dc1f6d0e12c03420da5dd"
+    }
+  },
+  {
+    "row": 46,
+    "description": "OEM宠物尿垫吸收性能实验室测试",
+    "sitePath": "/images/oem/quality/factory-testing-lab-01.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\factory-testing-lab-01.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-046-ID_4ACDF5916351458A89E8C3B6376F015D.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 92416,
+      "sha256": "48f832e045709f63b30fa67e4bb8a2a4671db356f5a36baffd4dfd378ebaeb3d"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 92416,
+      "sha256": "48f832e045709f63b30fa67e4bb8a2a4671db356f5a36baffd4dfd378ebaeb3d"
+    }
+  },
+  {
+    "row": 47,
+    "description": "宠物尿垫成品终检与尺寸测量",
+    "sitePath": "/images/oem/quality/factory-quality-control-02.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\quality\\factory-quality-control-02.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-047-ID_134BBC3C62B54543BD31752C4B7E6C1D.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    }
+  },
+  {
+    "row": 48,
+    "description": "博客封面：OEM Pet Pad Contract Manufacturing: A Buyer Workflow",
+    "sitePath": "/images/generated-site/blog/oem-pet-pad-contract-manufacturing.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-pet-pad-contract-manufacturing.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-048-ID_F9D45C539D2C411881CCD83079F137AC.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 111082,
+      "sha256": "c8c1f4e1f16d16c34eba6a0e5eb7acf73cbd31591fa16589cc15c170b5126d15"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 111082,
+      "sha256": "c8c1f4e1f16d16c34eba6a0e5eb7acf73cbd31591fa16589cc15c170b5126d15"
+    }
+  },
+  {
+    "row": 50,
+    "description": "博客封面：Planning an OEM Pilot Order Before Full-Scale Production",
+    "sitePath": "/images/generated-site/blog/oem-pilot-order-planning.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-pilot-order-planning.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-050-ID_F760045FA2584052B5F265E979F471CA.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    }
+  },
+  {
+    "row": 52,
+    "description": "博客封面：How Buyers Should Review OEM Capacity Allocation",
+    "sitePath": "/images/generated-site/blog/oem-capacity-allocation-review.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-capacity-allocation-review.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-052-ID_3E87433DA7D14803BDCE896DE6FB10DA.jpeg",
+      "format": "jpeg",
+      "width": 772,
+      "height": 580
+    },
+    "previous": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 114314,
+      "sha256": "8004a8402d1541cda97d193879582b1c444753339e1808cfa98605ad6664eed7"
+    },
+    "output": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 114314,
+      "sha256": "8004a8402d1541cda97d193879582b1c444753339e1808cfa98605ad6664eed7"
+    }
+  },
+  {
+    "row": 53,
+    "description": "博客封面：Puppy Pad Surface Intake: What B2B Buyers Should Specify",
+    "sitePath": "/images/generated-site/blog/puppy-pad-surface-intake-design.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\puppy-pad-surface-intake-design.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-053-ID_A94E504BEB3744E4ABF46FE0B97B07E9.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    }
+  },
+  {
+    "row": 54,
+    "description": "博客封面：Pet Pad Edge Seals: Preventing Leakage and Delamination",
+    "sitePath": "/images/generated-site/blog/pet-pad-edge-seal-quality.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-edge-seal-quality.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-054-ID_1B3AC788F6894B288C4FBAA8DADB0392.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    }
+  },
+  {
+    "row": 75,
+    "description": "博客封面：Cost Engineering for Private-Label Pet Product Packaging",
+    "sitePath": "/images/generated-site/blog/pet-product-packaging-cost-engineering.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-product-packaging-cost-engineering.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-075-ID_4EBF648B6EE942A7996D7C9F86F1BE4E.jpeg",
+      "format": "jpeg",
+      "width": 3840,
+      "height": 2160
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 201264,
+      "sha256": "f53f042758c0653093f459852ff0910df621fa721ab5523aff0cd1be61aa45b7"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 201264,
+      "sha256": "f53f042758c0653093f459852ff0910df621fa721ab5523aff0cd1be61aa45b7"
+    }
+  },
+  {
+    "row": 77,
+    "description": "博客封面：Shipping Document Checklist for Pet Product Importers",
+    "sitePath": "/images/generated-site/blog/pet-product-shipping-document-checklist.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-product-shipping-document-checklist.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-077-ID_2601A6387C63447297B3304D0F3346E8.jpeg",
+      "format": "jpeg",
+      "width": 3840,
+      "height": 2160
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252518,
+      "sha256": "540597e24eab6adad18893c00c4a5c813145d89ccb8bf1eae5ab7a0f425d5a38"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 252518,
+      "sha256": "540597e24eab6adad18893c00c4a5c813145d89ccb8bf1eae5ab7a0f425d5a38"
+    }
+  },
+  {
+    "row": 79,
+    "description": "博客封面：LCL vs FCL for Pet Product Imports",
+    "sitePath": "/images/generated-site/blog/pet-product-lcl-vs-fcl-decision.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-product-lcl-vs-fcl-decision.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-079-ID_0B5777D5D9BA44E99DE261A579609578.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 97550,
+      "sha256": "8b5350db3d50839a268f5f3507e7e7dedb625b0c974f1efdff39b5257ea5d05c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 97550,
+      "sha256": "8b5350db3d50839a268f5f3507e7e7dedb625b0c974f1efdff39b5257ea5d05c"
+    }
+  },
+  {
+    "row": 80,
+    "description": "博客封面：Pet Pad Defect Classification for Pre-Shipment Inspection",
+    "sitePath": "/images/generated-site/blog/pet-pad-defect-classification.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-defect-classification.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-080-ID_BFC45EA44F854B41B2272E722F2F8E66.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    }
+  },
+  {
+    "row": 81,
+    "description": "博客封面：How to Build a Pet Pad Retained Sample Program",
+    "sitePath": "/images/generated-site/blog/pet-pad-retained-sample-program.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-retained-sample-program.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-081-ID_FB6FA55F31EC4DA997D951142EBCAAD0.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 56420,
+      "sha256": "9fb7b70223f0fd2b4f379bd6526815ff2236d9ff7e42713f32e4b46369618da8"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 56420,
+      "sha256": "9fb7b70223f0fd2b4f379bd6526815ff2236d9ff7e42713f32e4b46369618da8"
+    }
+  },
+  {
+    "row": 84,
+    "description": "博客封面：Factory Maintenance Audit for Pet Product Production",
+    "sitePath": "/images/generated-site/blog/factory-maintenance-audit-pet-products.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\factory-maintenance-audit-pet-products.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-084-ID_AA93BCB27C634B2F9760FE352CF4FA5F.jpeg",
+      "format": "jpeg",
+      "width": 1132,
+      "height": 636
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 85160,
+      "sha256": "fdb12686ef1080056b48cd1a92525a28ea536542c10610f61c460075501546d0"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1132,
+      "height": 636,
+      "bytes": 85160,
+      "sha256": "fdb12686ef1080056b48cd1a92525a28ea536542c10610f61c460075501546d0"
+    }
+  },
+  {
+    "row": 85,
+    "description": "博客封面：Traceability Audit for OEM Pet Product Factories",
+    "sitePath": "/images/generated-site/blog/factory-traceability-audit.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\factory-traceability-audit.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-085-ID_60A54A1793BB4BF0BFF5C9F0DD702FD4.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 99394,
+      "sha256": "79165d350af58c799b6580256fa02992547228ad8a3b89dce9256d4338a72ff4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 99394,
+      "sha256": "79165d350af58c799b6580256fa02992547228ad8a3b89dce9256d4338a72ff4"
+    }
+  },
+  {
+    "row": 86,
+    "description": "博客封面：Business Continuity Review for an OEM Pet Product Factory",
+    "sitePath": "/images/generated-site/blog/factory-business-continuity-review.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\factory-business-continuity-review.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-086-ID_175BC5D79BEC48CF99BB9414EA2AD732.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 125858,
+      "sha256": "b8c3192bebf8b787fab419bacbb09f57b336a032dfd4704cf9e38410da72a66b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 125858,
+      "sha256": "b8c3192bebf8b787fab419bacbb09f57b336a032dfd4704cf9e38410da72a66b"
+    }
+  },
+  {
+    "row": 88,
+    "description": "博客封面：Nonwoven Basis Weight in Pet Pad Specifications",
+    "sitePath": "/images/generated-site/blog/nonwoven-basis-weight-pet-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\nonwoven-basis-weight-pet-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-088-ID_A13A5DD62AFC41EDAB43BD0852C431FA.jpeg",
+      "format": "jpeg",
+      "width": 3840,
+      "height": 2160
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 103606,
+      "sha256": "0b0bc6eee44dfebfc6e563f909cbe38f62f09c0cded0b1a8b3978269732be3be"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 103606,
+      "sha256": "0b0bc6eee44dfebfc6e563f909cbe38f62f09c0cded0b1a8b3978269732be3be"
+    }
+  },
+  {
+    "row": 89,
+    "description": "博客封面：Hot-Melt Adhesive in Absorbent Product Manufacturing",
+    "sitePath": "/images/generated-site/blog/hot-melt-adhesive-absorbent-products.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\hot-melt-adhesive-absorbent-products.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-089-ID_562BBA2761A247C9960A3E0EA8D6D5E2.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 88438,
+      "sha256": "6febbf6e22b7ef9a50e5268ff5e19731bacb2077540174d26cdcbe9dca94141f"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 88438,
+      "sha256": "6febbf6e22b7ef9a50e5268ff5e19731bacb2077540174d26cdcbe9dca94141f"
+    }
+  },
+  {
+    "row": 90,
+    "description": "博客封面：SAP Gel Blocking in Pet Pads: What Buyers Should Know",
+    "sitePath": "/images/generated-site/blog/sap-gel-blocking-pet-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\sap-gel-blocking-pet-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-090-ID_615401BAAEE84C86AD8EEBA5127A30F9.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 169044,
+      "sha256": "22c113f647c9c1ff60ba32840c60b41df4d6df1f3e516b1fafc0a67540b32713"
+    }
+  },
+  {
+    "row": 91,
+    "description": "博客封面：Auditing SAP Dosing Consistency in Production",
+    "sitePath": "/images/generated-site/blog/sap-dosing-consistency-audit.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\sap-dosing-consistency-audit.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-091-ID_8918608C0810464099FF49614593ECAD.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 137044,
+      "sha256": "ce6231e9a3f56003409fdf3208e9f9a42d570ff52ea223fa009403bab2f10344"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 137044,
+      "sha256": "ce6231e9a3f56003409fdf3208e9f9a42d570ff52ea223fa009403bab2f10344"
+    }
+  },
+  {
+    "row": 98,
+    "description": "博客封面：How to Write an OEM Pet Pad Product Brief",
+    "sitePath": "/images/generated-site/blog/oem-pet-pad-product-brief.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-pet-pad-product-brief.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-098-ID_693FDDE2C54F4D08AE063C8E948DBC6A.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 141002,
+      "sha256": "1898fbd38e3e9a89e72ac27ac0890a8960bb32e33b69eb50c19c47dc83674ec2"
+    }
+  },
+  {
+    "row": 100,
+    "description": "博客封面：OEM Pet Pad Sample Approval Workflow",
+    "sitePath": "/images/generated-site/blog/oem-pet-pad-sample-approval-workflow.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-pet-pad-sample-approval-workflow.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-100-ID_E9AA99CF5B62418EA08C92C2D50A3611.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    }
+  },
+  {
+    "row": 101,
+    "description": "博客封面：How to Plan a Pet Pad Pilot Order",
+    "sitePath": "/images/generated-site/blog/pet-pad-pilot-order-planning.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-pilot-order-planning.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-101-ID_CA22B5CAE60C4AEB9F51E0A5276D5D15.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 100776,
+      "sha256": "57a8879eb7b7ea054203201929dfec6507afbb81537b06f310bb7ca394f94cc8"
+    }
+  },
+  {
+    "row": 113,
+    "description": "博客封面：Five-Layer Puppy Pad Construction Explained",
+    "sitePath": "/images/generated-site/blog/five-layer-puppy-pad-construction.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\five-layer-puppy-pad-construction.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-113-ID_EAFBA31626CB42B1B4F009BAC4B817C7.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    }
+  },
+  {
+    "row": 114,
+    "description": "博客封面：How Leak-Proof PE Backing Works in Puppy Pads",
+    "sitePath": "/images/generated-site/blog/leak-proof-pe-backing-puppy-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\leak-proof-pe-backing-puppy-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-114-ID_B3E79353E0AC4120A9AFA35443488347.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    }
+  },
+  {
+    "row": 115,
+    "description": "博客封面：Absorption Speed vs Capacity in Pet Training Pads",
+    "sitePath": "/images/generated-site/blog/absorption-speed-vs-capacity-pet-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\absorption-speed-vs-capacity-pet-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-115-ID_B2078780087148AFA271622CA9CB0F77.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 421332,
+      "sha256": "2993a000b0c62877912f03c0910e068e93792e18ccf7f3a4b3a07183a9f7059f"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 421332,
+      "sha256": "2993a000b0c62877912f03c0910e068e93792e18ccf7f3a4b3a07183a9f7059f"
+    }
+  },
+  {
+    "row": 116,
+    "description": "博客封面：How Rewet Testing Helps Compare Puppy Pads",
+    "sitePath": "/images/generated-site/blog/puppy-pad-rewet-testing.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\puppy-pad-rewet-testing.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-116-ID_47239AEF48164B9587D0951BBD815884.jpeg",
+      "format": "jpeg",
+      "width": 4032,
+      "height": 2268
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 244376,
+      "sha256": "01bda21895339ac63e0cf0cc95086b6887f57eedca13f69b6da2409f707de5e8"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 244376,
+      "sha256": "01bda21895339ac63e0cf0cc95086b6887f57eedca13f69b6da2409f707de5e8"
+    }
+  },
+  {
+    "row": 117,
+    "description": "博客封面：Why Edge Sealing Matters in Pet Pads",
+    "sitePath": "/images/generated-site/blog/pet-pad-edge-sealing-quality.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-edge-sealing-quality.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-117-ID_92C3C9E972E24C97B66D5BD42C0A40A6.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    }
+  },
+  {
+    "row": 118,
+    "description": "博客封面：Pet Pad Embossing Patterns: Function and Buyer Choices",
+    "sitePath": "/images/generated-site/blog/pet-pad-embossing-patterns.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-embossing-patterns.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-118-ID_888629AC656445F68B1B67ADBC50050A.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    }
+  },
+  {
+    "row": 119,
+    "description": "博客封面：Scented vs Unscented Puppy Pads for Private Label",
+    "sitePath": "/images/generated-site/blog/scented-vs-unscented-puppy-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\scented-vs-unscented-puppy-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-119-ID_94B0C0EFD873495791336BCB2F9F593B.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 186738,
+      "sha256": "b4b2af609d5dc0ad568cdb7789bf358c77451e79ed3f41d1ae8fde3b2655c505"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 186738,
+      "sha256": "b4b2af609d5dc0ad568cdb7789bf358c77451e79ed3f41d1ae8fde3b2655c505"
+    }
+  },
+  {
+    "row": 121,
+    "description": "博客封面：Adhesive Puppy Pads: Corner Tabs and Full Backing",
+    "sitePath": "/images/generated-site/blog/adhesive-puppy-pad-backing-options.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\adhesive-puppy-pad-backing-options.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-121-ID_31DD7BEE069645E4A29BDE1D89C400E6.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 93584,
+      "sha256": "b1185b6dcb2231cdec15766372261ee4a80486e1245ab04599d1c145eeab6454"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 93584,
+      "sha256": "b1185b6dcb2231cdec15766372261ee4a80486e1245ab04599d1c145eeab6454"
+    }
+  },
+  {
+    "row": 122,
+    "description": "博客封面：How to Build a Retail Pet Pad Size Range",
+    "sitePath": "/images/generated-site/blog/retail-pet-pad-size-range.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\retail-pet-pad-size-range.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-122-ID_8D1C655E98894AD391BE6130297B9D06.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 137044,
+      "sha256": "ce6231e9a3f56003409fdf3208e9f9a42d570ff52ea223fa009403bab2f10344"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 137044,
+      "sha256": "ce6231e9a3f56003409fdf3208e9f9a42d570ff52ea223fa009403bab2f10344"
+    }
+  },
+  {
+    "row": 123,
+    "description": "博客封面：Common Puppy Pad Quality Defects and Root Causes",
+    "sitePath": "/images/generated-site/blog/common-puppy-pad-quality-defects.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\common-puppy-pad-quality-defects.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-123-ID_760B8B2C29A74FFCA57F8F1796EA2DD4.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 138386,
+      "sha256": "ed55d755d86c35b4d5f0e371de4c048e038d2906f724bca07e3143829299f923"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 138386,
+      "sha256": "ed55d755d86c35b4d5f0e371de4c048e038d2906f724bca07e3143829299f923"
+    }
+  },
+  {
+    "row": 128,
+    "description": "博客封面：How to Specify Adult Underpad Absorbency",
+    "sitePath": "/images/generated-site/blog/adult-underpad-absorbency-specification.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\adult-underpad-absorbency-specification.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-128-ID_69766C3A08474BA5ADF8DDC3173E99E5.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    }
+  },
+  {
+    "row": 145,
+    "description": "博客封面：What to Look for During a Pet Product Factory Tour",
+    "sitePath": "/images/generated-site/blog/pet-product-factory-tour-checklist.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-product-factory-tour-checklist.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-145-ID_B792FCF5697D423C8AF0485511DB39F9.jpeg",
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 279566,
+      "sha256": "bd49dffda8604d1f5502b2587e72e987e1d9c7a31609474bd82283dd761f0d43"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 279566,
+      "sha256": "bd49dffda8604d1f5502b2587e72e987e1d9c7a31609474bd82283dd761f0d43"
+    }
+  },
+  {
+    "row": 146,
+    "description": "博客封面：How to Evaluate Pet Pad Production Capacity",
+    "sitePath": "/images/generated-site/blog/evaluate-pet-pad-production-capacity.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\evaluate-pet-pad-production-capacity.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-146-ID_4640CC9CA55243A3804516C3F6C394E9.jpeg",
+      "format": "jpeg",
+      "width": 772,
+      "height": 580
+    },
+    "previous": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    }
+  },
+  {
+    "row": 148,
+    "description": "博客封面：Pet Product Warehouse Management for Export Orders",
+    "sitePath": "/images/generated-site/blog/pet-product-warehouse-export-management.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-product-warehouse-export-management.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-148-ID_CE0B73FFAAD1466D9FB5DA06C4558C18.jpeg",
+      "format": "jpeg",
+      "width": 772,
+      "height": 580
+    },
+    "previous": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 133846,
+      "sha256": "c69c0d828d3b6340415a50863a90f502aef5ca4bebe8efc94654e5d59efbdd66"
+    },
+    "output": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 133846,
+      "sha256": "c69c0d828d3b6340415a50863a90f502aef5ca4bebe8efc94654e5d59efbdd66"
+    }
+  },
+  {
+    "row": 149,
+    "description": "博客封面：Container Loading for Pet Pad Export Shipments",
+    "sitePath": "/images/generated-site/blog/pet-pad-container-loading-guide.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-container-loading-guide.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-149-ID_397188E65A7345A4AB884DCB05C3A570.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 102862,
+      "sha256": "65a66d0801e60b7112ddee4a5e6bc70f6b1577228cc6643824f65e1821ca441b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 102862,
+      "sha256": "65a66d0801e60b7112ddee4a5e6bc70f6b1577228cc6643824f65e1821ca441b"
+    }
+  },
+  {
+    "row": 152,
+    "description": "博客封面：Production Line Maintenance and OEM Supply Reliability",
+    "sitePath": "/images/generated-site/blog/production-line-maintenance-oem-reliability.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\production-line-maintenance-oem-reliability.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-152-ID_5F0EF19680BF42BC8325F344A5B5F26D.jpeg",
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 250916,
+      "sha256": "07cfe9b45f8f2ab410ff228b434b95e437adb3e4f8d10094c73e8eda30b08470"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 250916,
+      "sha256": "07cfe9b45f8f2ab410ff228b434b95e437adb3e4f8d10094c73e8eda30b08470"
+    }
+  },
+  {
+    "row": 159,
+    "description": "博客封面：FOB vs CIF for Pet Pad Shipments",
+    "sitePath": "/images/generated-site/blog/fob-vs-cif-pet-pad-shipments.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\fob-vs-cif-pet-pad-shipments.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-159-ID_35983C152CD54AF5B22B62F9A1E84E11.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 102318,
+      "sha256": "a7ed29d09370ce28de9d9637f721d29dfd13ca5acf378537bef1a6e5aab6866e"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 102318,
+      "sha256": "a7ed29d09370ce28de9d9637f721d29dfd13ca5acf378537bef1a6e5aab6866e"
+    }
+  },
+  {
+    "row": 160,
+    "description": "博客封面：Pre-Shipment Inspection for Pet Care Products",
+    "sitePath": "/images/generated-site/blog/pre-shipment-inspection-pet-care-products.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pre-shipment-inspection-pet-care-products.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-160-ID_B4E3402ADBE0427FABA7D131BC344CB0.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    }
+  },
+  {
+    "row": 169,
+    "description": "博客封面：Sustainability in Absorbent Pet Products",
+    "sitePath": "/images/generated-site/blog/sustainability-absorbent-pet-products.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\sustainability-absorbent-pet-products.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-169-ID_FE80E524531F4916B89BE10C325473C4.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 81968,
+      "sha256": "5105429cb9c073899a10c939fdca1800c47c1d4bf5111632f1cb6b0e968d182f"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 81968,
+      "sha256": "5105429cb9c073899a10c939fdca1800c47c1d4bf5111632f1cb6b0e968d182f"
+    }
+  },
+  {
+    "row": 174,
+    "description": "博客封面：PE Film Trends in Pet Pads and Underpads",
+    "sitePath": "/images/generated-site/blog/pe-film-trends-pet-pads-underpads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pe-film-trends-pet-pads-underpads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-174-ID_097CAB5127AE49EF9AA1EB6E766A2CD6.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 57436,
+      "sha256": "770b6afac4773d78c9701c0ec6f972b2f6ef98f8e07d6bd21cbf969cae724160"
+    }
+  },
+  {
+    "row": 175,
+    "description": "博客封面：Building a Resilient Pet Product Supply Chain",
+    "sitePath": "/images/generated-site/blog/resilient-pet-product-supply-chain.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\resilient-pet-product-supply-chain.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-175-ID_64C02974C6144166857799A171965AEF.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 60596,
+      "sha256": "1828ec2fdb02945790e17a662c0c4f50ab6d42ce032745764e07a8800802eee9"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 60596,
+      "sha256": "1828ec2fdb02945790e17a662c0c4f50ab6d42ce032745764e07a8800802eee9"
+    }
+  },
+  {
+    "row": 178,
+    "description": "博客封面：The Future of OEM Pet Product Manufacturing",
+    "sitePath": "/images/generated-site/blog/future-oem-pet-product-manufacturing.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\future-oem-pet-product-manufacturing.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-178-ID_2D1522220E024ECD83AF4DD343A37F82.jpeg",
+      "format": "jpeg",
+      "width": 772,
+      "height": 580
+    },
+    "previous": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    }
+  },
+  {
+    "row": 180,
+    "description": "博客封面：OEM Pet Pad Supplier Qualification Checklist for Importers",
+    "sitePath": "/images/generated-site/blog/oem-pet-pad-supplier-qualification-checklist.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\oem-pet-pad-supplier-qualification-checklist.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-180-ID_10F175D14E054C72A5FE1C5332AC9416.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 131102,
+      "sha256": "784641ca2e0d6332f3af7b8ca0861d71b80d828263b8b8bb1bb9d980755bf4d3"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 131102,
+      "sha256": "784641ca2e0d6332f3af7b8ca0861d71b80d828263b8b8bb1bb9d980755bf4d3"
+    }
+  },
+  {
+    "row": 185,
+    "description": "博客封面：Pet Pad Quality Control Inspection Plan for OEM Orders",
+    "sitePath": "/images/generated-site/blog/pet-pad-quality-control-inspection-plan.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-quality-control-inspection-plan.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-185-ID_7281B18D762F42F7BA8007E8B11BE8BD.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    }
+  },
+  {
+    "row": 186,
+    "description": "博客封面：How to Choose a Reliable Pet Pad Manufacturer",
+    "sitePath": "/images/generated-site/blog/choose-reliable-pet-pad-manufacturer.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\choose-reliable-pet-pad-manufacturer.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-186-ID_1B423BB89BC2455A813CC7B01434BB6F.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 131102,
+      "sha256": "784641ca2e0d6332f3af7b8ca0861d71b80d828263b8b8bb1bb9d980755bf4d3"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 131102,
+      "sha256": "784641ca2e0d6332f3af7b8ca0861d71b80d828263b8b8bb1bb9d980755bf4d3"
+    }
+  },
+  {
+    "row": 188,
+    "description": "博客封面：Private Label Pet Training Pads: A Complete Buyer’s Guide",
+    "sitePath": "/images/generated-site/blog/private-label-pet-training-pads-buyers-guide.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\private-label-pet-training-pads-buyers-guide.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-188-ID_7D66989E432F46C0AAE6BC222FDCC332.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 49272,
+      "sha256": "d44d66f166e4f6b6b65bf55a0686c4bb929674f98d66a7d1cebb56face8fa5b4"
+    }
+  },
+  {
+    "row": 189,
+    "description": "博客封面：How Puppy Pads Are Manufactured",
+    "sitePath": "/images/generated-site/blog/how-puppy-pads-are-manufactured.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\how-puppy-pads-are-manufactured.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-189-ID_3130158CB62D402284055CF17DDE4BE8.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 125626,
+      "sha256": "faff614dd3400942df04b5f8a1e6b0059d738e2c0fbec8d5d91fca0d4f99b5b2"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 125626,
+      "sha256": "faff614dd3400942df04b5f8a1e6b0059d738e2c0fbec8d5d91fca0d4f99b5b2"
+    }
+  },
+  {
+    "row": 190,
+    "description": "博客封面：How to Evaluate a Pet Pad Factory Before Placing an Order",
+    "sitePath": "/images/generated-site/blog/evaluate-pet-pad-factory-before-order.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\evaluate-pet-pad-factory-before-order.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-190-ID_D6AA757FA1404C27AB6BBBF2B87044BF.jpeg",
+      "format": "jpeg",
+      "width": 772,
+      "height": 580
+    },
+    "previous": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    },
+    "output": {
+      "format": "webp",
+      "width": 772,
+      "height": 580,
+      "bytes": 107028,
+      "sha256": "9789e1549c7f62d9c55ee519a985ad197e35bb35aa565a58a446da91f31ef42b"
+    }
+  },
+  {
+    "row": 191,
+    "description": "博客封面：What Is SAP in Puppy Pads and Why Does It Matter",
+    "sitePath": "/images/generated-site/blog/sap-in-puppy-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\sap-in-puppy-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-191-ID_8AAE4DF86E264386827F8E3543E3BD84.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 146716,
+      "sha256": "05e71d4390c14dcf1333c87e937067e03103be972283651f1922eff0b8abc192"
+    }
+  },
+  {
+    "row": 192,
+    "description": "博客封面：Virgin Pulp vs Recycled Pulp in Pet Pads",
+    "sitePath": "/images/generated-site/blog/virgin-pulp-vs-recycled-pulp-pet-pads.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\virgin-pulp-vs-recycled-pulp-pet-pads.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-192-ID_75AB5B29EC804E6EB78A93D7BA9C7960.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 138386,
+      "sha256": "ed55d755d86c35b4d5f0e371de4c048e038d2906f724bca07e3143829299f923"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 138386,
+      "sha256": "ed55d755d86c35b4d5f0e371de4c048e038d2906f724bca07e3143829299f923"
+    }
+  },
+  {
+    "row": 193,
+    "description": "博客封面：What Determines the Absorbency of a Puppy Pad",
+    "sitePath": "/images/generated-site/blog/what-determines-puppy-pad-absorbency.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\what-determines-puppy-pad-absorbency.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-193-ID_35B29ABEC6BF44AF9B7EEDF8C757FEC0.jpeg",
+      "format": "jpeg",
+      "width": 5712,
+      "height": 3213
+    },
+    "previous": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 92416,
+      "sha256": "48f832e045709f63b30fa67e4bb8a2a4671db356f5a36baffd4dfd378ebaeb3d"
+    },
+    "output": {
+      "format": "webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 92416,
+      "sha256": "48f832e045709f63b30fa67e4bb8a2a4671db356f5a36baffd4dfd378ebaeb3d"
+    }
+  },
+  {
+    "row": 197,
+    "description": "博客封面：Pet Pad Quality Control: What Professional Buyers Should Check",
+    "sitePath": "/images/generated-site/blog/pet-pad-quality-control-buyers-checklist.webp",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\generated-site\\blog\\pet-pad-quality-control-buyers-checklist.webp",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-197-ID_D624AF71508441A1B56A3E28368598CB.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    },
+    "output": {
+      "format": "webp",
+      "width": 850,
+      "height": 478,
+      "bytes": 108290,
+      "sha256": "0536d0448f5bf8f68faf32957207f5b741c524a4440d27bef7aada0ab75f8b5c"
+    }
+  },
+  {
+    "row": 201,
+    "description": "宠物训练尿垫五层结构分解展示",
+    "sitePath": "/images/products/pet-training-pads/pet-training-pad-structure.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\pet-training-pads\\pet-training-pad-structure.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-201-ID_7D77E702CE7F495384E0C3C123621B0F.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 118720,
+      "sha256": "296e2780754fab7c465d3f01b9dc658b549e8e680ec90e1b014a38bff8b2f79a"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 118720,
+      "sha256": "296e2780754fab7c465d3f01b9dc658b549e8e680ec90e1b014a38bff8b2f79a"
+    }
+  },
+  {
+    "row": 205,
+    "description": "成人护理垫吸收芯材料微距细节",
+    "sitePath": "/images/products/adult-underpads/adult-underpad-core-detail.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\adult-underpads\\adult-underpad-core-detail.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-205-ID_759551E74C544B4990B0F5560C347975.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 213008,
+      "sha256": "b44f6407728aabd43c48931606b3b9e2bf6ad0f33a4569aa3416d457ac41ab74"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 213008,
+      "sha256": "b44f6407728aabd43c48931606b3b9e2bf6ad0f33a4569aa3416d457ac41ab74"
+    }
+  },
+  {
+    "row": 208,
+    "description": "宠物吸水纸卷材与片材白底主图",
+    "sitePath": "/images/products/pet-absorbent-paper/pet-absorbent-paper-main.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\pet-absorbent-paper\\pet-absorbent-paper-main.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-208-ID_5FD4C07B44F2449EA2654B072829F050.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 162246,
+      "sha256": "8231358f4dc7fc8da46886f77c5a672e7306a0d0eca9d8f02bb47075d42a0e6c"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 162246,
+      "sha256": "8231358f4dc7fc8da46886f77c5a672e7306a0d0eca9d8f02bb47075d42a0e6c"
+    }
+  },
+  {
+    "row": 210,
+    "description": "宠物吸水纸纤维材料微距细节",
+    "sitePath": "/images/products/pet-absorbent-paper/pet-absorbent-paper-material.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\pet-absorbent-paper\\pet-absorbent-paper-material.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-210-ID_97033775D87E4C7F8073E5341DB18F2C.png",
+      "format": "png",
+      "width": 1448,
+      "height": 1086
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 118720,
+      "sha256": "296e2780754fab7c465d3f01b9dc658b549e8e680ec90e1b014a38bff8b2f79a"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 118720,
+      "sha256": "296e2780754fab7c465d3f01b9dc658b549e8e680ec90e1b014a38bff8b2f79a"
+    }
+  },
+  {
+    "row": 211,
+    "description": "宠物吸水纸卷材与批量包装展示",
+    "sitePath": "/images/products/pet-absorbent-paper/pet-absorbent-paper-roll-package.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\pet-absorbent-paper\\pet-absorbent-paper-roll-package.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-211-ID_2FE110F055C44CFAB296C191F0847268.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900,
+      "bytes": 177281,
+      "sha256": "681239ca9cd0bfd307e181e4364dfc2dcd97ecb398512702afa08e8b66ca26c3"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900,
+      "bytes": 177281,
+      "sha256": "681239ca9cd0bfd307e181e4364dfc2dcd97ecb398512702afa08e8b66ca26c3"
+    }
+  },
+  {
+    "row": 212,
+    "description": "宠物吸水纸尿垫转换应用场景",
+    "sitePath": "/images/products/pet-absorbent-paper/pet-absorbent-paper-application.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\pet-absorbent-paper\\pet-absorbent-paper-application.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-212-ID_8BAD24EDAB9B4E778BB5BA4DDB2B2D04.jpeg",
+      "format": "jpeg",
+      "width": 850,
+      "height": 478
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 850,
+      "height": 478,
+      "bytes": 63339,
+      "sha256": "d1fe394feefbac8479948bd99fca8c5afaef2e738c9a23a214a5c7b2d8e16e5b"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 850,
+      "height": 478,
+      "bytes": 63339,
+      "sha256": "d1fe394feefbac8479948bd99fca8c5afaef2e738c9a23a214a5c7b2d8e16e5b"
+    }
+  },
+  {
+    "row": 213,
+    "description": "一次性宠物清洁用品白底主图",
+    "sitePath": "/images/products/disposable-cleaning-products/disposable-cleaning-products-main.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\disposable-cleaning-products\\disposable-cleaning-products-main.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-213-ID_5EBCDC256ECE4F78B4D0CE62A1A834AA.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 143427,
+      "sha256": "8aefcd1abe84c358d27fdad6c7e7b4b4b5c1df726e545c9b357bad7cd2dd923a"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 143427,
+      "sha256": "8aefcd1abe84c358d27fdad6c7e7b4b4b5c1df726e545c9b357bad7cd2dd923a"
+    }
+  },
+  {
+    "row": 215,
+    "description": "一次性宠物清洁用品私牌包装展示",
+    "sitePath": "/images/products/disposable-cleaning-products/disposable-cleaning-products-package.jpg",
+    "targetPath": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\products\\disposable-cleaning-products\\disposable-cleaning-products-package.jpg",
+    "existed": true,
+    "source": {
+      "path": "C:\\Users\\Administrator\\Documents\\独立站修改\\work\\user_replacements\\media\\row-215-ID_35F20871700F471B842086F0C1937093.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024
+    },
+    "previous": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 143427,
+      "sha256": "8aefcd1abe84c358d27fdad6c7e7b4b4b5c1df726e545c9b357bad7cd2dd923a"
+    },
+    "output": {
+      "format": "jpeg",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 143427,
+      "sha256": "8aefcd1abe84c358d27fdad6c7e7b4b4b5c1df726e545c9b357bad7cd2dd923a"
+    }
+  }
+]
