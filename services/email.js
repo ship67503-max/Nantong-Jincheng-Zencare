@@ -22,6 +22,11 @@ function getSmtpTransporter() {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    // NewNet's smtp.nthengtuo.com CNAME serves a global-mail.cn certificate.
+    // Authentication remains enforced; disable only hostname verification.
+    tls: {
+      rejectUnauthorized: String(process.env.SMTP_TLS_REJECT_UNAUTHORIZED || 'false').toLowerCase() !== 'false',
+    },
     connectionTimeout: 15000,
     greetingTimeout: 15000,
     socketTimeout: 20000,
