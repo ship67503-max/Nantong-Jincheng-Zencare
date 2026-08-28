@@ -274,6 +274,13 @@ export const pageSeo = [
     image: '/images/generated-site/products/products-pet-pad-structure-01.webp',
   },
   {
+    path: '/privacy-policy',
+    title: 'Privacy Policy | JCZCARE',
+    description:
+      'Read how Nantong JINCHENG ZENCARE collects, uses, stores, and protects information submitted through the JCZCARE website and B2B inquiry forms.',
+    image: defaultImage,
+  },
+  {
     path: '/sign-in',
     title: 'Business Sign In | JCZCARE',
     description: 'Sign in to the JCZCARE business portal for OEM pet pad project communication and account registration.',

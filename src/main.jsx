@@ -1393,6 +1393,11 @@ const businessSeoPages = [
 const seoPageMap = new Map(businessSeoPages.map((page) => [page.path, page]));
 
 const staticSeoPages = {
+  '/privacy-policy': {
+    title: 'Privacy Policy | JCZCARE',
+    description: 'Read how Nantong JINCHENG ZENCARE collects, uses, stores, and protects information submitted through the JCZCARE website and B2B inquiry forms.',
+    image: heroFallbackImage,
+  },
   '/request-product-plan': {
     title: 'OEM Product Plan Request | JCZCARE Pet Pad Factory',
     description: 'Submit your OEM/ODM pet pad project details to Nantong JINCHENG ZENCARE for specification planning, samples, packaging direction, and B2B factory support.',
@@ -2213,7 +2218,7 @@ function FooterSocialLinks() {
   );
 }
 
-function SiteFooter({ ui }) {
+function SiteFooter({ ui, topHref = '#adult-underpads-top' }) {
   const [openGroups, setOpenGroups] = useState(() => {
     const openByDefault = !window.matchMedia('(max-width: 767px)').matches;
     return Object.fromEntries(footerLinkGroups.map((group) => [group.title, openByDefault]));
@@ -2247,7 +2252,7 @@ function SiteFooter({ ui }) {
             Start OEM Partnership
           </a>
           <FooterSocialLinks />
-          <a className="footer-top-link" href="#adult-underpads-top">
+          <a className="footer-top-link" href={topHref}>
             <ArrowUp size={20} />
             {ui.top}
           </a>
@@ -2278,6 +2283,164 @@ function SiteFooter({ ui }) {
         <small>Copyright {new Date().getFullYear()} JCZCARE. All rights reserved.</small>
       </div>
     </footer>
+  );
+}
+
+const privacyPolicySections = [
+  {
+    id: 'scope',
+    title: '1. Scope',
+    content: (
+      <p>
+        This Privacy Policy explains how Nantong JINCHENG ZENCARE Technology Company ("JCZCARE", "we", "us", or "our") handles personal information when you visit jczcare.com, review our products and manufacturing services, or contact us about an OEM, ODM, private-label, sample, or supply project.
+      </p>
+    ),
+  },
+  {
+    id: 'information-we-collect',
+    title: '2. Information We Collect',
+    content: (
+      <>
+        <p>We may collect information that you choose to provide through an inquiry form, email, WhatsApp, or other direct communication, including:</p>
+        <ul>
+          <li>Your name, company name, company website, and job role.</li>
+          <li>Your work email address, phone or WhatsApp number, and country or region.</li>
+          <li>Product interests, estimated quantity, target market, specifications, packaging direction, and project requirements.</li>
+          <li>Messages, attachments, sample requests, quotation details, and subsequent business correspondence.</li>
+        </ul>
+        <p>When you use the website, we may also receive technical and usage information such as browser and device type, IP address, approximate location derived from IP, pages viewed, referring page, visit time, button interactions, form events, and campaign parameters such as UTM values, fbclid, and gclid.</p>
+      </>
+    ),
+  },
+  {
+    id: 'how-we-use-information',
+    title: '3. How We Use Information',
+    content: (
+      <>
+        <p>We use information for legitimate business purposes connected with our B2B manufacturing services, including to:</p>
+        <ul>
+          <li>Respond to inquiries and prepare product, sample, quotation, packaging, and production plans.</li>
+          <li>Communicate about specifications, orders, delivery, quality, service, and ongoing cooperation.</li>
+          <li>Operate, secure, troubleshoot, and improve the website and inquiry process.</li>
+          <li>Understand website performance and the effectiveness of business marketing campaigns.</li>
+          <li>Comply with applicable legal, tax, accounting, export, and recordkeeping obligations.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'analytics-and-storage',
+    title: '4. Analytics, Cookies, and Browser Storage',
+    content: (
+      <>
+        <p>On our production website, we use Google Analytics 4 (measurement ID G-7WBQ3V257N) to understand page views, form activity, completed inquiries, errors, sample requests, and contact-link interactions. Analytics event values are restricted to avoid sending email addresses or phone numbers.</p>
+        <p>We also use Meta Pixel (pixel ID 1532666838061135) on our production domains to measure page views and confirmed lead events. Google and Meta may process device, browser, network, and interaction data under their own privacy terms.</p>
+        <p>The website may use cookies, local storage, and session storage to remember language and region preferences, support Google Translate, prevent duplicate event reporting, and retain first-visit and latest-visit attribution such as campaign parameters, landing page, external referrer origin, and visit timestamps. The language preference cookie may remain for up to one year. You can clear or block cookies and browser storage in your browser settings, although some preferences or website functions may then be unavailable.</p>
+      </>
+    ),
+  },
+  {
+    id: 'service-providers',
+    title: '5. Service Providers and International Transfers',
+    content: (
+      <>
+        <p>We use service providers that help us host, protect, measure, and operate the website and deliver inquiries. These may include Vercel for hosting, Cloudflare Turnstile for abuse prevention, Google for analytics and translation, Meta for advertising measurement, and email or delivery providers such as SMTP services or Resend.</p>
+        <p>These providers process information only for the relevant service and under their own contractual and privacy obligations. Because JCZCARE is located in China and our providers and customers may operate in other countries, information may be processed outside your country. Where applicable, we take reasonable steps to use appropriate safeguards for such transfers.</p>
+        <p>We do not sell personal information. We may disclose information when required by law, to protect our rights or systems, or as part of a corporate transaction subject to appropriate confidentiality protections.</p>
+      </>
+    ),
+  },
+  {
+    id: 'retention',
+    title: '6. Retention',
+    content: (
+      <p>
+        We retain personal information only for as long as reasonably necessary to respond to and manage your project, maintain business records, protect website security, resolve disputes, and meet legal or regulatory obligations. Retention periods vary according to the type of information and the purpose for which it is used.
+      </p>
+    ),
+  },
+  {
+    id: 'security',
+    title: '7. Security',
+    content: (
+      <p>
+        We use reasonable administrative, technical, and organizational measures intended to protect information against unauthorized access, loss, misuse, or alteration. Cloudflare Turnstile is used on inquiry forms to reduce automated abuse. No internet transmission or storage system is completely secure, so we cannot guarantee absolute security.
+      </p>
+    ),
+  },
+  {
+    id: 'rights-and-choices',
+    title: '8. Your Rights and Choices',
+    content: (
+      <>
+        <p>Depending on your location, you may have rights to request access to, correction of, deletion of, restriction of, or a copy of your personal information, and to object to or withdraw consent for certain processing.</p>
+        <p>You may control cookies and browser storage through your browser, use browser privacy controls, or contact us to make a privacy request. We may need to verify your identity before completing a request, and some information may be retained where required by law or for legitimate legal and security purposes.</p>
+      </>
+    ),
+  },
+  {
+    id: 'children',
+    title: '9. Children',
+    content: (
+      <p>
+        Our website is intended for business customers and is not directed to children. We do not knowingly collect personal information from children. If you believe a child has provided information to us, please contact us so that we can review and, where appropriate, delete it.
+      </p>
+    ),
+  },
+  {
+    id: 'changes',
+    title: '10. Changes to This Policy',
+    content: (
+      <p>
+        We may update this Privacy Policy to reflect changes in our website, services, providers, or legal obligations. The effective date at the top of this page identifies the latest version. Material updates will be posted on this standalone URL.
+      </p>
+    ),
+  },
+];
+
+function PrivacyPolicyPage() {
+  return (
+    <div className="privacy-page" id="privacy-policy-top">
+      <div className="container privacy-shell">
+        <header className="privacy-hero">
+          <a className="privacy-back-link" href="/">Back to JCZCARE</a>
+          <p className="section-kicker">Legal / Privacy</p>
+          <h1>Privacy Policy</h1>
+          <p className="privacy-lead">How JCZCARE collects, uses, stores, and protects information from website visitors and B2B customers.</p>
+          <p className="privacy-effective-date"><strong>Effective date:</strong> August 28, 2026</p>
+        </header>
+
+        <div className="privacy-layout">
+          <aside className="privacy-toc" aria-label="Privacy Policy contents">
+            <strong>On this page</strong>
+            <nav>
+              {privacyPolicySections.map((section) => <a href={`#${section.id}`} key={section.id}>{section.title.replace(/^\d+\.\s*/, '')}</a>)}
+              <a href="#contact-privacy">Contact Us</a>
+            </nav>
+          </aside>
+
+          <article className="privacy-content">
+            {privacyPolicySections.map((section) => (
+              <section className="privacy-section" id={section.id} key={section.id}>
+                <h2>{section.title}</h2>
+                {section.content}
+              </section>
+            ))}
+
+            <section className="privacy-section privacy-contact" id="contact-privacy">
+              <h2>11. Contact Us</h2>
+              <p>For questions about this policy or to exercise a privacy right, contact:</p>
+              <address>
+                <strong>Nantong JINCHENG ZENCARE Technology Company</strong>
+                <span>Nantong, Jiangsu, China</span>
+                <a href={buildMailto('Privacy Request')}>{contactEmail}</a>
+                <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer">Phone / WhatsApp: {whatsappPhone}</a>
+              </address>
+            </section>
+          </article>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -5200,6 +5363,7 @@ function App() {
   const isLearnPage = currentPath === '/pages/learn';
   const isGiveBackPage = currentPath === '/pages/give-back';
   const isGiftCardsPage = currentPath === '/pages/gift-cards';
+  const isPrivacyPolicyPage = currentPath === '/privacy-policy';
   const newsSlug = currentPath.match(/^\/pages\/news\/([^/]+)\/?$/)?.[1];
   const isNewsPage = currentPath === '/pages/news';
   const blogSlug = currentPath.match(/^\/blog\/([^/]+)\/?$/)?.[1];
@@ -5410,6 +5574,10 @@ function App() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    if (isPrivacyPolicyPage) {
+      return undefined;
+    }
 
     const root = rootRef.current;
     const nav = navRef.current;
@@ -5765,10 +5933,10 @@ function App() {
     }, root);
 
     return () => ctx.revert();
-  }, [currentSeries, catalogProduct, currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage, isProductsCenterPage]);
+  }, [currentSeries, catalogProduct, currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage, isProductsCenterPage, isPrivacyPolicyPage]);
 
   useEffect(() => {
-    if (currentSeries || catalogProduct || currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
+    if (currentSeries || catalogProduct || currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage || isPrivacyPolicyPage) {
       return undefined;
     }
 
@@ -5795,7 +5963,17 @@ function App() {
       window.clearTimeout(timer);
       window.removeEventListener('hashchange', scrollToHashSection);
     };
-  }, [currentSeries, catalogProduct, currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage]);
+  }, [currentSeries, catalogProduct, currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage, isPrivacyPolicyPage]);
+
+  if (isPrivacyPolicyPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <PrivacyPolicyPage />
+        <SiteFooter ui={ui} topHref="#privacy-policy-top" />
+      </main>
+    );
+  }
 
   if (isInquiryPage) {
     return (
