@@ -19063,3 +19063,27 @@ body,
     grid-column: 1 / -1 !important;
   }
 }
+
+/* OEM process timeline: keep the workflow cards light and readable. */
+.process-page .process-timeline {
+  background: #f1f8fa !important;
+  border-color: #cfe3e8 !important;
+}
+
+.process-page .process-timeline article {
+  background: #ffffff !important;
+  border-color: #c7dce4 !important;
+  box-shadow: 0 12px 32px rgba(25, 75, 89, 0.07) !important;
+}
+
+.process-page .process-timeline article > span {
+  color: #0d6d84 !important;
+}
+
+.process-page .process-timeline article h2 {
+  color: #102a35 !important;
+}
+
+.process-page .process-timeline article p {
+  color: #607985 !important;
+}
