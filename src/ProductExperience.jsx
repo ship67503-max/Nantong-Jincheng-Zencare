@@ -51,7 +51,7 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
         </div>
         <aside className="home-hero-panel home-hero-capability-panel" aria-label="JCZCARE factory capability">
           <div className="home-hero-capability-media">
-            <img src="/images/oem/hero/factory-campus.webp" alt="JCZCARE disposable hygiene product factory" loading="eager" decoding="async" />
+            <img src="/images/oem/production/factory-production-line-real-20260729.jpg" alt="JCZCARE automated disposable hygiene production line" loading="eager" decoding="async" />
             <span>JCZCARE SOURCE FACTORY</span>
           </div>
           <div className="home-hero-capability-copy">
