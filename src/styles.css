@@ -19087,3 +19087,33 @@ body,
 .process-page .process-timeline article p {
   color: #607985 !important;
 }
+
+/* Product inquiry CTA: replace the legacy navy block with the light site palette. */
+.catalog-series-page .catalog-series-cta,
+.catalog-detail-template .catalog-series-cta {
+  border: 1px solid #cfe3e8 !important;
+  background: #f1f8fa !important;
+  color: #102a35 !important;
+  box-shadow: 0 12px 32px rgba(25, 75, 89, 0.07) !important;
+}
+
+.catalog-series-page .catalog-series-cta h2,
+.catalog-detail-template .catalog-series-cta h2 {
+  color: #102a35 !important;
+}
+
+.catalog-series-page .catalog-series-cta p:not(.section-kicker),
+.catalog-detail-template .catalog-series-cta p:not(.section-kicker) {
+  color: #607985 !important;
+}
+
+.catalog-series-page .catalog-series-cta .section-kicker,
+.catalog-detail-template .catalog-series-cta .section-kicker {
+  color: #17778c !important;
+}
+
+.catalog-series-page .catalog-series-cta > a,
+.catalog-detail-template .catalog-series-cta > a {
+  background: #0d6d84 !important;
+  color: #ffffff !important;
+}
