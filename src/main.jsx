@@ -56,7 +56,7 @@ import {
 } from './authorityData.js';
 import { topicClusters } from './topicClusters.js';
 import { CatalogProductDetailPage, ProductCenterPage, ProductSeriesPage } from './ProductCatalogPages.jsx';
-import { HomeHeroCarousel, HomeProductShowcase, ProductMegaMenu } from './ProductExperience.jsx';
+import { HomeHeroCarousel, HomeProductShowcase, HomeTrustBar, ProductMegaMenu } from './ProductExperience.jsx';
 import {
   getProductSeries,
   getSeriesProduct,
@@ -357,6 +357,60 @@ const advantages = [
     text: 'Specification confirmation, sample approval, production control, and export coordination.',
     image: '/images/oem/customization/generated-20260808/private-label-support.png',
   },
+];
+
+const homeCustomizationCapabilities = [
+  ['Custom Size', 'Dimensions, folding format, pack count, and carton configuration planned for the target channel.'],
+  ['Custom Absorbency', 'Core direction reviewed around capacity, diffusion, rewet, and cost targets.'],
+  ['Custom Materials', 'Surface, pulp, SAP, backing film, and layer combinations reviewed before sampling.'],
+  ['Functional Options', 'Non-slip, charcoal, printed, and other product-specific directions discussed against the brief.'],
+  ['Printed Design', 'Product print direction, artwork review, and retail presentation coordinated before production.'],
+  ['Private Label Packaging', 'Bag structure, pack count, labels, cartons, and shipping marks planned for the channel.'],
+];
+
+const homePartnerReasons = [
+  ['Product Development Support', 'Translate market requirements into workable product specifications and a sampling brief.'],
+  ['Controlled Production', 'Coordinate materials, dimensions, absorbency, sealing, folding, and packing against the approved brief.'],
+  ['Private Label Coordination', 'Support packaging structure, artwork review, pack count, and carton requirements.'],
+  ['Export & Delivery Coordination', 'Discuss FOB, EXW, CIF, and DDP project options according to destination and buyer requirements.'],
+];
+
+const homeProcessSteps = [
+  ['01', 'Share Requirements', 'Tell us the product, market, quantity, specification, and packaging direction.'],
+  ['02', 'Confirm Specification', 'We organize the material, size, performance, and commercial brief for review.'],
+  ['03', 'Develop Sample', 'A sample is prepared against the confirmed brief and planned review points.'],
+  ['04', 'Approve Product & Packaging', 'Product performance, pack structure, artwork, and carton details are confirmed.'],
+  ['05', 'Produce & Inspect', 'Approved specifications move into scheduled production and in-process inspection.'],
+  ['06', 'Pack & Ship', 'Finished goods are released, packed, documented, and coordinated for shipment.'],
+];
+
+const homeQualityChecks = [
+  'Incoming Material Inspection',
+  'In-Process Inspection',
+  'Absorbency & Performance Review',
+  'Packaging & Count Check',
+  'Finished-Goods Release',
+  'Batch & Shipment Documentation',
+];
+
+const homeBuyerTypes = ['Pet Brands', 'Retailers', 'Importers', 'Distributors', 'Wholesalers', 'E-commerce Sellers'];
+
+const homeProjectScenarios = [
+  ['Private-Label Pet Pad Launch', 'Develop a product brief, sample, packaging direction, and repeat-order specification.'],
+  ['Multi-SKU Distributor Sourcing', 'Coordinate several categories through one product and commercial communication workflow.'],
+  ['Retail Packaging Redesign', 'Review pack count, artwork, bag structure, carton marks, and shelf presentation.'],
+  ['Absorbency Specification Adjustment', 'Compare material and core directions against use, price, and performance targets.'],
+];
+
+const homeFaqs = [
+  ['What products can JCZCARE manufacture?', 'JCZCARE supports pet urine pads, pet absorbent paper sheets, pet diapers, adult underpads, disposable cleaning products, and garbage bags.'],
+  ['What can be customized?', 'Size, absorbency, materials, functional options, printed design, pack count, private-label packaging, and export cartons can be discussed by product.'],
+  ['How do I request a sample?', 'Submit the inquiry form with your product, target market, specification, and expected quantity. The team will confirm the sample brief and delivery details.'],
+  ['What information is needed for a quotation?', 'Share product type, dimensions, materials or performance direction, pack format, estimated quantity, target market, and delivery destination.'],
+  ['What is the MOQ?', 'MOQ depends on the product, specification, material, and packaging format. It is confirmed after the project brief is reviewed.'],
+  ['Can you support private-label packaging?', 'Yes. Packaging structure, artwork review, pack count, labels, cartons, and shipping marks can be coordinated.'],
+  ['Which trade terms can be discussed?', 'FOB, EXW, CIF, and DDP can be discussed according to destination, logistics scope, and buyer requirements.'],
+  ['How long do sampling and production take?', 'Sampling is planned against the confirmed brief. Production and shipping timing vary by product, quantity, packaging, destination, and trade term.'],
 ];
 
 const customProducts = [
@@ -1849,7 +1903,6 @@ function SiteNav({ navRef, ui }) {
         <a href="/quality-control" onClick={closeMobileMenu}>{labels.quality}</a>
         <a href="/blog" onClick={closeMobileMenu}>{labels.resources}</a>
         <a href="/#contact" onClick={closeMobileMenu}>{labels.contact}</a>
-        <a className="nav-signin nav-signin-menu" href="/sign-in" onClick={closeMobileMenu}>{labels.signIn}</a>
       </div>
       <a className="nav-cta notranslate" translate="no" href="/request-product-plan?product=oem-pet-pad-project">
         {labels.quote}
@@ -3517,6 +3570,7 @@ function OemProcessPage({ materialTerminology }) {
             <OptimizedImage src={b2bImage('oem-sample-review')} alt="" loading="eager" />
           </div>
         </div>
+        <OemProcessBusinessContent />
         <MaterialInnovationSection materialTerminology={materialTerminology} />
         <CustomizationTimeline />
         <ShippingSolution />
@@ -4045,6 +4099,41 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
     ? inquiryProductOptions
     : [formState.product, ...inquiryProductOptions];
 
+  const detailFields = (
+    <div className="inquiry-more-details-fields">
+      <label>
+        <span>Company Name</span>
+        <input type="text" name="companyName" maxLength="200" autoComplete="organization" placeholder="Company name" value={formState.companyName} onChange={updateField('companyName')} />
+      </label>
+      <label>
+        <span>Company Website</span>
+        <input type="url" name="companyWebsite" maxLength="200" autoComplete="url" placeholder="https://example.com" value={formState.companyWebsite} onChange={updateField('companyWebsite')} />
+      </label>
+      <label>
+        <span>Job Role</span>
+        <input type="text" name="jobRole" maxLength="120" autoComplete="organization-title" placeholder="Purchasing Manager" value={formState.jobRole} onChange={updateField('jobRole')} />
+      </label>
+      <label className={fieldErrors.email ? 'has-error' : ''}>
+        <span>Work Email <strong className="required-mark" aria-hidden="true">*</strong></span>
+        <input ref={fieldRefs.email} type="email" name="email" required maxLength="200" autoComplete="email" placeholder="name@company.com" value={formState.email} onChange={updateField('email')} aria-invalid={Boolean(fieldErrors.email)} aria-describedby={fieldErrors.email ? 'inquiry-email-error' : undefined} />
+        {fieldErrors.email && <small id="inquiry-email-error" className="field-error">{fieldErrors.email}</small>}
+      </label>
+      <label className={fieldErrors.phone ? 'has-error' : ''}>
+        <span>Phone / WhatsApp <strong className="required-mark" aria-hidden="true">*</strong></span>
+        <input ref={fieldRefs.phone} type="tel" name="phone" required maxLength="100" autoComplete="tel" placeholder="Country code and number" value={formState.phone} onChange={updateField('phone')} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'inquiry-phone-error' : undefined} />
+        {fieldErrors.phone && <small id="inquiry-phone-error" className="field-error">{fieldErrors.phone}</small>}
+      </label>
+      <label>
+        <span>Country</span>
+        <input type="text" name="country" maxLength="100" autoComplete="country-name" placeholder="Country / market" value={formState.country} onChange={updateField('country')} />
+      </label>
+      <label>
+        <span>Estimated Quantity</span>
+        <input type="text" name="quantity" maxLength="100" placeholder="Monthly or order quantity" value={formState.quantity} onChange={updateField('quantity')} />
+      </label>
+    </div>
+  );
+
   return (
     <form className={`contact-form compact-inquiry-form ${className}`.trim()} aria-label="OEM inquiry form" onSubmit={handleSubmit} noValidate>
       <label className="form-honeypot" aria-hidden="true">
@@ -4066,41 +4155,12 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
           <input ref={fieldRefs.name} type="text" name="name" required maxLength="100" autoComplete="name" placeholder="Full name" value={formState.name} onChange={updateField('name')} aria-invalid={Boolean(fieldErrors.name)} aria-describedby={fieldErrors.name ? 'inquiry-name-error' : undefined} />
           {fieldErrors.name && <small id="inquiry-name-error" className="field-error">{fieldErrors.name}</small>}
         </label>
-        <details className="inquiry-more-details" open={moreDetailsOpen} onToggle={(event) => setMoreDetailsOpen(event.currentTarget.open)}>
-          <summary>More project details <span aria-hidden="true">+</span></summary>
-        <div className="inquiry-more-details-fields">
-        <label>
-          <span>Company Name</span>
-          <input type="text" name="companyName" maxLength="200" autoComplete="organization" placeholder="Company name" value={formState.companyName} onChange={updateField('companyName')} />
-        </label>
-        <label>
-          <span>Company Website</span>
-          <input type="url" name="companyWebsite" maxLength="200" autoComplete="url" placeholder="https://example.com" value={formState.companyWebsite} onChange={updateField('companyWebsite')} />
-        </label>
-        <label>
-          <span>Job Role</span>
-          <input type="text" name="jobRole" maxLength="120" autoComplete="organization-title" placeholder="Purchasing Manager" value={formState.jobRole} onChange={updateField('jobRole')} />
-        </label>
-        <label className={fieldErrors.email ? 'has-error' : ''}>
-          <span>Work Email <strong className="required-mark" aria-hidden="true">*</strong></span>
-          <input ref={fieldRefs.email} type="email" name="email" required maxLength="200" autoComplete="email" placeholder="name@company.com" value={formState.email} onChange={updateField('email')} aria-invalid={Boolean(fieldErrors.email)} aria-describedby={fieldErrors.email ? 'inquiry-email-error' : undefined} />
-          {fieldErrors.email && <small id="inquiry-email-error" className="field-error">{fieldErrors.email}</small>}
-        </label>
-        <label className={fieldErrors.phone ? 'has-error' : ''}>
-          <span>Phone / WhatsApp <strong className="required-mark" aria-hidden="true">*</strong></span>
-          <input ref={fieldRefs.phone} type="tel" name="phone" required maxLength="100" autoComplete="tel" placeholder="Country code and number" value={formState.phone} onChange={updateField('phone')} aria-invalid={Boolean(fieldErrors.phone)} aria-describedby={fieldErrors.phone ? 'inquiry-phone-error' : undefined} />
-          {fieldErrors.phone && <small id="inquiry-phone-error" className="field-error">{fieldErrors.phone}</small>}
-        </label>
-        <label>
-          <span>Country</span>
-          <input type="text" name="country" maxLength="100" autoComplete="country-name" placeholder="Country / market" value={formState.country} onChange={updateField('country')} />
-        </label>
-        <label>
-          <span>Estimated Quantity</span>
-          <input type="text" name="quantity" maxLength="100" placeholder="Monthly or order quantity" value={formState.quantity} onChange={updateField('quantity')} />
-        </label>
-        </div>
-        </details>
+        {source === 'homepage-full-rfq' ? detailFields : (
+          <details className="inquiry-more-details" open={moreDetailsOpen} onToggle={(event) => setMoreDetailsOpen(event.currentTarget.open)}>
+            <summary>More project details <span aria-hidden="true">+</span></summary>
+            {detailFields}
+          </details>
+        )}
         <label className={`inquiry-field-wide${fieldErrors.product ? ' has-error' : ''}`}>
           <span>Product Interest <strong className="required-mark" aria-hidden="true">*</strong></span>
           <select ref={fieldRefs.product} name="product" required value={formState.product} onChange={updateField('product')} aria-invalid={Boolean(fieldErrors.product)} aria-describedby={fieldErrors.product ? 'inquiry-product-error' : undefined}>
@@ -4906,12 +4966,222 @@ function GiftCardsPage() {
   );
 }
 
+function OemProcessBusinessContent() {
+  return (
+    <div className="oem-process-business-content">
+      <section className="home-section home-customization" id="oem-customization">
+        <div className="container">
+          <header className="home-section-heading">
+            <p className="section-kicker">OEM/ODM Customization</p>
+            <h2>Built Around Your Product Brief</h2>
+            <p>From product structure and absorbency to retail packaging and export cartons, each project starts with your target market and commercial requirements.</p>
+          </header>
+          <div className="home-capability-grid">
+            {homeCustomizationCapabilities.map(([title, text], index) => (
+              <article key={title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="home-section-cta">
+            <p>Not sure which specification fits your market? Share your target price, sales channel, and intended use.</p>
+            <a href="/request-product-plan?product=oem-process">Discuss Your Product Specification <ArrowUpRight size={18} /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-partner-reasons">
+        <div className="container">
+          <header className="home-section-heading">
+            <p className="section-kicker">Why JCZCARE</p>
+            <h2>A Manufacturing Partner, Not Just a Product Catalog</h2>
+          </header>
+          <div className="home-reason-grid">
+            {homePartnerReasons.map(([title, text], index) => (
+              <article key={title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-factory" id="factory-evidence">
+        <div className="container home-factory-grid">
+          <div className="home-factory-media">
+            <video
+              src="/videos/factory-profile-4-compressed.mp4"
+              poster="/images/oem/hero/factory-campus.webp"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="JCZCARE factory profile video"
+            />
+          </div>
+          <div className="home-factory-copy">
+            <p className="section-kicker">Factory & Production</p>
+            <h2>See the Manufacturing Behind Your Product</h2>
+            <p>Review the production, material, inspection, warehouse, and export coordination behind each OEM/ODM project.</p>
+            <ul>
+              <li>8 automated production lines</li>
+              <li>Specification-controlled production</li>
+              <li>Material and in-process inspections</li>
+              <li>Export packing and shipment coordination</li>
+            </ul>
+            <a href="/factory">Explore Our Factory <ArrowUpRight size={18} /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-process" id="oem-process-steps">
+        <div className="container">
+          <header className="home-section-heading">
+            <p className="section-kicker">OEM Cooperation</p>
+            <h2>From Product Brief to Shipment</h2>
+            <p>Timing is confirmed by product, specification, packaging, quantity, destination, and trade term.</p>
+          </header>
+          <ol className="home-process-grid">
+            {homeProcessSteps.map(([number, title, text]) => (
+              <li key={number}>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+          <a className="home-inline-cta" href="/request-product-plan?product=oem-process">Start Your OEM Project <ArrowUpRight size={18} /></a>
+        </div>
+      </section>
+
+      <section className="home-section home-quality" id="quality-preview">
+        <div className="container home-quality-grid">
+          <div className="home-quality-copy">
+            <p className="section-kicker">Quality Control</p>
+            <h2>Quality Control Connected to Your Approved Specification</h2>
+            <p>Checks follow the approved product and packaging brief from incoming materials through finished-goods release.</p>
+            <div className="home-quality-list">
+              {homeQualityChecks.map((item) => <span key={item}><ShieldCheck size={18} /> {item}</span>)}
+            </div>
+            <a href="/quality-control">View Quality Control <ArrowUpRight size={18} /></a>
+          </div>
+          <OptimizedImage src="/images/oem/quality/factory-quality-control-01.webp" alt="Quality inspection for absorbent hygiene products" />
+        </div>
+      </section>
+
+      <section className="home-section home-buyers">
+        <div className="container">
+          <header className="home-section-heading">
+            <p className="section-kicker">Professional Buyers</p>
+            <h2>Built for Professional Buyers</h2>
+            <p>Whether you are developing a new private-label product, expanding an existing range, or coordinating multiple categories, start with your market, specification, quantity, and packaging requirements.</p>
+          </header>
+          <div className="home-buyer-grid">
+            {homeBuyerTypes.map((buyer) => <span key={buyer}>{buyer}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-scenarios">
+        <div className="container">
+          <header className="home-section-heading">
+            <p className="section-kicker">Typical OEM Scenarios</p>
+            <h2>Common Starting Points for Buyer Projects</h2>
+          </header>
+          <div className="home-scenario-grid">
+            {homeProjectScenarios.map(([title, text]) => (
+              <article key={title}><h3>{title}</h3><p>{text}</p></article>
+            ))}
+          </div>
+          <a className="home-inline-cta" href="/request-product-plan?product=oem-process">Discuss a Similar Project <ArrowUpRight size={18} /></a>
+        </div>
+      </section>
+
+      <section className="home-section home-faq" id="faq">
+        <div className="container home-faq-shell">
+          <header className="home-section-heading">
+            <p className="section-kicker">Buyer FAQ</p>
+            <h2>Questions Before You Request a Quote</h2>
+          </header>
+          <div className="home-faq-list">
+            {homeFaqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>{question}<span aria-hidden="true">+</span></summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function HomePage({ rootRef, navRef, ui }) {
+  return (
+    <main ref={rootRef} className="home-b2b home-rebuild">
+      <HomeTrustBar items={[
+        ['OEM/ODM', 'Manufacturing'],
+        ['3-Day', 'Sampling'],
+        ['Private Label', 'Packaging'],
+        ['Global B2B', 'Supply'],
+      ]} />
+      <SiteNav navRef={navRef} ui={ui} />
+
+      <HomeHeroCarousel
+        emailHref={buildMailto('Website Inquiry', quotationEmailBody)}
+        contactEmail={contactEmail}
+        whatsappPhone={whatsappPhone}
+        whatsappChatUrl={whatsappChatUrl}
+      />
+
+      <section className="home-trust-metrics" aria-label="Manufacturer trust data">
+        <div className="container home-trust-grid">
+          {[
+            ['20 Years', 'Manufacturing Experience', 'Focused absorbent hygiene manufacturing.'],
+            ['8 Lines', 'Automated Production', 'Production planning across automated lines.'],
+            ['3-Day', 'Sampling', 'Sample development after the product brief is confirmed.'],
+            ['Global', 'OEM/ODM Supply', 'Export packing and delivery coordination.'],
+          ].map(([value, label, text]) => (
+            <article key={label}>
+              <strong>{value}</strong>
+              <h2>{label}</h2>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <HomeProductShowcase />
+
+      <section className="contact-page home-request-quote" id="contact">
+        <div className="container contact-inner">
+          <div className="contact-copy">
+            <p className="section-kicker">Contact / RFQ</p>
+            <h2>Tell Us About Your Product Project</h2>
+            <p>Share your product, market, specification, packaging, and estimated quantity. Our team will help organize the next step.</p>
+            <div className="contact-panel">
+              <a className="contact-panel-whatsapp" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="whatsapp-icon" size={20} />
+                <span><strong>Talk to Our OEM Specialist</strong><small>{whatsappPhone}</small></span>
+              </a>
+              <a href={buildMailto('Website Inquiry', quotationEmailBody)}><Mail size={20} /><span>{contactEmail}</span></a>
+            </div>
+          </div>
+          <InquiryForm product="" source="homepage-full-rfq" buttonLabel="Submit Your OEM/ODM Inquiry" />
+        </div>
+      </section>
+      <SiteFooter ui={ui} />
+    </main>
+  );
+}
+
 function App() {
   const rootRef = useRef(null);
   const navRef = useRef(null);
-  const heroVideoRef = useRef(null);
-  const aboutVideoRef = useRef(null);
-  const [heroVideoFailed, setHeroVideoFailed] = useState(false);
   const currentPath = window.location.pathname;
   const [activeRegion, setActiveRegion] = useState(getInitialRegion);
   const ui = useMemo(() => getUiText(activeRegion), [activeRegion]);
@@ -5123,8 +5393,8 @@ function App() {
     }
 
     applyPageSeo({
-      title: 'Nantong JINCHENG ZENCARE | Pet Pad OEM/ODM Source Factory',
-      description: 'Nantong JINCHENG ZENCARE is a pet pad OEM/ODM source factory for pet pads, absorbent care products, private-label packaging, and B2B supply.',
+      title: 'Pet Pad & Disposable Hygiene Products OEM/ODM Manufacturer | JCZCARE',
+      description: 'JCZCARE manufactures pet urine pads, absorbent paper sheets, pet diapers, adult underpads, cleaning products and garbage bags for OEM/ODM and private-label buyers.',
       path: currentPath === '/' ? '/' : currentPath,
       image: heroFallbackImage,
     });
@@ -5498,60 +5768,6 @@ function App() {
   }, [currentSeries, catalogProduct, currentProduct, currentNewsArticle, currentBlogArticle, currentAuthorityPage, currentSeoPage, isInquiryPage, isSignInPage, isAboutPage, isInvestorPage, isAffiliatesPage, isHelpPage, isLearnPage, isGiveBackPage, isGiftCardsPage, isNewsPage, isBlogPage, isProductsCenterPage]);
 
   useEffect(() => {
-    const video = heroVideoRef.current;
-
-    if (!video || heroVideoFailed) {
-      return undefined;
-    }
-
-    const keepHeroVideoLooping = () => {
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    };
-
-    video.loop = true;
-    video.muted = true;
-    video.addEventListener('ended', keepHeroVideoLooping);
-
-    return () => {
-      video.removeEventListener('ended', keepHeroVideoLooping);
-    };
-  }, [heroVideoFailed]);
-
-  useEffect(() => {
-    const video = aboutVideoRef.current;
-
-    if (!video) {
-      return undefined;
-    }
-
-    video.autoplay = true;
-    video.defaultMuted = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = 'auto';
-
-    const playWhenReady = () => {
-      if (document.visibilityState === 'hidden') {
-        return;
-      }
-      video.play().catch(() => {});
-    };
-
-    video.addEventListener('canplay', playWhenReady);
-    video.addEventListener('loadeddata', playWhenReady);
-    document.addEventListener('visibilitychange', playWhenReady);
-    playWhenReady();
-
-    return () => {
-      video.removeEventListener('canplay', playWhenReady);
-      video.removeEventListener('loadeddata', playWhenReady);
-      document.removeEventListener('visibilitychange', playWhenReady);
-    };
-  }, [currentPath]);
-
-  useEffect(() => {
     if (currentSeries || catalogProduct || currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
       return undefined;
     }
@@ -5837,6 +6053,9 @@ function App() {
     );
   }
 
+  return <HomePage rootRef={rootRef} navRef={navRef} ui={ui} />;
+/* Legacy homepage markup retained below for reference during the redesign. */
+/*
   return (
     <main ref={rootRef} className="home-b2b">
       <SiteNav navRef={navRef} ui={ui} />
@@ -6013,6 +6232,7 @@ function App() {
       <SiteFooter ui={ui} />
     </main>
   );
+*/
 }
 
 createRoot(document.getElementById('root')).render(<App />);
