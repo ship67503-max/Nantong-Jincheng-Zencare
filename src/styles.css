@@ -19117,3 +19117,46 @@ body,
   background: #0d6d84 !important;
   color: #ffffff !important;
 }
+
+/* Product center OEM capability: remove the legacy dark panel treatment. */
+.products-center-page .products-oem-section {
+  border: 1px solid #cfe3e8 !important;
+  background: #f1f8fa !important;
+  color: #102a35 !important;
+  box-shadow: 0 12px 32px rgba(25, 75, 89, 0.07) !important;
+}
+
+.products-center-page .products-oem-section .section-kicker,
+.products-center-page .products-oem-section .products-center-heading h2 {
+  color: #102a35 !important;
+}
+
+.products-center-page .products-oem-section .section-kicker {
+  color: #17778c !important;
+}
+
+.products-center-page .products-oem-section .products-center-heading > p {
+  color: #607985 !important;
+  opacity: 1 !important;
+}
+
+.products-center-page .products-oem-section .products-oem-grid > div {
+  border-color: #c7dce4 !important;
+  background: #ffffff !important;
+  color: #204754 !important;
+}
+
+.products-center-page .products-oem-section .products-oem-grid svg {
+  color: #0d6d84 !important;
+}
+
+.products-center-page .products-oem-section .products-oem-cta {
+  background: #0d6d84 !important;
+  color: #ffffff !important;
+}
+
+.products-center-page .products-oem-section .products-oem-cta:hover,
+.products-center-page .products-oem-section .products-oem-cta:focus-visible {
+  background: #095a6e !important;
+  color: #ffffff !important;
+}
