@@ -13892,6 +13892,265 @@ body.mobile-menu-open {
   }
 }
 
+/* Final product-plan override: flatten the detail wrapper into the two-column grid. */
+@media (min-width: 768px) {
+  .inquiry-page .inquiry-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+  }
+
+  .inquiry-page .inquiry-more-details-fields {
+    display: contents !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .inquiry-page .inquiry-fields > label:first-child {
+    align-self: start !important;
+  }
+
+  .inquiry-page .inquiry-fields > .inquiry-field-wide {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Blog knowledge hubs: light, high-contrast palette consistent with the site. */
+.blog-page .blog-cluster-directory {
+  border-color: #cfe3e8 !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 36px rgba(25, 75, 89, 0.07) !important;
+}
+
+.blog-page .blog-cluster-directory .section-kicker {
+  color: #17778c !important;
+}
+
+.blog-page .blog-cluster-directory h2 {
+  color: #102a35 !important;
+}
+
+.blog-page .blog-cluster-links a {
+  border-color: #d7e7eb !important;
+  background: #f4fafb !important;
+  color: #204754 !important;
+}
+
+.blog-page .blog-cluster-links a:hover,
+.blog-page .blog-cluster-links a:focus-visible {
+  border-color: #79b8c6 !important;
+  background: #eaf6f8 !important;
+  box-shadow: 0 8px 22px rgba(25, 75, 89, 0.09);
+}
+
+.blog-page .blog-cluster-links span {
+  color: #204754 !important;
+}
+
+.blog-page .blog-cluster-links small {
+  color: #6b828c !important;
+}
+
+.blog-page .blog-cluster-links svg {
+  color: #17778c !important;
+}
+
+/* OEM Process material technology: replace the legacy dark treatment. */
+.process-page .innovation {
+  border: 1px solid #d7e7eb;
+  background: #f4fafb !important;
+  color: #102a35 !important;
+}
+
+.process-page .innovation::before,
+.process-page .innovation::after {
+  display: none !important;
+}
+
+.process-page .innovation-copy,
+.process-page .innovation-card {
+  border-color: #cfe3e8 !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 36px rgba(25, 75, 89, 0.07) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.process-page .innovation .section-kicker,
+.process-page .innovation .title-key {
+  color: #17778c !important;
+}
+
+.process-page .innovation-copy h2,
+.process-page .innovation-card h3 {
+  color: #102a35 !important;
+}
+
+.process-page .innovation-copy p,
+.process-page .innovation-card p {
+  color: #607985 !important;
+}
+
+.process-page .innovation .icon-box {
+  border: 1px solid #cfe3e8;
+  background: #eaf6f8 !important;
+  color: #17778c !important;
+}
+
+/* Factory process flow: stronger contrast on the light page. */
+.manufacturing-page .process-flow {
+  border-color: #cfe3e8 !important;
+  background: #ffffff !important;
+}
+
+.manufacturing-page .process-flow span {
+  border-color: #c7dce4 !important;
+  background: #edf7f9 !important;
+  color: #204754 !important;
+}
+
+.manufacturing-page .process-flow span:not(:last-child)::after {
+  border: 1px solid #0d6d84;
+  background: #0d6d84 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 109, 132, 0.2);
+}
+
+/* Product-plan inquiry: white canvas with four rows of two basic fields. */
+.inquiry-page {
+  min-height: 100vh !important;
+  padding: 104px 0 56px !important;
+  overflow: visible !important;
+  background: #ffffff !important;
+  color: #102a35 !important;
+}
+
+.inquiry-page::before,
+.inquiry-page::after,
+.inquiry-page .inquiry-silk {
+  display: none !important;
+}
+
+.inquiry-page .inquiry-shell {
+  grid-template-columns: minmax(280px, 0.72fr) minmax(560px, 1fr) !important;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px) !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.inquiry-page .inquiry-copy {
+  align-self: center;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.inquiry-page .inquiry-copy h1 {
+  max-width: 640px;
+  color: #102a35 !important;
+  font-size: clamp(48px, 4.3vw, 76px);
+  line-height: 0.98;
+}
+
+.inquiry-page .inquiry-copy h1 .title-key,
+.inquiry-page .section-kicker {
+  color: #17778c !important;
+}
+
+.inquiry-page .inquiry-copy p:not(.section-kicker) {
+  margin-top: 22px;
+  color: #607985 !important;
+}
+
+.inquiry-page .inquiry-form {
+  padding: 22px !important;
+  border: 1px solid #cfe3e8 !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 36px rgba(25, 75, 89, 0.08) !important;
+}
+
+.inquiry-page .contact-form label span,
+.inquiry-page .required-fields-note,
+.inquiry-page .form-verification-heading {
+  color: #47636e !important;
+}
+
+.inquiry-page .contact-form input,
+.inquiry-page .contact-form select,
+.inquiry-page .contact-form textarea {
+  border: 1px solid #c7dce4 !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  color: #102a35 !important;
+}
+
+.inquiry-page .contact-form input::placeholder,
+.inquiry-page .contact-form textarea::placeholder {
+  color: #7b8f98 !important;
+}
+
+.inquiry-page .form-verification {
+  border-color: #cfe3e8 !important;
+  background: #f4fafb !important;
+}
+
+.inquiry-page .contact-form button {
+  background: #0d6d84 !important;
+  color: #ffffff !important;
+}
+
+@media (min-width: 768px) {
+  .inquiry-page .inquiry-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start;
+    gap: 10px !important;
+  }
+
+  .inquiry-page .inquiry-more-details-fields {
+    display: contents !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .inquiry-page .inquiry-fields > label:first-child {
+    align-self: start !important;
+  }
+
+  .inquiry-page .inquiry-field-wide {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .inquiry-page .inquiry-shell {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .inquiry-page .inquiry-copy h1 {
+    max-width: 680px;
+    font-size: clamp(42px, 9vw, 64px);
+  }
+}
+
+@media (max-width: 767px) {
+  .inquiry-page {
+    padding: 88px 0 28px !important;
+  }
+
+  .inquiry-page .inquiry-shell {
+    gap: 24px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .inquiry-page .inquiry-fields,
+  .inquiry-page .inquiry-more-details-fields {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
 /* Global light visual system: white is the dominant canvas on every route. */
 :root {
   --hero-navy: #f6fbfc;
@@ -18458,6 +18717,28 @@ body,
   }
 
   .home-request-quote .inquiry-fields > .inquiry-field-wide {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Final product-plan override: flatten the detail wrapper into the two-column grid. */
+@media (min-width: 768px) {
+  .inquiry-page .inquiry-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+  }
+
+  .inquiry-page .inquiry-more-details-fields {
+    display: contents !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .inquiry-page .inquiry-fields > label:first-child {
+    align-self: start !important;
+  }
+
+  .inquiry-page .inquiry-fields > .inquiry-field-wide {
     grid-column: 1 / -1 !important;
   }
 }

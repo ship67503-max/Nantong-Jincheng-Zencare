@@ -4155,7 +4155,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
           <input ref={fieldRefs.name} type="text" name="name" required maxLength="100" autoComplete="name" placeholder="Full name" value={formState.name} onChange={updateField('name')} aria-invalid={Boolean(fieldErrors.name)} aria-describedby={fieldErrors.name ? 'inquiry-name-error' : undefined} />
           {fieldErrors.name && <small id="inquiry-name-error" className="field-error">{fieldErrors.name}</small>}
         </label>
-        {source === 'homepage-full-rfq' ? detailFields : (
+        {source === 'homepage-full-rfq' || source === 'product-plan-request' ? detailFields : (
           <details className="inquiry-more-details" open={moreDetailsOpen} onToggle={(event) => setMoreDetailsOpen(event.currentTarget.open)}>
             <summary>More project details <span aria-hidden="true">+</span></summary>
             {detailFields}
