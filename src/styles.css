@@ -13914,6 +13914,43 @@ body.mobile-menu-open {
   }
 }
 
+/* Product center OEM capability panel: improve contrast on the light site. */
+.products-oem-section {
+  border: 1px solid #cfe3e8;
+  background: #f1f8fa;
+  box-shadow: 0 16px 42px rgba(25, 75, 89, 0.08);
+}
+
+.products-oem-section .products-center-heading h2 {
+  color: #102a35;
+}
+
+.products-oem-section .products-center-heading > p {
+  color: #607985;
+  opacity: 1;
+}
+
+.products-oem-section .products-oem-grid > div {
+  border-color: #c7dce4;
+  background: #ffffff;
+  color: #204754;
+}
+
+.products-oem-section .products-oem-grid svg {
+  color: #0d6d84;
+}
+
+.products-oem-section .products-oem-cta {
+  background: #0d6d84;
+  color: #ffffff;
+}
+
+.products-oem-section .products-oem-cta:hover,
+.products-oem-section .products-oem-cta:focus-visible {
+  background: #095a6e;
+  color: #ffffff;
+}
+
 /* Standalone Privacy Policy page. */
 .privacy-page {
   min-height: 100vh;
