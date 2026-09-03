@@ -37,6 +37,10 @@ const contactEmail = 'hengtuo@nthengtuo.com';
 const whatsappPhone = '+86 18962944556';
 const whatsappChatUrl =
   'https://wa.me/8618962944556?text=Hello%2C%20I%20am%20interested%20in%20your%20OEM%2FODM%20pet%20products.%20Please%20share%20more%20information%20about%20MOQ%2C%20pricing%2C%20samples%2C%20and%20lead%20time.';
+// Public Google Ads destination identifiers. Environment values override the supplied snippet.
+const googleAdsId = String(import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-18346194096').trim();
+const googleAdsLeadLabel = String(import.meta.env.VITE_GOOGLE_ADS_LEAD_LABEL || 'R6b4CJ6xyNUcELDpkqxE').trim();
+const hasGoogleAdsConfig = /^AW-\d+$/.test(googleAdsId) && Boolean(googleAdsLeadLabel);
 const Silk = React.lazy(() => import('./Silk'));
 
 const buildMailto = (subject = 'Website Inquiry', body = '') => {
@@ -47,6 +51,29 @@ const buildMailto = (subject = 'Website Inquiry', body = '') => {
   }
 
   return `mailto:${contactEmail}?${params.toString()}`;
+};
+// Reuse the single GA4 Google tag loaded by index.html for Ads conversion events.
+const ensureGoogleTagReady = () => {
+  if (!hasGoogleAdsConfig || typeof window === 'undefined') {
+    return false;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  return true;
+};
+
+const trackGoogleAdsLeadConversion = () => {
+  if (!ensureGoogleTagReady()) {
+    return;
+  }
+
+  window.gtag('event', 'conversion', {
+    send_to: `${googleAdsId}/${googleAdsLeadLabel}`,
+  });
 };
 
 const quotationEmailBody = [
@@ -2035,10 +2062,22 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
   });
   const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
   const lastSubmitAtRef = useRef(0);
+  const conversionTrackedRef = useRef(false);
 
   useEffect(() => {
     setFormState((state) => ({ ...state, product }));
   }, [product]);
+  useEffect(() => {
+    if (submitState.status !== 'success') {
+      conversionTrackedRef.current = false;
+      return;
+    }
+
+    if (!conversionTrackedRef.current) {
+      conversionTrackedRef.current = true;
+      trackGoogleAdsLeadConversion();
+    }
+  }, [submitState.status]);
 
   const updateField = (field) => (event) => {
     setFormState((state) => ({ ...state, [field]: event.target.value }));
@@ -2974,6 +3013,9 @@ function App() {
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
     : null;
+  useEffect(() => {
+    ensureGoogleTagReady();
+  }, []);
   const currentNewsArticle = newsSlug
     ? newsArticles.find((article) => article.slug === newsSlug)
     : null;
