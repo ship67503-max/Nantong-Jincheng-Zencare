@@ -1,0 +1,1868 @@
+{
+  "generated_at": "2026-07-23T09:25:40.105Z",
+  "homepage_protected": true,
+  "source_root": "D:/WebsiteImages",
+  "scanned_images_total": 152,
+  "usable_images_total": 143,
+  "excluded_images_total": 9,
+  "excluded_images": [
+    {
+      "index": 36,
+      "file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0062-original.jpg",
+      "reason": "Visible text/third-party promotional content or unsafe crop"
+    },
+    {
+      "index": 131,
+      "file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0033-original.jpg",
+      "reason": "Visible text/third-party promotional content or unsafe crop"
+    },
+    {
+      "index": 143,
+      "file": "D:\\WebsiteImages\\incoming\\ChatGPT Image 2026年7月23日 16_09_58.png",
+      "reason": "Visible text/third-party promotional content or unsafe crop"
+    },
+    {
+      "index": 144,
+      "file": "D:\\WebsiteImages\\incoming\\ChatGPT Image 2026年7月23日 16_16_29.png",
+      "reason": "Visible text/third-party promotional content or unsafe crop"
+    },
+    {
+      "index": 148,
+      "file": "D:\\WebsiteImages\\qa-temp\\contact-1.jpg",
+      "reason": "Contact sheet or QA screenshot, not a website material"
+    },
+    {
+      "index": 149,
+      "file": "D:\\WebsiteImages\\qa-temp\\contact-2.jpg",
+      "reason": "Contact sheet or QA screenshot, not a website material"
+    },
+    {
+      "index": 150,
+      "file": "D:\\WebsiteImages\\qa-temp\\contact-3.jpg",
+      "reason": "Contact sheet or QA screenshot, not a website material"
+    },
+    {
+      "index": 151,
+      "file": "D:\\WebsiteImages\\qa-temp\\contact-4.jpg",
+      "reason": "Contact sheet or QA screenshot, not a website material"
+    },
+    {
+      "index": 152,
+      "file": "D:\\WebsiteImages\\qa-temp\\new-incoming-contact-sheet.jpg",
+      "reason": "Contact sheet or QA screenshot, not a website material"
+    }
+  ],
+  "site_image_locations_scanned": 172,
+  "changed_files": [
+    "scripts/seo-page-data.mjs",
+    "src/authorityData.js",
+    "src/blogData.js",
+    "src/blogExpansionData.js",
+    "src/factoryData.js",
+    "src/main.jsx",
+    "src/seoGrowthArticles.js",
+    "src/topicClusters.js"
+  ],
+  "generated_assets_count": 32,
+  "generated_blog_covers_count": 150,
+  "replacement_references_count": 147,
+  "before_image_location_count": 172,
+  "after_image_location_count": 172,
+  "generated_assets": [
+    {
+      "key": "products-disposable-pads-01",
+      "category": "products",
+      "source_index": 39,
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/products/products-disposable-pads-01.webp",
+      "alt": "Dog beside a disposable pet training pad in a home setting",
+      "width": 1600,
+      "height": 900,
+      "bytes": 56670,
+      "sha256": "3235390704389dab2f70c70aad8b5b12307c995dbe6403dec9b15a0eb965890a"
+    },
+    {
+      "key": "products-disposable-pads-02",
+      "category": "products",
+      "source_index": 113,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/products/products-disposable-pads-02.webp",
+      "alt": "Packaged disposable pet pad beside a dog in a bright room",
+      "width": 1600,
+      "height": 900,
+      "bytes": 91614,
+      "sha256": "e2ecca62ec081b9473ecb24b7a2f8d8d0c664f29b8d7b3347f5aee1730387532"
+    },
+    {
+      "key": "products-pet-pad-structure-01",
+      "category": "products",
+      "source_index": 137,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0039-original.jpg",
+      "output_path": "/images/generated-site/products/products-pet-pad-structure-01.webp",
+      "alt": "Folded disposable pet pads and absorbent sheet structure",
+      "width": 1600,
+      "height": 900,
+      "bytes": 35836,
+      "sha256": "ad8cdb25016bc18b1b6270d4a2d83429660586195b66f6e787156dae13ec9590"
+    },
+    {
+      "key": "products-pet-pad-macro-01",
+      "category": "products",
+      "source_index": 140,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/products/products-pet-pad-macro-01.webp",
+      "alt": "Close-up of quilted pet pad surface with liquid bead",
+      "width": 1600,
+      "height": 900,
+      "bytes": 50570,
+      "sha256": "52a94e789c5f737dbb70801b35083aa1ac4854f1a39f2bda40af23b080158686"
+    },
+    {
+      "key": "products-absorbent-paper-01",
+      "category": "materials",
+      "source_index": 141,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0043-original.jpg",
+      "output_path": "/images/generated-site/materials/products-absorbent-paper-01.webp",
+      "alt": "Absorbent paper and core material sample on a tray",
+      "width": 1600,
+      "height": 900,
+      "bytes": 45982,
+      "sha256": "4f0c548057ce4ba3f13e4238735867bf6134e078b1e195313de6c29e9c042287"
+    },
+    {
+      "key": "products-pe-film-01",
+      "category": "materials",
+      "source_index": 138,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0040-original.jpg",
+      "output_path": "/images/generated-site/materials/products-pe-film-01.webp",
+      "alt": "Close-up of absorbent pad backing and layered edge",
+      "width": 1600,
+      "height": 900,
+      "bytes": 42618,
+      "sha256": "8414233663dab61fe73c0ec044d4cb7519b0fbebdcb9a437e04b4c5e126906a6"
+    },
+    {
+      "key": "products-underpads-01",
+      "category": "products",
+      "source_index": 40,
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/products/products-underpads-01.webp",
+      "alt": "Absorbency pressure test on an adult disposable underpad",
+      "width": 1600,
+      "height": 900,
+      "bytes": 55338,
+      "sha256": "3c3cf1862fa9d3c31af9e124e3cef5f76e09afcb75de8e8c99330a41490ff72e"
+    },
+    {
+      "key": "products-underpads-02",
+      "category": "products",
+      "source_index": 146,
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/products/products-underpads-02.webp",
+      "alt": "Adult underpad absorbency test with pressure block",
+      "width": 1600,
+      "height": 900,
+      "bytes": 55338,
+      "sha256": "3c3cf1862fa9d3c31af9e124e3cef5f76e09afcb75de8e8c99330a41490ff72e"
+    },
+    {
+      "key": "products-charcoal-pads-01",
+      "category": "products",
+      "source_index": 138,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0040-original.jpg",
+      "output_path": "/images/generated-site/products/products-charcoal-pads-01.webp",
+      "alt": "Dark-backed absorbent pad edge for odor-control product reference",
+      "width": 1600,
+      "height": 900,
+      "bytes": 42618,
+      "sha256": "8414233663dab61fe73c0ec044d4cb7519b0fbebdcb9a437e04b4c5e126906a6"
+    },
+    {
+      "key": "products-adhesive-pads-01",
+      "category": "products",
+      "source_index": 43,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\11 - download.jpg",
+      "output_path": "/images/generated-site/products/products-adhesive-pads-01.webp",
+      "alt": "Disposable pet pad on wood floor during liquid absorption test",
+      "width": 1600,
+      "height": 900,
+      "bytes": 65808,
+      "sha256": "75ea8c99122be8143978f74d32ea60ad432e4cbfc89aa27eccd5c69e67624654"
+    },
+    {
+      "key": "private-label-packaging-01",
+      "category": "packaging",
+      "source_index": 132,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/packaging/private-label-packaging-01.webp",
+      "alt": "Private-label pet care packaging review meeting",
+      "width": 1600,
+      "height": 900,
+      "bytes": 88964,
+      "sha256": "34d046a1fe6916b7eb8f5eb00cec22fdbec61052389cc7cfddd22e327cf89613"
+    },
+    {
+      "key": "private-label-packaging-02",
+      "category": "packaging",
+      "source_index": 133,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0035-original.jpg",
+      "output_path": "/images/generated-site/packaging/private-label-packaging-02.webp",
+      "alt": "Pet care packaging samples and absorbent products on a review table",
+      "width": 1600,
+      "height": 900,
+      "bytes": 69902,
+      "sha256": "127e5ea69555a6ee3d84980aa9137efe994a38200bdc2ababf8cd7c0f61e1200"
+    },
+    {
+      "key": "oem-sample-review-01",
+      "category": "oem",
+      "source_index": 33,
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/oem/oem-sample-review-01.webp",
+      "alt": "OEM product sample review with absorbent pad and packaging",
+      "width": 1600,
+      "height": 900,
+      "bytes": 70536,
+      "sha256": "6bbe549a05f0c2798430481d8b5b395bd82d5dad8cb046a4d2d099603192a50e"
+    },
+    {
+      "key": "oem-meeting-01",
+      "category": "oem",
+      "source_index": 56,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\23 - download.jpg",
+      "output_path": "/images/generated-site/oem/oem-meeting-01.webp",
+      "alt": "Business team reviewing pet care product samples and packaging",
+      "width": 1600,
+      "height": 900,
+      "bytes": 102172,
+      "sha256": "08e808f053e8ed194002fd799766c7db3966b3bfee3e4f5b165e0d25170b6991"
+    },
+    {
+      "key": "factory-campus-01",
+      "category": "factory",
+      "source_index": 15,
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/factory/factory-campus-01.webp",
+      "alt": "Modern factory campus exterior for JCZCARE company profile",
+      "width": 1600,
+      "height": 900,
+      "bytes": 105254,
+      "sha256": "8dcb9cf5283f887fc73968aaa86dddc467cde3f1a5bb90bd41c7487ba53aebfa"
+    },
+    {
+      "key": "factory-office-01",
+      "category": "about",
+      "source_index": 16,
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\7 - download.jpg",
+      "output_path": "/images/generated-site/about/factory-office-01.webp",
+      "alt": "Bright reception and office space for company profile",
+      "width": 1600,
+      "height": 900,
+      "bytes": 63338,
+      "sha256": "50e9e7614db8a3c6c7aacc5667f81256f4d33ace923a88222b1036ba8d2714d8"
+    },
+    {
+      "key": "factory-production-line-01",
+      "category": "factory",
+      "source_index": 47,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\15 - download.jpg",
+      "output_path": "/images/generated-site/factory/factory-production-line-01.webp",
+      "alt": "Automated absorbent product production line with stacked pet pads",
+      "width": 1600,
+      "height": 900,
+      "bytes": 150472,
+      "sha256": "9ba9b00d2fbbf563f45576a0f3b64455665447702947834744144db11329eb55"
+    },
+    {
+      "key": "factory-production-line-02",
+      "category": "factory",
+      "source_index": 49,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/factory/factory-production-line-02.webp",
+      "alt": "Wide view of automated pet pad production line",
+      "width": 1600,
+      "height": 900,
+      "bytes": 182682,
+      "sha256": "2dc94546485976e2070c24d5f200dcb7d210e1c93608bd4f9094b41ed91cb182"
+    },
+    {
+      "key": "factory-production-line-03",
+      "category": "factory",
+      "source_index": 129,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/factory/factory-production-line-03.webp",
+      "alt": "Pet pad converting line with blue absorbent products",
+      "width": 1600,
+      "height": 900,
+      "bytes": 153884,
+      "sha256": "56f317a2040c7733f046d3198fcf3ae32e4bb348a6aecde17cf6f1d475aa2cb3"
+    },
+    {
+      "key": "factory-lamination-01",
+      "category": "factory",
+      "source_index": 68,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/factory/factory-lamination-01.webp",
+      "alt": "Close-up of nonwoven roll material on production equipment",
+      "width": 1600,
+      "height": 900,
+      "bytes": 69508,
+      "sha256": "e4a5721af7c2500445290416de53fede1be2e98884b98e1fc6a5e92c33f10d78"
+    },
+    {
+      "key": "factory-lamination-02",
+      "category": "factory",
+      "source_index": 80,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\2- download.jpg",
+      "output_path": "/images/generated-site/factory/factory-lamination-02.webp",
+      "alt": "Absorbent sheet material running through production equipment",
+      "width": 1600,
+      "height": 900,
+      "bytes": 90210,
+      "sha256": "fa042132af61fbaa8a57b14b0681625569f65dc19b81ca26da3d8c5b120f8bc3"
+    },
+    {
+      "key": "factory-quality-control-01",
+      "category": "quality-control",
+      "source_index": 29,
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0055-original.jpg",
+      "output_path": "/images/generated-site/quality-control/factory-quality-control-01.webp",
+      "alt": "Quality inspector testing disposable pet pads in a laboratory",
+      "width": 1600,
+      "height": 900,
+      "bytes": 82394,
+      "sha256": "c02f43354a086e3fdb2b40479b133297f4a24111e0c234ca42f905cb384b05b6"
+    },
+    {
+      "key": "factory-quality-control-02",
+      "category": "quality-control",
+      "source_index": 53,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/quality-control/factory-quality-control-02.webp",
+      "alt": "Technician measuring and inspecting disposable pet pads",
+      "width": 1600,
+      "height": 900,
+      "bytes": 95572,
+      "sha256": "ead13960a2c1639fae67e43d6962eab683b962c21ea70ddda4da88d200affece"
+    },
+    {
+      "key": "factory-quality-control-03",
+      "category": "quality-control",
+      "source_index": 134,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/quality-control/factory-quality-control-03.webp",
+      "alt": "Laboratory absorbency test for pet pad quality control",
+      "width": 1600,
+      "height": 900,
+      "bytes": 86558,
+      "sha256": "84a01f18d34e90c9f192c552c1d6c8645283748f652303616895131147866c6b"
+    },
+    {
+      "key": "factory-testing-lab-01",
+      "category": "quality-control",
+      "source_index": 60,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\27- download.jpg",
+      "output_path": "/images/generated-site/quality-control/factory-testing-lab-01.webp",
+      "alt": "Absorbency test performed on a disposable underpad",
+      "width": 1600,
+      "height": 900,
+      "bytes": 64010,
+      "sha256": "ae79643eb7b6400061b64a8046d35160f41e2c9cb1857b7eb43ed7b9688145f1"
+    },
+    {
+      "key": "warehouse-finished-goods-01",
+      "category": "warehouse",
+      "source_index": 85,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\47 - download.jpg",
+      "output_path": "/images/generated-site/warehouse/warehouse-finished-goods-01.webp",
+      "alt": "Finished pet care goods stored in an organized warehouse aisle",
+      "width": 1600,
+      "height": 900,
+      "bytes": 162838,
+      "sha256": "84a4fa944a9e7b09ef6e29794a07c3a892a22fcc8f13c4809568704bde628517"
+    },
+    {
+      "key": "warehouse-finished-goods-02",
+      "category": "warehouse",
+      "source_index": 76,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\9 - download.jpg",
+      "output_path": "/images/generated-site/warehouse/warehouse-finished-goods-02.webp",
+      "alt": "Warehouse aisle with finished cartons and pet pad pallets",
+      "width": 1600,
+      "height": 900,
+      "bytes": 130892,
+      "sha256": "5193597c6f27349ad50b7a6810b02c3b34ab1ce59be433eeaf3325c1f88ed77c"
+    },
+    {
+      "key": "warehouse-pallet-01",
+      "category": "warehouse",
+      "source_index": 54,
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\21- download.jpg",
+      "output_path": "/images/generated-site/warehouse/warehouse-pallet-01.webp",
+      "alt": "Palletized pet care products ready in warehouse storage",
+      "width": 1600,
+      "height": 900,
+      "bytes": 169678,
+      "sha256": "ecddf8d77bbca08414f7e88339e5f1a209597d28b92c211ef4a4c81bd28befbf"
+    },
+    {
+      "key": "logistics-container-01",
+      "category": "logistics",
+      "source_index": 136,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/logistics/logistics-container-01.webp",
+      "alt": "Forklift loading pet care goods into an export container",
+      "width": 1600,
+      "height": 900,
+      "bytes": 85508,
+      "sha256": "5668c64841adb5cd220953aadc481663321da894db2f0e031976eb96add0d0db"
+    },
+    {
+      "key": "logistics-container-02",
+      "category": "logistics",
+      "source_index": 90,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\51- download.jpg",
+      "output_path": "/images/generated-site/logistics/logistics-container-02.webp",
+      "alt": "Container loading operation with forklifts and palletized goods",
+      "width": 1600,
+      "height": 900,
+      "bytes": 132836,
+      "sha256": "1559d60f81cc38ca255b6a47c775f082618884b29f68333bfde14b7dbab7ecf0"
+    },
+    {
+      "key": "contact-business-office-01",
+      "category": "contact",
+      "source_index": 5,
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\13 - download.jpg",
+      "output_path": "/images/generated-site/contact/contact-business-office-01.webp",
+      "alt": "Business discussion for OEM pet care product planning",
+      "width": 1600,
+      "height": 900,
+      "bytes": 94364,
+      "sha256": "9b8d866bc7ee057d0001fd6eb2ed8968a49d901b146d5cd8ddf5c401d31df7ca"
+    },
+    {
+      "key": "contact-pet-care-01",
+      "category": "contact",
+      "source_index": 118,
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0020-original.jpg",
+      "output_path": "/images/generated-site/contact/contact-pet-care-01.webp",
+      "alt": "Family with dogs using disposable pet pads in a home",
+      "width": 1600,
+      "height": 900,
+      "bytes": 97538,
+      "sha256": "b97a87d1d16f6253d815851869eeb7b65acea3ec9e0b8ab218c7e6aafbed8b09"
+    }
+  ],
+  "generated_blog_covers": [
+    {
+      "slug": "oem-pet-pad-contract-manufacturing",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-contract-manufacturing.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "oem-product-change-control",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/oem-product-change-control.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "oem-pilot-order-planning",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pilot-order-planning.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "oem-multi-sku-launch-plan",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-multi-sku-launch-plan.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "oem-capacity-allocation-review",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-capacity-allocation-review.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "puppy-pad-surface-intake-design",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/puppy-pad-surface-intake-design.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "pet-pad-edge-seal-quality",
+      "category": "quality",
+      "source_asset": "factory-quality-control-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0055-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-edge-seal-quality.webp",
+      "bytes": 54496,
+      "sha256": "9e582f49f53407f7cc7718e4e00e7d1da29da2b781ac48d0a51c10a30eb67fa5"
+    },
+    {
+      "slug": "pet-pad-embossing-pattern-selection",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-embossing-pattern-selection.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "pet-pad-folding-pack-efficiency",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-folding-pack-efficiency.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "travel-pet-pad-sourcing-guide",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/travel-pet-pad-sourcing-guide.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "adult-underpad-surface-comfort-specification",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-surface-comfort-specification.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "adult-underpad-pack-count-tender-planning",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-pack-count-tender-planning.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "adult-underpad-backing-film-selection",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-backing-film-selection.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "institutional-underpad-supplier-program",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/institutional-underpad-supplier-program.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "adult-underpad-arrival-inspection",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-arrival-inspection.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "dog-waste-bag-perforation-control",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/dog-waste-bag-perforation-control.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "dog-poop-bag-roll-count-verification",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/dog-poop-bag-roll-count-verification.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "dog-waste-bag-scent-selection",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/dog-waste-bag-scent-selection.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "dog-poop-bag-dispenser-compatibility",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/dog-poop-bag-dispenser-compatibility.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "dog-waste-bag-print-registration",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/dog-waste-bag-print-registration.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "private-label-claim-approval-workflow",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-claim-approval-workflow.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "private-label-barcode-master-data",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-barcode-master-data.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "private-label-line-extension-planning",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-line-extension-planning.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "private-label-retailer-onboarding",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-retailer-onboarding.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "pet-product-dieline-approval",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-dieline-approval.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "pet-pad-carton-compression-risk",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0035-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-carton-compression-risk.webp",
+      "bytes": 45964,
+      "sha256": "eaa2cc421faaa63af0751f53ddee73bf480ad62cd5de1100097589276e634435"
+    },
+    {
+      "slug": "multi-language-pet-product-packaging",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0035-original.jpg",
+      "output_path": "/images/generated-site/blog/multi-language-pet-product-packaging.webp",
+      "bytes": 45964,
+      "sha256": "eaa2cc421faaa63af0751f53ddee73bf480ad62cd5de1100097589276e634435"
+    },
+    {
+      "slug": "pet-product-packaging-cost-engineering",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-packaging-cost-engineering.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "pet-product-container-moisture-control",
+      "category": "logistics",
+      "source_asset": "warehouse-pallet-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\21- download.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-container-moisture-control.webp",
+      "bytes": 113070,
+      "sha256": "9b3d4f6c6e4b9451ca13189ea410c09a672609aa0c68cb5daa8d430d0261164e"
+    },
+    {
+      "slug": "pet-product-shipping-document-checklist",
+      "category": "logistics",
+      "source_asset": "logistics-container-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-shipping-document-checklist.webp",
+      "bytes": 55086,
+      "sha256": "8d2ee4a19f909341bd0b7d8c398a82f12559298629c7aa599d116436e8464c1d"
+    },
+    {
+      "slug": "pet-product-reorder-point-planning",
+      "category": "logistics",
+      "source_asset": "warehouse-finished-goods-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\47 - download.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-reorder-point-planning.webp",
+      "bytes": 107742,
+      "sha256": "56cd190cdd396ce31afafb24a2b8d0b96b4e1421bcbb86edb3c95fe95c05d48a"
+    },
+    {
+      "slug": "pet-product-lcl-vs-fcl-decision",
+      "category": "logistics",
+      "source_asset": "logistics-container-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-lcl-vs-fcl-decision.webp",
+      "bytes": 55086,
+      "sha256": "8d2ee4a19f909341bd0b7d8c398a82f12559298629c7aa599d116436e8464c1d"
+    },
+    {
+      "slug": "pet-pad-defect-classification",
+      "category": "logistics",
+      "source_asset": "logistics-container-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-defect-classification.webp",
+      "bytes": 55086,
+      "sha256": "8d2ee4a19f909341bd0b7d8c398a82f12559298629c7aa599d116436e8464c1d"
+    },
+    {
+      "slug": "pet-pad-retained-sample-program",
+      "category": "quality",
+      "source_asset": "factory-quality-control-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0055-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-retained-sample-program.webp",
+      "bytes": 54496,
+      "sha256": "9e582f49f53407f7cc7718e4e00e7d1da29da2b781ac48d0a51c10a30eb67fa5"
+    },
+    {
+      "slug": "oem-corrective-action-review",
+      "category": "quality",
+      "source_asset": "factory-quality-control-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0055-original.jpg",
+      "output_path": "/images/generated-site/blog/oem-corrective-action-review.webp",
+      "bytes": 54496,
+      "sha256": "9e582f49f53407f7cc7718e4e00e7d1da29da2b781ac48d0a51c10a30eb67fa5"
+    },
+    {
+      "slug": "pet-product-golden-sample-control",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-golden-sample-control.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "factory-maintenance-audit-pet-products",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/factory-maintenance-audit-pet-products.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "factory-traceability-audit",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/factory-traceability-audit.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "factory-business-continuity-review",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/factory-business-continuity-review.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "factory-subcontracting-control",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/factory-subcontracting-control.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "nonwoven-basis-weight-pet-pads",
+      "category": "materials",
+      "source_asset": "factory-lamination-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/blog/nonwoven-basis-weight-pet-pads.webp",
+      "bytes": 44998,
+      "sha256": "0efedd545d084bd5ef8c364a067a85a0d286459be876de73ebde10fbee67df10"
+    },
+    {
+      "slug": "hot-melt-adhesive-absorbent-products",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/hot-melt-adhesive-absorbent-products.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "sap-gel-blocking-pet-pads",
+      "category": "materials",
+      "source_asset": "factory-lamination-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/blog/sap-gel-blocking-pet-pads.webp",
+      "bytes": 44998,
+      "sha256": "0efedd545d084bd5ef8c364a067a85a0d286459be876de73ebde10fbee67df10"
+    },
+    {
+      "slug": "sap-dosing-consistency-audit",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/sap-dosing-consistency-audit.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "pe-film-pinhole-risk-pet-pads",
+      "category": "adult",
+      "source_asset": "products-underpads-02",
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/pe-film-pinhole-risk-pet-pads.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "printed-backing-film-pet-pads",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/printed-backing-film-pet-pads.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "pet-product-supplier-scorecard",
+      "category": "materials",
+      "source_asset": "products-pet-pad-structure-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0039-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-supplier-scorecard.webp",
+      "bytes": 21626,
+      "sha256": "8283100dd80a3e8981ead63284dae51e42c5fac3ebc066b01984ac2790dfb23c"
+    },
+    {
+      "slug": "pet-product-payment-milestone-plan",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-payment-milestone-plan.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "pet-product-quotation-normalization",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-quotation-normalization.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "pet-care-supply-chain-resilience",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-care-supply-chain-resilience.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "oem-pet-pad-product-brief",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-product-brief.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "custom-absorbency-targets-oem-pet-pads",
+      "category": "quality",
+      "source_asset": "factory-testing-lab-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\27- download.jpg",
+      "output_path": "/images/generated-site/blog/custom-absorbency-targets-oem-pet-pads.webp",
+      "bytes": 40864,
+      "sha256": "8f5fcada2abeef0c728f389cf07c7dfd62fee0646350eb745d89a50e142dcf83"
+    },
+    {
+      "slug": "oem-pet-pad-sample-approval-workflow",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-sample-approval-workflow.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "pet-pad-pilot-order-planning",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-pilot-order-planning.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "private-label-pet-pad-artwork-approval",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-pet-pad-artwork-approval.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "oem-pet-pad-pricing-factors",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-pricing-factors.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "pet-pad-repeat-order-consistency",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-repeat-order-consistency.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "oem-pet-pad-change-control",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-change-control.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "multi-sku-pet-pad-range-launch",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/multi-sku-pet-pad-range-launch.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "oem-pet-pad-production-timeline",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-production-timeline.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "questions-oem-buyers-ask-pet-pad-factory",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/questions-oem-buyers-ask-pet-pad-factory.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "nda-product-information-oem-sourcing",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/nda-product-information-oem-sourcing.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "oem-project-handoff-to-factory",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/oem-project-handoff-to-factory.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "demand-forecast-oem-pet-pad-supply",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/demand-forecast-oem-pet-pad-supply.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "pet-pad-technical-specification-sheet",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-technical-specification-sheet.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "five-layer-puppy-pad-construction",
+      "category": "materials",
+      "source_asset": "products-pet-pad-structure-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0039-original.jpg",
+      "output_path": "/images/generated-site/blog/five-layer-puppy-pad-construction.webp",
+      "bytes": 21626,
+      "sha256": "8283100dd80a3e8981ead63284dae51e42c5fac3ebc066b01984ac2790dfb23c"
+    },
+    {
+      "slug": "leak-proof-pe-backing-puppy-pads",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/leak-proof-pe-backing-puppy-pads.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "absorption-speed-vs-capacity-pet-pads",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/absorption-speed-vs-capacity-pet-pads.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "puppy-pad-rewet-testing",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/puppy-pad-rewet-testing.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "pet-pad-edge-sealing-quality",
+      "category": "quality",
+      "source_asset": "factory-testing-lab-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\27- download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-edge-sealing-quality.webp",
+      "bytes": 40864,
+      "sha256": "8f5fcada2abeef0c728f389cf07c7dfd62fee0646350eb745d89a50e142dcf83"
+    },
+    {
+      "slug": "pet-pad-embossing-patterns",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/pet-pad-embossing-patterns.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "scented-vs-unscented-puppy-pads",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/scented-vs-unscented-puppy-pads.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "activated-charcoal-pet-pads-buyer-guide",
+      "category": "charcoal",
+      "source_asset": "products-charcoal-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0040-original.jpg",
+      "output_path": "/images/generated-site/blog/activated-charcoal-pet-pads-buyer-guide.webp",
+      "bytes": 24290,
+      "sha256": "9407e08990c48c7193dd87b69dcbaa684c4133980c5bac87702605b8c05c6828"
+    },
+    {
+      "slug": "adhesive-puppy-pad-backing-options",
+      "category": "adhesive",
+      "source_asset": "products-adhesive-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\11 - download.jpg",
+      "output_path": "/images/generated-site/blog/adhesive-puppy-pad-backing-options.webp",
+      "bytes": 40874,
+      "sha256": "579a2937dec5ff5ef2df5f5414241f1a6f5e5dccfa565465de19354326b8bb98"
+    },
+    {
+      "slug": "retail-pet-pad-size-range",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/retail-pet-pad-size-range.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "common-puppy-pad-quality-defects",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/common-puppy-pad-quality-defects.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "pet-pad-performance-test-methods",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-performance-test-methods.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "adult-disposable-underpad-materials",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-disposable-underpad-materials.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "hospital-underpad-procurement-guide",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/hospital-underpad-procurement-guide.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "nursing-home-underpad-supplier-evaluation",
+      "category": "adult",
+      "source_asset": "products-underpads-02",
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/nursing-home-underpad-supplier-evaluation.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "adult-underpad-absorbency-specification",
+      "category": "adult",
+      "source_asset": "products-underpads-02",
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-absorbency-specification.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "underpad-skin-contact-surface",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/underpad-skin-contact-surface.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "pe-film-backing-adult-underpads",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/pe-film-backing-adult-underpads.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "oem-adult-underpads-development",
+      "category": "adult",
+      "source_asset": "factory-quality-control-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\20 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-adult-underpads-development.webp",
+      "bytes": 62854,
+      "sha256": "b2cf163181f31f760026f8501778a865ed792a0437b4f37400c38fadfb3f915e"
+    },
+    {
+      "slug": "private-label-adult-underpad-packaging",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/private-label-adult-underpad-packaging.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "adult-underpad-size-weight-pack-count",
+      "category": "adult",
+      "source_asset": "products-underpads-02",
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-size-weight-pack-count.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "adult-underpad-quality-inspection",
+      "category": "adult",
+      "source_asset": "products-underpads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/adult-underpad-quality-inspection.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "how-dog-waste-bags-are-manufactured",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/how-dog-waste-bags-are-manufactured.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "compostable-dog-poop-bags-due-diligence",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/compostable-dog-poop-bags-due-diligence.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "hdpe-vs-ldpe-dog-waste-bags",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/hdpe-vs-ldpe-dog-waste-bags.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "leak-proof-dog-poop-bag-specification",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/leak-proof-dog-poop-bag-specification.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "oem-dog-waste-bag-manufacturing",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/oem-dog-waste-bag-manufacturing.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "private-label-dog-poop-bags-launch",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-dog-poop-bags-launch.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "dog-waste-bag-roll-core-sizes",
+      "category": "materials",
+      "source_asset": "products-absorbent-paper-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0043-original.jpg",
+      "output_path": "/images/generated-site/blog/dog-waste-bag-roll-core-sizes.webp",
+      "bytes": 28202,
+      "sha256": "e19064ebe6dd4dced13962a3e4d81c9129f8dffb0c1202be065d0322b051e934"
+    },
+    {
+      "slug": "dog-poop-bag-packaging-options",
+      "category": "packaging",
+      "source_asset": "oem-sample-review-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\reviewed-0059-original.jpg",
+      "output_path": "/images/generated-site/blog/dog-poop-bag-packaging-options.webp",
+      "bytes": 44920,
+      "sha256": "c6ae3ab60a633755a67957a80a0337ef121062c4b6334b0593472524ee04a8a4"
+    },
+    {
+      "slug": "wholesale-dog-waste-bags-cost-moq",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/wholesale-dog-waste-bags-cost-moq.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "dog-waste-bag-thickness-tear-resistance",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/dog-waste-bag-thickness-tear-resistance.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "pet-product-factory-tour-checklist",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-factory-tour-checklist.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "evaluate-pet-pad-production-capacity",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/evaluate-pet-pad-production-capacity.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "pet-pad-factory-quality-control-system",
+      "category": "quality",
+      "source_asset": "factory-testing-lab-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\27- download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-factory-quality-control-system.webp",
+      "bytes": 40864,
+      "sha256": "8f5fcada2abeef0c728f389cf07c7dfd62fee0646350eb745d89a50e142dcf83"
+    },
+    {
+      "slug": "pet-product-warehouse-export-management",
+      "category": "logistics",
+      "source_asset": "warehouse-finished-goods-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\47 - download.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-warehouse-export-management.webp",
+      "bytes": 107742,
+      "sha256": "56cd190cdd396ce31afafb24a2b8d0b96b4e1421bcbb86edb3c95fe95c05d48a"
+    },
+    {
+      "slug": "pet-pad-container-loading-guide",
+      "category": "logistics",
+      "source_asset": "warehouse-finished-goods-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\47 - download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-container-loading-guide.webp",
+      "bytes": 107742,
+      "sha256": "56cd190cdd396ce31afafb24a2b8d0b96b4e1421bcbb86edb3c95fe95c05d48a"
+    },
+    {
+      "slug": "pet-product-export-documents",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-export-documents.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "review-pet-product-factory-certificates",
+      "category": "factory",
+      "source_asset": "factory-production-line-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\17- download.jpg",
+      "output_path": "/images/generated-site/blog/review-pet-product-factory-certificates.webp",
+      "bytes": 121312,
+      "sha256": "c0715837e50313b107b7dde1b514c9fdbba66ba1766966fd5cb7b8c712303fb7"
+    },
+    {
+      "slug": "production-line-maintenance-oem-reliability",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/production-line-maintenance-oem-reliability.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "choose-pet-product-supplier-long-term",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/choose-pet-product-supplier-long-term.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "china-vs-vietnam-pet-product-sourcing",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/china-vs-vietnam-pet-product-sourcing.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "reduce-pet-product-purchasing-cost",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/reduce-pet-product-purchasing-cost.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "private-label-pet-product-moq-guide",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-pet-product-moq-guide.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "imported-pet-product-lead-time",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/imported-pet-product-lead-time.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "incoterms-pet-product-importers",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/incoterms-pet-product-importers.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "fob-vs-cif-pet-pad-shipments",
+      "category": "logistics",
+      "source_asset": "logistics-container-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/blog/fob-vs-cif-pet-pad-shipments.webp",
+      "bytes": 55086,
+      "sha256": "8d2ee4a19f909341bd0b7d8c398a82f12559298629c7aa599d116436e8464c1d"
+    },
+    {
+      "slug": "pre-shipment-inspection-pet-care-products",
+      "category": "logistics",
+      "source_asset": "warehouse-pallet-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\21- download.jpg",
+      "output_path": "/images/generated-site/blog/pre-shipment-inspection-pet-care-products.webp",
+      "bytes": 113070,
+      "sha256": "9b3d4f6c6e4b9451ca13189ea410c09a672609aa0c68cb5daa8d430d0261164e"
+    },
+    {
+      "slug": "evaluate-pet-product-samples",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/evaluate-pet-product-samples.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "oem-pet-product-negotiation-tips",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/oem-pet-product-negotiation-tips.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "pet-product-supplier-red-flags",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-supplier-red-flags.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "annual-pet-product-sourcing-plan",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/annual-pet-product-sourcing-plan.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "global-pet-care-market-oem-buyers",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/global-pet-care-market-oem-buyers.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "private-label-pet-product-trends",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-pet-product-trends.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "retail-trends-pet-pad-ranges",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/retail-trends-pet-pad-ranges.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "pet-product-packaging-trends",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-packaging-trends.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "sustainability-absorbent-pet-products",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/sustainability-absorbent-pet-products.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "review-eco-claims-pet-products",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/review-eco-claims-pet-products.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "raw-material-volatility-pet-products",
+      "category": "materials",
+      "source_asset": "factory-lamination-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/blog/raw-material-volatility-pet-products.webp",
+      "bytes": 44998,
+      "sha256": "0efedd545d084bd5ef8c364a067a85a0d286459be876de73ebde10fbee67df10"
+    },
+    {
+      "slug": "sap-supply-pricing-absorbent-products",
+      "category": "materials",
+      "source_asset": "products-absorbent-paper-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0043-original.jpg",
+      "output_path": "/images/generated-site/blog/sap-supply-pricing-absorbent-products.webp",
+      "bytes": 28202,
+      "sha256": "e19064ebe6dd4dced13962a3e4d81c9129f8dffb0c1202be065d0322b051e934"
+    },
+    {
+      "slug": "fluff-pulp-absorbent-paper-supply",
+      "category": "materials",
+      "source_asset": "factory-lamination-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/blog/fluff-pulp-absorbent-paper-supply.webp",
+      "bytes": 44998,
+      "sha256": "0efedd545d084bd5ef8c364a067a85a0d286459be876de73ebde10fbee67df10"
+    },
+    {
+      "slug": "pe-film-trends-pet-pads-underpads",
+      "category": "adult",
+      "source_asset": "products-underpads-02",
+      "source_file": "D:\\WebsiteImages\\processed\\task-0002-adult-underpads-intake.jpg",
+      "output_path": "/images/generated-site/blog/pe-film-trends-pet-pads-underpads.webp",
+      "bytes": 35608,
+      "sha256": "cb5470ed7e37b5705ec3417244d986ba3f2470bb2d48925fef540ce417347fae"
+    },
+    {
+      "slug": "resilient-pet-product-supply-chain",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/resilient-pet-product-supply-chain.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "automation-pet-pad-manufacturing",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/automation-pet-pad-manufacturing.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "ecommerce-private-label-pet-products",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/ecommerce-private-label-pet-products.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "future-oem-pet-product-manufacturing",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/future-oem-pet-product-manufacturing.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "pet-product-sourcing-priorities-2027",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-product-sourcing-priorities-2027.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "oem-pet-pad-supplier-qualification-checklist",
+      "category": "product",
+      "source_asset": "products-pet-pad-macro-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0042-original.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-supplier-qualification-checklist.webp",
+      "bytes": 29448,
+      "sha256": "3e9637c722d2eefb37035c6dfaeb5c940b779d04e7fad82b1169aa642d833a1d"
+    },
+    {
+      "slug": "private-label-pet-pad-launch-timeline",
+      "category": "logistics",
+      "source_asset": "warehouse-pallet-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\21- download.jpg",
+      "output_path": "/images/generated-site/blog/private-label-pet-pad-launch-timeline.webp",
+      "bytes": 113070,
+      "sha256": "9b3d4f6c6e4b9451ca13189ea410c09a672609aa0c68cb5daa8d430d0261164e"
+    },
+    {
+      "slug": "pet-pad-factory-audit-remote-and-onsite",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-factory-audit-remote-and-onsite.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "pet-pad-packaging-compliance-artwork-checklist",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-packaging-compliance-artwork-checklist.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "pet-pad-landed-cost-model-importers",
+      "category": "logistics",
+      "source_asset": "logistics-container-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0038-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-landed-cost-model-importers.webp",
+      "bytes": 55086,
+      "sha256": "8d2ee4a19f909341bd0b7d8c398a82f12559298629c7aa599d116436e8464c1d"
+    },
+    {
+      "slug": "pet-pad-quality-control-inspection-plan",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-quality-control-inspection-plan.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "choose-reliable-pet-pad-manufacturer",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/choose-reliable-pet-pad-manufacturer.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "oem-vs-odm-pet-pads-buyers-guide",
+      "category": "product",
+      "source_asset": "products-disposable-pads-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\22张\\task-0001-chatgpt-source.png",
+      "output_path": "/images/generated-site/blog/oem-vs-odm-pet-pads-buyers-guide.webp",
+      "bytes": 34686,
+      "sha256": "c281327c8c3bcdcfc2ad8bf7e667ed65bba68359e57d2a840f56ca504409a123"
+    },
+    {
+      "slug": "private-label-pet-training-pads-buyers-guide",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/private-label-pet-training-pads-buyers-guide.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "how-puppy-pads-are-manufactured",
+      "category": "factory",
+      "source_asset": "factory-campus-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\18张\\6 - download.jpg",
+      "output_path": "/images/generated-site/blog/how-puppy-pads-are-manufactured.webp",
+      "bytes": 60608,
+      "sha256": "8dbcbc2411c398e4d6a4e38d816b86026970f573b6bbc54dfe7e9adca1e39ff3"
+    },
+    {
+      "slug": "evaluate-pet-pad-factory-before-order",
+      "category": "factory",
+      "source_asset": "factory-production-line-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0031-original.jpg",
+      "output_path": "/images/generated-site/blog/evaluate-pet-pad-factory-before-order.webp",
+      "bytes": 99770,
+      "sha256": "68471f9f0fad6515685a993a68984b720f8bcfc76a0d172d02fea37338e5eec5"
+    },
+    {
+      "slug": "sap-in-puppy-pads",
+      "category": "materials",
+      "source_asset": "products-pet-pad-structure-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0039-original.jpg",
+      "output_path": "/images/generated-site/blog/sap-in-puppy-pads.webp",
+      "bytes": 21626,
+      "sha256": "8283100dd80a3e8981ead63284dae51e42c5fac3ebc066b01984ac2790dfb23c"
+    },
+    {
+      "slug": "virgin-pulp-vs-recycled-pulp-pet-pads",
+      "category": "materials",
+      "source_asset": "factory-lamination-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\34 - download.jpg",
+      "output_path": "/images/generated-site/blog/virgin-pulp-vs-recycled-pulp-pet-pads.webp",
+      "bytes": 44998,
+      "sha256": "0efedd545d084bd5ef8c364a067a85a0d286459be876de73ebde10fbee67df10"
+    },
+    {
+      "slug": "what-determines-puppy-pad-absorbency",
+      "category": "quality",
+      "source_asset": "factory-quality-control-03",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0036-original.jpg",
+      "output_path": "/images/generated-site/blog/what-determines-puppy-pad-absorbency.webp",
+      "bytes": 57658,
+      "sha256": "511d2c0f0493301f70cf7db366eae3a3a9b5ba12002bd82ce310e0fd0cc1b01d"
+    },
+    {
+      "slug": "oem-pet-pad-moq-sampling-lead-time",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/oem-pet-pad-moq-sampling-lead-time.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "custom-packaging-private-label-pet-pads",
+      "category": "packaging",
+      "source_asset": "private-label-packaging-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0034-original.jpg",
+      "output_path": "/images/generated-site/blog/custom-packaging-private-label-pet-pads.webp",
+      "bytes": 54904,
+      "sha256": "e7b82444f12b85ba06367ecd222d15a275f073c1467b9aa01acde21dfbf0800a"
+    },
+    {
+      "slug": "reduce-pet-pad-procurement-costs",
+      "category": "product",
+      "source_asset": "products-disposable-pads-02",
+      "source_file": "D:\\WebsiteImages\\incoming\\66张\\reviewed-0015-original.jpg",
+      "output_path": "/images/generated-site/blog/reduce-pet-pad-procurement-costs.webp",
+      "bytes": 59158,
+      "sha256": "f580a6d84fda68b7fe60e65b9ebe8834869d673ff4c81ef7dddcddb98842780d"
+    },
+    {
+      "slug": "pet-pad-quality-control-buyers-checklist",
+      "category": "quality",
+      "source_asset": "factory-testing-lab-01",
+      "source_file": "D:\\WebsiteImages\\incoming\\36张\\27- download.jpg",
+      "output_path": "/images/generated-site/blog/pet-pad-quality-control-buyers-checklist.webp",
+      "bytes": 40864,
+      "sha256": "8f5fcada2abeef0c728f389cf07c7dfd62fee0646350eb745d89a50e142dcf83"
+    }
+  ],
+  "unsupported_positions": [
+    {
+      "location": "Custom Pet Waste Bags product detail and SEO image",
+      "current_image": "/images/custom-pet-waste-bags-ai.png",
+      "reason": "No clean dog-waste-bag material was found outside rejected; the only packaging-like candidates had visible third-party/Japanese promotional text."
+    },
+    {
+      "location": "Dog Poop Bags topic/category and generated guide source image",
+      "current_image": "/images/custom-pet-waste-bags-ai.png",
+      "reason": "No clean dog-waste-bag material was found outside rejected; using unrelated pad/factory images would be a semantic mismatch."
+    }
+  ],
+  "homepage_protection": {
+    "homepage_route": "/",
+    "files_not_modified_by_script": [
+      "index.html",
+      "src/styles.css",
+      "src/Silk.jsx"
+    ],
+    "homepage_data_preserved": [
+      "heroFallbackImage",
+      "factoryImages",
+      "customProducts.image"
+    ]
+  },
+  "notes": [
+    "Homepage JSX and homepage image data were intentionally preserved.",
+    "Generated images are new WebP files under public/images/generated-site; original images were not overwritten.",
+    "Dog waste bag imagery was left unchanged where no clean matching source was available."
+  ],
+  "replacement_summary": {
+    "code_and_data_references_replaced": 147,
+    "generated_reusable_assets": 32,
+    "generated_blog_covers": 150,
+    "generated_webp_files_total": 182
+  },
+  "verification": {
+    "lint": "passed: npm.cmd run lint (topic clusters, content ecosystem, SEO validation for 393 routes)",
+    "build": "passed: npm.cmd run build; Vite built successfully and generated 393 route-level SEO HTML files. Warning only: large chunk size.",
+    "route_image_check": "passed: 393 routes, 97 unique image URLs, 0 failures",
+    "browser_visual_check": "passed: desktop and 390px mobile representative checks for product, factory, blog, contact/learn pages; no initial viewport image failures or horizontal overflow found.",
+    "homepage_protection_check": "passed: no diff from checkpoint for index.html, src/styles.css, src/Silk.jsx, and protected homepage image files."
+  },
+  "deployment": {
+    "status": "success",
+    "production_domain": "https://www.jczcare.com",
+    "vercel_deployment_url": "https://nantong-jincheng-zencare-aq42d47gw-shi-peiyu-s-projects.vercel.app",
+    "vercel_inspector_url": "https://vercel.com/shi-peiyu-s-projects/nantong-jincheng-zencare/4BswXnTAeFGtAMqR3VfZDeZ8KpaS",
+    "vercel_project_id": "prj_oydn0sYZkzaSe8GggaK4AQyJg69N",
+    "production_check": "passed: HEAD 200 for /products/disposable-pet-pads, /factory/production-line, /blog/choose-reliable-pet-pad-manufacturer, and generated product image."
+  },
+  "git": {
+    "checkpoint_commit": "a587f04",
+    "image_replacement_commit": "90633a8",
+    "deployment_report_commit": "686dc4d",
+    "branch": "codex/regenerate-non-homepage-images",
+    "push_status": "success: pushed branch to origin/codex/regenerate-non-homepage-images",
+    "pull_request_url": "https://github.com/ship67503-max/Nantong-Jincheng-Zencare/pull/new/codex/regenerate-non-homepage-images"
+  }
+}

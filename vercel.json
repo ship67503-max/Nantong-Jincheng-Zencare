@@ -1,0 +1,102 @@
+{
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/pages/about",
+      "permanent": true
+    },
+    {
+      "source": "/profile",
+      "destination": "/about-factory",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/factory",
+      "permanent": true
+    },
+    {
+      "source": "/innovation",
+      "destination": "/academy",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/pages/news",
+      "permanent": true
+    },
+    {
+      "source": "/quality",
+      "destination": "/quality-control",
+      "permanent": true
+    },
+    {
+      "source": "/advantages",
+      "destination": "/about-factory",
+      "permanent": true
+    },
+    {
+      "source": "/customization",
+      "destination": "/private-label",
+      "permanent": true
+    },
+    {
+      "source": "/region/:country",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/rss.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/rss+xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path((?!sitemap(?:-index)?\\.xml|sitemap\\.html|rss\\.xml|robots\\.txt|favicon\\.svg|favicon\\.ico|assets/|images/|videos/|api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
