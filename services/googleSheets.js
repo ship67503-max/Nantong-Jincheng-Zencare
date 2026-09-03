@@ -5,7 +5,7 @@ const defaultSheetName = '\u5de5\u4f5c\u88681';
 function getSheetRange() {
   const sheetName = process.env.GOOGLE_SHEET_NAME || defaultSheetName;
 
-  return `${sheetName}!A:L`;
+  return `${sheetName}!A:O`;
 }
 
 function getGooglePrivateKey() {
@@ -29,8 +29,11 @@ function buildRow(inquiry) {
     inquiry.email || '',
     inquiry.phone || '',
     inquiry.country || '',
+    inquiry.companyWebsite || '',
     inquiry.product || '',
     inquiry.quantity || '',
+    inquiry.requiredSize || '',
+    inquiry.packagingRequirement || '',
     inquiry.message || '',
     inquiry.pageUrl || '',
     inquiry.ip || '',

@@ -13,7 +13,7 @@ const categoryProfiles = {
       'approved samples, controlled specifications, production records, packaging proofs and batch-related inspection evidence',
     commercial:
       'development scope, MOQ by component, sampling rounds, artwork approval, production scheduling and repeat-order control',
-    sourceImage: '/images/generated-site/factory/factory-production-line-01.webp',
+    sourceImage: '/images/oem/production/factory-production-line-real-20260729.jpg',
   },
   'Pet Training Pads': {
     buyers: 'pet pad brands, distributors, wholesalers, supermarkets and online sellers',
@@ -57,7 +57,7 @@ const categoryProfiles = {
       'dated factory records, live process evidence, production and inspection documents, retained samples, shipment photos and corrective actions',
     commercial:
       'capacity allocation, SKU planning, quality ownership, warehouse readiness, export coordination and business continuity',
-    sourceImage: '/images/generated-site/factory/factory-campus-01.webp',
+    sourceImage: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
   },
   'Buying Guide': {
     buyers: 'purchasing managers, importers, wholesalers, retail buyers and category managers',

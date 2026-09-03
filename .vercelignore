@@ -5,6 +5,11 @@ output
 .env
 .env*
 .vercel
+jcz-business-shared
+docs
+*.log
+website-audit-report.md
+b2b-image-map.json
 data/jcz-business-center/account/*.json
 public/videos/factory-profile-3.mp4
 public/videos/factory-final.mp4

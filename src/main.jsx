@@ -5,11 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   ArrowUpRight,
   ArrowUp,
+  Check,
   CirclePlay,
   Droplets,
   Factory,
   FlaskConical,
   Layers3,
+  Languages,
   Mail,
   MessageCircle,
   Microscope,
@@ -18,6 +20,7 @@ import {
   Truck,
 } from 'lucide-react';
 import './styles.css';
+import { CustomizationTimeline, ShippingSolution } from './HomePartnershipSolution.jsx';
 import {
   blogArticles,
   getBlogArticlesByCluster,
@@ -31,16 +34,84 @@ import {
 import { topicClusters } from './topicClusters.js';
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
-const heroFallbackImage = '/images/factory-campus.jpeg';
+const heroFallbackImage = '/images/oem/hero/factory-campus.webp';
 const siteUrl = 'https://www.jczcare.com';
 const contactEmail = 'hengtuo@nthengtuo.com';
 const whatsappPhone = '+86 18962944556';
 const whatsappChatUrl =
   'https://wa.me/8618962944556?text=Hello%2C%20I%20am%20interested%20in%20your%20OEM%2FODM%20pet%20products.%20Please%20share%20more%20information%20about%20MOQ%2C%20pricing%2C%20samples%2C%20and%20lead%20time.';
+const turnstileScriptId = 'cloudflare-turnstile-api';
+const turnstileTestSiteKey = '1x00000000000000000000AA';
+const googleTranslateScriptId = 'google-translate-element-script';
+const languageStorageKey = 'jczcare-language';
 // Public Google Ads destination identifiers. Environment values override the supplied snippet.
 const googleAdsId = String(import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-18346194096').trim();
 const googleAdsLeadLabel = String(import.meta.env.VITE_GOOGLE_ADS_LEAD_LABEL || 'R6b4CJ6xyNUcELDpkqxE').trim();
 const hasGoogleAdsConfig = /^AW-\d+$/.test(googleAdsId) && Boolean(googleAdsLeadLabel);
+const siteLanguages = [
+  { code: 'en', shortLabel: 'EN', label: 'English' },
+  { code: 'zh-CN', shortLabel: '\u4e2d', label: '\u4e2d\u6587' },
+  { code: 'it', shortLabel: 'IT', label: 'Italiano' },
+  { code: 'fr', shortLabel: 'FR', label: 'Fran\u00e7ais' },
+];
+const navigationTranslations = {
+  en: {
+    home: 'Home',
+    factory: 'Factory',
+    products: 'Products',
+    oemProcess: 'OEM Process',
+    quality: 'Quality Control',
+    resources: 'Resources',
+    contact: 'Contact',
+    quote: 'Request Quote',
+    signIn: 'Sign In',
+    ariaLabel: 'Main navigation',
+  },
+  'zh-CN': {
+    home: '\u9996\u9875',
+    factory: '\u5de5\u5382\u5b9e\u529b',
+    products: '\u4ea7\u54c1\u4e2d\u5fc3',
+    oemProcess: 'OEM\u6d41\u7a0b',
+    quality: '\u8d28\u91cf\u63a7\u5236',
+    resources: '\u8d44\u6e90\u4e2d\u5fc3',
+    contact: '\u8054\u7cfb\u6211\u4eec',
+    quote: '\u83b7\u53d6\u62a5\u4ef7',
+    signIn: '\u767b\u5f55',
+    ariaLabel: '\u4e3b\u5bfc\u822a',
+  },
+  it: {
+    home: 'Home',
+    factory: 'Fabbrica',
+    products: 'Prodotti',
+    oemProcess: 'Processo OEM',
+    quality: 'Controllo qualit\u00e0',
+    resources: 'Risorse',
+    contact: 'Contatti',
+    quote: 'Richiedi preventivo',
+    signIn: 'Accedi',
+    ariaLabel: 'Navigazione principale',
+  },
+  fr: {
+    home: 'Accueil',
+    factory: 'Usine',
+    products: 'Produits',
+    oemProcess: 'Processus OEM',
+    quality: 'Contr\u00f4le qualit\u00e9',
+    resources: 'Ressources',
+    contact: 'Contact',
+    quote: 'Demander un devis',
+    signIn: 'Connexion',
+    ariaLabel: 'Navigation principale',
+  },
+};
+const inquiryProductOptions = [
+  'OEM/ODM pet products',
+  'Disposable pet training pads',
+  'Adult underpads',
+  'Pet waste bags',
+  'Absorbent paper sheets',
+  'Other / Not sure yet',
+];
 const Silk = React.lazy(() => import('./Silk'));
 
 const buildMailto = (subject = 'Website Inquiry', body = '') => {
@@ -52,6 +123,52 @@ const buildMailto = (subject = 'Website Inquiry', body = '') => {
 
   return `mailto:${contactEmail}?${params.toString()}`;
 };
+
+const getInitialSiteLanguage = () => {
+  if (typeof window === 'undefined') {
+    return 'en';
+  }
+
+  const storedLanguage = window.localStorage.getItem(languageStorageKey);
+  const cookieLanguage = document.cookie
+    .split('; ')
+    .find((cookie) => cookie.startsWith('googtrans='))
+    ?.split('/').pop();
+  const requestedLanguage = storedLanguage || cookieLanguage || 'en';
+
+  return siteLanguages.some(({ code }) => code === requestedLanguage)
+    ? requestedLanguage
+    : 'en';
+};
+
+const setGoogleTranslateCookie = (language) => {
+  const cookieValue = `/en/${language}`;
+  const cookieOptions = 'path=/; max-age=31536000; SameSite=Lax';
+  document.cookie = `googtrans=${cookieValue}; ${cookieOptions}`;
+
+  if (window.location.hostname === 'jczcare.com' || window.location.hostname.endsWith('.jczcare.com')) {
+    document.cookie = `googtrans=${cookieValue}; domain=.jczcare.com; ${cookieOptions}`;
+  }
+};
+
+const initializeGoogleTranslate = () => {
+  const translateHost = document.getElementById('google_translate_element');
+
+  if (!translateHost || translateHost.dataset.initialized === 'true' || !window.google?.translate?.TranslateElement) {
+    return;
+  }
+
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'zh-CN,it,fr',
+      autoDisplay: false,
+    },
+    'google_translate_element',
+  );
+  translateHost.dataset.initialized = 'true';
+};
+
 // Reuse the single GA4 Google tag loaded by index.html for Ads conversion events.
 const ensureGoogleTagReady = () => {
   if (!hasGoogleAdsConfig || typeof window === 'undefined') {
@@ -115,66 +232,113 @@ const factoryImages = [
   {
     title: 'Clean Production Workshop',
     tag: 'Production',
-    src: '/images/production-line-clean.png',
+    src: '/images/oem/production/production-line-clean.png',
   },
   {
     title: 'Automated Lamination Line',
     tag: 'Lamination',
-    src: '/images/lamination-detail-clean.png',
+    src: '/images/oem/production/lamination-detail-clean.png',
   },
   {
     title: 'Custom Packing & Delivery',
     tag: 'Packaging',
-    src: '/images/warehouse-storage-clean.png',
+    src: '/images/oem/warehouse/warehouse-storage-clean.png',
   },
 ];
 
 const innovations = [
   {
     icon: Layers3,
-    title: 'Structure Development',
-    text: 'Layer design tuned for speed, lock-in, and cost control.',
+    title: 'Nonwoven Fabric',
+    text: 'Surface feel, liquid intake, embossing, and weight can be specified for the target channel.',
+    image: '/images/oem/materials/products-pet-pad-macro-01.webp',
   },
   {
     icon: Droplets,
-    title: 'Performance Customization',
-    text: 'Absorbency, rewet, pressure resistance, and size tuned by scenario.',
+    title: 'SAP & Wood Pulp',
+    text: 'Absorbent core direction is developed around capacity, diffusion, rewet, and cost targets.',
+    materialTerminology: true,
+    image: '/images/oem/materials/products-absorbent-paper-01.webp',
   },
   {
     icon: Ruler,
-    title: 'Brand-Ready Launch',
-    text: 'Specs, colors, scents, and packaging prepared for channel sales.',
+    title: 'PE Film & Layer Structure',
+    text: 'Backing film, edge sealing, and layer combinations are reviewed for leak protection.',
+    image: '/images/oem/materials/products-pe-film-01.webp',
   },
 ];
 
+const materialTerminologyTranslations = {
+  en: {
+    title: 'SAP & Wood Pulp',
+    text: 'Absorbent core direction is developed around capacity, diffusion, rewet, and cost targets.',
+    introduction: 'SAP, wood pulp, nonwoven fabric, and PE film are reviewed as one absorbent product system.',
+  },
+  'zh-CN': {
+    title: 'SAP 和木浆',
+    text: '吸收芯体围绕吸收量、扩散速度、回渗控制和成本目标进行设计。',
+    introduction: 'SAP、木浆、无纺布和 PE 膜作为一个完整的吸收产品系统进行评估。',
+  },
+  it: {
+    title: 'SAP e pasta di cellulosa',
+    text: 'La struttura del nucleo assorbente viene definita in base a capacita, diffusione, rewet e obiettivi di costo.',
+    introduction: 'SAP, pasta di cellulosa, tessuto non tessuto e film PE vengono valutati come un unico sistema assorbente.',
+  },
+  fr: {
+    title: 'SAP et p\u00e2te de cellulose',
+    text: 'La structure du noyau absorbant est d\u00e9finie selon la capacit\u00e9, la diffusion, le rewet et les objectifs de co\u00fbt.',
+    introduction: 'Le SAP, la p\u00e2te de cellulose, le non-tiss\u00e9 et le film PE sont \u00e9valu\u00e9s comme un syst\u00e8me absorbant unique.',
+  },
+};
+
+const homepageTrustStats = [
+  ['20 Years', 'Manufacturing Experience', 'Focused absorbent hygiene manufacturing.'],
+  ['300M pcs', 'Production Capability', 'Annual planned capacity across 8 automated lines.'],
+  ['Global Supply', 'Export Capability', 'International OEM order and shipment coordination.'],
+  ['OEM / ODM', 'Customization Support', 'Specification, material, packaging, and sampling support.'],
+];
+
 const inspections = [
-  ['01', 'Materials', 'Topsheet, pulp, SAP, and film checked by batch.'],
-  ['02', 'Process', 'Weight, size, sealing, embossing, and packing monitored on line.'],
-  ['03', 'Performance', 'Absorption, diffusion, rewet, pressure, and leakage tested.'],
-  ['04', 'Shipment', 'Cartons, labels, marks, and appearance reviewed before dispatch.'],
+  ['01', 'Incoming Material Inspection', 'Nonwoven, fluff pulp, SAP, PE film, and packaging materials are checked before production.'],
+  ['02', 'Production Inspection', 'Weight, size, sealing, embossing, folding, and packing are monitored on line.'],
+  ['03', 'Finished Product Testing', 'Absorption, diffusion, rewet, leakage, appearance, and carton marks are reviewed before release.'],
 ];
 
 const advantages = [
   {
-    icon: Factory,
-    title: 'Source Factory',
-    text: 'Direct control from core structure to finished packing.',
+    icon: Ruler,
+    title: 'Size Customization',
+    text: 'Dimensions, folding format, pack count, and carton configuration planned for your channel.',
+    image: '/images/oem/products/custom-disposable-pet-pads-premium.png',
   },
   {
     icon: FlaskConical,
-    title: 'Fast Sampling',
-    text: 'Quick OEM/ODM samples across size, absorbency, and pack format.',
+    title: 'Material Adjustment',
+    text: 'Surface, core, SAP ratio, backing film, and absorbency direction reviewed before sampling.',
+    image: '/images/oem/materials/products-absorbent-paper-01.webp',
+  },
+  {
+    icon: Layers3,
+    title: 'Packaging Customization',
+    text: 'Pack format, artwork workflow, pack count, carton marks, and retail presentation support.',
+    image: '/images/oem/packaging/private-label-packaging-01.webp',
   },
   {
     icon: ShieldCheck,
-    title: 'Quality System',
-    text: 'Batch checks for absorption, rewet, sealing, and consistency.',
+    title: 'Private Label Support',
+    text: 'Specification confirmation, sample approval, production control, and export coordination.',
+    image: '/images/oem/quality/packaging-customization-options.webp',
   },
-  {
-    icon: Truck,
-    title: 'Supply Coordination',
-    text: 'Production scheduling and export support for long-term orders.',
-  },
+];
+
+const homepageOemSteps = [
+  ['01', 'Inquiry', 'Share target market, product type, estimated quantity, and delivery plan.', '/images/oem/contact/business-meeting-oem.webp'],
+  ['02', 'Specification Confirmation', 'Confirm size, weight, absorbency, structure, pack count, and target price direction.', '/images/oem/customization/oem-meeting-01.webp'],
+  ['03', 'Material Selection', 'Review nonwoven, SAP, fluff pulp, absorbent paper, and PE film options.', '/images/oem/materials/production-process-line.webp'],
+  ['04', 'Sample Approval', 'Measure samples, review performance, and record buyer approval before production.', '/images/oem/quality/private-label-packaging-review.webp'],
+  ['05', 'Mass Production', 'Transfer the approved specification to scheduled production and line control.', '/images/oem/production/production-line-clean.png'],
+  ['06', 'Quality Inspection', 'Check incoming materials, in-process output, finished products, and packing.', '/images/oem/quality/quality-inspection-lab-mask.png'],
+  ['07', 'Shipment', 'Complete final release, export packing, loading, documents, and delivery coordination.', '/images/oem/warehouse/absorbency-testing.webp'],
 ];
 
 const customProducts = [
@@ -182,10 +346,13 @@ const customProducts = [
     slug: 'disposable-pet-pads',
     title: 'Disposable Pet Pads',
     category: 'Core Product',
-    image: '/images/custom-disposable-pet-pads-premium.png',
-    detailImage: '/images/generated-site/products/products-disposable-pads-01.webp',
+    image: '/images/oem/products/custom-disposable-pet-pads-premium.png',
+    detailImage: '/images/oem/products/products-disposable-pads-01.webp',
     detailImageAlt: 'Dog sitting beside a disposable pet training pad in a modern home',
     specs: ['Multiple sizes', 'Absorbency levels', 'Embossing optional'],
+    application: 'Retail, e-commerce, distributors, and daily pet training.',
+    oemCapability: 'Core training-pad OEM platform with repeat-order production control.',
+    customization: 'Size, absorbency, embossing, color, pack count, and private label.',
     badge: 'OEM / ODM',
     summary: 'OEM pet pads built around absorption, leak protection, and production planning.',
     details: ['Softness, embossing, size, and absorbency can be tuned.', 'Private-label packing and outer bag artwork supported.', 'Built for brands, retailers, and cross-border channels.'],
@@ -194,10 +361,13 @@ const customProducts = [
     slug: 'adult-underpads',
     title: 'Adult Disposable Underpads',
     category: 'Healthcare Care Series',
-    image: '/images/adult-underpads-hero.png',
-    detailImage: '/images/generated-site/products/products-underpads-01.webp',
+    image: '/images/oem/products/adult-underpads-hero.png',
+    detailImage: '/images/oem/products/products-underpads-01.webp',
     detailImageAlt: 'Absorbency testing of an adult disposable underpad in a quality laboratory',
     specs: ['SAP absorbency', 'Multiple sizes', 'OEM packaging'],
+    application: 'Healthcare, home care, medical distribution, and retail.',
+    oemCapability: 'Private-label underpad development for care and distribution channels.',
+    customization: 'Size, weight, SAP ratio, absorbency, folding, and packaging.',
     badge: 'OEM / ODM',
     summary: 'Premium disposable underpads for healthcare, home care, distribution, and private-label programs.',
     details: ['Non-woven, tissue, SAP, and PE film structures can be planned around the application.', 'Size, weight, absorbency, pack count, and carton presentation can be customized.', 'Sampling and specification review support for B2B healthcare product programs.'],
@@ -206,10 +376,13 @@ const customProducts = [
     slug: 'pet-care-pad-glove-wipes',
     title: 'Pet Care Pad & Glove Wipes',
     category: 'Care Series',
-    image: '/images/custom-care-pad-packaging-ai.png',
-    detailImage: '/images/generated-site/packaging/private-label-packaging-01.webp',
+    image: '/images/oem/products/custom-care-pad-packaging-ai.png',
+    detailImage: '/images/oem/packaging/private-label-packaging-01.webp',
     detailImageAlt: 'Private-label pet care packaging review meeting',
     specs: ['Private label', 'Retail pack', 'Soft surface'],
+    application: 'Pet care sets, retail shelves, e-commerce, and cleaning programs.',
+    oemCapability: 'Multi-product private-label support for disposable care ranges.',
+    customization: 'Material feel, product format, pouch structure, and pack count.',
     badge: 'Private Label',
     summary: 'Disposable care products for daily pet cleaning and private-label retail.',
     details: ['Pouch structure, pack count, and material feel can be customized.', 'Designed for retail shelves, online bundles, and care sets.', 'Sampling matched to target market and price band.'],
@@ -218,10 +391,13 @@ const customProducts = [
     slug: 'pet-absorbent-paper-sheets',
     title: 'Pet Absorbent Paper Sheets',
     category: 'Source Factory',
-    image: '/images/custom-absorbent-paper-ai.png',
-    detailImage: '/images/generated-site/materials/products-absorbent-paper-01.webp',
+    image: '/images/oem/products/custom-absorbent-paper-ai.png',
+    detailImage: '/images/oem/materials/products-absorbent-paper-01.webp',
     detailImageAlt: 'Absorbent paper and core material sample on a tray',
     specs: ['SAP blend', 'Layer material', 'Bulk customization'],
+    application: 'Absorbent product factories, converters, and bulk material buyers.',
+    oemCapability: 'Factory-direct absorbent layer and sheet supply programs.',
+    customization: 'Dimensions, thickness, SAP blend, absorbency, and bulk packing.',
     badge: 'Factory Direct',
     summary: 'Absorbent paper sheets configured for core materials and bulk supply.',
     details: ['SAP ratio, paper feel, thickness, and packing can be customized.', 'Available as layer material or standalone absorbent sheets.', 'Factory-direct support for formula and delivery control.'],
@@ -230,8 +406,11 @@ const customProducts = [
     slug: 'custom-pet-waste-bags',
     title: 'Custom Pet Waste Bags',
     category: 'Extended Range',
-    image: '/images/custom-pet-waste-bags-ai.png',
+    image: '/images/oem/products/custom-pet-waste-bags-ai.png',
     specs: ['Custom colors', 'Roll formats', 'OEM packaging'],
+    application: 'Retail, wholesale, subscription, and pet accessory channels.',
+    oemCapability: 'Extended-category sourcing for coordinated private-label ranges.',
+    customization: 'Film thickness, color, scent, roll count, and retail packaging.',
     badge: 'Color Options',
     summary: 'Custom pet waste bags with flexible colors, rolls, and retail packs.',
     details: ['Roll format, thickness, color, and packaging can be specified.', 'Pairs well with pet pad private-label programs.', 'Made for retail, distribution, and subscription channels.'],
@@ -240,10 +419,13 @@ const customProducts = [
     slug: 'charcoal-pet-pads',
     title: 'Charcoal Pet Pads',
     category: 'Odor Control',
-    image: '/images/custom-charcoal-pet-pad-ai.png',
-    detailImage: '/images/generated-site/products/products-charcoal-pads-01.webp',
+    image: '/images/oem/products/custom-charcoal-pet-pad-ai.png',
+    detailImage: '/images/oem/products/products-charcoal-pads-01.webp',
     detailImageAlt: 'Dark-backed absorbent pad edge for odor-control product reference',
     specs: ['Activated carbon', 'Odor reduction', 'Fast sampling'],
+    application: 'Premium retail, odor-control ranges, and indoor pet care.',
+    oemCapability: 'Functional training-pad development with carbon-layer options.',
+    customization: 'Carbon layer, absorbency, size, surface pattern, and packaging.',
     badge: 'Formula Support',
     summary: 'Odor-control pet pads for premium and upgraded product lines.',
     details: ['Carbon layer, absorbency, size, and surface pattern can be configured.', 'Built for odor-sensitive and premium pet care channels.', 'Samples available for absorption, rewet, and odor review.'],
@@ -252,14 +434,327 @@ const customProducts = [
     slug: 'adhesive-pet-pads',
     title: 'Adhesive Pet Pads',
     category: 'Anti-Slip Design',
-    image: '/images/custom-adhesive-pet-pad-ai.png',
-    detailImage: '/images/generated-site/products/products-adhesive-pads-01.webp',
+    image: '/images/oem/products/custom-adhesive-pet-pad-ai.png',
+    detailImage: '/images/oem/products/products-adhesive-pads-01.webp',
     detailImageAlt: 'Disposable pet pad on wood floor during liquid absorption test',
     specs: ['Secure backing', 'Easy removal', 'Quality checked'],
+    application: 'Indoor training, travel, clinics, and stability-focused product lines.',
+    oemCapability: 'Backing and anti-slip feature development for upgraded pad ranges.',
+    customization: 'Adhesive position, backing, size, absorbency, and pack format.',
     badge: 'Custom Backing',
     summary: 'Anti-slip pet pads designed for cleaner placement and easy removal.',
     details: ['Adhesive position, size, specification, and packing can be customized.', 'Designed to reduce shifting while removing cleanly.', 'Ideal for upgraded training pad and scenario-based lines.'],
   },
+];
+
+const b2bImage = (name) => `/images/generated-site/b2b-optimization/${name}.webp`;
+
+const productTechnicalSpecs = {
+  default: [
+    ['Size', 'Standard market sizes or buyer-defined dimensions'],
+    ['Absorption Level', 'Configured against the approved product brief and sample'],
+    ['Layer Structure', 'Nonwoven + distribution layer + absorbent core + PE backing'],
+    ['Material', 'Nonwoven, fluff pulp, SAP, tissue or absorbent paper, and PE film'],
+    ['Packing', 'Custom pack count, printed bag, export carton, and shipping marks'],
+    ['MOQ', 'Confirmed after specification, material, and packaging review'],
+  ],
+  'disposable-pet-pads': [
+    ['Size', '33 x 45 cm, 45 x 60 cm, 60 x 60 cm, 60 x 90 cm, or custom'],
+    ['Absorption Level', 'Buyer-defined direction confirmed through sample and performance review'],
+    ['Layer Structure', 'Nonwoven + tissue or absorbent paper + fluff pulp and SAP + PE film'],
+    ['Material', 'Soft nonwoven, fluff pulp, SAP, tissue or absorbent paper, and waterproof PE'],
+    ['Packing', 'Custom pack count, private-label bag, export carton, and shipping marks'],
+    ['MOQ', 'Confirmed according to size, absorbency, packaging, and order plan'],
+  ],
+  'adult-underpads': [
+    ['Size', '60 x 60 cm, 60 x 90 cm, 80 x 90 cm, or custom care dimensions'],
+    ['Core Material', 'Tissue layers with fluff pulp and SAP absorbent core'],
+    ['Absorption', 'Buyer-defined capacity and rewet direction confirmed during sampling'],
+    ['Back Sheet', 'Waterproof PE backing with project-defined color and thickness'],
+    ['Packing', 'Healthcare, retail, or distributor pack with private-label support'],
+  ],
+  'custom-pet-waste-bags': [
+    ['Material', 'HDPE / LDPE options'],
+    ['Thickness', 'Buyer-defined film gauge aligned to strength, feel, and price target'],
+    ['Roll Size', 'Custom bag dimensions, roll width, roll count, and dispenser format'],
+    ['Printing', 'Custom color, bag printing, labels, and private-label artwork'],
+    ['Packaging', 'Roll, pouch, box, dispenser, bundle, and export carton options'],
+  ],
+  'pet-care-pad-glove-wipes': [
+    ['Product Format', 'Care sheet, disposable pad, glove format, or project-defined item'],
+    ['Size', 'Buyer-defined dimensions and pack count'],
+    ['Material', 'Soft nonwoven selected around feel, strength, and intended care use'],
+    ['Packing', 'Pouch, bag, retail set, bundle, and export carton'],
+    ['Printing', 'Private-label pouch artwork, labels, and carton marks'],
+    ['MOQ', 'Confirmed after product format, material, and packaging review'],
+  ],
+  'pet-absorbent-paper-sheets': [
+    ['Sheet Size', 'Buyer-defined dimensions or converted layer cut size'],
+    ['Thickness', 'Project-defined basis weight and layer build'],
+    ['Core Material', 'Absorbent paper with optional tissue and SAP blend direction'],
+    ['Absorption', 'Configured around the intended finished product and sample target'],
+    ['Packing', 'Bulk protective wrapping, labels, pallets, and shipment marks'],
+    ['MOQ', 'Confirmed after material structure, sheet size, and delivery plan review'],
+  ],
+  'charcoal-pet-pads': [
+    ['Size', '33 x 45 cm, 45 x 60 cm, 60 x 60 cm, 60 x 90 cm, or custom'],
+    ['Absorption Level', 'Buyer-defined direction reviewed with odor-control sample performance'],
+    ['Layer Structure', 'Nonwoven + activated-carbon direction + absorbent core + PE film'],
+    ['Material', 'Nonwoven, carbon layer, fluff pulp, SAP, tissue, and waterproof PE'],
+    ['Packing', 'Private-label pack count, printed bag, export carton, and shipping marks'],
+    ['MOQ', 'Confirmed according to carbon layer, absorbency, packaging, and order plan'],
+  ],
+  'adhesive-pet-pads': [
+    ['Size', '33 x 45 cm, 45 x 60 cm, 60 x 60 cm, 60 x 90 cm, or custom'],
+    ['Absorption Level', 'Buyer-defined direction confirmed through sample testing'],
+    ['Layer Structure', 'Nonwoven + absorbent core + waterproof PE + adhesive placement'],
+    ['Material', 'Nonwoven, fluff pulp, SAP, tissue, PE film, and adhesive option'],
+    ['Packing', 'Custom pack count, private-label bag, carton, and shipping marks'],
+    ['MOQ', 'Confirmed according to backing design, size, packaging, and order plan'],
+  ],
+};
+
+const productApplications = [
+  'Retail chains',
+  'Wholesale distribution',
+  'Pet brands',
+  'Importers and distributors',
+];
+
+const productBuyerChannels = [
+  ['Retail', 'Shelf-ready specifications, pack counts, and carton planning for physical retail programs.'],
+  ['Pet Brands', 'Private-label product development aligned to brand positioning and target performance.'],
+  ['Distributors', 'Repeatable specifications and export packing for wholesale and regional supply.'],
+  ['Online Sellers', 'E-commerce pack formats, clear product differentiation, and repeat-order support.'],
+];
+
+const standardPadMaterialStructure = [
+  ['Nonwoven', 'Controls surface softness and liquid intake; weight, texture, and embossing can be reviewed.'],
+  ['Fluff Pulp', 'Supports liquid distribution and core volume; the selected grade affects bulk and absorption behavior.'],
+  ['SAP', 'Locks liquid inside the absorbent core; the ratio is planned around capacity, rewet, and cost targets.'],
+  ['PE Film', 'Provides the waterproof backing; thickness, color, and leak-resistance direction can be specified.'],
+];
+
+const productProcurementDetails = {
+  'disposable-pet-pads': {
+    overview: {
+      purpose: 'Disposable floor protection and daily pet training with a configurable absorbent core and waterproof backing.',
+      buyers: 'Pet brands, retailers, distributors, importers, wholesalers, and online sellers.',
+      scenarios: 'Home training, crates, carriers, veterinary use, travel, and indoor pet care.',
+    },
+    features: ['High absorption', 'Fast liquid intake', 'Leak protection', 'Custom sizes', 'Private label available'],
+    sizes: ['33 x 45 cm', '45 x 60 cm', '60 x 60 cm', '60 x 90 cm', 'Custom dimensions'],
+    materials: standardPadMaterialStructure,
+    customization: [
+      ['Size', 'Standard market sizes or buyer-defined dimensions and folding format.'],
+      ['Thickness', 'Product weight and core build planned around feel, capacity, and price position.'],
+      ['Absorption Level', 'Fluff pulp, absorbent paper, and SAP ratios reviewed against target performance.'],
+      ['Packaging', 'Pack count, bag format, carton quantity, and shipping marks.'],
+      ['Printing', 'Buyer-supplied artwork workflow, bag presentation, and carton marks.'],
+      ['Private Label', 'Brand-ready specification, sample approval, packaging, and repeat-order references.'],
+    ],
+    oemSupport: 'Specification review, sample development, private-label packaging, quality checkpoints, and repeat-order control.',
+  },
+  'adult-underpads': {
+    overview: {
+      purpose: 'Disposable protection for beds, chairs, examination surfaces, and home-care environments.',
+      buyers: 'Healthcare brands, medical distributors, care retailers, importers, and private-label buyers.',
+      scenarios: 'Hospitals, clinics, nursing homes, rehabilitation, home care, and mobility support.',
+    },
+    features: ['High absorption', 'Soft contact surface', 'Low rewet direction', 'Leak protection', 'Private label available'],
+    sizes: ['60 x 60 cm', '60 x 90 cm', '80 x 90 cm', 'Custom care dimensions'],
+    materials: standardPadMaterialStructure,
+    customization: [
+      ['Size', 'Common care dimensions or a buyer-defined format and folding direction.'],
+      ['Thickness', 'Core weight and layer build aligned to care setting and product positioning.'],
+      ['Absorption Level', 'SAP and fluff pulp direction developed around capacity and rewet targets.'],
+      ['Packaging', 'Healthcare, retail, or distributor pack counts and export cartons.'],
+      ['Printing', 'Private-label bag artwork, labels, carton marks, and approval workflow.'],
+      ['Private Label', 'Buyer-specific care specifications supported from sample to repeat production.'],
+    ],
+    oemSupport: 'Buyer-specific care specifications, sampling, private-label packs, carton planning, and production release support.',
+  },
+  'pet-care-pad-glove-wipes': {
+    overview: {
+      purpose: 'Disposable formats for routine pet cleaning, handling, and convenient care-set programs.',
+      buyers: 'Pet care brands, retailers, distributors, subscription sellers, and multi-product program buyers.',
+      scenarios: 'Daily cleaning, travel kits, grooming support, retail bundles, and home pet care.',
+    },
+    features: ['Soft contact material', 'Convenient single-use format', 'Custom product formats', 'Retail-ready packaging', 'Private label available'],
+    sizes: ['Buyer-defined sheet size', 'Glove format', 'Single-use care pad', 'Custom pack count'],
+    materials: [
+      ['Nonwoven', 'The selected grade controls softness, strength, surface feel, and the intended cleaning format.'],
+      ['Care Material', 'Dry or project-defined material direction is confirmed during specification and sample review.'],
+      ['Pouch Structure', 'Barrier and closure direction influence storage, handling, and retail presentation.'],
+      ['Retail Carton', 'Carton or bundle configuration supports shelf display and coordinated product programs.'],
+    ],
+    customization: [
+      ['Size', 'Buyer-defined sheet, pad, or glove dimensions and product format.'],
+      ['Thickness', 'Material weight and hand feel selected for the intended care task.'],
+      ['Absorption Level', 'Material uptake is reviewed where required by the specific care format.'],
+      ['Packaging', 'Pouch structure, closure, pack count, bundle, and carton format.'],
+      ['Printing', 'Buyer artwork, labels, pouch presentation, and carton marks.'],
+      ['Private Label', 'Coordinated product and packaging development for branded care ranges.'],
+    ],
+    oemSupport: 'Format review, sample confirmation, coordinated private-label packaging, and multi-product care program support.',
+  },
+  'pet-absorbent-paper-sheets': {
+    overview: {
+      purpose: 'Absorbent sheet material for use as a converted-product core layer or a standalone project-defined sheet.',
+      buyers: 'Absorbent product factories, converters, material distributors, importers, and bulk buyers.',
+      scenarios: 'Pet hygiene converting, absorbent core development, sampling, bulk material supply, and industrial use.',
+    },
+    features: ['Configurable absorption', 'Flexible layer integration', 'Custom dimensions', 'Bulk supply formats', 'Private label documentation'],
+    sizes: ['Custom sheet dimensions', 'Layer cut size', 'Project-specific thickness', 'Bulk packing format'],
+    materials: [
+      ['Absorbent Paper', 'Provides liquid distribution and a stable converted layer; basis weight affects thickness and handling.'],
+      ['SAP', 'Optional blend direction increases liquid lock-in and is planned around the required capacity.'],
+      ['Tissue', 'Tissue combinations can support layer integrity, distribution, and downstream converting.'],
+      ['Core Combination', 'The final sheet structure is matched to the buyer process and intended finished product.'],
+    ],
+    customization: [
+      ['Size', 'Sheet dimensions or converted layer cut size matched to buyer equipment.'],
+      ['Thickness', 'Basis weight and layer build reviewed for handling and finished-product targets.'],
+      ['Absorption Level', 'Paper grade and SAP blend adjusted around the requested uptake direction.'],
+      ['Packaging', 'Bulk packs, protective wrapping, pallet plan, and shipment labels.'],
+      ['Printing', 'Project identification, labels, outer marks, and buyer-required documentation.'],
+      ['Private Label', 'Buyer references and supply documentation for controlled repeat material orders.'],
+    ],
+    oemSupport: 'Material brief review, sample sheets, absorption checks, bulk packing planning, and repeat supply coordination.',
+  },
+  'custom-pet-waste-bags': {
+    overview: {
+      purpose: 'Disposable waste collection bags developed for convenient dispensing, carrying, and retail sale.',
+      buyers: 'Pet brands, retailers, distributors, importers, subscription sellers, and accessory wholesalers.',
+      scenarios: 'Daily walks, travel, parks, dispenser refills, retail bundles, and subscription programs.',
+    },
+    features: ['Leak-resistant film direction', 'Roll or folded formats', 'Dispenser-compatible options', 'Custom colors and printing', 'Private label available'],
+    sizes: ['Small roll format', 'Medium roll format', 'Large roll format', 'Custom bag and roll count'],
+    materials: [
+      ['HDPE Film', 'Supports a lightweight, firm bag direction; thickness is matched to strength and cost targets.'],
+      ['LDPE Film', 'Provides a softer and more flexible feel where the buyer brief requires it.'],
+      ['Color & Printing', 'Pigment and print direction create product differentiation and brand presentation.'],
+      ['Perforation & Roll', 'Perforation, roll count, and core format affect dispensing and pack compatibility.'],
+    ],
+    customization: [
+      ['Size', 'Bag dimensions, roll width, and dispenser-compatible formats.'],
+      ['Thickness', 'Film gauge selected around feel, leak resistance, and target price.'],
+      ['Absorption Level', 'Not applicable; film strength and leak-resistance requirements are specified instead.'],
+      ['Packaging', 'Roll count, box, pouch, dispenser, bundle, and export carton.'],
+      ['Printing', 'Bag print, color, packaging artwork, labels, and carton marks.'],
+      ['Private Label', 'Branded waste-bag specifications coordinated with retail packaging approval.'],
+    ],
+    oemSupport: 'Specification matching, color and print review, sample rolls, retail packaging, and coordinated category supply.',
+  },
+  'charcoal-pet-pads': {
+    overview: {
+      purpose: 'Functional pet training pads combining an absorbent core with an activated-carbon odor-control direction.',
+      buyers: 'Premium pet brands, retailers, distributors, importers, and online category sellers.',
+      scenarios: 'Indoor training, apartments, odor-sensitive homes, crates, travel, and premium retail ranges.',
+    },
+    features: ['High absorption', 'Odor-control direction', 'Fast liquid intake', 'Leak protection', 'Private label available'],
+    sizes: ['33 x 45 cm', '45 x 60 cm', '60 x 60 cm', '60 x 90 cm', 'Custom dimensions'],
+    materials: [
+      ...standardPadMaterialStructure,
+      ['Activated Carbon', 'Adds the odor-control direction; layer format and product positioning are reviewed during sampling.'],
+    ],
+    customization: [
+      ['Size', 'Standard training-pad sizes or buyer-defined dimensions and folding.'],
+      ['Thickness', 'Core weight, carbon-layer direction, and product feel.'],
+      ['Absorption Level', 'Fluff pulp and SAP ratio planned with absorption and odor-control targets.'],
+      ['Packaging', 'Pack count, bag presentation, carton quantity, and shipping marks.'],
+      ['Printing', 'Private-label artwork, product messaging workflow, and carton marks.'],
+      ['Private Label', 'Functional product positioning supported through sample and packaging approval.'],
+    ],
+    oemSupport: 'Functional structure review, odor-control sampling, performance checks, packaging approval, and mass-production support.',
+  },
+  'adhesive-pet-pads': {
+    overview: {
+      purpose: 'Absorbent pet pads with an adhesive or anti-slip placement direction for improved stability.',
+      buyers: 'Pet brands, retailers, veterinary suppliers, distributors, importers, and online sellers.',
+      scenarios: 'Indoor training, carriers, travel, veterinary use, moving pets, and stability-focused product ranges.',
+    },
+    features: ['High absorption', 'Anti-slip placement', 'Easy-removal direction', 'Leak protection', 'Private label available'],
+    sizes: ['33 x 45 cm', '45 x 60 cm', '60 x 60 cm', '60 x 90 cm', 'Custom dimensions'],
+    materials: [
+      ...standardPadMaterialStructure,
+      ['Adhesive Placement', 'Position and application direction affect holding performance and clean-removal evaluation.'],
+    ],
+    customization: [
+      ['Size', 'Standard or buyer-defined dimensions, folding, and adhesive placement.'],
+      ['Thickness', 'Product weight and core build aligned to capacity and channel position.'],
+      ['Absorption Level', 'Fluff pulp, SAP, and layer direction planned around target performance.'],
+      ['Packaging', 'Pack count, bag format, carton quantity, and export marks.'],
+      ['Printing', 'Buyer artwork, retail presentation, labels, and carton marks.'],
+      ['Private Label', 'Backing design, samples, packaging approval, and repeat-production references.'],
+    ],
+    oemSupport: 'Backing design review, sample evaluation, placement testing direction, private-label packaging, and production control.',
+  },
+};
+
+const oemProcessSteps = [
+  ['01', 'Requirement Analysis', 'Confirm target market, product category, channel, quantity, delivery destination, and commercial priorities.', '/images/oem/contact/business-meeting-oem.webp'],
+  ['02', 'Product Specification', 'Define size, weight, structure, absorbency, surface, backing, pack count, and acceptance criteria.', '/images/oem/customization/oem-meeting-01.webp'],
+  ['03', 'Material Selection', 'Review nonwoven, tissue, absorbent paper, fluff pulp, SAP, PE film, and functional options.', '/images/oem/materials/production-process-line.webp'],
+  ['04', 'Sample Development', 'Produce samples against the controlled specification and record each development version.', '/images/oem/customization/oem-sample-review-01.webp'],
+  ['05', 'Testing Approval', 'Review dimensions, absorption, diffusion, rewet, leakage, appearance, and buyer approval.', '/images/oem/quality/private-label-packaging-review.webp'],
+  ['06', 'Mass Production', 'Release the approved specification to material planning, scheduling, line setup, and in-process control.', '/images/oem/production/production-line-clean.png'],
+  ['07', 'Packaging', 'Confirm private-label artwork, bag format, pack count, carton marks, and export packing.', '/images/oem/packaging/private-label-packaging-02.webp'],
+  ['08', 'Shipment', 'Complete finished-goods release, loading preparation, documents, and delivery coordination.', '/images/oem/warehouse/absorbency-testing.webp'],
+];
+
+const oemCustomizationCapabilities = [
+  [Layers3, 'Private Label', 'Coordinate product specification, brand presentation, artwork approval, pack count, and repeat-order references.'],
+  [Factory, 'Custom Packaging', 'Review bag format, printed film, labels, cartons, shipping marks, and channel-ready presentation.'],
+  [Ruler, 'Size Customization', 'Develop dimensions, folding, weight, absorbency, and pack configuration around the target application.'],
+];
+
+const factoryCoreModules = [
+  ['01', 'Factory Overview', 'A 12,000 sq.m manufacturing base supports product development, production, quality review, packing, and export preparation.', '/images/oem/factory/factory-campus-real-aerial-20260729.png', ['20 years manufacturing experience', 'Integrated production and export coordination']],
+  ['02', 'Production Capability', 'Eight automated lines support repeatable dimensions, material placement, folding, sealing, and pack formats for planned OEM volumes.', '/images/oem/production/production-line-clean.png', ['8 automated production lines', '300M pcs planned annual capacity']],
+  ['03', 'Manufacturing Equipment', 'Production and lamination equipment is matched to absorbent structures, backing films, product dimensions, and packaging requirements.', '/images/oem/production/lamination-detail-clean.png', ['Automated converting equipment', 'Controlled line setup and monitoring']],
+  ['04', 'Production Workflow', 'Material release, line setup, production checks, performance testing, packaging, and finished-goods release follow one controlled order brief.', '/images/oem/production/factory-production-line-real-20260729.jpg', ['Specification-controlled workflow', 'In-process and release checkpoints']],
+  ['05', 'Warehouse & Logistics', 'Finished goods, export cartons, pallet preparation, loading coordination, and shipment documents are managed for international orders.', '/images/oem/warehouse/warehouse-storage-clean.png', ['Finished-goods storage', 'Export packing and loading preparation']],
+];
+
+const qualityStageSummary = [
+  ['01', 'Incoming Material Inspection', 'Check nonwoven, tissue, absorbent paper, fluff pulp, SAP, PE film, and packaging materials before release.', '/images/oem/quality/factory-quality-control-01.webp'],
+  ['02', 'Production Inspection', 'Monitor size, weight, material placement, sealing, embossing, folding, count, and line consistency.', '/images/oem/production/production-line-clean.png'],
+  ['03', 'Finished Product Testing', 'Review absorption, diffusion, rewet, leakage, appearance, packing, carton marks, and retained evidence.', '/images/oem/quality/quality-inspection-lab-mask.png'],
+];
+
+const qualityControlSteps = [
+  ['Material Verification', 'Approved material type, weight, appearance, and project references are reviewed before line release.', '/images/oem/quality/factory-quality-control-01.webp'],
+  ['Production Monitoring', 'Line checks track size, weight, sealing, folding, material placement, and pack consistency.', '/images/oem/production/production-line-clean.png'],
+  ['Absorption Testing', 'Absorption speed, capacity, diffusion, and rewet direction are checked against the project brief.', '/images/oem/quality/factory-testing-lab-01.webp'],
+  ['Leak Prevention Testing', 'Backing film, edge seal, adhesive direction, and pressure-related leakage risk are reviewed.', '/images/oem/quality/quality-inspection-lab-mask.png'],
+  ['Final Inspection', 'Finished goods, packs, cartons, appearance, count, and carton marks are inspected before release.', '/images/oem/quality/factory-quality-control-02.webp'],
+  ['Shipment Approval', 'Release records, documents, pallet condition, and loading readiness are confirmed for export.', '/images/oem/warehouse/absorbency-testing.webp'],
+];
+
+const manufacturingProcess = [
+  'Raw Material',
+  'Material Inspection',
+  'Production',
+  'Absorption Testing',
+  'Packaging',
+  'Shipment',
+];
+
+const privateLabelOptions = [
+  'Size',
+  'Absorbency',
+  'Packaging',
+  'Printing',
+  'Materials',
+  'Product Features',
+];
+
+const downloadResources = [
+  ['Product Catalog', 'Product range, material direction, applications, and OEM product platforms.'],
+  ['Factory Profile', 'Manufacturing base, production capability, quality system, and export support overview.'],
+  ['OEM Capability', 'OEM/ODM workflow, customization scope, sampling, MOQ discussion, and production planning.'],
+  ['Packaging Options', 'Private-label packaging formats, pack count planning, carton marks, and artwork approval flow.'],
 ];
 
 const adultUnderpadProduct = customProducts.find((product) => product.slug === 'adult-underpads');
@@ -457,6 +952,7 @@ const footerLinks = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Media', href: '/media' },
   { label: 'Downloads', href: '/downloads' },
+  { label: 'Download Center', href: '/download' },
   { label: 'Buyer Guides', href: '/buyer-guides' },
   { label: 'Material Knowledge', href: '/materials' },
   { label: 'Industry Reports', href: '/reports' },
@@ -497,7 +993,7 @@ const newsArticles = [
     date: '2026.07',
     title: 'Why factory visual content matters for B2B pet care brands',
     excerpt: 'Factory scenes, inspection details, and clean product visuals help customers understand capability before sampling.',
-    image: '/images/generated-site/factory/factory-production-line-01.webp',
+    image: '/images/oem/production/factory-production-line-real-20260729.jpg',
     body: [
       'B2B customers often need more than a product photo. They need to understand the manufacturing environment, inspection logic, packaging workflow, and communication reliability behind the product.',
       'Clear factory visuals can help brands and buyers align faster. Production lines, warehouse order, laboratory inspection, and product layer details all become part of the trust-building process.',
@@ -528,6 +1024,44 @@ const businessSeoPages = [
     ],
   },
   {
+    path: '/private-label',
+    kicker: 'Private Label',
+    title: 'Private Label Pet Pads OEM Program | JCZCARE',
+    description: 'Private label pet pads for brands, retailers, distributors, and wholesalers needing custom size, absorbency, packaging, printing, materials, and OEM manufacturing support.',
+    h1: 'Private label pet pads for brand-ready OEM programs.',
+    intro: 'Develop private-label pet pads with controlled specifications, sample approval, packaging customization, production planning, and export-ready delivery.',
+    image: b2bImage('private-label-packaging-review'),
+    sections: [
+      ['Customization scope', 'Size, absorbency, packaging, printing, material structure, and product features can be planned around your market.'],
+      ['Brand launch workflow', 'Move from idea to prototype, sample, production, and delivery with a clear buyer approval path.'],
+      ['B2B buyer fit', 'Built for pet brands, retail chains, wholesalers, distributors, and private-label buyers.'],
+    ],
+    faqs: [
+      ['Can JCZCARE support private-label packaging?', 'Yes. We can review pack format, artwork direction, carton marks, pack count, and production feasibility.'],
+      ['Can product specifications be customized?', 'Yes. Size, absorbency, materials, surface feel, backing film, and product features can be discussed before sampling.'],
+      ['What should a brand send first?', 'Share target market, benchmark product, expected monthly quantity, size, absorbency, packaging idea, and launch timing.'],
+    ],
+  },
+  {
+    path: '/download',
+    kicker: 'Download Center',
+    title: 'OEM Pet Pad Download Center | JCZCARE',
+    description: 'Request JCZCARE product catalog, factory profile, OEM capability overview, and packaging options for pet pad private-label and OEM sourcing projects.',
+    h1: 'Request OEM catalogs and buyer documents.',
+    intro: 'Use the download center to request product and factory information. Files are provided after inquiry review so the document pack matches your target product and market.',
+    image: b2bImage('download-center-catalog'),
+    sections: [
+      ['Product Catalog', 'Request product range information for disposable pet pads, underpads, absorbent sheets, care products, and dog waste bags.'],
+      ['Factory Profile', 'Request manufacturing capability, production workflow, quality control, and export-support information.'],
+      ['OEM Capability', 'Request customization, private-label packaging, sampling, MOQ, and production-planning information.'],
+    ],
+    faqs: [
+      ['Can I download PDFs directly?', 'The page currently provides a request entry. We do not publish fake PDF files when a document pack has not been confirmed.'],
+      ['What can I request?', 'Product catalog, factory profile, OEM capability information, and packaging option references.'],
+      ['How do I get the right files?', 'Submit your company, product interest, country, and project requirement so the team can send the relevant document pack.'],
+    ],
+  },
+  {
     path: '/private-label-pet-pads',
     kicker: 'Private Label Pet Pads',
     title: 'Private Label Pet Pads Manufacturer | OEM Packaging & Supply',
@@ -553,7 +1087,7 @@ const businessSeoPages = [
     description: 'China pet pee pad manufacturer for OEM/ODM orders, custom absorbency, private-label packaging, automated production, and export-ready B2B supply.',
     h1: 'Pet pee pad manufacturer for long-term B2B cooperation.',
     intro: 'Our factory supports commercial buyers with absorbent pet care products made for stable quality, structured communication, and repeat production.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
     sections: [
       ['Manufacturing capability', 'A 12,000-square-meter factory and automated lines support custom pet pad, pet diaper, absorbent sheet, and care pad programs.'],
       ['Quality process', 'Incoming materials, line checks, absorbency tests, sealing review, and shipment inspection help maintain order consistency.'],
@@ -572,7 +1106,7 @@ const businessSeoPages = [
     description: 'Pet pad factory with automated production, custom specifications, absorbent core development, private-label packaging, and B2B export coordination.',
     h1: 'A pet pad factory built for OEM/ODM supply.',
     intro: 'From raw material review to packing and shipment, our pet pad factory supports buyers who need clarity, capacity, and product consistency.',
-    image: '/images/generated-site/factory/factory-production-line-01.webp',
+    image: '/images/oem/production/factory-production-line-real-20260729.jpg',
     sections: [
       ['Automated production', 'Automated equipment helps manage repeated order output across size, weight, core structure, and pack format.'],
       ['Factory visibility', 'Production lines, warehouse organization, inspection steps, and packing workflows are part of our buyer communication process.'],
@@ -591,7 +1125,7 @@ const businessSeoPages = [
     description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent product manufacturer focused on OEM/ODM pet pads, private-label support, quality control, and export service.',
     h1: 'A focused absorbent pet care factory in Nantong.',
     intro: 'Nantong JINCHENG ZENCARE Technology Company focuses on the R&D, manufacturing, and sales of pet pads, pet diapers, absorbent sheets, and dog poop bags.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
     sections: [
       ['Company profile', 'With 20 years of industry experience, we support B2B buyers with product development, manufacturing, and packaging coordination.'],
       ['Production base', 'Our factory covers about 12,000 square meters with automated lines and stable production planning for absorbent pet care products.'],
@@ -610,7 +1144,7 @@ const businessSeoPages = [
     description: 'Quality control process for OEM pet pads covering raw materials, production checks, absorbency testing, rewet review, leakage performance, packaging, and shipment inspection.',
     h1: 'Quality control before every pet pad shipment.',
     intro: 'Our quality process is designed around practical buyer concerns: material consistency, absorbency, surface dryness, leakage prevention, sealing, packing, and shipment appearance.',
-    image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
+    image: b2bImage('quality-control-lab'),
     sections: [
       ['Incoming materials', 'Topsheet, fluff pulp, SAP, backing film, and packaging materials are reviewed against order requirements.'],
       ['Process checks', 'Weight, size, sealing, embossing, folding, and packaging consistency are monitored during production.'],
@@ -629,7 +1163,7 @@ const businessSeoPages = [
     description: 'OEM pet pad process for B2B buyers: project brief, specification planning, sample development, testing, packaging confirmation, production, inspection, and shipment.',
     h1: 'A clear OEM process from brief to shipment.',
     intro: 'Our OEM process helps buyers turn product ideas into practical specifications, samples, confirmed packaging, and repeatable production orders.',
-    image: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
+    image: b2bImage('oem-sample-review'),
     sections: [
       ['Project brief', 'Share target market, product type, size, absorbency, packaging direction, expected quantity, and delivery requirements.'],
       ['Sample development', 'We prepare specification options for buyer review, including material, structure, package format, and performance direction.'],
@@ -639,6 +1173,44 @@ const businessSeoPages = [
       ['What information is needed to start?', 'Please provide target market, size, absorbency, packaging idea, order quantity, and preferred delivery plan.'],
       ['How does sample confirmation work?', 'Samples are reviewed for structure, absorbency, surface feel, packaging, and buyer requirements before bulk order planning.'],
       ['Can you support repeat production?', 'Yes. Confirmed specifications and packaging details can be used to support repeat order consistency.'],
+    ],
+  },
+  {
+    path: '/oem-capability',
+    kicker: 'OEM Manufacturing Capability',
+    title: 'Pet Hygiene OEM Manufacturing Capability | JCZCARE',
+    description: 'Evaluate JCZCARE pet hygiene OEM manufacturing capability, production workflow, customization, quality control, and global supply support for European and American buyers.',
+    h1: 'OEM manufacturing capability for global pet hygiene buyers.',
+    intro: 'A factory capability overview for pet brands, retailers, distributors, importers, wholesalers, and procurement teams evaluating long-term OEM supply.',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
+    sections: [
+      ['Manufacturing overview', 'Review the production base, automated equipment, absorbent product experience, and order coordination behind OEM pet hygiene programs.'],
+      ['OEM cooperation process', 'Move from requirement analysis and specification confirmation through sampling, production, inspection, packaging, and shipment.'],
+      ['Quality and global supply', 'Connect incoming material checks, in-process inspection, finished-product testing, export packing, and delivery coordination.'],
+    ],
+    faqs: [
+      ['What can be customized for an OEM project?', 'Size, product weight, absorbency direction, materials, functional options, pack count, artwork, private label presentation, and carton requirements can be reviewed.'],
+      ['How does an OEM project begin?', 'Buyers can share the target market, product category, specification, estimated quantity, packaging direction, and delivery destination for project review.'],
+      ['Do you support European and American buyers?', 'Yes. The cooperation workflow is designed for overseas brands, retailers, distributors, importers, wholesalers, and procurement teams.'],
+    ],
+  },
+  {
+    path: '/case-study',
+    kicker: 'Anonymous OEM Project Examples',
+    title: 'OEM Pet Hygiene Case Studies | Global B2B Projects | JCZCARE',
+    description: 'Review five anonymous OEM pet hygiene project examples covering private-label pet pads, adult underpads, charcoal pads, adhesive pads, and coordinated category supply.',
+    h1: 'Anonymous OEM project examples for global pet care buyers.',
+    intro: 'Representative project profiles for pet brands, retailers, distributors, importers, and procurement teams evaluating product development, customization, production support, and repeat supply.',
+    image: '/images/oem/production/factory-production-line-03.webp',
+    sections: [
+      ['Product development examples', 'Review how different buyer briefs move from commercial challenge to controlled product and packaging specifications.'],
+      ['Customization and production support', 'Each anonymous example connects product options with sampling, quality checkpoints, production planning, and shipment preparation.'],
+      ['Buyer outcomes', 'Results focus on practical sourcing outputs such as approved specifications, aligned packaging, and repeat-order references without disclosing customer identities.'],
+    ],
+    faqs: [
+      ['Are customer names disclosed?', 'No. The examples are anonymous and do not identify customer companies, brands, or confidential commercial details.'],
+      ['What project types are included?', 'The page covers pet pads, adult underpads, charcoal pads, adhesive pads, waste bags, private label packaging, and coordinated supply.'],
+      ['How can a buyer start a similar project?', 'Share the target market, product category, specification, packaging direction, quantity, and delivery destination through the OEM partnership request.'],
     ],
   },
   {
@@ -737,12 +1309,12 @@ const staticSeoPages = {
   '/pages/about': {
     title: 'About Nantong JINCHENG ZENCARE | Pet Pad Source Factory',
     description: 'Learn about Nantong JINCHENG ZENCARE, a pet care absorbent products source factory supporting OEM/ODM pet pads, private-label packaging, and export supply.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
   },
   '/pages/investor-relations': {
     title: 'Business Overview | JCZCARE Pet Care Manufacturing',
     description: 'A business overview of JCZCARE manufacturing capability, production capacity, quality focus, and B2B absorbent pet care product supply.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
   },
   '/pages/affiliates': {
     title: 'Distributor & Partner Program | JCZCARE OEM Pet Pads',
@@ -1007,6 +1579,7 @@ const applyPageSeo = ({
   description,
   path,
   image,
+  indexable = true,
   faqs,
   product,
   article,
@@ -1026,7 +1599,7 @@ const applyPageSeo = ({
     const tag = document.createElement('meta');
     tag.setAttribute('name', 'robots');
     return tag;
-  }, 'content', 'index, follow, max-image-preview:large');
+  }, 'content', indexable ? 'index, follow, max-image-preview:large' : 'noindex, follow');
   setHeadTag('link[rel="canonical"]', () => {
     const tag = document.createElement('link');
     tag.setAttribute('rel', 'canonical');
@@ -1071,35 +1644,303 @@ const applyPageSeo = ({
   }));
 };
 
+function LanguageSwitcher() {
+  const [activeLanguage, setActiveLanguage] = useState(getInitialSiteLanguage);
+  const [isOpen, setIsOpen] = useState(false);
+  const switcherRef = useRef(null);
+  const activeLanguageDetails = siteLanguages.find(({ code }) => code === activeLanguage) ?? siteLanguages[0];
+
+  useEffect(() => {
+    document.documentElement.lang = activeLanguage;
+    document.documentElement.dataset.language = activeLanguage;
+    window.googleTranslateElementInit = initializeGoogleTranslate;
+
+    const existingScript = document.getElementById(googleTranslateScriptId);
+    if (existingScript) {
+      initializeGoogleTranslate();
+      return undefined;
+    }
+
+    const script = document.createElement('script');
+    script.id = googleTranslateScriptId;
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return undefined;
+  }, [activeLanguage]);
+
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (!switcherRef.current?.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', closeMenu);
+    document.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.removeEventListener('pointerdown', closeMenu);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, []);
+
+  const selectLanguage = (language) => {
+    if (language === activeLanguage) {
+      setIsOpen(false);
+      return;
+    }
+
+    window.localStorage.setItem(languageStorageKey, language);
+    setGoogleTranslateCookie(language);
+    setActiveLanguage(language);
+    window.location.reload();
+  };
+
+  return (
+    <div className="language-switcher notranslate" translate="no" ref={switcherRef}>
+      <button
+        type="button"
+        className="language-switcher-trigger"
+        aria-label={`Language: ${activeLanguageDetails.label}`}
+        aria-haspopup="menu"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        <Languages size={17} strokeWidth={1.8} aria-hidden="true" />
+        <span>{activeLanguageDetails.shortLabel}</span>
+      </button>
+      {isOpen && (
+        <div className="language-switcher-menu" role="menu" aria-label="Select language">
+          {siteLanguages.map((language) => (
+            <button
+              type="button"
+              role="menuitemradio"
+              aria-checked={language.code === activeLanguage}
+              className={language.code === activeLanguage ? 'is-active' : ''}
+              key={language.code}
+              onClick={() => selectLanguage(language.code)}
+            >
+              <span>{language.label}</span>
+              {language.code === activeLanguage && <Check size={15} strokeWidth={2.1} aria-hidden="true" />}
+            </button>
+          ))}
+          <small>Powered by Google Translate</small>
+        </div>
+      )}
+      <div id="google_translate_element" className="google-translate-host" aria-hidden="true" />
+    </div>
+  );
+}
+
 function SiteNav({ navRef, ui }) {
+  const labels = navigationTranslations[getInitialSiteLanguage()] ?? navigationTranslations.en;
+
   return (
     <nav ref={navRef} className="nav">
-      <a className="brand" href="/#home" aria-label="Nantong JINCHENG ZENCARE homepage">
+      <a className="brand notranslate" translate="no" href="/#home" aria-label="Nantong JINCHENG ZENCARE Technology Company homepage">
         <span>
           <strong>Nantong JINCHENG ZENCARE</strong>
           <small>Technology Company</small>
         </span>
       </a>
-      <div className="nav-links" aria-label="Main navigation">
-        <a href="/#about">{ui.nav[0]}</a>
-        <a href="/#projects">{ui.nav[1]}</a>
-        <a href="/#innovation">{ui.nav[2]}</a>
-        <a href="/blog">{ui.nav[6]}</a>
-        <a href="/factory">Factory</a>
-        <a href="/resources">Resources</a>
-        <a href="/products/adult-underpads">Products</a>
-        <a href="/#quality">{ui.nav[3]}</a>
-        <a href="/#advantages">{ui.nav[4]}</a>
-        <a href="/#customization">{ui.nav[5]}</a>
+      <div className="nav-links notranslate" translate="no" aria-label={labels.ariaLabel}>
+        <a href="/">{labels.home}</a>
+        <a href="/factory">{labels.factory}</a>
+        <a href="/#customization">{labels.products}</a>
+        <a href="/oem-process">{labels.oemProcess}</a>
+        <a href="/quality-control">{labels.quality}</a>
+        <a href="/blog">{labels.resources}</a>
+        <a href="/#contact">{labels.contact}</a>
       </div>
-      <a className="nav-cta" href="/#contact">
-        {ui.contact}
+      <a className="nav-cta notranslate" translate="no" href="/request-product-plan?product=oem-pet-pad-project">
+        {labels.quote}
         <ArrowUpRight size={18} strokeWidth={1.8} />
       </a>
-      <a className="nav-signin" href="/sign-in">
-        Sign In
+      <LanguageSwitcher />
+      <a className="nav-signin notranslate" translate="no" href="/sign-in">
+        {labels.signIn}
       </a>
     </nav>
+  );
+}
+
+function ProductProcurementModules({ product }) {
+  const details = productProcurementDetails[product.slug];
+  const technicalSpecs = productTechnicalSpecs[product.slug] || productTechnicalSpecs.default;
+
+  if (!details) {
+    return null;
+  }
+
+  return (
+    <section className="product-procurement-section" aria-labelledby={`${product.slug}-procurement-title`}>
+      <div className="product-procurement-heading">
+        <p className="section-kicker">B2B Product Configuration</p>
+        <h2 id={`${product.slug}-procurement-title`}>Evaluate the product before requesting a sample.</h2>
+        <p>Review the application, material structure, customization scope, and OEM entry points used to prepare a buyer-ready specification.</p>
+      </div>
+
+      <section className="product-buyer-module product-overview-module" aria-labelledby={`${product.slug}-overview-title`}>
+        <div className="product-module-heading">
+          <span>01</span>
+          <div>
+            <p className="section-kicker">Product Overview</p>
+            <h3 id={`${product.slug}-overview-title`}>{product.title} procurement overview</h3>
+          </div>
+        </div>
+        <div className="product-overview-grid">
+          {[
+            ['Product Use', details.overview.purpose],
+            ['Target Customers', details.overview.buyers],
+            ['Application Scenarios', details.overview.scenarios],
+          ].map(([title, text]) => (
+            <article key={title}>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="product-size-row">
+          <strong>Available Sizes</strong>
+          <div>{details.sizes.map((size) => <span key={size}>{size}</span>)}</div>
+        </div>
+      </section>
+
+      <section className="product-buyer-module" aria-labelledby={`${product.slug}-features-title`}>
+        <div className="product-module-heading">
+          <span>02</span>
+          <div>
+            <p className="section-kicker">Key Features</p>
+            <h3 id={`${product.slug}-features-title`}>Commercial features buyers can specify.</h3>
+          </div>
+        </div>
+        <div className="product-feature-grid">
+          {details.features.map((feature) => (
+            <article key={feature}>
+              <ShieldCheck size={20} strokeWidth={1.7} />
+              <strong>{feature}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-buyer-module" aria-labelledby={`${product.slug}-materials-title`}>
+        <div className="product-module-heading">
+          <span>03</span>
+          <div>
+            <p className="section-kicker">Material Structure</p>
+            <h3 id={`${product.slug}-materials-title`}>Material choices linked to product performance.</h3>
+          </div>
+        </div>
+        <div className="product-material-list">
+          {details.materials.map(([material, impact], index) => (
+            <article key={material}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h4>{material}</h4>
+                <p>{impact}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-buyer-module product-technical-module" aria-labelledby={`${product.slug}-technical-title`}>
+        <div className="product-module-heading">
+          <span>04</span>
+          <div>
+            <p className="section-kicker">Technical Specification</p>
+            <h3 id={`${product.slug}-technical-title`}>Specification fields for buyer review.</h3>
+          </div>
+        </div>
+        <dl className="product-specification-table">
+          {technicalSpecs.map(([label, value]) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="product-buyer-module" aria-labelledby={`${product.slug}-customization-title`}>
+        <div className="product-module-heading">
+          <span>05</span>
+          <div>
+            <p className="section-kicker">Customization Options</p>
+            <h3 id={`${product.slug}-customization-title`}>Define the specification for your market.</h3>
+          </div>
+        </div>
+        <div className="product-customization-grid">
+          {details.customization.map(([option, description]) => (
+            <article key={option}>
+              <h4>{option}</h4>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-buyer-module product-oem-entry" aria-labelledby={`${product.slug}-oem-entry-title`}>
+        <div>
+          <div className="product-module-heading">
+            <span>06</span>
+            <div>
+              <p className="section-kicker">OEM Process Entry</p>
+              <h3 id={`${product.slug}-oem-entry-title`}>Start with a sample or a commercial brief.</h3>
+            </div>
+          </div>
+          <p>{details.oemSupport}</p>
+        </div>
+        <div className="product-oem-actions">
+          <a className="product-action-secondary" data-product-cta="sample" href={`/request-product-plan?product=${product.slug}&request=sample`}>
+            Request Sample
+            <ArrowUpRight size={17} />
+          </a>
+          <a className="product-action-primary" data-product-cta="quote" href={`/request-product-plan?product=${product.slug}&request=quote`}>
+            Request Quote
+            <ArrowUpRight size={17} />
+          </a>
+        </div>
+      </section>
+
+      <section className="product-buyer-module" aria-labelledby={`${product.slug}-applications-title`}>
+        <div className="product-module-heading">
+          <span>07</span>
+          <div>
+            <p className="section-kicker">Application</p>
+            <h3 id={`${product.slug}-applications-title`}>Prepared for major B2B sales channels.</h3>
+          </div>
+        </div>
+        <div className="product-channel-grid">
+          {productBuyerChannels.map(([channel, description]) => (
+            <article key={channel}>
+              <h4>{channel}</h4>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="product-rfq-cta" aria-labelledby={`${product.slug}-rfq-title`}>
+        <div>
+          <p className="section-kicker">RFQ</p>
+          <h3 id={`${product.slug}-rfq-title`}>Send your target specification and order plan.</h3>
+          <p>Include market, size, material direction, packaging, estimated quantity, and delivery destination.</p>
+        </div>
+        <a data-product-cta="rfq" href={`/request-product-plan?product=${product.slug}`}>
+          Request OEM Quote
+          <ArrowUpRight size={18} />
+        </a>
+      </section>
+    </section>
   );
 }
 
@@ -1122,7 +1963,7 @@ function ProductDetail({ product }) {
               ))}
             </div>
             <a className="detail-cta" href={`/request-product-plan?product=${product.slug}`}>
-              Request This Product Plan
+              Request OEM Quote
               <ArrowUpRight size={18} />
             </a>
           </div>
@@ -1143,6 +1984,27 @@ function ProductDetail({ product }) {
               <p>{detail}</p>
             </article>
           ))}
+        </div>
+        <div className="product-b2b-grid product-b2b-summary-grid">
+          <article>
+            <p className="section-kicker">Product Overview</p>
+            <h2>{product.title} for OEM and private-label buyers</h2>
+            <p>{product.summary} JCZCARE helps buyers confirm product structure, package format, sample purpose, and repeat-order control before mass production.</p>
+          </article>
+          <article>
+            <p className="section-kicker">Applications</p>
+            <ul className="application-list">
+              {productApplications.map((application) => <li key={application}>{application}</li>)}
+            </ul>
+          </article>
+        </div>
+        <ProductProcurementModules product={product} />
+        <div className="product-quote-band">
+          <div>
+            <p className="section-kicker">OEM Quote</p>
+            <h2>Share size, absorbency, packaging, and monthly quantity.</h2>
+          </div>
+          <a href={`/request-product-plan?product=${product.slug}`}>Request OEM Quote <ArrowUpRight size={18} /></a>
         </div>
       </div>
     </section>
@@ -1197,9 +2059,9 @@ function SiteFooter({ ui }) {
               <small>{whatsappPhone}</small>
             </span>
           </a>
-          <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
-            <MessageCircle size={20} />
-            Start WhatsApp Chat
+          <a href="/request-product-plan?product=oem-partnership" aria-label="Start an OEM partnership">
+            <ArrowUpRight size={20} />
+            Start OEM Partnership
           </a>
           <a className="footer-top-link" href="#adult-underpads-top">
             <ArrowUp size={20} />
@@ -1335,6 +2197,8 @@ function AdultUnderpadsPage({ ui }) {
             ))}
           </div>
         </section>
+
+        <ProductProcurementModules product={adultUnderpadProduct} />
 
         <section className="adult-underpads-section" aria-labelledby="adult-underpads-applications-title">
           <div className="adult-underpads-section-heading">
@@ -1517,6 +2381,10 @@ function BlogPage() {
           <p>
             Practical insights for pet product brands, importers and distributors sourcing OEM and private label pet pads.
           </p>
+          <div className="business-seo-actions blog-hero-actions">
+            <a href="/request-product-plan?product=blog-reader">Request OEM Quote <ArrowUpRight size={18} /></a>
+            <a href="/oem-process">View OEM Process <ArrowUpRight size={18} /></a>
+          </div>
         </div>
 
         <nav className="blog-cluster-directory" aria-label="Blog topic clusters">
@@ -1607,10 +2475,10 @@ function BlogArticlePage({ article }) {
               <div className="blog-inline-links" aria-label="Related internal links">
                 <a href="/">JCZCARE homepage</a>
                 <a href={article.clusterPath}>{article.clusterTitle} pillar guide</a>
-                <a href="/customization">OEM/ODM customization</a>
+                <a href="/private-label">OEM/ODM customization</a>
                 <a href="/factory">Factory resources</a>
                 <a href="/products/disposable-pet-pads">Disposable pet pads</a>
-                <a href="/advantages">Factory advantages</a>
+                <a href="/about-factory">Factory advantages</a>
                 <a href="/contact">Contact the factory</a>
               </div>
             </div>
@@ -1688,8 +2556,8 @@ function BlogArticlePage({ article }) {
                 <li key={keyword}>{keyword}</li>
               ))}
             </ul>
-            <a href="/request-product-plan?product=blog-inquiry">
-              Submit an inquiry
+            <a href={`/request-product-plan?product=${article.slug}`}>
+              Request OEM Quote
               <ArrowUpRight size={16} />
             </a>
           </aside>
@@ -1765,7 +2633,12 @@ function AuthorityPage({ page }) {
               <a href="/contact">Contact Sales <ArrowUpRight size={17} /></a>
             </div>
           </div>
-          <OptimizedImage src={page.image} alt={page.imageAlt} loading="eager" fetchPriority="high" />
+          <OptimizedImage
+            src={page.image}
+            alt={page.imageAlt}
+            loading="eager"
+            fetchPriority="high"
+          />
         </header>
 
         {(page.kind === 'pillar' || page.kind === 'factory-detail') && (
@@ -2048,25 +2921,680 @@ function BusinessSeoPage({ page }) {
   );
 }
 
-function InquiryForm({ className = '', product = '', source = 'website-contact', rows = 4, buttonLabel = 'Send Inquiry' }) {
+function OemCapabilityPage() {
+  const productionSteps = [
+    ['01', 'Requirement Review', 'Confirm market, product category, target specification, estimated volume, packaging direction, and delivery destination.'],
+    ['02', 'Specification Planning', 'Define size, weight, absorbency, layer structure, functional options, pack count, and acceptance criteria.'],
+    ['03', 'Material Selection', 'Review nonwoven, tissue or absorbent paper, fluff pulp, SAP, PE film, and project-specific options.'],
+    ['04', 'Sample Development', 'Prepare controlled samples for dimensions, structure, performance, handling, and buyer evaluation.'],
+    ['05', 'Production Release', 'Transfer the approved specification to material planning, line setup, scheduling, and in-process controls.'],
+    ['06', 'Quality Verification', 'Check dimensions, weight, absorption, rewet, leakage, sealing, appearance, and pack consistency.'],
+    ['07', 'Packaging Approval', 'Confirm artwork, bag format, pack count, labels, carton marks, and export packing requirements.'],
+    ['08', 'Shipment Coordination', 'Complete finished-goods release, loading preparation, documentation, and delivery coordination.'],
+  ];
+  const customizationCapabilities = [
+    [Ruler, 'Size & Format', 'Standard market sizes or buyer-defined dimensions, folding, pack count, and carton configuration.'],
+    [Layers3, 'Material Structure', 'Surface material, core combination, SAP direction, backing film, and functional layers.'],
+    [Droplets, 'Performance Target', 'Absorption, liquid intake, diffusion, rewet, leakage, and product weight direction.'],
+    [Factory, 'Production Configuration', 'Specification-controlled line setup, product format, and planned volume requirements.'],
+    [FlaskConical, 'Sample Development', 'Documented sample versions for product, performance, and packaging review.'],
+    [ShieldCheck, 'Private Label Support', 'Artwork workflow, printed packaging, labels, carton marks, and repeat-order references.'],
+  ];
+  const qualityStages = [
+    ['Incoming Material Inspection', 'Review material type, weight, appearance, project reference, and release status before production.'],
+    ['Production Inspection', 'Monitor dimensions, product weight, material placement, sealing, folding, count, and line consistency.'],
+    ['Finished Product Testing', 'Verify absorption, diffusion, rewet, leakage, appearance, packing, carton marks, and release evidence.'],
+  ];
+  const globalSupplyCapabilities = [
+    ['Export Packing', 'Coordinate inner packs, cartons, shipping marks, pallet direction, and loading preparation.'],
+    ['Buyer Documentation', 'Prepare product specifications, packing references, quality records, and shipment information for project review.'],
+    ['Delivery Coordination', 'Align order planning with destination, shipment requirements, production timing, and logistics communication.'],
+    ['Repeat Supply', 'Maintain approved specification and packaging references to support repeat-order consistency.'],
+  ];
+
+  return (
+    <section className="oem-capability-page">
+      <div className="container oem-capability-shell">
+        <header className="oem-capability-hero">
+          <div className="oem-capability-hero-copy">
+            <p className="section-kicker">B2B Pet Hygiene Manufacturing</p>
+            <h1>OEM capability for European and American buyers.</h1>
+            <p>Evaluate manufacturing, customization, quality control, and global supply through one factory cooperation framework built for brands, retailers, distributors, importers, wholesalers, and procurement teams.</p>
+            <div className="oem-capability-actions">
+              <a href="/request-product-plan?product=oem-capability">
+                Request OEM Quote
+                <ArrowUpRight size={18} />
+              </a>
+              <a href="/products/disposable-pet-pads">
+                Review Product Platform
+                <ArrowUpRight size={18} />
+              </a>
+            </div>
+          </div>
+          <div className="oem-capability-hero-media">
+            <OptimizedImage
+              src="/images/oem/factory/factory-campus-real-aerial-20260729.png"
+              alt="Pet hygiene products OEM manufacturing facility"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div>
+              <span>Factory direct</span>
+              <span>OEM / ODM</span>
+              <span>Global B2B supply</span>
+            </div>
+          </div>
+        </header>
+
+        <section className="oem-capability-page-section" aria-labelledby="oem-manufacturing-overview-title">
+          <div className="oem-capability-heading">
+            <span>01</span>
+            <div>
+              <p className="section-kicker">Manufacturing Overview</p>
+              <h2 id="oem-manufacturing-overview-title">Factory capacity buyers can evaluate.</h2>
+              <p>Production resources, absorbent product experience, and export-order coordination are connected through one specification-controlled manufacturing system.</p>
+            </div>
+          </div>
+          <div className="oem-capability-overview">
+            <div className="oem-capability-media">
+              <OptimizedImage src="/images/oem/production/factory-production-line-real-20260729.jpg" alt="Automated pet hygiene product production line" />
+            </div>
+            <div className="oem-capability-stat-grid">
+              {[
+                ['12,000 sq.m', 'Manufacturing Base', 'Production, quality review, packing, and export preparation.'],
+                ['8 Lines', 'Automated Equipment', 'Planned line resources for absorbent hygiene product programs.'],
+                ['300M pcs', 'Planned Annual Capacity', 'Volume planning supported by automated manufacturing resources.'],
+                ['20 Years', 'Manufacturing Experience', 'Experience in absorbent hygiene products and B2B supply.'],
+              ].map(([value, title, text]) => (
+                <article key={title}>
+                  <strong>{value}</strong>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="oem-capability-page-section" aria-labelledby="oem-production-process-title">
+          <div className="oem-capability-heading">
+            <span>02</span>
+            <div>
+              <p className="section-kicker">Production Process</p>
+              <h2 id="oem-production-process-title">From buyer brief to shipment release.</h2>
+              <p>The cooperation process links commercial requirements to controlled specifications, samples, production, inspection, packaging, and shipment.</p>
+            </div>
+          </div>
+          <div className="oem-capability-process-media">
+            <OptimizedImage src="/images/oem/production/factory-production-line-02.webp" alt="Pet hygiene products factory production workflow" />
+          </div>
+          <ol className="oem-capability-process-list">
+            {productionSteps.map(([number, title, text]) => (
+              <li key={title}>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="oem-capability-page-section" aria-labelledby="oem-customization-capability-title">
+          <div className="oem-capability-heading">
+            <span>03</span>
+            <div>
+              <p className="section-kicker">Customization Capability</p>
+              <h2 id="oem-customization-capability-title">Configure the product for your market and channel.</h2>
+              <p>Customization is reviewed as a connected product system so materials, performance, packaging, and production remain aligned.</p>
+            </div>
+          </div>
+          <div className="oem-capability-customization">
+            <div className="oem-capability-media">
+              <OptimizedImage src="/images/oem/production/factory-lamination-01.webp" alt="Factory lamination equipment for customized absorbent products" />
+            </div>
+            <div className="oem-capability-custom-grid">
+              {customizationCapabilities.map(([Icon, title, text]) => (
+                <article key={title}>
+                  <span><Icon size={21} strokeWidth={1.7} /></span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="oem-capability-page-section" aria-labelledby="oem-quality-system-title">
+          <div className="oem-capability-heading">
+            <span>04</span>
+            <div>
+              <p className="section-kicker">Quality Control System</p>
+              <h2 id="oem-quality-system-title">Quality checkpoints tied to the approved specification.</h2>
+              <p>Inspection starts with incoming materials, continues during production, and finishes with product, packaging, and release review.</p>
+            </div>
+          </div>
+          <div className="oem-capability-split">
+            <div className="oem-capability-media">
+              <OptimizedImage src="/images/oem/quality/factory-quality-control-01.webp" alt="Factory quality inspection for absorbent hygiene products" />
+            </div>
+            <div className="oem-capability-stage-list">
+              {qualityStages.map(([title, text], index) => (
+                <article key={title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+              <a href="/quality-control">Review Quality Control System <ArrowUpRight size={17} /></a>
+            </div>
+          </div>
+        </section>
+
+        <section className="oem-capability-page-section" aria-labelledby="oem-global-supply-title">
+          <div className="oem-capability-heading">
+            <span>05</span>
+            <div>
+              <p className="section-kicker">Global Supply Capability</p>
+              <h2 id="oem-global-supply-title">Export coordination for repeat B2B supply.</h2>
+              <p>Finished goods, export packing, buyer documentation, and delivery communication are reviewed as part of the order plan.</p>
+            </div>
+          </div>
+          <div className="oem-capability-split oem-capability-supply">
+            <div className="oem-capability-supply-list">
+              {globalSupplyCapabilities.map(([title, text]) => (
+                <article key={title}>
+                  <Truck size={20} strokeWidth={1.7} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="oem-capability-media">
+              <OptimizedImage src="/images/oem/warehouse/warehouse-finished-goods-01.webp" alt="Finished goods warehouse prepared for global OEM supply" />
+            </div>
+          </div>
+        </section>
+
+        <section className="oem-capability-cta" aria-labelledby="oem-capability-cta-title">
+          <div>
+            <p className="section-kicker">06 Request OEM Quote</p>
+            <h2 id="oem-capability-cta-title">Share your product brief with the factory team.</h2>
+            <p>Send the target market, product category, specification, packaging direction, estimated quantity, and delivery destination for review.</p>
+          </div>
+          <a href="/request-product-plan?product=oem-capability">
+            Request OEM Quote
+            <ArrowUpRight size={18} />
+          </a>
+        </section>
+      </div>
+    </section>
+  );
+}
+
+function CaseStudyPage() {
+  const cases = [
+    {
+      number: '01',
+      title: 'Private-Label Pet Pad Program',
+      market: 'European brand program',
+      image: '/images/oem/products/products-disposable-pads-01.webp',
+      imageAlt: 'Disposable pet pad product for an anonymous private-label OEM project example',
+      summary: 'A pet care brand needed a clear product and packaging route for retail and online channels without losing control of repeat-order specifications.',
+      details: [
+        ['Industry', 'European pet care brand serving retail and e-commerce channels.'],
+        ['Challenge', 'Align absorption, product feel, pack count, and private-label presentation for multiple sales channels.'],
+        ['Solution', 'Create a controlled product brief, compare sample directions, and confirm measurable product and packaging requirements before production.'],
+        ['Customization', 'Size, product weight, SAP direction, surface embossing, pack count, printed bag artwork, and carton marks.'],
+        ['Production Support', 'Material review, sample version control, line setup, absorption and leakage checks, packaging approval, and shipment preparation.'],
+        ['Result', 'A buyer-approved product and packaging reference prepared for repeat-order planning and channel rollout.'],
+      ],
+    },
+    {
+      number: '02',
+      title: 'Adult Underpad Retail Program',
+      market: 'North American retail program',
+      image: '/images/oem/products/products-underpads-01.webp',
+      imageAlt: 'Adult disposable underpad for an anonymous retailer OEM project example',
+      summary: 'A retailer required an underpad specification that could serve home-care demand while remaining clear for packaging, quality review, and replenishment planning.',
+      details: [
+        ['Industry', 'North American retailer with healthcare and home-care product categories.'],
+        ['Challenge', 'Define a soft, leak-resistant underpad with an appropriate absorption direction and retail-ready pack structure.'],
+        ['Solution', 'Translate the channel brief into size, core, backing, packing, and acceptance requirements supported by sample review.'],
+        ['Customization', 'Care dimensions, core weight, SAP ratio, surface direction, PE backing, folding, pack count, and private-label packaging.'],
+        ['Production Support', 'Incoming material verification, product weight and size checks, absorption and rewet review, pack inspection, and carton confirmation.'],
+        ['Result', 'A documented underpad specification and pack configuration ready for purchasing review and repeat production control.'],
+      ],
+    },
+    {
+      number: '03',
+      title: 'Charcoal Pad Product Range',
+      market: 'Regional distributor program',
+      image: '/images/oem/products/products-charcoal-pads-01.webp',
+      imageAlt: 'Charcoal pet pad for an anonymous distributor OEM project example',
+      summary: 'A distributor wanted a differentiated odor-control range while keeping the underlying absorbent performance and supply workflow practical.',
+      details: [
+        ['Industry', 'Pet hygiene distributor supplying regional retail and wholesale accounts.'],
+        ['Challenge', 'Add an odor-control direction without creating unclear performance expectations or an unstable production specification.'],
+        ['Solution', 'Review carbon-layer options alongside absorbency, surface, backing, pack positioning, and sample acceptance criteria.'],
+        ['Customization', 'Activated-carbon direction, pad size, product weight, SAP ratio, surface pattern, backing color, pack count, and artwork.'],
+        ['Production Support', 'Functional sample preparation, absorption and rewet checks, line specification control, packaging review, and finished-goods release.'],
+        ['Result', 'A differentiated charcoal-pad specification aligned to distributor positioning and repeat supply references.'],
+      ],
+    },
+    {
+      number: '04',
+      title: 'Adhesive Pad Online Launch',
+      market: 'Global online brand program',
+      image: '/images/oem/products/products-adhesive-pads-01.webp',
+      imageAlt: 'Adhesive pet pad for an anonymous online brand OEM project example',
+      summary: 'An online pet brand needed a stability-focused pad that could be explained clearly to buyers and packed efficiently for e-commerce fulfillment.',
+      details: [
+        ['Industry', 'Online pet brand serving direct-to-consumer and marketplace channels.'],
+        ['Challenge', 'Balance adhesive placement, clean-removal direction, absorption, pack dimensions, and product differentiation.'],
+        ['Solution', 'Develop sample variants around backing and adhesive placement, then confirm product and pack requirements against the approved brief.'],
+        ['Customization', 'Pad size, absorption level, adhesive position, backing structure, folding, pack count, artwork, and carton configuration.'],
+        ['Production Support', 'Sample identification, backing review, dimensions and weight checks, absorption testing, pack inspection, and order reference control.'],
+        ['Result', 'A channel-ready adhesive-pad specification with approved sample and packaging references for production planning.'],
+      ],
+    },
+    {
+      number: '05',
+      title: 'Coordinated Multi-Category Supply',
+      market: 'International importer program',
+      image: '/images/oem/products/custom-pet-waste-bags-ai.webp',
+      imageAlt: 'Pet waste bags for an anonymous multi-category OEM supply example',
+      summary: 'An importer wanted to coordinate pet pads and waste bags under one purchasing framework while keeping each product specification independently controlled.',
+      details: [
+        ['Industry', 'International importer and distributor managing multiple pet hygiene categories.'],
+        ['Challenge', 'Coordinate different product materials, pack formats, artwork files, carton requirements, and shipment preparation.'],
+        ['Solution', 'Use separate controlled specifications for each category with one project schedule, packaging review process, and shipment communication plan.'],
+        ['Customization', 'Pet pad size and absorbency, waste-bag material and thickness, roll count, color, printing, private-label packs, and carton marks.'],
+        ['Production Support', 'Category-specific samples, artwork status tracking, production scheduling, quality checkpoints, packing review, and export coordination.'],
+        ['Result', 'An aligned multi-category sourcing framework with clear product references, packaging status, and repeat-order responsibilities.'],
+      ],
+    },
+  ];
+
+  return (
+    <section className="oem-case-study-page">
+      <div className="container oem-case-study-shell">
+        <header className="oem-case-study-hero">
+          <div>
+            <p className="section-kicker">Anonymous OEM Project Examples</p>
+            <h1>OEM project examples for global pet care buyers.</h1>
+            <p>Five representative sourcing briefs showing how product requirements can move through customization, sampling, production support, quality review, packaging, and repeat-order preparation.</p>
+            <a href="/request-product-plan?product=oem-partnership">
+              Request OEM Partnership
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+          <div className="oem-case-study-hero-media">
+            <OptimizedImage
+              src="/images/oem/production/factory-production-line-03.webp"
+              alt="Pet hygiene products OEM factory production line"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </div>
+        </header>
+
+        <div className="oem-case-study-disclosure" role="note">
+          <ShieldCheck size={22} strokeWidth={1.7} />
+          <div>
+            <strong>Anonymous by design</strong>
+            <p>These examples do not identify customer companies, brand names, or confidential commercial details. Results describe sourcing outputs without invented sales figures.</p>
+          </div>
+        </div>
+
+        <div className="oem-case-study-audience" aria-label="Target buyer groups">
+          {[
+            ['Pet Brands', 'Private-label product and packaging development'],
+            ['Retailers', 'Channel specifications and replenishment planning'],
+            ['Distributors', 'Differentiated ranges and repeat supply control'],
+          ].map(([title, text]) => (
+            <div key={title}>
+              <strong>{title}</strong>
+              <span>{text}</span>
+            </div>
+          ))}
+        </div>
+
+        <section className="oem-case-study-list" aria-labelledby="oem-case-study-list-title">
+          <div className="oem-case-study-heading">
+            <p className="section-kicker">Five Project Profiles</p>
+            <h2 id="oem-case-study-list-title">Different channels. One controlled OEM workflow.</h2>
+            <p>Each case follows the same buyer evaluation structure: industry context, sourcing challenge, proposed solution, customization scope, production support, and practical result.</p>
+          </div>
+
+          {cases.map((project) => (
+            <article className="oem-case-study-card" key={project.number}>
+              <div className="oem-case-study-card-heading">
+                <span>{project.number}</span>
+                <div>
+                  <p>Anonymous Case {project.number}</p>
+                  <h2>{project.title}</h2>
+                  <small>{project.market}</small>
+                </div>
+              </div>
+              <div className="oem-case-study-card-intro">
+                <div className="oem-case-study-card-media">
+                  <OptimizedImage src={project.image} alt={project.imageAlt} />
+                </div>
+                <p>{project.summary}</p>
+              </div>
+              <dl className="oem-case-study-details">
+                {project.details.map(([label, text]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+          ))}
+        </section>
+
+        <section className="oem-case-study-cta" aria-labelledby="oem-case-study-cta-title">
+          <div>
+            <p className="section-kicker">OEM Cooperation</p>
+            <h2 id="oem-case-study-cta-title">Build the next product brief with our factory team.</h2>
+            <p>Share your target market, product category, specification, packaging direction, estimated quantity, and delivery destination.</p>
+          </div>
+          <a href="/request-product-plan?product=oem-partnership">
+            Request OEM Partnership
+            <ArrowUpRight size={18} />
+          </a>
+        </section>
+      </div>
+    </section>
+  );
+}
+
+function OemProcessPage() {
+  return (
+    <section className="business-seo-page process-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero">
+          <div className="process-hero-copy">
+            <p className="section-kicker">OEM/ODM Process</p>
+            <h1>OEM/ODM Pet Pad Manufacturing Process</h1>
+            <p>Move from product requirement to approved sample, mass production, quality inspection, and global shipment with a clear B2B workflow.</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=oem-process">Request OEM Quote <ArrowUpRight size={18} /></a>
+              <a href="/private-label">Private Label Options <ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <div className="process-hero-media" aria-hidden="true">
+            <OptimizedImage src={b2bImage('oem-sample-review')} alt="" loading="eager" />
+          </div>
+        </div>
+        <section className="oem-capability-section" aria-labelledby="oem-capability-title">
+          <div>
+            <p className="section-kicker">Customization Capability</p>
+            <h2 id="oem-capability-title">Build a product and pack system for your market.</h2>
+          </div>
+          <div className="oem-capability-grid">
+            {oemCustomizationCapabilities.map(([Icon, title, text]) => (
+              <article key={title}>
+                <span><Icon size={24} strokeWidth={1.7} /></span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <div className="process-timeline">
+          {oemProcessSteps.map(([number, title, text, image]) => (
+            <article key={title}>
+              <OptimizedImage src={image} alt={`${title} in OEM pet pad manufacturing process`} />
+              <span>{number}</span>
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="product-quote-band">
+          <div>
+            <p className="section-kicker">Project Brief</p>
+            <h2>Send your target market, specification, packaging direction, and quantity.</h2>
+          </div>
+          <a href="/request-product-plan?product=oem-process">Request OEM Quote <ArrowUpRight size={18} /></a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ManufacturingCapabilityPage() {
+  const capabilityImages = [
+    ['/images/oem/production/factory-production-line-real-20260729.jpg', 'Automated pet pad production line'],
+    [b2bImage('factory-capability-workshop'), 'Factory capability and production workshop'],
+    ['/images/oem/warehouse/warehouse-finished-goods-01.webp', 'Finished goods warehouse for export orders'],
+    ['/images/oem/quality/factory-quality-control-01.webp', 'Quality control review for absorbent products'],
+  ];
+
+  return (
+    <section className="business-seo-page manufacturing-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero factory-quality-hero">
+          <div>
+            <p className="section-kicker">Manufacturing Capability</p>
+            <h1>Manufacturing capability for OEM pet pad supply.</h1>
+            <p>JCZCARE combines automated production lines, material inspection, quality checks, packaging coordination, and export preparation for overseas B2B buyers.</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=factory-capability">Request OEM Quote <ArrowUpRight size={18} /></a>
+              <a href="/quality-control">Quality Control System <ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <div className="factory-quality-hero-media" aria-hidden="true">
+            <OptimizedImage src="/images/oem/production/factory-production-line-real-20260729.jpg" alt="" loading="eager" />
+          </div>
+        </div>
+        <section className="factory-core-system" aria-labelledby="factory-core-system-title">
+          <div className="factory-core-heading">
+            <div>
+              <p className="section-kicker">Factory System</p>
+              <h2 id="factory-core-system-title">Manufacturing evidence for supplier evaluation.</h2>
+            </div>
+            <a href="/request-product-plan?product=factory-capability">
+              Request OEM Quote
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+          <div className="factory-core-list">
+            {factoryCoreModules.map(([number, title, text, image, facts]) => (
+              <article key={title}>
+                <div className="factory-core-media">
+                  <OptimizedImage src={image} alt={`${title} at JCZCARE OEM manufacturing facility`} />
+                </div>
+                <div className="factory-core-copy">
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                  <ul>
+                    {facts.map((fact) => <li key={fact}>{fact}</li>)}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <div className="business-seo-grid">
+          {[
+            ['Automated production lines', 'Stable equipment supports repeatable size, weight, folding, and pack formats.'],
+            ['Professional manufacturing team', 'Production, quality, packaging, and export teams coordinate the buyer brief.'],
+            ['Stable supply capability', 'Order planning connects material preparation, production scheduling, inspection, and shipment.'],
+          ].map(([title, text]) => (
+            <article key={title}>
+              <span>{title}</span>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="process-flow">
+          {manufacturingProcess.map((step) => <span key={step}>{step}</span>)}
+        </div>
+        <div className="capability-gallery">
+          {capabilityImages.map(([src, alt]) => (
+            <OptimizedImage key={src} src={src} alt={alt} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function QualityControlPage() {
+  return (
+    <section className="business-seo-page quality-system-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero factory-quality-hero">
+          <div>
+            <p className="section-kicker">Quality Control System</p>
+            <h1>Quality control system for OEM absorbent products.</h1>
+            <p>From incoming materials to shipment approval, quality checks focus on the details that affect B2B buyer risk: absorbency, leakage, rewet, sealing, packaging, and consistency.</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=quality-control">Request OEM Quote <ArrowUpRight size={18} /></a>
+              <a href="/oem-process">View OEM Process <ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <div className="factory-quality-hero-media" aria-hidden="true">
+            <OptimizedImage src="/images/oem/quality/quality-inspection-lab-mask.png" alt="" loading="eager" />
+          </div>
+        </div>
+        <section className="quality-stage-section" aria-labelledby="quality-stage-title">
+          <div>
+            <p className="section-kicker">Three Inspection Stages</p>
+            <h2 id="quality-stage-title">Control the order before, during, and after production.</h2>
+          </div>
+          <div className="quality-stage-grid">
+            {qualityStageSummary.map(([number, title, text, image]) => (
+              <article key={title}>
+                <OptimizedImage src={image} alt={`${title} for OEM absorbent products`} />
+                <div>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <div className="quality-check-grid">
+          {qualityControlSteps.map(([title, text, image]) => (
+            <article key={title}>
+              <OptimizedImage src={image} alt={`${title} for OEM pet pad quality control`} />
+              <div>
+                <h2>{title}</h2>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PrivateLabelPage() {
+  return (
+    <section className="business-seo-page private-label-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero">
+          <div>
+            <p className="section-kicker">Private Label Pet Pads</p>
+            <h1>Private label pet pads for brands and retail channels.</h1>
+            <p>Build a differentiated pet pad line with custom size, absorbency, packaging, printing, materials, and product features backed by OEM manufacturing support.</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=private-label-pet-pads">Request OEM Quote <ArrowUpRight size={18} /></a>
+              <a href="/download">Request Catalog <ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <OptimizedImage src={b2bImage('private-label-packaging-review')} alt="Private label pet pad packaging review" loading="eager" />
+        </div>
+        <div className="custom-option-grid">
+          {privateLabelOptions.map((option) => <span key={option}>{option}</span>)}
+        </div>
+        <div className="process-flow private-label-flow">
+          {['Idea', 'Prototype', 'Sample', 'Production', 'Delivery'].map((step) => <span key={step}>{step}</span>)}
+        </div>
+        <div className="business-seo-featured">
+          <p className="section-kicker">Private Label Inputs</p>
+          <div>
+            {[
+              [b2bImage('packaging-customization-options'), 'Packaging design and format review'],
+              [b2bImage('business-meeting-oem'), 'OEM project meeting and sample confirmation'],
+              [b2bImage('product-specification-samples'), 'Product specification and material samples'],
+            ].map(([src, title]) => (
+              <a href="/request-product-plan?product=private-label-pet-pads" key={title}>
+                <OptimizedImage src={src} alt={title} />
+                <span>Private Label</span>
+                <h2>{title}</h2>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DownloadCenterPage() {
+  return (
+    <section className="business-seo-page download-center-page">
+      <div className="container business-seo-shell">
+        <div className="business-seo-hero">
+          <div>
+            <p className="section-kicker">Download Center</p>
+            <h1>Request product and OEM capability documents.</h1>
+            <p>Use this page to request the right document pack for your project. We do not publish fake PDFs; the team will send relevant materials after reviewing your product interest.</p>
+            <div className="business-seo-actions">
+              <a href="/request-product-plan?product=download-center">Request Documents <ArrowUpRight size={18} /></a>
+              <a href="/contact">Contact Sales <ArrowUpRight size={18} /></a>
+            </div>
+          </div>
+          <OptimizedImage src={b2bImage('download-center-catalog')} alt="OEM product catalog and factory document request" loading="eager" />
+        </div>
+        <div className="download-grid">
+          {downloadResources.map(([title, text]) => (
+            <article key={title}>
+              <span>Request</span>
+              <h2>{title}</h2>
+              <p>{text}</p>
+              <a href={`/request-product-plan?product=${encodeURIComponent(title)}`}>Request {title} <ArrowUpRight size={16} /></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function InquiryForm({ className = '', product = '', source = 'website-contact', buttonLabel = 'Send Inquiry' }) {
   const [formState, setFormState] = useState({
     name: '',
-    companyName: '',
     email: '',
-    phone: '',
-    country: '',
     product,
-    quantity: '',
-    message: '',
-    website: '',
+    botField: '',
   });
   const [submitState, setSubmitState] = useState({ status: 'idle', message: '' });
+  const [captchaToken, setCaptchaToken] = useState('');
+  const [captchaStatus, setCaptchaStatus] = useState('loading');
   const lastSubmitAtRef = useRef(0);
   const conversionTrackedRef = useRef(false);
+  const captchaContainerRef = useRef(null);
+  const captchaWidgetIdRef = useRef(null);
+  const captchaSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY
+    || (/^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname) ? turnstileTestSiteKey : '');
 
   useEffect(() => {
     setFormState((state) => ({ ...state, product }));
   }, [product]);
+
   useEffect(() => {
     if (submitState.status !== 'success') {
       conversionTrackedRef.current = false;
@@ -2079,6 +3607,63 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
     }
   }, [submitState.status]);
 
+  useEffect(() => {
+    if (!captchaSiteKey) {
+      setCaptchaStatus('unavailable');
+      return undefined;
+    }
+
+    let cancelled = false;
+    const renderCaptcha = () => {
+      if (cancelled || !captchaContainerRef.current || !window.turnstile || captchaWidgetIdRef.current !== null) {
+        return;
+      }
+
+      captchaWidgetIdRef.current = window.turnstile.render(captchaContainerRef.current, {
+        sitekey: captchaSiteKey,
+        theme: 'light',
+        size: window.matchMedia('(max-width: 640px)').matches ? 'compact' : 'flexible',
+        callback: (token) => {
+          setCaptchaToken(token);
+          setCaptchaStatus('verified');
+        },
+        'expired-callback': () => {
+          setCaptchaToken('');
+          setCaptchaStatus('expired');
+        },
+        'error-callback': () => {
+          setCaptchaToken('');
+          setCaptchaStatus('error');
+        },
+      });
+      setCaptchaStatus('ready');
+    };
+
+    let script = document.getElementById(turnstileScriptId);
+    if (window.turnstile) {
+      renderCaptcha();
+    } else if (script) {
+      script.addEventListener('load', renderCaptcha);
+    } else {
+      script = document.createElement('script');
+      script.id = turnstileScriptId;
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.addEventListener('load', renderCaptcha);
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      cancelled = true;
+      script?.removeEventListener('load', renderCaptcha);
+      if (captchaWidgetIdRef.current !== null && window.turnstile) {
+        window.turnstile.remove(captchaWidgetIdRef.current);
+        captchaWidgetIdRef.current = null;
+      }
+    };
+  }, [captchaSiteKey]);
+
   const updateField = (field) => (event) => {
     setFormState((state) => ({ ...state, [field]: event.target.value }));
   };
@@ -2089,14 +3674,10 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
     const payload = {
       ...formState,
       name: formState.name.trim(),
-      companyName: formState.companyName.trim(),
       email: formState.email.trim(),
-      phone: formState.phone.trim(),
-      country: formState.country.trim(),
       product: formState.product.trim(),
-      quantity: formState.quantity.trim(),
-      message: formState.message.trim(),
-      website: formState.website.trim(),
+      botField: formState.botField.trim(),
+      captchaToken,
       source,
       pageUrl: window.location.href,
     };
@@ -2119,8 +3700,13 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
       return;
     }
 
-    if (!payload.message) {
-      setSubmitState({ status: 'error', message: 'Please enter your product requirement.' });
+    if (!payload.product) {
+      setSubmitState({ status: 'error', message: 'Please select a product.' });
+      return;
+    }
+
+    if (!payload.captchaToken) {
+      setSubmitState({ status: 'error', message: 'Please complete the human verification.' });
       return;
     }
 
@@ -2140,20 +3726,19 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
 
       setFormState({
         name: '',
-        companyName: '',
         email: '',
-        phone: '',
-        country: '',
         product,
-        quantity: '',
-        message: '',
-        website: '',
+        botField: '',
       });
       setSubmitState({
         status: 'success',
         message: data.message || 'Thank you. Your inquiry has been sent successfully. We will contact you shortly.',
       });
+      setCaptchaToken('');
+      window.turnstile?.reset(captchaWidgetIdRef.current);
     } catch (error) {
+      setCaptchaToken('');
+      window.turnstile?.reset(captchaWidgetIdRef.current);
       setSubmitState({
         status: 'error',
         message: error.message || 'Sorry, your inquiry could not be sent. Please try again or email us directly at hengtuo@nthengtuo.com.',
@@ -2162,53 +3747,52 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
   };
 
   const isLoading = submitState.status === 'loading';
+  const availableProductOptions = inquiryProductOptions.includes(formState.product) || !formState.product
+    ? inquiryProductOptions
+    : [formState.product, ...inquiryProductOptions];
 
   return (
-    <form className={`contact-form ${className}`.trim()} aria-label="OEM inquiry form" onSubmit={handleSubmit}>
+    <form className={`contact-form compact-inquiry-form ${className}`.trim()} aria-label="OEM inquiry form" onSubmit={handleSubmit}>
       <label className="form-honeypot" aria-hidden="true">
-        <span>Website</span>
+        <span>Leave blank</span>
         <input
           type="text"
-          name="website"
+          name="botField"
           tabIndex="-1"
           autoComplete="off"
-          value={formState.website}
-          onChange={updateField('website')}
+          value={formState.botField}
+          onChange={updateField('botField')}
         />
       </label>
-      <label>
-        <span>Name</span>
-        <input type="text" name="name" required maxLength="100" autoComplete="name" value={formState.name} onChange={updateField('name')} />
-      </label>
-      <label>
-        <span>Company Name</span>
-        <input type="text" name="companyName" maxLength="200" autoComplete="organization" value={formState.companyName} onChange={updateField('companyName')} />
-      </label>
-      <label>
-        <span>Email</span>
-        <input type="email" name="email" required maxLength="200" autoComplete="email" value={formState.email} onChange={updateField('email')} />
-      </label>
-      <label>
-        <span>Phone / WhatsApp</span>
-        <input type="text" name="phone" maxLength="100" autoComplete="tel" value={formState.phone} onChange={updateField('phone')} />
-      </label>
-      <label>
-        <span>Country</span>
-        <input type="text" name="country" maxLength="100" autoComplete="country-name" value={formState.country} onChange={updateField('country')} />
-      </label>
-      <label>
-        <span>Product</span>
-        <input type="text" name="product" maxLength="200" value={formState.product} onChange={updateField('product')} />
-      </label>
-      <label>
-        <span>Estimated Quantity</span>
-        <input type="text" name="quantity" maxLength="100" value={formState.quantity} onChange={updateField('quantity')} />
-      </label>
-      <label>
-        <span>Product Requirement</span>
-        <textarea name="message" rows={rows} required maxLength="5000" value={formState.message} onChange={updateField('message')} />
-      </label>
-      <button type="submit" disabled={isLoading}>
+      <div className="inquiry-fields">
+        <label>
+          <span>Your Name</span>
+          <input type="text" name="name" required maxLength="100" autoComplete="name" placeholder="Full name" value={formState.name} onChange={updateField('name')} />
+        </label>
+        <label>
+          <span>Work Email</span>
+          <input type="email" name="email" required maxLength="200" autoComplete="email" placeholder="name@company.com" value={formState.email} onChange={updateField('email')} />
+        </label>
+        <label className="inquiry-field-wide">
+          <span>Product Interest</span>
+          <select name="product" required value={formState.product} onChange={updateField('product')}>
+            <option value="">Select a product</option>
+            {availableProductOptions.map((option) => <option key={option} value={option}>{option}</option>)}
+          </select>
+        </label>
+      </div>
+      <div className={`form-verification ${captchaStatus}`}>
+        <div className="form-verification-heading">
+          <ShieldCheck size={18} aria-hidden="true" />
+          <span>Human Verification</span>
+        </div>
+        {captchaSiteKey ? (
+          <div ref={captchaContainerRef} className="turnstile-container" />
+        ) : (
+          <p>Verification is temporarily unavailable. Please contact us by email or WhatsApp.</p>
+        )}
+      </div>
+      <button type="submit" disabled={isLoading || !captchaToken}>
         {isLoading ? 'Sending...' : buttonLabel}
         <ArrowUpRight size={18} />
       </button>
@@ -2257,14 +3841,13 @@ function ProductPlanInquiry() {
             <em className="title-key">OEM/ODM inquiry</em>
           </h1>
           <p>
-            Share the key project details. Our team will prepare a clear product plan for your market.
+            Select the product you are sourcing and leave your work email. Our team will follow up to confirm the detailed requirements.
           </p>
         </div>
         <InquiryForm
           className="inquiry-form"
           product={productParam}
           source="product-plan-request"
-          rows={5}
         />
       </div>
     </section>
@@ -2726,7 +4309,7 @@ function LearnCenterPage() {
     },
     {
       title: 'Factory & Supply',
-      image: '/images/generated-site/factory/factory-production-line-01.webp',
+      image: '/images/oem/production/factory-production-line-real-20260729.jpg',
       articles: ['Automated production stability', 'Packing and shipment workflow', 'How OEM orders move through factory'],
     },
     {
@@ -2992,6 +4575,8 @@ function App() {
   const currentPath = window.location.pathname;
   const [activeRegion, setActiveRegion] = useState(getInitialRegion);
   const ui = useMemo(() => getUiText(activeRegion), [activeRegion]);
+  const materialTerminology = materialTerminologyTranslations[getInitialSiteLanguage()]
+    ?? materialTerminologyTranslations.en;
   const productSlug = currentPath.match(/^\/products\/([^/]+)\/?$/)?.[1];
   const isAdultUnderpadsPage = currentPath === '/products/adult-underpads';
   const isInquiryPage = currentPath === '/request-product-plan';
@@ -3007,12 +4592,20 @@ function App() {
   const isNewsPage = currentPath === '/pages/news';
   const blogSlug = currentPath.match(/^\/blog\/([^/]+)\/?$/)?.[1];
   const isBlogPage = currentPath === '/blog';
+  const isOemProcessPage = currentPath === '/oem-process';
+  const isOemCapabilityPage = currentPath === '/oem-capability';
+  const isCaseStudyPage = currentPath === '/case-study';
+  const isQualityControlPage = currentPath === '/quality-control';
+  const isPrivateLabelPage = currentPath === '/private-label';
+  const isDownloadCenterPage = currentPath === '/download';
+  const isManufacturingCapabilityPage = currentPath === '/factory';
   const currentAuthorityPage = getAuthorityPage(currentPath);
   const currentSeoPage = seoPageMap.get(currentPath);
   const currentStaticSeo = staticSeoPages[currentPath];
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
     : null;
+
   useEffect(() => {
     ensureGoogleTagReady();
   }, []);
@@ -3024,7 +4617,6 @@ function App() {
     : null;
 
   useEffect(() => {
-    document.documentElement.lang = activeRegion.lang;
     document.documentElement.dataset.region = activeRegion.slug;
   }, [activeRegion]);
 
@@ -3103,7 +4695,7 @@ function App() {
         title: 'Pet Pad OEM Blog | Factory Insights for Buyers',
         description: 'Practical JCZCARE blog insights for pet product brands, importers and distributors sourcing OEM pet pads and private label puppy pads.',
         path: '/blog',
-        image: '/images/generated-site/factory/factory-campus-01.webp',
+        image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
       });
       return;
     }
@@ -3134,6 +4726,7 @@ function App() {
         description: currentStaticSeo.description,
         path: currentPath,
         image: currentStaticSeo.image,
+        indexable: !isInquiryPage && !isSignInPage,
       });
       return;
     }
@@ -3163,50 +4756,10 @@ function App() {
       const navLinks = nav.querySelector('.nav-links');
       const navCta = nav.querySelector('.nav-cta');
 
-      const getNavLayout = () => {
-        const viewportWidth = window.innerWidth;
-        const isCompactViewport = viewportWidth <= 1400;
-        const startMaxWidth = viewportWidth - (isCompactViewport ? 64 : 96);
-        const startPadding = isCompactViewport ? 40 : 46;
-        const startGap = isCompactViewport ? 11 : 16;
-        const contentWidth = Array.from(nav.children).reduce(
-          (total, child) => total + Math.ceil(Math.max(child.scrollWidth, child.getBoundingClientRect().width)),
-          0,
-        );
-        const endMaxWidth = viewportWidth - (isCompactViewport ? 40 : 76);
-        const endPadding = isCompactViewport ? 34 : 50;
-        const endGap = isCompactViewport ? 16 : 28;
-        const startWidth = Math.min(
-          Math.ceil(contentWidth + startPadding + startGap * 2),
-          startMaxWidth,
-        );
-        const startLeft = Math.max(isCompactViewport ? 32 : 48, (viewportWidth - startWidth) / 2);
-        const endWidth = Math.min(
-          isCompactViewport ? 1160 : 1480,
-          endMaxWidth,
-          Math.ceil(contentWidth + endPadding + endGap * 2),
-        );
-        const endLeft = (viewportWidth - endWidth) / 2;
-
-        return {
-          startLeft,
-          startWidth,
-          endLeft,
-          endWidth,
-        };
-      };
-
       if (currentProduct || currentNewsArticle || currentBlogArticle || currentAuthorityPage || currentSeoPage || isInquiryPage || isSignInPage || isAboutPage || isInvestorPage || isAffiliatesPage || isHelpPage || isLearnPage || isGiveBackPage || isGiftCardsPage || isNewsPage || isBlogPage) {
         gsap.set(nav, {
-          x: 0,
           y: 0,
           autoAlpha: 1,
-          left: () => getNavLayout().endLeft,
-          top: 16,
-          width: () => getNavLayout().endWidth,
-          height: 66,
-          gap: () => (window.innerWidth <= 1400 ? 16 : 28),
-          padding: () => (window.innerWidth <= 1400 ? '0 12px 0 18px' : '0 16px 0 22px'),
           backgroundColor: 'rgba(19, 34, 27, 0.78)',
           borderColor: 'rgba(230, 246, 206, 0.22)',
           boxShadow: '0 24px 86px rgba(0, 0, 0, 0.42)',
@@ -3262,15 +4815,8 @@ function App() {
       }
 
       gsap.set(nav, {
-        x: 0,
-        y: -34,
-        autoAlpha: 0,
-        left: () => getNavLayout().startLeft,
-        top: 18,
-        width: () => getNavLayout().startWidth,
-        height: 54,
-        gap: 16,
-        padding: '0 12px 0 18px',
+        y: 0,
+        autoAlpha: 1,
         backgroundColor: 'rgba(18, 29, 23, 0.34)',
         borderColor: 'rgba(255, 255, 255, 0.14)',
         boxShadow: '0 16px 58px rgba(0, 0, 0, 0.22)',
@@ -3279,12 +4825,6 @@ function App() {
       gsap.set(navCta, { backgroundColor: '#d7ee84', color: '#15201a' });
 
       gsap.to(nav, {
-        left: () => getNavLayout().endLeft,
-        top: 16,
-        width: () => getNavLayout().endWidth,
-        height: 66,
-        gap: () => (window.innerWidth <= 1400 ? 16 : 28),
-        padding: () => (window.innerWidth <= 1400 ? '0 12px 0 18px' : '0 16px 0 22px'),
         backgroundColor: 'rgba(19, 34, 27, 0.78)',
         borderColor: 'rgba(230, 246, 206, 0.22)',
         boxShadow: '0 24px 86px rgba(0, 0, 0, 0.42)',
@@ -3350,7 +4890,6 @@ function App() {
           ease: cinematicEase,
         })
         .to('.hero-overlay', { autoAlpha: 1, duration: 1.4 }, 0)
-        .to(nav, { y: 0, autoAlpha: 1, duration: 1.05 }, 0.18)
         .to(
           '.hero-title-block .eyebrow',
           {
@@ -3711,6 +5250,76 @@ function App() {
     );
   }
 
+  if (isOemProcessPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <OemProcessPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isOemCapabilityPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <OemCapabilityPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isCaseStudyPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <CaseStudyPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isQualityControlPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <QualityControlPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isPrivateLabelPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <PrivateLabelPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isDownloadCenterPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <DownloadCenterPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
+  if (isManufacturingCapabilityPage) {
+    return (
+      <main ref={rootRef}>
+        <SiteNav navRef={navRef} ui={ui} />
+        <ManufacturingCapabilityPage />
+        <SiteFooter ui={ui} />
+      </main>
+    );
+  }
+
   if (currentAuthorityPage) {
     return (
       <main ref={rootRef}>
@@ -3740,7 +5349,7 @@ function App() {
   }
 
   return (
-    <main ref={rootRef}>
+    <main ref={rootRef} className="home-b2b">
       <SiteNav navRef={navRef} ui={ui} />
 
       <section className="hero" id="home">
@@ -3763,33 +5372,212 @@ function App() {
         <div className="hero-content">
           <div className="hero-main">
             <div className="hero-title-block">
-              <p className="eyebrow">PET PADS OEM / ODM MANUFACTURER</p>
+              <p className="eyebrow">B2B PET HYGIENE PRODUCTS MANUFACTURER</p>
               <h1 className="hero-title">
-                <span className="hero-title-focus">Pet Pad OEM/ODM</span>
-                <span className="hero-title-source">Source Factory.</span>
+                <span className="hero-title-focus">Pet Hygiene Products</span>
+                <span className="hero-title-source">OEM/ODM Manufacturer.</span>
               </h1>
               <span className="hero-title-line" aria-hidden="true" />
             </div>
             <div className="hero-side">
+              <div className="hero-manufacturing-visual">
+                <OptimizedImage
+                  src="/images/oem/production/production-line-clean.png"
+                  alt="Automated pet hygiene products manufacturing line"
+                  loading="eager"
+                />
+                <div className="hero-proof-strip" aria-label="Manufacturing capability summary">
+                  <span>20 Years</span>
+                  <span>8 Automated Lines</span>
+                  <span>Global OEM Supply</span>
+                </div>
+              </div>
               <p className="hero-copy">
-                <span>Custom absorbent pet care products for global brands, retailers, and channel partners.</span>
+                <span>OEM/ODM absorbent hygiene products for pet brands, retailers, distributors, importers, wholesalers, and global procurement teams.</span>
               </p>
-              <div className="hero-actions">
-                <a className="hero-action primary" href="#about">
-                  Watch Factory Video
-                  <CirclePlay size={18} />
-                </a>
-                <a className="hero-action secondary whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
-                  <MessageCircle className="whatsapp-icon" size={18} />
+              <div className="hero-contact-options" aria-label="Choose a contact channel">
+                <a
+                  className="hero-contact-option email"
+                  href={buildMailto('OEM/ODM Project Inquiry', quotationEmailBody)}
+                  aria-label={`Email our OEM team at ${contactEmail}`}
+                >
+                  <Mail size={19} aria-hidden="true" />
                   <span>
-                    <strong>Talk to Our OEM Specialist</strong>
-                    <small>Start WhatsApp Chat</small>
-                    <small>{whatsappPhone}</small>
+                    <small>Email Sales</small>
+                    <strong>{contactEmail}</strong>
                   </span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+                <a
+                  className="hero-contact-option whatsapp"
+                  href={whatsappChatUrl}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  aria-label={`Chat with our OEM team on WhatsApp at ${whatsappPhone}`}
+                >
+                  <MessageCircle size={19} aria-hidden="true" />
+                  <span>
+                    <small>WhatsApp</small>
+                    <strong>{whatsappPhone}</strong>
+                  </span>
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </div>
+              <ul className="hero-capabilities" aria-label="OEM and ODM capabilities">
+                <li>OEM/ODM Capability</li>
+                <li>Private Label</li>
+                <li>Custom Manufacturing</li>
+                <li>Global Supply</li>
+              </ul>
+              <div className="hero-actions">
+                <a className="hero-action primary" href="/request-product-plan?product=homepage-oem-project">
+                  Request OEM Quote
+                  <ArrowUpRight size={18} />
+                </a>
+                <a className="hero-action secondary" href="#about">
+                  View Manufacturing Capability
+                  <Factory size={18} />
                 </a>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <CustomizationTimeline />
+      <ShippingSolution />
+
+      <section className="section customization product-portfolio" id="customization">
+        <div className="container">
+          <div className="section-head customization-head">
+            <div>
+              <p className="section-kicker">Product Categories</p>
+              <h2>
+                Absorbent hygiene products for <em className="title-key">private-label markets</em>.
+              </h2>
+            </div>
+            <a className="section-action" href="/request-product-plan?product=product-portfolio">
+              Request Product Plan
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+
+          <div className="customization-toolbar" aria-label="OEM product categories">
+            <div>
+              <strong>Manufacturing portfolio</strong>
+              <span>Core products, absorbent structures, functional options, and retail-ready packs.</span>
+            </div>
+            <div className="customization-tabs">
+              <span>Training Pads</span>
+              <span>Adult Underpads</span>
+              <span>Pet Hygiene</span>
+              <span>Absorbent Materials</span>
+              <span>Private Label</span>
+            </div>
+          </div>
+
+          <div className="custom-product-grid">
+            {customProducts.map((product) => (
+              <article className="custom-product-card" key={product.title}>
+                <div className="custom-product-media">
+                  <OptimizedImage src={product.image} alt={`${product.title} OEM product category`} />
+                  <span>{product.badge}</span>
+                </div>
+                <div className="custom-product-body">
+                  <p>{product.category}</p>
+                  <h3>{product.title}</h3>
+                  <div className="custom-specs">
+                    {product.specs.map((spec) => (
+                      <span key={spec}>{spec}</span>
+                    ))}
+                  </div>
+                  <dl className="product-buyer-facts">
+                    <div>
+                      <dt>Application</dt>
+                      <dd>{product.application}</dd>
+                    </div>
+                    <div>
+                      <dt>OEM Capability</dt>
+                      <dd>{product.oemCapability}</dd>
+                    </div>
+                    <div>
+                      <dt>Customization</dt>
+                      <dd>{product.customization}</dd>
+                    </div>
+                  </dl>
+                  <a href={`/products/${product.slug}`}>
+                    View OEM Details
+                    <ArrowUpRight size={16} />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section projects" id="projects">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <p className="section-kicker">Factory Capability</p>
+              <h2>
+                Equipment, process, and warehousing for <em className="title-key">scalable OEM delivery</em>.
+              </h2>
+            </div>
+          </div>
+          <div className="project-grid">
+            {factoryImages.map((item, index) => (
+              <article className={`project-card project-${index + 1}`} key={item.title}>
+                <OptimizedImage src={item.src} alt={`${item.title} factory production scene`} />
+                <div className="project-content">
+                  <span>{item.tag}</span>
+                  <h3>{item.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section advantages" id="advantages">
+        <div className="container">
+          <div className="section-head compact">
+            <div>
+              <p className="section-kicker">Why Choose Us</p>
+              <h2>
+                Product and packaging options for <em className="title-key">private-label programs</em>.
+              </h2>
+            </div>
+          </div>
+          <div className="advantage-grid">
+            {advantages.map(({ icon: Icon, title, text, image }) => (
+              <article className="advantage-card" key={title}>
+                <div className="advantage-card-media">
+                  <OptimizedImage src={image} alt={`${title} for OEM customization`} />
+                </div>
+                <div className="advantage-card-body">
+                  <div className="icon-box">
+                    <Icon size={24} strokeWidth={1.7} />
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-trust-strip" aria-label="Manufacturer trust data">
+        <div className="container home-trust-grid">
+          {homepageTrustStats.map(([value, label, text]) => (
+            <article key={label}>
+              <strong>{value}</strong>
+              <h2>{label}</h2>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -3798,7 +5586,7 @@ function App() {
           <div className="about-video" aria-label="Factory video">
             <video
               src="/videos/factory-profile-4-compressed.mp4"
-              poster="/images/factory-campus.jpeg"
+              poster="/images/oem/hero/factory-campus.webp"
               autoPlay
               muted
               loop
@@ -3809,23 +5597,23 @@ function App() {
           <div className="about-grid">
             <div className="about-media">
               <OptimizedImage
-                src="/images/factory-campus.jpeg"
+                src="/images/oem/factory/factory-campus-real-aerial-20260729.png"
                 alt="Nantong JINCHENG ZENCARE factory exterior"
                 loading="eager"
               />
             </div>
             <div className="about-copy">
-              <p className="section-kicker">Factory Profile</p>
+              <p className="section-kicker">Manufacturing Capability</p>
               <h2>
-                Nantong JINCHENG ZENCARE,
+                Manufacturing capacity for
                 <br />
-                an <em className="title-key">OEM/ODM source factory</em>.
+                <em className="title-key">repeatable global supply</em>.
               </h2>
               <p>
-                20 years focused on pet pads, pet diapers, dog poop bags, and adult nursing pads.
+                20 years focused on pet training pads, adult underpads, absorbent hygiene products, and related private-label programs.
               </p>
               <p>
-                12,000 sq.m factory, 8 automated lines, 300M pcs annual capacity.
+                A 12,000 sq.m manufacturing base, 8 automated lines, and 300M pcs annual capacity support sampling, mass production, packing, and export delivery.
               </p>
               <div className="contact-strip">
                 <a className="whatsapp-cta" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp"><MessageCircle className="whatsapp-icon" size={18} /> {whatsappPhone}</a>
@@ -3847,30 +5635,37 @@ function App() {
               <span>Automated Production</span>
             </div>
             <a href="#contact">
-              Get Custom Plan
+              Request OEM Quote
               <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
       </section>
 
-      <section className="section projects" id="projects">
+      <section className="section home-oem-process" id="oem-process-home">
         <div className="container">
-          <div className="section-head">
+          <div className="section-head home-oem-process-head">
             <div>
-              <p className="section-kicker">Selected Projects</p>
+              <p className="section-kicker">OEM / ODM Process</p>
               <h2>
-                Real production scenes for <em className="title-key">scalable OEM delivery</em>.
+                A controlled process from <em className="title-key">requirement to shipment</em>.
               </h2>
             </div>
+            <a className="section-action" href="/oem-process">
+              View Full OEM Process
+              <ArrowUpRight size={18} />
+            </a>
           </div>
-          <div className="project-grid">
-            {factoryImages.map((item, index) => (
-              <article className={`project-card project-${index + 1}`} key={item.title}>
-                <OptimizedImage src={item.src} alt={`${item.title} factory production scene`} />
-                <div className="project-content">
-                  <span>{item.tag}</span>
-                  <h3>{item.title}</h3>
+          <div className="home-oem-grid">
+            {homepageOemSteps.map(([number, title, text, image]) => (
+              <article className="home-oem-card" key={title}>
+                <div className="home-oem-card-media">
+                  <OptimizedImage src={image} alt={`${title} for OEM pet hygiene products`} />
+                </div>
+                <div>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
                 </div>
               </article>
             ))}
@@ -3881,26 +5676,34 @@ function App() {
       <section className="section innovation" id="innovation">
         <div className="container innovation-grid">
           <div className="innovation-copy">
-            <p className="section-kicker">Product Innovation</p>
+            <p className="section-kicker">Material Technology</p>
             <h2>
-              <em className="title-key">R&D-led upgrades</em> for market-ready products.
+              Material choices engineered for <em className="title-key">target performance</em>.
             </h2>
             <p>
-              From materials to packaging, we build scalable product systems.
+              <span className="notranslate" translate="no">{materialTerminology.introduction}</span>
             </p>
           </div>
           <div className="innovation-cards">
-            {innovations.map(({ icon: Icon, title, text }) => (
+            {innovations.map(({ icon: Icon, title, text, image, materialTerminology: isMaterialTerminology }) => {
+              const displayTitle = isMaterialTerminology ? materialTerminology.title : title;
+              const displayText = isMaterialTerminology ? materialTerminology.text : text;
+
+              return (
               <article className="innovation-card" key={title}>
-                <div className="icon-box">
-                  <Icon size={26} strokeWidth={1.7} />
-                </div>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
+                <OptimizedImage src={image} alt={`${title} material detail`} />
+                <div className="innovation-card-copy">
+                  <div className="icon-box">
+                    <Icon size={24} strokeWidth={1.7} />
+                  </div>
+                  <div>
+                    <h3 className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayTitle}</h3>
+                    <p className={isMaterialTerminology ? 'notranslate' : undefined} translate={isMaterialTerminology ? 'no' : undefined}>{displayText}</p>
+                  </div>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -3909,7 +5712,7 @@ function App() {
         <div className="container quality-layout">
           <div className="quality-visual">
             <OptimizedImage
-              src="/images/quality-inspection-lab-mask.png"
+              src="/images/oem/quality/quality-inspection-lab-mask.png"
               alt="Pet pad quality inspection and laboratory testing"
               loading="eager"
             />
@@ -3919,12 +5722,12 @@ function App() {
             </div>
           </div>
           <div className="quality-content">
-            <p className="section-kicker">Quality Inspection</p>
+            <p className="section-kicker">Quality Control</p>
             <h2>
-              Batch-level <em className="title-key">quality control</em>.
+              Inspection from incoming material to <em className="title-key">finished goods</em>.
             </h2>
             <p>
-              Materials, process, performance, and shipment are checked before delivery.
+              Quality checks focus on specification consistency, absorbency, sealing, packaging, and shipment readiness.
             </p>
             <div className="inspection-list">
               {inspections.map(([step, title, text]) => (
@@ -3941,95 +5744,16 @@ function App() {
         </div>
       </section>
 
-      <section className="section advantages" id="advantages">
-        <div className="container">
-          <div className="section-head compact">
-            <div>
-              <p className="section-kicker">Why JINCHENG ZENCARE</p>
-              <h2>
-                Source factory strength for <em className="title-key">OEM/ODM supply support</em>.
-              </h2>
-            </div>
-          </div>
-          <div className="advantage-grid">
-            {advantages.map(({ icon: Icon, title, text }) => (
-              <article className="advantage-card" key={title}>
-                <div className="icon-box">
-                  <Icon size={26} strokeWidth={1.7} />
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section customization" id="customization">
-        <div className="container">
-          <div className="section-head customization-head">
-            <div>
-              <p className="section-kicker">Product Customization</p>
-              <h2>
-                Build your <em className="title-key">private-label line</em>.
-              </h2>
-            </div>
-            <a className="section-action" href="#contact">
-              Request Product Plan
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
-
-          <div className="customization-toolbar" aria-label="Product customization categories">
-            <div>
-              <strong>All categories</strong>
-              <span>Core products, structures, formulas, and retail-ready packs.</span>
-            </div>
-            <div className="customization-tabs">
-              <span>Pet Pads</span>
-              <span>Absorbent Core</span>
-              <span>Odor Control</span>
-              <span>Packaging</span>
-              <span>Private Label</span>
-            </div>
-          </div>
-
-          <div className="custom-product-grid">
-            {customProducts.map((product) => (
-              <article className="custom-product-card" key={product.title}>
-                <div className="custom-product-media">
-                  <OptimizedImage src={product.image} alt={`${product.title} customization option`} />
-                  <span>{product.badge}</span>
-                </div>
-                <div className="custom-product-body">
-                  <p>{product.category}</p>
-                  <h3>{product.title}</h3>
-                  <div className="custom-specs">
-                    {product.specs.map((spec) => (
-                      <span key={spec}>{spec}</span>
-                    ))}
-                  </div>
-                  <a href={`/products/${product.slug}`}>
-                    Know more...
-                    <ArrowUpRight size={16} />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="contact-page" id="contact">
         <div className="container contact-inner">
           <div className="contact-copy">
-            <p className="section-kicker">Start Your Custom Order</p>
+            <p className="section-kicker">Contact / RFQ</p>
             <h2>
-              <span>Start your</span>
-              <span><em className="title-key">custom pet products program</em>.</span>
+              <span>Discuss your next</span>
+              <span><em className="title-key">OEM/ODM sourcing project</em>.</span>
             </h2>
             <p>
-              Send your target market, specs, packaging, and order plan. We will prepare the OEM/ODM solution.
+              Select your product and leave a work email. Our OEM team will follow up to confirm specifications, quantity, packaging, and delivery.
             </p>
             <div className="contact-panel">
               <a className="contact-panel-whatsapp" href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with our OEM specialist on WhatsApp">
@@ -4049,7 +5773,6 @@ function App() {
           <InquiryForm
             product="OEM/ODM pet products"
             source="contact-page"
-            rows={4}
             buttonLabel="Send Inquiry"
           />
         </div>
@@ -4066,9 +5789,9 @@ function App() {
                 <small>{whatsappPhone}</small>
               </span>
             </a>
-            <a href={whatsappChatUrl} target="_blank" rel="noopener noreferrer" aria-label="Start WhatsApp Chat">
-              <MessageCircle size={20} />
-              Start WhatsApp Chat
+            <a href="/request-product-plan?product=oem-partnership" aria-label="Start an OEM partnership">
+              <ArrowUpRight size={20} />
+              Start OEM Partnership
             </a>
             <a className="footer-top-link" href="#home">
               <ArrowUp size={20} />

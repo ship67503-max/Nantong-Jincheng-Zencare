@@ -12,12 +12,16 @@ const fieldLimits = {
   companyName: 200,
   phone: 100,
   country: 100,
+  companyWebsite: 200,
   product: 200,
   quantity: 100,
+  requiredSize: 160,
+  packagingRequirement: 240,
   message: 5000,
   pageUrl: 500,
   source: 120,
-  website: 200,
+  botField: 200,
+  captchaToken: 2048,
 };
 
 function json(res, status, payload) {
@@ -118,18 +122,21 @@ function buildInquiry(req, body) {
     email: clean(body.email, fieldLimits.email).toLowerCase(),
     phone: clean(body.phone, fieldLimits.phone),
     country: clean(body.country, fieldLimits.country),
+    companyWebsite: clean(body.companyWebsite, fieldLimits.companyWebsite),
     product: clean(body.product, fieldLimits.product),
     quantity: clean(body.quantity, fieldLimits.quantity),
+    requiredSize: clean(body.requiredSize, fieldLimits.requiredSize),
+    packagingRequirement: clean(body.packagingRequirement, fieldLimits.packagingRequirement),
     message: clean(body.message, fieldLimits.message),
     pageUrl: clean(body.pageUrl, fieldLimits.pageUrl),
     source: clean(body.source, fieldLimits.source) || 'website',
-    website: clean(body.website, fieldLimits.website),
+    botField: clean(body.botField, fieldLimits.botField),
     submittedAt: new Date().toISOString(),
     userAgent: clean(req.headers['user-agent'], 500),
     ip: getClientIp(req),
   };
 
-  if (inquiry.website) {
+  if (inquiry.botField) {
     return { error: 'Unable to process this request.' };
   }
 
@@ -141,11 +148,53 @@ function buildInquiry(req, body) {
     return { error: 'Please enter a valid email address.' };
   }
 
-  if (!inquiry.message) {
-    return { error: 'Please enter your product requirement.' };
+  if (!inquiry.product) {
+    return { error: 'Please select a product.' };
   }
 
-  return { inquiry };
+  if (!inquiry.message) {
+    inquiry.message = `Product interest: ${inquiry.product}. Please contact me about OEM/ODM cooperation.`;
+  }
+
+  return {
+    inquiry,
+    captchaToken: clean(body.captchaToken, fieldLimits.captchaToken),
+  };
+}
+
+async function verifyHuman(captchaToken, ip) {
+  const secretKey = process.env.TURNSTILE_SECRET_KEY;
+
+  if (!secretKey) {
+    return { ok: false, message: 'Human verification is not configured.' };
+  }
+
+  if (!captchaToken) {
+    return { ok: false, message: 'Please complete the human verification.' };
+  }
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret: secretKey,
+        response: captchaToken,
+        remoteip: ip,
+      }),
+    });
+
+    if (!response.ok) {
+      return { ok: false, message: 'Human verification could not be completed. Please try again.' };
+    }
+
+    const result = await response.json();
+    return result.success
+      ? { ok: true }
+      : { ok: false, message: 'Human verification failed. Please try again.' };
+  } catch {
+    return { ok: false, message: 'Human verification could not be completed. Please try again.' };
+  }
 }
 
 async function syncInquiryToGoogleSheets(inquiry) {
@@ -153,6 +202,42 @@ async function syncInquiryToGoogleSheets(inquiry) {
     await appendInquiryToGoogleSheets(inquiry);
   } catch (error) {
     console.error('Google Sheets append failed', error?.message || 'Unknown error');
+  }
+}
+
+async function syncInquiryToBusinessCenter(inquiry) {
+  const apiUrl = String(process.env.JCZ_BUSINESS_SHARED_API_URL || '').replace(/\/$/, '');
+  const ingestToken = process.env.JCZ_BUSINESS_SHARED_INGEST_TOKEN;
+
+  if (!apiUrl || !ingestToken) {
+    return;
+  }
+
+  try {
+    const response = await fetch(`${apiUrl}/api/public/inquiries`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-jcz-ingest-token': ingestToken,
+      },
+      body: JSON.stringify({
+        name: inquiry.name,
+        companyName: inquiry.companyName,
+        email: inquiry.email,
+        phone: inquiry.phone,
+        country: inquiry.country,
+        product: inquiry.product,
+        quantity: inquiry.quantity,
+        message: inquiry.message,
+        pageUrl: inquiry.pageUrl,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+  } catch (error) {
+    console.error('JCZ Business Center sync failed', error?.message || 'Unknown error');
   }
 }
 
@@ -187,6 +272,13 @@ export default async function handler(req, res) {
       return;
     }
 
+    const verification = await verifyHuman(result.captchaToken, ip);
+
+    if (!verification.ok) {
+      json(res, 400, { message: verification.message });
+      return;
+    }
+
     const sent = await sendEmail(result.inquiry);
 
     if (!sent.ok) {
@@ -196,7 +288,10 @@ export default async function handler(req, res) {
       return;
     }
 
-    await syncInquiryToGoogleSheets(result.inquiry);
+    await Promise.all([
+      syncInquiryToGoogleSheets(result.inquiry),
+      syncInquiryToBusinessCenter(result.inquiry),
+    ]);
 
     json(res, 200, {
       ok: true,

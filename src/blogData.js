@@ -10,8 +10,8 @@ const updatedAt = '2026-07-15';
 const author = 'JCZCare Editorial Team';
 
 const baseImages = {
-  factory: '/images/generated-site/factory/factory-campus-01.webp',
-  production: '/images/generated-site/factory/factory-production-line-01.webp',
+  factory: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
+  production: '/images/oem/production/factory-production-line-real-20260729.jpg',
   lamination: '/images/generated-site/factory/factory-lamination-01.webp',
   warehouse: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
   quality: '/images/generated-site/quality-control/factory-quality-control-01.webp',

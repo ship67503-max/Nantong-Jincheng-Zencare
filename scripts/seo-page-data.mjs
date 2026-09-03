@@ -3,7 +3,7 @@ import { getAuthoritySeoEntries } from '../src/authorityData.js';
 
 export const siteUrl = 'https://www.jczcare.com';
 
-export const defaultImage = '/images/generated-site/factory/factory-campus-01.webp';
+export const defaultImage = '/images/oem/factory/factory-campus-real-aerial-20260729.png';
 
 export const organization = {
   name: 'Nantong JINCHENG ZENCARE Technology Company',
@@ -122,7 +122,7 @@ export const pageSeo = [
     title: 'Factory Projects & Production Scenes | JCZCARE',
     description:
       'Explore production scenes, warehouse organization, packaging workflows, and factory visuals for JCZCARE OEM/ODM pet care absorbent product programs.',
-    image: '/images/generated-site/factory/factory-production-line-01.webp',
+    image: '/images/oem/production/factory-production-line-real-20260729.jpg',
   },
   {
     path: '/innovation',
@@ -143,7 +143,7 @@ export const pageSeo = [
     title: 'Factory Advantages | JCZCARE OEM Pet Pads',
     description:
       'Source factory advantages for OEM/ODM pet pad buyers, including production coordination, sample support, quality system, and export supply planning.',
-    image: '/images/generated-site/factory/factory-campus-01.webp',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
   },
   {
     path: '/customization',
@@ -197,6 +197,20 @@ export const pageSeo = [
     image: '/images/generated-site/packaging/private-label-packaging-01.webp',
   },
   {
+    path: '/private-label',
+    title: 'Private Label Pet Pads OEM Program | JCZCARE',
+    description:
+      'Private label pet pads for brands, retailers, distributors, and wholesalers needing custom size, absorbency, packaging, printing, materials, and OEM manufacturing support.',
+    image: '/images/generated-site/b2b-optimization/private-label-packaging-review.webp',
+  },
+  {
+    path: '/download',
+    title: 'OEM Pet Pad Download Center | JCZCARE',
+    description:
+      'Request JCZCARE product catalog, factory profile, OEM capability overview, and packaging options for pet pad private-label and OEM sourcing projects.',
+    image: '/images/generated-site/b2b-optimization/download-center-catalog.webp',
+  },
+  {
     path: '/pet-pee-pad-manufacturer',
     title: 'Pet Pee Pad Manufacturer in China | JCZCARE OEM Factory',
     description:
@@ -208,7 +222,7 @@ export const pageSeo = [
     title: 'Pet Pad Factory | Automated OEM Pet Care Manufacturing',
     description:
       'Pet pad factory with automated production, custom specifications, absorbent core development, private-label packaging, and B2B export coordination.',
-    image: '/images/generated-site/factory/factory-production-line-01.webp',
+    image: '/images/oem/production/factory-production-line-real-20260729.jpg',
   },
   {
     path: '/about-factory',
@@ -222,14 +236,28 @@ export const pageSeo = [
     title: 'Pet Pad Quality Control | OEM Absorbency & Batch Inspection',
     description:
       'Quality control process for OEM pet pads covering raw materials, production checks, absorbency testing, rewet review, leakage performance, packaging, and shipment inspection.',
-    image: '/images/generated-site/quality-control/factory-quality-control-01.webp',
+    image: '/images/generated-site/b2b-optimization/quality-control-lab.webp',
   },
   {
     path: '/oem-process',
     title: 'OEM Pet Pad Process | From Brief to Production',
     description:
       'OEM pet pad process for B2B buyers: project brief, specification planning, sample development, testing, packaging confirmation, production, inspection, and shipment.',
-    image: '/images/generated-site/warehouse/warehouse-finished-goods-01.webp',
+    image: '/images/generated-site/b2b-optimization/oem-sample-review.webp',
+  },
+  {
+    path: '/oem-capability',
+    title: 'Pet Hygiene OEM Manufacturing Capability | JCZCARE',
+    description:
+      'Evaluate JCZCARE pet hygiene OEM manufacturing capability, production workflow, customization, quality control, and global supply support for European and American buyers.',
+    image: '/images/oem/factory/factory-campus-real-aerial-20260729.png',
+  },
+  {
+    path: '/case-study',
+    title: 'OEM Pet Hygiene Case Studies | Global B2B Projects | JCZCARE',
+    description:
+      'Review five anonymous OEM pet hygiene project examples covering private-label pet pads, adult underpads, charcoal pads, adhesive pads, and coordinated category supply.',
+    image: '/images/oem/production/factory-production-line-03.webp',
   },
   {
     path: '/certifications',

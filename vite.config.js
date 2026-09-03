@@ -5,7 +5,6 @@ import { resolvePublicRoutes } from './scripts/seo-routes.mjs';
 
 const hostname = 'https://www.jczcare.com';
 const dynamicRoutes = resolvePublicRoutes().filter((route) => route !== '/');
-const buildLastmod = new Date();
 
 export default defineConfig({
   plugins: [
@@ -15,7 +14,6 @@ export default defineConfig({
       dynamicRoutes,
       exclude: ['/404', '/admin', '/private', '/dev'],
       readable: true,
-      lastmod: buildLastmod,
       changefreq: {
         '*': 'monthly',
         '/': 'weekly',
