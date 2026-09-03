@@ -31,6 +31,7 @@ import {
   trackFormStart,
   trackPageView,
 } from './analytics.js';
+import { trackGoogleAdsConversion } from './googleAdsConversion.js';
 import {
   trackMetaLead,
   trackMetaPageView,
@@ -4120,6 +4121,12 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
     }
   }, [submitState.status]);
 
+  useEffect(() => {
+    if (submitState.status === 'success') {
+      trackGoogleAdsConversion({ submissionId: submissionIdRef.current });
+    }
+  }, [submitState.status]);
+
   const updateField = (field) => (event) => {
     const value = event.target.value;
     if (field !== 'botField') {
@@ -6414,4 +6421,3 @@ function App() {
 }
 
 createRoot(document.getElementById('root')).render(<App />);
-
