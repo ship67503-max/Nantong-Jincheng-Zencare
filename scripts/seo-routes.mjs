@@ -1,8 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { blogArticles } from '../src/blogData.js';
-import { authorityRoutes } from '../src/authorityData.js';
-import { factoryRoutes } from '../src/factoryData.js';
+import { storefrontRoutes } from '../src/storefront/metadata.js';
 
 const rootDir = process.cwd();
 const mainSourcePath = path.join(rootDir, 'src', 'main.jsx');
@@ -15,6 +14,7 @@ export const nonIndexableRoutes = [
 ];
 
 const excludedRoutePatterns = [
+  /^\/factory\/certificates\/?$/,
   /^\/404\/?$/,
   /^\/admin(?:\/|$)/,
   /^\/private(?:\/|$)/,
@@ -134,6 +134,7 @@ export const resolvePublicRoutes = () => {
   const routes = new Set();
 
   coreRoutes.forEach((route) => addRoute(routes, route));
+  storefrontRoutes.forEach((route) => addRoute(routes, route));
 
   const customProductsBlock = findDeclarationBlock(source, 'const customProducts', '[', ']');
   const newsArticlesBlock = findDeclarationBlock(source, 'const newsArticles', '[', ']');
@@ -152,9 +153,6 @@ export const resolvePublicRoutes = () => {
   addRoute(routes, '/pages/news');
   addRoute(routes, '/blog');
   blogArticles.forEach((article) => addRoute(routes, article.path));
-  authorityRoutes.forEach((route) => addRoute(routes, route));
-  factoryRoutes.forEach((route) => addRoute(routes, route));
-
   return Array.from(routes).sort((a, b) => a.localeCompare(b));
 };
 
