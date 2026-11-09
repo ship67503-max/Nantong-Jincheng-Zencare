@@ -1,3 +1,5 @@
+import { MarketingConsent } from './MarketingConsent.jsx';
+import { hasMarketingConsent } from './marketingConsent.js';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { gsap } from 'gsap';
@@ -33,7 +35,8 @@ import {
 } from './analytics.js';
 import {
   trackMetaLead,
-  trackMetaPageView,
+  trackMetaPage,
+  revokeMetaConsent,
 } from './metaPixel.js';
 import { captureLeadAttribution, getLeadAttribution } from './leadAttribution.js';
 import {
@@ -64,7 +67,6 @@ import {
   productCenterSeo,
 } from './productCatalogData.js';
 
-trackMetaPageView();
 
 const heroVideo = '/videos/hero-background-2-720p.webm';
 const heroFallbackImage = '/images/oem/hero/factory-campus.webp';
@@ -3996,7 +3998,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
     setSubmitState({ status: 'loading', message: 'Sending your inquiry...' });
 
     try {
-      await submitInquiry(payload);
+      const savedResult = await submitInquiry(payload);
 
       const conversionParameters = {
         form_name: formName,
@@ -4010,12 +4012,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
       if (new URLSearchParams(window.location.search).get('request') === 'sample') {
         trackB2BEvent('request_sample', conversionParameters, conversionOptions);
       }
-      trackMetaLead({
-        formName,
-        productInterest: payload.product,
-        isSampleRequest: new URLSearchParams(window.location.search).get('request') === 'sample',
-        submissionId: payload.submissionId,
-      });
+      try { trackMetaLead(savedResult); } catch { /* Tracking must not fail a delivered inquiry. */ }
 
       setSubmitState({
         status: 'success',
@@ -5133,8 +5130,23 @@ function App() {
   useEffect(() => {
     captureLeadAttribution();
     trackPageView();
-    trackMetaPageView();
+
   }, [currentPath]);
+
+  useEffect(() => {
+    const productId = catalogProduct ? `${catalogProduct.series.slug}-${catalogProduct.slug}` : currentProduct?.slug || null;
+    const track = () => {
+      if (!hasMarketingConsent()) revokeMetaConsent();
+      else trackMetaPage(productId);
+    };
+    track();
+    window.addEventListener('jczcare-consent-change', track);
+    window.addEventListener('storage', track);
+    return () => {
+      window.removeEventListener('jczcare-consent-change', track);
+      window.removeEventListener('storage', track);
+    };
+  }, [currentPath, catalogProduct, currentProduct]);
 
   useEffect(() => installContactClickTracking(), []);
 
@@ -5525,30 +5537,18 @@ function App() {
       return undefined;
     }
 
-    video.autoplay = true;
-    video.defaultMuted = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = 'auto';
-
-    const playWhenReady = () => {
-      if (document.visibilityState === 'hidden') {
-        return;
-      }
-      video.play().catch(() => {});
+    let loaded = false;
+    const loadAndPlay = () => {
+      if (!loaded) { loaded = true; video.src = video.dataset.src; video.load(); }
+      if (document.visibilityState !== 'hidden') video.play().catch(() => {});
     };
-
-    video.addEventListener('canplay', playWhenReady);
-    video.addEventListener('loadeddata', playWhenReady);
-    document.addEventListener('visibilitychange', playWhenReady);
-    playWhenReady();
-
-    return () => {
-      video.removeEventListener('canplay', playWhenReady);
-      video.removeEventListener('loadeddata', playWhenReady);
-      document.removeEventListener('visibilitychange', playWhenReady);
-    };
+    const observer = 'IntersectionObserver' in window
+      ? new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) { observer.disconnect(); loadAndPlay(); }
+        }, { rootMargin: '240px 0px' }) : null;
+    observer?.observe(video);
+    video.addEventListener('click', loadAndPlay);
+    return () => { observer?.disconnect(); video.removeEventListener('click', loadAndPlay); };
   }, [currentPath]);
 
   useEffect(() => {
@@ -5920,13 +5920,13 @@ function App() {
           <div className="about-video" aria-label="Factory video">
             <video
               ref={aboutVideoRef}
-              src="/videos/factory-profile-4-compressed.mp4"
+              data-src="/videos/factory-profile-4-compressed.mp4"
               poster="/images/oem/hero/factory-campus.webp"
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
+              preload="none"
             />
           </div>
           <div className="about-grid">
@@ -6015,5 +6015,5 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+createRoot(document.getElementById('root')).render(<><App /><MarketingConsent /></>);
 

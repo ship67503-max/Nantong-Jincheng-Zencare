@@ -1,6 +1,6 @@
 import { sendEmail } from '../services/email.js';
 import { appendInquiryToGoogleSheets } from '../services/googleSheets.js';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 
 const maxBodyBytes = 20 * 1024;
 const submitWindowMs = 60 * 1000;
@@ -109,8 +109,8 @@ function isRateLimited(ip) {
 }
 
 function pruneSubmissionCache(now = Date.now()) {
-  for (const [key, timestamp] of completedSubmissions) {
-    if (now - timestamp > submissionRetentionMs) {
+  for (const [key, record] of completedSubmissions) {
+    if (now - record.timestamp > submissionRetentionMs) {
       completedSubmissions.delete(key);
     }
   }
@@ -136,7 +136,7 @@ async function settleWithTimeout(task, label) {
   let timer;
 
   try {
-    await Promise.race([
+    return await Promise.race([
       Promise.resolve().then(task),
       new Promise((_, reject) => {
         timer = setTimeout(() => reject(new Error(`${label} timed out.`)), secondarySyncTimeoutMs);
@@ -144,6 +144,7 @@ async function settleWithTimeout(task, label) {
     ]);
   } catch (error) {
     console.error(`${label} failed`, error?.message || 'Unknown error');
+    return false;
   } finally {
     clearTimeout(timer);
   }
@@ -352,8 +353,10 @@ async function verifyHuman(captchaToken, ip) {
 async function syncInquiryToGoogleSheets(inquiry) {
   try {
     await appendInquiryToGoogleSheets(inquiry);
+    return true;
   } catch (error) {
     console.error('Google Sheets append failed', error?.message || 'Unknown error');
+    return false;
   }
 }
 
@@ -438,6 +441,8 @@ export function createContactHandler({
         json(res, 200, {
           deliveryConfirmed: true,
           duplicate: true,
+          saved: completedSubmissions.get(submissionKey).saved,
+          leadEventId: completedSubmissions.get(submissionKey).saved ? completedSubmissions.get(submissionKey).eventId : undefined,
           message: successMessage,
         });
         return;
@@ -470,7 +475,10 @@ export function createContactHandler({
           return;
         }
 
-        completedSubmissions.set(submissionKey, Date.now());
+        const eventId = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(result.submissionId)
+          ? result.submissionId.toLowerCase() : randomUUID();
+        const receipt = { timestamp: Date.now(), saved: false, eventId };
+        completedSubmissions.set(submissionKey, receipt);
 
         console.info('Inquiry email accepted by provider', {
           provider: sent.provider,
@@ -479,13 +487,16 @@ export function createContactHandler({
           rejected: sent.rejected || [],
         });
 
-        await Promise.all([
+        const [saved] = await Promise.all([
           settleWithTimeout(() => syncGoogleSheetsFn(result.inquiry), 'Google Sheets sync'),
           settleWithTimeout(() => syncBusinessCenterFn(result.inquiry), 'JCZ Business Center sync'),
         ]);
 
+        receipt.saved = saved === true;
         json(res, 200, {
           deliveryConfirmed: true,
+          saved: receipt.saved,
+          leadEventId: receipt.saved ? receipt.eventId : undefined,
           message: successMessage,
         });
       } finally {

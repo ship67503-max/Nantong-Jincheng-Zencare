@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { buildProductQuoteHref, productSeries } from './productCatalogData.js';
 
-const heroVideoSource = '/videos/hero-background-2-720p.webm';
+const heroVideoSource = '/videos/hero-background-2-720p-v2.webm';
 const heroVideoPoster = '/images/oem/hero/factory-campus.webp';
 
 const productImageMosaicRows = (() => {
@@ -126,8 +126,29 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
   const [paused, setPaused] = useState(false);
   const resumeAtRef = useRef(0);
   const touchStartRef = useRef(null);
+  const videoRef = useRef(null);
   const reducedMotion = useReducedMotion();
   const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return undefined;
+    const restricted = window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches
+      || window.navigator.connection?.saveData === true;
+    const load = () => {
+      if (!video.getAttribute('src')) { video.src = heroVideoSource; video.load(); }
+      video.play().catch(() => {});
+    };
+    const section = video.closest('section');
+    const observer = !restricted && 'IntersectionObserver' in window
+      ? new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) { observer.disconnect(); load(); }
+        }) : null;
+    observer?.observe(section);
+    section.addEventListener('pointerdown', load, { once: true });
+    section.addEventListener('keydown', load, { once: true });
+    return () => { observer?.disconnect(); section.removeEventListener('pointerdown', load); section.removeEventListener('keydown', load); };
+  }, []);
 
   const selectSlide = (index, manual = false) => {
     setActiveIndex((index + heroSlides.length) % heroSlides.length);
@@ -192,13 +213,13 @@ export function HomeHeroCarousel({ emailHref, contactEmail, whatsappPhone, whats
       </aside>
       <video
         className="home-product-hero-video"
-        src={heroVideoSource}
+        ref={videoRef}
         poster={heroVideoPoster}
-        autoPlay={!reducedMotion && !isMobile}
+        autoPlay={false}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
       />
       <div className="home-product-hero-slides">
