@@ -1,3 +1,5 @@
+import { trackMetaPage, trackMetaLead, revokeMetaConsent } from './metaPixel.js';
+import { MarketingConsent } from './MarketingConsent.jsx';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { gsap } from 'gsap';
@@ -3585,6 +3587,8 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
   const [captchaToken, setCaptchaToken] = useState('');
   const [captchaStatus, setCaptchaStatus] = useState('loading');
   const lastSubmitAtRef = useRef(0);
+  const submissionLock = useRef(false);
+  const submissionKey = useRef(null);
   const conversionTrackedRef = useRef(false);
   const captchaContainerRef = useRef(null);
   const captchaWidgetIdRef = useRef(null);
@@ -3684,7 +3688,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
 
     const now = Date.now();
 
-    if (submitState.status === 'loading' || now - lastSubmitAtRef.current < 2000) {
+    if (submissionLock.current || submitState.status === 'loading' || now - lastSubmitAtRef.current < 2000) {
       return;
     }
 
@@ -3710,20 +3714,24 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
       return;
     }
 
+    submissionLock.current = true;
     setSubmitState({ status: 'loading', message: 'Sending your inquiry...' });
 
     try {
+      submissionKey.current ||= crypto.randomUUID();
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-Inquiry-Idempotency-Key': submissionKey.current },
         body: JSON.stringify(payload),
       });
       const data = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
+      if (!response.ok || data.ok !== true) {
         throw new Error(data.message || 'Sorry, your inquiry could not be sent.');
       }
 
+      try { trackMetaLead(data); } catch { /* Tracking must never fail a saved inquiry. */ }
+      submissionKey.current = null;
       setFormState({
         name: '',
         email: '',
@@ -3743,6 +3751,8 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
         status: 'error',
         message: error.message || 'Sorry, your inquiry could not be sent. Please try again or email us directly at hengtuo@nthengtuo.com.',
       });
+    } finally {
+      submissionLock.current = false;
     }
   };
 
@@ -4605,6 +4615,20 @@ function App() {
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
     : null;
+
+  useEffect(() => {
+    const track = () => { try { trackMetaPage(customProducts.find(p => window.location.pathname.replace(/\/$/, '') === '/products/' + p.slug)?.slug); } catch { /* Tracking must not interrupt navigation. */ } };
+    const consent = () => { revokeMetaConsent(); track(); };
+    const originalPush = history.pushState, originalReplace = history.replaceState;
+    const push = function (...args) { originalPush.apply(this, args); track(); };
+    const replace = function (...args) { originalReplace.apply(this, args); track(); };
+    history.pushState = push; history.replaceState = replace;
+    track();
+    window.addEventListener('popstate', track);
+    window.addEventListener('jczcare-consent-change', consent);
+    window.addEventListener('storage', consent);
+    return () => { if (history.pushState === push) history.pushState = originalPush; if (history.replaceState === replace) history.replaceState = originalReplace; window.removeEventListener('popstate', track); window.removeEventListener('jczcare-consent-change', consent); window.removeEventListener('storage', consent); };
+  }, [currentPath]);
 
   useEffect(() => {
     ensureGoogleTagReady();
@@ -5813,5 +5837,5 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+createRoot(document.getElementById('root')).render(<><App /><MarketingConsent /></>);
 

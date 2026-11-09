@@ -1,3 +1,4 @@
+import { leadReceipt } from './leadReceipt.js';
 import { sendEmail } from '../services/email.js';
 import { appendInquiryToGoogleSheets } from '../services/googleSheets.js';
 
@@ -200,8 +201,10 @@ async function verifyHuman(captchaToken, ip) {
 async function syncInquiryToGoogleSheets(inquiry) {
   try {
     await appendInquiryToGoogleSheets(inquiry);
+    return true;
   } catch (error) {
     console.error('Google Sheets append failed', error?.message || 'Unknown error');
+    return false;
   }
 }
 
@@ -244,7 +247,7 @@ async function syncInquiryToBusinessCenter(inquiry) {
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Inquiry-Idempotency-Key');
 
   if (req.method === 'OPTIONS') {
     res.status(204).end();
@@ -288,12 +291,15 @@ export default async function handler(req, res) {
       return;
     }
 
-    await Promise.all([
+    const [saved] = await Promise.all([
       syncInquiryToGoogleSheets(result.inquiry),
       syncInquiryToBusinessCenter(result.inquiry),
     ]);
 
+    const receipt = leadReceipt(req.headers['x-inquiry-idempotency-key']);
     json(res, 200, {
+      saved,
+      leadEventId: saved ? receipt.eventId : undefined,
       ok: true,
       message: 'Thank you. Your inquiry has been sent successfully. We will contact you shortly.',
     });

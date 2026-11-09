@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { blogArticles } from '../src/blogData.js';
-import { storefrontRoutes } from '../src/storefront/metadata.js';
 
 const rootDir = process.cwd();
 const mainSourcePath = path.join(rootDir, 'src', 'main.jsx');
@@ -134,7 +133,6 @@ export const resolvePublicRoutes = () => {
   const routes = new Set();
 
   coreRoutes.forEach((route) => addRoute(routes, route));
-  storefrontRoutes.forEach((route) => addRoute(routes, route));
 
   const customProductsBlock = findDeclarationBlock(source, 'const customProducts', '[', ']');
   const newsArticlesBlock = findDeclarationBlock(source, 'const newsArticles', '[', ']');
