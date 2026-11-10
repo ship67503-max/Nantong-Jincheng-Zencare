@@ -1,4 +1,5 @@
 import {catalog} from './catalog.js';
+import { createProductionPixel, validLeadEventId, createLeadSubmissionId } from '../productionPixel.js';
 
 // This adapter uses the existing production API and its server-side validation,
 // Turnstile, email delivery and Sheets integration. No separate inquiry store.
@@ -12,6 +13,17 @@ export function initContactForm() {
   const format = form.elements.format;
   const params = new URLSearchParams(location.search);
   let token = '', widget = null, disposed = false, busy = false;
+  const pixel = createProductionPixel();
+  const attemptKey = 'jczcare-storefront-inquiry-attempt';
+  let submissionId = '';
+  try { submissionId = sessionStorage.getItem(attemptKey) || ''; } catch { /* memory fallback */ }
+  const clearAttempt = () => {
+    submissionId = '';
+    try { sessionStorage.removeItem(attemptKey); } catch { /* memory fallback */ }
+  };
+  // Retry an unchanged logical submission with the same non-personal event ID.
+  form.addEventListener('input', () => { if (!busy) clearAttempt(); });
+  form.addEventListener('change', () => { if (!busy) clearAttempt(); });
   const normalize = value => String(value || '').trim().toLowerCase().replace(/[–—]/g, '-');
   function syncFormats(selected = '') {
     const product = catalog.find(p => p.slug === category.value);
@@ -103,6 +115,8 @@ export function initContactForm() {
     e.preventDefault();
     if (busy || !form.reportValidity() || !token) return;
     busy = true; refresh(); result.textContent = 'Sending your inquiry…';
+    if (!validLeadEventId(submissionId)) submissionId = createLeadSubmissionId();
+    try { sessionStorage.setItem(attemptKey, submissionId); } catch { /* memory fallback */ }
     const data = new FormData(form);
     const payload = {
       name: data.get('name'), email: data.get('email'), phone: data.get('phone'), companyName: data.get('company'),
@@ -111,6 +125,7 @@ export function initContactForm() {
       message: `Request: ${form.elements.intent.selectedOptions[0].textContent}\nFormat: ${format.value || 'To be discussed'}\n${data.get('brief')}`,
       botField: data.get('botField'), captchaToken: token,
       source: 'storefront-contact', pageUrl: location.origin + location.pathname,
+      submissionId,
     };
     try {
       const response = await fetch('/api/contact', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
@@ -122,6 +137,8 @@ export function initContactForm() {
       const adsId = import.meta.env.VITE_GOOGLE_ADS_ID || 'AW-18346194096';
       const label = import.meta.env.VITE_GOOGLE_ADS_LEAD_LABEL || 'R6b4CJ6xyNUcELDpkqxE';
       window.gtag?.('event', 'conversion', {send_to:`${adsId}/${label}`});
+      if (validLeadEventId(submissionId) && data.leadEventId === submissionId) pixel.lead(data);
+      clearAttempt();
       form.reset(); syncFormats();
     } catch (error) {
       if (!disposed) { result.textContent = error.message; result.dataset.status = 'error'; }
