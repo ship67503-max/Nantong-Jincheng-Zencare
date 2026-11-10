@@ -89,6 +89,8 @@ test('returns success only after the email provider accepts the inquiry', async 
   assert.deepEqual(response.body, {
     success: true,
     deliveryConfirmed: true,
+    saved: false,
+    leadEventId: undefined,
     message: 'Thank you! Your inquiry has been sent successfully. Our team will contact you within 1 business day.',
   });
   assert.equal(receivedInquiry.email, 'buyer@example.com');
@@ -317,4 +319,63 @@ test('rate limits repeated submissions from the same address', async () => {
   }
 
   assert.deepEqual(statuses, [200, 200, 200, 429]);
+});
+
+
+test('Meta save receipt requires Sheets success and is stable on duplicate requests', async () => {
+  let writes = 0;
+  const handler = createContactHandler({
+    sendEmailFn: async () => ({ok:true,deliveryConfirmed:true}),
+    verifyHumanFn: async () => ({ok:true}),
+    syncGoogleSheetsFn: async () => { writes++; return true; },
+    syncBusinessCenterFn: async () => {},
+  });
+  const body = validBody({submissionId:'12345678-1234-4234-8234-123456789abc'});
+  const first = createResponse(), second = createResponse();
+  await handler(createRequest(body), first);
+  await handler(createRequest(body), second);
+  assert.equal(first.body.saved,true);
+  assert.equal(first.body.leadEventId,body.submissionId);
+  assert.equal(second.body.leadEventId,first.body.leadEventId);
+  assert.equal(second.body.saved,true);
+  assert.equal(writes,1);
+  assert.ok(!JSON.stringify(first.body).includes(body.email));
+});
+
+test('Sheets throw, false or missing confirmation keep email success but omit Meta receipt', async () => {
+  for (const [index, sync] of [async()=>{throw Error('mock Sheets failure')}, async()=>false, async()=>undefined].entries()) {
+    const handler = createContactHandler({
+      sendEmailFn:async()=>({ok:true,deliveryConfirmed:true}), verifyHumanFn:async()=>({ok:true}),
+      syncGoogleSheetsFn:sync, syncBusinessCenterFn:async()=>{},
+    });
+    const response=createResponse();
+    await handler(createRequest(validBody({submissionId:'failed-sheets-'+index}),'203.0.113.'+(30+index)),response);
+    assert.equal(response.body.success,true);
+    assert.equal(response.body.deliveryConfirmed,true);
+    assert.equal(response.body.saved,false);
+    assert.equal(response.body.leadEventId,undefined);
+  }
+});
+
+test('captcha and email failure never expose a save receipt', async () => {
+  for (const [index, captchaOk] of [false,true].entries()) {
+    let writes=0;
+    const handler=createContactHandler({sendEmailFn:async()=>({ok:false}),verifyHumanFn:async()=>({ok:captchaOk}),syncGoogleSheetsFn:async()=>{writes++;return true;}});
+    const response=createResponse();
+    await handler(createRequest(validBody({submissionId:'failed-delivery-'+index})),response);
+    assert.equal(response.body.success,false); assert.equal(response.body.saved,undefined);
+    assert.equal(response.body.leadEventId,undefined); assert.equal(writes,0);
+  }
+});
+
+test('Sheets timeout is not confirmation and late completion cannot create a false receipt', async () => {
+  let complete;
+  const handler=createContactHandler({sendEmailFn:async()=>({ok:true,deliveryConfirmed:true}),verifyHumanFn:async()=>({ok:true}),syncGoogleSheetsFn:()=>new Promise(resolve=>{complete=resolve}),syncBusinessCenterFn:async()=>{}});
+  const body=validBody({submissionId:'timeout-sheets-test'}), response=createResponse();
+  await handler(createRequest(body),response);
+  assert.equal(response.body.saved,false); assert.equal(response.body.leadEventId,undefined);
+  complete(true);
+  await new Promise(resolve=>setImmediate(resolve));
+  const retry=createResponse(); await handler(createRequest(body),retry);
+  assert.equal(retry.body.saved,false); assert.equal(retry.body.leadEventId,undefined);
 });

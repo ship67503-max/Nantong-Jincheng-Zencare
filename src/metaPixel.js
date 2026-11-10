@@ -1,193 +1,59 @@
-export const META_PIXEL_ID = '1532666838061135';
-
-const metaPixelScriptId = 'jczcare-meta-pixel';
-const metaPixelStateKey = '__jczcareMetaPixelState';
-const metaLeadStoragePrefix = 'jczcare-meta-lead:';
-const productionHostnames = new Set(['jczcare.com', 'www.jczcare.com']);
-const pixelIdPattern = /^\d{5,25}$/;
-const submissionIdPattern = /^[a-zA-Z0-9._:-]{8,100}$/;
-const emailLikePattern = /[^\s@]+@[^\s@]+\.[^\s@]+/;
-const phoneLikePattern = /(?:\+?\d[\s().-]*){7,}/;
-const allowedEventParameters = new Set([
-  'content_name',
-  'content_category',
-  'form_name',
-  'page_path',
-]);
-
-const hasDebugParameter = (location) => (
-  new URLSearchParams(location.search).get('meta_debug') === '1'
-);
-
-export const isMetaPixelEnabled = ({
-  hostname,
-  isProductionBuild,
-  debugMode = false,
-  pixelId,
-}) => Boolean(
-  pixelIdPattern.test(String(pixelId || ''))
-    && (debugMode || (isProductionBuild && productionHostnames.has(hostname.toLowerCase()))),
-);
-
-const readSessionValue = (storage, key) => {
-  try {
-    return storage?.getItem(key) || '';
-  } catch {
-    return '';
-  }
-};
-
-const writeSessionValue = (storage, key, value) => {
-  try {
-    storage?.setItem(key, value);
-    return true;
-  } catch {
-    return false;
-  }
-};
-
-const sanitizeValue = (value, maxLength = 100) => {
-  const normalized = String(value || '')
-    .replace(/[\u0000-\u001f\u007f]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, maxLength);
-
-  if (!normalized || emailLikePattern.test(normalized) || phoneLikePattern.test(normalized)) {
-    return undefined;
-  }
-
-  return normalized;
-};
-
-const getPagePath = (location) => location.pathname || '/';
-
-const sanitizeEventParameters = (parameters, location) => {
-  const combined = {
-    ...parameters,
-    page_path: getPagePath(location),
-  };
-
-  return Object.fromEntries(
-    Object.entries(combined)
-      .filter(([key]) => allowedEventParameters.has(key))
-      .map(([key, value]) => [key, sanitizeValue(value)])
-      .filter(([, value]) => value !== undefined),
-  );
-};
-
-export const initializeMetaPixel = ({
-  windowObject = window,
-  documentObject = document,
-  isProductionBuild = import.meta.env?.PROD === true,
-  pixelId = META_PIXEL_ID,
-} = {}) => {
-  const debugMode = hasDebugParameter(windowObject.location);
-  if (!isMetaPixelEnabled({
-    hostname: windowObject.location.hostname,
-    isProductionBuild,
-    debugMode,
-    pixelId,
-  })) {
-    return null;
-  }
-
-  if (windowObject[metaPixelStateKey]) {
-    return windowObject[metaPixelStateKey];
-  }
-
-  const state = {
-    debugMode,
-    lastPagePath: null,
-    sentLeadIds: new Set(),
-  };
-  windowObject[metaPixelStateKey] = state;
-
-  if (!windowObject.fbq) {
-    const fbq = function metaPixelQueue() {
-      if (fbq.callMethod) {
-        fbq.callMethod.apply(fbq, arguments);
-      } else {
-        fbq.queue.push(arguments);
-      }
-    };
-    fbq.push = fbq;
-    fbq.loaded = true;
-    fbq.version = '2.0';
-    fbq.queue = [];
-    windowObject.fbq = fbq;
-    windowObject._fbq = fbq;
-  }
-
-  if (!documentObject.getElementById(metaPixelScriptId)) {
-    const script = documentObject.createElement('script');
-    script.id = metaPixelScriptId;
-    script.async = true;
-    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
-    documentObject.head.appendChild(script);
-  }
-
-  windowObject.fbq('init', pixelId);
+// Migrates the legacy Pixel singleton and submission-ID deduplication approach.
+import { hasMarketingConsent } from './marketingConsent.js';
+export const META_PIXEL_ID = '153266838061135';
+const stateKey = '__jczcareMetaPixelState';
+export function initializeMetaPixel({ windowObject: w = window, documentObject: d = document,
+  enabled = (import.meta.env?.PROD === true && ['www.jczcare.com', 'jczcare.com'].includes(w.location.hostname))
+    || new URLSearchParams(w.location.search).get('meta_debug') === '1',
+} = {}) {
+  if (!enabled || !hasMarketingConsent(w)) return null;
+  if (w[stateKey]) { w.fbq('consent', 'grant'); return w[stateKey]; }
+  // Fail closed if another installer already owns fbq or the Meta script.
+  if (w.fbq || d.querySelector('script[src*="connect.facebook.net"]')) return null;
+  const fbq = function () { if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments); else fbq.queue.push(arguments); };
+  Object.assign(fbq, { push: fbq, loaded: true, version: '2.0', queue: [] });
+  w.fbq = w._fbq = fbq;
+  const state = { path: null, product: null, leads: new Set() };
+  w[stateKey] = state;
+  fbq('consent', 'grant');
+  fbq('set', 'autoConfig', false, META_PIXEL_ID);
+  fbq('init', META_PIXEL_ID);
+  const script = d.createElement('script');
+  script.id = 'jczcare-meta-pixel'; script.async = true;
+  script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+  d.head.appendChild(script);
   return state;
-};
-
-export const trackMetaPageView = (options = {}) => {
-  const windowObject = options.windowObject ?? window;
-  const documentObject = options.documentObject ?? document;
-  const state = initializeMetaPixel({ ...options, windowObject, documentObject });
-  if (!state) {
-    return false;
+}
+export function revokeMetaConsent(w = window) {
+  if (w[stateKey]) w.fbq('consent', 'revoke');
+}
+export function trackMetaPage(productId = null, options = {}) {
+  const w = options.windowObject ?? window;
+  const state = initializeMetaPixel(options);
+  if (!state) return false;
+  // Query strings and fragments are deliberately excluded from custom parameters.
+  const path = w.location.pathname.replace(/\/$/, '') || '/';
+  if (state.path !== path) {
+    state.path = path; state.product = null;
+    w.fbq('trackSingle', META_PIXEL_ID, 'PageView');
   }
-
-  const pagePath = getPagePath(windowObject.location);
-  if (state.lastPagePath === pagePath) {
-    return false;
+  if (productId && /^[a-z][a-z0-9-]{0,99}$/.test(productId) && state.product !== productId) {
+    state.product = productId;
+    w.fbq('trackSingle', META_PIXEL_ID, 'ViewContent', { content_ids: [productId], content_type: 'product' });
   }
-
-  state.lastPagePath = pagePath;
-  windowObject.fbq('track', 'PageView');
   return true;
-};
-
-export const trackMetaLead = ({
-  formName,
-  productInterest,
-  isSampleRequest = false,
-  submissionId,
-} = {}, options = {}) => {
-  const normalizedSubmissionId = String(submissionId || '').trim();
-  if (!submissionIdPattern.test(normalizedSubmissionId)) {
-    return false;
-  }
-
-  const windowObject = options.windowObject ?? window;
-  const documentObject = options.documentObject ?? document;
-  const state = initializeMetaPixel({ ...options, windowObject, documentObject });
-  if (!state) {
-    return false;
-  }
-
-  const storageKey = `${metaLeadStoragePrefix}${normalizedSubmissionId}`;
-  if (
-    state.sentLeadIds.has(normalizedSubmissionId)
-    || readSessionValue(windowObject.sessionStorage, storageKey) === '1'
-  ) {
-    return false;
-  }
-
-  const safeParameters = sanitizeEventParameters({
-    content_name: isSampleRequest ? 'Sample Request' : 'B2B Inquiry',
-    content_category: productInterest,
-    form_name: formName,
-  }, windowObject.location);
-
-  state.sentLeadIds.add(normalizedSubmissionId);
-  writeSessionValue(windowObject.sessionStorage, storageKey, '1');
-  windowObject.fbq('track', 'Lead', safeParameters, { eventID: normalizedSubmissionId });
-
-  if (state.debugMode) {
-    windowObject.console?.debug?.('[Meta Pixel debug]', 'Lead', safeParameters);
-  }
-
+}
+export function trackMetaLead(result, options = {}) {
+  const w = options.windowObject ?? window;
+  if (result?.success !== true || result?.deliveryConfirmed !== true || result?.saved !== true || !/^[a-f0-9-]{36}$/.test(result.leadEventId || '')) return false;
+  const state = initializeMetaPixel(options);
+  if (!state) return false;
+  const id = result.leadEventId, key = `jczcare-meta-lead:${id}`;
+  let stored = false;
+  try { stored = w.sessionStorage.getItem(key) === '1'; } catch { /* memory fallback */ }
+  if (stored || state.leads.has(id)) return false;
+  state.leads.add(id);
+  try { w.sessionStorage.setItem(key, '1'); } catch { /* memory fallback */ }
+  w.fbq('trackSingle', META_PIXEL_ID, 'Lead', {}, { eventID: id });
   return true;
-};
+}
