@@ -1,0 +1,7 @@
+.marketing-consent-panel{position:fixed;z-index:10000;bottom:52px;left:16px;width:min(520px,calc(100vw - 32px));padding:20px;background:#fff;color:#173a31;border:1px solid #c4d3cd;border-radius:12px;box-shadow:0 8px 32px #0003;font:14px/1.5 sans-serif}
+.marketing-consent-panel[hidden]{display:none}
+.marketing-consent-panel p{margin:0 0 12px}.marketing-consent-panel a{color:inherit;text-decoration:underline}
+.marketing-consent-panel>div{display:flex;flex-wrap:wrap;gap:10px}
+.marketing-consent-panel button,.marketing-consent-settings{padding:10px 14px;background:#fff;color:#173a31;border:1px solid #56786a;border-radius:6px;font:inherit;cursor:pointer}
+.marketing-consent-panel button:focus-visible,.marketing-consent-settings:focus-visible{outline:3px solid #23765d;outline-offset:3px}
+.marketing-consent-settings{position:fixed;bottom:12px;left:16px;z-index:9999;font:12px/1.3 sans-serif}

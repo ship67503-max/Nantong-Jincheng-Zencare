@@ -1,0 +1,10 @@
+/* Official supplied artwork. Never typeset, recolor or stretch the lockup. */
+a.brand.brand-logo{display:inline-flex;align-items:center;min-width:0;line-height:1;letter-spacing:normal;flex-shrink:0}
+a.brand.brand-logo img{display:block;width:138px;height:91px;object-fit:contain;object-position:left center;max-width:100%;background:white;border-radius:4px}
+.footer-main a.brand.brand-logo img,.site-footer .brand-logo img{width:205px;height:135px}
+.site-footer .footer-identity{padding-top:35px;padding-bottom:30px}
+.manufacturing-marquee .manufacturing-marquee-brand img{width:138px;height:53px;object-fit:contain;border-radius:4px;background:white}
+.customer-gallery-end .brand-signature{display:flex;align-items:center;gap:16px}
+.customer-gallery-end .brand-signature img{width:90px;height:35px;object-fit:contain;background:white;border-radius:3px}
+@media(max-width:800px){a.brand.brand-logo img{width:110px;height:72px}}
+@media(max-width:400px){a.brand.brand-logo img{width:100px;height:66px}.customer-gallery-end .brand-signature{gap:8px}}

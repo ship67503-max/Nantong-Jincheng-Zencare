@@ -97,15 +97,15 @@ const sitemapHtml = `<!doctype html>
     <title>HTML Sitemap | JCZCARE</title>
     <meta name="description" content="Browse all public JCZCARE pages, product pages, OEM resources, factory information, and blog articles." />
     <style>
-      body { margin: 0; font-family: Arial, sans-serif; background: #07130e; color: #f6f8ed; }
+      body { margin: 0; font-family: Arial, sans-serif; background: #f6fbfe; color: #202843; }
       main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
       h1 { font-size: clamp(42px, 7vw, 88px); line-height: .95; margin: 0 0 18px; }
-      p { color: rgba(246, 248, 237, .72); font-size: 18px; max-width: 760px; line-height: 1.7; }
-      section { border-top: 1px solid rgba(246, 248, 237, .14); padding: 32px 0; }
-      h2 { color: #d9fb76; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; }
+      p { color: #536278; font-size: 18px; max-width: 760px; line-height: 1.7; }
+      section { border-top: 1px solid #d8e6ef; padding: 32px 0; }
+      h2 { color: #32389b; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; }
       ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; padding: 0; list-style: none; }
-      a { display: block; color: #f6f8ed; text-decoration: none; border: 1px solid rgba(246, 248, 237, .14); border-radius: 18px; padding: 14px 16px; background: rgba(255,255,255,.04); }
-      a:hover { border-color: rgba(217, 251, 118, .7); color: #d9fb76; }
+      a { display: block; color: #32389b; text-decoration: none; border: 1px solid #d8e6ef; border-radius: 12px; padding: 14px 16px; background: white; }
+      a:hover { border-color: #249ecc; background: #e4f4fc; }
     </style>
   </head>
   <body>

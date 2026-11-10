@@ -399,7 +399,7 @@ const buildArticle = (spec) => {
         { label: 'View products', href: '/#projects' },
         { label: 'Review factory advantages', href: '/#advantages' },
         { label: 'Explore customization', href: '/#customization' },
-        { label: 'Contact sales', href: '/#contact' },
+        { label: 'Contact sales', href: '/contact' },
       ],
     },
   };

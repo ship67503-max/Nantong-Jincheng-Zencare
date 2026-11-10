@@ -20,6 +20,10 @@ import {
   Truck,
 } from 'lucide-react';
 import './styles.css';
+import './brand-tokens.css';
+import './legacy-brand-theme.css';
+import ManufacturingMarquee from './ManufacturingMarquee.jsx';
+import CustomerGallery from './CustomerGallery.jsx';
 import { CustomizationTimeline, ShippingSolution } from './HomePartnershipSolution.jsx';
 import {
   blogArticles,
@@ -291,13 +295,6 @@ const materialTerminologyTranslations = {
   },
 };
 
-const homepageTrustStats = [
-  ['20 Years', 'Manufacturing Experience', 'Focused absorbent hygiene manufacturing.'],
-  ['300M pcs', 'Production Capability', 'Annual planned capacity across 8 automated lines.'],
-  ['Global Supply', 'Export Capability', 'International OEM order and shipment coordination.'],
-  ['OEM / ODM', 'Customization Support', 'Specification, material, packaging, and sampling support.'],
-];
-
 const inspections = [
   ['01', 'Incoming Material Inspection', 'Nonwoven, fluff pulp, SAP, PE film, and packaging materials are checked before production.'],
   ['02', 'Production Inspection', 'Weight, size, sealing, embossing, folding, and packing are monitored on line.'],
@@ -390,17 +387,17 @@ const customProducts = [
   {
     slug: 'pet-absorbent-paper-sheets',
     title: 'Pet Absorbent Paper Sheets',
-    category: 'Source Factory',
+    category: 'Pet Hygiene Cleaning Product',
     image: '/images/oem/products/custom-absorbent-paper-ai.png',
-    detailImage: '/images/oem/materials/products-absorbent-paper-01.webp',
-    detailImageAlt: 'Absorbent paper and core material sample on a tray',
-    specs: ['SAP blend', 'Layer material', 'Bulk customization'],
-    application: 'Absorbent product factories, converters, and bulk material buyers.',
-    oemCapability: 'Factory-direct absorbent layer and sheet supply programs.',
-    customization: 'Dimensions, thickness, SAP blend, absorbency, and bulk packing.',
-    badge: 'Factory Direct',
-    summary: 'Absorbent paper sheets configured for core materials and bulk supply.',
-    details: ['SAP ratio, paper feel, thickness, and packing can be customized.', 'Available as layer material or standalone absorbent sheets.', 'Factory-direct support for formula and delivery control.'],
+    detailImage: '/images/products/pet-absorbent-paper-sheets/ai-details-20260918/wet-strength-plain.webp',
+    detailImageAlt: 'Pet absorbent paper sheet used for quick, clean urine pickup',
+    specs: ['Nonwoven or wet-strength paper', 'Wood pulp + SAP core', '25 x 30 / 30 x 40 cm'],
+    application: 'Pet brands, retailers, distributors, importers, and daily pet-care channels.',
+    oemCapability: 'Finished absorbent cleaning sheets supplied with fixed MOQ and repeat-order control.',
+    customization: 'Material, size, surface printing, packaging artwork, and pack format.',
+    badge: 'Finished Product',
+    summary: 'Fast, cleaner pet urine pickup sheets for brands building a practical daily-care range.',
+    details: ['Two outer-material options: soft nonwoven or thick wet-strength paper.', 'Wood pulp and SAP absorb liquid quickly without the mess of ordinary tissue.', 'Self-sealing bags and custom printed plastic bags are available for retail programs.'],
   },
   {
     slug: 'custom-pet-waste-bags',
@@ -489,12 +486,12 @@ const productTechnicalSpecs = {
     ['MOQ', 'Confirmed after product format, material, and packaging review'],
   ],
   'pet-absorbent-paper-sheets': [
-    ['Sheet Size', 'Buyer-defined dimensions or converted layer cut size'],
-    ['Thickness', 'Project-defined basis weight and layer build'],
-    ['Core Material', 'Absorbent paper with optional tissue and SAP blend direction'],
-    ['Absorption', 'Configured around the intended finished product and sample target'],
-    ['Packing', 'Bulk protective wrapping, labels, pallets, and shipment marks'],
-    ['MOQ', 'Confirmed after material structure, sheet size, and delivery plan review'],
+    ['Sheet Size', '25 x 30 cm, 30 x 40 cm, or custom dimensions'],
+    ['Outer Material', 'Nonwoven or thick wet-strength paper'],
+    ['Absorbent Core', 'Wood pulp + SAP'],
+    ['Use', 'Cover urine, absorb quickly, and remove without dirty hands'],
+    ['Packaging', 'Self-sealing bag or custom printed plastic bag'],
+    ['MOQ', 'Fixed MOQ; confirm the applicable quantity by inquiry or WhatsApp'],
   ],
   'charcoal-pet-pads': [
     ['Size', '33 x 45 cm, 45 x 60 cm, 60 x 60 cm, 60 x 90 cm, or custom'],
@@ -600,27 +597,27 @@ const productProcurementDetails = {
   },
   'pet-absorbent-paper-sheets': {
     overview: {
-      purpose: 'Absorbent sheet material for use as a converted-product core layer or a standalone project-defined sheet.',
-      buyers: 'Absorbent product factories, converters, material distributors, importers, and bulk buyers.',
-      scenarios: 'Pet hygiene converting, absorbent core development, sampling, bulk material supply, and industrial use.',
+      purpose: 'Finished cleaning sheets for quickly covering and absorbing pet urine on floors and other household surfaces.',
+      buyers: 'Pet brands, retailers, distributors, importers, wholesalers, and online sellers.',
+      scenarios: 'Daily accidents, puppy training clean-up, travel, clinics, grooming areas, and indoor pet care.',
     },
-    features: ['Configurable absorption', 'Flexible layer integration', 'Custom dimensions', 'Bulk supply formats', 'Private label documentation'],
-    sizes: ['Custom sheet dimensions', 'Layer cut size', 'Project-specific thickness', 'Bulk packing format'],
+    features: ['Fast liquid pickup', 'Cleaner handling', 'Nonwoven or wet-strength paper', 'Custom sizes', 'Private label available'],
+    sizes: ['25 x 30 cm', '30 x 40 cm', 'Custom dimensions'],
     materials: [
-      ['Absorbent Paper', 'Provides liquid distribution and a stable converted layer; basis weight affects thickness and handling.'],
-      ['SAP', 'Optional blend direction increases liquid lock-in and is planned around the required capacity.'],
-      ['Tissue', 'Tissue combinations can support layer integrity, distribution, and downstream converting.'],
-      ['Core Combination', 'The final sheet structure is matched to the buyer process and intended finished product.'],
+      ['Nonwoven Outer', 'Soft, light, and easy to handle for daily pet-care clean-up sheets.'],
+      ['Wet-Strength Paper Outer', 'Thicker paper surface that stays intact while absorbing and lifting liquid.'],
+      ['Wood Pulp', 'Distributes liquid through the absorbent centre of the sheet.'],
+      ['SAP', 'Locks liquid into the core for fast absorption and less mess than ordinary tissue.'],
     ],
     customization: [
-      ['Size', 'Sheet dimensions or converted layer cut size matched to buyer equipment.'],
-      ['Thickness', 'Basis weight and layer build reviewed for handling and finished-product targets.'],
-      ['Absorption Level', 'Paper grade and SAP blend adjusted around the requested uptake direction.'],
-      ['Packaging', 'Bulk packs, protective wrapping, pallet plan, and shipment labels.'],
-      ['Printing', 'Project identification, labels, outer marks, and buyer-required documentation.'],
-      ['Private Label', 'Buyer references and supply documentation for controlled repeat material orders.'],
+      ['Material', 'Choose nonwoven or wet-strength paper as the outer layer.'],
+      ['Size', 'Select 25 x 30 cm, 30 x 40 cm, or a custom dimension.'],
+      ['Printing', 'Printed absorbent sheets can be made with either material option.'],
+      ['Packaging', 'Use a self-sealing bag or a custom printed plastic bag.'],
+      ['MOQ', 'MOQ is fixed; buyers can confirm the applicable quantity by inquiry or WhatsApp.'],
+      ['Private Label', 'Coordinate pack artwork, labels, and repeat-order specifications.'],
     ],
-    oemSupport: 'Material brief review, sample sheets, absorption checks, bulk packing planning, and repeat supply coordination.',
+    oemSupport: 'Confirm the fixed MOQ, select the outer material and size, review a sample, then release the approved pack artwork for production.',
   },
   'custom-pet-waste-bags': {
     overview: {
@@ -1744,11 +1741,9 @@ function SiteNav({ navRef, ui }) {
 
   return (
     <nav ref={navRef} className="nav">
-      <a className="brand notranslate" translate="no" href="/#home" aria-label="Nantong JINCHENG ZENCARE Technology Company homepage">
-        <span>
-          <strong>Nantong JINCHENG ZENCARE</strong>
-          <small>Technology Company</small>
-        </span>
+      <a className="brand legacy-horizontal-brand notranslate" translate="no" href="/#home" aria-label="Nantong JINCHENG ZENCARE Technology Company homepage">
+        <img src="/images/brand/jcz-mark.webp" alt="JCZ logo" width="102" height="48" />
+        <img src="/images/brand/jcz-wordmark.webp" alt="Jincheng Zencare 锦程至臻护" width="125" height="34" />
       </a>
       <div className="nav-links notranslate" translate="no" aria-label={labels.ariaLabel}>
         <a href="/">{labels.home}</a>
@@ -1757,7 +1752,7 @@ function SiteNav({ navRef, ui }) {
         <a href="/oem-process">{labels.oemProcess}</a>
         <a href="/quality-control">{labels.quality}</a>
         <a href="/blog">{labels.resources}</a>
-        <a href="/#contact">{labels.contact}</a>
+        <a href="/contact">{labels.contact}</a>
       </div>
       <a className="nav-cta notranslate" translate="no" href="/request-product-plan?product=oem-pet-pad-project">
         {labels.quote}
@@ -1944,6 +1939,8 @@ function ProductProcurementModules({ product }) {
   );
 }
 
+
+
 function ProductDetail({ product }) {
   return (
     <section className="product-detail-page">
@@ -2120,7 +2117,7 @@ function AdultUnderpadsPage({ ui }) {
             <div className="adult-underpads-inline-links" aria-label="Product resources">
               <a href="/#customization">OEM / ODM service</a>
               <a href="/products/disposable-pet-pads">Pet pad range</a>
-              <a href="/#contact">Contact factory</a>
+              <a href="/contact">Contact factory</a>
             </div>
           </div>
         </section>
@@ -2245,7 +2242,7 @@ function AdultUnderpadsPage({ ui }) {
           <h2 id="adult-underpads-cta-title">Looking for a Reliable OEM Underpad Manufacturer?</h2>
           <p>Our engineering team helps brands build premium healthcare products for global markets.</p>
           <div className="adult-underpads-actions">
-            <a className="detail-cta" href="/#contact">Contact Sales <ArrowUpRight size={18} /></a>
+            <a className="detail-cta" href="/contact">Contact Sales <ArrowUpRight size={18} /></a>
             <a className="adult-underpads-secondary-cta" href="/request-product-plan?product=adult-underpads&request=sample">Request Sample <ArrowUpRight size={18} /></a>
           </div>
         </section>
@@ -3578,6 +3575,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
   const [formState, setFormState] = useState({
     name: '',
     email: '',
+    phone: '',
     product,
     botField: '',
   });
@@ -3727,6 +3725,7 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
       setFormState({
         name: '',
         email: '',
+        phone: '',
         product,
         botField: '',
       });
@@ -3772,6 +3771,10 @@ function InquiryForm({ className = '', product = '', source = 'website-contact',
         <label>
           <span>Work Email</span>
           <input type="email" name="email" required maxLength="200" autoComplete="email" placeholder="name@company.com" value={formState.email} onChange={updateField('email')} />
+        </label>
+        <label>
+          <span>WhatsApp / Phone</span>
+          <input type="tel" name="phone" maxLength="100" autoComplete="tel" placeholder="+1 555 000 0000" value={formState.phone} onChange={updateField('phone')} />
         </label>
         <label className="inquiry-field-wide">
           <span>Product Interest</span>
@@ -4094,7 +4097,7 @@ function InvestorRelationsPage() {
               <p className="section-kicker">Latest Updates</p>
               <h2>Business Milestones</h2>
             </div>
-            <a href="/#contact">
+            <a href="/contact">
               Contact Us
               <ArrowUpRight size={18} />
             </a>
@@ -4411,7 +4414,7 @@ function GiveBackPage() {
           <p>
             We believe source manufacturing should support quality management, practical use, and long-term value for pets, brands, and channel partners.
           </p>
-          <a href="/#contact">
+          <a href="/contact">
             Start a responsible project
             <ArrowUpRight size={18} />
           </a>
@@ -4605,6 +4608,7 @@ function App() {
   const currentProduct = productSlug
     ? customProducts.find((product) => product.slug === productSlug)
     : null;
+
 
   useEffect(() => {
     ensureGoogleTagReady();
@@ -5569,24 +5573,37 @@ function App() {
         </div>
       </section>
 
-      <section className="home-trust-strip" aria-label="Manufacturer trust data">
-        <div className="container home-trust-grid">
-          {homepageTrustStats.map(([value, label, text]) => (
-            <article key={label}>
-              <strong>{value}</strong>
-              <h2>{label}</h2>
-              <p>{text}</p>
-            </article>
-          ))}
+      <section className="mission-section" id="why-choose" aria-labelledby="mission-title">
+        <div className="container mission-shell">
+          <div className="mission-copy">
+            <p className="mission-kicker">WHY CHOOSE US</p>
+            <h2 id="mission-title">Your Brand, Our Mission</h2>
+            <p className="mission-intro">We strive to deliver advanced technology and high-quality products to customers worldwide.</p>
+            <div className="mission-points">
+              <article className="mission-point">
+                <span className="mission-icon" aria-hidden="true"><ShieldCheck size={28} strokeWidth={1.6} /></span>
+                <div><h3>Professional Experience</h3><p>With more than 20 years of experience in hygiene products, we understand OEM and ODM requirements and turn them into stable production.</p></div>
+              </article>
+              <article className="mission-point">
+                <span className="mission-icon" aria-hidden="true"><Factory size={28} strokeWidth={1.6} /></span>
+                <div><h3>Production Ability</h3><p>Our 12,000 sq.m. manufacturing base and automated production lines support consistent quality, flexible customization, and reliable delivery.</p></div>
+              </article>
+            </div>
+          </div>
+          <div className="mission-video">
+            <video src="/videos/factory-showcase-web.mp4" controls playsInline preload="metadata" />
+          </div>
         </div>
       </section>
+
+      <ManufacturingMarquee />
 
       <section className="section about" id="about">
         <div className="container about-shell">
           <div className="about-video" aria-label="Factory video">
             <video
-              src="/videos/factory-profile-4-compressed.mp4"
-              poster="/images/oem/hero/factory-campus.webp"
+              src="/videos/factory-showcase-web.mp4"
+             
               autoPlay
               muted
               loop
@@ -5743,6 +5760,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <CustomerGallery />
 
       <section className="contact-page" id="contact">
         <div className="container contact-inner">

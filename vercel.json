@@ -1,6 +1,26 @@
 {
   "redirects": [
     {
+      "source": "/pages/about",
+      "destination": "/factory",
+      "permanent": true
+    },
+    {
+      "source": "/about-factory",
+      "destination": "/factory",
+      "permanent": true
+    },
+    {
+      "source": "/factory/certificates",
+      "destination": "/certifications",
+      "permanent": true
+    },
+    {
+      "source": "/request-product-plan",
+      "destination": "/contact",
+      "permanent": false
+    },
+    {
       "source": "/sitemap-index.xml",
       "destination": "/sitemap.xml",
       "permanent": true
@@ -49,9 +69,60 @@
       "source": "/region/:country",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/products/disposable-pet-pads",
+      "destination": "/products/pet-training-pads",
+      "permanent": true
+    },
+    {
+      "source": "/products/custom-pet-waste-bags",
+      "destination": "/products/garbage-bags",
+      "permanent": true
+    },
+    {
+      "source": "/products/pet-care-pad-glove-wipes",
+      "destination": "/products/disposable-cleaning-products",
+      "permanent": true
     }
   ],
   "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/images/certificates/BSCI-social-compliance-audit.webp",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"BSCI-social-compliance-audit.webp\""
+        }
+      ]
+    },
+    {
+      "source": "/videos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [
@@ -91,8 +162,8 @@
   ],
   "rewrites": [
     {
-      "source": "/:path((?!sitemap\\.xml|sitemap\\.html|rss\\.xml|robots\\.txt|favicon\\.svg|favicon\\.ico|assets/|images/|videos/|api/).*)",
-      "destination": "/index.html"
+      "source": "/:path((?!api/|assets/|images/|videos/|media/|generated-images/|.*\\.[^/]+$).+)",
+      "destination": "/:path/index.html"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { blogArticles, getBlogArticleText } from '../src/blogData.js';
 import { getAuthoritySeoEntries } from '../src/authorityData.js';
+import {storefrontRoutes, metadataFor} from '../src/storefront/metadata.js';
 
 export const siteUrl = 'https://www.jczcare.com';
 
@@ -74,7 +75,7 @@ export const productSeo = [
     path: '/products/pet-absorbent-paper-sheets',
     title: 'Pet Absorbent Paper Sheets Manufacturer | JCZCARE',
     description:
-      'Pet absorbent paper sheets configured for SAP blend, layer material, bulk customization, and factory-direct absorbent core supply.',
+      'Finished pet urine cleanup sheets with nonwoven or wet-strength paper outer faces, a wood pulp and SAP core, custom printing and retail packaging.',
     image: '/images/generated-site/materials/products-absorbent-paper-01.webp',
     productName: 'Pet Absorbent Paper Sheets',
     category: 'Absorbent paper sheets',
@@ -436,7 +437,7 @@ export const allSeoEntries = [
   ...regions,
 ];
 
-export const getSeoEntry = (path = '/') => allSeoEntries.find((entry) => entry.path === path) || {
+export const getSeoEntry = (path = '/') => (storefrontRoutes.includes(path) ? metadataFor(path) : null) || allSeoEntries.find((entry) => entry.path === path) || {
   ...baseSeo,
   path,
   title: `${path.split('/').filter(Boolean).join(' ').replace(/\b\w/g, (char) => char.toUpperCase()) || 'JCZCARE'} | Nantong JINCHENG ZENCARE`,

@@ -1,5 +1,6 @@
 import { sendEmail } from '../services/email.js';
 import { appendInquiryToGoogleSheets } from '../services/googleSheets.js';
+import { randomUUID } from 'node:crypto';
 
 const maxBodyBytes = 20 * 1024;
 const submitWindowMs = 60 * 1000;
@@ -148,6 +149,10 @@ function buildInquiry(req, body) {
     return { error: 'Please enter a valid email address.' };
   }
 
+  if (!inquiry.phone) {
+    return { error: 'Please enter a WhatsApp number or phone number so our team can follow up.' };
+  }
+
   if (!inquiry.product) {
     return { error: 'Please select a product.' };
   }
@@ -197,11 +202,13 @@ async function verifyHuman(captchaToken, ip) {
   }
 }
 
-async function syncInquiryToGoogleSheets(inquiry) {
+async function syncInquiryToGoogleSheets(inquiry, append = appendInquiryToGoogleSheets) {
   try {
-    await appendInquiryToGoogleSheets(inquiry);
+    const receipt = await append(inquiry);
+    return { saved: receipt?.ok === true, saveStatus: receipt?.ok === true ? 'confirmed' : 'unknown' };
   } catch (error) {
     console.error('Google Sheets append failed', error?.message || 'Unknown error');
+    return { saved: false, saveStatus: 'unknown' };
   }
 }
 
@@ -241,7 +248,14 @@ async function syncInquiryToBusinessCenter(inquiry) {
   }
 }
 
-export default async function handler(req, res) {
+// Dependency injection is used only by isolated tests; deployed defaults stay unchanged.
+export function createProductionContactHandler({
+  send = sendEmail,
+  append = appendInquiryToGoogleSheets,
+  verify = verifyHuman,
+  syncBusiness = syncInquiryToBusinessCenter,
+} = {}) {
+return async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -272,14 +286,14 @@ export default async function handler(req, res) {
       return;
     }
 
-    const verification = await verifyHuman(result.captchaToken, ip);
+    const verification = await verify(result.captchaToken, ip);
 
     if (!verification.ok) {
       json(res, 400, { message: verification.message });
       return;
     }
 
-    const sent = await sendEmail(result.inquiry);
+    const sent = await send(result.inquiry);
 
     if (!sent.ok) {
       json(res, sent.status || 500, {
@@ -288,13 +302,17 @@ export default async function handler(req, res) {
       return;
     }
 
-    await Promise.all([
-      syncInquiryToGoogleSheets(result.inquiry),
-      syncInquiryToBusinessCenter(result.inquiry),
+    const [saveReceipt] = await Promise.all([
+      syncInquiryToGoogleSheets(result.inquiry, append),
+      syncBusiness(result.inquiry),
     ]);
 
+    const leadEventId = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(body.submissionId || ''))
+      ? body.submissionId : randomUUID();
     json(res, 200, {
       ok: true,
+      ...saveReceipt,
+      ...(saveReceipt.saved ? { leadEventId } : {}),
       message: 'Thank you. Your inquiry has been sent successfully. We will contact you shortly.',
     });
   } catch (error) {
@@ -303,4 +321,7 @@ export default async function handler(req, res) {
       message: 'Sorry, your inquiry could not be sent. Please try again or email us directly at hengtuo@nthengtuo.com.',
     });
   }
+};
 }
+
+export default createProductionContactHandler();
