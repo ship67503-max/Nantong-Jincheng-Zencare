@@ -1,0 +1,21 @@
+/* JCZCARE identity, derived from the supplied Jincheng Zencare logo.
+   Cyan and orange are decorative; readable links use royal blue.
+   Keep photography, functional error/success colors and WhatsApp unchanged. */
+:root {
+  --brand-blue: #32389b;
+  --brand-blue-deep: #242978;
+  --brand-cyan: #249ecc;
+  --brand-cyan-light: #a6dcea;
+  --brand-yellow: #ffdb21;
+  --brand-yellow-hover: #ffe65c;
+  --brand-orange: #f17416;
+  --brand-ink: #202843;
+  --brand-muted: #536278;
+  --brand-muted-soft: #64738a;
+  --brand-white: #ffffff;
+  --brand-surface: #f6fbfe;
+  --brand-sky: #e4f4fc;
+  --brand-line: #d8e6ef;
+  --brand-line-strong: #b0cddd;
+  --brand-night: #20265f;
+}

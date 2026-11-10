@@ -1,6 +1,7 @@
 node_modules
 dist
 output
+tmp
 .git
 .env
 .env*
@@ -16,3 +17,6 @@ public/videos/factory-final.mp4
 public/videos/factory-hero.mp4
 public/videos/factory-profile-4.mp4
 public/videos/hero-background-2.mp4
+public/videos/factory-showcase.mp4
+
+.secrets

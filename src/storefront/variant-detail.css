@@ -1,0 +1,50 @@
+/* Scoped to the 27 detail routes; parent product pages keep their layout. */
+.variant-detail-page { overflow-wrap:break-word; }
+.variant-detail-page .breadcrumbs { flex-wrap:wrap; gap:8px 12px; }
+.variant-detail-page .product-variant-hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,5vw,72px); padding-block:42px 48px; }
+.variant-detail-page .product-hero-photo { margin:0; height:auto; aspect-ratio:4 / 3; background:#fff; position:relative; border-radius:14px; }
+.variant-detail-page .product-hero-photo img { width:100%; height:100%; object-fit:contain; }
+.variant-detail-page .product-hero-photo figcaption { position:absolute; bottom:10px; left:12px; right:12px; font-size:calc(9px + 3px); line-height:1.4; letter-spacing:1px; padding:8px 10px; background:#fffffff0; }
+.variant-detail-page .core-page-intro { max-width:540px; }
+.variant-detail-page .product-jump { overflow-x:auto; white-space:nowrap; }
+.variant-detail-page .variant-construction { padding:56px 0; background:var(--brand-surface); scroll-margin-top:120px; }
+.variant-detail-page .construction-heading { margin-bottom:28px; max-width:800px; }
+.variant-detail-page .construction-heading .eyebrow { margin-bottom:12px; }
+.variant-detail-page .construction-heading h2 { font-size:calc(clamp(28px,3vw,42px) + 3px); line-height:1.12; margin:0; }
+.variant-detail-page .construction-panel { display:grid; grid-template-columns:minmax(0,1.13fr) minmax(0,1fr); gap:clamp(24px,3vw,42px); align-items:start; padding:28px; background:white; border:1px solid var(--brand-line); border-radius:18px; }
+.variant-detail-page .construction-figure { margin:0; min-width:0; align-self:center; }
+.variant-detail-page .construction-figure img { display:block; width:100%; aspect-ratio:3 / 2; height:auto; object-fit:contain; border-radius:8px; background:#fff; }
+.variant-detail-page .construction-figure figcaption { font-size:calc(11px + 3px); color:var(--muted); line-height:1.65; margin-top:14px; }
+.variant-detail-page .construction-copy { min-width:0; }
+.variant-detail-page .construction-copy ol { margin:0; padding:0; list-style:none; }
+.variant-detail-page .construction-copy li { display:grid; grid-template-columns:26px minmax(0,1fr); gap:12px; padding:12px 0; border-bottom:1px solid var(--brand-line); }
+.variant-detail-page .construction-copy li:first-child { padding-top:0; }
+.variant-detail-page .construction-copy li>span { font-size:calc(11px + 3px); color:var(--blue); line-height:24px; }
+.variant-detail-page .construction-copy h3 { font-size:calc(15px + 3px); line-height:1.5; margin:0 0 4px; }
+.variant-detail-page .construction-copy p { font-size:calc(13px + 3px); line-height:1.65; color:var(--muted); margin:0; }
+.variant-detail-page .construction-note { margin-top:18px; padding:14px 16px; background:var(--brand-surface); border-left:2px solid var(--blue); }
+.variant-detail-page .construction-note strong { display:block; font-size:calc(12px + 3px); margin-bottom:5px; }
+.variant-detail-page .specification-band { padding:56px 0; background:#fff; }
+.variant-detail-page .spec-layout { grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:48px; }
+.variant-detail-page .spec-layout h2 { font-size:calc(clamp(28px,3vw,40px) + 3px); }
+.variant-detail-page .spec-list>div { grid-template-columns:minmax(100px,.4fr) minmax(0,1fr); gap:18px; }
+.variant-detail-page .variant-inquiry { padding-block:52px; border-top:1px solid var(--brand-line); }
+.variant-detail-page .faq-layout,.variant-detail-page .related-formats { padding-block:48px; }
+.variant-detail-page .related-format-grid img { background:white; }
+.variant-detail-page #specifications,.variant-detail-page #inquiry-options { scroll-margin-top:120px; }
+@media(max-width:900px){
+  .variant-detail-page .construction-panel { grid-template-columns:minmax(0,1fr) minmax(0,1fr); padding:20px; gap:24px; }
+  .variant-detail-page .product-variant-hero h1 { font-size:calc(42px + 3px); }
+}
+@media(max-width:700px){
+  .variant-detail-page .product-variant-hero,.variant-detail-page .construction-panel,.variant-detail-page .spec-layout { grid-template-columns:minmax(0,1fr); gap:24px; }
+  .variant-detail-page .product-variant-hero { padding-block:26px 32px; }
+  .variant-detail-page .product-variant-hero h1 { font-size:calc(38px + 3px); }
+  .variant-detail-page .construction-figure { width:100%; max-width:560px; justify-self:center; }
+  .variant-detail-page .variant-construction,.variant-detail-page .specification-band { padding-block:36px; }
+  .variant-detail-page .construction-panel { padding:16px; border-radius:12px; }
+  .variant-detail-page .construction-heading { margin-bottom:22px; }
+  .variant-detail-page .spec-list>div { grid-template-columns:minmax(0,1fr); gap:8px; }
+  .variant-detail-page .section-heading { display:block; }
+  .variant-detail-page .section-heading>p { margin-top:16px; }
+}

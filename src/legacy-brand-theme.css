@@ -1,0 +1,130 @@
+/* The editorial/SEO renderer shares the identity, preserving its dark reading surfaces. */
+:root {
+  --hero-navy: var(--brand-night);
+  --hero-deep: var(--brand-blue-deep);
+  --hero-surface: #262d71;
+  --hero-surface-strong: #303982;
+  --hero-text: var(--brand-white);
+  --hero-muted: #d4deed;
+  --hero-cyan: var(--brand-cyan-light);
+  --hero-cyan-soft: #dff5fa;
+  --hero-lime: var(--brand-cyan-light);
+  --hero-line: #ffffff30;
+}
+::selection { background: var(--brand-yellow); color: var(--brand-blue-deep); }
+/* The legacy GSAP animation writes inline colors; keep only its geometry/motion. */
+.nav, .nav.is-floating { background: white !important; border-color: var(--brand-line) !important; min-height:112px; box-shadow:0 8px 28px rgba(32,40,67,.08)!important; }
+.nav .nav-links{background:var(--brand-surface)}
+.nav .nav-links a,.nav .nav-signin,.nav .language-switcher-trigger{color:var(--brand-blue-deep)!important}
+.nav .nav-links a:hover{background:var(--brand-sky);color:var(--brand-blue)!important}
+.nav .language-switcher-trigger,.nav .nav-signin{border-color:var(--brand-line);background:var(--brand-surface)}
+.site-footer .footer-identity{background:var(--brand-surface)}
+.site-footer{background:var(--brand-surface)}
+@media(max-width:900px){.nav,.nav.is-floating{min-height:0}.nav .brand-logo{grid-column:1/-1}}
+.nav .nav-cta { background: var(--brand-blue) !important; color: white !important; }
+.nav .nav-cta:hover { background: var(--brand-blue-deep) !important; }
+.site-footer .footer-support { background: var(--brand-blue); }
+.site-footer .footer-support-inner .footer-whatsapp-cta { background: #ffffff0c; }
+.site-footer .footer-support-inner .footer-top-link { background: white; color: var(--brand-blue); }
+/* Bring legacy SEO and authority pages onto the supplied logo's white / light-blue system. */
+.authority-page,.business-seo-page{padding-top:164px!important;--hero-text:var(--brand-ink);--hero-muted:var(--brand-muted);--hero-line:var(--brand-line);--hero-surface:var(--brand-surface);--hero-surface-strong:var(--brand-sky)}
+.authority-page :is(a,summary,strong,small,figcaption,[role="cell"],[role="columnheader"]),.business-seo-page :is(a,strong,small){color:var(--brand-blue-deep)}
+.authority-page :is(.authority-breadcrumbs,.authority-article-grid span,.authority-summary-bar span,.authority-references span),.business-seo-page .factory-specification-table span{color:var(--brand-muted)}
+.authority-page :is(.authority-card-grid a,.authority-article-grid a,.authority-faq-group,.authority-products a,.authority-references a){background:white;border-color:var(--brand-line)}
+.authority-page :is(.authority-hero-actions a,.authority-final-cta a){background:var(--brand-blue);color:white;border-color:var(--brand-blue)}
+.authority-page :is(.authority-hero-actions a:last-child,.authority-final-cta a:last-child){background:white;color:var(--brand-blue);border-color:var(--brand-line-strong)}
+@media(max-width:900px){.authority-page,.business-seo-page{padding-top:190px!important}}
+@media(max-width:680px){
+  .business-seo-shell,.authority-shell{min-width:0;max-width:100%}
+  .business-seo-hero{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .business-seo-hero>div,.business-seo-hero>picture{min-width:0;width:100%;box-sizing:border-box}
+  .business-seo-hero>div{padding:28px 24px}
+  .business-seo-hero h1{font-size:calc(36px + 3px);line-height:1.12;overflow-wrap:anywhere;max-width:100%}
+  .business-seo-hero p{max-width:100%;font-size:calc(15px + 3px) !important}
+  .business-seo-hero img{width:100%;height:260px}
+  .business-seo-actions{min-width:0;flex-wrap:wrap}
+  .business-seo-actions a{width:100%;min-width:0;white-space:normal}
+}
+.product-detail-page,
+.adult-underpads-page,
+.about-page,
+.investor-page,
+.affiliates-page,
+.help-page,
+.learn-page,
+.news-page,
+.news-article-page,
+.authority-page,
+.business-seo-page,
+.giveback-page,
+.gift-page,
+.inquiry-page,
+.signin-page,
+.oem-capability-page,
+.oem-case-study-page {
+  background: var(--brand-white) !important;
+  color: var(--brand-ink) !important;
+}
+.product-detail-page :is(.detail-copy, .detail-visual, .detail-info-grid article),
+.product-detail-page :is(.product-b2b-grid article, .product-quote-band),
+.adult-underpads-page :is(.adult-underpads-hero, .adult-underpads-advantages, .adult-underpads-certification, .adult-underpads-final-cta),
+.adult-underpads-page :is(.adult-underpads-feature-card, .adult-underpads-custom-card, .adult-underpads-application-card, .adult-underpads-faq-list details, .adult-underpads-spec-table),
+.about-page :is(.about-page-hero, .about-page-grid article, .about-address-card),
+.news-page :is(.news-hero, .news-feature, .news-card),
+.news-article-page :is(.news-article-hero, .news-article-body, .news-article-aside, .news-related-card),
+.authority-page :is(.authority-hero, .authority-summary-bar, .authority-card-section, .authority-content, .authority-toc, .authority-faq, .authority-references, .authority-products, .authority-final-cta),
+.business-seo-page :is(.business-seo-hero, .business-seo-grid > *, .business-seo-featured, .business-seo-faq, .business-seo-links, .oem-capability-section, .factory-core-system, .quality-stage-section, .download-grid > *),
+.oem-capability-page :is(.oem-capability-hero, .oem-capability-page-section, .oem-capability-cta),
+.oem-case-study-page :is(.oem-case-study-hero, .oem-case-study-card, .oem-case-study-cta),
+.inquiry-page :is(.inquiry-copy, .inquiry-form),
+.signin-page :is(.signin-copy, .signin-card) {
+  border-color: var(--brand-line) !important;
+  background: var(--brand-surface) !important;
+  box-shadow: 0 18px 48px rgba(32,40,67,.08) !important;
+}
+.product-detail-page :is(h1,h2,h3),
+.adult-underpads-page :is(h1,h2,h3),
+.about-page :is(h1,h2,h3),
+.news-page :is(h1,h2,h3),
+.news-article-page :is(h1,h2,h3),
+.authority-page :is(h1,h2,h3),
+.business-seo-page :is(h1,h2,h3),
+.oem-capability-page :is(h1,h2,h3),
+.oem-case-study-page :is(h1,h2,h3),
+.inquiry-page :is(h1,h2,h3),
+.signin-page :is(h1,h2,h3) { color: var(--brand-ink) !important; }
+.product-detail-page :is(p,li,dd,td),
+.adult-underpads-page :is(p,li,dd,td),
+.about-page :is(p,li,dd,td),
+.news-page :is(p,li,dd,td),
+.news-article-page :is(p,li,dd,td),
+.authority-page :is(p,li,dd,td),
+.business-seo-page :is(p,li,dd,td),
+.oem-capability-page :is(p,li,dd,td),
+.oem-case-study-page :is(p,li,dd,td),
+.inquiry-page :is(p,li,dd,td),
+.signin-page :is(p,li,dd,td) { color: var(--brand-muted) !important; }
+.authority-page .section-kicker,
+.business-seo-page .section-kicker,
+.news-page .section-kicker,
+.news-article-page .section-kicker,
+.authority-page .title-key,
+.business-seo-page .title-key { color: var(--brand-blue) !important; }
+.authority-page :is(.authority-table,.authority-table-wrap,.authority-breadcrumbs),
+.business-seo-page :is(.process-flow,.factory-specification-table,.quality-stage-grid article,.custom-option-grid article),
+.news-article-page :is(.blog-toc,.blog-checklist,.blog-faq),
+.inquiry-page .contact-form :is(input,textarea,select),
+.signin-page .contact-form input { background: white !important; border-color: var(--brand-line) !important; color: var(--brand-ink) !important; }
+.product-detail-page :is(.detail-cta,.product-quote-band a),
+.adult-underpads-page .detail-cta,
+.business-seo-page :is(.business-seo-actions a,.product-quote-band a),
+.inquiry-page .contact-form button,
+.signin-page .contact-form button { background: var(--brand-blue) !important; color: white !important; }
+.site-footer,.footer-links-band { background: var(--brand-sky) !important; border-color: var(--brand-line) !important; }
+.site-footer :is(h2,h3,strong,a) { color: var(--brand-blue-deep) !important; }
+.site-footer :is(p,small) { color: var(--brand-muted) !important; }
+.site-footer .footer-support { background: var(--brand-sky) !important; color: var(--brand-ink) !important; border-color: var(--brand-line) !important; }
+.site-footer .footer-support-inner > a:not(.footer-top-link) { color: var(--brand-blue) !important; }
+.site-footer .footer-support-inner .footer-whatsapp-cta { background: white !important; border-color: var(--brand-line-strong) !important; }
+.site-footer .footer-support-inner .footer-top-link { background: var(--brand-blue) !important; color: white !important; }
+:is(button, a, summary, input, select, textarea):focus-visible { outline: 3px solid var(--brand-cyan); outline-offset: 4px; }

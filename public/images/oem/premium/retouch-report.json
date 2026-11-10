@@ -1,0 +1,53 @@
+[
+  {
+    "output": "C:\\Users\\Administrator\\Documents\\Google独立站\\public\\images\\oem\\premium\\factory-campus-premium.webp",
+    "source": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\factory\\factory-campus-real-aerial-20260729.png",
+    "source_size": [
+      2200,
+      1236
+    ],
+    "operations": [
+      "EXIF orientation",
+      "conservative white balance",
+      "tone lift",
+      "subtle color/contrast",
+      "unsharp mask",
+      "downsample to web width"
+    ],
+    "content_policy": "source pixels only; no generative redraw, removal, replacement, or text/logo edits"
+  },
+  {
+    "output": "C:\\Users\\Administrator\\Documents\\Google独立站\\public\\images\\oem\\premium\\production-line-premium.webp",
+    "source": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\oem\\production\\factory-production-line-real-20260729.jpg",
+    "source_size": [
+      3840,
+      2160
+    ],
+    "operations": [
+      "EXIF orientation",
+      "conservative white balance",
+      "tone lift",
+      "subtle color/contrast",
+      "unsharp mask",
+      "downsample to web width"
+    ],
+    "content_policy": "source pixels only; no generative redraw, removal, replacement, or text/logo edits"
+  },
+  {
+    "output": "C:\\Users\\Administrator\\Documents\\Google独立站\\public\\images\\oem\\premium\\warehouse-storage-premium.webp",
+    "source": "C:\\Users\\Administrator\\Documents\\独立站修改\\public\\images\\warehouse-storage.JPG",
+    "source_size": [
+      3840,
+      2160
+    ],
+    "operations": [
+      "EXIF orientation",
+      "conservative white balance",
+      "tone lift",
+      "subtle color/contrast",
+      "unsharp mask",
+      "downsample to web width"
+    ],
+    "content_policy": "source pixels only; no generative redraw, removal, replacement, or text/logo edits"
+  }
+]

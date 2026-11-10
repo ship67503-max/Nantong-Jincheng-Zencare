@@ -1,0 +1,131 @@
+/* Shared palette and editorial spacing for public storefront pages. */
+:root {
+  --ink: var(--brand-ink);
+  --blue: var(--brand-blue);
+  --sky: var(--brand-sky);
+  --sky-soft: var(--brand-surface);
+  --teal: var(--brand-blue);
+  --paper: var(--brand-white);
+  --muted: var(--brand-muted);
+  --line: var(--brand-line);
+  --mint: var(--brand-surface);
+  --lime: var(--brand-yellow);
+}
+::selection { background: var(--brand-yellow); color: var(--brand-blue-deep); }
+.utility { background: var(--brand-surface); color: var(--brand-muted); }
+.utility-dot { color: var(--brand-yellow); }
+.brand { color: var(--brand-blue); }
+.brand > span { color: var(--brand-blue-deep); }
+.brand small { color: var(--brand-muted); }
+.nav-shell{height:112px}
+.header{border-top:3px solid var(--brand-blue);background:#fff}
+.nav-shell nav a:hover{color:var(--brand-blue)}
+.b2b-hero em,.factory-landing em{color:var(--brand-blue)}
+.b2b-customization,.testing-section,.resources-hero-panel{background:var(--brand-sky)}
+.b2b-customization{background:#f6f8fa;border-bottom:1px solid #e4e9ee}
+#home-view .factory-story{background:#fbf8f2;color:var(--brand-ink);border-bottom:1px solid #ece7de}
+#home-view .factory-story .eyebrow,
+#home-view .factory-story h2 em{color:var(--brand-blue)}
+#home-view .factory-story-description,
+#home-view .factory-story-signature{color:#657286}
+#home-view .factory-story-signature{border-color:#dfe3e8}
+.b2b-closing,.closing{border-top:3px solid var(--brand-cyan)}
+.quality-stages article>span{color:var(--brand-cyan)}
+footer{border-top:3px solid var(--brand-blue)}
+@media(max-width:800px){.nav-shell{height:90px}.nav-shell nav{top:90px}}
+.eyebrow, .text-link { color: var(--brand-blue); }
+.text-link { border-color: var(--brand-line-strong); }
+.nav-shell nav a[aria-current=page] { box-shadow: 0 2px 0 var(--brand-cyan); }
+.button, .b2b-customization .button, .paper-spec-page .button {
+  background: var(--brand-blue); border-color: var(--brand-blue); color: white;
+}
+.button:hover, .b2b-customization .button:hover, .paper-spec-page .button:hover {
+  background: var(--brand-blue-deep); border-color: var(--brand-blue-deep); color: white;
+}
+.nav-shell > .button, .b2b-hero-actions .button, .b2b-closing .button,
+.contact-form-shell .button, .core-page-cta .button {
+  background: var(--brand-blue); border-color: var(--brand-blue); color: white;
+}
+.nav-shell > .button:hover, .b2b-hero-actions .button:hover, .b2b-closing .button:hover,
+.contact-form-shell .button:hover, .core-page-cta .button:hover {
+  background: var(--brand-blue-deep); border-color: var(--brand-blue-deep); color: white;
+}
+.button.light { background: white; border-color: var(--brand-line-strong); color: var(--brand-blue); }
+.button.light:hover { background: var(--brand-sky); border-color: var(--brand-blue); color: var(--brand-blue); }
+.b2b-status { background: var(--brand-orange); box-shadow: 0 0 0 5px #f15a2414; }
+.dot { background: var(--brand-cyan); }
+.manufacturing-marquee { background: var(--brand-sky); color: var(--brand-blue-deep); }
+.manufacturing-marquee-divider { color: var(--brand-cyan); }
+.manufacturing-marquee-note { background: var(--brand-surface); color: var(--brand-muted); }
+.customer-gallery, footer { background: var(--brand-surface); }
+.customer-gallery-end i { color: var(--brand-orange); }
+.band {
+  background: var(--brand-sky);
+  padding-block: clamp(56px, 5vw, 80px);
+}
+.band .two-column {
+  align-items: center;
+  gap: clamp(54px, 8vw, 120px);
+}
+.band .two-column > div:last-child {
+  max-width: 520px;
+}
+.band .two-column h2 {
+  max-width: 540px;
+  font-size: calc(clamp(38px, 4vw, 58px) + 3px);
+  line-height: 1.08;
+}
+.band .two-column p:not(.eyebrow) {
+  max-width: 520px;
+  font-size: calc(15px + 3px);
+  line-height: 1.85;
+}
+.closing {
+  background: var(--brand-surface);
+  border: 1px solid var(--brand-line);
+  border-radius: 20px;
+  margin-top: 76px;
+  margin-bottom: 92px;
+  padding: 38px 44px;
+}
+.closing h2 { max-width: 720px; font-size: calc(clamp(30px, 3vw, 45px) + 3px); }
+.closing > .button { flex-shrink: 0; }
+/* Use either a full-width band with inner gutters or a constrained wrap, never both. */
+.quality-hero { width: 100%; }
+.quality-hero h1 { font-size: calc(clamp(44px, 4.3vw, 64px) + 3px); letter-spacing: -.045em; line-height: 1.1; }
+.quality-hero > img { height: auto; aspect-ratio: 3 / 2; }
+.oem-hero h1, .product-hero h1 { font-size: calc(clamp(42px, 4.3vw, 64px) + 3px); line-height: 1.1; letter-spacing: -.045em; }
+.paper-spec-page .paper-intro .actions { justify-content: center; }
+@media(min-width:681px) and (max-width:1000px){
+  .quality-hero,.oem-hero,.product-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+  .quality-hero{padding-inline:28px}
+  .quality-hero h1,.oem-hero h1,.product-hero h1{font-size:calc(42px + 3px)}
+  .closing{align-items:flex-start;flex-direction:column;gap:24px}
+}
+.quality-hero + .section { padding-top: 92px; }
+.quality-hero + .section .section-heading { margin-bottom: 48px; }
+.quality-hero + .section .section-heading h2 { max-width: 620px; }
+.quality-hero + .section .quality-stages { gap: 38px; }
+@media(max-width:680px){
+  .quality-hero{padding:56px 20px 64px;border-radius:0 0 20px 20px}
+  .quality-hero h1{font-size:calc(clamp(48px,13vw,64px) + 3px);letter-spacing:-3px}
+  .quality-hero>img{height:auto;margin-top:10px}
+  .band .two-column{gap:32px}
+  .band .two-column h2{font-size:calc(38px + 3px)}
+  .closing{margin-top:52px;margin-bottom:62px;padding:28px 24px}
+}
+.paper-experience { --story-blue: var(--brand-blue); --story-ink: var(--brand-ink); }
+.paper-spec-page {
+  --paper-blue: var(--brand-blue); --paper-deep: var(--brand-ink);
+  --paper-muted: var(--brand-muted); --paper-line: var(--brand-line);
+}
+.pad-detail { --pad-blue: var(--brand-blue); --pad-soft: var(--brand-surface); --pad-line: var(--brand-line); }
+.pad-format-buttons button[aria-pressed=true], .pad-sizes button[aria-pressed=true],
+.pad-print-switch button[aria-pressed=true] { box-shadow: inset 0 -3px var(--brand-blue); }
+.scene-editorial .product-visual-steps button[aria-pressed=true],
+.scene-editorial .product-visual-steps button[aria-pressed=true] span { color: var(--brand-blue); }
+.scene-editorial .product-visual-steps button[aria-pressed=true] span::before { background: var(--brand-blue); }
+input, select, textarea { accent-color: var(--brand-blue); }
+:is(button, a, summary, input, select, textarea):focus-visible {
+  outline: 3px solid var(--brand-blue); outline-offset: 4px;
+}

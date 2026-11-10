@@ -6,9 +6,35 @@ import { resolvePublicRoutes } from './scripts/seo-routes.mjs';
 const hostname = 'https://www.jczcare.com';
 const dynamicRoutes = resolvePublicRoutes().filter((route) => route !== '/');
 
+const storefrontDevRoot = () => ({
+  name: 'storefront-dev-root',
+  configureServer(server) {
+    server.middlewares.use((request, _response, next) => {
+      const pathname = request.url?.split('?')[0] || '/';
+      const isPageRequest = request.method === 'GET'
+        && !pathname.startsWith('/@')
+        && !pathname.startsWith('/src/')
+        && !pathname.startsWith('/node_modules/')
+        && !pathname.startsWith('/images/')
+        && !pathname.startsWith('/videos/')
+        && !pathname.startsWith('/assets/')
+        && !pathname.startsWith('/api/')
+        && !/\.[a-z0-9]+$/i.test(pathname);
+      if (isPageRequest) {
+        request.url = '/storefront.html';
+      }
+      next();
+    });
+  },
+});
+
 export default defineConfig({
+  build: {
+    rollupOptions: { input: { legacy: 'index.html', storefront: 'storefront.html' } },
+  },
   plugins: [
     react(),
+    storefrontDevRoot(),
     Sitemap({
       hostname,
       dynamicRoutes,

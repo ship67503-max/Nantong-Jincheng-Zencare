@@ -2,10 +2,10 @@ import { google } from 'googleapis';
 
 const defaultSheetName = '\u5de5\u4f5c\u88681';
 
-function getSheetRange() {
+export function getSheetRange() {
   const sheetName = process.env.GOOGLE_SHEET_NAME || defaultSheetName;
 
-  return `${sheetName}!A:O`;
+  return `'${sheetName.replace(/'/g, "''")}'!A:O`;
 }
 
 function getGooglePrivateKey() {
@@ -50,12 +50,6 @@ export async function appendInquiryToGoogleSheets(inquiry) {
     throw new Error('Missing Google Sheets environment variables.');
   }
 
-  console.log('GOOGLE_CLIENT_EMAIL:', process.env.GOOGLE_CLIENT_EMAIL);
-  console.log('GOOGLE_PROJECT_ID:', process.env.GOOGLE_PROJECT_ID);
-  console.log('GOOGLE_SHEET_ID:', process.env.GOOGLE_SHEET_ID);
-  console.log('Runtime GOOGLE_SHEET_ID =', process.env.GOOGLE_SHEET_ID);
-  console.log('GOOGLE_SHEET_NAME:', process.env.GOOGLE_SHEET_NAME);
-
   const auth = new google.auth.JWT({
     email: process.env.GOOGLE_CLIENT_EMAIL,
     key: getGooglePrivateKey(),
@@ -68,26 +62,26 @@ export async function appendInquiryToGoogleSheets(inquiry) {
   const range = getSheetRange();
 
   try {
-    await sheets.spreadsheets.get({
+    const metadata = await sheets.spreadsheets.get({
       spreadsheetId,
+      fields: 'sheets.properties.title',
     });
-    console.log('Spreadsheet GET success');
+    const sheetName = process.env.GOOGLE_SHEET_NAME || defaultSheetName;
+    if (!metadata.data.sheets?.some(sheet => sheet.properties?.title === sheetName)) {
+      throw new Error('Configured inquiry worksheet does not exist. Check GOOGLE_SHEET_NAME.');
+    }
   } catch (error) {
     console.error('Spreadsheet GET failed status:', error.response?.status);
-    console.error('Spreadsheet GET failed data:', error.response?.data);
     console.error('Spreadsheet GET failed message:', error.message);
 
     throw error;
   }
 
-  console.log('Using spreadsheetId:', spreadsheetId);
-  console.log('Using range:', range);
-
   try {
     await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
-      valueInputOption: 'USER_ENTERED',
+      valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {
         values: [buildRow(inquiry)],
@@ -103,5 +97,41 @@ export async function appendInquiryToGoogleSheets(inquiry) {
 
   console.log('Google Sheets append succeeded');
 
+  return { ok: true };
+}
+
+export async function appendContactClickToGoogleSheets(click) {
+  if (!hasGoogleSheetsConfig() || !process.env.GOOGLE_CLICK_SHEET_ID) {
+    throw new Error('Missing Google click sheet environment variables.');
+  }
+
+  const auth = new google.auth.JWT({
+    email: process.env.GOOGLE_CLIENT_EMAIL,
+    key: getGooglePrivateKey(),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    projectId: process.env.GOOGLE_PROJECT_ID,
+  });
+  const sheets = google.sheets({ version: 'v4', auth });
+  const sheetName = process.env.GOOGLE_CLICK_SHEET_NAME || '工作表1';
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: process.env.GOOGLE_CLICK_SHEET_ID,
+    range: `'${sheetName.replace(/'/g, "''")}'!A:J`,
+    valueInputOption: 'RAW',
+    insertDataOption: 'INSERT_ROWS',
+    requestBody: {
+      values: [[
+        click.timestamp,
+        click.channel,
+        click.pageUrl,
+        click.referrer,
+        click.device,
+        click.language,
+        click.utmSource,
+        click.utmMedium,
+        click.utmCampaign,
+        click.sessionId,
+      ]],
+    },
+  });
   return { ok: true };
 }

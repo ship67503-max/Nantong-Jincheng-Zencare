@@ -627,7 +627,7 @@ const buildArticle = (spec) => ({
     links: [
       { label: 'View OEM/ODM services', href: '/#customization' },
       { label: 'View products', href: '/#projects' },
-      { label: 'Contact the factory', href: '/#contact' },
+      { label: 'Contact the factory', href: '/contact' },
       { label: 'Submit an inquiry', href: '/request-product-plan?product=blog-inquiry' },
     ],
   },

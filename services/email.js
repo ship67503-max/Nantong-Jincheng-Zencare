@@ -1,6 +1,3 @@
-const contactEmail = process.env.CONTACT_TO_EMAIL || 'hengtuo@nthengtuo.com';
-const fromEmail = process.env.CONTACT_FROM_EMAIL;
-
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -77,8 +74,11 @@ function renderHtmlEmail(inquiry) {
 
 export async function sendEmail(inquiry) {
   const apiKey = process.env.RESEND_API_KEY;
+  const contactEmail = (process.env.CONTACT_TO_EMAIL || 'hengtuo@nthengtuo.com').trim();
+  const fromEmail = process.env.CONTACT_FROM_EMAIL?.trim();
 
   if (!apiKey || !fromEmail) {
+    console.error('Inquiry email is not configured');
     return { ok: false, status: 503 };
   }
 
@@ -102,9 +102,13 @@ export async function sendEmail(inquiry) {
     }),
   });
 
-  if (!response.ok) {
-    return { ok: false, status: response.status };
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok || !result.id) {
+    // Do not log message bodies, customer addresses or authentication data.
+    console.error('Inquiry email rejected', {status: response.status, code: result.name || 'missing_message_id'});
+    return { ok: false, status: 502 };
   }
 
-  return { ok: true };
+  console.info('Inquiry email accepted by Resend', {id: result.id, to: contactEmail, from: fromEmail});
+  return { ok: true, id: result.id };
 }

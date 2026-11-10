@@ -10,7 +10,7 @@ const sharedCta = {
     { label: 'View OEM/ODM services', href: '/#customization' },
     { label: 'View pet pad products', href: '/#projects' },
     { label: 'Review factory advantages', href: '/#advantages' },
-    { label: 'Contact the factory', href: '/#contact' },
+    { label: 'Contact the factory', href: '/contact' },
     { label: 'Request a product plan', href: '/request-product-plan?product=seo-growth-inquiry' },
   ],
 };

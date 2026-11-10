@@ -148,6 +148,10 @@ function buildInquiry(req, body) {
     return { error: 'Please enter a valid email address.' };
   }
 
+  if (!inquiry.phone) {
+    return { error: 'Please enter a WhatsApp number or phone number so our team can follow up.' };
+  }
+
   if (!inquiry.product) {
     return { error: 'Please select a product.' };
   }
