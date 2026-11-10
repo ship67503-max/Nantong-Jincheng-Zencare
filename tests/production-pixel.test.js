@@ -29,6 +29,7 @@ test('production asset ID is exact; initialize only once across clients', () => 
   r.pixel.page(); createProductionPixel(r.options).page();
   assert.deepEqual(r.calls().filter(c => c[0] === 'init'), [['init', '1532666838061135']]);
   assert.equal(r.scripts.length, 1);
+  assert.equal(r.w.fbq.disablePushState, true);
   assert.equal(events(r).length, 1);
   assert.ok(r.calls().some(c => c[0] === 'set' && c[1] === 'autoConfig' && c[2] === false));
 });

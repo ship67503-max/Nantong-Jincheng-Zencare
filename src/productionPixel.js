@@ -54,7 +54,9 @@ function initialize({ windowObject: w, documentObject: d, enabled }) {
     if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
     else fbq.queue.push(arguments);
   };
-  Object.assign(fbq, { push: fbq, loaded: true, version: '2.0', queue: [] });
+  // The storefront owns SPA PageView. Otherwise the SDK's history listener can
+  // send a second PageView on pushState even with autoConfig disabled.
+  Object.assign(fbq, { push: fbq, loaded: true, version: '2.0', queue: [], disablePushState: true });
   w.fbq = w._fbq = fbq;
   const state = { path: null, product: null, leads: new Set() };
   w[stateKey] = state;
