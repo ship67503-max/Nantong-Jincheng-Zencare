@@ -1,6 +1,6 @@
 // Migrates the legacy Pixel singleton and submission-ID deduplication approach.
 import { hasMarketingConsent } from './marketingConsent.js';
-export const META_PIXEL_ID = '1532666838061135';
+export const META_PIXEL_ID = '153266838061135';
 const stateKey = '__jczcareMetaPixelState';
 export function initializeMetaPixel({ windowObject: w = window, documentObject: d = document,
   enabled = (import.meta.env?.PROD === true && ['www.jczcare.com', 'jczcare.com'].includes(w.location.hostname))
